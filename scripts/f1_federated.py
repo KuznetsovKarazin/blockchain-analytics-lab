@@ -3,21 +3,24 @@ F1 - Federated detection on Elliptic: what does pooling, partitioning and privac
 
 Setting. The labelled training transactions (steps 1-30) are split across K
 simulated institutions. Every regime trains the same one-hidden-layer MLP
-(64 ReLU units, SGD, lr 0.01, batch 128) for the same number of passes over the
-data (20), so differences come from where the data sit, not from compute.
+(64 ReLU units, SGD, lr 0.01, batch 128) for up to 100 passes over the data
+(epochs, or rounds of one local epoch), evaluated every 5 passes; the reported
+model is the checkpoint with the best validation AP (steps 31-34), and the AP at
+a fixed 20 passes is kept as well.
 Features are standardised with training-period statistics and clipped to [-10, 10]
 (in a real federation these statistics would themselves be aggregated).
 
 Regimes
   central      all training data pooled
   local        each institution trains alone (mean / min / max over institutions)
-  fedavg       FedAvg, full participation, 1 local epoch per round, 20 rounds
+  fedavg       FedAvg, full participation, 1 local epoch per round
 Partitions (K = 10)
   iid          random split
   time         institution k holds time steps 3k+1..3k+3 (different eras)
   label        Dirichlet(0.5) label skew: illicit share differs by institution
 Privacy
-  dp           client-level DP-FedAvg: clip each update to C, Gaussian noise
+  dp           client-level DP-FedAvg, 100 rounds: clip each update to C (median
+               update norm of a 20-round non-private pilot), Gaussian noise
                z*C on the sum; K = 10 and K = 100 (iid); epsilon by RDP, no
                subsampling amplification, delta = 1e-5
   secagg       pairwise masking: time per client and exactness vs K
@@ -45,7 +48,8 @@ from bclab.repro import atomic_to_csv, dump_json, set_seed, write_manifest
 
 DATA = Path("data/raw/elliptic")
 LR, BATCH, PASSES, K = 0.01, 128, 20, 10
-CURVE_LEN = 40
+CURVE_LEN, EVERY = 100, 5
+DP_ROUNDS = 100
 
 
 def partition(kind, idx, y, step, k, rng):
@@ -87,6 +91,13 @@ class Ctx:
                 "f1": f1_score(y_te, s_te >= thr, zero_division=0)}
 
 
+def select(cur):
+    """Best-validation checkpoint, plus the test AP at the fixed budget of PASSES."""
+    best = max(cur, key=lambda r: r["ap_val"])
+    fixed = next(r for r in cur if r["pass"] == PASSES)
+    return [{**best, "best_pass": best["pass"], "ap_fixed": fixed["ap"]}]
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=None)
@@ -104,12 +115,13 @@ def main() -> None:
         # central, with learning curve (validation and test AP per pass)
         rng = np.random.default_rng(seed)
         m = MLP(X.shape[1], seed=seed)
+        cur = []
         for ep in range(CURVE_LEN):
             m.sgd(X[tr_idx], d.y[tr_idx], 1, LR, BATCH, rng)
-            ev = c.evaluate(m)
-            curves.append({"regime": "central", "partition": "-", "seed": seed, "pass": ep + 1, **ev})
-            if ep + 1 == PASSES:
-                regimes.append({"regime": "central", "partition": "-", "seed": seed, **ev})
+            if (ep + 1) % EVERY == 0:
+                cur.append({"regime": "central", "partition": "-", "seed": seed, "pass": ep + 1, **c.evaluate(m)})
+        curves += cur
+        regimes += select(cur)
 
         for kind in ("iid", "time", "label"):
             prng = np.random.default_rng(1000 + seed)
@@ -124,17 +136,24 @@ def main() -> None:
                     continue
                 rng = np.random.default_rng(seed * 100 + i)
                 lm = MLP(X.shape[1], seed=seed)
-                lm.sgd(X[p], d.y[p], PASSES, LR, BATCH, rng)
-                regimes.append({"regime": "local", "partition": kind, "seed": seed, "client": i, **c.evaluate(lm)})
+                cur = []
+                for ep in range(CURVE_LEN):
+                    lm.sgd(X[p], d.y[p], 1, LR, BATCH, rng)
+                    if (ep + 1) % EVERY == 0:
+                        cur.append({"regime": "local", "partition": kind, "seed": seed, "client": i,
+                                    "pass": ep + 1, **c.evaluate(lm)})
+                regimes += select(cur)
             # FedAvg with curve
             clients = [(X[p], d.y[p].astype(float)) for p in parts]
 
-            def cb(t, g, kind=kind, seed=seed):
-                ev = c.evaluate(g)
-                curves.append({"regime": "fedavg", "partition": kind, "seed": seed, "pass": t + 1, **ev})
-                if t + 1 == PASSES:
-                    regimes.append({"regime": "fedavg", "partition": kind, "seed": seed, **ev})
+            cur = []
+
+            def cb(t, g, kind=kind, seed=seed, cur=cur):
+                if (t + 1) % EVERY == 0:
+                    cur.append({"regime": "fedavg", "partition": kind, "seed": seed, "pass": t + 1, **c.evaluate(g)})
             fedavg(clients, X.shape[1], CURVE_LEN, 1, LR, BATCH, seed, callback=cb)
+            curves += cur
+            regimes += select(cur)
             print(seed, kind, "done", flush=True)
 
     curves = pd.DataFrame(curves)
@@ -145,7 +164,8 @@ def main() -> None:
     reg_sum = (regimes.groupby(["regime", "partition"])
                .agg(n=("ap", "size"), ap=("ap", "mean"), ap_sd=("ap", "std"), ap_min=("ap", "min"),
                     ap_max=("ap", "max"), ap_pre=("ap_pre", "mean"), ap_post=("ap_post", "mean"),
-                    f1=("f1", "mean"), ap_val=("ap_val", "mean"))
+                    f1=("f1", "mean"), ap_val=("ap_val", "mean"), ap_fixed=("ap_fixed", "mean"),
+                    best_pass=("best_pass", "median"))
                .reset_index())
     atomic_to_csv(reg_sum, out / "regimes_summary.csv", index=False)
 
@@ -155,14 +175,20 @@ def main() -> None:
         prng = np.random.default_rng(7)
         parts = partition("iid", tr_idx, d.y, d.step, k, prng)
         clients = [(X[p], d.y[p].astype(float)) for p in parts]
-        _, norms = fedavg(clients, X.shape[1], PASSES, 1, LR, BATCH, 0)
+        _, norms = fedavg(clients, X.shape[1], 20, 1, LR, BATCH, 0)
         clip = float(np.median(norms))
         for z in (0.0, 0.5, 1.0, 2.0, 4.0):
             for seed in range(args.seeds):
-                g, _ = fedavg(clients, X.shape[1], PASSES, 1, LR, BATCH, seed, clip=clip, noise_mult=z)
-                dp_rows.append({"clients": k, "clip": clip, "noise_mult": z, "seed": seed,
-                                "epsilon": rdp_epsilon(z, PASSES), "noise_sd_on_mean": z * clip / k,
-                                **c.evaluate(g)})
+                cur = []
+
+                def cb(t, g, cur=cur):
+                    if (t + 1) % EVERY == 0:
+                        cur.append({"pass": t + 1, **c.evaluate(g)})
+                fedavg(clients, X.shape[1], DP_ROUNDS, 1, LR, BATCH, seed, clip=clip, noise_mult=z, callback=cb)
+                best = max(cur, key=lambda r: r["ap_val"])
+                dp_rows.append({"clients": k, "clip": clip, "noise_mult": z, "seed": seed, "rounds": DP_ROUNDS,
+                                "epsilon": rdp_epsilon(z, DP_ROUNDS), "noise_sd_on_mean": z * clip / k,
+                                "best_pass": best["pass"], **{kk: v for kk, v in best.items() if kk != "pass"}})
             print("dp", k, z, flush=True)
     dp = pd.DataFrame(dp_rows)
     atomic_to_csv(dp, out / "dp.csv", index=False)
@@ -200,6 +226,7 @@ def main() -> None:
         fm = curves[(curves.regime == "fedavg") & (curves.partition == kind)].groupby("pass")["ap"].mean()
         axes[0].plot(fm.index, fm, color="0.55", ls=F.LINES[i], label=f"FedAvg {kind}, test")
     axes[0].axvline(PASSES, color="0.7", lw=0.8, ls=":")
+    axes[0].set_xlim(0, CURVE_LEN)
     axes[0].set_xlabel("passes over the data (epochs or rounds)")
     axes[0].set_ylabel("average precision")
     axes[0].set_title("(a) learning curves")
@@ -211,7 +238,7 @@ def main() -> None:
         base = dp_sum[(dp_sum.clients == k) & (dp_sum.noise_mult == 0)].ap.iloc[0]
         axes[1].axhline(base, color="0.6", ls=F.LINES[i], lw=0.8)
     axes[1].set_xscale("log")
-    axes[1].set_xlabel("client-level epsilon (delta = 1e-5, 20 rounds)")
+    axes[1].set_xlabel(f"client-level epsilon (delta = 1e-5, {DP_ROUNDS} rounds)")
     axes[1].set_ylabel("average precision, test")
     axes[1].set_title("(b) cost of differential privacy")
     axes[1].legend(frameon=False)
@@ -219,11 +246,13 @@ def main() -> None:
 
     summary = {"regimes": reg_sum.to_dict(orient="records"), "dp": dp_sum.to_dict(orient="records"),
                "secagg": sa.to_dict(orient="records"),
-               "config": {"lr": LR, "batch": BATCH, "passes": PASSES, "K": K, "hidden": 64}}
+               "config": {"lr": LR, "batch": BATCH, "passes": PASSES, "K": K, "hidden": 64,
+                          "curve_len": CURVE_LEN, "every": EVERY, "dp_rounds": DP_ROUNDS}}
     dump_json(summary, out / "summary.json")
     write_manifest(out, script="scripts/f1_federated.py",
                    config={"seeds": args.seeds, "lr": LR, "batch": BATCH, "passes": PASSES, "K": K,
-                           "curve_len": CURVE_LEN, "dirichlet_alpha": 0.5, "delta": 1e-5},
+                           "curve_len": CURVE_LEN, "every": EVERY, "dp_rounds": DP_ROUNDS,
+                           "dirichlet_alpha": 0.5, "delta": 1e-5},
                    data_files=[DATA / "elliptic_txs_classes.csv", DATA / "elliptic_txs_features.csv"])
     print(reg_sum.to_string())
     print(dp_sum.to_string())

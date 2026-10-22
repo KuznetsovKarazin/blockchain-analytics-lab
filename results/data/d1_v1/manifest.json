@@ -1,0 +1,50 @@
+{
+  "script": "scripts/d1_eth_pipeline.py",
+  "created_utc": "2026-10-22T19:41:50Z",
+  "git_commit": "96d14e24843539d5acc9f9a8533c024829d4564b",
+  "git_dirty": true,
+  "dirty_files": [
+    "scripts/00_fetch_data.py",
+    "scripts/d1_eth_pipeline.py"
+  ],
+  "diff_sha256": "f938a5d58e9c862874bf0642deeae062153906b213176a6c6dfbdc8c1fcd3a9b",
+  "python": "3.13.16",
+  "platform": "Linux-6.18.44-fc-v140-x86_64-with-glibc2.39",
+  "cpu_count": 4,
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "torch": null,
+    "lightgbm": "4.7.0",
+    "xgboost": null,
+    "pyarrow": "26.0.0",
+    "networkx": "3.7",
+    "statsmodels": "0.15.0"
+  },
+  "config": {
+    "weeks": {
+      "2022w30": [
+        "2022-07-25",
+        "2022-07-31"
+      ],
+      "2024w10": [
+        "2024-03-04",
+        "2024-03-10"
+      ]
+    },
+    "n_sample": 100000,
+    "top": 0.01,
+    "knn_k": 10,
+    "ofac_snapshots": {
+      "ofac_2022-09-16": "96f89d770659edad674fa2ea101a0d79a7f4c768",
+      "ofac_2024-02-21": "0650c71e7a7561dd0f97bdda49110eb56b59a7fa",
+      "ofac_2026-10-01": "6ae2472c439b9bb2788f8df662052ae31854aa97"
+    }
+  },
+  "data": {
+    "data/raw/ethereum-lists/src/addresses/addresses-darklist.json": "cd6d4491e0309c17f79c1c3245fb46b069077e9c0bdc00a9dbe08f3770f9dbab"
+  },
+  "data_sets": {}
+}

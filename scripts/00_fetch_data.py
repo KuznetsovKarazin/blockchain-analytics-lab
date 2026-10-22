@@ -16,6 +16,15 @@ RAW = Path("data/raw")
 SOURCES = {
     "DeFiHackLabs": ("https://github.com/SunWeb3Sec/DeFiHackLabs.git",
                      "23c7bd83ccb4524972a9493617fcc8764ab6269b"),
+    # OFAC SDN digital-currency addresses, extracted lists (branch "lists")
+    "ofac-addresses": ("https://github.com/0xB10C/ofac-sanctioned-digital-currency-addresses.git",
+                       "6ae2472c439b9bb2788f8df662052ae31854aa97"),
+    # community darklist of phishing / scam addresses (src/addresses/addresses-darklist.json)
+    "ethereum-lists": ("https://github.com/MyEtherWallet/ethereum-lists.git",
+                       "8f86cba9b58db79608ece8fa784775b3c41e2e26"),
+    # Ponzi contract addresses (GPL-3.0; used locally, not redistributed)
+    "ethereum-ponzi": ("https://github.com/blockchain-unica/ethereum-ponzi.git",
+                       "e083ce720f934e17ea1fe9124b70ea874aa042bf"),
 }
 
 
@@ -43,9 +52,23 @@ def fetch(name: str, url: str, commit: str) -> None:
     print(f"{name}: checked out {commit[:10]}")
 
 
+# older revisions needed as point-in-time snapshots (read with `git show <sha>:<path>`)
+SNAPSHOTS = {
+    "ofac-addresses": ["96f89d770659edad674fa2ea101a0d79a7f4c768",    # 2022-09-16
+                       "0650c71e7a7561dd0f97bdda49110eb56b59a7fa"],   # 2024-02-21
+}
+
+
 def main() -> int:
     for name, (url, commit) in SOURCES.items():
         fetch(name, url, commit)
+    for name, shas in SNAPSHOTS.items():
+        for sha in shas:
+            try:
+                git("cat-file", "-e", sha, cwd=RAW / name)
+            except subprocess.CalledProcessError:
+                git("fetch", "-q", "--depth", "1", "origin", sha, cwd=RAW / name)
+            print(f"{name}: snapshot {sha[:10]} available")
     if not (RAW / "elliptic" / "elliptic_txs_features.csv").exists():
         print("elliptic: not found; download it manually into data/raw/elliptic/ (see docs/DATA.md)")
     return 0
