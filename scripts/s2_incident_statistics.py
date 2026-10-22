@@ -98,6 +98,7 @@ def main() -> None:
     ax2.grid(False)
     axes[1].set_title("(b) incidents and median loss per year")
     axes[1].set_xticks(yr["year"], [str(int(v)) for v in yr["year"]], rotation=45)
+    fig.subplots_adjust(wspace=0.55)
     F.save(fig, out, "fig_s2")
 
     summary = {

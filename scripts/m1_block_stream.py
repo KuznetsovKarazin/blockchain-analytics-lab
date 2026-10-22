@@ -159,6 +159,10 @@ def main() -> None:
         ax.semilogy(d_.index, d_.values + 1e-2, color="0" if i % 2 == 0 else "0.5", ls=F.LINES[i % len(F.LINES)], lw=0.8, label=pol)
     ax.set_ylabel("incidents per day (30-day mean)")
     ax.set_title("(b) alert load by threshold policy")
+    from matplotlib.ticker import NullFormatter, ScalarFormatter
+    ax.yaxis.set_major_formatter(ScalarFormatter())
+    ax.yaxis.set_minor_formatter(NullFormatter())
+    fig.subplots_adjust(wspace=0.38)
     ax.legend(frameon=False, fontsize=6)
     for a_ in axes:
         a_.xaxis.set_major_locator(mdates.YearLocator())

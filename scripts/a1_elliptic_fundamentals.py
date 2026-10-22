@@ -184,6 +184,7 @@ def main() -> None:
     axes[1].set_ylabel("average precision, test 35-49")
     axes[1].set_title("(b) model family and feature set")
     axes[1].legend(frameon=False)
+    fig.subplots_adjust(wspace=0.35)
     F.save(fig, out, "fig_a1")
 
     summary = {"metrics_summary": agg.to_dict(orient="records"),

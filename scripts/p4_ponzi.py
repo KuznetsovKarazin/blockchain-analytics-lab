@@ -16,11 +16,13 @@ Model: random forest (500 trees, balanced subsample weights).
 Sample: all Ponzi addresses + 20,000 non-Ponzi addresses drawn at random from
 the population of contract addresses (so code duplicates appear as often as they
 do on chain). Evaluation by 5-fold cross-validation, three repetitions, with
-three ways of forming folds:
+three ways of forming folds (grouped schemes use stratified group folds):
   random    stratified by label, ignoring code identity
   exact     grouped by code hash after removing the compiler metadata trailer
   skeleton  grouped by opcode sequence without PUSH operands (near-clones)
-plus a temporal split: train on contracts created before 2017-01-01, test on 2017.
+plus (d) a population of distinct codes (one row per distinct deployed code after
+metadata removal, folds grouped by near-clone skeleton), and a temporal split:
+train on contracts created before 2017-01-01, test on 2017.
 
 Outputs: results/patterns/p4_<stamp>/
 """
@@ -36,7 +38,7 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import average_precision_score, roc_auc_score
-from sklearn.model_selection import GroupKFold, StratifiedKFold
+from sklearn.model_selection import StratifiedGroupKFold, StratifiedKFold
 
 from bclab import evm
 from bclab import figures as F
@@ -122,10 +124,8 @@ def main() -> None:
                 folds = StratifiedKFold(5, shuffle=True, random_state=rep).split(X, y)
             else:
                 groups = g_exact if scheme == "exact" else g_skel
-                # shuffle group order per repetition so that folds differ across repeats
-                uniq = pd.unique(groups)
-                perm = {gname: i for i, gname in enumerate(rng.permutation(uniq))}
-                folds = GroupKFold(5).split(X, y, groups=np.array([perm[gname] for gname in groups]))
+                # stratified so that every fold holds positives even when one code family is very large
+                folds = StratifiedGroupKFold(5, shuffle=True, random_state=rep).split(X, y, groups=groups)
             for k, (tr, te) in enumerate(folds):
                 if y[te].sum() == 0:
                     continue
@@ -144,6 +144,38 @@ def main() -> None:
                                        test_pos=("test_pos", "sum"))
               .reset_index())
     cv_sum["twin_share"] = cv_sum.twin_share / cv_sum.test_pos
+    atomic_to_csv(cv_sum, out / "cv_summary.csv", index=False)
+
+    # distinct-code population: one row per distinct deployed code (after metadata
+    # removal), positive if any Ponzi address carries it; folds grouped by skeleton
+    dist = df.drop_duplicates("code")[["code", "block_timestamp"]].copy()
+    dist["bytecode"] = dist.code.map(code_of)
+    dist["exact"] = dist.bytecode.map(lambda c: hashlib.sha1(evm.strip_metadata(c).encode()).hexdigest())
+    pos_exact = set(g_exact[y == 1])
+    dist = dist.drop_duplicates("exact")
+    dist["y"] = dist.exact.isin(pos_exact).astype(int)
+    Xd = np.vstack([feat[c] if c in feat else featurise(c) for c in dist.bytecode])
+    yd = dist.y.to_numpy()
+    gd = np.array([evm.skeleton(c) for c in dist.bytecode])
+    pop.update({"distinct_codes_after_metadata_strip": len(dist), "distinct_codes_positive": int(yd.sum())})
+    for rep in range(args.repeats):
+        for k, (tr, te) in enumerate(StratifiedGroupKFold(5, shuffle=True, random_state=rep).split(Xd, yd, groups=gd)):
+            if yd[te].sum() == 0:
+                continue
+            m = rf(rep).fit(Xd[tr], yd[tr])
+            s = m.predict_proba(Xd[te])[:, 1]
+            rows.append({"repeat": rep, "scheme": "distinct_codes", "fold": k, "test_pos": int(yd[te].sum()),
+                         "test_n": len(te), "ap": average_precision_score(yd[te], s),
+                         "roc_auc": roc_auc_score(yd[te], s), "test_pos_with_exact_twin_in_train": 0})
+        print(rep, "distinct_codes", flush=True)
+    cv = pd.DataFrame(rows)
+    atomic_to_csv(cv, out / "cv_folds.csv", index=False)
+    cv_sum = (cv.groupby("scheme").agg(ap=("ap", "mean"), ap_sd=("ap", "std"), roc_auc=("roc_auc", "mean"),
+                                       twin_share=("test_pos_with_exact_twin_in_train", "sum"),
+                                       test_pos=("test_pos", "sum"), test_n=("test_n", "sum"))
+              .reset_index())
+    cv_sum["twin_share"] = cv_sum.twin_share / cv_sum.test_pos
+    cv_sum["prevalence"] = cv_sum.test_pos / cv_sum.test_n
     atomic_to_csv(cv_sum, out / "cv_summary.csv", index=False)
 
     # temporal split
@@ -168,15 +200,17 @@ def main() -> None:
     F.style()
     import matplotlib.pyplot as plt
     fig, ax = plt.subplots(figsize=(3.4, 2.6))
-    order = ["random", "exact", "skeleton"]
+    order = ["random", "exact", "skeleton", "distinct_codes"]
     s_ = cv_sum.set_index("scheme").loc[order]
-    xx = np.arange(4)
+    xx = np.arange(5)
     vals = list(s_.ap) + [tmp.ap.mean()]
     errs = list(s_.ap_sd) + [tmp.ap.std()]
-    ax.bar(xx, vals, yerr=errs, capsize=2, color=["0.85", "0.6", "0.35", "0.1"], edgecolor="0")
-    ax.axhline(y.mean(), color="0", ls=":", lw=1)
-    ax.set_xticks(xx, ["random\nfolds", "grouped:\nexact code", "grouped:\nnear-clones", "temporal:\n<2017 / 2017"],
-                  fontsize=7)
+    prev_ = list(s_.prevalence) + [tmp.test_pos.iloc[0] / tmp.test_n.iloc[0]]
+    ax.bar(xx, vals, yerr=errs, capsize=2, color=["0.9", "0.7", "0.5", "0.3", "0.1"], edgecolor="0")
+    ax.scatter(xx, prev_, marker="_", s=200, color="0", zorder=3, label="prevalence (AP of a random score)")
+    ax.legend(frameon=False, fontsize=6, loc="lower left")
+    ax.set_xticks(xx, ["random\nfolds", "grouped:\nexact", "grouped:\nnear-\nclones", "distinct\ncodes", "temporal\n2016/2017"],
+                  fontsize=6)
     ax.set_ylabel("average precision")
     ax.set_title("Ponzi detection from bytecode")
     F.save(fig, out, "fig_p4")

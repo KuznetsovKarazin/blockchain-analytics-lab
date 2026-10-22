@@ -94,7 +94,7 @@ def main() -> None:
             rows.append({"step": t, "policy": pol, "alerts_all": int((sa >= thr).sum()), "n_all": int(allm.sum()),
                          "alerts_labelled": int(pred.sum()), "n_labelled": int(lab.sum()), "pos": int(y[lab].sum()),
                          "tp": int((pred & (y[lab] == 1)).sum()),
-                         "precision": precision_score(y[lab], pred, zero_division=0),
+                         "precision": precision_score(y[lab], pred, zero_division=np.nan),
                          "recall": recall_score(y[lab], pred, zero_division=0) if y[lab].sum() else np.nan,
                          "threshold": float(thr)})
         # labels that have arrived after step t: steps <= t - DELAY + 1 ... (step t-DELAY+1 becomes known)
@@ -120,10 +120,10 @@ def main() -> None:
         for part, rng_ in (("all", range(35, 50)), ("pre", range(35, 43)), ("post", range(43, 50))):
             h = g[g.step.isin(rng_)]
             tp, al, pos = h.tp.sum(), h.alerts_labelled.sum(), h.pos.sum()
-            p_ = tp / al if al else 0.0
+            p_ = tp / al if al else np.nan
             r_ = tp / pos if pos else np.nan
             summ.append({"policy": pol, "part": part, "precision": p_, "recall": r_,
-                         "f1": 2 * p_ * r_ / (p_ + r_) if p_ + r_ > 0 else 0.0,
+                         "f1": 2 * p_ * r_ / (p_ + r_) if (p_ + r_) > 0 else 0.0,
                          "alerts_per_step_mean": float(h.alerts_all.mean()), "alerts_per_step_max": int(h.alerts_all.max())})
     summ = pd.DataFrame(summ)
     atomic_to_csv(summ, out / "policies.csv", index=False)
@@ -151,15 +151,16 @@ def main() -> None:
         g = st[st.policy == pol]
         axes[0].plot(g.step, g.recall, color="0" if i % 2 == 0 else "0.5", ls=F.LINES[i], marker=F.MARKERS[i],
                      ms=2.5, label=pol)
-        axes[1].plot(g.step, g.precision, color="0" if i % 2 == 0 else "0.5", ls=F.LINES[i], marker=F.MARKERS[i],
+        axes[1].plot(g.step, g.alerts_all, color="0" if i % 2 == 0 else "0.5", ls=F.LINES[i], marker=F.MARKERS[i],
                      ms=2.5, label=pol)
     for a in axes:
         a.axvline(42.5, color="0.6", ls=":", lw=0.8)
         a.set_xlabel("time step")
     axes[0].set_ylabel("recall")
     axes[0].set_title("(a) recall per step")
-    axes[1].set_ylabel("precision")
-    axes[1].set_title("(b) precision per step")
+    axes[1].set_ylabel("alerts (all transactions)")
+    axes[1].set_title("(b) alerts per step")
+    fig.subplots_adjust(wspace=0.35)
     axes[0].legend(frameon=False, fontsize=6)
     F.save(fig, out, "fig_m2")
     dump_json({"policies": summ.to_dict(orient="records"), "latency": lat.to_dict(orient="records"),

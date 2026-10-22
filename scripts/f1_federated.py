@@ -238,6 +238,10 @@ def main() -> None:
         base = dp_sum[(dp_sum.clients == k) & (dp_sum.noise_mult == 0)].ap.iloc[0]
         axes[1].axhline(base, color="0.6", ls=F.LINES[i], lw=0.8)
     axes[1].set_xscale("log")
+    eps_ticks = sorted(dp_sum.loc[dp_sum.noise_mult > 0, "epsilon"].unique())
+    axes[1].set_xticks(eps_ticks, [f"{e:.0f}" for e in eps_ticks])
+    axes[1].minorticks_off()
+    fig.subplots_adjust(wspace=0.35)
     axes[1].set_xlabel(f"client-level epsilon (delta = 1e-5, {DP_ROUNDS} rounds)")
     axes[1].set_ylabel("average precision, test")
     axes[1].set_title("(b) cost of differential privacy")
