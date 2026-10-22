@@ -221,6 +221,7 @@ def main() -> None:
         x = x[x > 0]
         ccdf = 1 - np.arange(len(x)) / len(x)
         axes[0].loglog(x, ccdf, color="0", ls=F.LINES[i], label=lab_)
+    axes[0].set_xlim(1e-3, 1e7)
     axes[0].set_xlabel("value per sender (one week)")
     axes[0].set_ylabel("share of senders >= value")
     axes[0].set_title("(a) heavy tails, 2024-03-04..10")
@@ -228,6 +229,7 @@ def main() -> None:
     keys = [k for k in flagged if k[1] == "knn"] + [k for k in flagged if k[1] == "iforest"]
     M = np.array([[len(flagged[a] & flagged[b]) / len(flagged[a] | flagged[b]) for b in keys] for a in keys])
     im = axes[1].imshow(M, cmap="Greys", vmin=0, vmax=1)
+    axes[1].grid(False)
     labs = [f"{h}/{'kNN' if d == 'knn' else 'IF'}" for h, d in keys]
     axes[1].set_xticks(range(len(keys)), labs, rotation=60, ha="right", fontsize=6)
     axes[1].set_yticks(range(len(keys)), labs, fontsize=6)
