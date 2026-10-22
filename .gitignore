@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+venv*/
+.venv/
+
+# Data (fetched by scripts/00_fetch_data.py; Elliptic is downloaded manually)
+data/raw/
+data/cache/
+
+# Large per-run artefacts (metrics CSV/JSON and figures ARE committed)
+results/**/*.parquet
+results/**/*.npz
+results/**/smoke*/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,55 @@
+{
+  "script": "scripts/s1_double_spend.py",
+  "created_utc": "2026-10-22T19:20:44Z",
+  "git_commit": null,
+  "git_dirty": true,
+  "dirty_files": [
+    "pyproject.toml",
+    "scripts/s1_double_spend.py",
+    "scripts/s2_incident_statistics.py",
+    "src/bclab/__init__.py",
+    "src/bclab/doublespend.py",
+    "src/bclab/figures.py",
+    "src/bclab/incidents.py",
+    "src/bclab/repro.py"
+  ],
+  "diff_sha256": "6a3678b67254009988bd06660b6699789a911e3455b7740722c820688989fd31",
+  "python": "3.13.16",
+  "platform": "Linux-6.18.44-fc-v140-x86_64-with-glibc2.39",
+  "cpu_count": 4,
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "torch": null,
+    "lightgbm": "4.7.0",
+    "xgboost": null,
+    "pyarrow": "26.0.0",
+    "networkx": "3.7",
+    "statsmodels": "0.15.0"
+  },
+  "config": {
+    "qs": [
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "zs": [
+      1,
+      40
+    ],
+    "slot_ratios": [
+      0.0,
+      0.1,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "mc": 400000,
+    "seed": 0
+  },
+  "data": {},
+  "data_sets": {}
+}

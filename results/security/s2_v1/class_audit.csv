@@ -1,0 +1,41 @@
+date,name,cause_text,cause_class
+2022-11-23,NUM,Protocol Token incompatible,other
+2026-10-06,MakerDAOFlipKeeper,"the dormant ETH-A flip-keeper proxy's drain selector has no ds-auth check, so anyone can call it to make the keeper vat.hope() a caller-supplied worker and then deal its four undealt 2020 ETH-A auctio",access control
+2022-04-15,Rikkei Finance,Access control & Price Oracle Manipulation,oracle / price manipulation
+2025-07-20,Stepp2p,Logic Flaw,business logic
+2026-08-05,StrongBlock,governance takeover of an abandoned Governor,other
+2026-10-06,SetProtocol,"a second RebalancingSetTokenV3 vault (ETHMACOAPY) hit by the same permissionless actualizeFee() divCeil rounding, the attacker issues the rebalancing set then donates the residual base set into the va",arithmetic / precision
+2026-02-16,XDKRecycle,XDK recycle reserve manipulation,oracle / price manipulation
+2024-09-04,Unverified_16d0,Access control,access control
+2025-06-26,ResupplyFi,Share price manipulation,oracle / price manipulation
+2026-09-21,TheRedVillage,"ungated PolygonTRVRouter forwardRequest relays an attacker-supplied upgradeTo through the router's _authorizeUpgrade role on the SeasonService UUPS proxy, installing a malicious implementation that us",access control
+2026-04-14,Saturn Protocol,Vulnerability Disclosure,other
+2025-04-27,bitdog,Access Control,access control
+2025-01-21,Ast,Price-Manipulation,oracle / price manipulation
+2025-06-19,BankrollStack,Incorrect dividends calculation,arithmetic / precision
+2023-09-30,FireBirdPair,Lack Slippage Protection,slippage / front-running
+2023-05-09,HODL,Reflection token,"token mechanics (fee, tax, rebase, reflection)"
+2022-08-07,EGD Finance,Flashloans & Price Manipulation,oracle / price manipulation
+2024-02-23,CompoundUni,Oracle bad price,oracle / price manipulation
+2024-12-14,JHY,Logic Flaw,business logic
+2025-06-15,FixedTokenBSwap,Price Oracle Manipulation,oracle / price manipulation
+2026-10-02,GoldPesa,"the GPX V4 hook rebalances protocol liquidity inside beforeSwap via a burn and TAKE_PAIR that run in the attacker's own open PoolManager unlock, and never checks the PositionManager deltas are settled",input / call validation
+2022-12-09,NOVAToken,Malicious Unlimted Minting (Rugged),malicious project / rug pull
+2022-12-12,BGLD (Deflationary token),FlashLoan price manipulation,oracle / price manipulation
+2024-02-10,FILX DN404,Access Control,access control
+2026-03-23,BCE,Deflationary Token Logic Error,"token mechanics (fee, tax, rebase, reflection)"
+2025-09-18,NGP,Price Manipulation,oracle / price manipulation
+2024-09-02,Pythia,Logic Flaw,business logic
+2023-07-12,WGPT,Business Logic Flaw,business logic
+2026-06-09,NovaBox,Constructor Dividend Checkpoint Bypass,input / call validation
+2022-06-26,XCarnival,Infinite Number of Loans,other
+2023-10-11,BH,Price manipulation,oracle / price manipulation
+2024-09-03,Penpiexyz_io,Reentrancy and Reward Manipulation,reentrancy
+2026-09-21,DoinGud,acceptOffer replay via missing offer cleanup on the amount=0 path,input / call validation
+2025-07-17,unverified,Signature Verification,input / call validation
+2022-10-24,Market,Read-only Reentrancy,reentrancy
+2022-06-24,Harmony's Horizon Bridge,Private key compromised,key compromise / phishing
+2026-06-17,WHALE,Transfer Accounting Reserve Desync,business logic
+2026-09-15,RsETHSafeModule,nested self-referential multicall authorization bypass drains Gnosis Safe via DELEGATECALL,access control
+2023-11-29,AIS,Insufficient validation,input / call validation
+2025-05-09,Nalakuvara_LotteryTicket50,Price Manipulation,oracle / price manipulation

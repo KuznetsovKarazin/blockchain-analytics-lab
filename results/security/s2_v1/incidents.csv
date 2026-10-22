@@ -1,0 +1,898 @@
+date,name,cause_text,lost_text,loss_usd,loss_parse,loss_usd_lenient,cause_class,year
+2017-07-19,Parity Multisig,delegatecall to unprotected initWallet,"153,037 ETH (~$30M)",30000000.0,usd,30000000.0,access control,2017
+2017-11-06,Parity,'Accidentally Killed It',514k ETH,,other token,,other,2017
+2018-04-22,Beauty Chain,Integer Overflow,$900 million,900000000.0,usd,900000000.0,arithmetic / precision,2018
+2018-04-24,SmartMesh,Overflow,140M,,unit not stated,140000000.0,arithmetic / precision,2018
+2018-10-07,SpankChain,Reentrancy,155 $ETH,155.0,usd,155.0,reentrancy,2018
+2020-04-18,UniSwapV1,ERC777 Reentrancy,"$220,000",220000.0,usd,220000.0,reentrancy,2020
+2020-04-19,LendfMe,ERC777 Reentrancy,"$25,000,000",25000000.0,usd,25000000.0,reentrancy,2020
+2020-06-18,Bancor Protocol,Access Control,,,missing,,access control,2020
+2020-06-28,Balancer Protocol,Token Incompatible,,,missing,,other,2020
+2020-08-04,Opyn Protocol,msgValue in loop,,,missing,,other,2020
+2020-09-12,bzx,Incorrect transfer,,,missing,,business logic,2020
+2020-10-26,Harvest Finance,Flashloan Attack,$33.8 million,33800000.0,usd,33800000.0,flash-loan assisted (unspecified),2020
+2020-11-21,Pickle Finance,Insufficient validation,$20 million,20000000.0,usd,20000000.0,input / call validation,2020
+2020-12-29,Cover Protocol,Incorrect calculation via cached data,,,missing,,arithmetic / precision,2020
+2021-01-25,Sushi Badger Digg,Sandwich attack,81.68 ETH,,other token,,slippage / front-running,2021
+2021-02-04,Yearn YDai,Slippage proection absent,11 Million $,11000000.0,usd,11000000.0,slippage / front-running,2021
+2021-03-05,Paid Network,Private key compromised,$3 million,3000000.0,usd,3000000.0,key compromise / phishing,2021
+2021-03-08,DODO,Flashloan Attack,"$700,000",700000.0,usd,700000.0,flash-loan assisted (unspecified),2021
+2021-04-28,Uranium,Miscalculation,$50 million,50000000.0,usd,50000000.0,arithmetic / precision,2021
+2021-05-02,Spartan,Logic Flaw,$30.5M,30500000.0,usd,30500000.0,business logic,2021
+2021-05-08,Value Defi,Cross Contract Reentrancy,,,missing,,reentrancy,2021
+2021-05-09,RariCapital,Cross Contract Reentrancy,,,missing,,reentrancy,2021
+2021-05-16,bEarn,Logic Flaw,11M,,unit not stated,11000000.0,business logic,2021
+2021-05-19,PancakeBunny,Price Oracle Manipulation,,,missing,,oracle / price manipulation,2021
+2021-05-27,JulSwap,Flash Loan,1.5M,,unit not stated,1500000.0,flash-loan assisted (unspecified),2021
+2021-05-27,BurgerSwap,Mathematical flaw + Reentrancy,,,missing,,reentrancy,2021
+2021-06-03,PancakeHunny,Incorrect calculation,,,missing,,arithmetic / precision,2021
+2021-06-07,88mph NFT,Access control,,,missing,,access control,2021
+2021-06-22,Eleven Finance,Doesn’t burn shares,,,missing,,"token mechanics (fee, tax, rebase, reflection)",2021
+2021-06-25,xWin Finance,subscription-incentive-mechanism,~$300k,300000.0,usd,300000.0,business logic,2021
+2021-06-28,SafeDollar,Deflationary token uncompatible,$.2 million,,other token,,"token mechanics (fee, tax, rebase, reflection)",2021
+2021-07-02,Chainswap,"Bridge, logic flaw",$.8 million,,other token,,bridge / cross-chain message,2021
+2021-07-10,Chainswap,"Bridge, logic flaw",$4.4 million,4400000.0,usd,4400000.0,bridge / cross-chain message,2021
+2021-07-28,Levyathan Finance,(I) Lost keys and minting (II) Vulnerable emergencyWithdraw,$1.5 million,1500000.0,usd,1500000.0,other,2021
+2021-08-04,Popsicle,Repeated Reward Claim - Logic Flaw,20M USD,20000000.0,usd,20000000.0,business logic,2021
+2021-08-04,WaultFinace,FlashLoan price manipulation,390 ETH,,other token,,oracle / price manipulation,2021
+2021-08-11,Poly Network,"Bridge, getting around modifier through cross-chain message",$611 million,611000000.0,usd,611000000.0,bridge / cross-chain message,2021
+2021-08-17,XSURGE,Flashloan Attack + Reentrancy,$5 million,5000000.0,usd,5000000.0,reentrancy,2021
+2021-08-30,Cream Finance,Flashloan Attack + Reentrancy,$18 million,18000000.0,usd,18000000.0,reentrancy,2021
+2021-09-03,DAO Maker,Bad Access Controal,$4 million,4000000.0,usd,4000000.0,other,2021
+2021-09-12,ZABU Finance,Deflationary token uncompatible,,,missing,,"token mechanics (fee, tax, rebase, reflection)",2021
+2021-09-15,NowSwap Platform,Incorrect calculation,"158.28 WETH and 535,706 USDT",535706.0,stablecoin,535706.0,arithmetic / precision,2021
+2021-09-15,Nimbus Platform,Incorrect calculation,1.45 ETH,,other token,,arithmetic / precision,2021
+2021-09-16,SushiSwap Miso,Insufficient validation,All funds returned,,other token,,input / call validation,2021
+2021-10-15,Indexed Finance,Price Manipulation,$16M,16000000.0,usd,16000000.0,oracle / price manipulation,2021
+2021-10-27,CreamFinance,Price Manipulation,$130M,130000000.0,usd,130000000.0,oracle / price manipulation,2021
+2021-11-23,Ploutoz,Flash Loan,365K,,unit not stated,365000.0,flash-loan assisted (unspecified),2021
+2021-11-30,MonoX Finance,Price Manipulation,$31 million,31000000.0,usd,31000000.0,oracle / price manipulation,2021
+2021-12-14,Nerve Bridge,Swap Metapool Attack,900 BNB,,other token,,bridge / cross-chain message,2021
+2021-12-18,Grim Finance,Flashloan & Reentrancy,$30 million,30000000.0,usd,30000000.0,reentrancy,2021
+2021-12-21,Visor Finance,Reentrancy,$8.2 million,8199999.999999999,usd,8199999.999999999,reentrancy,2021
+2022-01-18,Multichain (Anyswap),Insufficient Token Validation,$1.4 million,1400000.0,usd,1400000.0,input / call validation,2022
+2022-01-28,Qubit Finance,Bridge address(0).safeTransferFrom() does not revert,$80 million,80000000.0,usd,80000000.0,bridge / cross-chain message,2022
+2022-02-04,TecraSpace,Any token is destroyed,~63k $USDT,63000.0,usd,63000.0,other,2022
+2022-02-06,Meter,Bridge,$4.3 million,4300000.0,usd,4300000.0,bridge / cross-chain message,2022
+2022-02-08,Sandbox LAND,Access control,,,missing,,access control,2022
+2022-02-14,BuildFinance,DAO,$470k,470000.0,usd,470000.0,other,2022
+2022-03-03,TreasureDAO,Zero Fee,$1 million,1000000.0,usd,1000000.0,"token mechanics (fee, tax, rebase, reflection)",2022
+2022-03-05,Bacon Protocol,Reentrancy,$1 million,1000000.0,usd,1000000.0,reentrancy,2022
+2022-03-09,Fantasm Finance,Business logic in mint(),$2.6 million,2600000.0,usd,2600000.0,business logic,2022
+2022-03-13,Paraluni,Flashloan & Reentrancy,$1.7 million,1700000.0,usd,1700000.0,reentrancy,2022
+2022-03-13,Hundred Finance,ERC667 Reentrancy,$1.7 million,1700000.0,usd,1700000.0,reentrancy,2022
+2022-03-15,Agave Finance,ERC667 Reentrancy,$1.5 million,1500000.0,usd,1500000.0,reentrancy,2022
+2022-03-20,Li.Fi,Bridges,$570K,570000.0,usd,570000.0,bridge / cross-chain message,2022
+2022-03-20,Umbrella Network,Underflow,,,missing,,arithmetic / precision,2022
+2022-03-21,OneRing Finance,Flashloan & Price Oracle Manipulation,$1.45 million,1450000.0,usd,1450000.0,oracle / price manipulation,2022
+2022-03-22,CompoundTUSDSweepTokenBypass,Insufficient validation,,,missing,,input / call validation,2022
+2022-03-26,Auctus,Arbitrary Call,$726 k,726000.0,usd,726000.0,input / call validation,2022
+2022-03-27,Revest Finance,Reentrancy,$11.2 million,11200000.0,usd,11200000.0,reentrancy,2022
+2022-03-29,Redacted Cartel,Custom Approval Logic,,,missing,,input / call validation,2022
+2022-03-29,Ronin Network,Bridge,$624 million,624000000.0,usd,624000000.0,bridge / cross-chain message,2022
+2022-04-09,GYMNetwork,Flashloan + token migrate flaw,"1,327 WBNB",,other token,,business logic,2022
+2022-04-11,Creat Future,Overflow,$1.9 million,1900000.0,usd,1900000.0,arithmetic / precision,2022
+2022-04-12,ElephantMoney,Flashloan & Price Oracle Manipulation,"$11.2 million (27,416.46 BNB)",11200000.0,usd,11200000.0,oracle / price manipulation,2022
+2022-04-15,Rikkei Finance,Access control & Price Oracle Manipulation,$1.1 million (2671 BNB),1100000.0,usd,1100000.0,oracle / price manipulation,2022
+2022-04-16,BeanstalkFarms,DAO + Flashloan,$182 million,182000000.0,usd,182000000.0,flash-loan assisted (unspecified),2022
+2022-04-21,Zeed Finance,Incorrect calculation,$1 million,1000000.0,usd,1000000.0,arithmetic / precision,2022
+2022-04-23,Akutar NFT,Denial of Service,34M USD,34000000.0,usd,34000000.0,other,2022
+2022-04-24,Wiener DOGE,Flashloan,78 BNB,,other token,,flash-loan assisted (unspecified),2022
+2022-04-28,DEUS DAO,Flashloan & Price Oracle Manipulation,$13 million,13000000.0,usd,13000000.0,oracle / price manipulation,2022
+2022-04-30,Rari Capital/Fei Protocol,Flashloan Attack + Reentrancy,$80 million,80000000.0,usd,80000000.0,reentrancy,2022
+2022-04-30,Saddle Finance,Swap Metapool Attack,$10 million,10000000.0,usd,10000000.0,other,2022
+2022-05-08,Fortress Loans,Malicious Proposal & Price Oracle Manipulation,"1,048.1 ETH + 400,000 DAI (~$3.00M)",3000000.0,usd,3000000.0,oracle / price manipulation,2022
+2022-05-17,ApeCoin (APE),Flashloan,$1.1 million,1100000.0,usd,1100000.0,flash-loan assisted (unspecified),2022
+2022-05-24,HackDao,Skim token balance,,,missing,,other,2022
+2022-05-29,NOVO Protocol,Flashloan & Price Oracle Manipulation,279 BNB,,other token,,oracle / price manipulation,2022
+2022-06-06,Discover,Flashloan & Price Oracle Manipulation,49 BNB,,other token,,oracle / price manipulation,2022
+2022-06-08,Optimism,Wintermute,20 million Optimism (OP) tokens returned 17 million of them,,other token,,other,2022
+2022-06-08,GYMNetwork,Accesscontrol,$2.1 million,2100000.0,usd,2100000.0,access control,2022
+2022-06-16,InverseFinance,Flashloan & Price Oracle Manipulation,"53.2445 WBTC and 99,976.29 USDT",99976.29,stablecoin,99976.29,oracle / price manipulation,2022
+2022-06-18,SNOOD,Miscalculation on \_spendAllowance,104 ETH,,other token,,arithmetic / precision,2022
+2022-06-24,Harmony's Horizon Bridge,Private key compromised,$100 million,100000000.0,usd,100000000.0,key compromise / phishing,2022
+2022-06-26,XCarnival,Infinite Number of Loans,3087 ETH (~$3.87M),3870000.0,usd,3870000.0,other,2022
+2022-07-01,Quixotic,Optimism NFT Marketplace,$100K,100000.0,usd,100000.0,other,2022
+2022-07-06,FlippazOne NFT,Accesscontrol,,,missing,,access control,2022
+2022-07-10,Omni NFT,Reentrancy,$1.4M,1400000.0,usd,1400000.0,reentrancy,2022
+2022-07-13,SpaceGodzilla,Flashloans & Price Manipulation,"25,378 BUSD",25378.0,stablecoin,25378.0,oracle / price manipulation,2022
+2022-07-23,Audius,Storage Collision & Malicious Proposal,704 ETH (~1.08M US$),1080000.0,usd,1080000.0,malicious project / rug pull,2022
+2022-07-25,LPC,"Business Logic Flaw : Incorrect recipient balance check, did not check sender!=recipient in transfer","178 BNB (~45,715 US$)",45715.0,usd,45715.0,input / call validation,2022
+2022-08-01,Reaper Farm,Business Logic Flaw : Lack of access control mechanism,Multiple ERC-20 Tokens (~1.7M US$),1700000.0,usd,1700000.0,access control,2022
+2022-08-02,Nomad Bridge,Business Logic Flaw : Incorrect acceptable merkle-root checks,Multiple ERC-20 Tokens (~152M US$),152000000.0,usd,152000000.0,bridge / cross-chain message,2022
+2022-08-03,Qixi,Underflow,6.08 BNB,,other token,,arithmetic / precision,2022
+2022-08-04,EtnProduct,Business Logic Flaw,3074 USD,3074.0,usd,3074.0,business logic,2022
+2022-08-07,EGD Finance,Flashloans & Price Manipulation,"36,044 USDT",36044.0,stablecoin,36044.0,oracle / price manipulation,2022
+2022-08-09,ANCH,Skim token balance,,,missing,,other,2022
+2022-08-10,XSTABLE Protocol,Incorrect Logic Check,,,missing,,input / call validation,2022
+2022-08-13,Circle,Price Manipulation,~$50.5K,50500.0,usd,50500.0,oracle / price manipulation,2022
+2022-08-16,Circle,Price Manipulation,~$151.6K,151600.0,usd,151600.0,oracle / price manipulation,2022
+2022-08-24,LuckyTiger NFT,Predicting Random Numbers,,,missing,,weak randomness,2022
+2022-08-28,DDC,Unchecked External Calls,,,missing,,input / call validation,2022
+2022-09-02,Bad Guys by RPF,Business Logic Flaw : Missing Check For Number of NFT to Mint,Bad Guys by RPF(400 NFTs),,other token,,access control,2022
+2022-09-02,ShadowFi,Access Control,"1,078 BNB",,other token,,access control,2022
+2022-09-05,ZoomproFinance,Flashloans & Price Manipulation,"61,160 USDT",61160.0,stablecoin,61160.0,oracle / price manipulation,2022
+2022-09-06,NXUSD,flashloan price oracle manipulation,"50,000 USD",50000.0,usd,50000.0,oracle / price manipulation,2022
+2022-09-08,NewFreeDAO,Flashloans Attack,1M US$,1000000.0,usd,1000000.0,flash-loan assisted (unspecified),2022
+2022-09-08,Ragnarok Online Invasion,Broken Access Control,"157.98 BNB (~44,000 US$)",44000.0,usd,44000.0,access control,2022
+2022-09-08,YYDS,pair manipulate,"742,286.27 BUSD",742286.27,stablecoin,742286.27,oracle / price manipulation,2022
+2022-09-09,DPC,Incorrect Reward calculation,"$103,755",103755.0,usd,103755.0,arithmetic / precision,2022
+2022-09-13,MevBot private tx,Incorrect access control,$140 K,140000.0,usd,140000.0,access control,2022
+2022-09-23,RADT-DAO,pair manipulate,"94,304 USDT",94304.0,stablecoin,94304.0,oracle / price manipulation,2022
+2022-09-28,MEVBOT,Arbitrary Call,"$1,469,700",1469700.0,usd,1469700.0,input / call validation,2022
+2022-09-28,BXH,Flashloan & Price Oracle Manipulation,"$40,305",40305.0,usd,40305.0,oracle / price manipulation,2022
+2022-10-01,Thunder Brawl,Reentrancy,,,missing,,reentrancy,2022
+2022-10-01,RL Token,Incorrect Reward calculation,,,missing,,arithmetic / precision,2022
+2022-10-01,BabySwap,Parameter Access Control,,,missing,,access control,2022
+2022-10-02,Transit Swap,Incorrect owner address validation,over $21 Million,21000000.0,usd,21000000.0,input / call validation,2022
+2022-10-06,RES-Token,pair manipulate,,,missing,,oracle / price manipulation,2022
+2022-10-09,Xave Finance,Malicious Proposal Mint & Transfer Ownership,"100,000,000,000,000 RNBW",,other token,,malicious project / rug pull,2022
+2022-10-10,Carrot,Public functionCall,"31,318 BUSDT",,other token,,other,2022
+2022-10-11,Templedao,Insufficient access control,$2.3 million,2300000.0,usd,2300000.0,access control,2022
+2022-10-11,Rabby Wallet SwapRouter,Arbitrary External Call Vulnerability,"~200,000 US$",200000.0,usd,200000.0,input / call validation,2022
+2022-10-12,ATK,FlashLoan manipulate price,~127K BUSD,127000.0,stablecoin,127000.0,oracle / price manipulation,2022
+2022-10-14,EFLeverVault,Verify flashLoan Callback,750 ETH,,other token,,flash-loan assisted (unspecified),2022
+2022-10-14,MEVBOTa47b,Price Oracle Manipulation,~187.75 WETH,,other token,,oracle / price manipulation,2022
+2022-10-14,INUKO,FlashLoan price manipulation,$50k,50000.0,usd,50000.0,oracle / price manipulation,2022
+2022-10-17,Uerii Token,Access Control,$2.4 k,2400.0,usd,2400.0,access control,2022
+2022-10-18,PLTD,Transfer Logic Flaw,$ 24k,24000.0,usd,24000.0,business logic,2022
+2022-10-18,HPAY,Access Control,115 BNB,,other token,,access control,2022
+2022-10-20,BEGO,Incorrect signature verification,12 BNB,,other token,,input / call validation,2022
+2022-10-20,HEALTH,Transfer Logic Flaw,16 BNB,,other token,,business logic,2022
+2022-10-21,OlympusDAO,No input validation,~$292K (30500 OHM),292000.0,usd,292000.0,input / call validation,2022
+2022-10-24,Market,Read-only Reentrancy,$220k,220000.0,usd,220000.0,reentrancy,2022
+2022-10-24,MulticallWithoutCheck,Arbitrary External Call Vulnerability,$600,600.0,usd,600.0,input / call validation,2022
+2022-10-25,ULME,Access Control,~250k US$ which resulted in ~50k profit,250000.0,usd,250000.0,access control,2022
+2022-10-26,N00d Token,Reentrancy,$29k,29000.0,usd,29000.0,reentrancy,2022
+2022-10-27,VTF Token,Incorrect Reward calculation,$50k,50000.0,usd,50000.0,arithmetic / precision,2022
+2022-10-27,Team Finance,Liquidity Migration Exploit,Multiple Tokens ~$15.8M US$,15800000.0,usd,15800000.0,other,2022
+2022-11-05,BDEX,Business Logic Flaw,16WBNB,,other token,,business logic,2022
+2022-11-07,MooCAKECTX,FlashLoan Attack,$140k,140000.0,usd,140000.0,flash-loan assisted (unspecified),2022
+2022-11-08,Kashi,Price-caching Design Defect,$110k,110000.0,usd,110000.0,oracle / price manipulation,2022
+2022-11-08,MEV_0ad8,Arbitrary call,$282k,282000.0,usd,282000.0,input / call validation,2022
+2022-11-09,BrahTOPG,Arbitrary External Call Vulnerability,$89k,89000.0,usd,89000.0,input / call validation,2022
+2022-11-10,DFXFinance,Reentrancy,$4M,4000000.0,usd,4000000.0,reentrancy,2022
+2022-11-16,SheepFarm,No input validation,~1BNB,,other token,,input / call validation,2022
+2022-11-17,UEarnPool,FlashLoan Attack,$24k,24000.0,usd,24000.0,flash-loan assisted (unspecified),2022
+2022-11-18,Polynomial,No input validation,~1.4K USD,1400.0,usd,1400.0,input / call validation,2022
+2022-11-19,AnnexFinance,Verify flashLoan Callback,$3k,3000.0,usd,3000.0,flash-loan assisted (unspecified),2022
+2022-11-21,sDAO,Business Logic Flaw,$13k,13000.0,usd,13000.0,business logic,2022
+2022-11-22,AUR,Lack of Permission Check,$13k,13000.0,usd,13000.0,access control,2022
+2022-11-23,NUM,Protocol Token incompatible,$13k,13000.0,usd,13000.0,other,2022
+2022-11-29,SEAMAN,Business Logic Flaw,$7k,7000.0,usd,7000.0,business logic,2022
+2022-11-29,MBC & ZZSH,Business Logic Flaw & Access Control,$5.9k,5900.0,usd,5900.0,access control,2022
+2022-12-01,APC,FlashLoan & price manipulation,$6k,6000.0,usd,6000.0,oracle / price manipulation,2022
+2022-12-02,OverNight,FlashLoan Attack,170k,,unit not stated,170000.0,flash-loan assisted (unspecified),2022
+2022-12-05,BBOX,FlashLoan price manipulation,12k,,unit not stated,12000.0,oracle / price manipulation,2022
+2022-12-05,RFB,Predicting Random Numbers,12BNB,,other token,,weak randomness,2022
+2022-12-07,AES (Deflationary token),Business Logic Flaw & FlashLoan price manipulation,$60k,60000.0,usd,60000.0,oracle / price manipulation,2022
+2022-12-09,NOVAToken,Malicious Unlimted Minting (Rugged),330 $BNB,330.0,usd,330.0,malicious project / rug pull,2022
+2022-12-10,MU&MUG,FlashLoan price manipulation,$57k,57000.0,usd,57000.0,oracle / price manipulation,2022
+2022-12-10,TIFIToken,FlashLoan price manipulation,87 WBNB,,other token,,oracle / price manipulation,2022
+2022-12-11,MEVbot_0x28d9,Insufficient validation,$2k $USDT,2000.0,usd,2000.0,input / call validation,2022
+2022-12-11,Lodestar,FlashLoan price manipulation,$4M,4000000.0,usd,4000000.0,oracle / price manipulation,2022
+2022-12-12,BGLD (Deflationary token),FlashLoan price manipulation,$18k,18000.0,usd,18000.0,oracle / price manipulation,2022
+2022-12-13,ElasticSwap,Business Logic Flaw,$845k,845000.0,usd,845000.0,business logic,2022
+2022-12-14,FPR,Access Control,$29k,29000.0,usd,29000.0,access control,2022
+2022-12-14,Nmbplatform,FlashLoan price manipulation,76k,,unit not stated,76000.0,oracle / price manipulation,2022
+2022-12-23,Defrost,Reentrancy,$170k,170000.0,usd,170000.0,reentrancy,2022
+2022-12-25,Rubic,Arbitrary External Call Vulnerability,$1.5M,1500000.0,usd,1500000.0,input / call validation,2022
+2022-12-29,JAY,Insufficient validation + Reentrancy,~15.32 ETH,,other token,,reentrancy,2022
+2022-12-30,DFS,Insufficient validation + flashloan,$1450,1450.0,usd,1450.0,input / call validation,2022
+2023-01-03,GDS,Business Logic Flaw,$180k,180000.0,usd,180000.0,business logic,2023
+2023-01-10,BRA,Business Logic Flaw,819 BNB (~224k$),224000.0,usd,224000.0,business logic,2023
+2023-01-11,RoeFinance,FlashLoan price manipulation,$80k,80000.0,usd,80000.0,oracle / price manipulation,2023
+2023-01-11,UFDao,Incorrect Parameter Setting,$90k,90000.0,usd,90000.0,input / call validation,2023
+2023-01-16,MidasCapital,Read-only Reentrancy,$650k,650000.0,usd,650000.0,reentrancy,2023
+2023-01-17,OmniEstate,No Input Parameter Check,$70k(236 BNB),70000.0,usd,70000.0,input / call validation,2023
+2023-01-18,QTNToken,business logic flaw,~2ETH,,other token,,business logic,2023
+2023-01-18,UPSToken,business logic flaw,~22 ETH,,other token,,business logic,2023
+2023-01-19,ThoreumFinance,business logic flaw,~2000 BNB,,other token,,business logic,2023
+2023-01-19,SHOCO,Reflection token,~4ETH,,other token,,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-01-26,TINU,Reflection token,22 ETH,,other token,,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-01-30,BEVO,Reflection token,144 BNB,,other token,,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-02-02,BonqDAO,Price Oracle Manipulation,BEUR stablecoin and ALBT Token (~88M US$),88000000.0,usd,88000000.0,oracle / price manipulation,2023
+2023-02-03,Spherax USDs,Balance Recalculation Bug,~309k USDs (Stablecoin),,other token,,arithmetic / precision,2023
+2023-02-03,Orion Protocol,Reentrancy,$3M,3000000.0,usd,3000000.0,reentrancy,2023
+2023-02-06,FDP,Reflection token,~16 WBNB,,other token,,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-02-07,CowSwap,Arbitrary External Call Vulnerability,~$120k,120000.0,usd,120000.0,input / call validation,2023
+2023-02-10,Sheep,Reflection token,~$3K,3000.0,usd,3000.0,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-02-10,dForce,Read-Only-Reentrancy,~$3.65M,3650000.0,usd,3650000.0,reentrancy,2023
+2023-02-17,Platypusdefi,Business Logic Flaw,~$8.5M,8500000.0,usd,8500000.0,business logic,2023
+2023-02-17,Dexible,Arbitrary External Call Vulnerability,~$1.5M,1500000.0,usd,1500000.0,input / call validation,2023
+2023-02-17,Starlink,Business Logic Flaw,~$12k,12000.0,usd,12000.0,business logic,2023
+2023-02-18,RevertFinance,Arbitrary External Call Vulnerability,~$30k,30000.0,usd,30000.0,input / call validation,2023
+2023-02-22,DYNA,Business Logic Flaw,~$21k,21000.0,usd,21000.0,business logic,2023
+2023-02-24,EFVault,Storage Collision,~$5.1M,5100000.0,usd,5100000.0,other,2023
+2023-02-27,LaunchZone,Access Control,"~$320,000",320000.0,usd,320000.0,access control,2023
+2023-02-27,swapX,Access Control,~$1M,1000000.0,usd,1000000.0,access control,2023
+2023-03-07,Phoenix,Access Control & Arbitrary External Call,~$100k,100000.0,usd,100000.0,access control,2023
+2023-03-08,DKP,FlashLoan price manipulation,~$80K,80000.0,usd,80000.0,oracle / price manipulation,2023
+2023-03-13,EulerFinance,Business Logic Flaw,~$200M,200000000.0,usd,200000000.0,business logic,2023
+2023-03-15,Poolz,integer overflow,~$390K,390000.0,usd,390000.0,arithmetic / precision,2023
+2023-03-17,ParaSpace NFT,Flashloan + scaledBalanceOf Manipulation,,,missing,,oracle / price manipulation,2023
+2023-03-22,BIGFI,Reflection token,$30k,30000.0,usd,30000.0,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-03-25,DBW,Business Logic Flaw,$24k,24000.0,usd,24000.0,business logic,2023
+2023-03-28,Thena,Yield Protocol Flaw,$10k,10000.0,usd,10000.0,business logic,2023
+2023-03-28,SafeMoon Hack,Access Control,$8.9M,8900000.0,usd,8900000.0,access control,2023
+2023-04-02,Allbridge,FlashLoan price manipulation,$550k,550000.0,usd,550000.0,bridge / cross-chain message,2023
+2023-04-05,Sentiment,Read-Only-Reentrancy,$1M,1000000.0,usd,1000000.0,reentrancy,2023
+2023-04-09,SushiSwap,Unchecked User Input,>$3.3M,3300000.0,usd,3300000.0,input / call validation,2023
+2023-04-11,Paribus,Reentrancy,$100k,100000.0,usd,100000.0,reentrancy,2023
+2023-04-12,MetaPoint,Unrestricted Approval,$820k(2500BNB),820000.0,usd,820000.0,input / call validation,2023
+2023-04-13,yearnFinance,Misconfiguration,$11.6M,11600000.0,usd,11600000.0,other,2023
+2023-04-15,HundredFinance,Donate Inflation ExchangeRate && Rounding Error,$7M,7000000.0,usd,7000000.0,arithmetic / precision,2023
+2023-04-16,Swapos V2,error k value Attack,~$468k,468000.0,usd,468000.0,oracle / price manipulation,2023
+2023-04-19,OLIFE,Reflection token,~32 WBNB,,other token,,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-04-24,Axioma,Business Logic Flaw,~21 WBNB,,other token,,business logic,2023
+2023-04-27,Silo finance,Business Logic Flaw,None,,other token,,business logic,2023
+2023-04-28,0vix,FlashLoan Price Manipulation,~$2M,2000000.0,usd,2000000.0,oracle / price manipulation,2023
+2023-05-02,Level,Business Logic Flaw,~$1M,1000000.0,usd,1000000.0,business logic,2023
+2023-05-03,NeverFall,Price Manipulation,~74K,,unit not stated,74000.0,oracle / price manipulation,2023
+2023-05-05,DEI,wrong implemention,~5.4M USDC,5400000.0,stablecoin,5400000.0,business logic,2023
+2023-05-06,Melo,Access Control,~$90k,90000.0,usd,90000.0,access control,2023
+2023-05-09,HODL,Reflection token,~$2.3 ETH,2.3,usd,2.3,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-05-09,MCC,Reflection token,~$10 ETH,10.0,usd,10.0,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-05-10,SNK,Reward Calculation Error,~$197k,197000.0,usd,197000.0,arithmetic / precision,2023
+2023-05-11,SellToken01,Business Logic Flaw,~$95k,95000.0,usd,95000.0,business logic,2023
+2023-05-12,LW,FlashLoan Price Manipulation,~$50k,50000.0,usd,50000.0,oracle / price manipulation,2023
+2023-05-13,SellToken02,Price Manipulation,~$197k,197000.0,usd,197000.0,oracle / price manipulation,2023
+2023-05-13,Bitpaidio,Business Logic Flaw,~$30K,30000.0,usd,30000.0,business logic,2023
+2023-05-14,SellToken03,Unchecked User Input,Unclear,,unknown,,input / call validation,2023
+2023-05-14,landNFT,Lack of permission control,"149,616 $BUSD",149616.0,usd,149616.0,access control,2023
+2023-05-23,LFI Token,Business Logic Flaw,~36K USD,36000.0,usd,36000.0,business logic,2023
+2023-05-24,CS Token,Outdated Global Variable,~714K USD,714000.0,usd,714000.0,other,2023
+2023-05-24,Local Trade LCT,Improper Access Control of Close-source contract,~384 BNB,,other token,,access control,2023
+2023-05-25,GPT Token,Fee Machenism Exploitation,~$42k,42000.0,usd,42000.0,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-05-29,Jimbo,Protocol Specific Price Manipulation,~$8M,8000000.0,usd,8000000.0,oracle / price manipulation,2023
+2023-05-29,BabyDogeCoin,Lack Slippage Protection,~$135k,135000.0,usd,135000.0,slippage / front-running,2023
+2023-05-29,NOON (NO),Wrong visibility in function,~$2K,2000.0,usd,2000.0,business logic,2023
+2023-05-29,FAPEN,Wrong balance check,~$600,600.0,usd,600.0,input / call validation,2023
+2023-05-31,ERC20TokenBank,Price Manipulation,~$111k,111000.0,usd,111000.0,oracle / price manipulation,2023
+2023-06-01,Cellframenet,Calculation issues during liquidity migration,~$76k,76000.0,usd,76000.0,arithmetic / precision,2023
+2023-06-01,DDCoin,Flashloan attack and smart contract vulnerability,~$300k,300000.0,usd,300000.0,flash-loan assisted (unspecified),2023
+2023-06-02,NST Simple Swap,"Unverified contract, wrong approval",$40k,40000.0,usd,40000.0,input / call validation,2023
+2023-06-06,VINU,Price Manipulation,~$6k,6000.0,usd,6000.0,oracle / price manipulation,2023
+2023-06-06,UN,Price Manipulation,~$26k,26000.0,usd,26000.0,oracle / price manipulation,2023
+2023-06-07,CompounderFinance,Manipulation of funds through fluctuations in the amount of exchangeable assets,"~$27,174",27174.0,usd,27174.0,oracle / price manipulation,2023
+2023-06-11,SellToken04,Price Manipulation,~$109k,109000.0,usd,109000.0,oracle / price manipulation,2023
+2023-06-12,Sturdy Finance,Read-Only-Reentrancy,~$800k,800000.0,usd,800000.0,reentrancy,2023
+2023-06-15,DEPUSDT_LEVUSDC,Incorrect access control,~$105k,105000.0,usd,105000.0,access control,2023
+2023-06-15,CFC,Uniswap Skim() token balance attack,~$16k,16000.0,usd,16000.0,other,2023
+2023-06-17,MidasCapitalXYZ,Precision Loss,~$600K,600000.0,usd,600000.0,arithmetic / precision,2023
+2023-06-17,Pawnfi,Business Logic Flaw,~$820K,820000.0,usd,820000.0,business logic,2023
+2023-06-18,ARA,Incorrect handling of permissions,~$125k,125000.0,usd,125000.0,access control,2023
+2023-06-19,Contract_0x7657,Business Logic,~$20k $USDT,20000.0,usd,20000.0,business logic,2023
+2023-06-20,MIMSpell,Arbitrary External Call Vulnerability,~$17k,17000.0,usd,17000.0,input / call validation,2023
+2023-06-21,BUNN,Reflection tokens,~52BNB,,other token,,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-06-21,BabyDogeCoin02,Lack Slippage Protection,~ 441 BNB,,other token,,slippage / front-running,2023
+2023-06-23,SHIDO,Business Logic,~997 WBNB,,other token,,business logic,2023
+2023-06-27,UnverifiedContr_9ad32,Business Logic Flaw,~5955 USD,5955.0,usd,5955.0,input / call validation,2023
+2023-06-27,STRAC,Business Logic Flaw,~12 $ETH,12.0,usd,12.0,business logic,2023
+2023-06-28,Themis,Manipulation of prices using Flashloan,~$370k,370000.0,usd,370000.0,oracle / price manipulation,2023
+2023-06-30,MyAi,Business Logic,~2 $BNB,2.0,usd,2.0,business logic,2023
+2023-06-30,Biswap,V3Migrator Exploit,~$72k,72000.0,usd,72000.0,other,2023
+2023-07-03,AzukiDAO,Invalid signature verification,~$69k,69000.0,usd,69000.0,input / call validation,2023
+2023-07-04,BambooIA,Price manipulation attack,~200BNB,,other token,,oracle / price manipulation,2023
+2023-07-04,BaoCommunity,Donate Inflation ExchangeRate && Rounding Error,~$46k,46000.0,usd,46000.0,arithmetic / precision,2023
+2023-07-07,LUSD,Price manipulation attack,~9464USDT,,other token,,oracle / price manipulation,2023
+2023-07-08,Civfund,Lack of access control,~$165k,165000.0,usd,165000.0,access control,2023
+2023-07-08,CIVNFT,Lack of access control,~$180k,180000.0,usd,180000.0,access control,2023
+2023-07-10,ArcadiaFi,Reentrancy,~$400k,400000.0,usd,400000.0,reentrancy,2023
+2023-07-11,Libertify,Reentrancy,~$452k,452000.0,usd,452000.0,reentrancy,2023
+2023-07-11,RodeoFinance,TWAP Oracle Manipulation,~$888k,888000.0,usd,888000.0,oracle / price manipulation,2023
+2023-07-12,WGPT,Business Logic Flaw,~$80k,80000.0,usd,80000.0,business logic,2023
+2023-07-12,Platypus,Bussiness Logic Flaw,~$51K,51000.0,usd,51000.0,business logic,2023
+2023-07-15,USDTStakingContract28,Lack of access control,~20999 USD,20999.0,usd,20999.0,access control,2023
+2023-07-17,NewFi,Lack Slippage Protection,~$31K,31000.0,usd,31000.0,slippage / front-running,2023
+2023-07-18,BNO,Invalid emergency withdraw mechanism,~$505K,505000.0,usd,505000.0,business logic,2023
+2023-07-18,APEDAO,Business Logic Flaw,~$7K,7000.0,usd,7000.0,business logic,2023
+2023-07-20,FFIST,Business Logic Flaw,~$110k,110000.0,usd,110000.0,business logic,2023
+2023-07-20,Utopia,Business Logic Flaw,~$119k,119000.0,usd,119000.0,business logic,2023
+2023-07-21,SUT,Business Logic Flaw,~$8k,8000.0,usd,8000.0,business logic,2023
+2023-07-21,Conic Finance,Read-Only-Reentrancy && MisConfiguration,~$3.25M,3250000.0,usd,3250000.0,reentrancy,2023
+2023-07-22,Conic Finance 02,Price Manipulation,~$934K,934000.0,usd,934000.0,oracle / price manipulation,2023
+2023-07-23,MintoFinance,Signature Replay,~$9K,9000.0,usd,9000.0,input / call validation,2023
+2023-07-24,Palmswap,Business Logic Flaw,~$900K,900000.0,usd,900000.0,business logic,2023
+2023-07-26,Carson,Price manipulation,~$150K,150000.0,usd,150000.0,oracle / price manipulation,2023
+2023-07-30,Curve,Vyper Compiler Bug && Reentrancy,~ $41M,41000000.0,usd,41000000.0,reentrancy,2023
+2023-07-31,GYMNET,Insufficient validation,Unclear,,unknown,,input / call validation,2023
+2023-08-01,LeetSwap,Access Control,~$630K,630000.0,usd,630000.0,access control,2023
+2023-08-01,NeutraFinance,Price Manipulation,~$23ETH,,other token,,oracle / price manipulation,2023
+2023-08-02,Uwerx,Fault logic,~$176ETH,,other token,,business logic,2023
+2023-08-02,CurveBurner,Lack Slippage Protection,~$36K,36000.0,usd,36000.0,slippage / front-running,2023
+2023-08-09,EarningFram,Reentrancy,~$286k,286000.0,usd,286000.0,reentrancy,2023
+2023-08-14,ZunamiProtocol,Price Manipulation,~$2M,2000000.0,usd,2000000.0,oracle / price manipulation,2023
+2023-08-18,ExactlyProtocol,insufficient validation,~$7M,7000000.0,usd,7000000.0,input / call validation,2023
+2023-08-19,BTC20,Price Manipulation,~$18ETH,,other token,,oracle / price manipulation,2023
+2023-08-21,EHIVE,Business Logic Flaw,~$15K,15000.0,usd,15000.0,business logic,2023
+2023-08-24,GSS,skim token balance,~$25K,25000.0,usd,25000.0,other,2023
+2023-08-26,SVT,flawed price calculation,~$400K,400000.0,usd,400000.0,oracle / price manipulation,2023
+2023-08-27,Balancer,Rounding Error && Business Logic Flaw,~$2M,2000000.0,usd,2000000.0,arithmetic / precision,2023
+2023-08-29,EAC,Price Manipulation,~$29BNB,,other token,,oracle / price manipulation,2023
+2023-09-02,DAppSocial,Business Logic Flaw,~$16K,16000.0,usd,16000.0,business logic,2023
+2023-09-05,FloorDAO,Rebasing logic issue,~$40ETH,,other token,,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-09-05,HeavensGate,Rebasing logic issue,~$8ETH,,other token,,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-09-05,JumpFarm,Rebasing logic issue,~$2.4ETH,2.0,usd,2.0,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-09-05,QuantumWN,Rebasing logic issue,~$0.5 ETH,0.5,usd,0.5,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-09-07,HCT,Price Manipulation,~$30.5BNB,30.0,usd,30.0,oracle / price manipulation,2023
+2023-09-08,APIG,Business Logic Flaw,~$169K,169000.0,usd,169000.0,business logic,2023
+2023-09-09,BFCToken,Business Logic Flaw,~$38K,38000.0,usd,38000.0,business logic,2023
+2023-09-11,0x0DEX,Parameter manipulation,~$61K,61000.0,usd,61000.0,oracle / price manipulation,2023
+2023-09-16,uniclyNFT,Reentrancy,1 NFT,,other token,,reentrancy,2023
+2023-09-21,CEXISWAP,Incorrect Access Control,~$30K,30000.0,usd,30000.0,access control,2023
+2023-09-24,KubSplit,Pool manipulation,~$78K,78000.0,usd,78000.0,oracle / price manipulation,2023
+2023-09-26,XSDWETHpool,Reentrancy,~$56.9BNB,56.0,usd,56.0,reentrancy,2023
+2023-09-29,DEXRouter,Arbitrary External Call,~$4K,4000.0,usd,4000.0,input / call validation,2023
+2023-09-30,FireBirdPair,Lack Slippage Protection,~$3.2K MATIC,3200.0,usd,3200.0,slippage / front-running,2023
+2023-10-05,DePayRouter,Business Logic Flaw,~$ 827 USDC,827.0,usd,827.0,business logic,2023
+2023-10-07,StarsArena,Reentrancy,~$3M,3000000.0,usd,3000000.0,reentrancy,2023
+2023-10-08,ZS,Business Logic Flaw,~$14K,14000.0,usd,14000.0,business logic,2023
+2023-10-08,pSeudoEth,Pool manipulation,~$2.3K,2300.0,usd,2300.0,oracle / price manipulation,2023
+2023-10-11,BH,Price manipulation,~$1.27M,1270000.0,usd,1270000.0,oracle / price manipulation,2023
+2023-10-12,Platypus,Business Logic Flaw,~$2M,2000000.0,usd,2000000.0,business logic,2023
+2023-10-13,WiseLending,Donate Inflation ExchangeRate && Rounding Error,~$260K,260000.0,usd,260000.0,arithmetic / precision,2023
+2023-10-13,BelugaDex,Price manipulation,~$175K,175000.0,usd,175000.0,oracle / price manipulation,2023
+2023-10-18,MicDao,Price Manipulation,~$13K,13000.0,usd,13000.0,oracle / price manipulation,2023
+2023-10-18,Hopelend,Div Precision Loss,~$825K,825000.0,usd,825000.0,arithmetic / precision,2023
+2023-10-19,kTAF,CompoundV2 Inflation Attack,~$8K,8000.0,usd,8000.0,oracle / price manipulation,2023
+2023-10-22,OpenLeverage,Business Logic Flaw,~$8K,8000.0,usd,8000.0,business logic,2023
+2023-10-24,MaestroRouter2,Arbitrary External Call,~$280ETH,,other token,,input / call validation,2023
+2023-10-28,AstridProtocol,Business Logic Flaw,~$127ETH,,other token,,business logic,2023
+2023-10-30,LaEeb,Lack Slippage Protection,~1.8 WBNB,,other token,,slippage / front-running,2023
+2023-10-31,UniBotRouter,Arbitrary External Call,"~$83,944 USD$",83944.0,usd,83944.0,input / call validation,2023
+2023-11-01,SwampFinance,Business Logic Flaw,Unclear,,unknown,,business logic,2023
+2023-11-01,OnyxProtocol,Precission Loss Vulnerability,~$2M,2000000.0,usd,2000000.0,arithmetic / precision,2023
+2023-11-02,3913Token,Deflationary Token Attack,~$31354 USD$,31354.0,usd,31354.0,"token mechanics (fee, tax, rebase, reflection)",2023
+2023-11-02,BRAND,Lack of access control,~23 WBNB,,other token,,access control,2023
+2023-11-06,TheStandard_io,Lack of slippage protection,~$290K,290000.0,usd,290000.0,slippage / front-running,2023
+2023-11-06,KR,Precision loss,~$15K,15000.0,usd,15000.0,arithmetic / precision,2023
+2023-11-06,TrustPad,Lack of msg.sender address verification,~$155K,155000.0,usd,155000.0,access control,2023
+2023-11-07,MEVbot,Lack of access control,~$2M,2000000.0,usd,2000000.0,access control,2023
+2023-11-07,RBalancer,Business Logic Flaw,~17 ETH,,other token,,business logic,2023
+2023-11-10,grok,Lack of slippage protection,~26 ETH,,other token,,slippage / front-running,2023
+2023-11-10,Raft_fi,Donate Inflation ExchangeRate & Rounding Error,~$3.2 M,3200000.0,usd,3200000.0,arithmetic / precision,2023
+2023-11-11,MahaLend,Donate Inflation ExchangeRate & Rounding Error,~$20 K,20000.0,usd,20000.0,arithmetic / precision,2023
+2023-11-12,MEVBot_0x8c2d,Lack of Access Control,~$365K,365000.0,usd,365000.0,access control,2023
+2023-11-12,MEVBot_0xa247,Incorrect Access Control,~$150K,150000.0,usd,150000.0,access control,2023
+2023-11-14,OKC Project,"Instant Rewards, Unlocked",~$6268,6268.0,usd,6268.0,business logic,2023
+2023-11-15,LinkDAO,Bad `K` Value Verification,~$30K,30000.0,usd,30000.0,business logic,2023
+2023-11-15,XAI,Business Logic Flaw,Unclear,,unknown,,business logic,2023
+2023-11-15,EHX,Lack of Slippage Control,Unclear,,unknown,,slippage / front-running,2023
+2023-11-16,WECO,Business Logic Flaw,~$18K,18000.0,usd,18000.0,business logic,2023
+2023-11-17,ShibaToken,Business Logic Flaw,~$31K,31000.0,usd,31000.0,business logic,2023
+2023-11-17,Token8633_9419,Price Manipulation,~$52K,52000.0,usd,52000.0,oracle / price manipulation,2023
+2023-11-22,KyberSwap,precision loss,~$48M,48000000.0,usd,48000000.0,arithmetic / precision,2023
+2023-11-25,MetaLend,CompoundV2 Inflation Attack,~$4K,4000.0,usd,4000.0,oracle / price manipulation,2023
+2023-11-25,TheNFTV2,logic flaw,~$19K,19000.0,usd,19000.0,business logic,2023
+2023-11-28,FiberRouter,input validation,18 eth,,other token,,input / call validation,2023
+2023-11-29,Burntbubba,Price Manipulation,~$3K,3000.0,usd,3000.0,oracle / price manipulation,2023
+2023-11-29,AIS,Insufficient validation,~$61k,61000.0,usd,61000.0,input / call validation,2023
+2023-11-30,CAROLProtocol,Price Manipulation Via Reentrancy,~$53k,53000.0,usd,53000.0,reentrancy,2023
+2023-11-30,EEE,Price Manipulation,~$22.8K,22800.0,usd,22800.0,oracle / price manipulation,2023
+2023-12-01,UnverifiedContr_0x431abb,Business Logic Flaw,~$500k,500000.0,usd,500000.0,input / call validation,2023
+2023-12-02,bZxProtocol,Inflation Attack,~$208k,208000.0,usd,208000.0,oracle / price manipulation,2023
+2023-12-05,BEARNDAO,Business Logic Flaw,~$769k,769000.0,usd,769000.0,business logic,2023
+2023-12-05,MAMO,Price Manipulation,~$3.3K,3300.0,usd,3300.0,oracle / price manipulation,2023
+2023-12-06,ElephantStatus,Price Manipulation,~$165k,165000.0,usd,165000.0,oracle / price manipulation,2023
+2023-12-06,TIME,Arbitrary Address Spoofing Attack,~84.59 ETH,,other token,,other,2023
+2023-12-07,HNet,Business logic flaw,~2.4 $WBNB,2.4,usd,2.4,business logic,2023
+2023-12-09,BCT,Price Manipulation,~10.2BNB,,other token,,oracle / price manipulation,2023
+2023-12-11,GoodCompound,Price Manipulation,~$13K (~250 COMP Token),13000.0,usd,13000.0,oracle / price manipulation,2023
+2023-12-13,HYPR,Business Logic Flaw,~$200k,200000.0,usd,200000.0,business logic,2023
+2023-12-14,PHIL,Business Logic Flaw,~$2 $BNB,2.0,usd,2.0,business logic,2023
+2023-12-16,GoodDollar,Lack of Input Validation & Reentrancy,~$2M,2000000.0,usd,2000000.0,reentrancy,2023
+2023-12-16,NFTTrader,Reentrancy,~$3M,3000000.0,usd,3000000.0,reentrancy,2023
+2023-12-16,KEST,Business Logic Flaw,~$2.3K,2300.0,usd,2300.0,business logic,2023
+2023-12-17,FloorProtocol,Business Logic Flaw,"~$1,6M",16000000.0,usd,16000000.0,business logic,2023
+2023-12-17,Bob,Price Manipulation,~3BNB,,other token,,oracle / price manipulation,2023
+2023-12-20,TransitFinance,Lack of Validation Pool,~110k,,unit not stated,110000.0,input / call validation,2023
+2023-12-22,PineProtocol,Business Logic Flaw,~90k,,unit not stated,90000.0,business logic,2023
+2023-12-25,Telcoin,Storage Collision,"~1,24M",,unit not stated,124000000.0,other,2023
+2023-12-28,DominoTT,Precision loss,~5 $WBNB,5.0,usd,5.0,arithmetic / precision,2023
+2023-12-28,CCV,Precision loss,~3.2K $BUSD,3200.0,usd,3200.0,arithmetic / precision,2023
+2023-12-30,ChannelsFinance,CompoundV2 Inflation Attack,~320K,,unit not stated,320000.0,oracle / price manipulation,2023
+2023-12-31,Channels,Price Manipulation,~$4.4K,4400.0,usd,4400.0,oracle / price manipulation,2023
+2024-01-01,OrbitChain,Incorrect input validation,~81M,,unit not stated,81000000.0,input / call validation,2024
+2024-01-02,MIC,Business Logic Flaw,~500K,,unit not stated,500000.0,business logic,2024
+2024-01-02,RadiantCapital,Loss of Precision,"~4,5M",,unit not stated,45000000.0,arithmetic / precision,2024
+2024-01-04,Gamma,Price manipulation,~6.3M,,unit not stated,6300000.0,oracle / price manipulation,2024
+2024-01-10,Freedom,lack of access control,74 $WBNB,74.0,usd,74.0,access control,2024
+2024-01-10,LQDX,Unauthorized TransferFrom,unknown,,unknown,,access control,2024
+2024-01-12,SocketGateway,Lack of calldata validation,~3.3Million $,3300000.0,usd,3300000.0,input / call validation,2024
+2024-01-12,WiseLending,Bad HealthFactor Check,~464K,,unit not stated,464000.0,input / call validation,2024
+2024-01-15,Shell_MEV_0xa898,lack of access control,~1K $BUSD,1000.0,usd,1000.0,access control,2024
+2024-01-17,BmiZapper,Arbitrary external call vulnerability,~114K,,unit not stated,114000.0,input / call validation,2024
+2024-01-22,DAO_SoulMate,Incorrect Access Control,~319K,,unit not stated,319000.0,access control,2024
+2024-01-25,NBLGAME,Reentrancy,~180K,,unit not stated,180000.0,reentrancy,2024
+2024-01-27,CitadelFinance,Price Manipulation,~93K,,unit not stated,93000.0,oracle / price manipulation,2024
+2024-01-28,BarleyFinance,Reentrancy,~130K,,unit not stated,130000.0,reentrancy,2024
+2024-01-29,PeapodsFinance,Reentrancy,~1K $DAI,1000.0,usd,1000.0,reentrancy,2024
+2024-01-30,XSIJ,Business Logic Flaw,~51K USD,51000.0,usd,51000.0,business logic,2024
+2024-01-30,MIMSpell,Precission Loss,"~6,5M",,unit not stated,65000000.0,arithmetic / precision,2024
+2024-02-01,AffineDeFi,lack of validation userData,~88K,,unit not stated,88000.0,input / call validation,2024
+2024-02-02,ADC,incorrect-access-control,~20 eth,,other token,,business logic,2024
+2024-02-05,BurnsDefi,Price Manipulation,~67K,,unit not stated,67000.0,oracle / price manipulation,2024
+2024-02-08,Pandora,Integer Underflow,~17K USD,17000.0,usd,17000.0,arithmetic / precision,2024
+2024-02-10,FILX DN404,Access Control,200K,,unit not stated,200000.0,access control,2024
+2024-02-11,Game,Reentrancy && Business Logic Flaw,~20 ETH,,other token,,reentrancy,2024
+2024-02-13,MINER,Price Manipulation,~3.5 WBNB,,other token,,oracle / price manipulation,2024
+2024-02-15,Miner,lack of validation dst address,~150k,,unit not stated,150000.0,input / call validation,2024
+2024-02-15,DualPools,precision truncation,~42k,,unit not stated,42000.0,arithmetic / precision,2024
+2024-02-15,Babyloogn,lack of validation,~2 $BNB,2.0,usd,2.0,input / call validation,2024
+2024-02-16,ParticleTrade,lack of validation data,~50k,,unit not stated,50000.0,input / call validation,2024
+2024-02-19,RuggedArt,reentrancy,~10k,,unit not stated,10000.0,reentrancy,2024
+2024-02-20,EGGX,reentrancy,~2 ETH,,other token,,reentrancy,2024
+2024-02-21,GAIN,bad function implementation,~6.4 ETH,,other token,,other,2024
+2024-02-21,DeezNutz 404,lack of validation,~170k,,unit not stated,170000.0,input / call validation,2024
+2024-02-22,SwarmMarkets,lack of validation,~7k $DAI,7000.0,usd,7000.0,input / call validation,2024
+2024-02-23,BlueberryProtocol,logic flaw,"~1,400,000 USD",1400000.0,usd,1400000.0,business logic,2024
+2024-02-23,CompoundUni,Oracle bad price,"~439,537 USD",439537.0,usd,439537.0,oracle / price manipulation,2024
+2024-02-23,Zoomer,Business Logic Flaw,~14 ETH,,other token,,business logic,2024
+2024-02-28,Seneca,Arbitrary External Call Vulnerability,~6M,,unit not stated,6000000.0,input / call validation,2024
+2024-02-28,SMOOFSStaking,Reentrancy,Unclear,,unknown,,reentrancy,2024
+2024-03-05,Woofi,Price Manipulation,~8M,,unit not stated,8000000.0,oracle / price manipulation,2024
+2024-03-06,TGBS,Business Logic Flaw,~150K,,unit not stated,150000.0,business logic,2024
+2024-03-06,ALP,Public internal function,~10K,,unit not stated,10000.0,other,2024
+2024-03-07,GHT,Business Logic Flaw,~57K,,unit not stated,57000.0,business logic,2024
+2024-03-09,UnizenIO,unverified external call,~2M,,unit not stated,2000000.0,input / call validation,2024
+2024-03-09,Juice,Business Logic Flaw,~54 ETH,,other token,,business logic,2024
+2024-03-11,Binemon,precission-loss,~0.2 BNB,,other token,,arithmetic / precision,2024
+2024-03-12,BBT,business logic flaw,~5.06 ETH,,other token,,business logic,2024
+2024-03-13,IT,business logic flaw,~13k USDT,13000.0,stablecoin,13000.0,business logic,2024
+2024-03-14,MO,business logic flaw,~413k USDT,413000.0,stablecoin,413000.0,business logic,2024
+2024-03-20,Paraswap,Incorrect Access Control,~24K,,unit not stated,24000.0,access control,2024
+2024-03-21,SSS,Token Balance Doubles on Transfer to self,4.8M,,unit not stated,4800000.0,other,2024
+2024-03-23,CGT,Incorrect Access Control,996B (CGT token),,other token,,access control,2024
+2024-03-24,ARK,business logic flaw,~348BNB,,other token,,business logic,2024
+2024-03-25,ZongZi,Price Manipulation,~223K,,unit not stated,223000.0,oracle / price manipulation,2024
+2024-03-28,LavaLending,Business Logic Flaw,~340K,,unit not stated,340000.0,business logic,2024
+2024-03-29,PrismaFi,Insufficient Validation,$~11M,,other token,,input / call validation,2024
+2024-03-29,ETHFIN,lack of access control,~$1.24K (2.13 BNB),1240.0,usd,1240.0,access control,2024
+2024-04-01,OpenLeverage,business logic flaw,~234K,,unit not stated,234000.0,business logic,2024
+2024-04-01,ATM,business logic flaw,$~182K USD,182000.0,usd,182000.0,business logic,2024
+2024-04-02,HoppyFrogERC,business logic flaw,~0.3 ETH,,other token,,business logic,2024
+2024-04-04,wsm,manipulating price,$~18K USD,18000.0,usd,18000.0,oracle / price manipulation,2024
+2024-04-08,SQUID,sandwich attack,$~87K USD,87000.0,usd,87000.0,slippage / front-running,2024
+2024-04-09,UPS,business logic flaw,$~28K USD,28000.0,usd,28000.0,business logic,2024
+2024-04-10,BigBangSwap,precission loss,$~5K $BUSD,5000.0,usd,5000.0,arithmetic / precision,2024
+2024-04-12,GROKD,lack of access control,$~150 BNB,,other token,,access control,2024
+2024-04-12,SumerMoney,Reentrancy,350K,,unit not stated,350000.0,reentrancy,2024
+2024-04-12,FIL314,Insufficient Validation And Price Manipulation,~14 BNB,,other token,,oracle / price manipulation,2024
+2024-04-14,Hackathon,business logic flaw,~20K,,unit not stated,20000.0,business logic,2024
+2024-04-15,ChaingeFinance,Arbitrary External Call,~560K,,unit not stated,560000.0,input / call validation,2024
+2024-04-15,GFA,business-logic-flaw,~14K USD,14000.0,usd,14000.0,business logic,2024
+2024-04-16,MARS,Bad Reflection,>100K,,other token,,"token mechanics (fee, tax, rebase, reflection)",2024
+2024-04-16,SATX,Logic Flaw,~ 50 BNB,,other token,,business logic,2024
+2024-04-17,UnverifiedContr_0x00C409,unverified external call,~ 18 eth,,other token,,input / call validation,2024
+2024-04-19,HedgeyFinance,Logic Flaw,48M USD,48000000.0,usd,48000000.0,business logic,2024
+2024-04-20,Rico,Arbitrary Call,36K,,unit not stated,36000.0,input / call validation,2024
+2024-04-22,Z123,price manipulation,136k USD,136000.0,usd,136000.0,oracle / price manipulation,2024
+2024-04-24,YIEDL,Input Validation,150k USD,150000.0,usd,150000.0,input / call validation,2024
+2024-04-24,XBridge,Logic Flaw,">200k USD(plus a lot of STC, SRLTY, Mazi tokens)",200000.0,usd,200000.0,bridge / cross-chain message,2024
+2024-04-25,NGFS,Bad Access Control,~190K,,unit not stated,190000.0,access control,2024
+2024-04-27,BNBX,precission loss,~75 $BNB,75.0,usd,75.0,arithmetic / precision,2024
+2024-04-30,Yield,Business Logic Flaw,181K,,unit not stated,181000.0,business logic,2024
+2024-04-30,PikeFinance,Uninitialized Proxy,1.4M,,unit not stated,1400000.0,access control,2024
+2024-05-06,OSN,Reward Distribution Problem,~109K USD,109000.0,usd,109000.0,business logic,2024
+2024-05-07,SATURN,Price Manipulation,~15 BNB,,other token,,oracle / price manipulation,2024
+2024-05-08,GPU,self transfer,~32K USD,32000.0,usd,32000.0,other,2024
+2024-05-10,TSURU,Insufficient Validation,140K,,unit not stated,140000.0,input / call validation,2024
+2024-05-10,GFOX,lack of access control,330K USD,330000.0,usd,330000.0,access control,2024
+2024-05-12,TGC,Business Logic Flaw,$32K,32000.0,usd,32000.0,business logic,2024
+2024-05-14,PredyFinance,Reentrancy,$464K,464000.0,usd,464000.0,reentrancy,2024
+2024-05-14,Sonne Finance,Precision loss,$20M,20000000.0,usd,20000000.0,arithmetic / precision,2024
+2024-05-16,TCH,Signature Malleability Vulnerability,$18K,18000.0,usd,18000.0,input / call validation,2024
+2024-05-22,Burner,sandwich ack,1.7 eth,,other token,,slippage / front-running,2024
+2024-05-26,NORMIE,Business Logic Flaw,$490K,490000.0,usd,490000.0,business logic,2024
+2024-05-27,RedKeysCoin,Weak RNG,$12K,12000.0,usd,12000.0,weak randomness,2024
+2024-05-28,EXcommunity,Business Logic Flaw,33BNB,,other token,,business logic,2024
+2024-05-28,Tradeonorion,Business Logic Flaw,~645K,,unit not stated,645000.0,business logic,2024
+2024-05-29,MetaDragon,Lack of Access Control,~ $180k,180000.0,usd,180000.0,access control,2024
+2024-05-29,SCROLL,Integer Underflow,76 ETH,,other token,,arithmetic / precision,2024
+2024-05-31,MixedSwapRouter,Arbitrary Call,>10700USD(WINR token),,other token,,input / call validation,2024
+2024-05-31,Liquiditytokens,Business Logic Flaw,~200K USD,200000.0,usd,200000.0,business logic,2024
+2024-06-01,VeloCore,lack-of-access-control,$6.88M,6880000.0,usd,6880000.0,other,2024
+2024-06-04,NCD,Business Logic Flaw,$6.4K,6400.0,usd,6400.0,business logic,2024
+2024-06-06,SteamSwap,Logic Flaw,~$91k,91000.0,usd,91000.0,business logic,2024
+2024-06-06,MineSTM,Business Logic Flaw,$13.8K,13800.0,usd,13800.0,business logic,2024
+2024-06-08,YYStoken,Business Logic Flaw,$28K,28000.0,usd,28000.0,business logic,2024
+2024-06-10,UwULend,Price Manipulation,19.3M,,unit not stated,19300000.0,oracle / price manipulation,2024
+2024-06-10,Bazaar,Insufficient Permission Check,1.4M,,unit not stated,1400000.0,access control,2024
+2024-06-11,JokInTheBox,business logic flaw,~9.2 ETH,,other token,,business logic,2024
+2024-06-16,Crb2,business logic flaw,~15K,,unit not stated,15000.0,business logic,2024
+2024-06-16,WIFCOIN_ETH,business logic flaw,~3.4 ETH (WIF token),,other token,,business logic,2024
+2024-06-17,Dyson_money,business logic flaw,52 BNB,,other token,,business logic,2024
+2024-06-18,INcufi,business logic flaw,~59K USD,59000.0,usd,59000.0,business logic,2024
+2024-06-27,APEMAGA,business logic flaw,~9 ETH,,other token,,business logic,2024
+2024-06-28,Will,business logic flaw,$52K,52000.0,usd,52000.0,business logic,2024
+2024-07-02,MRP,Reentrancy,17 BNB,,other token,,reentrancy,2024
+2024-07-03,UnverifiedContr_0x452E25,lack-of-access-control,27 ETH,,other token,,input / call validation,2024
+2024-07-05,DeFiPlaza,loss of precision,~200K USD,200000.0,usd,200000.0,arithmetic / precision,2024
+2024-07-08,LW,Integer Underflow,~7K USD,7000.0,usd,7000.0,arithmetic / precision,2024
+2024-07-11,GAX,Lack of access control,~50K $BUSD,50000.0,usd,50000.0,access control,2024
+2024-07-11,SBT,business logic flaw,~56K USD,56000.0,usd,56000.0,business logic,2024
+2024-07-12,DoughFina,Incorrect input validation,~1.8M USD,1800000.0,usd,1800000.0,input / call validation,2024
+2024-07-14,Minterest,Reentrancy,~427 ETH,,other token,,reentrancy,2024
+2024-07-16,Lifiprotocol,Incorrect input validation,~10M USD,10000000.0,usd,10000000.0,input / call validation,2024
+2024-07-23,MEVbot_0xdd7c,Incorrect input validation,~18k USD,18000.0,usd,18000.0,input / call validation,2024
+2024-07-24,Spectra_finance,Incorrect input validation,~73K USD,73000.0,usd,73000.0,input / call validation,2024
+2024-08-01,Convergence,Incorrect input validation,~200K USD,200000.0,usd,200000.0,input / call validation,2024
+2024-08-06,Novax,Price Manipulation,~25K USD,25000.0,usd,25000.0,oracle / price manipulation,2024
+2024-08-12,iVest,Business logic flaw,~338 WBNB,,other token,,business logic,2024
+2024-08-13,VOW,Misconfiguration,~ 1M USD,1000000.0,usd,1000000.0,other,2024
+2024-08-14,YodlRouter,Arbitrary Call,~5k,,unit not stated,5000.0,input / call validation,2024
+2024-08-16,Zenterest,Price Out Of Date,~21000 USD,21000.0,usd,21000.0,oracle / price manipulation,2024
+2024-08-16,OMPx Contract,FlashLoan,4.37 ETH (~11527 USD),11527.0,usd,11527.0,flash-loan assisted (unspecified),2024
+2024-08-20,Coco,Logic flaw,280BNB,,other token,,business logic,2024
+2024-08-28,Unverified_667d,Access control,$10k,10000.0,usd,10000.0,access control,2024
+2024-08-28,AAVE,Arbitrary Call Error,52000,,unit not stated,52000.0,input / call validation,2024
+2024-09-02,Pythia,Logic Flaw,21 ETH,,other token,,business logic,2024
+2024-09-03,Penpiexyz_io,Reentrancy and Reward Manipulation,"11,113.6 ETH (~$27,348,259 USD)",27348259.0,usd,27348259.0,reentrancy,2024
+2024-09-04,Unverified_16d0,Access control,329 USD,329.0,usd,329.0,access control,2024
+2024-09-05,HANAToken,Price Manipulation,283 USD,283.0,usd,283.0,oracle / price manipulation,2024
+2024-09-05,PLN,Access control,400K USD,400000.0,usd,400000.0,access control,2024
+2024-09-05,Unverified_a89f,Access control,1.5k,,unit not stated,1500.0,access control,2024
+2024-09-10,Caterpillar_Coin_CUT,Price Manipulation,~1.4M USD,1400000.0,usd,1400000.0,oracle / price manipulation,2024
+2024-09-11,AIRBTC_exp,Access control,~6.8k USD,6800.0,usd,6800.0,access control,2024
+2024-09-11,INUMI_db27,Access control,~4.7k USD,4700.0,usd,4700.0,access control,2024
+2024-09-11,INUMI,Access control,~11.7k USD,11700.0,usd,11700.0,access control,2024
+2024-09-12,Unverified_03f9,Access Control,1.7k,,unit not stated,1700.0,access control,2024
+2024-09-13,OTSeaStaking,Logic Flaw,26k,,unit not stated,26000.0,business logic,2024
+2024-09-13,Unverified_5697,Access Control,12K,,unit not stated,12000.0,access control,2024
+2024-09-15,WXETA,Logic Flaw,110K,,unit not stated,110000.0,business logic,2024
+2024-09-18,Unverified_766a,Access control,100 USD,100.0,usd,100.0,access control,2024
+2024-09-20,DOGGO,Logic Flaw,7K USD,7000.0,usd,7000.0,business logic,2024
+2024-09-20,Shezmu,Access Control,4.9M USD,4900000.0,usd,4900000.0,access control,2024
+2024-09-23,PestoToken,Price Manipulation,1.4K,,unit not stated,1400.0,oracle / price manipulation,2024
+2024-09-23,Bankroll_Network,Incorrect input validation,~404 WBNB (~234.8K USD),234800.0,usd,234800.0,input / call validation,2024
+2024-09-24,MARA---price-manipulation,MARA---price-manipulation,~8.8 WBNB (~5.3K USD),5300.0,usd,5300.0,oracle / price manipulation,2024
+2024-09-26,OnyxDAO,Fake Market,"4.1M VUSD, 7.35M XCN, 5K DAI, 0.23 WBTC, 50K USDT (>$3.8M USD)",3800000.0,usd,3800000.0,other,2024
+2024-09-26,Bedrock_DeFi,Swap ETH/BTC 1/1 in mint function,27.83925883 BTC (~$1.7M USD),1700000.0,usd,1700000.0,other,2024
+2024-10-01,FireToken,Pair Manipulation With Transfer Function,8.45 ETH (~$20K USD),20000.0,usd,20000.0,oracle / price manipulation,2024
+2024-10-02,LavaLending,Price Manipulation,"1 USDC, 125795.6 cUSDC, 0,0067 WBTC, 2.25 WETH (~$130K USD)",130000.0,usd,130000.0,oracle / price manipulation,2024
+2024-10-05,AIZPTToken,Wrong Price Calculation,,,missing,,oracle / price manipulation,2024
+2024-10-06,SASHAToken,Price Manipulation,,,missing,,oracle / price manipulation,2024
+2024-10-10,HYDT,Oracle Price Manipulation,,,missing,,oracle / price manipulation,2024
+2024-10-11,P719Token,Price Manipulation Inflate Attack,,,missing,,oracle / price manipulation,2024
+2024-10-13,MorphoBlue,Overpriced Asset in Oracle,"$230,000",230000.0,usd,230000.0,oracle / price manipulation,2024
+2024-10-22,Vista,flashmint receive error,"$28,000",28000.0,usd,28000.0,other,2024
+2024-10-22,Erc20transfer,Access Control,"$14,773.35",14773.35,usd,14773.35,access control,2024
+2024-10-26,CompoundFork,Flashloan attack,$1M,1000000.0,usd,1000000.0,flash-loan assisted (unspecified),2024
+2024-10-29,BUBAI,Rug pull,$131K,131000.0,usd,131000.0,malicious project / rug pull,2024
+2024-11-05,RPP,Logic Flaw,~ $14.1K,14100.0,usd,14100.0,business logic,2024
+2024-11-07,ChiSale,Logic Flaw,$16.3 K,16300.0,usd,16300.0,business logic,2024
+2024-11-07,VRug,Rug pull,$8.4 K,8400.0,usd,8400.0,malicious project / rug pull,2024
+2024-11-07,CoW,Access Control,$59 K,59000.0,usd,59000.0,access control,2024
+2024-11-09,X319,Access Control,$12.9 K,12900.0,usd,12900.0,access control,2024
+2024-11-11,DeltaPrime,Reentrancy,$12.9 K,12900.0,usd,12900.0,reentrancy,2024
+2024-11-14,vETH,Vulnerable Price Dependency,447k,,unit not stated,447000.0,oracle / price manipulation,2024
+2024-11-17,MFT,Logic Flaw,33.7k USD,33700.0,usd,33700.0,business logic,2024
+2024-11-19,PolterFinance,FlashLoan Attack,$7M,7000000.0,usd,7000000.0,flash-loan assisted (unspecified),2024
+2024-11-20,MainnetSettler,Access Control,$66K,66000.0,usd,66000.0,access control,2024
+2024-11-21,Matez,Integer Truncation,80k USD,80000.0,usd,80000.0,arithmetic / precision,2024
+2024-11-23,Ak1111,Access Control,31.5K USD,31500.0,usd,31500.0,access control,2024
+2024-11-24,Proxy_b7e1,Logic Flaw,8.5k USD,8500.0,usd,8500.0,business logic,2024
+2024-11-26,NFTG,Access Control,10k USD,10000.0,usd,10000.0,access control,2024
+2024-12-03,Pledge,Access Control,15K,,unit not stated,15000.0,access control,2024
+2024-12-10,CloberDEX,Reentrancy,~501K US$ (133.7 WETH),501000.0,usd,501000.0,reentrancy,2024
+2024-12-10,LABUBU Token,Logic Flaw,"17.4 BNB (~ $12,048)",12048.0,usd,12048.0,business logic,2024
+2024-12-14,JHY,Logic Flaw,11k BSC-USD,,other token,,business logic,2024
+2024-12-16,BTC24H,Logic Flaw,~ $85.7K,85700.0,usd,85700.0,business logic,2024
+2024-12-18,SlurpyCoin,Logic Flaw,3k USD,3000.0,usd,3000.0,business logic,2024
+2024-12-23,Moonhacker,improper input validation,318.9 k,,unit not stated,318900.0,input / call validation,2024
+2024-12-27,Bizness,Reentrancy,15.7k USD,15700.0,usd,15700.0,reentrancy,2024
+2025-01-01,LAURAToken,Pair Balance Manipulation,12.34 ETH (~$41.2K USD),41200.0,usd,41200.0,oracle / price manipulation,2025
+2025-01-04,98Token,Unprotected public function,28K USDT,28000.0,stablecoin,28000.0,access control,2025
+2025-01-04,SorStaking,Incorrect reward calculation,～8 ETH,,other token,,arithmetic / precision,2025
+2025-01-06,Mosca,Logic Flaw,19K,,unit not stated,19000.0,business logic,2025
+2025-01-07,IPC Incorrect burn pairs,Logic Flaw,～590k USDT,590000.0,stablecoin,590000.0,"token mechanics (fee, tax, rebase, reflection)",2025
+2025-01-08,LPMine,Incorrect reward calculation,~24k USDT,24000.0,stablecoin,24000.0,arithmetic / precision,2025
+2025-01-08,HORS,Access Control,14.8 WBNB,,other token,,access control,2025
+2025-01-10,JPulsepot,Logic Flaw,21.5K,,unit not stated,21500.0,business logic,2025
+2025-01-11,RoulettePotV2,Price Manipulation,~28K,,unit not stated,28000.0,oracle / price manipulation,2025
+2025-01-12,Unilend,Logic Flaw,60 stETH,,other token,,business logic,2025
+2025-01-13,Mosca2,Logic Flaw,37.6K,,unit not stated,37600.0,business logic,2025
+2025-01-14,IdolsNFT,Logic Flaw,97 stETH,,other token,,business logic,2025
+2025-01-18,Paribus,Bad oracle,~86k,,unit not stated,86000.0,oracle / price manipulation,2025
+2025-01-21,Ast,Price-Manipulation,~65K,,unit not stated,65000.0,oracle / price manipulation,2025
+2025-01-23,ODOS,invalid-signature-verification,~50k,,unit not stated,50000.0,input / call validation,2025
+2025-01-26,AIXBTForcedSwap,Hardcoded Auth Key,"13,597.36 USDC",13597.36,stablecoin,13597.36,other,2025
+2025-01-28,MCAI,Tax wallet allowance bypass,12.03 WETH,,other token,,"token mechanics (fee, tax, rebase, reflection)",2025
+2025-02-01,GoldReserve,Business Logic Flaw,12.74 BNB,,other token,,business logic,2025
+2025-02-08,Peapods Finance,Price Manipulation,"~ $3,500",3500.0,usd,3500.0,oracle / price manipulation,2025
+2025-02-08,GMT7,Access Control,16.75 BNB,,other token,,access control,2025
+2025-02-11,LimitOrderProtocol,Access Control,2800000 BRAINS,,other token,,access control,2025
+2025-02-11,Scorch,Price Oracle Manipulation,0.14 ETH,,other token,,oracle / price manipulation,2025
+2025-02-11,FourMeme,Logic Flaw,~186k,,unit not stated,186000.0,business logic,2025
+2025-02-15,unverified_d4f1,access-control,~15.2k,,unit not stated,15200.0,input / call validation,2025
+2025-02-21,Bybit,Phishing attack,1.5B,,unit not stated,1500000000.0,key compromise / phishing,2025
+2025-02-21,StepHeroNFTs,Reentrancy On Sell NFT,137.9 BNB,,other token,,reentrancy,2025
+2025-02-22,Unverified_35bc,Reentrancy,$6.7K,6700.0,usd,6700.0,reentrancy,2025
+2025-02-23,HegicOptions,Business Logic Flaw,~104M,,unit not stated,104000000.0,business logic,2025
+2025-02-24,INVISTECH,Pair Tax Price Manipulation,5.14 WBNB,,other token,,oracle / price manipulation,2025
+2025-02-26,HenloKart,Fake Native Deposit And Immediate Cancel,0.59 ETH,,other token,,other,2025
+2025-02-27,Venus_ZKSync,Donation Attack,86.72 WETH,,other token,,oracle / price manipulation,2025
+2025-03-04,Pump,Not Slippage Protection,~ $6.4K,6400.0,usd,6400.0,slippage / front-running,2025
+2025-03-05,1inch FusionV1 Settlement,Arbitrary Yul Calldata,4.5M,,unit not stated,4500000.0,input / call validation,2025
+2025-03-06,PTM,Business Logic Flaw,552.63 USDT,552.63,stablecoin,552.63,business logic,2025
+2025-03-06,RnsPay,Arbitrary External Call,1050 USDC,1050.0,stablecoin,1050.0,input / call validation,2025
+2025-03-06,unverified,Business Logic Flaw,980.32 USDC,980.32,stablecoin,980.32,input / call validation,2025
+2025-03-07,UNI,Logic Flaw,~ $14K,14000.0,usd,14000.0,business logic,2025
+2025-03-07,StackMarket,Business Logic Flaw,0.56 WETH,,other token,,business logic,2025
+2025-03-07,SBR Token,Price Manipulation,~ $18.4K,18400.0,usd,18400.0,oracle / price manipulation,2025
+2025-03-11,ZeroExSettler,Arbitrary External Call,"3,008 USDT",3008.0,stablecoin,3008.0,input / call validation,2025
+2025-03-11,DUCKVADER,Free Mint Bug,~ $9.6K,9600.0,usd,9600.0,business logic,2025
+2025-03-14,H2O,Weak Random Mint,22470 USD,22470.0,usd,22470.0,weak randomness,2025
+2025-03-16,wKeyDAO,unprotected function,"737,000",,unit not stated,737000.0,access control,2025
+2025-03-18,unverified,Business Logic Flaw,0.40 WAVAX,,other token,,input / call validation,2025
+2025-03-18,DCFToken,Lack of Slippage Protection,~442k,,unit not stated,442000.0,slippage / front-running,2025
+2025-03-20,BBXToken,Price Manipulation,11902 BUSD,11902.0,stablecoin,11902.0,oracle / price manipulation,2025
+2025-03-27,YziAI,Rug Pull,~ $239.4K,239400.0,usd,239400.0,malicious project / rug pull,2025
+2025-03-28,Alkimiya_IO,unsafecast,~ 95.5 K (1.14015390 WBTC),,other token,,other,2025
+2025-03-30,LeverageSIR,Storage SLOT1 collision,"~ 353.8 K (17814,86 USDC, 1,4085 WBTC, 119,87 WETH)",1781486.0,stablecoin,1781486.0,other,2025
+2025-04-04,AIRWA,Access Control,$33.6K,33600.0,usd,33600.0,access control,2025
+2025-04-07,AmpKashi,AMP Collateral Borrow Price Manipulation,$572.31,572.31,usd,572.31,oracle / price manipulation,2025
+2025-04-08,Laundromat,Logic Flaw,1.5K USD,1500.0,usd,1500.0,business logic,2025
+2025-04-11,Unverified 0x6077,Lack of Access Control,~ $62.3K,62300.0,usd,62300.0,access control,2025
+2025-04-16,Roar,Rug Pull,$777k,777000.0,usd,777000.0,malicious project / rug pull,2025
+2025-04-16,YVToken,Not Slippage Protection,15261.68240413121964707 BUSD,15261.68240413122,stablecoin,15261.68240413122,slippage / front-running,2025
+2025-04-18,BTNFT,Claim Rewards Without Protection,19025.9193312786235214 BUSD,19025.919331278623,stablecoin,19025.919331278623,business logic,2025
+2025-04-26,Lifeprotocol,Price Manipulation,15114 BUSD,15114.0,stablecoin,15114.0,oracle / price manipulation,2025
+2025-04-26,ImpermaxV3,FlashLoan Price Oracle Manipulation,"62,628.66 USD",62628.66,usd,62628.66,oracle / price manipulation,2025
+2025-04-27,AventaRewardClaim,Claim Accounting,"16,019,528 AVENTA",,other token,,business logic,2025
+2025-04-27,multitransferswap,Business Logic Flaw,0.34 ETH,,other token,,business logic,2025
+2025-04-27,bitdog,Access Control,2.10 BNB,,other token,,access control,2025
+2025-04-28,tcdp,Broken transferFrom Allowance Check,2.02 ETH,,other token,,input / call validation,2025
+2025-04-29,FlyLong,Balance Forgery,1.73 BNB,,other token,,other,2025
+2025-05-06,Crosswise,Trusted Forwarder Spoof,4.16 WBNB,,other token,,other,2025
+2025-05-09,Nalakuvara_LotteryTicket50,Price Manipulation,~ 105.5K USD,105500.0,usd,105500.0,oracle / price manipulation,2025
+2025-05-11,MBUToken,Price Manipulation not confirmed,~2.16 M BUSD,2160000.0,stablecoin,2160000.0,oracle / price manipulation,2025
+2025-05-14,Unwarp,lack-of-access-control,9K USD,9000.0,usd,9000.0,other,2025
+2025-05-16,Bitallx,Payout Amount Mismatch,"2,029.47 USDT",2029.47,stablecoin,2029.47,other,2025
+2025-05-18,KRC,deflationary token,7k USD,7000.0,usd,7000.0,"token mechanics (fee, tax, rebase, reflection)",2025
+2025-05-19,BetaPresale,Access Control,1.921686798824852706 WBNB and 46.474821659738262175 BUSD,46.47482165973826,stablecoin,46.47482165973826,access control,2025
+2025-05-20,IRYSAI,rug pull,69.6K USD,69600.0,usd,69600.0,malicious project / rug pull,2025
+2025-05-24,RICE,Lack of Access Control,~ $88.1K,88100.0,usd,88100.0,access control,2025
+2025-05-25,Dumbo,Business Logic Flaw,628.45 BUSD,628.45,stablecoin,628.45,business logic,2025
+2025-05-25,Unverified_0000,Access Control,"5,658.46 USD",5658.46,usd,5658.46,access control,2025
+2025-05-26,YDT,Logic Flaw,41k USD,41000.0,usd,41000.0,business logic,2025
+2025-05-27,UsualMoney,Arbitrage,43k USD,43000.0,usd,43000.0,other,2025
+2025-05-28,Corkprotocol,Access Control,12M USD,12000000.0,usd,12000000.0,access control,2025
+2025-05-28,Unverified_91a1,Access Control,551.22 USD,551.22,usd,551.22,access control,2025
+2025-05-31,DogeAlliance,Price Manipulation,990.33 USD,990.33,usd,990.33,oracle / price manipulation,2025
+2025-06-03,PegaBall,Business Logic Flaw,1512.85 USD,1512.85,usd,1512.85,business logic,2025
+2025-06-08,TokenFactory,Business Logic Flaw,657.17 USD,657.17,usd,657.17,business logic,2025
+2025-06-09,BitCrown,Access Control,7939.27 USD,7939.27,usd,7939.27,access control,2025
+2025-06-10,Unverified_8490,Access Control,48.3K USD,48300.0,usd,48300.0,access control,2025
+2025-06-12,AAVEBoost,Logic Flaw,14.8K USD,14800.0,usd,14800.0,business logic,2025
+2025-06-14,TSAggregatorGeneric,Business Logic Flaw,1300 USD,1300.0,usd,1300.0,business logic,2025
+2025-06-15,FixedTokenBSwap,Price Oracle Manipulation,2.2K USD,2200.0,usd,2200.0,oracle / price manipulation,2025
+2025-06-15,WaleCoin,Access Control,918.83 USD,918.83,usd,918.83,access control,2025
+2025-06-17,MetaPool,Infinite Mint via unvalidated ERC4626 mint,25k USD,25000.0,usd,25000.0,other,2025
+2025-06-18,BankrollStackPlus,Incorrect dividends calculation,"12,234.48 USD",12234.48,usd,12234.48,arithmetic / precision,2025
+2025-06-19,SinstakeZombie,Incorrect dividends calculation,705.13 USD,705.13,usd,705.13,arithmetic / precision,2025
+2025-06-19,BasePricePool,Price Manipulation,802.57 USD,802.57,usd,802.57,oracle / price manipulation,2025
+2025-06-19,BankrollNetwork,Incorrect dividends calculation,24.5 WBNB,,other token,,arithmetic / precision,2025
+2025-06-19,BankrollStack,Incorrect dividends calculation,5k USD,5000.0,usd,5000.0,arithmetic / precision,2025
+2025-06-20,Gangsterfinance,Incorrect dividends,16.5k USD,16500.0,usd,16500.0,business logic,2025
+2025-06-20,HoldSafe,Price Manipulation,"4,824.96 USD",4824.96,usd,4824.96,oracle / price manipulation,2025
+2025-06-20,TokenVault,Incorrect dividends calculation,"3,226.51 USD",3226.51,usd,3226.51,arithmetic / precision,2025
+2025-06-23,GradientMakerPool,Price Oracle Manipulation,5k USD,5000.0,usd,5000.0,oracle / price manipulation,2025
+2025-06-25,Unverified_b5cb,Access Control,2M USD,2000000.0,usd,2000000.0,access control,2025
+2025-06-25,SiloFinance,Arbitrary Call,"500,000+ USD",,other token,,input / call validation,2025
+2025-06-25,ParaSwapDAIApproval,Stale Approval,"2,298.68 USD",2298.68,usd,2298.68,input / call validation,2025
+2025-06-26,ResupplyFi,Share price manipulation,9.6M USD,9600000.0,usd,9600000.0,oracle / price manipulation,2025
+2025-06-28,InitcodeFactoryFees,Access Control,"2,383.25 USD",2383.25,usd,2383.25,access control,2025
+2025-06-29,Stead,Access Control,14.5k USD,14500.0,usd,14500.0,access control,2025
+2025-07-02,ActivePoolUrgentRedemption,Urgent Redemption,"2,696.49 USD",2696.49,usd,2696.49,other,2025
+2025-07-02,FPC,Logic Flaw,4.7M USDT,4700000.0,stablecoin,4700000.0,business logic,2025
+2025-07-05,Unverified,Access Control,~ $285.7K,285700.0,usd,285700.0,access control,2025
+2025-07-05,ActivePoolScrvUsd,Urgent Redemption,"$4,204.55",4204.55,usd,4204.55,other,2025
+2025-07-05,RANT,Logic Flaw,~ $204K,204000.0,usd,204000.0,business logic,2025
+2025-07-09,GMX,Share price manipulation,41M USD,41000000.0,usd,41000000.0,oracle / price manipulation,2025
+2025-07-13,UPENG,Incorrect Burn Logic,"$1,035.06",1035.06,usd,1035.06,"token mechanics (fee, tax, rebase, reflection)",2025
+2025-07-16,VDS,Logic Flaw,13k USD,13000.0,usd,13000.0,business logic,2025
+2025-07-16,StrategyLlamaLendConvex,Share Price Manipulation,563.12 USDC,563.12,stablecoin,563.12,oracle / price manipulation,2025
+2025-07-17,WETC,Incorrect Burn Logic,101k USD,101000.0,usd,101000.0,"token mechanics (fee, tax, rebase, reflection)",2025
+2025-07-17,unverified,Signature Verification,502.42 USDT,502.42,stablecoin,502.42,input / call validation,2025
+2025-07-20,Stepp2p,Logic Flaw,43k USD,43000.0,usd,43000.0,business logic,2025
+2025-07-21,BoJLeverageMarket,Liquidity Index Manipulation,"$7,227.59 USD",7227.59,usd,7227.59,oracle / price manipulation,2025
+2025-07-24,SWAPPStaking,Incorrect Reward calculation,"$32,196.28",32196.28,usd,32196.28,arithmetic / precision,2025
+2025-07-24,EmptySetReserve,Fixed Order Swap,"$1,509.78",1509.78,usd,1509.78,other,2025
+2025-07-25,WhereIsMyDragonTreasure,Fixed Reward Redemption,"$47,461.35",47461.35,usd,47461.35,business logic,2025
+2025-07-26,MulticallWithETH,arbitrary-call,10K USD,10000.0,usd,10000.0,other,2025
+2025-07-26,Unverified6883,Fake Uniswap Callback,"$1,006.89",1006.89,usd,1006.89,input / call validation,2025
+2025-07-26,Unverified670471,Unchecked Flash Loan Callback,"$1,818.33",1818.33,usd,1818.33,input / call validation,2025
+2025-07-28,AvaxBIFKNPair,Flash Swap Accounting,2.4K USD,2400.0,usd,2400.0,business logic,2025
+2025-07-28,SuperRare,Access Control,730K USD,730000.0,usd,730000.0,access control,2025
+2025-07-29,AnyswapWETHPermit,Permit Validation Bypass,200 WETH,,other token,,input / call validation,2025
+2025-08-01,PendleReflector,Business Logic Flaw,2304.18 USD,2304.18,usd,2304.18,business logic,2025
+2025-08-04,BscInitcodeToken,Business Logic Flaw,700.32 USD,700.32,usd,700.32,business logic,2025
+2025-08-05,MyCoinMaster,Business Logic Flaw,653.49 USD,653.49,usd,653.49,business logic,2025
+2025-08-08,ArbitrumBaseSwapper,Business Logic Flaw,"1,847.33 USD",1847.33,usd,1847.33,business logic,2025
+2025-08-11,WXC,Incorrect token burn mechanism,37.5 WBNB,,other token,,"token mechanics (fee, tax, rebase, reflection)",2025
+2025-08-12,Bebop,Arbitrary user input,21k USD,21000.0,usd,21000.0,input / call validation,2025
+2025-08-12,BaseBebopSettlement,Arbitrary External Call,"3,875.46 USD",3875.46,usd,3875.46,input / call validation,2025
+2025-08-13,YuliAI,Price Manipulation,78k USDT,78000.0,stablecoin,78000.0,oracle / price manipulation,2025
+2025-08-13,BeefyZapRouter,Arbitrary External Call,"6,584.95 USD",6584.95,usd,6584.95,input / call validation,2025
+2025-08-13,Grizzifi,Logic Flaw,61k USD,61000.0,usd,61000.0,business logic,2025
+2025-08-13,coinbase,Misconfiguration,300k USD,300000.0,usd,300000.0,other,2025
+2025-08-15,SizeCredit,Access Control,19.7k USD,19700.0,usd,19700.0,access control,2025
+2025-08-15,PDZ,Price Manipulation,3.3 BNB,,other token,,oracle / price manipulation,2025
+2025-08-15,SizeFlashLoanLooping,Arbitrary External Call,533.05 USD,533.05,usd,533.05,input / call validation,2025
+2025-08-16,d3xai,Price Manipulation,190 BNB,,other token,,oracle / price manipulation,2025
+2025-08-16,unverified,Business Logic Flaw,"3,131.11 DAI",3131.11,stablecoin,3131.11,input / call validation,2025
+2025-08-17,AutoPooledTradingBot,Business Logic Flaw,0.15198 ETH,,other token,,business logic,2025
+2025-08-19,PresaleV5,Price Manipulation,"9,769.23 USD",9769.23,usd,9769.23,oracle / price manipulation,2025
+2025-08-20,MulticallWithXera,Access Control,17k USD,17000.0,usd,17000.0,access control,2025
+2025-08-20,0x8d2e,Access Control,40k USDC,40000.0,stablecoin,40000.0,access control,2025
+2025-08-22,Unverified_6f7a,Access Control,"7,630.46 USD",7630.46,usd,7630.46,access control,2025
+2025-08-23,ABCCApp,Lack of Access Control,~ $10.1K,10100.0,usd,10100.0,access control,2025
+2025-08-23,EquilibriaEPendle,Reward Accounting Flaw,"62,661.57 USD",62661.57,usd,62661.57,business logic,2025
+2025-08-27,0xf340,Access Control,4k USD,4000.0,usd,4000.0,access control,2025
+2025-08-30,EverValueCoin,Arbitrage,100k USD,100000.0,usd,100000.0,other,2025
+2025-08-31,Hexotic,Incorrect Input Validation,500 USD,500.0,usd,500.0,input / call validation,2025
+2025-09-13,Kame,Arbitary External Call,18167.8 USD,18167.8,usd,18167.8,other,2025
+2025-09-18,NGP,Price Manipulation,2M USD,2000000.0,usd,2000000.0,oracle / price manipulation,2025
+2025-10-04,MIMSpell3,Bypassed Insolvency Check,1.7M USD,1700000.0,usd,1700000.0,input / call validation,2025
+2025-10-04,Abracadabra,Logic Flaw,1.8M USD,1800000.0,usd,1800000.0,business logic,2025
+2025-10-07,TokenHolder,Access Control,20 WBNB,,other token,,access control,2025
+2025-10-20,SharwaFinance,Post Insolvency Check,"146,000 USD",146000.0,usd,146000.0,input / call validation,2025
+2025-11-03,BalancerV2,Precision Loss,120M USD,120000000.0,usd,120000000.0,arithmetic / precision,2025
+2025-11-04,Moonwell,Faulty Oracle,1M USD,1000000.0,usd,1000000.0,oracle / price manipulation,2025
+2025-11-10,DRLVaultV3,Price Manipulation,100k USD,100000.0,usd,100000.0,oracle / price manipulation,2025
+2025-12-01,yETH,Unsafe Math,9M USD,9000000.0,usd,9000000.0,other,2025
+2026-01-01,PRXVT,Bussiness Logic Flaw,32.8 ETH,,other token,,business logic,2026
+2026-01-09,Truebit,OverFlow,8540ETH,,other token,,arithmetic / precision,2026
+2026-01-10,FutureSwap,Unit Mismatch,433K USD,433000.0,usd,433000.0,arithmetic / precision,2026
+2026-01-12,MTToken,Incorrect Fee Logic,37K USD,37000.0,usd,37000.0,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-01-20,SynapLogic,Business Logic Flaw,27.6 ETH & 3450 USDC,3450.0,stablecoin,3450.0,business logic,2026
+2026-01-20,Makina,Price Oracle Manipulation,5.1M USD,5100000.0,usd,5100000.0,oracle / price manipulation,2026
+2026-02-15,Moonwell,Faulty Oracle,1.78M USD,1780000.0,usd,1780000.0,oracle / price manipulation,2026
+2026-02-16,XDKRecycle,XDK recycle reserve manipulation,6.84 WBNB,,other token,,oracle / price manipulation,2026
+2026-02-22,LAXO Token,Incorrect Burn Logic,"~137,000 US$",137000.0,usd,137000.0,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-03-02,Curve LlamaLend,Share price manipulation,"~240,000 US$",240000.0,usd,240000.0,oracle / price manipulation,2026
+2026-03-10,AlkemiEarn,Business Logic,43.45 ETH,,other token,,business logic,2026
+2026-03-15,StakeOnMe,Owner-privileged JAKE burn reserve drain,0.28 ETH,,other token,,access control,2026
+2026-03-15,Venus THE,BorrowBehalf + Donation Attack,"913,858.263360521396654198 CAKE + 1,972.530910582753621682 WBNB",,other token,,oracle / price manipulation,2026
+2026-03-16,unverified,CheckoutPool Old BOC Missing Access Control,"85,730 USDC",85730.0,stablecoin,85730.0,access control,2026
+2026-03-19,Revamp,Reward Accounting Drain,2.99 BNB,,other token,,business logic,2026
+2026-03-19,ATMBlindBox,Weak Randomness / Predictable RNG,99K USD,99000.0,usd,99000.0,weak randomness,2026
+2026-03-23,BCE,Deflationary Token Logic Error,"~800,000 USDT",800000.0,stablecoin,800000.0,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-03-24,Univ3CollateralToken,Logic Error,57K USD,57000.0,usd,57000.0,business logic,2026
+2026-03-24,XocolatlLiquidator,Access Control / Input Validation,3.25 cbETH and 0.22 WETH,,other token,,access control,2026
+2026-03-27,EST Token,Incorrect Token Burn Mechanism,150.2 WBNB,,other token,,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-03-28,VTSwapHook,Pricing Error in UniswapV4 Hook,"4,507,034.03 vATH + 2,007,935.14 ATH",,other token,,other,2026
+2026-03-31,WhalebitOracleManipulation,Algebra spot-price oracle manipulation,824K USD,824000.0,usd,824000.0,oracle / price manipulation,2026
+2026-04-05,PerpPair,Virtual AMM Manipulation,165K USDC,165000.0,stablecoin,165000.0,oracle / price manipulation,2026
+2026-04-07,SquidMulticallAllowanceDrain,Arbitrary Call / Wrong Approval,1 ETH,,other token,,input / call validation,2026
+2026-04-12,SubQuerySettings,Settings access control,218.07M SQT,,other token,,access control,2026
+2026-04-14,MONA LisaVault,reward-farming / BurnAddress accounting exploit!,~60.95K USDT,60950.0,stablecoin,60950.0,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-04-14,Saturn Protocol,Vulnerability Disclosure,0 (Disclosure only; no exploit occurred),,other token,,other,2026
+2026-04-15,XLootStaking,Duplicate xLOOT Redemption,6.21 ETH,,other token,,other,2026
+2026-04-19,AaveRebalancerCreditDelegation,Arbitrary External Call / Credit Delegation Abuse,"6,999.91 WAVAX",,other token,,input / call validation,2026
+2026-04-20,ThetanutsVaultShareRounding,Vault Share Rounding Manipulation,0.15 WBTC,,other token,,oracle / price manipulation,2026
+2026-04-20,JuiceboxREVLoans,Fake terminal loan source validation bypass,21.77 ETH,,other token,,input / call validation,2026
+2026-04-21,KipseliPropAMM,Pricing / Decimals Mismatch,0.93 cbBTC,,other token,,arithmetic / precision,2026
+2026-04-23,GiddyVaultV3,Incomplete Signature Coverage,$1.3M,1300000.0,usd,1300000.0,input / call validation,2026
+2026-04-25,SingularityDynaVault,Oracle Misconfiguration / Share Inflation,413.13K USDC,413130.0,stablecoin,413130.0,oracle / price manipulation,2026
+2026-04-27,Unverified_a152,AllowanceTarget approval drain,229K USDT,229000.0,stablecoin,229000.0,input / call validation,2026
+2026-04-28,JUDAO,JUDAO sell-hook reserve drain,205K USDT + 36 BNB,205000.0,stablecoin,205000.0,other,2026
+2026-04-28,RWAVault,Missing ERC4626 allowance check,"398,655.47 USDC",398655.47,stablecoin,398655.47,input / call validation,2026
+2026-05-01,SharwaMarginTrading,Hegic collateral spot price manipulation,32.85K USDC,32850.0,stablecoin,32850.0,oracle / price manipulation,2026
+2026-05-05,Ekubo,Business Logic Flaw,~$1.4M,1400000.0,usd,1400000.0,business logic,2026
+2026-05-07,TrustedVolumes,Signature Replay,~$5.87M,5870000.0,usd,5870000.0,input / call validation,2026
+2026-05-10,Renegade,Uninitialized Proxy,~$209K,209000.0,usd,209000.0,access control,2026
+2026-05-11,INKFinance,Business Logic Flaw,~$140K,140000.0,usd,140000.0,business logic,2026
+2026-05-11,HumaFinance,Credit Approval Bypass,"~$101K (82,315 USDC + 19,074 USDC.e)",101000.0,usd,101000.0,input / call validation,2026
+2026-05-12,SQTokenStaking,Access Control,~$346.1K,346100.0,usd,346100.0,access control,2026
+2026-05-15,AdsharesBridge,Insufficient Validation,~$628K,628000.0,usd,628000.0,bridge / cross-chain message,2026
+2026-05-17,SEAToken,Business Logic Flaw,~$110K,110000.0,usd,110000.0,business logic,2026
+2026-05-17,VerusBridge,Insufficient Validation,~$11.58M,11580000.0,usd,11580000.0,bridge / cross-chain message,2026
+2026-05-18,TesseraSwap,Callback Repayment Price Spread,~$20K,20000.0,usd,20000.0,oracle / price manipulation,2026
+2026-05-19,ElevateFi,Reserve Price Manipulation,"~16,000 USD",16000.0,usd,16000.0,oracle / price manipulation,2026
+2026-05-20,MAPProtocol,Arbitrary Mint,~$180K,180000.0,usd,180000.0,other,2026
+2026-05-21,MureDistribution,Signature Verification Bypass,~5.45 ETH,,other token,,input / call validation,2026
+2026-05-22,FractalProtocol,Business Logic Flaw,~$13.7K,13700.0,usd,13700.0,business logic,2026
+2026-05-25,WUSD.fi,_englove Sybil Incentive Abuse,~$200K USD (GLOVE emissions + LP drain),200000.0,usd,200000.0,other,2026
+2026-05-25,New Market Trading,SquidRouterModule Missing Caller Check,~$3.98M USD,3980000.0,usd,3980000.0,access control,2026
+2026-05-25,SquidRouterModule,Missing caller check,0.25 WBTC + 0.29 wTAO + 0.02 WETH,,other token,,access control,2026
+2026-05-26,SKP Token,Owner Backdoor LP Burn + Price Manipulation,~$212K USD,212000.0,usd,212000.0,oracle / price manipulation,2026
+2026-05-27,Joe Agent,Reentrancy in removeLiquidityViaContract,~$45K USD (62.5 BNB + ~1.196M JOE),45000.0,usd,45000.0,reentrancy,2026
+2026-05-28,DxSale,Ownership Override Attack,~7.3M USD,7300000.0,usd,7300000.0,other,2026
+2026-05-28,LegendaryMoneyMonNft,ecrecover address(0) Signature Bypass,"~$85.5K USD (85,519 USDT)",85500.0,usd,85500.0,input / call validation,2026
+2026-05-29,YSDAO,Price Manipulation and Tax Bypass,~19.49K USDT,19490.0,stablecoin,19490.0,oracle / price manipulation,2026
+2026-05-30,AROS,Signature Replay,~$295K,295000.0,usd,295000.0,input / call validation,2026
+2026-06-04,BYToken,Permissionless triggerAutoBurn Reserve Manipulation,"~$87,402 (146.60 WBNB)",87402.0,usd,87402.0,oracle / price manipulation,2026
+2026-06-04,ATM Token,Hidden transferFrom Auto-Swap Drain,"~$243,543 USDT",243543.0,usd,243543.0,other,2026
+2026-06-05,AISOTHPresale,Fixed-price presale arbitrage,"30,314.76 USDT",30314.76,stablecoin,30314.76,oracle / price manipulation,2026
+2026-06-05,DTXT,Liquidity Misclassification Fee Bypass,"35,041.11 USDT",35041.11,stablecoin,35041.11,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-06-06,BOSS,BOSS helper mint/burn and transfer-tax pool skew,"10,207.54 USDT",10207.54,stablecoin,10207.54,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-06-07,AmbientCrocSwapDex,Native surplus accounting flaw,67.85 ETH,,other token,,business logic,2026
+2026-06-09,NovaBox,Constructor Dividend Checkpoint Bypass,56.73 ETH,,other token,,input / call validation,2026
+2026-06-09,TOPBPool,Governance-controlled token mint and Balancer pool drain,944.20 WETH,,other token,,other,2026
+2026-06-14,Aztec Connect,numRealTxs Proof/Settlement Mismatch (permissionless RollupProcessorV3),~$2.19M (this PoC reproduces the 908.99 ETH leg),2190000.0,usd,2190000.0,access control,2026
+2026-06-15,Thetanuts,Index vault component-share accounting flaw,105471.50 USDC,105471.5,stablecoin,105471.5,business logic,2026
+2026-06-16,DIP,Fee-on-Transfer Reserve Manipulation,"111,097.59 USDC",111097.59,stablecoin,111097.59,oracle / price manipulation,2026
+2026-06-17,LBP,LBP balanceOf reward accounting,610.56 BNB,,other token,,business logic,2026
+2026-06-17,WHALE,Transfer Accounting Reserve Desync,"3,460.41 USDT",3460.41,stablecoin,3460.41,business logic,2026
+2026-06-17,Aztec V1,escapeHatch Proof-Forgery (permissionless RollupProcessor exit),"~$2.2M (1158 ETH + 150,000 DAI + 0.4696 renBTC)",2200000.0,usd,2200000.0,access control,2026
+2026-06-18,JB,JB helper repeated cycle drains JB/USDT pair,"49,958.06 USDT",49958.06,stablecoin,49958.06,other,2026
+2026-06-20,OLPC,OLPC pair reserve manipulation,"1,115,903.66 USDT",1115903.66,stablecoin,1115903.66,oracle / price manipulation,2026
+2026-06-22,ATM,LP Token Burn,"1,603.99 WBNB",,other token,,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-06-22,Aztec Escape Hatch,proof_id Accounting Bypass (whitehat reproduction),"N/A (purely educational; worst-case impact would have been ~$2M, matching the separate vulnerability that actually drained the contracts)",2000000.0,usd,2000000.0,business logic,2026
+2026-06-23,RoyalRoyalties,Zero-amount ERC1155 batch transfer inflated Royal LDA tier balance,"261,162.93 USDC",261162.93,stablecoin,261162.93,other,2026
+2026-06-24,DLMC,Reserve-derived livePrice manipulation,"222,560.22 USDT",222560.22,stablecoin,222560.22,oracle / price manipulation,2026
+2026-06-25,OceanBPoolSideStaking,BPool single-sided join/exit math with SideStaking gulp accounting,127.86K mOCEAN,,other token,,business logic,2026
+2026-06-25,LixirPermitDrain,Broken Signature Verification,"2.60 ETH, 4,477.72 USDC, 3,609.95 USDT, 24,182.56 LIX",8087.67,stablecoin,8087.67,input / call validation,2026
+2026-06-27,CookFinanceIssuance,Price Oracle Manipulation,~$50K,50000.0,usd,50000.0,oracle / price manipulation,2026
+2026-06-28,AIDC,Business Logic Flaw,220.13 WBNB,,other token,,business logic,2026
+2026-06-29,Vault4626,Business Logic Flaw,13.53 WETH,,other token,,business logic,2026
+2026-07-01,edel-xstock,Price Oracle Manipulation,"204,215.57 USDC",204215.57,stablecoin,204215.57,oracle / price manipulation,2026
+2026-07-06,SummerFi,FleetCommander NAV Inflation via Depegged xUSD,~$6M (DAI + LVUSDC shares),6000000.0,usd,6000000.0,other,2026
+2026-07-16,PerpetualProtocol,"v2 (Curie) unguarded OrderBook funding-growth update lets anyone poison cached funding, draining the Vault","~3,062.21 USDC",3062.21,stablecoin,3062.21,access control,2026
+2026-07-16,CrowdRingCircle,"sell-destroy path burns CRC out of the pair on any non-exempt sell, collapsing the reserve so a follow-up swap drains the pool's USDT",~201.36K USDT,201360.0,stablecoin,201360.0,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-07-28,LULA,"Rental reward claims call LULA.recycle(), which moves up to a third of the pair's LULA to Rental and sync()s with no USDT leaving, so after a buy routed to the fee-excluded owner bypasses buyEnabled, the claims drain the pair's LULA reserve and 4,999 LULA buys back the pushed USDT plus the pool's liquidity",~578.3K USDT,578300.0,stablecoin,578300.0,oracle / price manipulation,2026
+2026-08-02,MOKE,"settle() tx.origin check lets any EOA latch a manipulated MOKE/USDT price, then claim() mints inflated MOKE against it",~1546.54 BNB (~41.68M MOKE over-minted),,other token,,oracle / price manipulation,2026
+2026-08-03,AIC,"pair skim / reserve-mismatch exploit, flash-swap leveraged",~32.36 BNB (~$21.5K),21500.0,usd,21500.0,other,2026
+2026-08-05,StrongBlock,governance takeover of an abandoned Governor,"32,695.761681 STRONG + 383,447.167299 STRNGR (~$72K)",72000.0,usd,72000.0,other,2026
+2026-08-06,UnistreetLaunchpad,arbitrary call injection via unvalidated launch forwarding,"~17,743.91 USDC + ~0.0072 WETH (~$17.75K)",17750.0,usd,17750.0,input / call validation,2026
+2026-08-09,USM,defund() price split-invariance rounding exploit,~70.83 ETH,,other token,,oracle / price manipulation,2026
+2026-08-19,AllbridgeCCTP,Phantom deposit via unverified message attestation,"~189,751.554381 USDC",189751.554381,stablecoin,189751.554381,bridge / cross-chain message,2026
+2026-08-22,SandboxOFT,LayerZero delegate hijack via approveAndCall,"10,000,000 SAND minted unbacked (~$517,170 face value, one of 400+ repeated txs in an ongoing campaign)",517170.0,usd,517170.0,input / call validation,2026
+2026-08-23,ArrakisGUNI,Uniswap V3 spot-price manipulation of vault mint/burn,~2.9414 ETH net attacker surplus (Arrakis V1 / G-UNI ENS-WETH vault),,other token,,oracle / price manipulation,2026
+2026-08-23,TermFinance,Governance capture via thinly-wrapped Aragon voting power,"2,841.743535791961701401 WETH (attacker net gain, ETH meta-vault)",,other token,,other,2026
+2026-08-25,FHToken,sell-tax reserve mismatch via premature sync(),"19,999.018106552928530404 USDT (~$20K)",20000.0,usd,20000.0,oracle / price manipulation,2026
+2026-08-26,EnjinCryptoItems,"unprotected registry reinitialization, manager takeover","5,231,353 ENJ (~$142K)",142000.0,usd,142000.0,access control,2026
+2026-08-27,CashCowCoin,privileged burn + premature sync() drains PancakeSwap pair,~165.47 WBNB (~$117.4K),117400.0,usd,117400.0,oracle / price manipulation,2026
+2026-08-28,AjnaFinance,liquidation accounting manipulation via self-controlled auction,"~$124.8K for this cbETH pool (1 of 7 pools hit by the same bug the same day, ~$775K aggregate)",775000.0,usd,775000.0,oracle / price manipulation,2026
+2026-08-31,BalancerV1BPool,joinswapPoolAmountOut rounding drain across 5 pools,"~$110,839 for this DPI/USDC/WETH/WBTC pool (~$234K aggregate across all 5 vulnerable pools)",234000.0,usd,234000.0,arithmetic / precision,2026
+2026-08-31,FloatProtocol,Uniswap V3 spot price manipulation of Hypervisor LP shares,"~$28,000 (10.71 ETH)",28000.0,usd,28000.0,oracle / price manipulation,2026
+2026-09-01,ReflexerGEB,Shared GebProxyActions library registered as SAFE owner,"~5.9436 ETH (~$14K, drained from 4 SAFEs in one tx: IDs 3, 5, 8, 18)",14000.0,usd,14000.0,other,2026
+2026-09-03,NotionalFinance,ERC1155 fCash mint overflow drains escrow,"~69,257.37 DAI + ~1,658,524.86 USDC (~$1.73M)",1730000.0,usd,1730000.0,arithmetic / precision,2026
+2026-09-05,Reddio,cross-share-class balance double-count via permissionless registerErc20,~9.25 ETH,,other token,,access control,2026
+2026-09-05,SecuredFi,same-block self-trade manipulates getMarketUnitPrice to fabricate collateral,~0.9 WBTC (~$72K single-drain; ~$104K across all actors exploiting the same public bug),72000.0,usd,72000.0,oracle / price manipulation,2026
+2026-09-05,DHC,repeatable claim due to missing claimed-flag,~$71.8K USDT,71800.0,usd,71800.0,other,2026
+2026-09-07,CozyFinance,unverified UMA Optimistic Oracle trigger enables unbacked protection-token redemption,"~160,776 USDC.e (~$160K)",160000.0,usd,160000.0,oracle / price manipulation,2026
+2026-09-07,RouterDrain,permissionless swap entry lets a fake V3 pool abuse router allowances,"~62.28 WBNB across 29 victims (3 reconstructed here: OCEAN, Kandura, SATURN)",,other token,,access control,2026
+2026-09-08,OrderFactory,missing access control on createOrderForBuyer drains buyer accounts,~20.247 ETH this tx (5 buyers drained; reported incident total ~24.7 ETH),,other token,,access control,2026
+2026-09-09,EtherFiAtomicQueue,missing solver access control drains victim allowances,~15.45 ETH (9 real victims' standing liquidETH allowances drained),,other token,,access control,2026
+2026-09-09,OMNI404,ERC-404 dual ID/amount transfer interpretation drains pool WETH,2.427 WETH (run() leg reproduced here; ~3.02 ETH across the full 4-tx block),,other token,,other,2026
+2026-09-09,BeatXswap,slot0 spot-price oracle with no TWAP guard drains vesting BTX reserves,"~$63.7K USDT net profit (2,984,557 BTX / ~$77.5K drained from two vesting reserves)",77500.0,usd,77500.0,oracle / price manipulation,2026
+2026-09-09,EnsoFinance,short-window Uniswap V3 TWAP oracle enables ~9x overvalued strategy deposit,~5.6 ETH (5.277 ETH realized in this PoC after slippage selling looted UNI/AAVE/MKR back to WETH),,other token,,oracle / price manipulation,2026
+2026-09-09,UnifiProtocol,unregistered caller-supplied pool trusted for reward eligibility and math,"~5.86 BNB (treasury still holds ~9.17 BNB, contract unpaused — bug remains re-exploitable)",,other token,,business logic,2026
+2026-09-09,ZentraFinance,"aToken burn safeguard clamps to zero, repayWithATokens clears debt without burning","~140,000 ctUSD + 30 USDC.e (~$143K)",143000.0,usd,143000.0,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-09-11,GDC,"chained EOA bypass, liquidity misclassification, burn mismatch, and reentrant tax-free exit",~35.34 BNB (35.337151495976986490 BNB reproduced exact to the wei),,other token,,reentrancy,2026
+2026-09-11,ORB,leveraged pool buyout + refund-before-sell reentrancy drains burnLP-depleted reserve,"~44.9-45 BNB (~$32,610.72)",32610.72,usd,32610.72,reentrancy,2026
+2026-09-12,YamFinance,dormant-DAO quorum governance takeover drains legacy UMA farming contracts,~$121K (48.085 WETH + 763.101 UMA),121000.0,usd,121000.0,other,2026
+2026-09-12,SpiralHookV2,Uniswap V4 spot-price borrow plus tx.origin-keyed same-block guard bypass,~10.70728 ETH (reproduced exact to the wei),,other token,,oracle / price manipulation,2026
+2026-09-15,BonfireSwap,missing caller authorization lets anyone force-sell any approved holder's tokens,~66 BNB (~$47-50K); 58.78 BNB reproduced from a 5-victim subset (~98.7% of tokens drained),47.0,usd,47.0,access control,2026
+2026-09-15,RsETHSafeModule,nested self-referential multicall authorization bypass drains Gnosis Safe via DELEGATECALL,"2,900 aEthrsETH (~$7.8M gross; 2,882.37 rsETH / ~$7.73M net to the MEV frontrunner)",7800000.0,usd,7800000.0,access control,2026
+2026-09-16,Nimiq,"GSN forwarder skips signature check, relying solely on attacker-chosen paymaster","~$50,463.79 (USDC, USDT0, USDC.e drained from a swap-liquidity wallet's standing approvals)",50463.79,usd,50463.79,input / call validation,2026
+2026-09-16,PrimeFinance,permissionless stale signed oracle report overwrite drains lending pool,~425.5 WHYPE (~$33.4K) drained from the lending pool reserve,33400.0,usd,33400.0,oracle / price manipulation,2026
+2026-09-16,Flamincome,permissionless Convex stakeFor inflates Strategy NAV and lets VaultYUSDT overpay on withdrawAll,~$345.9K USDT net attacker profit (gross Strategy loss ~$595K in aUSDT+USDT),595000.0,usd,595000.0,access control,2026
+2026-09-16,Startale,transient storage init flag outlives the constructor and lets anyone reinitialize an ERC7579 account and drain it,"427.551160 USDC drained in this batch tx (32.555561 USDC reproduced across 3 of 23 victim accounts; ~$2,876 USDC+USDT aggregate across 41 known batches)",2876.0,usd,2876.0,access control,2026
+2026-09-18,Likwid,missing pairDelta update in leverage=0 margin borrow freezes AMM quote,74.31 BNB (reproduced to within 3 wei),,other token,,other,2026
+2026-09-21,InternetToken,permissionless swapV3 with caller-supplied pool lets a fake callback mint INT arbitrarily,"764,145,702 INT + 5.846988 WETH (attacker minted 925.41M INT total, dumped 161.27M into the real INT/WETH pool for the WETH, reproduced to the wei)",,other token,,access control,2026
+2026-09-21,GaslessReservoirEnabler,erc20WithTransfersAndExecute lets a whitelisted module run unvalidated transferFrom calldata,"8.72 WETH (~$23.8K) across 466 victims with standing approvals to the Enabler; PoC reproduces 3 victims, 2.3546 WETH (~$6.4K, ~27% of the WETH-leg loss)",23800.0,usd,23800.0,input / call validation,2026
+2026-09-21,DoinGud,acceptOffer replay via missing offer cleanup on the amount=0 path,"35,380.154566 USDC net (two byte-identical acceptOffer calls each paid out 35,486.935717 USDC from escrow; funded via a UniV2 flash swap, repaid 35,593.716868 USDC)",106460.807151,stablecoin,106460.807151,input / call validation,2026
+2026-09-21,TheRedVillage,"ungated PolygonTRVRouter forwardRequest relays an attacker-supplied upgradeTo through the router's _authorizeUpgrade role on the SeasonService UUPS proxy, installing a malicious implementation that uses the proxy's TRVZooKeeper roles to pull every player's approved WETH and sweep the vault","31.426018474517367982 WETH (~$80.7K) swept from TRVZooKeeper on Polygon; 299 players with standing WETH approvals were pulled for 31.350379502001368 WETH and the vault's pre-existing 0.075638972516 WETH was swept with them, reproduced to the wei",80700.0,usd,80700.0,access control,2026
+2026-09-23,PancakeV3SwapHelper,Signed Swap Delta Accounting Error,~1.6488688845 BNB (~$1.3K),1300.0,usd,1300.0,business logic,2026
+2026-09-26,DAOstack,permissionless newOrganization lets an attacker hijack an existing Reputation contract and drain the Avatar,"4.025 ETH (full Genesis Alpha treasury); attacker minted 20,000 REP against the victim's real Reputation contract (supply 9,738.6 to 29,738.6, ~67% majority after a 200 REP GenesisProtocol vote-cost burn) and used it to self-install as a full-permission scheme",,other token,,access control,2026
+2026-09-29,LPBonus,reserve inconsistency between reward accrual and LP withdrawal lets a manipulated MSN reserve inflate an LP reward claim,"~92,607 USDT (~$92.6k) on BNB Chain; one LP position claimed 1,442,165.713011 FIST against an accrual that funded ~940,041.612768 FIST, extracted by flash-swapping the MSN reserve down at accrual and back up at withdrawal",92600.0,usd,92600.0,oracle / price manipulation,2026
+2026-09-30,MUS,"deposit refunds a first-deposit bonus and also credits it as withdrawable allocation, so a single deposit-withdraw from a fresh address returns more ETH than deposited","~0.400168 ETH per deposit-withdraw cycle (exactly reproduced) on Ethereum; the MUS pool's standing 5.335 ETH was drained to 0 across the attack block, reported campaign total ~$36.9k across many fresh addresses",36900.0,usd,36900.0,other,2026
+2026-09-30,PositionManager,"deposit values the vault's existing USDT at the manipulable PancakeSwap V3 spot price, so crashing the spot before depositing mints inflated shares that withdraw redeems in the same transaction","32,080.604282 USDT (exactly reproduced) on BNB Chain; one atomic tx crashed the USDT/BTCB spot with an 8,000,000 USDT swap, then ran 24 deposit(1,000,000 USDT)/withdraw cycles to drain the vault's own PancakeSwap V3 position, the pool losing 32,096.098596 USDT",9064176.702878,stablecoin,9064176.702878,oracle / price manipulation,2026
+2026-09-30,SKYDAO,"sell-path controller burns the pair's SKYDAO and syncs before the net sell is credited, latching a near-zero reserve that a direct pair.swap drains for the pair's entire USDT","59,914.12 USDT net to the attacker (exactly reproduced) on BNB Chain; the SKYDAO/USDT PancakeSwap V2 pair lost its entire 183,482.88 USDT reserve, drained by a direct pair.swap against the reserve the sell-path burn+sync latched to ~0",243397.0,stablecoin,243397.0,"token mechanics (fee, tax, rebase, reflection)",2026
+2026-10-01,FlashLoopAdapter,"a Safe module authenticates its caller by asking that caller whether the module is enabled (self-attestation) and then makes an unconstrained call to a caller-supplied router, letting a fake Safe drive the adapter into draining real Safes that enabled it","114.096151 WETH (~$305k, exactly reproduced) on Ethereum; two Safes that enabled the module as a victim were emptied - Safe #1 lost 1306.48 weETH of Aave collateral once its 1335.26 WETH debt was repaid, Safe #2 lost 6.426 weETH, all swapped to WETH via ODOS for the attacker's net",305000.0,usd,305000.0,other,2026
+2026-10-02,GoldPesa,"the GPX V4 hook rebalances protocol liquidity inside beforeSwap via a burn and TAKE_PAIR that run in the attacker's own open PoolManager unlock, and never checks the PositionManager deltas are settled first, so an unsettled mint debt parked in the same unlock nets against the hook's burn credit and the attacker walks the freed USDC out","114,999.999186 USDC (exactly reproduced) on Base; the GPX/USDC V4 pool's protocol liquidity was burned by the hook's own hourly rebalance, and its 148,868.602188 USDC burn credit was split by the shared-unlock delta bug - 33,868.603002 USDC reached the hook while 114,999.999186 USDC paid off the attacker's unsettled mint debt and then exited to the attacker, funded by a 175,000 USDC Morpho flash loan repaid in the same tx",587737.203562,stablecoin,587737.203562,input / call validation,2026
+2026-10-03,MALT,"the MALT/DAI sLP runs its below-peg price recovery inside swap() before sending the output, pulling DAI from the Capital Source treasury into the pool, then checks its constant-product invariant against the final balances without separating the injected treasury DAI from the caller's own input, so a negligible 1 DAI swap is credited with thousands of injected DAI and releases a disproportionate MALT output","13,440.581562307921517594 DAI net profit to the attacker (exactly reproduced) on Polygon; the Capital Source treasury was drained of 12,744.644506590589136718 DAI across two below-peg rebalance injections, the attacker paying just 1 DAI per exploit swap and arbitraging the extracted MALT out on QuickSwap - the ~$72K figure in the original alert does not match the on-chain reconstruction",72000.0,usd,72000.0,oracle / price manipulation,2026
+2026-10-06,MakerDAOFlipKeeper,"the dormant ETH-A flip-keeper proxy's drain selector has no ds-auth check, so anyone can call it to make the keeper vat.hope() a caller-supplied worker and then deal its four undealt 2020 ETH-A auctions and flux/exit the freed 200 WETH of collateral out","exactly 200 ETH (200.000000000000000000 WETH, 0xad78ebc5ac6200000 wei, reproduced with zero variance) to a fresh attacker on Ethereum; the dormant keeper proxy's unprotected drain settled its four undealt 2020 ETH-A liquidation auctions (#1457-1460, 50 WETH each) and swept the freed collateral out - not a MakerDAO core bug, the keeper impl's drain selector simply omits the ds-auth modifier that the contract's other functions carry",,other token,,access control,2026
+2026-10-06,SetProtocol,"a second RebalancingSetTokenV3 vault (ETHMACOAPY) hit by the same permissionless actualizeFee() divCeil rounding, the attacker issues the rebalancing set then donates the residual base set into the vault own backing so the zero-fee recompute bumps unitShares from 12253 to 12264, then redeems the same quantity for more collateral than was deposited, the ~116,000 WETH issue/redeem size supplied fee-free by an Aave-v3-fork flash loan","4.047988247781965824 WETH to the attacker in the first tx (reproduced to the wei) on Ethereum; two independent EOAs drained the ETHMACOAPY rebalancing set across two txs two blocks apart for ~8.11 WETH total, this PoC reconstructs the first tx (0xb54c77dae4c5ff8664779bacfb56d75242f39005b0b7778109d2f9033b9e8fc2) only, the ~116,000 WETH working capital borrowed and repaid in the same tx via a zero-premium Aave-v3-fork flash loan",,other token,,arithmetic / precision,2026
+2026-10-08,X7Finance,"X7Pioneer's claimRewards() adds the unaccounted ETH balance delta into totalRewards on every call but only refreshes lastETHBalance when claimable is non-zero, so calling it with an empty tokenIds array re-counts the same donated delta each time and inflates the per-token reward until a single owned NFT drains the whole pool, the ~26.96 ETH donation supplied by a flash loan and repaid from the drain","~6.78 ETH to the attacker on Ethereum (attacker EOA balance rose 6.777538 ETH; this reconstruction nets 6.793749214542107991 ETH, the difference being the on-chain Aave flash-loan premium and gas, neither modeled); the single draining claimRewards([300]) pays 33.756919822234785023 ETH, matching the on-chain RewardsClaimed to the wei, with the ~26.96 ETH donation capital returned",,other token,,oracle / price manipulation,2026
+2026-10-09,BitBay,"the UsdcDaiV4Vault _withdraw liquidity==0 branch pays the vault entire DAI and USDC balance to the caller with no share-weighted cap, and reposition() is permissionless once the tick is outside the narrow LP range, so the attacker deposits one wei for a single share, swaps the Uniswap v4 pool to push the tick onto tickUpper, calls reposition to recompute a position whose liquidity rounds to zero and leaves the pooled funds as raw balance, then redeems that one share to sweep the whole 14838 DAI pool","14838.466608989135865711 DAI swept from the vault by a single 1-wei share on Polygon (reproduced to the wei against the on-chain Withdrawn amount), the attacker then unwound the drained DAI plus flash-loaned capital to a net ~14,813 USDC profit",29651.466608989136,stablecoin,29651.466608989136,access control,2026
+2026-10-14,UNCXSmartTokenVesting,"VestingManager pools every deposit of a given token in one contract and release() pays a slice of the full contract balance over a global share count, release() debits that global count but leaves the position's deposited shares in place and cancel() then debits the same shares a second time, so the attacker flash-borrows each token, creates self-owned vestings whose tranches are already elapsed and so instantly releasable, releases and cancels soft helper vestings to shrink the share denominator while donating token straight into the pool to raise the balance, then releases a payout vesting against the corrupted denominator and inflated balance to over-withdraw the other vesters backing tokens across five ERC-20s","~88-89K USD across five ERC-20s on Ethereum, retained after the per-token flash loans are repaid and each reproduced to the wei against the tx transfer logs (EDGEN 55,601,598.708417972560603048, ZC 9,055,847.637887682268154756, pepecoin 40,155.284285661160205717, LO0P 65,372.217059159993437512, PAAL 113,657.766933968), the working capital flash-borrowed per token from Uniswap V3 (EDGEN), Uniswap V2 (pepecoin, PAAL) and Uniswap V4 (ZC, LO0P) and repaid in the same leg",89000.0,usd,89000.0,other,2026
+2026-10-15,KolanHook,"KolanHook settles its escrowed ETH buy-windows at the same Uniswap v4 pool's instantaneous spot price with no TWAP or bound and accept() is ungated once a window has expired, so the attacker flash-borrows 6.7 WETH from Balancer, swaps it to move the KLN spot, then calls accept() on two expired windows it does not own so _closeWindow() mispositions their escrowed ETH as single-sided liquidity around the manipulated price and runs an unbounded buyback, and reverses the swap back through that freshly placed ETH liquidity before repaying the loan for a 1.279453 ETH net gain","1.279453 ETH net to the attacker EOA on Ethereum (surplus 1.279914429958618589 ETH after the 6.7 WETH Balancer flash loan is repaid, minus ~0.00046 ETH gas), draining KolanHook's full 2.309861 ETH of escrowed window funds",,other token,,oracle / price manipulation,2026
+2026-10-17,BiFi,"the idle BiFi USDT market freezes its per-block exchange rate and stores the entire 264,059-block inactive gap on the first action, then the interest model charges that full ~36 day gap of deposit interest on every later action in the same block at a utilization rate the attacker sets through permissionless deposit and borrow, so the attacker flash-borrows 40.5M USDT from Morpho, deposits it to seed the frozen gap, borrows to spike utilization, runs a repay and withdraw loop twice to cash out the inflated deposit interest, then repays the loan and swaps the 165,574 USDT surplus to 68.0572 WETH","~165,574 USDT drained from the BiFi USDT market on Ethereum, swapped to 68.057203111718789216 WETH (the PoC reproduces the surplus to 68.057464 WETH, a sub-0.0003 WETH intra-block drift from the parent-block fork point); the profit was taken one block after the exploit contract was deployed by the MEV bot c0ffeebabe front-running the same permissionless mechanism",165574.0,stablecoin,165574.0,access control,2026
+2026-10-17,TIPMine,"TIPMine.mine() is permissionless (its only guards are a supply flag and a once-per-day timer that is already open at lastMineTime 0), and it burns and pushes 2% of the TIP supply straight out of the live TIP/SOL Pancake pair through the TIP token's burnFromPool and distributeFromPool, each of which force-syncs the pair, so the pair's TIP reserve collapses while its SOL reserve is untouched and TIP reprices ~10^8x, letting anyone holding TIP sell it back into the pool and take the SOL side, so the attacker deals in ~36k SOL of flash capital, buys a little TIP then dumps 35,121 SOL to move most of the pool's TIP onto its own side, calls the ungated mine() to burn the pool's remaining TIP down, and sells the held TIP back for almost the entire SOL reserve","~667 SOL drained from the TIP/SOL pool on BNB Chain, taken to the attacker EOA as 667.228863551156127021 SOL (SOL Transfer, log index 182); the PoC reconstructs 706.253909658913182860 SOL, the pool's full ~715 SOL reserve, with the ~39 SOL difference being the real multi-source flash-sourcing cost (a Venus-fork SOL borrow plus 13 ecosystem-pool flash loans) that the deal()-modelled, fee-free capital does not incur",,other token,,oracle / price manipulation,2026
+2026-10-18,AlpsCon,"AlpsCon AI Trade Hub still trusts the canonical Hardhat default account 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 on its onlyVerified whitelist, and that account's private key is public, so the attacker uses an EIP-7702 authorization signed with the known key to delegate the account to exploit code and pass every reward gate, and because each reward hub version imports the previous version's balances through migrate() and then pays claimServiceResults() against the version's already-accumulated profitPerShare while the fresh deposit's entryProfitPerShare is still zero, a brand-new flash-funded ALPS stake in the still-open V6 hub is credited the full historical reward history, so the attacker flash-borrows 1,027,990 USDC from Aave, buys and stakes ALPS, imports the stake forward, over-claims the rewards out of V7/V8/V9, unstakes and sells back, and repays the loan for a 152,295.3625 USDC net gain","~152.8K USDC drained from the AlpsCon AI Trade Hub reward pools on BNB Chain; the attacker EOA received 152,295.3625 USDC before gas, with the Aave flash loan of 1,027,990 USDC repaid in full at 1,028,503.995 USDC. This PoC reconstructs the dominant V9 over-claim leg at a 129,775.6074 USDC net; the remaining 22,519.75 USDC is the V7/V8 cascade inside the real single claimServiceResults() call, which an equivalent standalone call does not reproduce",2513884.7149,stablecoin,2513884.7149,key compromise / phishing,2026
