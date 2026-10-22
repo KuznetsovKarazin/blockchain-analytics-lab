@@ -1,0 +1,52 @@
+{
+  "script": "scripts/a1_elliptic_fundamentals.py",
+  "created_utc": "2026-10-22T19:26:08Z",
+  "git_commit": "08c04320bb9a3feff91e6d591060390ebf16003a",
+  "git_dirty": false,
+  "dirty_files": [],
+  "diff_sha256": null,
+  "python": "3.13.16",
+  "platform": "Linux-6.18.44-fc-v140-x86_64-with-glibc2.39",
+  "cpu_count": 4,
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "torch": null,
+    "lightgbm": "4.7.0",
+    "xgboost": null,
+    "pyarrow": "26.0.0",
+    "networkx": "3.7",
+    "statsmodels": "0.15.0"
+  },
+  "config": {
+    "seeds": 3,
+    "resamples": 200,
+    "budget": 0.01,
+    "prevalences": [
+      0.5,
+      0.2,
+      0.1,
+      0.05,
+      0.02,
+      0.01,
+      0.005
+    ],
+    "windows": [
+      "1-7",
+      "8-14",
+      "15-21",
+      "22-28",
+      "29-35",
+      "36-42",
+      "43-49"
+    ]
+  },
+  "data": {
+    "data/raw/elliptic/elliptic_txs_classes.csv": "93e2e7b2405c735ba752bf6ba06b947561deddd1f5a8fc91e46f6a4c0e439493",
+    "data/raw/elliptic/elliptic_txs_features.csv": "fd7f83573443c9e302e371d3f110e3b6224160f5d1ed8a287757936127800ff0",
+    "data/raw/elliptic/elliptic_txs_edgelist.csv": "a35053ba68a98e4382cae2ba65b9d9e36b23b6439e02dff084971b1b72a5156e"
+  },
+  "data_sets": {}
+}
