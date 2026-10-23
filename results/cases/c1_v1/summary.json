@@ -1,0 +1,67 @@
+{
+  "rows_part_a": 38752578,
+  "value_rows_part_b": 31571827,
+  "incident": {
+    "cold_wallet_volume_before_first_new_target": 90000.0,
+    "address_keys_unique_in_cold_wallet_rows": true,
+    "cold_wallet_delegatecalls_before_incident_day": 3,
+    "cold_wallet_delegate_targets_before": [
+      "0x34cfac646f301356faa8b21e94227e3583fe3f5f"
+    ],
+    "new_delegate_targets_incident_day": [
+      {
+        "block": 21895238,
+        "time": "2025-02-21 14:13:35",
+        "target": "0x96221423681a6d52e184d440a8efcebb105c7242",
+        "tx": "0x46deef0f52e3a983b67abf4714448a41dd7ffd6d32d32da69d62081c68ad7882"
+      },
+      {
+        "block": 21895246,
+        "time": "2025-02-21 14:15:11",
+        "target": "0xbdd077f651ebe7f7b3ce16fe5f2b025be2969516",
+        "tx": "0x25800d105db4f21908d646a7a3db849343737c5fba0bc5701f782bf0e75217c9"
+      }
+    ],
+    "drain_block": 21895251,
+    "drain_time": "2025-02-21 14:16:11",
+    "drained_eth": 401346.7688584047,
+    "first_new_target_block": 21895238,
+    "lead_blocks": 13,
+    "lead_seconds": 156.0
+  },
+  "dispersion": [
+    {
+      "hub_threshold": 50,
+      "hubs": 4350,
+      "traced_addresses": 10085,
+      "eth_into_hubs": 392357.34930120164,
+      "hours_to_below_50pct": 133.0,
+      "hours_to_below_10pct": 210.0,
+      "held_share_after_24h": 0.9835678728484896,
+      "held_share_after_7d": 0.32286112540022965,
+      "held_share_end": 0.022395507232064207
+    },
+    {
+      "hub_threshold": 100,
+      "hubs": 2351,
+      "traced_addresses": 10086,
+      "eth_into_hubs": 392357.34930120164,
+      "hours_to_below_50pct": 133.0,
+      "hours_to_below_10pct": 210.0,
+      "held_share_after_24h": 0.9835678728484896,
+      "held_share_after_7d": 0.32286112540022965,
+      "held_share_end": 0.022395507232064207
+    },
+    {
+      "hub_threshold": 500,
+      "hubs": 754,
+      "traced_addresses": 10275,
+      "eth_into_hubs": 392315.60535863554,
+      "hours_to_below_50pct": 133.0,
+      "hours_to_below_10pct": 210.0,
+      "held_share_after_24h": 0.9835678728484896,
+      "held_share_after_7d": 0.3232104679101685,
+      "held_share_end": 0.02249912337119074
+    }
+  ]
+}

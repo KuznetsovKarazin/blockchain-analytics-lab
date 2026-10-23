@@ -4,83 +4,119 @@
   "date_min": "2017-07-19",
   "date_max": "2026-10-18",
   "parse_counts": {
-    "usd": 535,
-    "other token": 176,
+    "usd": 537,
+    "other token": 174,
     "unit not stated": 79,
     "stablecoin": 68,
     "missing": 32,
     "unknown": 7
   },
-  "share_with_usd": 0.6722408026755853,
-  "share_other_class": 0.08361204013377926,
+  "share_with_usd": 0.6744704570791528,
+  "share_other_class": 0.0903010033444816,
   "recent_from_year": 2021,
   "recent_n": 883,
-  "recent_with_usd": 596,
-  "recent_usd_total": 3330585484.566038,
-  "recent_usd_median": 80000.0,
-  "recent_top10_share": 0.6866660563429396,
-  "recent_usd_total_lenient": 5325432284.566038,
-  "recent_with_usd_lenient": 674,
-  "recent_top1pct_share": 0.570170022297876,
+  "recent_with_usd": 598,
+  "recent_usd_total": 3331585484.566038,
+  "recent_usd_median": 80350.0,
+  "recent_top10_share": 0.68645994845241,
+  "recent_usd_total_lenient": 5326432284.566038,
+  "recent_with_usd_lenient": 676,
+  "recent_top1pct_share": 0.5699988815527445,
+  "by_component": [
+    {
+      "component": "bridge / cross-chain",
+      "incidents": 15.0,
+      "with_usd": 14.0,
+      "usd_total": 1590217751.554381,
+      "usd_median": 4350000.0,
+      "usd_top1_share": 0.39239909087297153,
+      "with_usd_lenient": 14.0,
+      "usd_total_lenient": 1590217751.554381,
+      "share_incidents": 0.01698754246885617,
+      "share_usd": 0.4773156081154909
+    },
+    {
+      "component": "other or not stated",
+      "incidents": 868.0,
+      "with_usd": 584.0,
+      "usd_total": 1741367733.0116572,
+      "usd_median": 76750.0,
+      "usd_top1_share": 0.11485224872870729,
+      "with_usd_lenient": 662.0,
+      "usd_total_lenient": 3736214533.0116568,
+      "share_incidents": 0.9830124575311439,
+      "share_usd": 0.5226843918845091
+    }
+  ],
   "largest": [
     {
       "date": "2022-03-29",
       "name": "Ronin Network",
-      "cause_class": "bridge / cross-chain message",
+      "cause_class": "other",
+      "component": "bridge / cross-chain",
       "loss_usd": 624000000.0
     },
     {
       "date": "2021-08-11",
       "name": "Poly Network",
-      "cause_class": "bridge / cross-chain message",
+      "cause_class": "other",
+      "component": "bridge / cross-chain",
       "loss_usd": 611000000.0
     },
     {
       "date": "2023-03-13",
       "name": "EulerFinance",
       "cause_class": "business logic",
+      "component": "other or not stated",
       "loss_usd": 200000000.0
     },
     {
       "date": "2022-04-16",
       "name": "BeanstalkFarms",
       "cause_class": "flash-loan assisted (unspecified)",
+      "component": "other or not stated",
       "loss_usd": 182000000.0
     },
     {
       "date": "2022-08-02",
       "name": "Nomad Bridge",
-      "cause_class": "bridge / cross-chain message",
+      "cause_class": "input / call validation",
+      "component": "bridge / cross-chain",
       "loss_usd": 152000000.0
     },
     {
       "date": "2021-10-27",
       "name": "CreamFinance",
       "cause_class": "oracle / price manipulation",
+      "component": "other or not stated",
       "loss_usd": 130000000.0
     },
     {
       "date": "2025-11-03",
       "name": "BalancerV2",
       "cause_class": "arithmetic / precision",
+      "component": "other or not stated",
       "loss_usd": 120000000.0
     },
     {
       "date": "2022-06-24",
       "name": "Harmony's Horizon Bridge",
       "cause_class": "key compromise / phishing",
+      "component": "bridge / cross-chain",
       "loss_usd": 100000000.0
     },
     {
       "date": "2023-02-02",
       "name": "BonqDAO",
       "cause_class": "oracle / price manipulation",
+      "component": "other or not stated",
       "loss_usd": 88000000.0
     },
     {
       "date": "2022-01-28",
       "name": "Qubit Finance",
-      "cause_class": "bridge / cross-chain message",
+      "cause_class": "other",
+      "component": "bridge / cross-chain",
       "loss_usd": 80000000.0
     }
   ]

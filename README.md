@@ -3,7 +3,7 @@
 Reproducible studies of blockchain security data: threat models and incident
 statistics (S), AI fundamentals on transaction data (A), data collection and
 preprocessing (D), transaction patterns (P), streaming monitoring (M) and
-federated, privacy-preserving detection (F).
+federated, privacy-preserving detection (F), plus one incident case (C).
 
 Every number comes from a numbered script in `scripts/` and is stored with a
 manifest (code commit, uncommitted diff hash, input files, package versions,
@@ -17,7 +17,7 @@ reused from the public project
 | Study | Question | Data | Script → results |
 |---|---|---|---|
 | S1 | How sensitive are double-spend confirmation rules to discretized time and limited attacker patience? | analytical + Monte Carlo | `s1_double_spend.py` → `results/security/s1_v1` |
-| S2 | Which root causes and protocol types carry the indexed DeFi losses? | DeFiHackLabs | `s2_incident_statistics.py` → `results/security/s2_v1` |
+| S2 | Which stated causes and attacked components (bridge or not) carry the indexed DeFi losses? | DeFiHackLabs | `s2_incident_statistics.py` → `results/security/s2_v1` |
 | A1 | How do model families, prevalence and time windows change Elliptic metrics and feature importance? | Elliptic | `a1_elliptic_fundamentals.py` → `results/fundamentals/a1_v1` |
 | D1 | What do public Ethereum/Bitcoin tables encode silently; how do normalisation and label versions change results? | AWS public blockchain data, OFAC lists, ethereum-lists | `d1_eth_pipeline.py` → `results/data/d1_v1` |
 | D2 | Do imbalance remedies help under a temporal split? | Elliptic | `d2_imbalance.py` → `results/data/d2_v1` |
@@ -27,7 +27,9 @@ reused from the public project
 | P4 | Ponzi contracts from bytecode under random, grouped, distinct-code and temporal evaluation | AWS ETH contracts 2015–2017, ethereum-ponzi | `p4_ponzi.py` → `results/patterns/p4_v1` |
 | M1 | Unsupervised threshold policies on a block stream: alert load and cost | AWS ETH blocks 2023–2025 | `m1_block_stream.py` → `results/monitoring/m1_v1` |
 | M2 | Supervised stream with delayed labels: fixed, budget, recalibrated, retrained; scoring latency | Elliptic | `m2_elliptic_stream.py` → `results/monitoring/m2_v1` |
-| F1 | Central vs local vs FedAvg under three partitions; client-level DP; pairwise-masking cost | Elliptic | `f1_federated.py` → `results/federated/f1_v1` |
+| F1 | Central vs local vs FedAvg under three partitions; clipping and Gaussian noise at client level; pairwise-masking cost (simulation) | Elliptic | `f1_federated.py` → `results/federated/f1_v1` |
+| F1b | What F1's privacy numbers certify: RDP accountant under add/remove and replace-one adjacency, and what is not accounted | F1 results | `f1b_dp_accounting.py` → `results/federated/f1b_v1` |
+| C1 | Exchange cold-wallet drain (2025-02-21): first on-chain signal, its alert cost on ordinary days, dispersion of the stolen ether | AWS ETH traces and token transfers, Feb–Mar 2025 | `c1_custody_drain.py` → `results/cases/c1_v1` |
 
 ## Quick start
 
@@ -48,6 +50,15 @@ a few hours; P4 reads about four million contract bytecodes day by day.
 
 * Results are deterministic given the seeds in each script, the pinned data
   revisions and the package versions recorded in each `manifest.json`.
+* Studies that read the AWS cache write `inputs_<chain>_<table>.csv` next to
+  their results: one row per day with row count, columns, SHA-256 of the cached
+  file and the upstream object keys, sizes and modification times. A study
+  refuses to run when a day in its range is missing from the cache, unless the
+  day is marked missing upstream. The cached files themselves (tens of GB) are
+  not part of the repository.
+* F1 reports conditional privacy-accountant values, not an end-to-end
+  differential-privacy guarantee of the pipeline (see `f1b_dp_accounting.py`).
+* Timing measurements limit numerical thread pools to one thread.
 * All online statistics in M1/M2 use only past blocks or steps; thresholds are
   never chosen on test data.
 * Labels that are not ours to redistribute (Elliptic, ethereum-ponzi) are never

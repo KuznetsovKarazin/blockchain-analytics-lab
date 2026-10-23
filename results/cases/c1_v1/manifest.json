@@ -1,0 +1,62 @@
+{
+  "script": "scripts/c1_custody_drain.py",
+  "created_utc": "2026-10-23T12:02:08Z",
+  "git_commit": "da30f33e5b001004bcddce1d23fc9c983f8b6737",
+  "git_dirty": false,
+  "dirty_files": [],
+  "diff_sha256": null,
+  "python": "3.13.16",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+  "cpu_count": 4,
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "torch": null,
+    "lightgbm": "4.7.0",
+    "xgboost": null,
+    "pyarrow": "26.0.0",
+    "networkx": "3.7",
+    "statsmodels": "0.15.0"
+  },
+  "config": {
+    "hist0": "2025-02-07",
+    "eval0": "2025-02-14",
+    "incident": "2025-02-21",
+    "end": "2025-03-07",
+    "hv_volume": 10000.0,
+    "n_prior": [
+      1,
+      3,
+      10
+    ],
+    "x_eth": [
+      100.0,
+      1000.0,
+      10000.0
+    ],
+    "r3": [
+      100.0,
+      2.0,
+      5
+    ],
+    "taint_min": 0.01,
+    "hub_h": [
+      50,
+      100,
+      500
+    ]
+  },
+  "data": {},
+  "data_sets": {
+    "eth_traces_slim": {
+      "n_files": 29,
+      "sha256": "1e36e4cca5a6fa4885c3ca71a82c776227628a948449bc4ca5f74eebc60e3490"
+    },
+    "eth_token_transfers": {
+      "n_files": 1,
+      "sha256": "b1256bddc8a9696ba481f222ebec38b9f90d9f5e3362b862d319fdc57cf07f71"
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
   "script": "scripts/m1_block_stream.py",
-  "created_utc": "2026-10-23T00:16:16Z",
-  "git_commit": "e00d7e4e8ff11f3f8bbd744bc29c1ea07720ff14",
+  "created_utc": "2026-10-23T10:59:59Z",
+  "git_commit": "24b9ad3206a96917ceb7bdcc8818b461ac6cfea8",
   "git_dirty": false,
   "dirty_files": [],
   "diff_sha256": null,
   "python": "3.13.16",
-  "platform": "Linux-6.18.44-fc-v140-x86_64-with-glibc2.39",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
   "cpu_count": 4,
   "packages": {
     "numpy": "2.5.4",
@@ -22,6 +22,7 @@
   },
   "config": {
     "start": "2023-01-01",
+    "eval_start": "2023-02-01",
     "end": "2025-12-31",
     "window": 7200,
     "half_life": 1800,
@@ -29,5 +30,10 @@
     "merge": 25
   },
   "data": {},
-  "data_sets": {}
+  "data_sets": {
+    "eth_blocks": {
+      "n_files": 1096,
+      "sha256": "8481c41e49ceebe56425ce6af72c917fc1afa8f8dcc9bba0d3ade3128b744096"
+    }
+  }
 }

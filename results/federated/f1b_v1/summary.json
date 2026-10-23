@@ -1,0 +1,113 @@
+{
+  "rounds": 100,
+  "delta": 1e-05,
+  "source": "results/federated/f1_v1/dp_summary.csv",
+  "status": "conditional accountant values; not an end-to-end DP guarantee of F1",
+  "not_accounted": [
+    "pooled standardisation statistics",
+    "clip bound from a non-private pilot",
+    "validation-based checkpoint selection"
+  ],
+  "rows": [
+    {
+      "clients": 10,
+      "noise_mult": 0.0,
+      "clip": 0.03503831603147523,
+      "epsilon_add_remove": Infinity,
+      "epsilon_replace_one": Infinity,
+      "ap": 0.615511435394252,
+      "ap_sd": 0.05835345282609951,
+      "f1": 0.5997665682299295
+    },
+    {
+      "clients": 10,
+      "noise_mult": 0.5,
+      "clip": 0.03503831603147523,
+      "epsilon_add_remove": 295.98860467145937,
+      "epsilon_replace_one": 991.9883549775914,
+      "ap": 0.6115633890445564,
+      "ap_sd": 0.03881554193490686,
+      "f1": 0.5687429099963649
+    },
+    {
+      "clients": 10,
+      "noise_mult": 1.0,
+      "clip": 0.03503831603147523,
+      "epsilon_add_remove": 97.98638970791339,
+      "epsilon_replace_one": 295.98860467145937,
+      "ap": 0.6013104935646533,
+      "ap_sd": 0.024959495974735978,
+      "f1": 0.5351887304582922
+    },
+    {
+      "clients": 10,
+      "noise_mult": 2.0,
+      "clip": 0.03503831603147523,
+      "epsilon_add_remove": 36.49277972034369,
+      "epsilon_replace_one": 97.98638970791339,
+      "ap": 0.5628171206547951,
+      "ap_sd": 0.06293481209302937,
+      "f1": 0.5571177645735985
+    },
+    {
+      "clients": 10,
+      "noise_mult": 4.0,
+      "clip": 0.03503831603147523,
+      "epsilon_add_remove": 15.121368496287996,
+      "epsilon_replace_one": 36.49277972034369,
+      "ap": 0.4586838034071477,
+      "ap_sd": 0.15029670134091816,
+      "f1": 0.4578519801113239
+    },
+    {
+      "clients": 100,
+      "noise_mult": 0.0,
+      "clip": 0.026170751605400826,
+      "epsilon_add_remove": Infinity,
+      "epsilon_replace_one": Infinity,
+      "ap": 0.4295889831555271,
+      "ap_sd": 0.1026306848347149,
+      "f1": 0.44536305361014533
+    },
+    {
+      "clients": 100,
+      "noise_mult": 0.5,
+      "clip": 0.026170751605400826,
+      "epsilon_add_remove": 295.98860467145937,
+      "epsilon_replace_one": 991.9883549775914,
+      "ap": 0.430817365716297,
+      "ap_sd": 0.10181149109804695,
+      "f1": 0.44595670268989046
+    },
+    {
+      "clients": 100,
+      "noise_mult": 1.0,
+      "clip": 0.026170751605400826,
+      "epsilon_add_remove": 97.98638970791339,
+      "epsilon_replace_one": 295.98860467145937,
+      "ap": 0.4310044142756743,
+      "ap_sd": 0.10049387367029937,
+      "f1": 0.4464538439975696
+    },
+    {
+      "clients": 100,
+      "noise_mult": 2.0,
+      "clip": 0.026170751605400826,
+      "epsilon_add_remove": 36.49277972034369,
+      "epsilon_replace_one": 97.98638970791339,
+      "ap": 0.43046822635689375,
+      "ap_sd": 0.09678294055999634,
+      "f1": 0.44464713231049435
+    },
+    {
+      "clients": 100,
+      "noise_mult": 4.0,
+      "clip": 0.026170751605400826,
+      "epsilon_add_remove": 15.121368496287996,
+      "epsilon_replace_one": 36.49277972034369,
+      "ap": 0.4279791533556661,
+      "ap_sd": 0.08848373514628469,
+      "f1": 0.45192123527102585
+    }
+  ]
+}

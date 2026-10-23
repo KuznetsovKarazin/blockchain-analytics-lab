@@ -112,27 +112,27 @@
   "latency": [
     {
       "model": "logistic regression",
-      "single_ms_median": 0.22228449961403385,
-      "single_ms_p99": 0.6503563305341228,
-      "batch1000_us_per_tx": 0.6859712000732543
+      "single_ms_median": 0.33358249993398204,
+      "single_ms_p99": 0.9784508198026733,
+      "batch1000_us_per_tx": 0.861674000043422
     },
     {
       "model": "random forest (500)",
-      "single_ms_median": 27.901185500013526,
-      "single_ms_p99": 50.252089389650784,
-      "batch1000_us_per_tx": 58.360278799955275
+      "single_ms_median": 36.40115000007427,
+      "single_ms_p99": 70.0889883696618,
+      "batch1000_us_per_tx": 119.53726260016992
     },
     {
       "model": "LightGBM (400)",
-      "single_ms_median": 0.5422565009212121,
-      "single_ms_p99": 0.7013185187497554,
-      "batch1000_us_per_tx": 22.541886399994837
+      "single_ms_median": 1.0200734996033134,
+      "single_ms_p99": 1.425284599208676,
+      "batch1000_us_per_tx": 32.06541979998291
     },
     {
-      "model": "MLP 165-64-1 (numpy)",
-      "single_ms_median": 0.03088749963353621,
-      "single_ms_p99": 0.09932766981364669,
-      "batch1000_us_per_tx": 1.2846530000388157
+      "model": "MLP 165-64-1 (numpy, untrained: forward pass only)",
+      "single_ms_median": 0.055533000249852194,
+      "single_ms_p99": 0.1697799193880199,
+      "batch1000_us_per_tx": 2.2903252000105567
     }
   ],
   "thr_fixed": 0.5912263537664225,

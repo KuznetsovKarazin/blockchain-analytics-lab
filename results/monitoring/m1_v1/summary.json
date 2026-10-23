@@ -3,96 +3,96 @@
   "policies": [
     {
       "policy": "fixed",
-      "alerts": 71155,
-      "incidents": 21542,
-      "alerts_per_day_mean": 64.92244525547446,
+      "alerts": 70501,
+      "incidents": 21214,
+      "alerts_per_day_mean": 66.1981220657277,
       "alerts_per_day_median": 24.0,
-      "incidents_per_day_mean": 19.655109489051096,
-      "incidents_per_day_p99": 67.09999999999991,
-      "days_without_alert": 0.0018248175182481751,
+      "incidents_per_day_mean": 19.91924882629108,
+      "incidents_per_day_p99": 67.7199999999998,
+      "days_without_alert": 0.0018779342723004694,
       "worst_day": "2023-05-06",
       "worst_day_alerts": 5702,
       "alerts_per_day_by_year": {
-        "2023": 107.14794520547945,
+        "2023": 115.13473053892216,
         "2024": 44.39890710382514,
         "2025": 43.276712328767125
       },
       "per_signal_alerts": {
-        "log_base_fee": 40722,
-        "gas_ratio": 13516,
-        "tx_count": 17509
+        "log_base_fee": 40499,
+        "gas_ratio": 13293,
+        "tx_count": 17289
       }
     },
     {
       "policy": "rolling",
-      "alerts": 155200,
-      "incidents": 30740,
-      "alerts_per_day_mean": 141.6058394160584,
-      "alerts_per_day_median": 37.5,
-      "incidents_per_day_mean": 28.047445255474454,
+      "alerts": 158913,
+      "incidents": 29979,
+      "alerts_per_day_mean": 149.21408450704226,
+      "alerts_per_day_median": 43.0,
+      "incidents_per_day_mean": 28.149295774647886,
       "incidents_per_day_p99": 77.0,
-      "days_without_alert": 0.002737226277372263,
+      "days_without_alert": 0.0009389671361502347,
       "worst_day": "2025-10-06",
-      "worst_day_alerts": 3006,
+      "worst_day_alerts": 2497,
       "alerts_per_day_by_year": {
-        "2023": 147.7835616438356,
-        "2024": 68.3879781420765,
-        "2025": 208.84657534246574
+        "2023": 147.30239520958085,
+        "2024": 80.05191256830601,
+        "2025": 220.31506849315068
       },
       "per_signal_alerts": {
-        "log_base_fee": 105901,
+        "log_base_fee": 111753,
         "gas_ratio": 0,
-        "tx_count": 50536
+        "tx_count": 48442
       }
     },
     {
       "policy": "ewma",
-      "alerts": 16880,
-      "incidents": 10993,
-      "alerts_per_day_mean": 15.401459854014599,
-      "alerts_per_day_median": 8.0,
-      "incidents_per_day_mean": 10.030109489051094,
+      "alerts": 16217,
+      "incidents": 10764,
+      "alerts_per_day_mean": 15.227230046948357,
+      "alerts_per_day_median": 7.0,
+      "incidents_per_day_mean": 10.107042253521128,
       "incidents_per_day_p99": 44.0,
-      "days_without_alert": 0.04470802919708029,
-      "worst_day": "2023-01-01",
-      "worst_day_alerts": 109,
+      "days_without_alert": 0.046009389671361506,
+      "worst_day": "2023-06-10",
+      "worst_day_alerts": 102,
       "alerts_per_day_by_year": {
-        "2023": 27.923287671232877,
+        "2023": 28.52994011976048,
         "2024": 9.8551912568306,
         "2025": 8.441095890410958
       },
       "per_signal_alerts": {
-        "log_base_fee": 2465,
+        "log_base_fee": 2127,
         "gas_ratio": 0,
-        "tx_count": 14467
+        "tx_count": 14135
       }
     },
     {
       "policy": "quantile",
-      "alerts": 58153,
-      "incidents": 17335,
-      "alerts_per_day_mean": 53.059306569343065,
-      "alerts_per_day_median": 34.0,
-      "incidents_per_day_mean": 15.816605839416058,
-      "incidents_per_day_p99": 28.049999999999955,
+      "alerts": 57103,
+      "incidents": 16876,
+      "alerts_per_day_mean": 53.61784037558685,
+      "alerts_per_day_median": 35.0,
+      "incidents_per_day_mean": 15.846009389671362,
+      "incidents_per_day_p99": 28.3599999999999,
       "days_without_alert": 0.0,
       "worst_day": "2025-12-07",
       "worst_day_alerts": 415,
       "alerts_per_day_by_year": {
-        "2023": 38.775342465753425,
+        "2023": 39.23053892215569,
         "2024": 52.71857923497268,
         "2025": 67.68493150684931
       },
       "per_signal_alerts": {
-        "log_base_fee": 39248,
-        "gas_ratio": 9052,
-        "tx_count": 10284
+        "log_base_fee": 38737,
+        "gas_ratio": 8799,
+        "tx_count": 9985
       }
     }
   ],
   "cost": {
-    "ewma_us_per_block": 0.58290155803167,
-    "window_median_us_per_block": 174.64632520000123,
+    "ewma_us_per_block": 0.8640487809804045,
+    "window_median_us_per_block": 248.85770479995702,
     "z_last": 1.0848384806374758
   },
   "fixed_thresholds": {
