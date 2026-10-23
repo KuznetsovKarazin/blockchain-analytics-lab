@@ -19,6 +19,7 @@ reused from the public project
 | S1 | How sensitive are double-spend confirmation rules to discretized time and limited attacker patience? | analytical + Monte Carlo | `s1_double_spend.py` → `results/security/s1_v1` |
 | S2 | Which stated causes and attacked components (bridge or not) carry the indexed DeFi losses? | DeFiHackLabs | `s2_incident_statistics.py` → `results/security/s2_v1` |
 | A1 | How do model families, prevalence and time windows change Elliptic metrics and feature importance? | Elliptic | `a1_elliptic_fundamentals.py` → `results/fundamentals/a1_v1` |
+| A1b | Prevalence (population no-skill reference) versus the expected AP of a random score on finite samples | Elliptic labels | `a1b_random_ap.py` → `results/fundamentals/a1b_v1` |
 | D1 | What do public Ethereum/Bitcoin tables encode silently; how do normalisation and label versions change results? | AWS public blockchain data, OFAC lists, ethereum-lists | `d1_eth_pipeline.py` → `results/data/d1_v1` |
 | D2 | Do imbalance remedies help under a temporal split? | Elliptic | `d2_imbalance.py` → `results/data/d2_v1` |
 | P1 | Periodicity and bursts in block-level activity | AWS ETH/BTC blocks 2023–2025 | `p1_time_patterns.py` → `results/patterns/p1_v1` |

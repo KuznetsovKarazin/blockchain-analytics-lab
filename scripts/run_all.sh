@@ -22,6 +22,7 @@ if [ "$lane" = rest ] || [ "$lane" = all ]; then
   run s1_double_spend.py results/security/s1_v1
   run s2_incident_statistics.py results/security/s2_v1
   run a1_elliptic_fundamentals.py results/fundamentals/a1_v1
+  run a1b_random_ap.py results/fundamentals/a1b_v1
   run d1_eth_pipeline.py results/data/d1_v1
   run d2_imbalance.py results/data/d2_v1
   run p1_time_patterns.py results/patterns/p1_v1
