@@ -37,8 +37,11 @@ def cache_dir(chain: str, table: str) -> Path:
     return CACHE / f"{chain}_{table}"
 
 
-def fetch_day(fs, chain: str, table: str, day: str, columns: list[str], retries: int = 4) -> dict | None:
-    out = cache_dir(chain, table) / f"{day}.parquet"
+def fetch_day(fs, chain: str, table: str, day: str, columns: list[str], retries: int = 4,
+              row_filter=None, alias: str | None = None) -> dict | None:
+    """Cache one day; `row_filter` (a pyarrow.compute expression) keeps a subset of rows,
+    stored as table `alias` (cache folder <chain>_<alias>)."""
+    out = cache_dir(chain, alias or table) / f"{day}.parquet"
     if out.exists():
         return None
     prefix = f"{BUCKET}/v1.0/{chain}/{table}/date={day}"
@@ -51,11 +54,14 @@ def fetch_day(fs, chain: str, table: str, day: str, columns: list[str], retries:
             tables = [pq.read_table(i.path, filesystem=fs, columns=columns) for i in infos]
             import pyarrow as pa
             t = pa.concat_tables(tables) if len(tables) > 1 else tables[0]
+            n_src = t.num_rows
+            if row_filter is not None:
+                t = t.filter(row_filter)
             out.parent.mkdir(parents=True, exist_ok=True)
             tmp = out.with_suffix(".tmp")
             pq.write_table(t, tmp, compression="zstd")
             tmp.replace(out)
-            return {"day": day, "status": "ok", "rows": t.num_rows,
+            return {"day": day, "status": "ok", "rows": t.num_rows if row_filter is None else f"{t.num_rows}/{n_src}",
                     "keys": ";".join(i.path.removeprefix(BUCKET + "/") for i in infos),
                     "sizes": ";".join(str(i.size) for i in infos),
                     "mtimes": ";".join(str(i.mtime) for i in infos)}
@@ -77,10 +83,56 @@ def append_index(chain: str, table: str, rec: dict) -> None:
         w.writerow({k: rec.get(k, "") for k in w.fieldnames})
 
 
-def read_cached(chain: str, table: str, start: str, end: str, columns: list[str] | None = None):
-    import pandas as pd
-    files = [cache_dir(chain, table) / f"{d}.parquet" for d in days(start, end)]
-    files = [f for f in files if f.exists()]
+def cache_status(chain: str, table: str) -> dict[str, dict]:
+    """Last cache_index.csv record per day (status 'ok', 'missing' upstream or 'error')."""
+    idx = cache_dir(chain, table) / "cache_index.csv"
+    if not idx.exists():
+        return {}
+    with open(idx, newline="") as f:
+        return {r["day"]: r for r in csv.DictReader(f)}
+
+
+def cached_files(chain: str, table: str, start: str, end: str) -> list[Path]:
+    """Cached files of the days start..end. Every day must be cached unless the cache
+    index records it as missing upstream; any other gap raises (no silent gaps)."""
+    status = cache_status(chain, table)
+    files = []
+    for d in days(start, end):
+        f = cache_dir(chain, table) / f"{d}.parquet"
+        if f.exists():
+            files.append(f)
+        elif status.get(d, {}).get("status") != "missing":
+            raise FileNotFoundError(f"{chain}/{table}: day {d} is not cached (run scripts/d0_cache_aws.py)")
     if not files:
         raise FileNotFoundError(f"no cached {chain}/{table} between {start} and {end}")
-    return pd.concat([pd.read_parquet(f, columns=columns) for f in files], ignore_index=True), files
+    return files
+
+
+def read_cached(chain: str, table: str, start: str, end: str, columns: list[str] | None = None):
+    """Read the cached days start..end (coverage checked by `cached_files`)."""
+    import pandas as pd
+    files = cached_files(chain, table, start, end)
+    df = pd.concat([pd.read_parquet(f, columns=columns) for f in files], ignore_index=True)
+    if columns is not None and list(df.columns) != list(columns):
+        raise ValueError(f"{chain}/{table}: expected columns {columns}, got {list(df.columns)}")
+    return df, files
+
+
+def write_input_index(out_dir, chain: str, table: str, files, name: str | None = None) -> Path:
+    """inputs_<chain>_<table>.csv next to the results: per cached day the upstream object
+    keys, sizes and modification times, the cached row count and the SHA-256 of the
+    cached file, so that a run can be traced to the exact AWS objects it read."""
+    import pyarrow.parquet as pq
+    from bclab.repro import sha256_file
+    status = cache_status(chain, table)
+    out = Path(out_dir) / (name or f"inputs_{chain}_{table}.csv")
+    with open(out, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["day", "rows", "columns", "sha256", "upstream_keys", "upstream_sizes", "upstream_mtimes"])
+        for p in files:
+            p = Path(p)
+            r = status.get(p.stem, {})
+            md = pq.ParquetFile(p).metadata
+            w.writerow([p.stem, md.num_rows, ";".join(md.schema.names), sha256_file(p),
+                        r.get("keys", ""), r.get("sizes", ""), r.get("mtimes", "")])
+    return out

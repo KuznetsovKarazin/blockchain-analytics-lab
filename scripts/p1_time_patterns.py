@@ -8,8 +8,9 @@ hour holds about six blocks, too few for a stable count).
   (a) periodicity: periodogram of the de-trended hourly Ethereum series
       (log counts minus a centred 7-day rolling mean); strongest periods
   (b) seasonality: mean profile by hour of day (UTC) and by weekday
-  (c) bursts: robust z-score of log counts against a trailing 28-day median
-      and MAD (only past data, as a monitor would see it); bursts are runs with
+  (c) bursts: robust z-score of log counts against the median of the trailing
+      28 days and the median absolute deviation from that median over the same
+      window (only past data, as a monitor would see it; no score if MAD = 0); bursts are runs with
       z >= 5; the same rule applied to Bitcoin daily counts
 
 Outputs: results/patterns/p1_<stamp>/
@@ -25,7 +26,8 @@ import numpy as np
 import pandas as pd
 
 from bclab import figures as F
-from bclab.aws import read_cached
+from bclab.aws import read_cached, write_input_index
+from bclab.online import rolling_mad_z
 from bclab.repro import atomic_to_csv, dump_json, set_seed, write_manifest
 
 START, END = "2023-01-01", "2025-12-31"
@@ -33,9 +35,8 @@ Z_BURST = 5.0
 
 
 def robust_z(x: pd.Series, window: int) -> pd.Series:
-    med = x.rolling(window, min_periods=window // 2).median().shift(1)
-    mad = (x - med).abs().rolling(window, min_periods=window // 2).median().shift(1)
-    return (x - med) / (1.4826 * mad.replace(0, np.nan))
+    """Median and MAD of the trailing `window` points (bclab.online.rolling_mad_z)."""
+    return pd.Series(rolling_mad_z(x.to_numpy(), window, workers=1), index=x.index)
 
 
 def runs(flag: pd.Series) -> pd.DataFrame:
@@ -144,7 +145,9 @@ def main() -> None:
                "btc_bursts_top": bb.sort_values("peak_z", ascending=False).head(10).astype(str).to_dict(orient="records"),
                "eth_tx_per_hour_by_year": yearly.to_dict(orient="records")}
     dump_json(summary, out / "summary.json")
-    write_manifest(out, script="scripts/p1_time_patterns.py",
+    write_input_index(out, "eth", "blocks", efiles)
+    write_input_index(out, "btc", "blocks", bfiles)
+    write_manifest(out, script="scripts/p1_time_patterns.py", data_sets={"eth_blocks": efiles, "btc_blocks": bfiles},
                    config={"start": START, "end": END, "z_burst": Z_BURST, "eth_window_h": 24 * 28, "btc_window_d": 28})
     print(top.to_string())
     print(prof_w.to_string())

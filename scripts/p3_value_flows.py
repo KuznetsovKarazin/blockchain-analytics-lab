@@ -34,7 +34,7 @@ import numpy as np
 import pandas as pd
 
 from bclab import figures as F
-from bclab.aws import read_cached
+from bclab.aws import read_cached, write_input_index
 from bclab.repro import atomic_to_csv, dump_json, set_seed, write_manifest
 
 WEEKS = {"2022w30": ("2022-07-25", "2022-07-31"), "2024w10": ("2024-03-04", "2024-03-10")}
@@ -62,9 +62,11 @@ def main() -> None:
     ofac = {a.strip().lower() for a in txt.split() if a.strip()}
 
     cand_rows, round_rows, large_rows, hits_by_week = [], [], [], {}
+    files_used = []
     for week, (a, b) in WEEKS.items():
-        df, _ = read_cached("eth", "transactions", a, b,
+        df, f_ = read_cached("eth", "transactions", a, b,
                             ["block_timestamp", "from_address", "to_address", "value", "receipt_status"])
+        files_used += f_
         df = df[(df.receipt_status == 1) & (df.value > 0) & (df.to_address != "None")]
         df = df.assign(eth=df.value / WEI, to=df.to_address.str.lower())
         g = df.groupby("to")
@@ -149,12 +151,14 @@ def main() -> None:
     axes[1].set_ylabel("share with <= 2 significant digits")
     axes[1].set_title("(b) round values")
     axes[1].legend(frameon=False)
+    fig.subplots_adjust(wspace=0.45)
     F.save(fig, out, "fig_p3")
     dump_json({"rule_summary": summ.to_dict(orient="records"),
                "hits": hits[["week", "to", "n_in", "modal_eth", "modal_share", "pow10_share", "n_denoms", "senders",
                                      "rule_single", "rule_multi", "in_reference_list"]].to_dict(orient="records"),
                "large": lg_.to_dict(orient="records")}, out / "summary.json")
-    write_manifest(out, script="scripts/p3_value_flows.py",
+    write_input_index(out, "eth", "transactions", files_used)
+    write_manifest(out, script="scripts/p3_value_flows.py", data_sets={"eth_transactions": files_used},
                    config={"weeks": WEEKS, "min_in": MIN_IN, "ofac_sha": OFAC_SHA, "modal_share": 0.99})
     print(summ.to_string())
     print(hits[["week", "to", "n_in", "modal_eth", "modal_share", "pow10_share", "n_denoms", "senders",

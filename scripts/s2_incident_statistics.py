@@ -10,7 +10,9 @@ incidents, not of all incidents.
 Outputs (results/security/s2_<stamp>/):
   incidents.csv     one row per incident: date, name, root-cause text, class, parsed USD
   by_year.csv       incidents and parsed USD losses per year
-  by_class.csv      incidents and parsed USD losses per root-cause class (2021 onward)
+  by_class.csv      incidents and parsed USD losses per stated-cause class (2021 onward)
+  by_component.csv  the same per attacked component (bridge / cross-chain or other);
+                    component and cause are separate codings (see bclab.incidents)
   class_audit.csv   40 random titles with their class (for a manual consistency check)
   fig_s2.png/.eps/.pdf
 """
@@ -19,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import subprocess
+import textwrap
 import time
 from pathlib import Path
 
@@ -68,7 +71,15 @@ def main() -> None:
     by_class["share_usd"] = by_class["usd_total"] / by_class["usd_total"].sum()
     atomic_to_csv(by_class, out / "by_class.csv", index=False)
 
-    audit = df.sample(40, random_state=2026)[["date", "name", "cause_text", "cause_class"]]
+    by_comp = (recent.groupby("component").apply(summarise, include_groups=False).reset_index())
+    by_comp["share_incidents"] = by_comp["incidents"] / by_comp["incidents"].sum()
+    by_comp["share_usd"] = by_comp["usd_total"] / by_comp["usd_total"].sum()
+    atomic_to_csv(by_comp, out / "by_component.csv", index=False)
+    bridge_by_cause = (recent[recent.component == "bridge / cross-chain"]
+                       .groupby("cause_class").apply(summarise, include_groups=False).reset_index())
+    atomic_to_csv(bridge_by_cause, out / "bridge_by_cause.csv", index=False)
+
+    audit = df.sample(40, random_state=2026)[["date", "name", "cause_text", "cause_class", "component"]]
     audit["cause_text"] = audit["cause_text"].str.slice(0, 200)
     atomic_to_csv(audit, out / "class_audit.csv", index=False)
 
@@ -85,9 +96,9 @@ def main() -> None:
     axes[0].barh(y - 0.2, bc["share_incidents"] * 100, 0.4, color="0.35", edgecolor="0", label="incidents")
     axes[0].barh(y + 0.2, bc["share_usd"] * 100, 0.4, color="white", edgecolor="0", hatch="///",
                  label="parsed USD loss")
-    axes[0].set_yticks(y, bc["cause_class"])
+    axes[0].set_yticks(y, [textwrap.fill(c, 24) for c in bc["cause_class"]], fontsize=6)
     axes[0].set_xlabel("share, %")
-    axes[0].set_title(f"(a) root-cause classes, {args.from_year}-{int(df.year.max())}")
+    axes[0].set_title(f"(a) stated-cause classes, {args.from_year}-{int(df.year.max())}")
     axes[0].legend(frameon=False, loc="lower right")
     yr = by_year[by_year.year >= args.from_year]
     axes[1].bar(yr["year"], yr["incidents"], color="0.75", edgecolor="0")
@@ -113,7 +124,8 @@ def main() -> None:
         "recent_top10_share": float(top10),
         "recent_usd_total_lenient": float(recent["loss_usd_lenient"].sum()),
         "recent_with_usd_lenient": int(recent["loss_usd_lenient"].notna().sum()), "recent_top1pct_share": float(top1pct),
-        "largest": recent.nlargest(10, "loss_usd")[["date", "name", "cause_class", "loss_usd"]]
+        "by_component": by_comp.to_dict(orient="records"),
+        "largest": recent.nlargest(10, "loss_usd")[["date", "name", "cause_class", "component", "loss_usd"]]
                          .astype({"date": str}).to_dict(orient="records"),
     }
     dump_json(summary, out / "summary.json")

@@ -17,6 +17,9 @@ lane=${1:-all}
 if [ "$lane" = fed ] || [ "$lane" = all ]; then
   run f1_federated.py results/federated/f1_v1
 fi
+if [ "$lane" = fed ] || [ "$lane" = rest ] || [ "$lane" = all ]; then
+  run f1b_dp_accounting.py results/federated/f1b_v1     # reads f1_v1, no training
+fi
 if [ "$lane" = rest ] || [ "$lane" = all ]; then
   run s1_double_spend.py results/security/s1_v1
   run s2_incident_statistics.py results/security/s2_v1
@@ -29,4 +32,5 @@ if [ "$lane" = rest ] || [ "$lane" = all ]; then
   run p4_ponzi.py results/patterns/p4_v1
   run m1_block_stream.py results/monitoring/m1_v1
   run m2_elliptic_stream.py results/monitoring/m2_v1
+  run c1_custody_drain.py results/cases/c1_v1
 fi

@@ -1,7 +1,7 @@
 import numpy as np
 
 from bclab import doublespend as ds
-from bclab.incidents import classify, parse_usd
+from bclab.incidents import classify, component, parse_usd
 
 
 def test_exact_matches_known_values():
@@ -34,9 +34,19 @@ def test_parse_usd():
     assert parse_usd("204,215.57 USDC") == (204215.57, "stablecoin")
     assert parse_usd("~22 ETH") == (None, "other token")
     assert parse_usd("1.5B") == (None, "unit not stated")
+    # leading-decimal amounts (SafeDollar, Chainswap in the index)
+    assert parse_usd("$.2 million") == (0.2e6, "usd")
+    assert parse_usd("$.8 million") == (0.8e6, "usd")
 
 
 def test_classify_first_match():
     assert classify("Penpie - Reentrancy and Reward Manipulation") == "reentrancy"
     assert classify("Harmony's Horizon Bridge - Private key compromised") == "key compromise / phishing"
     assert classify("X - Lack Slippage Protection") == "slippage / front-running"
+
+
+def test_component_is_separate_from_cause():
+    t = "Harmony's Horizon Bridge - Private key compromised"
+    assert component(t) == "bridge / cross-chain"
+    assert classify(t) == "key compromise / phishing"
+    assert component("Penpie - Reentrancy") == "other or not stated"

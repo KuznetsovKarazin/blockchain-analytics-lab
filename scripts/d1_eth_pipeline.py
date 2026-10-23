@@ -13,7 +13,9 @@ Parts
       float64 number of wei, exact only below 2**53 wei), heavy tails;
   (b) time-series hygiene of block headers: Ethereum missed slots (gaps that are
       multiples of 12 s), Bitcoin timestamps that go backwards;
-  (c) sender-level features for 2024-03-04..10 and four normalisations
+  (c) sender-level features for 2024-03-04..10 (ether sent counts successful
+      transactions only; the value of failed attempts is a separate feature) and four
+      normalisations
       (z-score, log1p + z-score, robust median/IQR, rank); overlap of the top 1%
       most anomalous senders under a scale-sensitive detector (k-NN distance)
       and under Isolation Forest;
@@ -37,7 +39,7 @@ from sklearn.ensemble import IsolationForest
 from sklearn.neighbors import NearestNeighbors
 
 from bclab import figures as F
-from bclab.aws import read_cached
+from bclab.aws import cached_files, read_cached, write_input_index
 from bclab.repro import atomic_to_csv, dump_json, set_seed, write_manifest
 
 WEEKS = {"2022w30": ("2022-07-25", "2022-07-31"), "2024w10": ("2024-03-04", "2024-03-10")}
@@ -106,12 +108,16 @@ def blocks_hygiene() -> tuple[dict, pd.DataFrame]:
 
 def sender_features(df: pd.DataFrame) -> pd.DataFrame:
     ts = df.block_timestamp.astype("int64") // 10 ** 9
-    df = df.assign(ts=ts, eth=df.value / WEI, fee=df.receipt_gas_used * df.gas_price / WEI,
-                   failed=(df.receipt_status == 0).astype(int),
+    ok = df.receipt_status == 1
+    df = df.assign(ts=ts, fee=df.receipt_gas_used * df.gas_price / WEI,
+                   eth_sent=np.where(ok, df.value / WEI, 0.0),             # value actually transferred
+                   eth_failed=np.where(ok, 0.0, df.value / WEI),           # value of failed attempts
+                   failed=(~ok).astype(int),
                    create=(df.receipt_contract_address.fillna("") != "").astype(int))
     g = df.groupby("from_address")
-    f = pd.DataFrame({"n_tx": g.size(), "n_to": g.to_address.nunique(), "eth_out": g.eth.sum(),
-                      "eth_max": g.eth.max(), "fee_eth": g.fee.sum(), "gas_price_gwei": g.gas_price.mean() / 1e9,
+    f = pd.DataFrame({"n_tx": g.size(), "n_to": g.to_address.nunique(), "eth_sent": g.eth_sent.sum(),
+                      "eth_max_sent": g.eth_sent.max(), "eth_failed_attempts": g.eth_failed.sum(),
+                      "fee_eth": g.fee.sum(), "gas_price_gwei": g.gas_price.mean() / 1e9,
                       "failed_share": g.failed.mean(), "creations": g.create.sum(),
                       "span_h": (g.ts.max() - g.ts.min()) / 3600, "nonce_max": g.nonce.max()})
     return f
@@ -215,7 +221,7 @@ def main() -> None:
     F.style()
     import matplotlib.pyplot as plt
     fig, axes = plt.subplots(1, 2, figsize=(6.5, 2.7))
-    for i, (col, lab_) in enumerate((("eth_out", "ETH sent"), ("n_tx", "transactions sent"),
+    for i, (col, lab_) in enumerate((("eth_sent", "ETH sent (successful tx)"), ("n_tx", "transactions sent"),
                                      ("gas_price_gwei", "mean gas price, gwei"))):
         x = np.sort(feats[col].to_numpy(float))
         x = x[x > 0]
@@ -244,7 +250,12 @@ def main() -> None:
     summary = {"audit": aud.to_dict(orient="records"), "blocks": hyg, "coverage": cov.to_dict(orient="records"),
                "overlap": jac.to_dict(orient="records"), "n_senders": len(feats), "sample": len(fs)}
     dump_json(summary, out / "summary.json")
+    bl = {c: cached_files(c, "blocks", "2023-01-01", "2025-12-31") for c in ("eth", "btc")}
+    write_input_index(out, "eth", "transactions", files_used)
+    for c, fl in bl.items():
+        write_input_index(out, c, "blocks", fl)
     write_manifest(out, script="scripts/d1_eth_pipeline.py",
+                   data_sets={"eth_transactions": files_used, "eth_blocks": bl["eth"], "btc_blocks": bl["btc"]},
                    config={"weeks": WEEKS, "n_sample": N_SAMPLE, "top": TOP, "knn_k": 10,
                            "ofac_snapshots": OFAC_SNAPSHOTS},
                    data_files=[DARK])

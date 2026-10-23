@@ -132,8 +132,8 @@ def main() -> None:
     axes[0].set_title("(a) ranking quality")
     axes[1].set_ylabel("mean predicted probability")
     axes[1].set_title("(b) probability scale")
-    axes[0].legend(frameon=False, fontsize=6)
-    axes[1].legend(frameon=False, fontsize=6)
+    for a_ in axes:      # framed legends: the hatched and grey keys stay readable in print
+        a_.legend(frameon=True, framealpha=1, edgecolor="0.6", fontsize=6)
     F.save(fig, out, "fig_d2")
     dump_json({"summary": agg.to_dict(orient="records")}, out / "summary.json")
     write_manifest(out, script="scripts/d2_imbalance.py", config={"seeds": args.seeds, "budget": BUDGET, "smote_k": 5},

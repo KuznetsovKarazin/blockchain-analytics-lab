@@ -180,7 +180,7 @@ def main() -> None:
     xx = np.arange(4)
     axes[1].bar(xx - 0.2, sub_lf["ap"], 0.4, color="white", edgecolor="0", hatch="///", label="LF (93 local)")
     axes[1].bar(xx + 0.2, sub["ap"], 0.4, color="0.35", edgecolor="0", label="AF (165 all)")
-    axes[1].set_xticks(xx, ["logistic\nregression", "isolation\nforest", "random\nforest", "LightGBM"])
+    axes[1].set_xticks(xx, ["logistic\nregression", "isolation\nforest", "random\nforest", "Light-\nGBM"], fontsize=6)
     axes[1].set_ylabel("average precision, test 35-49")
     axes[1].set_title("(b) model family and feature set")
     axes[1].legend(frameon=False)

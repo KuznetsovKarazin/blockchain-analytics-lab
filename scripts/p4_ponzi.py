@@ -42,7 +42,7 @@ from sklearn.model_selection import StratifiedGroupKFold, StratifiedKFold
 
 from bclab import evm
 from bclab import figures as F
-from bclab.aws import cache_dir
+from bclab.aws import cached_files, write_input_index
 from bclab.repro import atomic_to_csv, dump_json, set_seed, write_manifest
 
 PONZI = Path("data/raw/ethereum-ponzi/ponzi-addresses.csv")
@@ -77,7 +77,8 @@ def main() -> None:
 
     # read day by day and keep one copy of each distinct bytecode (memory: ~4M rows,
     # but only tens of thousands of distinct codes)
-    files = sorted(cache_dir("eth", "contracts").glob("*.parquet"))
+    files = cached_files("eth", "contracts", "2015-07-30", "2017-12-31")
+    write_input_index(out, "eth", "contracts", files)
     parts, code_of = [], {}
     for f in files:
         t = pd.read_parquet(f, columns=["address", "bytecode", "block_timestamp"])
@@ -218,7 +219,7 @@ def main() -> None:
                "importance_top": imp.head(10).to_dict(), "sample_prevalence": float(y.mean())}, out / "summary.json")
     write_manifest(out, script="scripts/p4_ponzi.py",
                    config={"n_neg": N_NEG, "repeats": args.repeats, "split_date": str(SPLIT_DATE.date())},
-                   data_files=[PONZI])
+                   data_files=[PONZI], data_sets={"eth_contracts": files})
     print(cv_sum.to_string())
     print(tmp.to_string())
     print(imp.head(10))

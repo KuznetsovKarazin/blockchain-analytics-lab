@@ -9,14 +9,18 @@ a delay of DELAY steps (investigation time).
 
 Alerting policies
   fixed       threshold maximising F1 on validation steps 31-34; never updated
-  budget      the top 1% of the step's transactions by score (constant load)
+  budget      exactly the k = round(0.01 n) highest-scored of the step's n transactions
+              (ties broken by row order; constant load, batch policy)
   recal       threshold re-chosen after each step to maximise F1 on the most
               recent four steps whose labels have arrived
   retrain     model retrained after each step on all labelled steps whose
               labels have arrived (expanding window), threshold as in recal
 
-Also: scoring latency of four model families on one CPU thread, for one
-transaction at a time and for a batch of 1,000.
+Also: scoring latency of four model families on one CPU thread (BLAS and OpenMP
+pools limited to one thread), for one transaction at a time and for a batch of
+1,000 ready-made 165-dimensional feature vectors. This is a microbenchmark of model
+scoring only: no RPC, feature extraction, confirmations or network. The MLP is not
+trained; its row measures the cost of a forward pass.
 
 Outputs: results/monitoring/m2_<stamp>/
 """
@@ -31,6 +35,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.metrics import f1_score, precision_score, recall_score
+from threadpoolctl import threadpool_limits
 
 from bal.data.elliptic import TEST_STEPS, TRAIN_STEPS, VAL_STEPS, load_elliptic
 from bal.eval.metrics import threshold_at_val_f1
@@ -86,12 +91,19 @@ def main() -> None:
         r_all = retrain_model.predict_score(X[allm])
         r_lab = retrain_model.predict_score(X[lab])
         scores["base"][t], scores["retrain"][t] = s_lab, r_lab
+        # budget: exactly the k highest scores of the step (ties broken by row order),
+        # a batch policy that needs all scores of the step
         k = max(1, int(round(BUDGET * allm.sum())))
-        thr_budget = np.sort(s_all)[-k]
+        top = np.lexsort((np.arange(len(s_all)), -s_all))[:k]
+        budget_all = np.zeros(len(s_all), bool)
+        budget_all[top] = True
+        is_lab = y[allm] >= 0
+        thr_budget = float(s_all[top].min())
         for pol, thr, sa, sl in (("fixed", thr_fixed, s_all, s_lab), ("budget", thr_budget, s_all, s_lab),
                                  ("recal", recal_thr, s_all, s_lab), ("retrain", retrain_thr, r_all, r_lab)):
-            pred = sl >= thr
-            rows.append({"step": t, "policy": pol, "alerts_all": int((sa >= thr).sum()), "n_all": int(allm.sum()),
+            alert_all = budget_all if pol == "budget" else sa >= thr
+            pred = alert_all[is_lab]
+            rows.append({"step": t, "policy": pol, "alerts_all": int(alert_all.sum()), "n_all": int(allm.sum()),
                          "alerts_labelled": int(pred.sum()), "n_labelled": int(lab.sum()), "pos": int(y[lab].sum()),
                          "tp": int((pred & (y[lab] == 1)).sum()),
                          "precision": precision_score(y[lab], pred, zero_division=np.nan),
@@ -138,9 +150,11 @@ def main() -> None:
             m.est.set_params(n_jobs=1)
     mlp = MLP(X.shape[1], seed=0)
     mu, sd = X[tr].mean(0), X[tr].std(0) + 1e-6
-    lat = latency({"logistic regression": mods["logreg"].predict_score, "random forest (500)": mods["rf"].predict_score,
-                   "LightGBM (400)": mods["lgbm"].predict_score,
-                   "MLP 165-64-1 (numpy)": lambda Z: mlp.score((Z - mu) / sd)}, Xs)
+    with threadpool_limits(limits=1):          # BLAS/OpenMP pools pinned to one thread
+        lat = latency({"logistic regression": mods["logreg"].predict_score,
+                       "random forest (500)": mods["rf"].predict_score,
+                       "LightGBM (400)": mods["lgbm"].predict_score,
+                       "MLP 165-64-1 (numpy, untrained: forward pass only)": lambda Z: mlp.score((Z - mu) / sd)}, Xs)
     lat = pd.DataFrame(lat)
     atomic_to_csv(lat, out / "latency.csv", index=False)
 

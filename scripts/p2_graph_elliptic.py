@@ -2,18 +2,20 @@
 P2 - Network-based analysis on the Elliptic transaction graph.
 
 Each Elliptic time step is a separate graph (edges never cross steps). For the
-training steps 1-30 we compute, per step, on the directed graph:
-  in-degree, out-degree, PageRank (alpha 0.85), betweenness (sampled, k = 500
-  pivots, fixed seed) and the local clustering coefficient of the undirected
-  version; and Louvain communities (networkx, resolution 1, fixed seed).
+training steps 1-30 we compute, per step:
+  in-degree, out-degree and PageRank (alpha 0.85) on the directed graph;
+  betweenness (sampled, k = 500 pivots, fixed seed) and the local clustering
+  coefficient on its undirected version; and Louvain communities (networkx,
+  resolution 1, fixed seed).
 
 Questions
   (a) Are illicit transactions more central? ROC-AUC and AP of each centrality
       used directly as an illicit score, against the prevalence among labelled
       nodes (AUC < 0.5 means illicit nodes are LESS central).
   (b) Do communities group behaviour? Label homophily: share of labelled edges
-      joining two illicit or two licit nodes, versus the share expected if labels
-      were shuffled; and a leave-one-out community score (illicit share of the
+      joining two illicit or two licit nodes, versus p^2 + (1-p)^2, the share
+      expected if labels were independent of the graph (a formula, not a
+      shuffle experiment); and a leave-one-out community score (illicit share of the
       other labelled members of a node's community) evaluated by AP.
 
 Outputs: results/patterns/p2_<stamp>/
@@ -116,7 +118,7 @@ def main() -> None:
     axes[0].set_ylim(0, 1)
     axes[0].set_title("(a) centrality vs community")
     axes[1].plot(hom.step, hom.same_label_share, color="0", marker="o", ms=2.5, label="observed")
-    axes[1].plot(hom.step, hom.expected_if_random, color="0.5", ls="--", marker="s", ms=2.5, label="labels shuffled")
+    axes[1].plot(hom.step, hom.expected_if_random, color="0.5", ls="--", marker="s", ms=2.5, label="independent labels")
     axes[1].set_xlabel("time step")
     axes[1].set_ylabel("edges joining equal labels")
     axes[1].set_title("(b) label homophily, steps 1-30")

@@ -6,9 +6,15 @@ Each incident is a markdown section "### YYYYMMDD <name> - <root cause>" followe
 tokens. We convert to USD only what the text states in dollars or in USD-pegged
 stablecoins; amounts in other tokens are left unconverted (no price lookup).
 
-Root-cause classes come from keyword rules over the title. The rules are
-deliberately coarse, ordered (first match wins) and reported with the share of
-titles that fall through to "other".
+Two separate codings come from keyword rules over the title:
+  * cause_class: a coarse class of the stated proximate cause (ordered rules, first
+    match wins; the share of titles that fall through to "other" is reported). A
+    flash loan is an instrument, not a cause; titles that name nothing but a flash
+    loan form their own residual class.
+  * component: the attacked component when the title names a bridge or cross-chain
+    messaging ("bridge / cross-chain"), else "other or not stated". A bridge is a
+    target, not a cause: a bridge incident also has a cause class (key compromise,
+    validation, ...).
 """
 
 from __future__ import annotations
@@ -25,7 +31,6 @@ LOST = re.compile(r"^#+\s*Lost\s*:?\s*(.*)$", re.I)
 # (class, regex over the lower-cased title); first match wins
 CLASSES: list[tuple[str, str]] = [
     ("key compromise / phishing", r"private key|key compromis|compromised key|phishing|social engineer|leaked key|default account|known key"),
-    ("bridge / cross-chain message", r"bridge|cross-chain|crosschain"),
     ("reentrancy", r"reentran|re-entran|read-only"),
     ("oracle / price manipulation", r"price manipulation|oracle|manipulat|twap|spot price|share price|donation|inflation attack|first deposit|sync\(|\bk\b value|price"),
     ("slippage / front-running", r"slippage|sandwich|front-?run|mev\b"),
@@ -40,7 +45,7 @@ CLASSES: list[tuple[str, str]] = [
 ]
 
 _MULT = {"k": 1e3, "thousand": 1e3, "m": 1e6, "mm": 1e6, "million": 1e6, "b": 1e9, "billion": 1e9}
-_NUM = r"(\d[\d,]*(?:\.\d+)?)\s*(k|m|mm|b|thousand|million|billion)?\b"
+_NUM = r"(\d[\d,]*(?:\.\d+)?|\.\d+)\s*(k|m|mm|b|thousand|million|billion)?\b"
 USD_PATTERNS = [
     re.compile(r"\$\s*" + _NUM, re.I),                                   # $1.2M, $ 70k
     re.compile(_NUM + r"\s*(?:us\$|usd\b|us dollars|dollars)", re.I),     # 4.9M USD, 152M US$
@@ -75,6 +80,13 @@ def parse_usd(text: str) -> tuple[float | None, str]:
     if re.search(r"unclear|unknown|n/a", t, re.I):
         return None, "unknown"
     return None, "other token"
+
+
+COMPONENT = r"bridge|cross-chain|crosschain"
+
+
+def component(title: str) -> str:
+    return "bridge / cross-chain" if re.search(COMPONENT, title.lower()) else "other or not stated"
 
 
 def classify(title: str) -> str:
@@ -114,6 +126,7 @@ def parse_readme(path: str | Path) -> pd.DataFrame:
     lenient = [(_value(n, k if isinstance(k, str) else None) if isinstance(n, str) else np.nan) for n, k in zip(bare[0], bare[1])]
     df["loss_usd_lenient"] = df["loss_usd"].where(df["loss_usd"].notna(), lenient)
     df["cause_class"] = (df["name"] + " " + df["cause_text"]).map(classify)
+    df["component"] = (df["name"] + " " + df["cause_text"]).map(component)
     df["source_file"] = str(path)
     return df
 

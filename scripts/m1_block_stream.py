@@ -9,14 +9,19 @@ Threshold policies, applied to each signal separately (upper tail; an alert is
 raised when any signal crosses):
   fixed      99.9th percentile of January 2023, never updated
   rolling    robust z >= 6 against the trailing 7,200 blocks (about one day):
-             median and MAD of past blocks only
+             median of those blocks and the median absolute deviation from that
+             median, both over the same window (bclab.online.rolling_mad_z)
   ewma       z >= 6 against an exponentially weighted mean and variance of past
-             blocks (half-life 1,800 blocks, about six hours)
+             blocks (half-life 1,800 blocks, about six hours; bclab.online.ewma_z)
   quantile   value above the 99.9th percentile of the trailing 7,200 blocks
              (a rate-controlling rule: about 7 crossings per signal per day
              if the recent past is representative)
 Alert handling: raw alerts, and incidents = alerts merged when they are less than
 25 blocks (about five minutes) apart.
+
+January 2023 is calibration (fixed threshold) and warm-up (adaptive statistics);
+all policies are evaluated on 2023-02-01..2025-12-31. Adaptive statistics use only
+blocks before the scored block. A zero MAD or variance gives no score (no alert).
 
 Reported: alerts and incidents per day, share of days with no alert, worst day,
 and the per-block CPU cost of the online update for the ewma policy (O(1)) and
@@ -35,10 +40,13 @@ import numpy as np
 import pandas as pd
 
 from bclab import figures as F
-from bclab.aws import read_cached
+from bclab.aws import read_cached, write_input_index
+from bclab.online import ewma_z as _ewma_z
+from bclab.online import rolling_mad_z
 from bclab.repro import atomic_to_csv, dump_json, set_seed, write_manifest
 
 START, END = "2023-01-01", "2025-12-31"
+EVAL_START = "2023-02-01"
 WINDOW, HALF_LIFE, Z, MERGE = 7200, 1800, 6.0, 25
 
 
@@ -49,16 +57,11 @@ def signals(b: pd.DataFrame) -> pd.DataFrame:
 
 
 def rolling_z(x: pd.Series) -> pd.Series:
-    med = x.rolling(WINDOW, min_periods=WINDOW // 2).median().shift(1)
-    mad = (x - med).abs().rolling(WINDOW, min_periods=WINDOW // 2).median().shift(1)
-    return (x - med) / (1.4826 * mad.replace(0, np.nan))
+    return pd.Series(rolling_mad_z(x.to_numpy(), WINDOW), index=x.index)
 
 
 def ewma_z(x: pd.Series) -> pd.Series:
-    a = 1 - 0.5 ** (1 / HALF_LIFE)
-    m = x.ewm(alpha=a, adjust=False).mean().shift(1)
-    v = ((x - m) ** 2).ewm(alpha=a, adjust=False).mean().shift(1)
-    return (x - m) / np.sqrt(v.replace(0, np.nan))
+    return pd.Series(_ewma_z(x.to_numpy(), HALF_LIFE), index=x.index)
 
 
 def rolling_q(x: pd.Series) -> pd.Series:
@@ -77,10 +80,10 @@ def bench(x: np.ndarray, n: int = 50_000) -> dict:
     m, v = x[0], 0.0
     t0 = time.perf_counter()
     for xi in x[1:n]:
-        z = (xi - m) / (v ** 0.5 + 1e-12)
         d = xi - m
+        z = d / (v ** 0.5 + 1e-12)
         m += a * d
-        v = (1 - a) * (v + a * d * d)
+        v = (1 - a) * v + a * d * d      # same recursion as bclab.online.ewma_z
     t_ewma = (time.perf_counter() - t0) / (n - 1)
     buf = x[:WINDOW].copy()
     t0 = time.perf_counter()
@@ -100,28 +103,23 @@ def main() -> None:
     set_seed(0)
     out = Path(args.out or f"results/monitoring/m1_{time.strftime('%Y%m%d_%H%M%S')}")
     out.mkdir(parents=True, exist_ok=True)
-    b, _ = read_cached("eth", "blocks", START, END,
+    b, bfiles = read_cached("eth", "blocks", START, END,
                        ["number", "timestamp", "transaction_count", "gas_used", "gas_limit", "base_fee_per_gas"])
     b = b.drop_duplicates("number").sort_values("number").reset_index(drop=True)
     S = signals(b)
     day = b.timestamp.dt.normalize()
-    jan = (b.timestamp < "2023-02-01").to_numpy()
+    jan = (b.timestamp < EVAL_START).to_numpy()
 
-    flags = {}
-    fixed_thr = S[jan].quantile(0.999)
-    flags["fixed"] = (S > fixed_thr).any(axis=1).to_numpy()
-    flags["rolling"] = (S.apply(rolling_z) >= Z).any(axis=1).to_numpy()
-    flags["ewma"] = (S.apply(ewma_z) >= Z).any(axis=1).to_numpy()
+    ev = ~jan                                     # evaluation blocks
+    Zr = S.apply(rolling_z)
+    Ze = S.apply(ewma_z)
     Q = S.apply(rolling_q)
-    flags["quantile"] = (S > Q).any(axis=1).to_numpy()
-    per_signal = {pol: {} for pol in flags}
-    for col in S.columns:
-        per_signal["fixed"][col] = int((S[col] > fixed_thr[col]).sum())
-        per_signal["rolling"][col] = int((rolling_z(S[col]) >= Z).sum())
-        per_signal["ewma"][col] = int((ewma_z(S[col]) >= Z).sum())
-        per_signal["quantile"][col] = int((S[col] > Q[col]).sum())
+    fixed_thr = S[jan].quantile(0.999)
+    per_col = {"fixed": S > fixed_thr, "rolling": Zr >= Z, "ewma": Ze >= Z, "quantile": S > Q}
+    flags = {pol: f.any(axis=1).to_numpy() & ev for pol, f in per_col.items()}
+    per_signal = {pol: {c: int((f[c].to_numpy() & ev).sum()) for c in S.columns} for pol, f in per_col.items()}
 
-    days = pd.Index(day.unique())
+    days = pd.Index(day[ev].unique())
     daily, summ = [], []
     for pol, f in flags.items():
         idx = np.flatnonzero(f)
@@ -172,8 +170,9 @@ def main() -> None:
     F.save(fig, out, "fig_m1")
     dump_json({"blocks": len(b), "policies": summ.to_dict(orient="records"), "cost": cost,
                "fixed_thresholds": fixed_thr.to_dict()}, out / "summary.json")
-    write_manifest(out, script="scripts/m1_block_stream.py",
-                   config={"start": START, "end": END, "window": WINDOW, "half_life": HALF_LIFE, "z": Z, "merge": MERGE})
+    write_input_index(out, "eth", "blocks", bfiles)
+    write_manifest(out, script="scripts/m1_block_stream.py", data_sets={"eth_blocks": bfiles},
+                   config={"start": START, "eval_start": EVAL_START, "end": END, "window": WINDOW, "half_life": HALF_LIFE, "z": Z, "merge": MERGE})
     print(summ.to_string())
     print(cost)
 
