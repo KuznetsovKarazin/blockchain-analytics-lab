@@ -17,7 +17,7 @@ def trace_order_key(trace_address: pd.Series) -> pd.Series:
     """Sortable key for the call tree: '' for the root call, '00000,00002' for [0, 2].
     Lexicographic order of the keys is the pre-order (execution start) order."""
     def pad(s):
-        if s is None or (isinstance(s, float) and np.isnan(s)) or s == "":
+        if s is None or (isinstance(s, float) and np.isnan(s)) or s in ("", "None"):
             return ""
         return ",".join(f"{int(p):05d}" for p in str(s).split(","))
     return trace_address.map(pad)

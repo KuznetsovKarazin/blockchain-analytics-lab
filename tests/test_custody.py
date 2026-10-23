@@ -44,3 +44,8 @@ def test_taint_same_block_forwarding_and_hour_convention():
     assert r["held"][1] == 10.0           # the transfer at 1.5 h is not yet counted at 1 h
     assert r["held"][2] == 4.0            # ... and is counted at 2 h
     assert r["to_hubs"] == 6.0
+
+
+def test_trace_order_key_root_spellings():
+    k = trace_order_key(pd.Series(["None", None, "", "0", "0,1"], dtype=object))
+    assert k.tolist() == ["", "", "", "00000", "00000,00001"]
