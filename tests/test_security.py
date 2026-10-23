@@ -49,4 +49,4 @@ def test_component_is_separate_from_cause():
     t = "Harmony's Horizon Bridge - Private key compromised"
     assert component(t) == "bridge / cross-chain"
     assert classify(t) == "key compromise / phishing"
-    assert component("Penpie - Reentrancy") == "other or not stated"
+    assert component("Penpie - Reentrancy") == "no bridge keyword in title"

@@ -8,11 +8,11 @@ stablecoins; amounts in other tokens are left unconverted (no price lookup).
 
 Two separate codings come from keyword rules over the title:
   * cause_class: a coarse class of the stated proximate cause (ordered rules, first
-    match wins; the share of titles that fall through to "other" is reported). A
-    flash loan is an instrument, not a cause; titles that name nothing but a flash
-    loan form their own residual class.
+    match wins; the share of titles that fall through, "unclassified by keyword rules",
+    is reported). A flash loan is an instrument, not a cause; titles that name
+    nothing but a flash loan form their own residual class.
   * component: the attacked component when the title names a bridge or cross-chain
-    messaging ("bridge / cross-chain"), else "other or not stated". A bridge is a
+    messaging ("bridge / cross-chain"), else "no bridge keyword in title". A bridge is a
     target, not a cause: a bridge incident also has a cause class (key compromise,
     validation, ...).
 """
@@ -82,11 +82,12 @@ def parse_usd(text: str) -> tuple[float | None, str]:
     return None, "other token"
 
 
+UNCLASSIFIED = "unclassified by keyword rules"
 COMPONENT = r"bridge|cross-chain|crosschain"
 
 
 def component(title: str) -> str:
-    return "bridge / cross-chain" if re.search(COMPONENT, title.lower()) else "other or not stated"
+    return "bridge / cross-chain" if re.search(COMPONENT, title.lower()) else "no bridge keyword in title"
 
 
 def classify(title: str) -> str:
@@ -94,7 +95,7 @@ def classify(title: str) -> str:
     for name, rx in CLASSES:
         if re.search(rx, t):
             return name
-    return "other"
+    return UNCLASSIFIED
 
 
 def parse_readme(path: str | Path) -> pd.DataFrame:

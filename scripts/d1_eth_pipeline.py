@@ -245,6 +245,7 @@ def main() -> None:
                          color="white" if M[i_, j_] > 0.5 else "black")
     axes[1].set_title("(b) overlap of top-1% senders")
     fig.colorbar(im, ax=axes[1], fraction=0.046)
+    fig.subplots_adjust(wspace=0.6)
     F.save(fig, out, "fig_d1")
 
     summary = {"audit": aud.to_dict(orient="records"), "blocks": hyg, "coverage": cov.to_dict(orient="records"),

@@ -208,7 +208,7 @@ def main() -> None:
     errs = list(s_.ap_sd) + [tmp.ap.std()]
     prev_ = list(s_.prevalence) + [tmp.test_pos.iloc[0] / tmp.test_n.iloc[0]]
     ax.bar(xx, vals, yerr=errs, capsize=2, color=["0.9", "0.7", "0.5", "0.3", "0.1"], edgecolor="0")
-    ax.scatter(xx, prev_, marker="_", s=200, color="0", zorder=3, label="prevalence (AP of a random score)")
+    ax.scatter(xx, prev_, marker="_", s=200, color="0", zorder=3, label="prevalence (no-skill PR reference)")
     ax.legend(frameon=False, fontsize=6, loc="lower left")
     ax.set_xticks(xx, ["random\nfolds", "grouped:\nexact", "grouped:\nnear-\nclones", "distinct\ncodes", "temporal\n2016/2017"],
                   fontsize=6)

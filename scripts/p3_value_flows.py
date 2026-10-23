@@ -40,6 +40,8 @@ from bclab.repro import atomic_to_csv, dump_json, set_seed, write_manifest
 WEEKS = {"2022w30": ("2022-07-25", "2022-07-31"), "2024w10": ("2024-03-04", "2024-03-10")}
 OFAC_REPO, OFAC_SHA = Path("data/raw/ofac-addresses"), "96f89d770659edad674fa2ea101a0d79a7f4c768"
 WEI = 10 ** 18
+# exact denominations 10^k ETH, k = -3..3, as stored (wei in float64; these values are exact)
+POW10_WEI = {float(10 ** (18 + k)): k for k in range(-3, 4)}
 MIN_IN = 30
 
 
@@ -73,16 +75,15 @@ def main() -> None:
         n_in = g.size()
         keep = n_in[n_in >= MIN_IN].index
         sub = df[df.to.isin(keep)]
-        mode = sub.groupby("to").eth.agg(lambda v: v.value_counts().index[0])
+        mode_wei = sub.groupby("to").value.agg(lambda v: v.value_counts().index[0])
+        mode = mode_wei / WEI
         share = sub.assign(m=sub.to.map(mode)).pipe(lambda x: (x.eth == x.m).groupby(x.to).mean())
         cand = pd.DataFrame({"n_in": n_in[keep], "modal_eth": mode, "modal_share": share,
                              "senders": sub.groupby("to").from_address.nunique()})
-        lg = np.log10(cand.modal_eth)
-        cand["power_of_ten"] = np.isclose(lg, np.round(lg), atol=1e-9) & (lg >= -3) & (lg <= 3)
-        # multi-denomination signature: most deposits at 10^k ETH, several k in use
-        lv = np.log10(sub.eth)
-        p10 = np.isclose(lv, np.round(lv), atol=1e-9) & (lv >= -3) & (lv <= 3)
-        sub = sub.assign(p10=p10, k=np.where(p10, np.round(lv), np.nan))
+        cand["power_of_ten"] = mode_wei.isin(list(POW10_WEI)).reindex(cand.index)
+        # multi-denomination signature: most deposits at exactly 10^k ETH, several k in use
+        k = sub.value.map(POW10_WEI)
+        sub = sub.assign(p10=k.notna().to_numpy(), k=k.to_numpy())
         cand["pow10_share"] = sub.groupby("to").p10.mean()
         kshare = sub[sub.p10].groupby(["to", "k"]).size().div(n_in[keep], level="to")
         cand["n_denoms"] = (kshare >= 0.05).groupby(level="to").sum().reindex(cand.index).fillna(0).astype(int)

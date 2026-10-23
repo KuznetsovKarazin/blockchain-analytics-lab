@@ -98,13 +98,55 @@ def select(cur):
     return [{**best, "best_pass": best["pass"], "ap_fixed": fixed["ap"]}]
 
 
+def plot_f1(curves: pd.DataFrame, dp_sum: pd.DataFrame, out: Path) -> None:
+    F.style()
+    import matplotlib.pyplot as plt
+    fig, axes = plt.subplots(1, 2, figsize=(6.5, 2.7))
+    cm = curves[curves.regime == "central"].groupby("pass")[["ap_val", "ap"]].mean()
+    axes[0].plot(cm.index, cm.ap_val, color="0", ls=F.LINES[1], label="central, validation 31-34")
+    axes[0].plot(cm.index, cm.ap, color="0", ls=F.LINES[0], label="central, test 35-49")
+    for i, kind in enumerate(("iid", "time", "label")):
+        fm = curves[(curves.regime == "fedavg") & (curves.partition == kind)].groupby("pass")["ap"].mean()
+        axes[0].plot(fm.index, fm, color="0.55", ls=F.LINES[i], label=f"FedAvg {kind}, test")
+    axes[0].axvline(PASSES, color="0.7", lw=0.8, ls=":")
+    axes[0].set_xlim(0, CURVE_LEN)
+    axes[0].set_xlabel("passes over the data (epochs or rounds)")
+    axes[0].set_ylabel("average precision")
+    axes[0].set_title("(a) learning curves")
+    axes[0].legend(frameon=False, fontsize=6)
+    for i, k in enumerate((10, 100)):
+        s = dp_sum[(dp_sum.clients == k) & (dp_sum.noise_mult > 0)]
+        axes[1].errorbar(s.epsilon, s.ap, yerr=s.ap_sd, color="0", ls=F.LINES[i], marker=F.MARKERS[i],
+                         ms=3, capsize=2, label=f"{k} institutions")
+        base = dp_sum[(dp_sum.clients == k) & (dp_sum.noise_mult == 0)].ap.iloc[0]
+        axes[1].axhline(base, color="0.6", ls=F.LINES[i], lw=0.8)
+    axes[1].set_xscale("log")
+    eps_ticks = sorted(dp_sum.loc[dp_sum.noise_mult > 0, "epsilon"].unique())
+    axes[1].set_xticks(eps_ticks, [f"{e:.0f}" for e in eps_ticks])
+    axes[1].minorticks_off()
+    fig.subplots_adjust(wspace=0.35)
+    axes[1].set_xlabel(f"conditional epsilon, add/remove one institution\n(delta = 1e-5, {DP_ROUNDS} rounds)")
+    axes[1].set_ylabel("average precision, test")
+    axes[1].set_title("(b) clipping and Gaussian noise")
+    axes[1].legend(frameon=False)
+    F.save(fig, out, "fig_f1")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=None)
     ap.add_argument("--seeds", type=int, default=3)
+    ap.add_argument("--figure-only", action="store_true",
+                    help="redraw the figure from curves.csv and dp_summary.csv in --out, no training")
     args = ap.parse_args()
     out = Path(args.out or f"results/federated/f1_{time.strftime('%Y%m%d_%H%M%S')}")
     out.mkdir(parents=True, exist_ok=True)
+    if args.figure_only:
+        plot_f1(pd.read_csv(out / "curves.csv"), pd.read_csv(out / "dp_summary.csv"), out)
+        write_manifest(out, script="scripts/f1_federated.py --figure-only", name="manifest_figure.json",
+                       config={"inputs": ["curves.csv", "dp_summary.csv"]},
+                       data_files=[out / "curves.csv", out / "dp_summary.csv"])
+        return
     c = Ctx()
     d, X = c.d, c.X
     tr_idx = np.flatnonzero(c.tr)
@@ -216,37 +258,7 @@ def main() -> None:
     sa = pd.DataFrame(sa_rows)
     atomic_to_csv(sa, out / "secagg.csv", index=False)
 
-    F.style()
-    import matplotlib.pyplot as plt
-    fig, axes = plt.subplots(1, 2, figsize=(6.5, 2.7))
-    cm = curves[curves.regime == "central"].groupby("pass")[["ap_val", "ap"]].mean()
-    axes[0].plot(cm.index, cm.ap_val, color="0", ls=F.LINES[1], label="central, validation 31-34")
-    axes[0].plot(cm.index, cm.ap, color="0", ls=F.LINES[0], label="central, test 35-49")
-    for i, kind in enumerate(("iid", "time", "label")):
-        fm = curves[(curves.regime == "fedavg") & (curves.partition == kind)].groupby("pass")["ap"].mean()
-        axes[0].plot(fm.index, fm, color="0.55", ls=F.LINES[i], label=f"FedAvg {kind}, test")
-    axes[0].axvline(PASSES, color="0.7", lw=0.8, ls=":")
-    axes[0].set_xlim(0, CURVE_LEN)
-    axes[0].set_xlabel("passes over the data (epochs or rounds)")
-    axes[0].set_ylabel("average precision")
-    axes[0].set_title("(a) learning curves")
-    axes[0].legend(frameon=False, fontsize=6)
-    for i, k in enumerate((10, 100)):
-        s = dp_sum[(dp_sum.clients == k) & (dp_sum.noise_mult > 0)]
-        axes[1].errorbar(s.epsilon, s.ap, yerr=s.ap_sd, color="0", ls=F.LINES[i], marker=F.MARKERS[i],
-                         ms=3, capsize=2, label=f"{k} institutions")
-        base = dp_sum[(dp_sum.clients == k) & (dp_sum.noise_mult == 0)].ap.iloc[0]
-        axes[1].axhline(base, color="0.6", ls=F.LINES[i], lw=0.8)
-    axes[1].set_xscale("log")
-    eps_ticks = sorted(dp_sum.loc[dp_sum.noise_mult > 0, "epsilon"].unique())
-    axes[1].set_xticks(eps_ticks, [f"{e:.0f}" for e in eps_ticks])
-    axes[1].minorticks_off()
-    fig.subplots_adjust(wspace=0.35)
-    axes[1].set_xlabel(f"client-level epsilon (delta = 1e-5, {DP_ROUNDS} rounds)")
-    axes[1].set_ylabel("average precision, test")
-    axes[1].set_title("(b) cost of differential privacy")
-    axes[1].legend(frameon=False)
-    F.save(fig, out, "fig_f1")
+    plot_f1(curves, dp_sum, out)
 
     summary = {"regimes": reg_sum.to_dict(orient="records"), "dp": dp_sum.to_dict(orient="records"),
                "secagg": sa.to_dict(orient="records"),

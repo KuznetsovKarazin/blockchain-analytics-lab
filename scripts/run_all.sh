@@ -16,9 +16,7 @@ run() {  # run <script> <out dir> [args...]
 lane=${1:-all}
 if [ "$lane" = fed ] || [ "$lane" = all ]; then
   run f1_federated.py results/federated/f1_v1
-fi
-if [ "$lane" = fed ] || [ "$lane" = rest ] || [ "$lane" = all ]; then
-  run f1b_dp_accounting.py results/federated/f1b_v1     # reads f1_v1, no training
+  run f1b_dp_accounting.py results/federated/f1b_v1     # reads f1_v1, so only after F1
 fi
 if [ "$lane" = rest ] || [ "$lane" = all ]; then
   run s1_double_spend.py results/security/s1_v1

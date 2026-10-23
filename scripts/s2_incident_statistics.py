@@ -11,7 +11,7 @@ Outputs (results/security/s2_<stamp>/):
   incidents.csv     one row per incident: date, name, root-cause text, class, parsed USD
   by_year.csv       incidents and parsed USD losses per year
   by_class.csv      incidents and parsed USD losses per stated-cause class (2021 onward)
-  by_component.csv  the same per attacked component (bridge / cross-chain or other);
+  by_component.csv  the same per attacked component (bridge / cross-chain or no bridge keyword);
                     component and cause are separate codings (see bclab.incidents)
   class_audit.csv   40 random titles with their class (for a manual consistency check)
   fig_s2.png/.eps/.pdf
@@ -29,7 +29,7 @@ import numpy as np
 import pandas as pd
 
 from bclab import figures as F
-from bclab.incidents import load_all
+from bclab.incidents import UNCLASSIFIED, load_all
 from bclab.repro import atomic_to_csv, dump_json, write_manifest
 
 ROOT = Path("data/raw/DeFiHackLabs")
@@ -90,13 +90,13 @@ def main() -> None:
 
     F.style()
     import matplotlib.pyplot as plt
-    fig, axes = plt.subplots(1, 2, figsize=(6.6, 3.6), gridspec_kw={"width_ratios": [1.25, 1]})
+    fig, axes = plt.subplots(1, 2, figsize=(6.6, 4.2), gridspec_kw={"width_ratios": [1.25, 1]})
     bc = by_class.sort_values("incidents")
     y = np.arange(len(bc))
     axes[0].barh(y - 0.2, bc["share_incidents"] * 100, 0.4, color="0.35", edgecolor="0", label="incidents")
     axes[0].barh(y + 0.2, bc["share_usd"] * 100, 0.4, color="white", edgecolor="0", hatch="///",
                  label="parsed USD loss")
-    axes[0].set_yticks(y, [textwrap.fill(c, 30) for c in bc["cause_class"]], fontsize=6)
+    axes[0].set_yticks(y, [textwrap.fill(c, 28) for c in bc["cause_class"]], fontsize=7.5)
     axes[0].set_xlabel("share, %")
     axes[0].set_title(f"(a) stated-cause classes, {args.from_year}-{int(df.year.max())}")
     axes[0].legend(frameon=False, loc="lower right")
@@ -117,7 +117,7 @@ def main() -> None:
         "n_incidents": len(df), "date_min": str(df.date.min().date()), "date_max": str(df.date.max().date()),
         "parse_counts": df["loss_parse"].value_counts().to_dict(),
         "share_with_usd": float(df["loss_usd"].notna().mean()),
-        "share_other_class": float((df["cause_class"] == "other").mean()),
+        "share_unclassified": float((df["cause_class"] == UNCLASSIFIED).mean()),
         "recent_from_year": args.from_year,
         "recent_n": len(recent), "recent_with_usd": int(recent["loss_usd"].notna().sum()),
         "recent_usd_total": float(usd.sum()), "recent_usd_median": float(usd.median()),

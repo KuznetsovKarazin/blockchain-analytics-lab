@@ -128,7 +128,8 @@ def main() -> None:
                "labelled_nodes": len(labd), "prevalence": prev}, out / "summary.json")
     write_manifest(out, script="scripts/p2_graph_elliptic.py",
                    config={"steps": "1-30", "betweenness_k": 500, "louvain_resolution": 1.0},
-                   data_files=[DATA / "elliptic_txs_classes.csv", DATA / "elliptic_txs_edgelist.csv"])
+                   data_files=[DATA / "elliptic_txs_features.csv", DATA / "elliptic_txs_classes.csv",
+                               DATA / "elliptic_txs_edgelist.csv"])
     print(res.to_string())
     print(conc)
     print(hom.describe().T[["mean", "min", "max"]])

@@ -12,7 +12,8 @@ without moving ether.
 
 Part A - custody rules, replayed causally over all addresses of the chain. History
 starts 2025-02-07; rules are evaluated 2025-02-14..2025-02-21 (seven ordinary days and
-the incident day). "Earlier" means an earlier transaction (block, transaction index).
+the incident day). "Earlier" means an earlier transaction (block, transaction index): all calls of a
+transaction are judged against the history before it.
   R1  new delegate target: a contract executes a delegatecall to a target it has never
       delegatecalled before, and it made at least N earlier delegatecalls (N = 1, 3, 10).
       For a proxy or Safe wallet a new target means new code runs with its storage.
@@ -36,7 +37,8 @@ distinct counterparties (H = 50, 100, 500) in ether transfers of 2025-02-07..202
 hubs are typically services (exchanges, routers, bridges, swap contracts). Reported per
 hour: tainted non-hub addresses and the ether they still hold (received minus sent along
 traced transfers; gas fees ignored), and the times at which that holding falls below
-50% and 10% of the drained ether.
+50% and 10% of the drained ether. Hour k is the state after all transfers up to exactly
+k hours after the drain; crossing times are therefore exact to the next whole hour.
 
 Outputs: results/cases/c1_<stamp>/
 """
@@ -55,6 +57,7 @@ import pyarrow.parquet as pq
 
 from bclab import figures as F
 from bclab.aws import cached_files, read_cached, write_input_index
+from bclab.custody import new_pair_tx, prior_tx_stats, taint_replay, trace_order_key
 from bclab.repro import atomic_to_csv, dump_json, set_seed, write_manifest
 
 COLD = "0x1db92e2eebc8e0c075a02bea49a2935bcd2dfcf4"      # Safe multisig cold wallet
@@ -94,11 +97,12 @@ def key1(a: str) -> int:
 
 def load(start: str, end: str, value_only: bool = False) -> pd.DataFrame:
     """Call traces, one day at a time, with addresses replaced by 64-bit keys; rows in
-    transaction order (days are read in order and sorted one by one)."""
+    execution order: block, transaction index, call tree in pre-order (days are read in
+    order and sorted one by one)."""
     global COLD_ID, RECV_ID
     COLD_ID, RECV_ID = key1(COLD), key1(FIRST_RECEIVER)
-    cols = ["block_number", "transaction_index", "call_type", "from_address", "to_address", "value",
-            "block_timestamp"]
+    cols = ["block_number", "transaction_index", "trace_address", "call_type", "from_address", "to_address",
+            "value", "block_timestamp"]
     parts = []
     for f in cached_files("eth", "traces_slim", start, end):
         x = pq.read_table(f, columns=cols)
@@ -112,9 +116,10 @@ def load(start: str, end: str, value_only: bool = False) -> pd.DataFrame:
             "from_address": addr_key(x.column("from_address")),
             "to_address": addr_key(x.column("to_address")),
             "eth": x.column("value").to_numpy() / WEI,
-            "block_timestamp": x.column("block_timestamp").to_pandas()})
+            "block_timestamp": x.column("block_timestamp").to_pandas(),
+            "tkey": trace_order_key(x.column("trace_address").to_pandas())})
         del x
-        d = d.sort_values(["block_number", "transaction_index"], kind="stable")
+        d = d.sort_values(["block_number", "transaction_index", "tkey"], kind="stable").drop(columns="tkey")
         d["txpos"] = d.block_number.to_numpy() * 10_000 + d.pop("transaction_index").to_numpy()
         d["day"] = d.block_timestamp.dt.normalize()
         parts.append(d)
@@ -138,12 +143,6 @@ def check_keys(df: pd.DataFrame) -> bool:
     a = pd.unique(pd.concat([df.from_address, df.to_address]).dropna().str.lower())
     k = addr_key(pa.array(a))
     return len(np.unique(k)) == len(a)
-
-
-def first_in_tx(df: pd.DataFrame, keys: list[str]) -> pd.Series:
-    """True where `keys` occur for the first time since the start of the history
-    (rows are in transaction order)."""
-    return ~df.duplicated(keys, keep="first")
 
 
 def prior_count(df: pd.DataFrame, key: str) -> np.ndarray:
@@ -201,24 +200,30 @@ def part_a(t: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
     val = t[(t.eth > 0) & ~t.dc]        # a delegatecall reports the value of the call it runs in; no ether moves
     rows = []
     dc = t[t.dc].reset_index(drop=True)
-    new_pair = first_in_tx(dc, ["from_address", "to_address"])
+    new_pair = pd.Series(new_pair_tx(dc, "from_address", "to_address"))
     prior = prior_count(dc, "from_address")
-    # distinct delegate targets of the caller before this row: a "stable proxy" has
-    # used exactly one target so far (a Safe wallet calls its singleton every time)
-    targets_before = new_pair.groupby(dc.from_address).cumsum().to_numpy() - new_pair.to_numpy()
+    # distinct delegate targets of the caller in earlier transactions: a "stable proxy"
+    # has used exactly one target so far (a Safe wallet calls its singleton every time)
+    firsts = (dc.groupby(["from_address", "to_address"], sort=False).txpos.min().reset_index()
+              .sort_values("txpos"))
+    firsts["k"] = firsts.groupby("from_address").cumcount() + 1
+    q = pd.DataFrame({"from_address": dc.from_address.to_numpy(), "txpos": dc.txpos.to_numpy(),
+                      "i": np.arange(len(dc))}).sort_values("txpos")
+    m = pd.merge_asof(q, firsts[["from_address", "txpos", "k"]], on="txpos", by="from_address",
+                      allow_exact_matches=False)
+    targets_before = np.zeros(len(dc))
+    targets_before[m.i.to_numpy()] = m.k.fillna(0).to_numpy()
     stable = {"stable proxy": targets_before == 1}
     for n in N_PRIOR:
         rows += summarize(f"R1 new delegate target (N>={n})", new_pair & (prior >= n), dc, "from_address", val,
                           extra=stable)
 
     v = val.reset_index(drop=True)
-    new_cp = first_in_tx(v, ["from_address", "to_address"])
+    new_cp = new_pair_tx(v, "from_address", "to_address")       # every call of the pair's first tx
     for x in X_ETH:
         rows += summarize(f"R2 >= {x:,.0f} ETH to new counterparty", new_cp & (v.eth >= x), v, "from_address", val)
-    g = v.groupby("from_address")
-    prev_max = g.eth.cummax().groupby(v.from_address).shift(1)
-    nprev = g.cumcount()
-    r3 = (v.eth >= R3_MIN) & (nprev >= R3_HIST) & (v.eth > R3_FACTOR * prev_max)
+    prev_max, nprev = prior_tx_stats(v, "from_address")           # history of earlier transactions only
+    r3 = (v.eth.to_numpy() >= R3_MIN) & (nprev >= R3_HIST) & (v.eth.to_numpy() > R3_FACTOR * prev_max)
     rows += summarize("R3 outlier transfer (>2x own max)", r3, v, "from_address", val)
     res = pd.DataFrame(rows)
 
@@ -271,65 +276,40 @@ def tokens_out() -> pd.DataFrame:
 
 
 def part_b(t: pd.DataFrame, drain_block: int, drained_eth: float) -> tuple[pd.DataFrame, list[dict]]:
+    """`t`: ether transfers in execution order. Taint starts right after the drain call
+    (cold wallet -> first receiver), so later calls of the same block and transaction count."""
     base = t[(t.eth > 0) & (t.day < INCIDENT)]
     deg = pd.concat([base[["from_address", "to_address"]].rename(columns={"from_address": "a", "to_address": "b"}),
                      base[["to_address", "from_address"]].rename(columns={"to_address": "a", "from_address": "b"})])
     deg = deg.drop_duplicates().groupby("a").size()
-    v = t[(t.eth > 0) & (t.block_number > drain_block)]
-    frm, to, eth, ts = v.from_address.to_numpy(), v.to_address.to_numpy(), v.eth.to_numpy(), v.block_timestamp.to_numpy()
-    t0 = t[t.block_number == drain_block].block_timestamp.iloc[0]
-    hours = ((ts - np.datetime64(t0)) / np.timedelta64(1, "h"))
+    t = t.reset_index(drop=True)
+    drain_rows = np.flatnonzero(((t.from_address == COLD_ID) & (t.to_address == RECV_ID)
+                                 & (t.block_number == drain_block)).to_numpy())
+    assert len(drain_rows) == 1, "expected one drain call"
+    v = t.iloc[drain_rows[0] + 1:]
+    v = v[v.eth > 0]
+    t0 = t.block_timestamp.iloc[drain_rows[0]]
+    hours = ((v.block_timestamp.to_numpy() - np.datetime64(t0)) / np.timedelta64(1, "h"))
+    frm, to, eth = v.from_address.to_numpy(), v.to_address.to_numpy(), v.eth.to_numpy()
     series, summ = [], []
     for h in HUB_H:
         hubs = set(deg[deg >= h].index)
-        hop = {RECV_ID: 1}
-        held = {RECV_ID: drained_eth}
-        total_held = drained_eth
-        n_hour = int(np.ceil(hours.max())) + 1
-        cnt_by_hour = np.zeros((n_hour, 3), int)
-        cnt_by_hour[:, 0] = 1
-        held_by_hour = np.full(n_hour, np.nan)
-        to_hubs = 0.0
-        cur = 0
-        for i in range(len(frm)):
-            hr = int(hours[i])
-            while cur < hr:
-                held_by_hour[cur] = total_held
-                cur += 1
-            f = frm[i]
-            h_f = held.get(f, 0.0)
-            if h_f <= 0:
-                continue
-            e = min(eth[i], h_f)          # tainted-first: only the traced part moves on
-            held[f] = h_f - e
-            total_held -= e
-            d = to[i]
-            if d in hubs:
-                to_hubs += e
-                continue
-            if d not in hop:
-                if e < TAINT_MIN:
-                    continue
-                hop[d] = hop[f] + 1
-                cnt_by_hour[hr:, min(hop[d], 3) - 1] += 1
-            held[d] = held.get(d, 0.0) + e
-            total_held += e
-        while cur < n_hour:
-            held_by_hour[cur] = total_held
-            cur += 1
-        frac = held_by_hour / drained_eth
+        r = taint_replay(frm, to, eth, hours, RECV_ID, drained_eth, hubs, TAINT_MIN)
+        frac = r["held"] / drained_eth
+        n_hour = len(frac)
+
         def first_below(p):
             idx = np.flatnonzero(frac < p)
             return float(idx[0]) if len(idx) else None
-        summ.append({"hub_threshold": h, "hubs": len(hubs), "traced_addresses": len(hop),
-                     "eth_into_hubs": to_hubs, "hours_to_below_50pct": first_below(0.5),
+        summ.append({"hub_threshold": h, "hubs": len(hubs), "traced_addresses": r["traced"],
+                     "eth_into_hubs": r["to_hubs"], "hours_to_below_50pct": first_below(0.5),
                      "hours_to_below_10pct": first_below(0.1),
                      "held_share_after_24h": float(frac[min(24, n_hour - 1)]),
                      "held_share_after_7d": float(frac[min(168, n_hour - 1)]),
                      "held_share_end": float(frac[-1])})
-        series.append(pd.DataFrame({"hub_threshold": h, "hour": np.arange(n_hour), "held_eth": held_by_hour,
-                                    "held_share": frac, "hop1": cnt_by_hour[:, 0], "hop2": cnt_by_hour[:, 1],
-                                    "hop3plus": cnt_by_hour[:, 2]}))
+        c = r["counts"]
+        series.append(pd.DataFrame({"hub_threshold": h, "hour": np.arange(n_hour), "held_eth": r["held"],
+                                    "held_share": frac, "hop1": c[:, 0], "hop2": c[:, 1], "hop3plus": c[:, 2]}))
     return pd.concat(series, ignore_index=True), summ
 
 
