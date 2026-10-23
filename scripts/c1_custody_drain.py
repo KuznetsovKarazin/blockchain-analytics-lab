@@ -5,7 +5,10 @@ what it costs in alerts on ordinary days, and how fast the stolen ether disperse
 Data: Ethereum call traces 2025-02-07..2025-03-07 (AWS cache, successful delegatecalls
 and value-carrying calls only) and token transfers of 2025-02-21. Addresses of the case
 (the exchange's Safe multisig cold wallet and the first receiving address) are public
-and appear in the trace data themselves; no third-party labels are used.
+and appear in the trace data themselves; no third-party labels are used. Ether
+transfers are value-carrying calls other than delegatecalls: a delegatecall trace
+repeats the value of the call it runs in (for example a deposit into a proxy wallet)
+without moving ether.
 
 Part A - custody rules, replayed causally over all addresses of the chain. History
 starts 2025-02-07; rules are evaluated 2025-02-14..2025-02-21 (seven ordinary days and
@@ -99,8 +102,9 @@ def load(start: str, end: str, value_only: bool = False) -> pd.DataFrame:
     parts = []
     for f in cached_files("eth", "traces_slim", start, end):
         x = pq.read_table(f, columns=cols)
-        if value_only:
-            x = x.filter(pc.greater(x.column("value"), 0))
+        if value_only:      # ether transfers only: a delegatecall carries its caller's value, it moves none
+            x = x.filter(pc.and_(pc.greater(x.column("value"), 0),
+                                 pc.invert(pc.equal(x.column("call_type"), "delegatecall").fill_null(False))))
         d = pd.DataFrame({
             "block_number": x.column("block_number").to_numpy(),
             "transaction_index": x.column("transaction_index").to_numpy().astype(np.int32),
@@ -194,7 +198,7 @@ def summarize(name: str, flag, df: pd.DataFrame, who: str, val: pd.DataFrame,
 
 
 def part_a(t: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
-    val = t[t.eth > 0]
+    val = t[(t.eth > 0) & ~t.dc]        # a delegatecall reports the value of the call it runs in; no ether moves
     rows = []
     dc = t[t.dc].reset_index(drop=True)
     new_pair = first_in_tx(dc, ["from_address", "to_address"])
