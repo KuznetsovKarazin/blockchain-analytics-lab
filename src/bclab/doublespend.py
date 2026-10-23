@@ -1,8 +1,7 @@
 """
 Success probability of a double-spend race under three models (study S, S1).
 
-All models use the same success event as Nakamoto (2008) and Chapter 1 of the
-book: after the merchant has seen z honest confirmations, the attacker's
+All models use the same success event as Nakamoto (2008): after the merchant has seen z honest confirmations, the attacker's
 private chain catches up with the honest chain (a tie counts as success).
 With strict lead required, replace the deficit d by d + 1.
 
@@ -48,7 +47,7 @@ def catch_up_finite(ratio: float, deficit: np.ndarray, give_up: int) -> np.ndarr
 
 
 def exact_catch_up(q: float, z: int) -> float:
-    """Eq. (1.3) of the book: 1 - sum_{k<z} C(k+z-1,k) (p^z q^k - q^z p^k)."""
+    """Closed form of the exact race: 1 - sum_{k<z} C(k+z-1,k) (p^z q^k - q^z p^k)."""
     p = 1 - q
     if q >= p:
         return 1.0

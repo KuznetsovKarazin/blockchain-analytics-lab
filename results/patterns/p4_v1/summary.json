@@ -1,0 +1,109 @@
+{
+  "population": {
+    "rows": 3969518,
+    "addresses": 3958986,
+    "duplicate_rows": 10532,
+    "ponzi_listed": 184,
+    "ponzi_unique": 182,
+    "ponzi_found": 182,
+    "ponzi_distinct_exact_codes": 162,
+    "ponzi_distinct_skeletons": 147,
+    "sample_distinct_exact_codes": 796,
+    "population_distinct_raw_codes": 63360,
+    "ponzi_by_year": {
+      "2015": 2,
+      "2016": 171,
+      "2017": 9
+    },
+    "neg_codes_shared_with_ponzi": 0,
+    "distinct_codes_after_metadata_strip": 52544,
+    "distinct_codes_positive": 162
+  },
+  "cv": [
+    {
+      "scheme": "distinct_codes",
+      "ap": 0.636352656692829,
+      "ap_sd": 0.09996704220865536,
+      "roc_auc": 0.9709393266695894,
+      "twin_share": 0.0,
+      "test_pos": 486,
+      "test_n": 157632,
+      "prevalence": 0.003083130328867235
+    },
+    {
+      "scheme": "exact",
+      "ap": 0.9719323569793461,
+      "ap_sd": 0.029652435962845537,
+      "roc_auc": 0.9990571696696696,
+      "twin_share": 0.0,
+      "test_pos": 546,
+      "test_n": 60546,
+      "prevalence": 0.009017936775344366
+    },
+    {
+      "scheme": "random",
+      "ap": 0.9852356358898936,
+      "ap_sd": 0.007709728894844985,
+      "roc_auc": 0.9998237800300301,
+      "twin_share": 0.163003663003663,
+      "test_pos": 546,
+      "test_n": 60546,
+      "prevalence": 0.009017936775344366
+    },
+    {
+      "scheme": "skeleton",
+      "ap": 0.9769687346283823,
+      "ap_sd": 0.02906804890416826,
+      "roc_auc": 0.9973567427731651,
+      "twin_share": 0.0,
+      "test_pos": 546,
+      "test_n": 60546,
+      "prevalence": 0.009017936775344366
+    }
+  ],
+  "temporal": [
+    {
+      "repeat": 0,
+      "train_pos": 173,
+      "test_pos": 9,
+      "test_n": 18790,
+      "ap": 0.5835066422404332,
+      "roc_auc": 0.998645202894178,
+      "precision_at_k_eq_pos": 0.5555555555555556,
+      "test_pos_with_exact_twin_in_train": 0
+    },
+    {
+      "repeat": 1,
+      "train_pos": 173,
+      "test_pos": 9,
+      "test_n": 18790,
+      "ap": 0.5868835553781415,
+      "roc_auc": 0.9874045282170515,
+      "precision_at_k_eq_pos": 0.5555555555555556,
+      "test_pos_with_exact_twin_in_train": 0
+    },
+    {
+      "repeat": 2,
+      "train_pos": 173,
+      "test_pos": 9,
+      "test_n": 18790,
+      "ap": 0.6086106486106486,
+      "roc_auc": 0.9988167710866183,
+      "precision_at_k_eq_pos": 0.5555555555555556,
+      "test_pos_with_exact_twin_in_train": 0
+    }
+  ],
+  "importance_top": {
+    "LT": 0.1369662691081279,
+    "SLOAD": 0.12504725545743642,
+    "SSTORE": 0.09990690268576173,
+    "SHA3": 0.07108863738737156,
+    "GT": 0.05921366106043611,
+    "log_length": 0.047775220969123226,
+    "STOP": 0.04514718745460669,
+    "OR": 0.043067342717140335,
+    "NOT": 0.03840050174534384,
+    "SWAP": 0.033098630782413
+  },
+  "sample_prevalence": 0.009017936775344366
+}

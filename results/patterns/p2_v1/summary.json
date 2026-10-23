@@ -1,0 +1,61 @@
+{
+  "scores": [
+    {
+      "score": "in_degree",
+      "roc_auc": 0.45263941187530055,
+      "ap": 0.11322160720384097,
+      "prevalence": 0.10979371863965806,
+      "median_illicit": 1.0,
+      "median_licit": 1.0
+    },
+    {
+      "score": "out_degree",
+      "roc_auc": 0.41210721155557184,
+      "ap": 0.10092508305880442,
+      "prevalence": 0.10979371863965806,
+      "median_illicit": 1.0,
+      "median_licit": 1.0
+    },
+    {
+      "score": "pagerank",
+      "roc_auc": 0.5606483384732658,
+      "ap": 0.11561281323457734,
+      "prevalence": 0.10979371863965806,
+      "median_illicit": 0.0001402891930409072,
+      "median_licit": 0.00011944006093409437
+    },
+    {
+      "score": "betweenness",
+      "roc_auc": 0.4238211452760965,
+      "ap": 0.09639917373269583,
+      "prevalence": 0.10979371863965806,
+      "median_illicit": 0.0,
+      "median_licit": 0.00025387154100025384
+    },
+    {
+      "score": "clustering",
+      "roc_auc": 0.4839582631284528,
+      "ap": 0.10931699984362447,
+      "prevalence": 0.10979371863965806,
+      "median_illicit": 0.0,
+      "median_licit": 0.0
+    },
+    {
+      "score": "comm_loo",
+      "roc_auc": 0.9359837424224311,
+      "ap": 0.7274544841173128,
+      "prevalence": 0.10979371863965806,
+      "median_illicit": 0.6666666666666666,
+      "median_licit": 0.0
+    }
+  ],
+  "concentration": {
+    "communities_ge10_labelled": 838,
+    "share_of_illicit_in_majority_illicit_communities": 0.5619498984427894,
+    "share_communities_without_illicit": 0.5847255369928401,
+    "mean_same_label_share": 0.9313319660356513,
+    "mean_expected_if_random": 0.7900010706540244
+  },
+  "labelled_nodes": 26905,
+  "prevalence": 0.10979371863965806
+}

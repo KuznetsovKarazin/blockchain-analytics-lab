@@ -1,0 +1,32 @@
+{
+  "script": "scripts/p4_ponzi.py",
+  "created_utc": "2026-10-22T21:55:00Z",
+  "git_commit": "f14cd4f350a7e76b874d0a2176b05449bd9e15ab",
+  "git_dirty": false,
+  "dirty_files": [],
+  "diff_sha256": null,
+  "python": "3.13.16",
+  "platform": "Linux-6.18.44-fc-v140-x86_64-with-glibc2.39",
+  "cpu_count": 4,
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "torch": null,
+    "lightgbm": "4.7.0",
+    "xgboost": null,
+    "pyarrow": "26.0.0",
+    "networkx": "3.7",
+    "statsmodels": "0.15.0"
+  },
+  "config": {
+    "n_neg": 20000,
+    "repeats": 3,
+    "split_date": "2017-01-01"
+  },
+  "data": {
+    "data/raw/ethereum-ponzi/ponzi-addresses.csv": "306af856423eae51128ecafe295c8fe3b613d81dddcae8333b7820c8bab755f9"
+  },
+  "data_sets": {}
+}
