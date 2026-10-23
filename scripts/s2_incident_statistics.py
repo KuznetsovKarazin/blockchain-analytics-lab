@@ -90,13 +90,13 @@ def main() -> None:
 
     F.style()
     import matplotlib.pyplot as plt
-    fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.9), gridspec_kw={"width_ratios": [1.25, 1]})
+    fig, axes = plt.subplots(1, 2, figsize=(6.6, 3.6), gridspec_kw={"width_ratios": [1.25, 1]})
     bc = by_class.sort_values("incidents")
     y = np.arange(len(bc))
     axes[0].barh(y - 0.2, bc["share_incidents"] * 100, 0.4, color="0.35", edgecolor="0", label="incidents")
     axes[0].barh(y + 0.2, bc["share_usd"] * 100, 0.4, color="white", edgecolor="0", hatch="///",
                  label="parsed USD loss")
-    axes[0].set_yticks(y, [textwrap.fill(c, 24) for c in bc["cause_class"]], fontsize=6)
+    axes[0].set_yticks(y, [textwrap.fill(c, 30) for c in bc["cause_class"]], fontsize=6)
     axes[0].set_xlabel("share, %")
     axes[0].set_title(f"(a) stated-cause classes, {args.from_year}-{int(df.year.max())}")
     axes[0].legend(frameon=False, loc="lower right")
