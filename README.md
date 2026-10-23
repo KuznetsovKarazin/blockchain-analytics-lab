@@ -49,6 +49,12 @@ a few hours; P4 reads about four million contract bytecodes day by day.
 
 ## Reproducibility notes
 
+* Dependencies are declared in `pyproject.toml` (with blockchain-detector-eval
+  pinned to a commit); there is no lock file. The exact package versions of
+  each run are recorded in its `manifest.json`.
+* `run_all.sh` deletes and rewrites each fixed run folder (`*_v1`); earlier
+  states of a folder are kept only in the Git history. Its clean-tree check
+  covers `src/`, `scripts/` and `pyproject.toml`, not other files.
 * Results are deterministic given the seeds in each script, the pinned data
   revisions and the package versions recorded in each `manifest.json`.
 * Studies that read the AWS cache write `inputs_<chain>_<table>.csv` next to

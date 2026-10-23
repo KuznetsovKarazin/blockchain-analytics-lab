@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # Re-run every study into results/<area>/<code>_v1 from a clean checkout.
+# Each fixed run folder is deleted and rewritten; earlier states live only in Git history.
 # Usage: bash scripts/run_all.sh [lane]   lane = fed | rest | all (default all)
 set -euo pipefail
 cd "$(dirname "$0")/.."
-if [ -n "$(git status --porcelain -- src scripts)" ]; then
-  echo "working tree has uncommitted changes in src/ or scripts/; commit first" >&2
+if [ -n "$(git status --porcelain -- src scripts pyproject.toml)" ]; then
+  echo "working tree has uncommitted changes in src/, scripts/ or pyproject.toml; commit first" >&2
   exit 1
 fi
 run() {  # run <script> <out dir> [args...]
