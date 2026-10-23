@@ -345,9 +345,9 @@ def figure(out: Path, inc: pd.DataFrame, info: dict, series: pd.DataFrame) -> No
     y = [0, 0] + list(np.cumsum(inc.eth) / 1e3) + [inc.eth.sum() / 1e3]
     ax.step(x, y, where="post", color="0", lw=0.9)
     ax.axvline(0, color="0.4", ls="--", lw=0.8)
-    ax.text(0.15, y[-1] * 0.55, "R1: new delegate\ntarget", fontsize=6)
+    ax.text(-0.1, y[-1] * 0.55, "R1: new\ndelegate\ntarget", fontsize=6, ha="right")
     ax.axvline(m(info["drain_time"]), color="0.6", ls=":", lw=0.8)
-    ax.text(m(info["drain_time"]) + 0.15, y[-1] * 0.15, "R2: large transfer\nto new counterparty", fontsize=6)
+    ax.text(m(info["drain_time"]) - 0.1, y[-1] * 0.15, "R2: large\ntransfer to new\ncounterparty", fontsize=6, ha="right")
     ax.set_xlabel("minutes after first new delegate target")
     ax.set_ylabel("ether drained, thousand ETH")
     ax.set_title("(a) cold wallet, 21 Feb 2025")
