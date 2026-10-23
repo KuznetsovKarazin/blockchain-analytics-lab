@@ -343,8 +343,8 @@ def figure(out: Path, inc: pd.DataFrame, info: dict, series: pd.DataFrame) -> No
     ax.axvline(0, color="0.4", ls="--", lw=0.8)
     ax.text(0.15, y[-1] * 0.55, "R1: new delegate\ntarget", fontsize=6)
     ax.axvline(m(info["drain_time"]), color="0.6", ls=":", lw=0.8)
-    ax.text(m(info["drain_time"]) + 0.15, y[-1] * 0.15, "R2, R3", fontsize=6)
-    ax.set_xlabel("minutes after the first new delegate target")
+    ax.text(m(info["drain_time"]) + 0.15, y[-1] * 0.15, "R2: large transfer\nto new counterparty", fontsize=6)
+    ax.set_xlabel("minutes after first new delegate target")
     ax.set_ylabel("ether drained, thousand ETH")
     ax.set_title("(a) cold wallet, 21 Feb 2025")
     ax = axes[1]
@@ -353,10 +353,10 @@ def figure(out: Path, inc: pd.DataFrame, info: dict, series: pd.DataFrame) -> No
         ax.plot(s.hour / 24, s.held_share * 100, color="0" if i != 1 else "0.5", ls=F.LINES[i % len(F.LINES)],
                 lw=0.8, label=f"hubs: >= {h} counterparties")
     ax.set_xlabel("days after the drain")
-    ax.set_ylabel("held in traced addresses, % of drained ETH")
+    ax.set_ylabel("% of drained ETH still held")
     ax.set_title("(b) dispersion of the stolen ether")
-    ax.legend(frameon=False, fontsize=6)
-    fig.subplots_adjust(wspace=0.38)
+    ax.legend(frameon=True, fontsize=6)
+    fig.subplots_adjust(wspace=0.45)
     F.save(fig, out, "fig_c1")
 
 
