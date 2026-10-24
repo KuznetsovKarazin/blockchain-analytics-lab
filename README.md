@@ -73,5 +73,7 @@ a few hours; P4 reads about four million contract bytecodes day by day.
 
 ## License
 
-Code: MIT. Results and documentation: CC BY 4.0. Data sources keep their own
-licences (see `docs/DATA.md`).
+Code (`src/`, `scripts/`, `tests/`): MIT (`LICENSE`). Result files
+(`results/`) and documentation (`README.md`, `docs/`): CC BY 4.0
+(`results/LICENSE`). The datasets are not redistributed and keep their own
+licences; `docs/DATA.md` lists each source and what the result files contain.
