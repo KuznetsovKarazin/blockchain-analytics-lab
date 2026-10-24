@@ -6,8 +6,13 @@ package versions of its run.
 
 ## v0.1.2 (2026-10-25)
 
-Metadata and testing only; no script or result changed.
+Metadata, testing and distribution; no script and no number changed.
 
+* Figures (`results/*/*_v1/fig_*.png|eps|pdf`, 13 studies) are no longer
+  distributed: they also appear in a book whose publisher holds the rights to
+  its illustrations. Each script still writes its figure when run; the
+  tables and metrics of each study stay in the CSV/JSON files of the same
+  folder. Releases v0.1.0 and v0.1.1 contained them.
 * Version strings agree: `CITATION.cff`, `pyproject.toml` and
   `bclab.__version__` all say 0.1.2 (they said 0.1.0 in the v0.1.1 release);
   `CITATION.cff` gains `date-released` and keywords; `.zenodo.json` added for
