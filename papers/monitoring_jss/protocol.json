@@ -1,0 +1,221 @@
+{
+  "schema_version": "article2_monitoring_protocol_draft_v0.1",
+  "status": "draft-not-frozen",
+  "created_local_date": "2026-10-25",
+  "title": "Operational Evaluation of Blockchain Monitoring Pipelines under Alert Budgets and Delayed Feedback",
+  "target": "Journal of Systems and Software; ordinary Research Article",
+  "basis": {
+    "plan": "Article_1_2_Research_Plan_2026-10-24.docx",
+    "repository": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab",
+    "branch": "paper/monitoring-jss",
+    "verified_base_sha": "049239566bc5ecadec1691eb64279ce7b204a86d",
+    "dependency_repository": "https://github.com/KuznetsovKarazin/blockchain-detector-eval",
+    "dependency_pin": "dc1ba8876f3f163c27c48f3a39292fc47f71bf18",
+    "new_scientific_experiments_completed": false
+  },
+  "time_model": {
+    "event_fields": [
+      "chain_id",
+      "block_number",
+      "block_hash",
+      "tx_index",
+      "log_index_or_trace_index",
+      "event_time",
+      "observed_time",
+      "feature_ready_time",
+      "decision_time",
+      "model_version",
+      "alert_id",
+      "label_available_time"
+    ],
+    "modes": [
+      "archive_replay_with_measured_local_processing",
+      "scenario_replay_with_explicit_acquisition_and_confirmation_delays"
+    ],
+    "unknown_historical_observed_time": "null; never substitute block timestamp as observed fact",
+    "timestamp_units": "UTC timestamp with declared precision",
+    "availability_rule": "Features and labels may influence a decision only after their declared availability time.",
+    "event_order_rule": "Use validated chain/block/transaction/log or trace order; unresolved ties remain explicit.",
+    "cross_chain_rule": "Use only already observed messages; watermark and waiting rules must be specified before evaluation.",
+    "prefix_invariance_required": true,
+    "finality_policy": "to_be_frozen; reorg tests required only if non-finalized blocks are supported",
+    "scenario_additional_delays_seconds_proposed": [
+      0,
+      12,
+      60,
+      180
+    ]
+  },
+  "budgets": {
+    "evm": {
+      "status": "proposed; freeze after volume pilot and before method comparisons",
+      "notifications_per_day": [
+        1,
+        5,
+        20
+      ],
+      "population": "to_be_frozen",
+      "day_boundary": "UTC proposed; to_be_frozen",
+      "unit": "emitted notification after causal grouping and suppression",
+      "hard_limit": "causal admission mechanism required; historical quantile alone is insufficient",
+      "record": [
+        "raw_trigger",
+        "emitted_notification",
+        "suppression_reason",
+        "actual_load",
+        "budget_exceedance"
+      ],
+      "grouping": "first notification immediate; suppress related later triggers by a predeclared rule",
+      "ties": "deterministic rule to_be_frozen before evaluation"
+    },
+    "elliptic": {
+      "mode": "completed_batch",
+      "budget_fractions_proposed": [
+        0.001,
+        0.005,
+        0.01
+      ],
+      "label_delays_steps_proposed": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "batch_wait_included": true,
+      "steps_are_not_seconds": true,
+      "zero_delay_order": "predict and record decision before revealing label",
+      "seeds_count_proposed": "3-5; exact values to_be_frozen"
+    }
+  },
+  "calibration": {
+    "policies": [
+      "fixed_threshold",
+      "past_only_calibration",
+      "adaptive_calibration",
+      "retrain_with_separate_temporal_calibration"
+    ],
+    "primary_elliptic_model": "LightGBM",
+    "simple_elliptic_control": "LR or RF; to_be_frozen",
+    "evm_models": "fixed domain rules and suitable unsupervised methods; supervised methods only with independent eligible training data",
+    "retraining_calibration": "Separate available temporal window excluded from fitting the new model.",
+    "in_sample_threshold_tuning_allowed": false,
+    "model_version_association_required": true,
+    "old_model_scores_for_new_model": "not automatic; requires separately defined procedure",
+    "insufficient_positives_fallback": "to_be_frozen",
+    "feedback_assumption": "All historically labelled examples become available after the declared delay; selective alert-only feedback is outside the minimum claim."
+  },
+  "data": {
+    "development_cases": [
+      "Ronin",
+      "Nomad",
+      "previously studied custody drain"
+    ],
+    "external_incidents_proposed": "2-4",
+    "other_protocols_or_mechanism_families_min_proposed": 2,
+    "continuous_days_per_population_proposed": "30-60",
+    "inclusion_requirements": [
+      "observable mechanism",
+      "raw event access",
+      "verified event order",
+      "independent confirmation of attack transactions",
+      "pre-incident history",
+      "defined monitored population"
+    ],
+    "exclusions_ledger_required": true,
+    "no_known_attack_day_is_proven_negative": false,
+    "false_alarm_estimation": "requires adjudication of alerts, complete or sampled with known inclusion probabilities",
+    "previous_elliptic_steps_35_49_status": "development/exploratory re-evaluation; not a new untouched external test"
+  },
+  "pilot": {
+    "scope": "one ordinary day and one intensive fragment; one detector and two modes",
+    "full_grid_authorized_in_this_protocol": false,
+    "measure": [
+      "runtime",
+      "RAM",
+      "disk_and_cache_size",
+      "queue_length",
+      "prefix_invariance",
+      "duplicate_alert_id_behavior"
+    ],
+    "purpose": "feasibility and implementation correctness, not confirmatory scientific evidence"
+  },
+  "evaluation": {
+    "local_stages": [
+      "raw_read",
+      "decode",
+      "state_and_features",
+      "score",
+      "raw_trigger",
+      "causal_grouping_and_suppression",
+      "hard_budget_admission",
+      "notification_and_decision_log_write"
+    ],
+    "timing": [
+      "p50",
+      "p95",
+      "p99",
+      "event_count",
+      "throughput",
+      "queue_length",
+      "memory"
+    ],
+    "reliability_tests": [
+      "duplicate_delivery",
+      "late_event_policy",
+      "checkpoint_restart"
+    ],
+    "primary_outputs": [
+      "per_incident_recall_at_actual_load",
+      "first_valid_notification_time",
+      "missed_incidents",
+      "emitted_notifications",
+      "budget_exceedances",
+      "adaptation_cost",
+      "pipeline_resources"
+    ],
+    "uncertainty_units": [
+      "independent_incident_or_protocol",
+      "day_or_week_blocks_accounting_for_temporal_dependence"
+    ],
+    "unsupported_claims": [
+      "prevented_losses_without_intervention_experiment",
+      "false_positive_rate_from_unlabelled_M1",
+      "end_to_end_latency_from_scoring_only",
+      "new_independent_test_from_development_cases"
+    ]
+  },
+  "required_artifacts": [
+    "protocol_and_change_log",
+    "frozen_config_before_main_comparisons",
+    "input_manifest_with_provenance_licenses_and_sha256",
+    "case_inclusion_exclusion_ledger",
+    "clean_source_commit_or_complete_source_patch",
+    "environment_versions_and_hardware_threads",
+    "exact_commands_seeds_and_run_timestamps",
+    "event_and_label_availability_log",
+    "decision_log_with_model_versions_and_suppression_reasons",
+    "per_incident_and_per_period_metrics",
+    "stage_and_end_to_end_timing",
+    "reliability_test_evidence",
+    "table_and_figure_generation_scripts",
+    "result_provenance_ledger"
+  ],
+  "storage": {
+    "unique_run_id_required": true,
+    "overwrite_existing_results": false,
+    "preserve_book_monitoring_results": true,
+    "existing_run_all_sh": "do not invoke without adaptation; it deletes and rewrites fixed *_v1 folders",
+    "third_party_raw_data_and_labels": "redistribute only when permitted by applicable licence",
+    "paper_directory": "papers/monitoring_jss/",
+    "new_runs": "papers/monitoring_jss/runs/<unique_run_id>/"
+  },
+  "freeze_blockers": [
+    "external case eligibility and exact scope",
+    "event source and temporal precision",
+    "population and notification grouping",
+    "hard-budget admission and ties",
+    "calibration windows and fallback",
+    "exact seeds and measurement repeats",
+    "finality and late-event policy"
+  ]
+}
