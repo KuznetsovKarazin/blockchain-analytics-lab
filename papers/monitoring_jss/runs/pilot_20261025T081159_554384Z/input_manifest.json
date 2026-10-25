@@ -1,0 +1,101 @@
+{
+  "acquisition_seconds": 6.067667822000203,
+  "config_sha256": "f407280c903188e21cea430feb7f615486a8e8f0074c7082b082a319ba137940",
+  "files": [
+    {
+      "bytes": 6206807,
+      "name": "source.parquet",
+      "sha256": "204ff85f0f4188727cbe5c5e11fb6d245fba098742f51d9ce03da564186d46a1"
+    },
+    {
+      "bytes": 1948864,
+      "name": "ordinary_day.jsonl",
+      "rows": 7167,
+      "sha256": "4a32762ff7cdd89b4c8f67158f33351ae9bbd2efb8f70bec5a786e5e2141efea"
+    },
+    {
+      "bytes": 81578,
+      "name": "intensive_hour.jsonl",
+      "rows": 300,
+      "sha256": "95ed3366a09ab0e5eba1b4a85a39c13ce7d08e864032b50233a67079d60b9edb"
+    }
+  ],
+  "finality_scope": "historical canonical snapshot assumed settled; consensus finality not independently verified",
+  "first_block": 19358080,
+  "first_event_time": 1709510411.0,
+  "historical_index_record": {
+    "columns": "number;timestamp;transaction_count;gas_used;gas_limit;base_fee_per_gas;size;miner",
+    "day": "2024-03-04",
+    "rows": "7167",
+    "sha256": "2c2e035bc3071bed666eca91de53f1d2faae3870c582c648eb4825f78ee152ae",
+    "upstream_keys": "v1.0/eth/blocks/date=2024-03-04/part-00000-f140221e-3cff-43f9-a9cb-736a053f6cc2-c000.snappy.parquet",
+    "upstream_mtimes": "2025-09-30 19:56:49+00:00",
+    "upstream_sizes": "6206807"
+  },
+  "historical_index_sha256": "bbde8030fcdf395607c7bd9fcfc74502f7375b535fdeb6a65f34f2cfd2c9b319",
+  "hourly_transaction_totals": {
+    "0": 47226,
+    "1": 47149,
+    "2": 49499,
+    "3": 48366,
+    "4": 47189,
+    "5": 48405,
+    "6": 50398,
+    "7": 48880,
+    "8": 50668,
+    "9": 52631,
+    "10": 53743,
+    "11": 53284,
+    "12": 56338,
+    "13": 54407,
+    "14": 57278,
+    "15": 56187,
+    "16": 56954,
+    "17": 57858,
+    "18": 56081,
+    "19": 54827,
+    "20": 57595,
+    "21": 53820,
+    "22": 57029,
+    "23": 51388
+  },
+  "integrity_checks": {
+    "consecutive_block_numbers": true,
+    "hash_format": true,
+    "monotone_event_time": true,
+    "row_count_matches_index": true,
+    "unique_block_hashes": true,
+    "unique_block_numbers": true
+  },
+  "intensive_role": "exploratory intensity stress slice of the same day, not an independent case",
+  "intensive_utc_hour": 17,
+  "last_block": 19365246,
+  "last_event_time": 1709596799.0,
+  "license_status": "AWS Open Data source terms apply; raw redistribution not cleared or performed",
+  "ordinary_day_role": "predeclared date, no claim of absence of attacks",
+  "parquet_decode_and_normalize_seconds": 0.39024689200005014,
+  "retrieved_finished_utc": "2026-10-25T08:11:37.847315+00:00",
+  "retrieved_started_utc": "2026-10-25T08:11:31.201698+00:00",
+  "schema_version": "monitoring_pilot_input_v1",
+  "selection": "UTC hour with greatest sum of transaction_count within source day; ties earliest hour; selected before detector execution",
+  "source_day": "2024-03-04",
+  "source_http_headers": {
+    "accept-ranges": "bytes",
+    "connection": "close",
+    "content-length": "6206807",
+    "content-type": "binary/octet-stream",
+    "date": "Sun, 25 Oct 2026 08:11:37 GMT",
+    "etag": "\"959bd800cdb54e4794fb47beeb4b2893\"",
+    "last-modified": "Tue, 30 Sep 2025 19:56:49 GMT",
+    "server": "envoy",
+    "x-amz-id-2": "nRG8GYBVfBm+Wjg77PeNrVRDItVpj1J5KA59/F/2+HOe5hGxQrNCKJF4NapGcZoKdZr49TsdMD2wQScfxUq6YTX2n0/tdvZm",
+    "x-amz-meta-file-mtime": "1709604117000",
+    "x-amz-request-id": "2B54CBPTK6KSF6FH",
+    "x-amz-server-side-encryption": "AES256",
+    "x-amz-storage-class": "INTELLIGENT_TIERING",
+    "x-envoy-upstream-service-time": "157"
+  },
+  "source_key": "v1.0/eth/blocks/date=2024-03-04/part-00000-f140221e-3cff-43f9-a9cb-736a053f6cc2-c000.snappy.parquet",
+  "source_parquet_schema": "number: int64\nhash: string\ntimestamp: timestamp[ns]\ntransaction_count: int64\n-- schema metadata --\norg.apache.spark.version: '3.1.1'\norg.apache.spark.sql.parquet.row.metadata: '{\"type\":\"struct\",\"fields\":[{\"' + 1419",
+  "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/blocks/date=2024-03-04/part-00000-f140221e-3cff-43f9-a9cb-736a053f6cc2-c000.snappy.parquet"
+}

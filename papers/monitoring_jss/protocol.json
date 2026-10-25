@@ -1,5 +1,5 @@
 {
-  "schema_version": "article2_monitoring_protocol_draft_v0.1",
+  "schema_version": "article2_monitoring_protocol_draft_v0.2",
   "status": "draft-not-frozen",
   "created_local_date": "2026-10-25",
   "title": "Operational Evaluation of Blockchain Monitoring Pipelines under Alert Budgets and Delayed Feedback",
@@ -11,7 +11,8 @@
     "verified_base_sha": "049239566bc5ecadec1691eb64279ce7b204a86d",
     "dependency_repository": "https://github.com/KuznetsovKarazin/blockchain-detector-eval",
     "dependency_pin": "dc1ba8876f3f163c27c48f3a39292fc47f71bf18",
-    "new_scientific_experiments_completed": false
+    "new_scientific_experiments_completed": false,
+    "new_software_feasibility_experiments_completed": true
   },
   "time_model": {
     "event_fields": [
@@ -19,7 +20,8 @@
       "block_number",
       "block_hash",
       "tx_index",
-      "log_index_or_trace_index",
+      "log_index",
+      "trace_index",
       "event_time",
       "observed_time",
       "feature_ready_time",
@@ -102,7 +104,8 @@
     "model_version_association_required": true,
     "old_model_scores_for_new_model": "not automatic; requires separately defined procedure",
     "insufficient_positives_fallback": "to_be_frozen",
-    "feedback_assumption": "All historically labelled examples become available after the declared delay; selective alert-only feedback is outside the minimum claim."
+    "feedback_assumption": "All historically labelled examples become available after the declared delay; selective alert-only feedback is outside the minimum claim.",
+    "elliptic_delay_convention_draft": "Prediction and decision for step t precede label release. Label from step s with integer delay d is released after step s+d and may first affect prediction s+d+1. Initial labelled development history and validation availability must be declared separately. Implement an explicit queue; do not reuse M2 known_upto=t-DELAY+1 for a d=0 sweep."
   },
   "data": {
     "development_cases": [
@@ -137,7 +140,16 @@
       "prefix_invariance",
       "duplicate_alert_id_behavior"
     ],
-    "purpose": "feasibility and implementation correctness, not confirmatory scientific evidence"
+    "purpose": "feasibility and implementation correctness, not confirmatory scientific evidence",
+    "implementation_scope": "Single-chain finalized historical Ethereum block-header workload only. No receipts, traces, learned detector, delayed-label adaptation, cross-chain features or incident recall.",
+    "config_file": "pilot_config.json",
+    "timing_interpretation": "Local file read/decode/core/write measured. x1 and compressed arrival schedules use a virtual FIFO clock with measured service costs; no wall-clock pacing, real network or historical observation latency is claimed.",
+    "status": "bounded_feasibility_complete_and_verified",
+    "selection": "One date chosen in advance, 2024-03-04 UTC; intensive hour is the maximum sum of transaction_count within that same date, earliest hour breaks ties. Workload-only exploratory selection; not an independent incident.",
+    "historical_finality": "Offline canonical archive assumption; no live finality observation and no numerical confirmation delay imposed. Reorg handling unsupported.",
+    "recovery_scope": "ReplayState snapshot round-trip and deterministic log-replay tests; no external notification delivery guarantee or transactional durable outbox claim.",
+    "accepted_run": "runs/pilot_20261025T081404_015172Z",
+    "verification": "qa/verify_20261025T081539_946082Z/verification.json"
   },
   "evaluation": {
     "local_stages": [
@@ -217,5 +229,19 @@
     "calibration windows and fallback",
     "exact seeds and measurement repeats",
     "finality and late-event policy"
+  ],
+  "updated_local_date": "2026-10-25",
+  "change_log": [
+    {
+      "date": "2026-10-25",
+      "scope": "v0.2 bounded pilot specification",
+      "changes": [
+        "Explicitly distinguish virtual FIFO queue experiments from paced replay and real end-to-end latency.",
+        "Do not reconstruct block hashes from the old cache: reacquire original upstream block-header partition.",
+        "Use separate tx/log/trace index fields.",
+        "Document old M2 delay convention and d=0 incompatibility.",
+        "Full experiment grid remains draft and unexecuted."
+      ]
+    }
   ]
 }

@@ -1,39 +1,59 @@
 # Article 2 status — 25 October 2026
 
-Working title: **Operational Evaluation of Blockchain Monitoring Pipelines under Alert Budgets and Delayed Feedback**.
-Target: Journal of Systems and Software, ordinary research article.
+**Bounded feasibility pilot completed and independently checked. The full research
+protocol remains draft; the article is not ready for submission.**
 
-## Starting point
+Repository: KuznetsovKarazin/blockchain-analytics-lab; branch: paper/monitoring-jss.
+Starting HEAD: bb80caac70f8a289e719ec5b88dafa3767c1ef79.
+Companion dependency unchanged: dc1ba8876f3f163c27c48f3a39292fc47f71bf18.
 
-Repository `KuznetsovKarazin/blockchain-analytics-lab`, branch `paper/monitoring-jss`.
-Baseline commit: `049239566bc5ecadec1691eb64279ce7b204a86d`.
-The paper branch initially matched main. The current `pyproject.toml` pins the companion `blockchain-detector-eval` package to `dc1ba8876f3f163c27c48f3a39292fc47f71bf18`; this is not the newer article-1 baseline. The dependency is not changed here.
+## Completed
 
-## Completed now
+- Reviewed the supplied plan and handoff, M1/M2 source, stored summaries,
+  data indexes, dependency and actual historical manifests (`source_audit.json`).
+- Added the draft operational contract, machine-readable schemas, a causal
+  finalized-header replay core, acquisition/runner and verification scripts.
+- Downloaded the indexed Ethereum block-header partition for 2024-03-04;
+  checked 7,167 blocks and 7,166 parent links. Selected the busiest hour, 17 UTC,
+  by input workload only: 300 blocks from the same day.
+- Executed 12 small cells: two periods, two virtual arrival schedules, three
+  independent worker repetitions. No model training or full research grid.
+- Passed 14 unit tests, 8 real-input QA checks and schema validation of all
+  44,802 final-run decisions. Independent reviewer recomputed FIFO queues,
+  counts and budgets from logs. All 24 final compressed logs match saved hashes.
+- Assembled three incident candidates and probed real BSC RPC availability.
+  No candidate yet passes independent-test eligibility.
 
-- Read and checked the M1/M2 implementation, summaries, data instructions and dependency pin.
-- Saved this handoff and a machine-readable draft protocol.
-- Preserved the established priority: article 1 first; article 2 protocol and small pilot before a larger study.
+## Accepted evidence
 
-No new replay, model training, incident evaluation, latency measurement or reliability experiment has been run in this starter package.
+Use `runs/pilot_20261025T081404_015172Z/` and `qa/verify_20261025T081539_946082Z/verification.json`.
+See `SESSION_REPORT.md` for the measured results, interpretation and commands.
+Per-record logs and raw data are retained privately; Git contains code, source
+snapshots, aggregate results and verification hashes.
 
-## Existing evidence and limits
+The earlier run `pilot_20261025T081159_554384Z` is **quarantined/superseded**:
+independent validation found one truncated compressed decision log with a hash
+mismatch. Its original bytes/metadata are preserved, its integrity audit records
+failure, and none of its timing results are used in the session report. The cause
+of the truncation is not established. The accepted run independently passes the
+same integrity checks. An initial runtime success flag is not sufficient evidence.
 
-M1 uses 7,827,863 Ethereum blocks from 2023–2025, with January 2023 used for calibration and evaluation beginning in February. It measures alert workload without attack ground truth. Grouped triggers are not confirmed security incidents.
+## Work packages
 
-M2 uses Elliptic steps 1–30 for training, 31–34 for validation and previously studied steps 35–49 for testing. It has a single delay setting of 2 steps. The top-1% budget is a completed-batch policy; batch waiting must be counted. Retrain threshold calibration reuses training predictions and must be replaced by an independent temporal calibration procedure. MLP timing is an untrained forward pass; existing timing excludes data acquisition and feature construction.
+| Package | Actual state | Remaining |
+|---|---|---|
+| P2.01 | Header event/decision schema and causal replay verified | Receipts/logs/traces; cross-chain availability and watermark |
+| P2.02 | Fixed rule, causal cooldown, hard notification admission | Calibration, model-compatible fallback, temporal retraining, label queue |
+| P2.03 | Three candidates; one BSC attack receipt actually obtained | Prior-exposure audit, full attack labels, 30–60-day continuous populations |
+| P2.04 | Measured local header stages, RAM/disk; modeled FIFO queues | Real data-extraction pipeline and live/finality timing scope |
+| P2.05 | Duplicate/late/orderly snapshot continuation verified | Durable outbox, crash injection, delivery and recovery timing |
+| P2.06 | Reproducible exploratory pilot report | Independent scientific comparisons, uncertainty and transferable result |
 
-Ronin, Nomad and the studied custody case remain development examples. Independent incidents, continuous ordinary periods and explicit event availability are not yet established for the new paper.
+## Next executable task
 
-## P2.01–P2.06
-
-All six work packages remain planned. `protocol.json` is **draft-not-frozen**. The next step is to implement an event schema and one small replay, followed by a data/volume pilot and candidate-incident registry. The full grid follows feasibility and protocol freeze.
-
-Pipeline ordering must enforce the stated resource unit: score -> raw trigger -> causal grouping/suppression -> hard-budget admission -> emitted notification and decision log. Labels arrive through their own availability queue. Any different grouping/admission ordering must define its state effects explicitly.
-
-Do not run `scripts/run_all.sh` unchanged: it removes and rewrites fixed historical `*_v1` outputs. Use `papers/monitoring_jss/runs/<unique_run_id>/`. Retain `results/monitoring/`, the current package pin and the source manifest.
-
-## First pilot
-
-One ordinary day and one intensive fragment; one detector and two regimes. Verify prefix invariance, no duplicate notifications after replay/restart, explicit unknown historical observation times, and causal hard-budget handling. Measure runtime, RAM, disk/cache and queue size. Report measured local stages separately from hypothetical acquisition/confirmation delays. A successful smoke run is not confirmatory evidence of detection performance.
-
+Audit prior exposure of Euler, Beanstalk and BSC Token Hub across the book and K4.
+For the first eligible mechanism, fix historical contracts/ABI/event population
+and test receipt/log availability for one full day before committing to a 45-day
+window. Keep label adjudication separate from detector settings. Build the new
+Elliptic label-availability queue and temporal calibration only after its phase
+convention is fixed. Article 1/book priorities remain unchanged.

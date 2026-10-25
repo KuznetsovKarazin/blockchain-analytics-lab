@@ -1,0 +1,479 @@
+{
+  "schema_version": "monitoring_independent_review_v1",
+  "reviewed_at_utc": "2026-10-25T08:16:50.044617+00:00",
+  "reviewed_run": "pilot_20261025T081404_015172Z",
+  "verdict": "PASS_FOR_DECLARED_FEASIBILITY_SCOPE",
+  "scientific_detection_validation": false,
+  "method": "Read-only code review, historical-results reconciliation, independent persisted-log checks, alternative deque FCFS recomputation, source snapshot digest verification, raw parent-link inspection. Separate agent within same AI session; not independent human label adjudication.",
+  "final_run": {
+    "schema_version": "monitoring_pilot_independent_persisted_review_v1",
+    "reviewed_run": "pilot_20261025T081404_015172Z",
+    "review_date": "2026-10-25",
+    "review_scope": "Read-only implementation and persisted decision/timing consistency; no attack-performance conclusion.",
+    "cell_checks": [
+      {
+        "cell": "ordinary_day_x1_r1",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "ordinary_day_x1_r2",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "ordinary_day_x1_r3",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "ordinary_day_x1000000_r1",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "ordinary_day_x1000000_r2",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "ordinary_day_x1000000_r3",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1_r1",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1_r2",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1_r3",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1000000_r1",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1000000_r2",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1000000_r3",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      }
+    ],
+    "source_snapshot_code_checks": [
+      {
+        "path": "run_pilot.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": true
+      },
+      {
+        "path": "fetch_pilot.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": true
+      },
+      {
+        "path": "replay_core.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": true
+      },
+      {
+        "path": "tests/test_replay_core.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": true
+      },
+      {
+        "path": "incidents/probe_bsc_detail.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": true
+      },
+      {
+        "path": "incidents/probe_candidate_rpc.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": true
+      }
+    ],
+    "all_persisted_consistency_checks_pass": true,
+    "completed_cells_reviewed": 12,
+    "run_status": "complete"
+  },
+  "prior_invalid_run": {
+    "schema_version": "monitoring_pilot_independent_persisted_review_v1",
+    "reviewed_run": "pilot_20261025T081159_554384Z",
+    "review_date": "2026-10-25",
+    "review_scope": "Read-only implementation and persisted decision/timing consistency; no attack-performance conclusion.",
+    "cell_checks": [
+      {
+        "cell": "ordinary_day_x1_r1",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "ordinary_day_x1_r2",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "ordinary_day_x1_r3",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": false,
+        "read_error": "Compressed file ended before the end-of-stream marker was reached",
+        "gzip_readable": false
+      },
+      {
+        "cell": "ordinary_day_x1000000_r1",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "ordinary_day_x1000000_r2",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "ordinary_day_x1000000_r3",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 7167,
+        "paired_timing_rows": 7167,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1_r1",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1_r2",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1_r3",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1000000_r1",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1000000_r2",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      },
+      {
+        "cell": "intensive_hour_x1000000_r3",
+        "summary_hash_matches_manifest": true,
+        "log_hashes_match": true,
+        "gzip_readable": true,
+        "rows": 300,
+        "paired_timing_rows": 300,
+        "same_row_count": true,
+        "queue_recomputed_with_deque": true,
+        "decision_clock_before_write_finish": true,
+        "id_and_rule_alignment": true,
+        "hard_budget": true,
+        "unique_alert_ids": true
+      }
+    ],
+    "source_snapshot_code_checks": [
+      {
+        "path": "run_pilot.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": false
+      },
+      {
+        "path": "fetch_pilot.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": false
+      },
+      {
+        "path": "replay_core.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": true
+      },
+      {
+        "path": "tests/test_replay_core.py",
+        "saved_hash_matches_manifest": true,
+        "current_file_matches_saved": true
+      }
+    ],
+    "all_persisted_consistency_checks_pass": false,
+    "completed_cells_reviewed": 12,
+    "run_status": "complete"
+  },
+  "parent_links_independent": {
+    "rows": 7167,
+    "links_tested": 7166,
+    "matching_links": 7166,
+    "source_parquet_sha256": "204ff85f0f4188727cbe5c5e11fb6d245fba098742f51d9ce03da564186d46a1"
+  },
+  "findings": [
+    {
+      "id": "R01",
+      "severity": "resolved",
+      "finding": "Parent-hash checks were missing in first acquisition but are included and pass in final input manifest. Independent raw inspection confirms all 7166 within-day parent links. First-block parent across day boundary and chain consensus remain outside scope."
+    },
+    {
+      "id": "R02",
+      "severity": "resolved",
+      "finding": "Final manifest includes full_worker_wall_seconds for each subprocess; wall_runtime_seconds is replay loop only. Peak RSS scope now explicitly excludes later summary aggregation."
+    },
+    {
+      "id": "R03",
+      "severity": "pass_with_limit",
+      "finding": "All six executable/source .py files in final snapshot match their manifest hashes and current files at independent review. Workers execute live paths; before/after automatic source-mutation guard remains advisable for future concurrent runs."
+    },
+    {
+      "id": "R04",
+      "severity": "minor_provenance_gap",
+      "finding": "Exact acquisition command is not in input_manifest.json, although input key, input hashes, full fetch code, config and source acquisition timing are present. Preserve the original command separately in session notes when available."
+    },
+    {
+      "id": "R05",
+      "severity": "resolved",
+      "finding": "Final input manifest explicitly says upstream key is not guaranteed immutable and identifies retrieved bytes by SHA-256."
+    },
+    {
+      "id": "R06",
+      "severity": "declared_limit",
+      "finding": "FCFS queue is modeled using measured service duration; it is not a paced live queue and does not allocate the virtual waiting backlog. Measured RSS is not a queue-memory sizing estimate."
+    },
+    {
+      "id": "R07",
+      "severity": "declared_limit",
+      "finding": "Per-event decision writing is buffered gzip, with gzip close separate and fsync/remote sink excluded. Virtual notification-ready time is not durable external delivery time."
+    },
+    {
+      "id": "R08",
+      "severity": "declared_limit",
+      "finding": "Intensive hour is selected by source transaction-count volume; per-header processing work is nearly constant. Arrival compression is the direct stress factor for this header pipeline; no transaction-extraction cost is measured."
+    },
+    {
+      "id": "R09",
+      "severity": "declared_limit",
+      "finding": "Core checkpoint tests prove orderly serialized-state continuation, not crash-safe exactly-once external alert delivery."
+    },
+    {
+      "id": "R10",
+      "severity": "invalid_prior_run",
+      "finding": "First exploratory run pilot_20261025T081159_554384Z contains a truncated ordinary_day_x1_r3/decisions.jsonl.gz: expected SHA256 78675fcc5b488bb677e9dc8060491c05b923555d55506acfd00bca7d24b3110a; observed SHA256 1b1446cf19049031d00b15b02709e33f97dfe697472a74889ac5721b062c4226; observed 497287 bytes. The original stored summary reports completion but cannot establish integrity of the altered bytes. This first run must be excluded from evidence; exact corruption cause was not established by this read-only audit."
+    }
+  ],
+  "source_files_at_review": {
+    "papers/monitoring_jss/run_pilot.py": "c30f22a021ef8780790a2cf696e42ce7439044084a02c0788e411c5b29e2fcc9",
+    "papers/monitoring_jss/fetch_pilot.py": "85847b49f8ef2336509a0f15f402a8f78a7c29a559ad0700691bb4d01e03c309",
+    "papers/monitoring_jss/replay_core.py": "f133627bbbebfb105a4230e70304c97f4ba48f7adf1084e206dea42245a3e5d3",
+    "papers/monitoring_jss/pilot_config.json": "f407280c903188e21cea430feb7f615486a8e8f0074c7082b082a319ba137940"
+  },
+  "no_repository_edits_by_reviewer": true,
+  "allowed_conclusion": "One day plus a nested high-volume hour can be processed by the declared fixed-header rule with a five-notification cap. Local timing and virtual queue arithmetic are reproducible from complete logs. No detection accuracy, independent attack recall, production deployment readiness, live latency, real finality, or arbitrary-crash delivery guarantee follows."
+}

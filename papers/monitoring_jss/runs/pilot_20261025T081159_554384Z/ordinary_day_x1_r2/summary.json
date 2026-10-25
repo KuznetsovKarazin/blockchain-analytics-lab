@@ -1,0 +1,146 @@
+{
+  "budget_exceedance_count": 0,
+  "checks": {
+    "causal_playback_timestamps": true,
+    "hard_budget_respected": true,
+    "historical_observed_time_unknown": true,
+    "labels_unused": true,
+    "no_duplicate_alert_id": true
+  },
+  "distributions": {
+    "core_seconds": {
+      "max": 0.0008445230000688753,
+      "n": 7167,
+      "p50": 2.2373999854607973e-05,
+      "p95": 5.0946999954248896e-05,
+      "p99": 7.462306012712361e-05
+    },
+    "decode_seconds": {
+      "max": 8.821299979899777e-05,
+      "n": 7167,
+      "p50": 4.376000106276479e-06,
+      "p95": 6.678000181636882e-06,
+      "p99": 2.7320999988660334e-05
+    },
+    "local_service_seconds": {
+      "max": 0.0009862769998107979,
+      "n": 7167,
+      "p50": 3.907900008925935e-05,
+      "p95": 9.195100001306854e-05,
+      "p99": 0.00036893928012432314
+    },
+    "queued_or_in_service_at_arrival": {
+      "max": 0.0,
+      "n": 7167,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    },
+    "read_seconds": {
+      "max": 0.0004076650002389215,
+      "n": 7167,
+      "p50": 2.099995981552638e-07,
+      "p95": 4.9040002977562815e-06,
+      "p99": 1.5982600161805792e-05
+    },
+    "virtual_notification_ready_seconds": {
+      "max": 0.0009862769998107979,
+      "n": 7167,
+      "p50": 3.907900008925935e-05,
+      "p95": 9.195099955832119e-05,
+      "p99": 0.00036893927906930926
+    },
+    "virtual_queue_wait_seconds": {
+      "max": 0.0,
+      "n": 7167,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    },
+    "write_seconds": {
+      "max": 0.0009590360000402143,
+      "n": 7167,
+      "p50": 1.1348000043653883e-05,
+      "p95": 2.5589999722797034e-05,
+      "p99": 0.00032775561982816763
+    }
+  },
+  "events": 7167,
+  "evidence_role": "new exploratory real-header feasibility run; no attack labels",
+  "finished_utc": "2026-10-25T08:12:01.639901+00:00",
+  "gzip_close_seconds": 0.0005428079998637259,
+  "input_historical_first_event_time": 1709510411.0,
+  "input_path": "data/raw/monitoring_jss/2024-03-04/ordinary_day.jsonl",
+  "input_sha256": "4a32762ff7cdd89b4c8f67158f33351ae9bbd2efb8f70bec5a786e5e2141efea",
+  "local_service_throughput_events_per_second": 18713.598272169635,
+  "log_sha256": {
+    "decisions.jsonl.gz": "5f327cad98e726ab46c83cffa079ed587c93606c914dba3cf508dffea6948fdf",
+    "timing.csv.gz": "eea2889cf0219ec27caf8405d1009ba5726265a3451e921abcaf7ed79b9ac98f"
+  },
+  "logs_bytes": 1519323,
+  "notifications": 5,
+  "notifications_by_playback_utc_day": {
+    "2026-10-25": 5
+  },
+  "peak_rss_bytes": 28442624,
+  "period": "ordinary_day.jsonl",
+  "playback_origin": "2026-10-25T00:00:00+00:00",
+  "ram_scope": "whole independent Linux worker including interpreter, state and timing buffer",
+  "raw_triggers": 438,
+  "repetition": 2,
+  "schema_version": "monitoring_pilot_cell_v1",
+  "source_bytes": 1948864,
+  "speed_factor": 1,
+  "started_utc": "2026-10-25T08:12:00.952991+00:00",
+  "suppression_counts": {
+    "None": 5,
+    "below_threshold": 6729,
+    "budget": 430,
+    "grouped": 3
+  },
+  "thread_count": 1,
+  "timing_scope": {
+    "clock_warning": "Historical event_time and playback timestamps have distinct epochs. Do not subtract across them.",
+    "compression_warning": "Budget uses playback UTC day; compression is an engineering stress experiment, not an equal-production-horizon comparison.",
+    "excluded": [
+      "network acquisition",
+      "Parquet conversion",
+      "remote RPC",
+      "receipts/logs/traces",
+      "consensus finality",
+      "fsync/durable notification",
+      "timing-buffer append and export",
+      "result aggregation"
+    ],
+    "measured": [
+      "buffered JSONL read",
+      "JSON decode",
+      "header state/score/group/budget core",
+      "buffered gzip decision write"
+    ],
+    "modeled": [
+      "FCFS arrival schedule",
+      "queue wait",
+      "notification-ready offset"
+    ]
+  },
+  "virtual_completion_seconds": 86388.000043886,
+  "wall_loop_throughput_events_per_second": 18257.515322021358,
+  "wall_runtime_seconds": 0.3925506770001448,
+  "worker_command": [
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/run_pilot.py",
+    "--worker",
+    "--config",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/pilot_20261025T081159_554384Z/config.json",
+    "--inputs",
+    "/workspace/scratch/159bf77d8682/monitoring-work/data/raw/monitoring_jss/2024-03-04",
+    "--cell",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/pilot_20261025T081159_554384Z/ordinary_day_x1_r2",
+    "--period",
+    "ordinary_day.jsonl",
+    "--speed",
+    "1",
+    "--rep",
+    "2"
+  ]
+}

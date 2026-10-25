@@ -1,0 +1,44 @@
+{
+  "schema": "article2_result_provenance_v1",
+  "date": "2026-10-25",
+  "entries": [
+    {
+      "id": "M1",
+      "repository": "blockchain-analytics-lab",
+      "path": "results/monitoring/m1_v1",
+      "role": "book historical workload result; no attack labels",
+      "new_for_paper": false
+    },
+    {
+      "id": "M2",
+      "repository": "blockchain-analytics-lab",
+      "path": "results/monitoring/m2_v1",
+      "role": "book exploratory labelled benchmark; known calibration/delay limitations",
+      "new_for_paper": false
+    },
+    {
+      "id": "pilot_v1",
+      "path": "runs/pilot_20261025T081159_554384Z",
+      "role": "quarantined preliminary engineering run; one corrupt log",
+      "use_for_results": false
+    },
+    {
+      "id": "pilot_20261025T081404_015172Z",
+      "path": "runs/pilot_20261025T081404_015172Z",
+      "role": "new exploratory measured local replay on historical real headers; modeled arrival/queue; not independent attack evidence",
+      "use_for_results": true
+    },
+    {
+      "id": "verify_20261025T081539_946082Z",
+      "path": "qa/verify_20261025T081539_946082Z",
+      "role": "implementation verification on real input with synthetic delivery/label/suffix fault injections",
+      "independent_scientific_incidents": 0
+    },
+    {
+      "id": "candidate_registry",
+      "path": "incidents/incident_candidates_20261025.json",
+      "role": "acquisition triage, three candidates, zero eligible independent tests",
+      "new_scientific_detection_result": false
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab/papers/monitoring_jss/decision.schema.json",
+  "title": "Causal finalized-header replay decision, pilot v1",
+  "description": "Structural decision contract. replay_core additionally enforces temporal ordering and hard budget. Snapshots support deterministic continuation; atomic outbox/sink delivery across a crash is outside this pilot.",
+  "type": "object",
+  "required": [
+    "chain_id",
+    "block_number",
+    "block_hash",
+    "tx_index",
+    "log_index",
+    "trace_index",
+    "event_time",
+    "observed_time",
+    "label_available_time",
+    "transaction_count",
+    "schema_version",
+    "event_id",
+    "population_id",
+    "clock_domain",
+    "replay_available_time",
+    "feature_ready_time",
+    "decision_time",
+    "model_version",
+    "score",
+    "threshold",
+    "raw_trigger",
+    "group_candidate",
+    "notification_emitted",
+    "alert_id",
+    "suppression_reason",
+    "budget_day_utc",
+    "daily_budget",
+    "notifications_on_day",
+    "label_used"
+  ],
+  "properties": {
+    "chain_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "block_number": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "block_hash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{64}$"
+    },
+    "tx_index": {
+      "type": "null"
+    },
+    "log_index": {
+      "type": "null"
+    },
+    "trace_index": {
+      "type": "null"
+    },
+    "event_time": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Historical block timestamp, UTC POSIX seconds; never playback arrival."
+    },
+    "observed_time": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Historical observation timestamp if independently recorded, otherwise null. Never infer it from block timestamp or playback schedule."
+    },
+    "label_available_time": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Historical label availability if known, otherwise null. The fixed pilot detector never uses labels."
+    },
+    "transaction_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "schema_version": {
+      "const": "replay_decision_v1"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^event:[0-9a-f]{64}$"
+    },
+    "population_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "clock_domain": {
+      "const": "replay_scenario_posix_seconds",
+      "description": "Replay processing/availability clock, independent of historical event and observed timestamps. Pilot playback uses a declared later POSIX origin. Budget calendar follows this clock; compressed runs are workload tests, not historical notification-time estimates."
+    },
+    "replay_available_time": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Modeled availability on declared replay clock. Not historical observed_time."
+    },
+    "feature_ready_time": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Feature-ready instant on replay clock supplied by runner."
+    },
+    "decision_time": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Replay-clock budget admission epoch, after scoring/grouping; excludes subsequent audit serialization and sink write."
+    },
+    "model_version": {
+      "type": "string",
+      "pattern": "^finalized_header_fixed_count_v1:[0-9a-f]{16}$"
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "transaction_count for evaluated headers, null for duplicate/late deliveries."
+    },
+    "threshold": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "raw_trigger": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Strict score > threshold; null when event is not evaluated."
+    },
+    "group_candidate": {
+      "type": "boolean",
+      "description": "Passes fixed cooldown anchored on last emitted notification; budget evaluated afterwards."
+    },
+    "notification_emitted": {
+      "type": "boolean",
+      "description": "Admitted to local notification output. Does not assert external transactional delivery."
+    },
+    "alert_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^alert:[0-9a-f]{64}$"
+    },
+    "suppression_reason": {
+      "enum": [
+        null,
+        "duplicate",
+        "late",
+        "below_threshold",
+        "grouped",
+        "budget"
+      ]
+    },
+    "budget_day_utc": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "UTC date of replay decision, not historical event date."
+    },
+    "daily_budget": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "notifications_on_day": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "label_used": {
+      "const": false
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "notification_emitted": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "alert_id": {
+            "type": "string"
+          },
+          "suppression_reason": {
+            "type": "null"
+          },
+          "raw_trigger": {
+            "const": true
+          },
+          "group_candidate": {
+            "const": true
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "alert_id": {
+            "type": "null"
+          },
+          "suppression_reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "suppression_reason": {
+            "enum": [
+              "duplicate",
+              "late"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "score": {
+            "type": "null"
+          },
+          "raw_trigger": {
+            "type": "null"
+          },
+          "group_candidate": {
+            "const": false
+          }
+        }
+      }
+    }
+  ]
+}

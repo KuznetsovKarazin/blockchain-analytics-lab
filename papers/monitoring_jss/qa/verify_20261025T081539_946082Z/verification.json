@@ -1,0 +1,238 @@
+{
+  "baseline_notifications": 5,
+  "baseline_semantic_sha256": "ff28cdfb71e96a1066b951ac43d9985c09bf38663e6083ade7c12b127d1d6345",
+  "baseline_state_sha256": "4ca3dc100b7336a9f734852b653382637f446e6be1a00ba35285322d0d41ff01",
+  "clock_scope": "fixed deterministic verification clock, not measured runtime; original event gaps retained",
+  "command_argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "papers/monitoring_jss/verify_pilot.py",
+    "--input",
+    "data/raw/monitoring_jss/2024-03-04_parent_checked/ordinary_day.jsonl",
+    "--run",
+    "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z"
+  ],
+  "command_shell": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python papers/monitoring_jss/verify_pilot.py --input data/raw/monitoring_jss/2024-03-04_parent_checked/ordinary_day.jsonl --run papers/monitoring_jss/runs/pilot_20261025T081404_015172Z",
+  "config": {
+    "chain_id": 1,
+    "cooldown_seconds": 300,
+    "daily_budget": 5,
+    "population_id": "ethereum_block_headers",
+    "threshold": 300
+  },
+  "environment": {
+    "jsonschema_version": "4.26.0",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "evidence_role": "implementation QA on historical data plus explicit delivery/suffix fault injections; not attack-detection evidence",
+  "finished_utc": "2026-10-25T08:15:49.746010+00:00",
+  "git_base_commit": "bb80caac70f8a289e719ec5b88dafa3767c1ef79",
+  "input": {
+    "events": 7167,
+    "path": "data/raw/monitoring_jss/2024-03-04_parent_checked/ordinary_day.jsonl",
+    "sha256": "4a32762ff7cdd89b4c8f67158f33351ae9bbd2efb8f70bec5a786e5e2141efea"
+  },
+  "passed": true,
+  "playback_origin": "2026-10-25T00:00:00+00:00",
+  "playback_speed": 1,
+  "runtime_seconds": 9.799821427000097,
+  "schema_version": "monitoring_pilot_real_input_verification_v1",
+  "semantic_fields_excluded": [
+    "decision_time",
+    "feature_ready_time",
+    "label_available_time",
+    "observed_time",
+    "replay_available_time"
+  ],
+  "sources": {
+    "papers/monitoring_jss/decision.schema.json": "d727f1a2f81c6830a44e61bc936e0c7ca1f00a1134c88d2bc5f795f26b6ccc5a",
+    "papers/monitoring_jss/event.schema.json": "e8219c41d79840d2330c046a742db33701acba83a7504ccaca60f28942f31c03",
+    "papers/monitoring_jss/pilot_config.json": "f407280c903188e21cea430feb7f615486a8e8f0074c7082b082a319ba137940",
+    "papers/monitoring_jss/replay_core.py": "f133627bbbebfb105a4230e70304c97f4ba48f7adf1084e206dea42245a3e5d3",
+    "papers/monitoring_jss/verify_pilot.py": "3fcbe8305b90fb796ed86d8cfe2f60413e5cc2c4de20d07720947e0e2af573a6"
+  },
+  "split_index": 3583,
+  "started_utc": "2026-10-25T08:15:39.946253+00:00",
+  "tests": [
+    {
+      "details": {
+        "mutated_future_events": 3584,
+        "prefix_events": 3583,
+        "prefix_semantic_sha256": "6418a383ca133d4a63d2cdf36ee0654611dabb54be78c4f3ba67f641f55e6ed4"
+      },
+      "name": "prefix_invariance_under_future_counts_and_labels",
+      "passed": true,
+      "runtime_seconds": 0.3079436549996899
+    },
+    {
+      "details": {
+        "adaptation_tested": false,
+        "mutated_label_metadata_rows": 7167
+      },
+      "name": "label_metadata_has_no_effect_on_fixed_detector",
+      "passed": true,
+      "runtime_seconds": 0.14286682399961137
+    },
+    {
+      "details": {
+        "inserted_duplicate_deliveries": 57,
+        "notifications": 5
+      },
+      "name": "duplicate_delivery_no_repeated_notification_or_budget_consumption",
+      "passed": true,
+      "runtime_seconds": 0.14032512799985852
+    },
+    {
+      "details": {
+        "atomic_external_delivery_tested": false,
+        "checkpoint_after_events": 3583,
+        "snapshot_sha256": "637ba0742d38b537c7736ae8ec859c5efbdec86339ebe5eec3a4d96d638a4f18"
+      },
+      "name": "json_checkpoint_restart_exact_continuation",
+      "passed": true,
+      "runtime_seconds": 0.12740553299954627
+    },
+    {
+      "details": {
+        "delayed_original_input_index": 10,
+        "delivered_after_original_index": 3582,
+        "prior_decision_digest_unchanged": true,
+        "reorg_tested": false
+      },
+      "name": "held_back_real_header_late_drop_without_history_rewrite",
+      "passed": true,
+      "runtime_seconds": 0.10722649799936335
+    },
+    {
+      "details": {
+        "limit": 5,
+        "notification_counts_by_playback_day": {
+          "2026-10-25": 5
+        },
+        "raw_triggers": 438
+      },
+      "name": "hard_budget_and_unique_alert_ids",
+      "passed": true,
+      "runtime_seconds": 0.0015338889998020022
+    },
+    {
+      "details": {
+        "event_times_unchanged": true,
+        "historical_observed_null_rows": 7167
+      },
+      "name": "unknown_historical_observation_preserved",
+      "passed": true,
+      "runtime_seconds": 0.0031493599999521393
+    },
+    {
+      "details": {
+        "logs": [
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/intensive_hour_x1000000_r1/decisions.jsonl.gz",
+            "sha256": "64c53a6ba26041040de150a44c69a98a12e36b2836a466a29fca776eb58afebd",
+            "validated_records": 300
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/intensive_hour_x1000000_r2/decisions.jsonl.gz",
+            "sha256": "e6d59870ff5934ae38f18ad93c939d85a1bc682fe587113cc77aed5412393c1b",
+            "validated_records": 300
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/intensive_hour_x1000000_r3/decisions.jsonl.gz",
+            "sha256": "85e3798df40e90afef3cf53c3d852be233a9f5be0b06c6aff32b06dbab61cd4e",
+            "validated_records": 300
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/intensive_hour_x1_r1/decisions.jsonl.gz",
+            "sha256": "e07cd5cc1368a61fe73a1114d454c73aa56501418a35048b64f89ba1065e351c",
+            "validated_records": 300
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/intensive_hour_x1_r2/decisions.jsonl.gz",
+            "sha256": "afae5e6bbce53f4d377e19f9e23d12ac4c117ebb9945b67fd957eb807247d45e",
+            "validated_records": 300
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/intensive_hour_x1_r3/decisions.jsonl.gz",
+            "sha256": "d9449780d9df6e45f703f67af81ea6254e4605643ea6228ffd76205687ba1889",
+            "validated_records": 300
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/ordinary_day_x1000000_r1/decisions.jsonl.gz",
+            "sha256": "e554e0cd0c80ef8b48f7280bae8ff632a2756a84b26c919d8ffd47a40c8068da",
+            "validated_records": 7167
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/ordinary_day_x1000000_r2/decisions.jsonl.gz",
+            "sha256": "5862f88cc577faf8fbadecbc3fe1f837e4642830c033d8858e91966d6bd9b5b7",
+            "validated_records": 7167
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/ordinary_day_x1000000_r3/decisions.jsonl.gz",
+            "sha256": "d5eb3ae4396673f333996045069a621a47071ee510bf19b9c15893c94daf5494",
+            "validated_records": 7167
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/ordinary_day_x1_r1/decisions.jsonl.gz",
+            "sha256": "75f084721ea2929b08b2fefdfe149237d86d1226393de0e5f89abaa00ef5b901",
+            "validated_records": 7167
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/ordinary_day_x1_r2/decisions.jsonl.gz",
+            "sha256": "12d4ed27353c82d910978e344252037c5034122d4ee8cb86b06e1e553a9d15af",
+            "validated_records": 7167
+          },
+          {
+            "notification_counts_by_day": {
+              "2026-10-25": 5
+            },
+            "path": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/ordinary_day_x1_r3/decisions.jsonl.gz",
+            "sha256": "6ad3dc6eba03d93e9d7929b26f875ef50667346b948676b1ca5cc5c97b267a29",
+            "validated_records": 7167
+          }
+        ],
+        "matching_ordinary_input_cells": 6,
+        "run": "papers/monitoring_jss/runs/pilot_20261025T081404_015172Z",
+        "schema_sha256": "d727f1a2f81c6830a44e61bc936e0c7ca1f00a1134c88d2bc5f795f26b6ccc5a",
+        "total_validated_records": 44802
+      },
+      "name": "persisted_pilot_decision_schema_and_provenance",
+      "passed": true,
+      "runtime_seconds": 8.714934569999969
+    }
+  ],
+  "verification_service_seconds": 0.001
+}

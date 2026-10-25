@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab/papers/monitoring_jss/event.schema.json",
+  "title": "Historical finalized Ethereum block-header event, pilot v1",
+  "description": "Canonical historical header supplied by a validated source. Finality is an input assumption; this schema does not verify consensus finality, transaction ordering, logs, traces or reorgs. All times are UTC POSIX seconds. Structural validation is supplemented by replay_core validation of finite numbers and clock ordering.",
+  "type": "object",
+  "required": [
+    "chain_id",
+    "block_number",
+    "block_hash",
+    "event_time",
+    "transaction_count"
+  ],
+  "properties": {
+    "chain_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "block_number": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "block_hash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{64}$"
+    },
+    "tx_index": {
+      "type": "null"
+    },
+    "log_index": {
+      "type": "null"
+    },
+    "trace_index": {
+      "type": "null"
+    },
+    "event_time": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Historical block timestamp, UTC POSIX seconds; never playback arrival."
+    },
+    "observed_time": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Historical observation timestamp if independently recorded, otherwise null. Never infer it from block timestamp or playback schedule."
+    },
+    "label_available_time": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Historical label availability if known, otherwise null. The fixed pilot detector never uses labels."
+    },
+    "transaction_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "label": {
+      "description": "Optional audit metadata; never read by the fixed-count detector."
+    }
+  },
+  "additionalProperties": true
+}

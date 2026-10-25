@@ -1,0 +1,54 @@
+Статья 2: первичные источники и отбор новых случаев
+Дата проверки: 25 октября 2026 года.
+
+Это рабочий реестр кандидатов до сравнения методов, а не готовая независимая тестовая выборка. Новые в данном списке случаи могут уже присутствовать в K4, книге или другом коде автора. До включения нужен поиск по всему проекту и фиксация предыдущего использования.
+
+1. Новизна относительно XChainWatcher и BridgeGuard
+
+XChainWatcher (Augusto et al., arXiv:2410.02029v2, 15 November 2024) использует Datalog-модель межсетевых правил. Авторы оценивают Ronin/Nomad, предоставляют транзакционные данные, измеряют извлечение фактов и исполнение модели. Извлечение включает дополнительные RPC-запросы за транзакциями и debug_traceTransaction, когда receipts недостаточно. Поэтому ни общую архитектуру мониторинга мостов, ни сам факт измерения feature/RPC latency нельзя считать новым вкладом нашей статьи. Author repository обозначен MIT; конкретные данные и вложенные зависимости всё равно требуют проверки лицензии. Статья arXiv v2 имеет отдельную лицензию CC BY-NC-ND 4.0 — она не заменяется лицензией кода.
+Источники:
+https://arxiv.org/html/2410.02029v2 (раздел IV-D)
+https://github.com/AndreAugusto11/XChainWatcher
+
+Нужный BridgeGuard — Wu et al., “Safeguarding Blockchain Ecosystem: Understanding and Detecting Attack Transactions on Cross-chain Bridges”, arXiv:2410.14493v2, publisher DOI 10.1145/3696410.3714604. Это графовый детектор с глобальными и локальными признаками исполнения; опубликованы классификационные и временные результаты. Версия v2 (3 марта 2025) рассматривает 49 инцидентов; экспериментальная выборка раздела 3.3 относится к 22 атакам на cross-chain business logic и содержит 203 attack transactions и 40,000 normal transactions, supervised split 7:3 и десять повторов. Этот эксперимент не следует отождествлять с нашей причинной непрерывной оценкой при лимите уведомлений и задержанных метках. Версия v2 проверена дополнительно; в тексте остаются несогласованности отдельных показателей, поэтому числа эффективности здесь не переношу. Перед воспроизведением нужен доступный закреплённый код и финальная публикация.
+Author-linked artifact https://anonymous.4open.science/r/BridgeGuard-220E/ открылся с пустой веб-выгрузкой; код/данные и лицензию фактически не проверил. Не путать с одноимённым TDSC 2025 static-analysis BridgeGuard, который проверяет external interaction vulnerabilities в bridge-router contracts.
+Источники:
+https://arxiv.org/html/2410.14493v2 (разделы 3.3–3.4)
+https://dl.acm.org/doi/10.1145/3696410.3714604
+
+Предлагаемое отличие нашей работы — проверяемые причинные решения в непрерывном потоке при одинаковом заданном лимите именно выдаваемых уведомлений, задержанной обратной связи, модель-специфичной временной калибровке и сбоях исполнения. Необходим совместный анализ фактической нагрузки, своевременности, очереди, стадий обработки, дубликатов, поздних событий и restart. Это рабочая исследовательская гипотеза, а не доказанная заявка на приоритет. Сходство с двумя работами ещё не исключает другие близкие публикации.
+
+2. Три кандидата
+
+Euler V1, Ethereum, 13 March 2023: lending/liquidation accounting. Протокол подтверждает инцидент; оригинальный анализ SlowMist содержит шесть seed transaction hashes. Выделить frontrunner и основного участника; считать их одним инцидентом для оценки неопределённости. Предложенный непрерывный период [2023-01-27, 2023-03-14) UTC. Нужна вся заранее определённая популяция Euler V1, не только кошельки злоумышленника.
+https://www.euler.finance/blog/war-peace-behind-the-scenes-of-eulers-240m-exploit-recovery
+https://slowmist.medium.com/slowmist-an-analysis-of-the-attack-on-euler-finance-5143abc0d5ad
+https://swivel.substack.com/p/post-mortem-euler-liquidation-vulnerability
+
+Beanstalk, Ethereum, 17 April 2022: governance/flash-loan voting. Официальное сообщение ссылается на технический разбор. Seed exploit transaction и отдельные preparation/proposal transactions записаны в JSON. Предложенный период [2022-03-03, 2022-04-18) UTC. Исторические ABI и изменения Diamond facets нужно разрешить до выделения признаков. Для атомарного exploit receipt-детекция является постфактум относительно уже исполненной транзакции.
+https://bean.money/blog/beanstalk-governance-exploit
+https://medium.com/@nvy_0x/the-beanstalk-bean-exploit-b038f4d324ea
+
+BSC Token Hub, BNB Smart Chain/Beacon, 6 October 2022: cross-chain proof validation. Официальное сообщение подтверждает инцидент; Coinbase даёт оригинальный технический разбор. Предложенный период [2022-08-22, 2022-10-07) UTC. Получен один реальный receipt первой атаки. Полнота BSC и доступность исторической Beacon-side популяции не подтверждены. Coinbase повторно ссылается на первую транзакцию при описании второй волны — вторую метку нельзя копировать без проверки. Этот кандидат резервный: односторонний BSC outflow-пилот возможен, но не подтверждает межсетевые инварианты.
+https://www.bnbchain.org/en/blog/bnb-chain-ecosystem-update
+https://www.coinbase.com/blog/bsc-token-hub-compromise-investigation-and-analysis-8
+
+3. Что фактически проверено
+
+В каталоге лежат read-only probe scripts и JSON-журналы. Ethereum PublicNode вернул HTTP403 и для eth_chainId, и для запрошенного Beanstalk receipt. Это ограничение конкретной попытки доступа, не доказательство отсутствия данных. Etherscan-страница этого tx также не была получена (403).
+
+Официальный BSC endpoint вернул chain_id=56 и receipt tx ebf83628ba893d35b496121fb8201666b8e09f3cbadf0e269162baa72efe3b8b. Block 21957793, tx_index 57, logs 139/140/141, timestamp 2022-10-06 18:26:46 UTC. Полный сырой JSON сохранён и хеширован. Дополнительный журнал bsc_detail_probe.json подтверждает получение header/transaction; eth_getLogs вернул -32005 limit exceeded, а debug_traceTransaction — -32000 missing trie node. Поэтому данный endpoint пока не обеспечивает нужную полную выгрузку логов и исторических traces. Никакие кошельки не подключались и транзакции не отправлялись.
+
+Методы receipts/logs документированы Ethereum; debug tracing является отдельным нестандартным RPC и зависит от узла/доступной истории. Документация BSC предупреждает об ограничениях eth_getLogs на публичных endpoints. Получение одного receipt не гарантирует возможность выгрузить 45 суток.
+https://ethereum.org/developers/docs/apis/json-rpc/
+https://geth.ethereum.org/docs/interacting-with-geth/rpc/ns-debug
+https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/
+https://ethereum.publicnode.com/
+
+4. Ближайшая исполнимая задача
+
+Сначала провести repository-wide exposure audit трёх случаев. Затем для первого не использованного случая зафиксировать исторические адреса, ABI и event population; скачать один обычный полный UTC-день и короткий интенсивный фрагмент с проверкой полноты по блокам/receipts. Только после этой проверки и объёмной оценки выбирать окончательное 45-дневное окно и параметры бюджетов. Labels хранить отдельно от входов детектора; historical observed_time оставлять null. Unknown дни не помечать benign, а reviewer-verified false alarms считать только по проверенным уведомлениям. Никакой полной экспериментальной сетки или вывода о recall сейчас нет.
+
+5. Ограничения распространения
+
+Не установлена лицензия на bulk/provider data и report-derived label files. Публичность страницы или блокчейна сама по себе не даёт лицензию на чужой собранный датасет. До проверки условий распространять идентификаторы, собственные скрипты и provenance; raw probe responses сохранять как внутреннюю проверку, не публиковать автоматически. Не включать тексты отчётов и изображения авторов в репозиторий.

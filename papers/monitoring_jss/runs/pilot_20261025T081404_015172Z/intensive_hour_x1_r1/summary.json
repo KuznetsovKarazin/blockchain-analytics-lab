@@ -1,0 +1,150 @@
+{
+  "budget_exceedance_count": 0,
+  "checks": {
+    "causal_playback_timestamps": true,
+    "decision_before_buffered_write_completion": true,
+    "fcfs_schedule_reconstructed": true,
+    "hard_budget_respected": true,
+    "historical_observed_time_unknown": true,
+    "labels_unused": true,
+    "no_duplicate_alert_id": true,
+    "queue_counts_reconstructed": true,
+    "stage_sum_matches_service": true
+  },
+  "distributions": {
+    "core_seconds": {
+      "max": 8.73219996719854e-05,
+      "n": 300,
+      "p50": 1.4411499705602182e-05,
+      "p95": 2.3811500250303654e-05,
+      "p99": 5.1248510681034286e-05
+    },
+    "decode_seconds": {
+      "max": 2.6839999918593094e-05,
+      "n": 300,
+      "p50": 2.7939995561609976e-06,
+      "p95": 4.367499332147418e-06,
+      "p99": 9.972549705707845e-06
+    },
+    "local_service_seconds": {
+      "max": 0.00042833499992411816,
+      "n": 300,
+      "p50": 2.5103000098170014e-05,
+      "p95": 6.0475599957499086e-05,
+      "p99": 0.0002524782103046164
+    },
+    "queued_or_in_service_at_arrival": {
+      "max": 0.0,
+      "n": 300,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    },
+    "read_seconds": {
+      "max": 6.4300002122763544e-06,
+      "n": 300,
+      "p50": 1.5000023267930374e-07,
+      "p95": 2.6335495476814707e-06,
+      "p99": 3.589619836930065e-06
+    },
+    "virtual_notification_ready_seconds": {
+      "max": 0.00042833499992411816,
+      "n": 300,
+      "p50": 2.5103000098170014e-05,
+      "p95": 6.0475599957499086e-05,
+      "p99": 0.0002524782103046164
+    },
+    "virtual_queue_wait_seconds": {
+      "max": 0.0,
+      "n": 300,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    },
+    "write_seconds": {
+      "max": 0.0004102379998585093,
+      "n": 300,
+      "p50": 7.341000127780717e-06,
+      "p95": 1.3948549803899376e-05,
+      "p99": 0.00023358832007033922
+    }
+  },
+  "events": 300,
+  "evidence_role": "new exploratory real-header feasibility run; no attack labels",
+  "finished_utc": "2026-10-25T08:14:10.077450+00:00",
+  "gzip_close_seconds": 0.00043606600047496613,
+  "input_historical_first_event_time": 1709571611.0,
+  "input_path": "data/raw/monitoring_jss/2024-03-04_parent_checked/intensive_hour.jsonl",
+  "input_sha256": "95ed3366a09ab0e5eba1b4a85a39c13ce7d08e864032b50233a67079d60b9edb",
+  "local_service_throughput_events_per_second": 28392.2061289592,
+  "log_sha256": {
+    "decisions.jsonl.gz": "e07cd5cc1368a61fe73a1114d454c73aa56501418a35048b64f89ba1065e351c",
+    "timing.csv.gz": "3097747f6e977bf3c1b177c25e526e84ccca70d289395bd9942f0bea464db95d"
+  },
+  "logs_bytes": 62810,
+  "notifications": 5,
+  "notifications_by_playback_utc_day": {
+    "2026-10-25": 5
+  },
+  "peak_rss_bytes": 20606976,
+  "period": "intensive_hour.jsonl",
+  "playback_origin": "2026-10-25T00:00:00+00:00",
+  "ram_scope": "Linux worker high-water RSS sampled at end of replay and timing export; includes interpreter, state and timing buffer, excludes later summary aggregation",
+  "raw_triggers": 25,
+  "repetition": 1,
+  "schema_version": "monitoring_pilot_cell_v1",
+  "source_bytes": 81578,
+  "speed_factor": 1,
+  "started_utc": "2026-10-25T08:14:10.056506+00:00",
+  "suppression_counts": {
+    "None": 5,
+    "below_threshold": 275,
+    "budget": 9,
+    "grouped": 11
+  },
+  "thread_count": 1,
+  "timing_scope": {
+    "clock_warning": "Historical event_time and playback timestamps have distinct epochs. Do not subtract across them.",
+    "compression_warning": "Budget uses playback UTC day; compression is an engineering stress experiment, not an equal-production-horizon comparison.",
+    "excluded": [
+      "network acquisition",
+      "Parquet conversion",
+      "remote RPC",
+      "receipts/logs/traces",
+      "consensus finality",
+      "fsync/durable notification",
+      "timing-buffer append and export",
+      "result aggregation"
+    ],
+    "measured": [
+      "buffered JSONL read",
+      "JSON decode",
+      "header state/score/group/budget core",
+      "buffered gzip decision write"
+    ],
+    "modeled": [
+      "FCFS arrival schedule",
+      "queue wait",
+      "notification-ready offset"
+    ]
+  },
+  "virtual_completion_seconds": 3588.000024877,
+  "wall_loop_throughput_events_per_second": 26441.719321338158,
+  "wall_runtime_seconds": 0.011345707000145921,
+  "worker_command": [
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/run_pilot.py",
+    "--worker",
+    "--config",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/config.json",
+    "--inputs",
+    "/workspace/scratch/159bf77d8682/monitoring-work/data/raw/monitoring_jss/2024-03-04_parent_checked",
+    "--cell",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/pilot_20261025T081404_015172Z/intensive_hour_x1_r1",
+    "--period",
+    "intensive_hour.jsonl",
+    "--speed",
+    "1",
+    "--rep",
+    "1"
+  ]
+}

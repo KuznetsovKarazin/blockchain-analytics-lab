@@ -1,0 +1,288 @@
+{
+  "schema": "monitoring_incident_candidates_v1",
+  "research_date": "2026-10-25",
+  "purpose": "Pre-comparison acquisition triage; not a frozen test set",
+  "comparison_results_seen": false,
+  "known_excluded_cases": [
+    "Ronin",
+    "Nomad",
+    "previous custody-wallet drain"
+  ],
+  "sources": {
+    "euler_protocol": {
+      "url": "https://www.euler.finance/blog/war-peace-behind-the-scenes-of-eulers-240m-exploit-recovery",
+      "kind": "protocol retrospective"
+    },
+    "euler_labels": {
+      "url": "https://slowmist.medium.com/slowmist-an-analysis-of-the-attack-on-euler-finance-5143abc0d5ad",
+      "kind": "original security investigation"
+    },
+    "euler_context": {
+      "url": "https://swivel.substack.com/p/post-mortem-euler-liquidation-vulnerability",
+      "kind": "affected integrator postmortem"
+    },
+    "bean_protocol": {
+      "url": "https://bean.money/blog/beanstalk-governance-exploit",
+      "kind": "protocol announcement"
+    },
+    "bean_technical": {
+      "url": "https://medium.com/@nvy_0x/the-beanstalk-bean-exploit-b038f4d324ea",
+      "kind": "original technical analysis linked by protocol announcement"
+    },
+    "bsc_protocol": {
+      "url": "https://www.bnbchain.org/en/blog/bnb-chain-ecosystem-update",
+      "kind": "protocol announcement"
+    },
+    "bsc_labels": {
+      "url": "https://www.coinbase.com/blog/bsc-token-hub-compromise-investigation-and-analysis-8",
+      "kind": "original security investigation"
+    },
+    "bsc_rpc": {
+      "url": "https://docs.bnbchain.org/bnb-smart-chain/developers/json_rpc/json-rpc-endpoint/",
+      "kind": "official RPC documentation"
+    },
+    "ethereum_rpc": {
+      "url": "https://ethereum.org/developers/docs/apis/json-rpc/",
+      "kind": "official method documentation"
+    },
+    "geth_trace": {
+      "url": "https://geth.ethereum.org/docs/interacting-with-geth/rpc/ns-debug",
+      "kind": "official method documentation"
+    },
+    "ethereum_provider": {
+      "url": "https://ethereum.publicnode.com/",
+      "kind": "provider endpoint documentation"
+    },
+    "xchain_paper": {
+      "url": "https://arxiv.org/html/2410.02029v2",
+      "kind": "author preprint v2"
+    },
+    "xchain_repo": {
+      "url": "https://github.com/AndreAugusto11/XChainWatcher",
+      "kind": "author artifact"
+    },
+    "bridgeguard_paper": {
+      "url": "https://arxiv.org/html/2410.14493v2",
+      "kind": "author version v2 corresponding to WWW 2025, checked by lead reviewer"
+    },
+    "bridgeguard_publication": {
+      "url": "https://dl.acm.org/doi/10.1145/3696410.3714604",
+      "kind": "publisher record"
+    },
+    "bridgeguard_artifact": {
+      "url": "https://anonymous.4open.science/r/BridgeGuard-220E/",
+      "kind": "author-linked artifact; empty web extraction"
+    }
+  },
+  "candidates": [
+    {
+      "status": "candidate_not_eligible",
+      "raw_corpus_acquired": false,
+      "prehistory_verified": false,
+      "independence_verified": false,
+      "exposure_check": "Only absence from inherited Ronin/Nomad/custody exclusion list checked. Search all prior code, book experiments and K4 before eligibility.",
+      "observed_time_historical": null,
+      "label_available_time_historical": null,
+      "licensing": "No redistribution license for report-derived labels or provider bulk data established. Publish identifiers, extraction code and provenance only until terms are checked.",
+      "candidate_window_policy": "Proposed contiguous window: 45 complete UTC days before incident date plus incident UTC day. Exact blocks and contract population must be frozen after volume/acquisition pilot and before method comparisons.",
+      "raw_requirements": [
+        "block headers and hashes",
+        "transaction order and indices",
+        "transaction receipts and logs",
+        "execution traces if selected features require them",
+        "explicit missing-range ledger"
+      ],
+      "eligibility_gates": [
+        "repository-wide prior-exposure audit",
+        "contract and event population frozen",
+        "complete contiguous history with hashes and gaps checked",
+        "attack transaction list independently cross-checked",
+        "feature readiness and delayed-label policy recorded",
+        "redistribution terms recorded"
+      ],
+      "id": "candidate_euler_20230313",
+      "protocol": "Euler V1",
+      "family": "lending / liquidation accounting",
+      "chains": [
+        {
+          "namespace": "eip155",
+          "chain_id": 1,
+          "name": "Ethereum"
+        }
+      ],
+      "incident_date": "2023-03-13",
+      "proposed_window_utc": [
+        "2023-01-27T00:00:00Z",
+        "2023-03-14T00:00:00Z"
+      ],
+      "priority": 1,
+      "source_ids": [
+        "euler_protocol",
+        "euler_labels",
+        "euler_context"
+      ],
+      "seed_attack_transactions": [
+        "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
+        "0x71a908be0bef6174bccc3d493becdfd28395d78898e355d451cb52f7bac38617",
+        "0x62bd3d31a7b75c098ccf28bc4d4af8c4a191b4b9e451fab4232258079e8b18c4",
+        "0x465a6780145f1efe3ab52f94c006065575712d2003d83d85481f3d110ed131d9",
+        "0x3097830e9921e4063d334acb82f6a79374f76f0b1a8f857e89b89bc58df1f311",
+        "0x47ac3527d02e6b9631c77fad1cdee7bfa77a8a7bfd4880dccbda5146ace4088f"
+      ],
+      "attack_label_note": "Six transaction IDs are report-derived seeds, not independently verified raw labels. Keep the frontrunning transaction distinct from the main actor but group all into one incident for uncertainty.",
+      "population_proposal": "Freeze Euler V1 core and selected lending market contracts from historical deployment/configuration, not attacker-address sampling.",
+      "availability": "Ethereum historical receipts/logs are defined by JSON-RPC; no Euler raw data acquired. PublicNode endpoint probe returned HTTP 403, including eth_chainId; this does not establish global unavailability.",
+      "scientific_caution": "A finalized receipt-based alert after an atomic exploit cannot prevent that transaction; evaluate subsequent opportunities only under explicit scenario timing."
+    },
+    {
+      "status": "candidate_not_eligible",
+      "raw_corpus_acquired": false,
+      "prehistory_verified": false,
+      "independence_verified": false,
+      "exposure_check": "Only absence from inherited Ronin/Nomad/custody exclusion list checked. Search all prior code, book experiments and K4 before eligibility.",
+      "observed_time_historical": null,
+      "label_available_time_historical": null,
+      "licensing": "No redistribution license for report-derived labels or provider bulk data established. Publish identifiers, extraction code and provenance only until terms are checked.",
+      "candidate_window_policy": "Proposed contiguous window: 45 complete UTC days before incident date plus incident UTC day. Exact blocks and contract population must be frozen after volume/acquisition pilot and before method comparisons.",
+      "raw_requirements": [
+        "block headers and hashes",
+        "transaction order and indices",
+        "transaction receipts and logs",
+        "execution traces if selected features require them",
+        "explicit missing-range ledger"
+      ],
+      "eligibility_gates": [
+        "repository-wide prior-exposure audit",
+        "contract and event population frozen",
+        "complete contiguous history with hashes and gaps checked",
+        "attack transaction list independently cross-checked",
+        "feature readiness and delayed-label policy recorded",
+        "redistribution terms recorded"
+      ],
+      "id": "candidate_beanstalk_20220417",
+      "protocol": "Beanstalk",
+      "family": "governance / flash-loan voting",
+      "chains": [
+        {
+          "namespace": "eip155",
+          "chain_id": 1,
+          "name": "Ethereum"
+        }
+      ],
+      "incident_date": "2022-04-17",
+      "proposed_window_utc": [
+        "2022-03-03T00:00:00Z",
+        "2022-04-18T00:00:00Z"
+      ],
+      "priority": 2,
+      "source_ids": [
+        "bean_protocol",
+        "bean_technical"
+      ],
+      "seed_attack_transactions": [
+        "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+      ],
+      "context_transactions": [
+        {
+          "role": "BIP18 proposal; not itself a completed theft",
+          "tx_hash": "0x68cdec0ac76454c3b0f7af0b8a3895db00adf6daaf3b50a99716858c4fa54c6f"
+        },
+        {
+          "role": "BIP19 proposal; contextual label only",
+          "tx_hash": "0x9575e478d7c542558ecca52b27072fa1f1ec70679106bdbd62f3bb4d6c87a80d"
+        }
+      ],
+      "population_proposal": "Freeze historical Beanstalk Diamond/governance and relevant Silo/token events for all users. Verify historical ABI and facet changes.",
+      "availability": "Receipt retrieval from public Ethereum endpoint returned HTTP 403. Explorer page also returned HTTP 403. No raw event or contiguous history downloaded.",
+      "scientific_caution": "Single atomic incident. Preparation and exploit execution need separate labels; a detector designed after reading the exploit is exploratory unless held out at protocol level."
+    },
+    {
+      "status": "candidate_not_eligible",
+      "raw_corpus_acquired": false,
+      "prehistory_verified": false,
+      "independence_verified": false,
+      "exposure_check": "Only absence from inherited Ronin/Nomad/custody exclusion list checked. Search all prior code, book experiments and K4 before eligibility.",
+      "observed_time_historical": null,
+      "label_available_time_historical": null,
+      "licensing": "No redistribution license for report-derived labels or provider bulk data established. Publish identifiers, extraction code and provenance only until terms are checked.",
+      "candidate_window_policy": "Proposed contiguous window: 45 complete UTC days before incident date plus incident UTC day. Exact blocks and contract population must be frozen after volume/acquisition pilot and before method comparisons.",
+      "raw_requirements": [
+        "block headers and hashes",
+        "transaction order and indices",
+        "transaction receipts and logs",
+        "execution traces if selected features require them",
+        "explicit missing-range ledger"
+      ],
+      "eligibility_gates": [
+        "repository-wide prior-exposure audit",
+        "contract and event population frozen",
+        "complete contiguous history with hashes and gaps checked",
+        "attack transaction list independently cross-checked",
+        "feature readiness and delayed-label policy recorded",
+        "redistribution terms recorded"
+      ],
+      "id": "candidate_bsc_token_hub_20221006",
+      "protocol": "BSC Token Hub",
+      "family": "cross-chain bridge / proof validation",
+      "chains": [
+        {
+          "namespace": "eip155",
+          "chain_id": 56,
+          "name": "BNB Smart Chain"
+        },
+        {
+          "namespace": "non_evm",
+          "chain_id": null,
+          "name": "BNB Beacon Chain",
+          "note": "historical chain identifier and archival provider still to verify"
+        }
+      ],
+      "incident_date": "2022-10-06",
+      "proposed_window_utc": [
+        "2022-08-22T00:00:00Z",
+        "2022-10-07T00:00:00Z"
+      ],
+      "priority": 3,
+      "source_ids": [
+        "bsc_protocol",
+        "bsc_labels",
+        "bsc_rpc"
+      ],
+      "seed_attack_transactions": [
+        "0xebf83628ba893d35b496121fb8201666b8e09f3cbadf0e269162baa72efe3b8b"
+      ],
+      "raw_seed_verified": {
+        "receipt_file": "bsc_receipt_raw.json",
+        "chain_id": 56,
+        "block_number": 21957793,
+        "block_hash": "0x4bb3dce2d2811c0734ab08c27c8173da377c045cefe20b117443b08eebd2e449",
+        "tx_index": 57,
+        "log_indices": [
+          139,
+          140,
+          141
+        ],
+        "event_time_utc": "2022-10-06T18:26:46Z",
+        "status": 1,
+        "historical_observed_time": null
+      },
+      "source_conflict": "Coinbase report reuses first exploit transaction link for the second 20:43:18 wave and describes an inconsistent time gap. Do not copy it as a second label; resolve from raw chain evidence and another primary investigation.",
+      "population_proposal": "BSC CrossChain system contract 0x0000000000000000000000000000000000002000 and TokenHub 0x0000000000000000000000000000000000001004, plus matched Beacon-side messages if cross-chain invariants are tested.",
+      "availability": "One real attack receipt and chain_id obtained from the official public BSC endpoint. Full 45-day log history, Beacon-side data and complete attack list remain unverified. See probe logs for method support.",
+      "scientific_caution": "Reserve candidate until both chains are covered. A BSC-only outflow detector may be evaluated as single-chain, but cannot be presented as verification of cross-chain message consistency.",
+      "availability_checks": {
+        "chain_id": "obtained 56",
+        "eth_getTransactionReceipt": "obtained one receipt with three logs",
+        "eth_getBlockByHash": "obtained header and tx hash list",
+        "eth_getTransactionByHash": "obtained attack input and metadata",
+        "eth_getLogs": "error -32005: limit exceeded for single-block filter",
+        "debug_traceTransaction": "error -32000: missing trie node",
+        "complete_45_day_history": "not downloaded",
+        "beacon_side_messages": "not downloaded"
+      }
+    }
+  ],
+  "common_label_policy": "Unlabelled transactions/days are unknown, not confirmed benign. Report actual reviewed-alert denominator; do not infer false positives from all non-attack time.",
+  "selection_note": "Selection based on evidence and acquisition feasibility only. Final acceptance/exclusion decisions must be logged before comparing monitoring methods. A receipt probe is not proof of complete historical availability.",
+  "related_work_correction": "BridgeGuard v2 reviewed 49 historical incidents, but section 3.3 describes 22 cross-chain-business-logic attacks supplying 203 labelled attack transactions. Neither 49 nor 203 is the count of independent incidents in that evaluation."
+}

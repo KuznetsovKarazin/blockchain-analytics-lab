@@ -1,0 +1,257 @@
+{
+  "schema_version": "monitoring_source_audit_v1",
+  "audit_date": "2026-10-25",
+  "repository": "KuznetsovKarazin/blockchain-analytics-lab",
+  "head": "bb80caac70f8a289e719ec5b88dafa3767c1ef79",
+  "audit_kind": "read-only code and stored-artifact consistency review; not independent scientific replication",
+  "dependency_pin": "dc1ba8876f3f163c27c48f3a39292fc47f71bf18",
+  "checked_counts": {
+    "M1_total_input_days": 1096,
+    "M1_total_blocks": 7827863,
+    "M1_calibration_blocks": 222058,
+    "M1_evaluation_blocks": 7605805,
+    "M1_evaluation_days": 1065,
+    "M1_daily_policy_rows": 4260,
+    "M2_steps": [
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "M2_policy_steps": 60,
+    "M2_counts_by_policy": {
+      "budget": {
+        "n_all": 67504,
+        "alerts_all": 676,
+        "n_labelled": 16670,
+        "alerts_labelled": 258,
+        "pos": 1083,
+        "tp": 255,
+        "alerts_unknown": 418
+      },
+      "fixed": {
+        "n_all": 67504,
+        "alerts_all": 6718,
+        "n_labelled": 16670,
+        "alerts_labelled": 914,
+        "pos": 1083,
+        "tp": 790,
+        "alerts_unknown": 5804
+      },
+      "recal": {
+        "n_all": 67504,
+        "alerts_all": 4404,
+        "n_labelled": 16670,
+        "alerts_labelled": 824,
+        "pos": 1083,
+        "tp": 771,
+        "alerts_unknown": 3580
+      },
+      "retrain": {
+        "n_all": 67504,
+        "alerts_all": 2598,
+        "n_labelled": 16670,
+        "alerts_labelled": 748,
+        "pos": 1083,
+        "tp": 729,
+        "alerts_unknown": 1850
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "A01",
+      "priority": "high",
+      "title": "DELAY=0 is not supported by the old M2 availability formula",
+      "locations": [
+        "scripts/m2_elliptic_stream.py:112",
+        "scripts/m2_elliptic_stream.py:118"
+      ],
+      "evidence": "With DELAY=2, label step s is revealed after prediction step s+1 and first affects step s+2. Changing only DELAY to 0 sets known_upto=t+1 after prediction t; the recent window includes unscored t+1, giving scores[base][t+1] KeyError and selecting future labels.",
+      "correction": "Implement an explicit label queue. Specify arrival phase and prediction-before-reveal even at delay 0; test delays 0/1/2/4. Preserve the historical run as DELAY=2 with its actual convention."
+    },
+    {
+      "id": "A02",
+      "priority": "high",
+      "title": "Retrain calibrates on fitted examples; zero-positive fallback retains a prior-model threshold",
+      "locations": [
+        "scripts/m2_elliptic_stream.py:120",
+        "scripts/m2_elliptic_stream.py:124",
+        "scripts/m2_elliptic_stream.py:126"
+      ],
+      "evidence": "Recent available labelled steps belong to m_tr; new-model scores of those same rows tune the threshold. When yy.sum()==0, retrain_thr carries over despite model replacement.",
+      "correction": "Exclude a separate available temporal calibration window from fit and associate its scores/threshold with the new model; predeclare a model-compatible fallback."
+    },
+    {
+      "id": "A03",
+      "priority": "high",
+      "title": "Stored M1 cache projection cannot identify exact block versions",
+      "locations": [
+        "scripts/d0_cache_aws.py:20",
+        "scripts/m1_block_stream.py:106",
+        "scripts/m1_block_stream.py:108",
+        "results/monitoring/m1_v1/inputs_eth_blocks.csv"
+      ],
+      "evidence": "Eight cached columns exclude block_hash and parent_hash; M1 reads six columns and drops duplicates by number before sorting. Conflicting hashes cannot be audited from this projection; observed/finality times are absent.",
+      "correction": "Fetch a separate pilot input including hash and parent_hash where available. Validate uniqueness/continuity and preserve unknown historical observed_time as null. Do not invent a hash or assert live finality verification."
+    },
+    {
+      "id": "A04",
+      "priority": "high",
+      "title": "M2 precision and recall apply to the labelled subset, workload to every row",
+      "locations": [
+        "scripts/m2_elliptic_stream.py:88",
+        "scripts/m2_elliptic_stream.py:105",
+        "results/monitoring/m2_v1/per_step.csv"
+      ],
+      "evidence": "Across test steps there are 67,504 rows, 16,670 labelled rows, and 1,083 labelled positives. Budget emits 676 alerts but evaluates precision on 258 labelled alerts (255 true positives); 418 alerts remain unlabelled, not false or true positives.",
+      "correction": "Always report label coverage and unknown alerted count beside labelled precision/recall. Do not describe 0.9884 as precision of all 676 notifications."
+    },
+    {
+      "id": "A05",
+      "priority": "medium",
+      "title": "Top-k is completed-batch with rounded counts and row-order ties",
+      "locations": [
+        "scripts/m2_elliptic_stream.py:96",
+        "scripts/m2_elliptic_stream.py:97"
+      ],
+      "evidence": "k=max(1,round(0.01*n)); selecting requires the entire batch. Python rounding and minimum one imply not exactly 1% in general, although all historical batches are large. Ties depend on source row order.",
+      "correction": "Prespecify floor/round and minimum policy, stable transaction-ID tie handling, and batch-wait accounting; retain this only as a batch baseline."
+    },
+    {
+      "id": "A06",
+      "priority": "medium",
+      "title": "README overstates non-use of test labels",
+      "locations": [
+        "README.md:69",
+        "scripts/m2_elliptic_stream.py:114"
+      ],
+      "evidence": "The fixed threshold uses validation, but recal/retrain adapt using delayed labels of earlier test steps. This is legitimate prequential adaptation if the timing is declared; it is not never choosing thresholds on test data.",
+      "correction": "Clarify in Article 2 provenance that only available past-stream labels enter adaptation, while current/future labels do not."
+    },
+    {
+      "id": "A07",
+      "priority": "medium",
+      "title": "M1 total block count includes calibration and grouped hits are not security incidents",
+      "locations": [
+        "scripts/m1_block_stream.py:111",
+        "scripts/m1_block_stream.py:119",
+        "scripts/m1_block_stream.py:71",
+        "results/monitoring/m1_v1/summary.json"
+      ],
+      "evidence": "7,827,863 total blocks include 222,058 from January 2023, leaving 7,605,805 evaluation blocks over 1,065 days. incidents() groups by distance between retained row positions, not measured elapsed time, with no attack labels or hard notification budget.",
+      "correction": "Use explicit calibration/evaluation counts, call incidents grouped triggers/notifications, and specify time or block-count grouping without treating five minutes as exact."
+    },
+    {
+      "id": "A08",
+      "priority": "medium",
+      "title": "Existing latency is a scoring microbenchmark, not operational latency",
+      "locations": [
+        "scripts/m2_elliptic_stream.py:51",
+        "scripts/m2_elliptic_stream.py:145",
+        "scripts/m2_elliptic_stream.py:151",
+        "scripts/m1_block_stream.py:78"
+      ],
+      "evidence": "M2 times 200 single ready-feature scores and five 1,000-row batches, one numerical thread; MLP is untrained. M1 times scalar EWMA/sliding-median loops. No data acquisition, decoding, queue, grouping, durable write, adaptation cost, confirmation, or operator response is included.",
+      "correction": "Report pilot measured local stages and simulated scheduling separately. p50/p95/p99, RAM/disk and queue are new measurements only after execution."
+    },
+    {
+      "id": "A09",
+      "priority": "medium",
+      "title": "Historical manifests are more specific than the release changelog",
+      "locations": [
+        "CHANGELOG.md:34",
+        "results/monitoring/m1_v1/manifest.json",
+        "results/monitoring/m2_v1/manifest.json"
+      ],
+      "evidence": "M1 manifest pins 3518af786e547355abc626f44b6bf218cc600490; M2 pins e778dad9dfd7f7e5dccb4e2b4a8dcb009ea32309. Changelog calls the final run e7aed73. git show comparison confirms both stored script files are byte-identical between their respective manifest commit and current baseline.",
+      "correction": "Cite each run manifest for provenance, not a single release shorthand. This audit does not independently rerun the historical scientific experiments."
+    },
+    {
+      "id": "A10",
+      "priority": "medium",
+      "title": "Generic reproducibility helper does not cover new papers code or preserve dirty source patches",
+      "locations": [
+        "src/bclab/repro.py:53",
+        "src/bclab/repro.py:76",
+        "pyproject.toml:24"
+      ],
+      "evidence": "CODE_PATHS excludes papers/. Dirty source is represented only by a digest, not a preserved patch. Historical package list does not record the installed companion bal commit; pyproject pins dc1ba8876f3f163c27c48f3a39292fc47f71bf18.",
+      "correction": "Use pilot-specific full source snapshot/patch and file hashes covering papers/, exact commands/config, dependency pin and environment versions; do not use old write_manifest unchanged for new code."
+    },
+    {
+      "id": "A11",
+      "priority": "low",
+      "title": "AWS upstream metadata does not itself pin immutable source bytes",
+      "locations": [
+        "src/bclab/aws.py:7",
+        "src/bclab/aws.py:64",
+        "src/bclab/aws.py:131"
+      ],
+      "evidence": "Docstring mentions ETag, but saved fields are keys, sizes and mtimes; cached-file SHA-256 is present. No source ETag/version ID/raw-object checksum is saved by the old helper.",
+      "correction": "Record SHA-256 of locally downloaded raw objects and provenance metadata for new acquisition, with redistribution terms. Do not claim historical ETag was preserved."
+    },
+    {
+      "id": "A12",
+      "priority": "low",
+      "title": "M2 loader reads an additional unmanifested file",
+      "locations": [
+        "blockchain-detector-eval@dc1ba8876f3f163c27c48f3a39292fc47f71bf18/src/bal/data/elliptic.py:load_elliptic",
+        "scripts/m2_elliptic_stream.py:182"
+      ],
+      "evidence": "Pinned load_elliptic also opens elliptic_txs_edgelist.csv and maps edge IDs; M2 manifest hashes only features/classes. Edges are not used by the tabular model, so they should not affect predictions but remain a runtime input.",
+      "correction": "Hash all loader inputs or expose a tabular-only loader with clearly documented input contract."
+    }
+  ],
+  "plan_alignment": "The supplied Article 2 plan correctly identifies the main scientific limits; A01, A04, A09 and A10 are additional implementation/provenance details to retain in the new protocol.",
+  "not_done": [
+    "No historical input cache downloaded by this audit",
+    "No model training or full grid",
+    "No attack-label adjudication",
+    "No repo file edited"
+  ],
+  "source_files": {
+    "README.md": "3fec5ec4aa11475131c5602de4fbc1b6edd1e938450aadf4e471bf7632131ac4",
+    "CHANGELOG.md": "af8b60d77c8b6e57bb45fe59305fc8b214210975f614dafe3ee9d839904ba445",
+    "docs/DATA.md": "dd78deb129f85cf10c76752746fd3c16e0836054264301e561588ff658633006",
+    "pyproject.toml": "26ed8f64839e3ddab9cbd0fc0f73f1ea25a2459e00423432df0768cfca454c76",
+    "scripts/m1_block_stream.py": "779a223a2c1084ef0692f93bea988255c4a99eae688ae6666a7f8c2ac52e831b",
+    "scripts/m2_elliptic_stream.py": "69df1440bf1693254dea05ede580881c7f798a0cbe6e5b75f1545fb34ff4219a",
+    "results/monitoring/m1_v1/summary.json": "802a4c86c6f62c7ce0c9d0d738ada2cc939b488d1f7afd7d21a643d108c3de7f",
+    "results/monitoring/m1_v1/manifest.json": "4435cc7afa84a864861174b7fa77394235be0e5f6d145a880129c387ff6fe384",
+    "results/monitoring/m2_v1/summary.json": "636bd01929fd9d74df473cca0626c39a98c684efe3315d090a318b39f68ad5c7",
+    "results/monitoring/m2_v1/manifest.json": "d855aa26d20c9a82ffe5c06980bb685a8291705c622c119005b83559e34d7c94"
+  },
+  "pinned_loader_verified": {
+    "url": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/dc1ba8876f3f163c27c48f3a39292fc47f71bf18/src/bal/data/elliptic.py",
+    "blob_sha": "2d4154b19b749155ff1312f6dccf69d0546f921b",
+    "features": {
+      "local": 93,
+      "aggregated": 72,
+      "total": 165
+    },
+    "label_mapping": {
+      "1": 1,
+      "2": 0,
+      "unknown": -1
+    },
+    "mask_default": "labelled=True excludes unknown rows",
+    "steps": {
+      "train": "1..30",
+      "validation": "31..34",
+      "test": "35..49"
+    },
+    "operational_availability": "Not verified by loader: it reads all 165 ready features and the complete edgelist from disk. Disconnected time-step graph claim does not establish within-step feature availability."
+  }
+}
