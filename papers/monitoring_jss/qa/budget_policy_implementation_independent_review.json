@@ -1,0 +1,148 @@
+{
+  "schema_version": "budget_policy_implementation_independent_review_v1",
+  "verdict": "PASS_SYNTHETIC_PRE_REAL_INPUT",
+  "all_checks_pass": true,
+  "source_sha256": "549450dfc7db970ee039f17ef2c86d7a75820acc5b7128c46e340d1ebaf31726",
+  "review_script_sha256": "d3ad55ddfe0e48cc46c540defb526a9197a39a310e8ab5a8e36149e88074c7da",
+  "config_sha256": "7b83aaa220f5527f58faf801fbc3977c657ef9f6a427d7523136694e0a41ea0d",
+  "oracle": "Independent prefix-list/bisection count, release-instant counting, and token eligibility from elapsed time since last emitted event; not the production deque/floor/refill recurrence.",
+  "synthetic_decisions_compared": 390888,
+  "checkpoint_round_trips": 744,
+  "random_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "budgets_tested": [
+    0,
+    1,
+    5,
+    20
+  ],
+  "checks": [
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "greedy",
+      "budget": 0,
+      "rows": 21450,
+      "notifications": 0,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "greedy",
+      "budget": 1,
+      "rows": 21450,
+      "notifications": 30,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "greedy",
+      "budget": 5,
+      "rows": 21450,
+      "notifications": 150,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "greedy",
+      "budget": 20,
+      "rows": 21450,
+      "notifications": 600,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "paced_cumulative",
+      "budget": 0,
+      "rows": 21450,
+      "notifications": 0,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "paced_cumulative",
+      "budget": 1,
+      "rows": 21450,
+      "notifications": 30,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "paced_cumulative",
+      "budget": 5,
+      "rows": 21450,
+      "notifications": 150,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "paced_cumulative",
+      "budget": 20,
+      "rows": 21450,
+      "notifications": 600,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "token_bucket",
+      "budget": 0,
+      "rows": 21450,
+      "notifications": 0,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "token_bucket",
+      "budget": 1,
+      "rows": 21450,
+      "notifications": 30,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "token_bucket",
+      "budget": 5,
+      "rows": 21450,
+      "notifications": 150,
+      "pass": true
+    },
+    {
+      "check": "exact_boundary_30day_oracle",
+      "policy": "token_bucket",
+      "budget": 20,
+      "rows": 21450,
+      "notifications": 600,
+      "pass": true
+    },
+    {
+      "check": "invalid_input_atomicity_and_all_observed_key_conflicts",
+      "cases": 6,
+      "pass": true
+    },
+    {
+      "check": "future_suffix_prefix_invariance",
+      "policies": 3,
+      "pass": true
+    },
+    {
+      "check": "verified_empty_days_vs_missing_or_contradictory_completion",
+      "cases": 5,
+      "pass": true
+    }
+  ],
+  "real_payloads_read": 0,
+  "new_policy_outcomes_on_real_data": 0,
+  "resolved_review_findings": [
+    "All observed order-key conflicts now fail, including old accepted and previously late identities.",
+    "Explicit failed/running acquisition status or complete=false cannot be overridden by another completion flag."
+  ],
+  "limits": [
+    "This verifies policy semantics and synthetic input gates; complete real-window archive/Parquet/source correctness requires the separate acquisition audit.",
+    "Orderly checkpoint continuation is tested; arbitrary-crash delivery and cryptographic authenticity of user-supplied checkpoints are not claimed.",
+    "The actual emitter population, source clock assumptions and label-informed window selection remain those of the separately approved design."
+  ]
+}

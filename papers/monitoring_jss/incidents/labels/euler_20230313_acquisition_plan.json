@@ -1,0 +1,119 @@
+{
+  "schema": "monitoring_attack_day_acquisition_plan_v1",
+  "created_utc": "2026-10-25T09:15:00.958663+00:00",
+  "candidate_id": "candidate_euler_20230313",
+  "status": "defined_not_executed_by_label_curation_pass",
+  "purpose": "Bounded whole-day emitter coverage and external label cross-check; no detector comparison or 45-day acquisition",
+  "chain_id": 1,
+  "day_utc": "2023-03-13",
+  "start_utc": "2023-03-13T00:00:00Z",
+  "end_utc": "2023-03-14T00:00:00Z",
+  "emitter_addresses": [
+    "0x27182842e098f60e3d576794a5bffb0777e025d3"
+  ],
+  "topics_filter": null,
+  "population_name": "all Ethereum Euler V1 core-emitted event logs",
+  "population_provenance_reference": "../populations/euler_v1_core_day_20230301.json",
+  "source_provenance_reference": "source_provenance_20261025.json",
+  "label_manifest_reference": "euler_20230313_labels.json",
+  "include_all_matching_logs_in_day": true,
+  "do_not_filter_population_to_attack_hashes": true,
+  "start_block_number": null,
+  "end_block_number_exclusive": null,
+  "source_objects": {
+    "logs": {
+      "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2023-03-13/part-00000-2b4d1fd8-2a91-4f4f-aeae-99a922dcc953-c000.snappy.parquet",
+      "key": "v1.0/eth/logs/date=2023-03-13/part-00000-2b4d1fd8-2a91-4f4f-aeae-99a922dcc953-c000.snappy.parquet",
+      "listed_bytes": 456668908,
+      "listed_etag": "\"9ce67d9d2464ed6ecbeae2fda39ded88-7\"",
+      "listed_last_modified": "2025-09-30T20:05:15.000Z",
+      "list_response_sha256": "e6a8a275e1aa9117328c5871b9d47ea93da36dca70048244f7aad0dea9296067",
+      "listing_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2023-03-13%2F",
+      "listing_untruncated": true,
+      "whole_object_downloaded": false,
+      "whole_object_sha256": null,
+      "note": "Listing verifies discoverability only. Pin HEAD/If-Match and validate acquired bytes separately."
+    },
+    "blocks": {
+      "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/blocks/date=2023-03-13/part-00000-de87cb26-3d9e-4815-b5e9-b3b9c4ae4d03-c000.snappy.parquet",
+      "key": "v1.0/eth/blocks/date=2023-03-13/part-00000-de87cb26-3d9e-4815-b5e9-b3b9c4ae4d03-c000.snappy.parquet",
+      "listed_bytes": 6186785,
+      "listed_etag": "\"0da7a8533f1cbd1c61c557b268ccff97\"",
+      "listed_last_modified": "2025-09-30T19:56:48.000Z",
+      "list_response_sha256": "3233ccadc609bf0873a0f74c05b3612f021ecf5c207f5fc7ff389cb5bb1de436",
+      "listing_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2023-03-13%2F",
+      "listing_untruncated": true,
+      "whole_object_downloaded": false,
+      "whole_object_sha256": null,
+      "note": "Listing verifies discoverability only. Pin HEAD/If-Match and validate acquired bytes separately."
+    },
+    "transactions": {
+      "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/transactions/date=2023-03-13/part-00000-a9b429be-93d6-4809-aabd-d8cb2c4ece04-c000.snappy.parquet",
+      "key": "v1.0/eth/transactions/date=2023-03-13/part-00000-a9b429be-93d6-4809-aabd-d8cb2c4ece04-c000.snappy.parquet",
+      "listed_bytes": 660439277,
+      "listed_etag": "\"d8d8065929cf6a7109f7395540363ef2-10\"",
+      "listed_last_modified": "2025-09-30T21:45:41.000Z",
+      "list_response_sha256": "fa423a5d5b2485f61ba850aad777945d02b3ff8fc3dc2ddceeb923573d3e6d9a",
+      "listing_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Ftransactions%2Fdate%3D2023-03-13%2F",
+      "listing_untruncated": true,
+      "whole_object_downloaded": false,
+      "whole_object_sha256": null,
+      "note": "Listing verifies discoverability only. Pin HEAD/If-Match and validate acquired bytes separately."
+    }
+  },
+  "acquisition_command_argv": [
+    "python",
+    "papers/monitoring_jss/acquire_protocol_logs.py",
+    "--day",
+    "2023-03-13",
+    "--address",
+    "0x27182842e098f60e3d576794a5bffb0777e025d3",
+    "--address-source",
+    "https://github.com/euler-legacy-xyz/euler-contracts/blob/dfaa7788b17ac7c2a826a3ed242d7181998a778f/addresses/euler-addresses-mainnet.json",
+    "--population",
+    "all Ethereum Euler V1 core-emitted event logs",
+    "--logs-key",
+    "v1.0/eth/logs/date=2023-03-13/part-00000-2b4d1fd8-2a91-4f4f-aeae-99a922dcc953-c000.snappy.parquet",
+    "--blocks-key",
+    "v1.0/eth/blocks/date=2023-03-13/part-00000-de87cb26-3d9e-4815-b5e9-b3b9c4ae4d03-c000.snappy.parquet",
+    "--byte-budget",
+    "500000000"
+  ],
+  "receipt_path": {
+    "status": "not_acquired",
+    "rpc_request_template": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "eth_getTransactionReceipt",
+      "params": [
+        "<each positive transaction hash from label manifest>"
+      ]
+    },
+    "verification_sequence": [
+      "Confirm eth_chainId=0x1 before interpreting response.",
+      "Fetch receipt for each labelled transaction; require non-null success status, transactionHash, transactionIndex, blockHash, blockNumber and complete logs.",
+      "Fetch eth_getTransactionByHash and eth_getBlockByHash(blockHash,false); verify hash/index membership and timestamp.",
+      "Archive exact responses with provider, collection time, errors, byte count and SHA-256; do not call explorer extraction a full RPC receipt.",
+      "Join core/diamond logs from each receipt against the independently selected emitter stream; keep all other receipt logs for semantic cross-check only."
+    ],
+    "alternative": "AWS transaction projection may provide receipt-derived columns; inspect schema first. Joining those columns with logs is not a downloaded original RPC receipt. Label evidence type explicitly.",
+    "full_receipt_response_path_template": "private_evidence/<run_id>/receipts/<tx_hash>.json"
+  },
+  "validation_gates": [
+    "Untruncated partition listing; whole UTC day headers contiguous with unique block hashes and parent links.",
+    "Scan every emitter-address row; preserve all matching topics and rows; check log identities/order/timestamps and missing fields.",
+    "Resolve each externally labelled transaction against acquired rows; missing or conflicting labels stay unresolved.",
+    "For semantic features, reconstruct historical module/facet deployments; source commit date is not bytecode evidence.",
+    "Store separate immutable acquisition manifest; this plan never substitutes for an executed acquisition."
+  ],
+  "scope_limit": "All emitter logs, narrower than all protocol calls/transactions or all external token outflows.",
+  "eligible_after_this_one_day_run": false,
+  "remaining_after_run": [
+    "45-day contiguous prehistory",
+    "label-set completeness/adjudication",
+    "feature readiness and delayed-label policy",
+    "material exposure caveats",
+    "redistribution terms"
+  ],
+  "address_source_url": "https://github.com/euler-legacy-xyz/euler-contracts/blob/dfaa7788b17ac7c2a826a3ed242d7181998a778f/addresses/euler-addresses-mainnet.json"
+}

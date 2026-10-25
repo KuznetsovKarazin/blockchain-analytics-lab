@@ -1,0 +1,135 @@
+{
+  "all_checks_pass": true,
+  "checked_utc": "2026-10-25T12:57:56.057123+00:00",
+  "decision_rows_checked": 260415,
+  "distinct_positive_source_logs": 6,
+  "independent_incident_test": false,
+  "join_run": "budget_policy_label_join_20261025T125414_524570Z",
+  "joined_output_sha256": "8e18f08591bbd0cfb15b125d3d716c890aeed5a93642ddfb9f97e857ac9cf09c",
+  "label_sha256": "3518e1c753a3f0ba31b6977ab5b4f3811c5a3846569e1e930922af9084115046",
+  "policy_run": "budget_policy_20261025T125143_314640Z",
+  "production_modules_imported": false,
+  "reported_incidents": 1,
+  "results": [
+    {
+      "cell_id": "beanstalk_diamond__greedy__B1",
+      "positive_counts": {
+        "below_threshold": 3,
+        "emitted": 0,
+        "group_candidates": 3,
+        "hard_budget_rejected": 3,
+        "raw_triggers": 3,
+        "selected_exploit_logs": 6
+      },
+      "prior_same_day": 1,
+      "rows_checked": 28935
+    },
+    {
+      "cell_id": "beanstalk_diamond__paced_cumulative__B1",
+      "positive_counts": {
+        "below_threshold": 3,
+        "emitted": 0,
+        "group_candidates": 3,
+        "hard_budget_rejected": 3,
+        "raw_triggers": 3,
+        "selected_exploit_logs": 6
+      },
+      "prior_same_day": 1,
+      "rows_checked": 28935
+    },
+    {
+      "cell_id": "beanstalk_diamond__token_bucket__B1",
+      "positive_counts": {
+        "below_threshold": 3,
+        "emitted": 0,
+        "group_candidates": 3,
+        "hard_budget_rejected": 3,
+        "raw_triggers": 3,
+        "selected_exploit_logs": 6
+      },
+      "prior_same_day": 1,
+      "rows_checked": 28935
+    },
+    {
+      "cell_id": "beanstalk_diamond__greedy__B5",
+      "positive_counts": {
+        "below_threshold": 3,
+        "emitted": 0,
+        "group_candidates": 3,
+        "hard_budget_rejected": 3,
+        "raw_triggers": 3,
+        "selected_exploit_logs": 6
+      },
+      "prior_same_day": 5,
+      "rows_checked": 28935
+    },
+    {
+      "cell_id": "beanstalk_diamond__paced_cumulative__B5",
+      "positive_counts": {
+        "below_threshold": 3,
+        "emitted": 0,
+        "group_candidates": 3,
+        "quota_rejected": 3,
+        "raw_triggers": 3,
+        "selected_exploit_logs": 6
+      },
+      "prior_same_day": 3,
+      "rows_checked": 28935
+    },
+    {
+      "cell_id": "beanstalk_diamond__token_bucket__B5",
+      "positive_counts": {
+        "below_threshold": 3,
+        "emitted": 0,
+        "group_candidates": 3,
+        "raw_triggers": 3,
+        "selected_exploit_logs": 6,
+        "token_rejected": 3
+      },
+      "prior_same_day": 3,
+      "rows_checked": 28935
+    },
+    {
+      "cell_id": "beanstalk_diamond__greedy__B20",
+      "positive_counts": {
+        "below_threshold": 3,
+        "emitted": 0,
+        "group_candidates": 3,
+        "hard_budget_rejected": 3,
+        "raw_triggers": 3,
+        "selected_exploit_logs": 6
+      },
+      "prior_same_day": 20,
+      "rows_checked": 28935
+    },
+    {
+      "cell_id": "beanstalk_diamond__paced_cumulative__B20",
+      "positive_counts": {
+        "below_threshold": 3,
+        "emitted": 0,
+        "group_candidates": 3,
+        "quota_rejected": 3,
+        "raw_triggers": 3,
+        "selected_exploit_logs": 6
+      },
+      "prior_same_day": 11,
+      "rows_checked": 28935
+    },
+    {
+      "cell_id": "beanstalk_diamond__token_bucket__B20",
+      "positive_counts": {
+        "below_threshold": 3,
+        "emitted": 0,
+        "group_candidates": 3,
+        "raw_triggers": 3,
+        "selected_exploit_logs": 6,
+        "token_rejected": 3
+      },
+      "prior_same_day": 8,
+      "rows_checked": 28935
+    }
+  ],
+  "schema_version": "budget_policy_label_independent_review_v1",
+  "scope": "One prior-L2 incident; no negative labels, recall estimate, observed latency or prevention inference.",
+  "script_sha256": "61a0f0841964547324fe2491cdc7fc5af1e06640d388eac3f4081fde668d8f92"
+}

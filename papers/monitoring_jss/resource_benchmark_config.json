@@ -1,0 +1,74 @@
+{
+  "acquisition_delay_use": "algebraic uniform shifts only; no additional measured repeats and no claim these are observed network/finality delays",
+  "acquisition_delays_seconds": [
+    0,
+    12,
+    60,
+    180
+  ],
+  "base_semantic_run": "budget_policy_20261025T125143_314640Z",
+  "controls": "Same measured source bytes, full-window config, and accepted semantic decisions. Repetition variation includes shared-host scheduling; OS cache is preflight-warmed and uncontrolled.",
+  "cpu_affinity_rule": "smallest CPU in original process allowed affinity set; single CPU for every worker",
+  "daily_budget": 5,
+  "execution_order": "five balanced repetition blocks with seeded randomized order of six cells, then one separately shuffled set of24 memory prefixes",
+  "gzip_compresslevel": 6,
+  "input_manifest": "papers/monitoring_jss/runs/protocol_window_20261025T123312_675327Z/manifest.json",
+  "input_manifest_sha256": "7505e42dec974609355d388313e7b446354f8c78a57421245e52b8107787431b",
+  "memory_prefixes": [
+    1000,
+    5000,
+    10000,
+    "full"
+  ],
+  "memory_repetitions": 1,
+  "memory_scope": "24 independent fresh processes; nested prefixes; one descriptive probe each; RSS before serialization and compact checkpoint bytes after; no repeated statistical memory inference.",
+  "order_seed": 20261025,
+  "parallel_workers": 1,
+  "policies": [
+    "greedy",
+    "paced_cumulative",
+    "token_bucket"
+  ],
+  "populations": [
+    "euler_core",
+    "beanstalk_diamond"
+  ],
+  "quantile_definition": "nearest rank ceil(p*N)-1",
+  "schema_version": "resource_benchmark_config_v1",
+  "scope": "Cached local JSONL stream; six measured stages; aggregate immutable core; buffered local gzip output. No network, ABI semantics, learned model, durable notification, live arrival or operator response.",
+  "semantic_reference": "papers/monitoring_jss/resource_semantic_reference.json",
+  "study_config": "papers/monitoring_jss/budget_policy_study_config.json",
+  "study_config_sha256": "7b83aaa220f5527f58faf801fbc3977c657ef9f6a427d7523136694e0a41ea0d",
+  "study_type": "bounded_local_instrumented_service_and_state_growth",
+  "thread_environment": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONHASHSEED": "0"
+  },
+  "time_limits_seconds_per_worker": 180,
+  "timing_repetitions": 5,
+  "virtual_schedules": [
+    {
+      "kind": "event_gaps",
+      "scale": 1
+    },
+    {
+      "kind": "event_gaps",
+      "scale": 1000000
+    },
+    {
+      "events_per_second": 1000,
+      "kind": "constant_rate"
+    },
+    {
+      "events_per_second": 10000,
+      "kind": "constant_rate"
+    },
+    {
+      "events_per_second": 100000,
+      "kind": "constant_rate"
+    }
+  ]
+}

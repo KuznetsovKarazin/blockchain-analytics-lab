@@ -1,0 +1,74 @@
+{
+  "schema_version": "elliptic_pinned_loader_parity_v1",
+  "source_commit": "dc1ba8876f3f163c27c48f3a39292fc47f71bf18",
+  "source_blob_sha": "2d4154b19b749155ff1312f6dccf69d0546f921b",
+  "source_sha256": "99fdfe6651170b2810f0493529b2a1378589d35d8532a200111eafd585dc95da",
+  "checks": {
+    "tx_ids_equal": true,
+    "time_steps_equal": true,
+    "labels_equal": true,
+    "direct18_features_bitwise_equal": true,
+    "pinned_local_width_93": true,
+    "pinned_all_width_165": true,
+    "direct18_finite": true
+  },
+  "all_checks_pass": true,
+  "direct18_columns": [
+    2,
+    3,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "max_feature_absolute_difference": 0.0,
+  "edge_shape": [
+    2,
+    234355
+  ],
+  "counts": {
+    "historical_train_1_30": {
+      "rows": 123287,
+      "illicit": 2954,
+      "licit": 23951,
+      "unknown": 96382
+    },
+    "validation_31_34": {
+      "rows": 12978,
+      "illicit": 508,
+      "licit": 2481,
+      "unknown": 9989
+    },
+    "exploratory_test_35_49": {
+      "rows": 67504,
+      "illicit": 1083,
+      "licit": 15587,
+      "unknown": 50834
+    },
+    "initial_fit_1_26": {
+      "rows": 113787,
+      "illicit": 2433,
+      "licit": 22284,
+      "unknown": 89070
+    },
+    "initial_calibration_27_30": {
+      "rows": 9500,
+      "illicit": 521,
+      "licit": 1667,
+      "unknown": 7312
+    }
+  },
+  "caveat": "Parity verifies data mapping, not the scientific validity or temporal availability of publisher-prepared normalized features. Proposed protocol determines actual fit/calibration windows; named counts are descriptive only."
+}

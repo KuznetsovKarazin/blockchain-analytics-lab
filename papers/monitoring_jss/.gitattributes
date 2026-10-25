@@ -1,0 +1,6 @@
+# Preserve frozen acquisition CSV bytes; CRLF is part of the recorded artifact.
+runs/**/counts_by_step.csv whitespace=cr-at-eol
+
+# Preserve immutable matplotlib SVG paths and stdlib CSV CRLF bytes recorded in SHA manifests.
+runs/resource_*/resource_*.csv whitespace=cr-at-eol
+runs/resource_*/resource_benchmark_primary.svg whitespace=-blank-at-eol

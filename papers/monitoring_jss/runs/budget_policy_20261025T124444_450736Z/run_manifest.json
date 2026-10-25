@@ -1,0 +1,64 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "papers/monitoring_jss/budget_policy_replay.py",
+    "--config",
+    "papers/monitoring_jss/budget_policy_study_config.json",
+    "--input-manifest",
+    "papers/monitoring_jss/runs/protocol_window_20261025T123312_675327Z/manifest.json",
+    "--run-id",
+    "budget_policy_20261025T124444_450736Z"
+  ],
+  "completed_at_utc": "2026-10-25T12:45:38.031364+00:00",
+  "config_sha256": "7b83aaa220f5527f58faf801fbc3977c657ef9f6a427d7523136694e0a41ea0d",
+  "cwd": "/workspace/scratch/159bf77d8682/monitoring-work",
+  "environment": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "error": "ValueError('written artifact SHA-256 changed')",
+  "executed_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/budget_policy_20261025T124444_450736Z/source_snapshot/budget_policy_replay.py",
+    "--execute-run",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/budget_policy_20261025T124444_450736Z"
+  ],
+  "frozen_file_sha256": {
+    "config.json": "7b83aaa220f5527f58faf801fbc3977c657ef9f6a427d7523136694e0a41ea0d",
+    "input_manifest.json": "7505e42dec974609355d388313e7b446354f8c78a57421245e52b8107787431b",
+    "provenance/inventory.json": "6135153b5496370a82374edb4f41d39d8b79086fb0db8d6d73332da5d015bacb",
+    "provenance/label_manifest.json": "3518e1c753a3f0ba31b6977ab5b4f3811c5a3846569e1e930922af9084115046",
+    "resolved_inputs.json": "820a6deafb6a074af6d4a4774109c716b30fad5e2d865584d6ad6bbe1612a2ae",
+    "source_snapshot/budget_policy_replay.py": "549450dfc7db970ee039f17ef2c86d7a75820acc5b7128c46e340d1ebaf31726",
+    "source_snapshot/event_log_replay.py": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+    "source_snapshot/tests/test_budget_policy_replay.py": "984f87d3630f66b288016d8c01b36331bcf43f806915d6d92c3df42613f168c0"
+  },
+  "frozen_sources_config_inputs_unchanged": true,
+  "input_manifest_sha256": "7505e42dec974609355d388313e7b446354f8c78a57421245e52b8107787431b",
+  "interpretation": "functional logical-event-time simulation; no observed delivery or performance claim",
+  "memory_scope": "streamed inputs and decisions; rolling deque plus finite-30-day identity/order ledgers",
+  "provenance": {
+    "inventory": {
+      "copy": "provenance/inventory.json",
+      "sha256": "6135153b5496370a82374edb4f41d39d8b79086fb0db8d6d73332da5d015bacb",
+      "source": "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/common_window_inventory.json"
+    },
+    "label_manifest": {
+      "copy": "provenance/label_manifest.json",
+      "sha256": "3518e1c753a3f0ba31b6977ab5b4f3811c5a3846569e1e930922af9084115046",
+      "source": "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/incidents/labels/beanstalk_20220417_labels.json"
+    }
+  },
+  "schema_version": "budget_policy_run_v1",
+  "started_at_utc": "2026-10-25T12:44:54.182918+00:00",
+  "status": "failed",
+  "tracked_source_sha256": {
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/budget_policy_replay.py": "549450dfc7db970ee039f17ef2c86d7a75820acc5b7128c46e340d1ebaf31726",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/budget_policy_study_config.json": "7b83aaa220f5527f58faf801fbc3977c657ef9f6a427d7523136694e0a41ea0d",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/event_log_replay.py": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/incidents/labels/beanstalk_20220417_labels.json": "3518e1c753a3f0ba31b6977ab5b4f3811c5a3846569e1e930922af9084115046",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/common_window_inventory.json": "6135153b5496370a82374edb4f41d39d8b79086fb0db8d6d73332da5d015bacb",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/protocol_window_20261025T123312_675327Z/manifest.json": "7505e42dec974609355d388313e7b446354f8c78a57421245e52b8107787431b",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/tests/test_budget_policy_replay.py": "984f87d3630f66b288016d8c01b36331bcf43f806915d6d92c3df42613f168c0"
+  }
+}

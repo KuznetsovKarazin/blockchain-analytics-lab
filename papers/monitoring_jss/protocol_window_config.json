@@ -1,0 +1,43 @@
+{
+  "archive_retention": "all sealed archives retained locally; only reproducible loose downloaded Parquet removed after verified seal",
+  "decode_workers": 1,
+  "download_workers": 4,
+  "end_utc_exclusive": "2022-04-18T00:00:00Z",
+  "inventory_path": "papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/common_window_inventory.json",
+  "inventory_sha256": "6135153b5496370a82374edb4f41d39d8b79086fb0db8d6d73332da5d015bacb",
+  "labels_in_input": false,
+  "max_object_bytes": 500000000,
+  "min_free_bytes": 1500000000,
+  "population_contract_path": "papers/monitoring_jss/incidents/phase4_population/shared_20220319_20220418_population_contract.json",
+  "population_contract_sha256": "29334843003ed2f3c6634cc1ca239c5a7020b2d9a02d875ecc23314d05f1b2fd",
+  "populations": [
+    {
+      "address_source": "https://github.com/euler-legacy-xyz/euler-contracts/blob/85c8e473f2fc4d814eb5c98070db5e00730d2de1/addresses/euler-addresses-mainnet.json",
+      "addresses": [
+        "0x27182842e098f60e3d576794a5bffb0777e025d3"
+      ],
+      "chain_id": 1,
+      "population_id": "euler_core"
+    },
+    {
+      "address_source": "https://github.com/BeanstalkFarms/Beanstalk/blob/be22be2e92be1bdd7e7f4c4ce2b9df69ba7684ab/protocol/test/utils/constants.js",
+      "addresses": [
+        "0xc1e088fc1323b20bcbee9bd1b9fc9546db5624c5"
+      ],
+      "chain_id": 1,
+      "population_id": "beanstalk_diamond"
+    }
+  ],
+  "pyarrow_version": "26.0.0",
+  "remove_loose_parquet_after_verified_seal": true,
+  "schema_version": "protocol_window_config_v1",
+  "scope": "metadata-defined complete emitter populations; no attack outcome evaluation",
+  "source_hashes": {
+    "acquire_protocol_logs.py": "d4d8654cb94b0e07b3e5dcd214466d5888fefc42769c79f582b279fc08a29357",
+    "acquire_protocol_window.py": "d02e882489ea4143dc61b6f512df1b7ba3fa188fa53163c66da52a42804e4416"
+  },
+  "start_utc": "2022-03-19T00:00:00Z",
+  "study_design_freeze_path": "papers/monitoring_jss/runs/budget_policy_design_20261025T122801_063002Z/design_freeze.json",
+  "study_design_freeze_sha256": "26c076f3c8c78cca290917d87b6296847e95892dacda0416b0a6ea4c5acd82f5",
+  "topics": "all"
+}

@@ -1,0 +1,36 @@
+{
+  "boundary_checks": {
+    "correct_point": true,
+    "expected_cursor": true,
+    "expected_decisions": true,
+    "expected_outbox": true,
+    "expected_pending": true,
+    "expected_sink": true,
+    "integrity_ok": true
+  },
+  "cursor": 8,
+  "decisions": 9,
+  "integrity": [
+    "ok",
+    "ok"
+  ],
+  "marker": {
+    "exit_code": 73,
+    "point": "before_local_commit",
+    "seq": 9,
+    "utc": "2026-10-25T09:21:14.492035+00:00"
+  },
+  "original_unclean_files_unchanged_before_restart": true,
+  "outbox": 0,
+  "sink_attempts": 0,
+  "sink_effects": 0,
+  "unacknowledged": 0,
+  "unclean_file_sha256": {
+    "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+    "local.sqlite-shm": "a886068780dbce3ba5603b1e10374e838b82dcf3f327887606de1c8e445301dc",
+    "local.sqlite-wal": "68e223f44af186f9a1319e4a7d99e9b03959832e09c3dd2ecdece472c3b0a5c1",
+    "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+    "sink.sqlite-shm": "bfc13ca90ecb821af3d3f4af89115eabfdb2687f92bf8489e71532fb1714eca7",
+    "sink.sqlite-wal": "62c646269f0d0aa9481cce82d090735f38c47bc7a98c2f8a503f3e3fccf3574b"
+  }
+}

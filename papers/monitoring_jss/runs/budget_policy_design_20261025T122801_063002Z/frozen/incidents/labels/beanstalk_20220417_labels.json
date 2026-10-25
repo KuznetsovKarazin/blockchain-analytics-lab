@@ -1,0 +1,97 @@
+{
+  "schema": "monitoring_incident_label_manifest_v1",
+  "curated_utc": "2026-10-25T09:15:00.958663+00:00",
+  "status": "candidate_not_eligible",
+  "chain_id": 1,
+  "comparison_results_used_for_label_selection": false,
+  "historical_observed_time": null,
+  "historical_label_available_time": null,
+  "label_availability_policy": "Publication dates are source metadata, not historical operational observation or adjudication times. Do not inject them as live delayed-feedback timestamps.",
+  "sources_reference": "source_provenance_20261025.json",
+  "exposure_audit_reference": "../exposure_audit_20261025.json",
+  "raw_rpc_receipts_acquired_in_this_label_pass": false,
+  "raw_blockchain_partition_bytes_acquired_in_this_label_pass": 0,
+  "label_join_policy": "Join externally adjudicated transaction hashes after population acquisition. The source-list order is not canonical transaction order. Unknown times/indices remain null.",
+  "independence_verified": false,
+  "candidate_id": "candidate_beanstalk_20220417",
+  "protocol": "Beanstalk",
+  "incident_date": "2022-04-17",
+  "prior_exposure_level": "L2_curation_plus_registry",
+  "population_config_reference": "../populations/beanstalk_diamond_day_20220401_candidate.json",
+  "attack_day_acquisition_plan": "beanstalk_20220417_acquisition_plan.json",
+  "exploit_transactions": [
+    {
+      "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+      "role": "exploit_execution",
+      "positive_incident_label": true,
+      "source_ids": [
+        "bean_protocol",
+        "bean_beosin",
+        "bean_sharkteam",
+        "explorer_bean_attack"
+      ],
+      "event_date_utc": "2022-04-17",
+      "block_number": 14602790,
+      "block_timestamp_utc": "2022-04-17T12:24:16Z",
+      "block_hash": null,
+      "transaction_index": null,
+      "execution_status": "success_reported_by_explorer",
+      "evidence_level": "authored_reports_plus_indexed_primary_explorer_metadata_not_full_receipt",
+      "top_level_created_contract": "0x728ad672409da288ca5b9aa85d1a55b803ba97d7",
+      "internal_created_execution_contract": "0x79224bc0bf70ec34f0ef56ed8251619499a59def",
+      "full_receipt_path": null,
+      "receipt_sha256": null
+    }
+  ],
+  "context_transactions_not_positive_labels": [
+    {
+      "tx_hash": "0x68cdec0ac76454c3b0f7af0b8a3895db00adf6daaf3b50a99716858c4fa54c6f",
+      "role": "governance_proposal",
+      "proposal_id": 18,
+      "positive_incident_label": false,
+      "event_date_utc": "2022-04-16",
+      "source_ids": [
+        "bean_nv",
+        "bean_sharkteam",
+        "explorer_bean_proposal18"
+      ],
+      "block_number": 14595906,
+      "block_timestamp_utc": "2022-04-16T10:54:45Z",
+      "block_hash": null,
+      "transaction_index": null,
+      "full_receipt_path": null,
+      "role_note": "Preparation/context; not a completed theft. Do not turn every parsed historical exclusion-set hash into a positive label."
+    },
+    {
+      "tx_hash": "0x9575e478d7c542558ecca52b27072fa1f1ec70679106bdbd62f3bb4d6c87a80d",
+      "role": "governance_proposal",
+      "proposal_id": 19,
+      "positive_incident_label": false,
+      "event_date_utc": "2022-04-16",
+      "source_ids": [
+        "bean_nv",
+        "bean_sharkteam"
+      ],
+      "block_number": null,
+      "block_timestamp_utc": null,
+      "block_hash": null,
+      "transaction_index": null,
+      "full_receipt_path": null,
+      "role_note": "Preparation/context; not a completed theft. Do not turn every parsed historical exclusion-set hash into a positive label."
+    }
+  ],
+  "completeness": {
+    "report_claim": "The cited authored analyses identify this key atomic exploit transaction; preceding preparation and subsequent fund movements also exist.",
+    "complete_attack_set_independently_verified": false,
+    "scope": "One confirmed report-level exploit seed; no exhaustive attacker-activity claim."
+  },
+  "historical_date_caveat": "Historical DeFiHackLabs README and S2 record 2022-04-16; current candidate registry uses actual attack date 2022-04-17. Do not copy the S2 catalogue heading date into replay-window or event labels.",
+  "mechanism_and_role_cautions": [
+    "The observed proposal is on April 16 and execution on April 17; the prior catalogue heading must not define attack-day replay labels.",
+    "The top-level creation at 0x728a... and internal executor at 0x7922... are distinct; neither replaces the historically monitored Diamond emitter.",
+    "Flash-loan repayment inside the atomic exploit is not recovery to Beanstalk.",
+    "Diamond logs alone cannot distinguish normal commit from emergencyCommit, reconstruct proposal initializer/calldata, or prove governance execution checks.",
+    "Historical VoteList indexing differs between pinned source snapshots; actual DiamondCut/facet activation and deployed ABI remain unresolved.",
+    "A receipt-time alert cannot interrupt a finalized atomic transaction. Proposal-warning evaluation needs a separately specified task and cannot relabel preparation as a completed theft."
+  ]
+}

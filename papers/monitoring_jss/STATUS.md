@@ -1,71 +1,123 @@
 # Article 2 status — 25 October 2026
 
-**Header and Euler event-log feasibility pilots completed. Delayed-feedback
-scheduling and temporal calibration bookkeeping verified. The full scientific
-comparison remains draft; no independent attack-detection result is claimed.**
+**Phase 5 local resource measurement is complete and independently verified:
+30 timing workers, 24 fresh-prefix memory probes and 150 modeled FIFO scenarios
+per series. A fully identical technical repeat followed a documented concurrent
+audit in the original series; both remain preserved. Independent incident
+validation and the full scientific comparison remain incomplete.**
 
 Repository: KuznetsovKarazin/blockchain-analytics-lab; branch: paper/monitoring-jss.
-First pilot published at aa5886d20866579eb8855bca36cfad54ac76dee8.
-Companion dependency remains dc1ba8876f3f163c27c48f3a39292fc47f71bf18.
-Historical book scripts and results are unchanged.
+Companion pin unchanged: dc1ba8876f3f163c27c48f3a39292fc47f71bf18.
+Historical book scripts/results are unchanged. Current report:
+[SESSION_5_REPORT_RU.md](SESSION_5_REPORT_RU.md). Prior continuous-window report:
+[SESSION_4_REPORT_RU.md](SESSION_4_REPORT_RU.md). Previous stage:
+[SESSION_3_REPORT_RU.md](SESSION_3_REPORT_RU.md).
 
-## Completed evidence
+## New findings
 
-- Header pilot: 7,167 blocks, 12 cells and 44,802 decisions; see `SESSION_REPORT.md`.
-- Euler acquisition: complete address scan of 2,416,676 rows; all 1,247 matching
-  core logs from 218 transactions, linked to 215 blocks. All 7,118 daily headers,
-  7,117 parent links and 37 downloaded ranges checked independently.
-- Euler replay: six processes, 7,482 decisions; each emits 5 notifications from
-  146 raw workload triggers, with equal semantics across speeds and repetitions.
-  Measured local costs and modeled FIFO queues are reported separately.
-- Delayed feedback: delays 0/1/2/4, predict-before-release, disjoint temporal
-  calibration, whole-model/threshold fallback and stale-update protection.
-  No estimator has been fitted by this new utility.
-- Candidate exposure: Euler and Beanstalk occurred in earlier catalog/curation
-  sources, but were not K4 positive cases in the audited scope. BSC has no match
-  in the checked sources. All three remain candidates, not eligible tests.
-- Full monitoring test suite: 58 passed and 23 subtests passed. Independent
-  reviews additionally check acquisition, label scheduling and written logs.
+- Resource repeat `resource_20261025T135508_936231Z`: all 725,400 decisions equal
+  the accepted phase4 B5 semantics; all 24 prefix states independently reconstructed.
+  The five-run median instrumented-loop throughput is about 11.1–12.1k records/s;
+  per-run p95 service medians span166–199microseconds across the six cells.
+- B5 bounds notifications, not processing volume or retained identities. Every
+  accepted event adds one seen and one order-key entry. Full greedy checkpoints
+  are4,506,512bytes (Euler) and6,692,443bytes (Beanstalk); memory is not indefinitely bounded.
+- Queue results are lossless finite-trace simulations, not historical/live latency.
+  RSS is a whole-process OS estimate sampled before checkpoint serialization.
+- Initial resource series is semantically valid but has known concurrent reference
+  audit activity; identical sources/jobs were fully repeated with known local tasks held.
+  Shared-platform interference remains uncontrolled; no causal policy-speed superiority.
+- Full suite:165tests+92subtests. Both sealed runs and150scenarios per run independently PASS.
+- Renewed Git publication was blocked by automatic risk review on content/destination
+  authorization. No commit/ref update; remote remains23129bd. Local history retained in bundle.
 
-The current detailed report is `SESSION_2_REPORT_RU.md`. Protocol extensions
-are `EVENT_LOG_CONTRACT.md` and `DELAYED_FEEDBACK_CONTRACT.md`.
 
-## Accepted and excluded runs
+- A shared continuous window, March19–April17 2022, contains 19,425 Euler core
+  and 28,935 Beanstalk Diamond logs. All 30 source partitions and 192,391
+  consecutive headers were independently verified. This is an incident-conditioned
+  window, not random background or an independent attack test.
+- Eighteen cells compare greedy, paced cumulative and token-bucket admission
+  at daily caps 1/5/20. All 435,240 decisions, 540 daily and 12,960 hourly
+  aggregates match an independent oracle; no hard-cap exceedances.
+- At cap five, Euler notifications are 119/105/71 and Beanstalk 49/47/42.
+  Paced admission covers more raw-trigger-active hours here, but this is a
+  workload metric and does not establish better attack detection.
+- All nine Beanstalk cells issue zero notifications on the six logs of the
+  reported exploit execution. Three raw triggers are rejected by the hard daily
+  cap, unreleased quota or unavailable token. Unused daily allowance does not
+  guarantee immediate admission. This L2 case is now a development diagnostic.
+- The first comparison run failed final integrity checks on five decision gzip
+  files and is excluded. A retry using identical computation in isolated staging
+  was sealed before export and passed independent integrity and semantic checks.
+  The corruption cause remains unknown.
+- Current full suite: 146 tests and 73 subtests pass. Pre-execution independent
+  checks cover 390,888 synthetic decisions and 744 checkpoint continuations.
 
-| Evidence | Path |
-|---|---|
-| Accepted header replay | `runs/pilot_20261025T081404_015172Z/` |
-| Accepted Euler acquisition | `runs/protocol_logs_20261025T083346_282558Z/` |
-| Accepted Euler log replay | `runs/event_logs_20261025T084327_927529Z/` |
-| Earlier header run, excluded | `runs/pilot_20261025T081159_554384Z/` |
+- Elliptic: 10 cells, 100 fitted estimators and 675,040 decisions on a declared
+  direct18 subset. At 328 notifications per cell, fixed LightGBM found 73 known
+  positives; retraining at delays 0/1/2/4 found 42/46/52/68. All 150 batches filled
+  the cap, so this result reflects ranking and does not demonstrate a threshold-
+  calibration benefit. Most LightGBM alerts have unknown labels.
+- Primary-source review found future address history within the purported local
+  Elliptic features. The reduced subset is still a retrospective supplied-feature
+  benchmark with global normalization/dependence caveats, not an online repair.
+- Euler March13: unchanged workload rule used all five daily notifications before
+  the first of six reported exploit executions. Their 196 raw triggers were all
+  budget-suppressed. These six executions comprise one L2 incident; after viewing
+  this outcome, Euler is a development diagnostic, not a future untouched test.
+- Process crashes: 12 actual terminations and resumes plus three uninterrupted
+  cells recover identical 1,247 decisions and five unique local sink effects.
+  After sink commit/before ack, six delivery attempts produce five effects under
+  the specified idempotent sink contract. No general network exactly-once claim.
+- Full test suite: 82 passed and 39 subtests passed. Independent checks include
+  actual models/scores, fitting/calibration cohorts, compressed logs, SQLite
+  states, preserved crash snapshots and sealed evidence archives.
 
-The excluded header run has one truncated gzip decision log and hash mismatch.
-Original bytes and failed integrity results are preserved. The cause is not
-established; its timing results are not used. Later accepted runs are checked
-on their written files rather than relying on process success alone.
+## Evidence status
 
-Raw data, downloaded ranges and per-record logs are preserved privately.
-Git contains code, exact executed snapshots, aggregate results and audit hashes.
-No raw upstream redistribution license is inferred from a software license.
-
-## Work packages
-
-| Package | Actual state | Remaining |
+| Evidence | Run | Status |
 |---|---|---|
-| P2.01 | Header and real protocol-event replay, ordering and provenance verified | Receipts/traces, deployed semantic ABI, cross-chain availability |
-| P2.02 | Hard budget and delayed-label/calibration state contracts verified | Fitted models, class minima, threshold objective, full temporal experiment |
-| P2.03 | Three candidates, exposure audit, two population definitions, one full Euler day | Eligible labelled cases and 30–60-day continuous populations |
-| P2.04 | Measured source extraction and local replay; modeled queueing | More source/population workloads and declared live/finality scope |
-| P2.05 | Duplicate/late delivery and orderly snapshot continuation | Durable outbox, arbitrary crashes, delivery and recovery timing |
-| P2.06 | Two reproducible exploratory reports with independent checks | Independent scientific comparisons and uncertainty |
+| Header pilot | pilot_20261025T081404_015172Z | accepted |
+| Original header attempt | pilot_20261025T081159_554384Z | excluded: truncated gzip |
+| Euler March1 acquisition/replay | protocol_logs_20261025T083346_282558Z / event_logs_20261025T084327_927529Z | accepted |
+| Elliptic acquisition | elliptic_data_20261025T090822_439609Z | accepted original v1 |
+| Elliptic actual-model experiment | elliptic_prequential_20261025T091655_598646Z | accepted, exploratory |
+| Euler March13 acquisition/replay | protocol_logs_20261025T091457_496507Z / event_logs_attack_20261025T092349_917377Z | accepted, descriptive |
+| First durability attempt | durable_20261025T090940_001269Z | excluded: changed/corrupt DB artifacts and stale sidecars |
+| Replacement durability experiment | durable_20261025T092104_711695Z | accepted after independent sealed-archive verification |
+| Continuous 30-day acquisition | protocol_window_20261025T123312_675327Z | accepted; both selected emitters |
+| First allocation comparison | budget_policy_20261025T124444_450736Z | excluded: five changed/truncated gzip artifacts |
+| Sealed allocation retry | budget_policy_20261025T125143_314640Z | accepted; identical code/config/inputs |
+| Beanstalk post-decision label join | budget_policy_label_join_20261025T125414_524570Z | accepted, one L2 diagnostic only |
 
-## Next bounded research step
+All paths are under `runs/`. All excluded attempts retain original reports and
+observed bytes. Their causes are unestablished; their timing results are not
+used as accepted evidence. Hardening the artifact handoff is not presented as
+proof of the original corruption cause.
 
-Complete eligible-case and monitored-population definitions, including exact
-attack transaction labels and historical deployment evidence where semantic
-features require it. Plan continuous windows with the measured extraction
-volume, retain prior-exposure categories, and fix the multi-day budget clock.
-For Elliptic, freeze actual estimator, calibration class minima, seeds and
-threshold objective before an exploratory rerun of already studied steps.
-These are evidence/design requirements, not a request for further permission.
-Article 1 and the book retain their agreed priority.
+Raw datasets, exact cohorts, models, decisions and database evidence are retained
+privately. Git contains code, frozen configs/source snapshots, aggregate results
+and hashes. Source distribution terms are not inferred from a code license.
+
+## Remaining work
+
+| Package | Completed bounded work | Still required for broader claims |
+|---|---|---|
+| P2.01 | Header/core-log ingestion, order, provenance | Semantic ABI/deployment evidence, receipts/traces and cross-chain availability where needed |
+| P2.02 | Actual fit/calibrate/release experiment; 18-cell causal budget allocation | Wider predeclared model comparisons; distinguish threshold, ranking and admission effects |
+| P2.03 | Exposure/label audit; complete 30-day two-emitter population and one-day diagnostics | Independent eligible cases, additional windows and adjudication of unknown alerts |
+| P2.04 | Extraction, prepared-feature modeling, local replay and persistence measurements | Controlled performance study, live/finality scope and more workloads |
+| P2.05 | Real local process crashes with conditional idempotent sink | Other fault positions, remote delivery, kernel/power-loss only if claimed |
+| P2.06 | Reproducible negative findings; learned-model and continuous-window tables/figures | Independent scientific comparisons and justified uncertainty |
+
+Next, obtain eligible independent cases and label evidence, define semantic
+features before their outcomes, and separate workload coverage from incident
+quality. Do not tune on Euler or Beanstalk and reuse them as untouched tests.
+Already studied Elliptic steps remain exploratory. Article 1 and the book retain
+their agreed priority; submission and correspondence are not authorized here.
+
+The prior GitHub publication was rejected without a reason. The last verified
+remote head is 23129bdcff24508bb690a6747c3c4900d8ae8dbd; later work is local and
+preserved in portable evidence bundles. Thirty source archives were durably saved
+and verified local cache copies reclaimed; their exact location/SHA index is
+retained privately. Do not interpret absent local source ZIPs as failed acquisition.

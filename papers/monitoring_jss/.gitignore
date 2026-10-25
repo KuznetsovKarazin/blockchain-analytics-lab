@@ -1,7 +1,21 @@
 # Per-record logs remain in the author's private evidence archive until source
 # redistribution terms are resolved. Summaries, hashes and code stay in Git.
 runs/**/*.jsonl.gz
+runs/**/*.json.gz
+# Detailed hourly output and integrity reports with per-record excerpts remain
+# in the private evidence package; concise aggregates and audit hashes are public.
+runs/budget_policy_*/cells/*/hourly.json
+qa/budget_policy_failed_run_independent_review.json
+qa/budget_policy_retry_integrity_independent_review.json
 runs/**/*.csv.gz
+runs/**/*.joblib
+runs/**/*.pkl
+runs/**/*.npz
+runs/**/*.sqlite*
+runs/**/*.db
+incidents/labels/raw/
 incidents/*_raw.json
 incidents/rpc_availability_probe.json
 incidents/bsc_detail_probe.json
+
+runs/resource_*/resource_benchmark_primary.png

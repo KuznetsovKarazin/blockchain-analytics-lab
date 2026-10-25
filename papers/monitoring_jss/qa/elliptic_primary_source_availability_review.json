@@ -1,0 +1,127 @@
+{
+  "audit": "Elliptic feature and label availability: primary-source review",
+  "checked_utc": "2026-10-25T09:06:37.951674+00:00",
+  "models_or_data_modified": false,
+  "sources": [
+    {
+      "id": "original2019",
+      "url": "https://arxiv.org/pdf/1908.02591",
+      "title": "Anti-Money Laundering in Bitcoin: Experimenting with Graph Convolutional Networks for Financial Forensics",
+      "authors": "Weber et al.",
+      "year": 2019,
+      "locations": [
+        "Section 2.1.2, PDF page 2",
+        "Section 2.1.3, PDF page 3",
+        "Section 4, PDF page 5"
+      ],
+      "web_refs": [
+        "turn23view2",
+        "turn24view1",
+        "turn24view2"
+      ],
+      "short_quote": "assuming the availability of ground truth after each time",
+      "quote_words": 10,
+      "findings": "166 features comprise 94 local features including the time step and 72 one-hop backward/forward aggregates. The 49 time steps are approximately two weeks apart; each contains transactions within less than three hours. Its retrained-RF discussion assumes ground truth availability after each step; this is not an observed annotation timestamp."
+    },
+    {
+      "id": "provider_release",
+      "url": "https://www.kaggle.com/datasets/ellipticco/elliptic-data-set",
+      "title": "Elliptic Data Set",
+      "authority": "Ellipticco official release",
+      "web_refs": [
+        "turn20search0",
+        "turn22search8"
+      ],
+      "access_note": "Search-indexed provider description readable; dynamic direct page extraction returned no lines. Original paper independently confirms feature counts and temporal description.",
+      "short_quote": "including the time step described above",
+      "quote_words": 7,
+      "findings": "Provider description counts the time-step field within the first 94 features; 72 additional features use one-hop backward/forward transaction information. Reviewed description provides no historical label-discovery timestamps."
+    },
+    {
+      "id": "audit2026",
+      "url": "https://dfrws.org/wp-content/uploads/2026/04/DFRWS_USA_2026_Camera_Ready_Paper_65.pdf",
+      "landing_url": "https://dfrws.org/presentation/the-enemy-of-reproducibility-is-opacity-whats-inside-the-elliptic-bitcoin-dataset-and-why-it-is-wrong/",
+      "publisher_url": "https://www.sciencedirect.com/science/article/pii/S2666281726000818",
+      "doi": "10.1016/j.fsidi.2026.302124",
+      "title": "The enemy of reproducibility is opacity: What's inside the Elliptic bitcoin dataset (and why it is wrong)",
+      "authors": [
+        "Miroslav Šafář",
+        "Jan Pluskal",
+        "Vladimír Veselý",
+        "Ondřej Ryšavý"
+      ],
+      "year": 2026,
+      "publication": "Forensic Science International: Digital Investigation 57, 302124; June 2026 supplement",
+      "access_note": "ScienceDirect direct extraction 403; indexed publisher abstract/metadata available. Full 10-page camera-ready paper read through official DFRWS download.",
+      "locations": [
+        "Section 3.2, PDF page 4: fixed block 575059 and all available predecessor/successor neighbors",
+        "Section 4.1, PDF page 5: dataset-wide preprocessing",
+        "Section 4.2, PDF page 5: temporal leakage",
+        "Section 4.3, PDF pages 6–7: shared-address dependence"
+      ],
+      "web_refs": [
+        "turn20search9",
+        "turn24view0",
+        "turn25view0",
+        "turn25view2",
+        "turn28view0"
+      ],
+      "short_quote": "after the end of the test period",
+      "quote_words": 8,
+      "findings": "Authors report address-derived local features evaluated at dataset construction block 575059, later than the test period; neighbor aggregates also include transactions outside the released graph. They identify global z-score preprocessing and address reuse across temporal splits. Their reconstructed-feature agreement supports this criticism, but this audit did not reproduce the reconstruction. These findings materially strengthen the availability caveat; removing 72 neighbor aggregates does not remove future information from local features."
+    },
+    {
+      "id": "audit2026_author_mapping",
+      "url": "https://github.com/nesfit/DeanonymizedEllipticBitcoinDataset",
+      "authority": "Paper authors, independently reconstructed semantics; not an Elliptic endorsement",
+      "locations": [
+        "README Local transaction features: Feature 1=TimeStep",
+        "README Local transactions features derived from features of addresses: Features 23–94 at block 575059",
+        "README Aggregated Features: Features 95–166"
+      ],
+      "web_refs": [
+        "turn23view1",
+        "turn28view1"
+      ],
+      "findings": "Mapping specifies Feature 1 as time, Features 23–94 as address aggregates at the fixed reference block, and Features 95–166 as neighborhood aggregates. The mapping is reverse engineering, not original provider disclosure."
+    }
+  ],
+  "conclusions": [
+    {
+      "topic": "94versus93",
+      "status": "confirmed_plus_arithmetic",
+      "statement": "The official 94 local count includes one time-step field. Excluding time leaves 93 local predictors. Excluding time from 166 total leaves 165 predictors = 93 local + 72 aggregated. Publish the exact selected column indices; a 93-column vector is not the original 94-feature baseline."
+    },
+    {
+      "topic": "feature_availability",
+      "status": "material_caveat",
+      "statement": "Local-only does not imply available at transaction time. Delaying label release, splitting chronologically, or fitting a new scaler cannot erase future blockchain activity already encoded in provided vectors."
+    },
+    {
+      "topic": "replay_clock",
+      "status": "inference_from_release_schema",
+      "statement": "Use discrete step/batch replay. Within-step transaction arrival/order and feature readiness are not established by the public step field; txId ordering is not documented chronological order. Batch top-k decisions belong after batch completion."
+    },
+    {
+      "topic": "label_clock",
+      "status": "unestablished_historically",
+      "statement": "Treat chosen label delays as scenario parameters. Neither reviewed official description nor original paper establishes historical label-discovery times; initial-history labels are an explicit availability assumption."
+    },
+    {
+      "topic": "allowed_interpretation",
+      "status": "recommendation",
+      "statement": "Keep Elliptic pilot as a retrospective benchmark/replay of precomputed features with simulated feedback availability. Do not claim causal live feature extraction, live transaction latency, leak-free detection or unseen-entity generalization. Hardware/queue/update implementation checks can still be meaningful within this stated scope."
+    },
+    {
+      "topic": "future_causal_study",
+      "status": "recommendation_no_changes_made",
+      "statement": "A causal accuracy study needs time-scoped feature reconstruction or a separately justified feature set, suitable train-only preprocessing and an evaluation split matching the intended entity-generalization goal. Do not silently relabel a local-only ablation as repaired."
+    }
+  ],
+  "quote_policy": "Each source has at most 25 quoted words; all other text is concise paraphrase/inference.",
+  "limitations": [
+    "No raw Elliptic vectors or transaction reconstruction were downloaded or analyzed in this review.",
+    "The 2026 paper is a primary research claim, not a provider correction; cite attribution explicitly.",
+    "Absence of documented label timestamps is an availability limitation, not proof about investigators actual historical behavior."
+  ]
+}

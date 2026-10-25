@@ -1,0 +1,65 @@
+{
+  "atomic_seal": {
+    "explicit_resume": true,
+    "explicit_zero_rows_allowed_only_after_complete_source_scan": true,
+    "no_lost_matches_gate": true,
+    "partial_then_rename": true,
+    "per_member_sha256_crc": true,
+    "same_emitter_all_topics": true,
+    "utc_day_and_cross_day_header_chain_gate": true,
+    "whole_source_sha256": true
+  },
+  "attack_outcomes_evaluated": false,
+  "conservative_archives_plus_active_raw_and_one_seal_copy_bytes": 9119791646,
+  "cpu": {
+    "cgroup_cpu_quota_cores": 8,
+    "new_collector_records_process_cpu": true,
+    "observed_os_cpu_count": 9,
+    "previous_process_cpu_measurements": null
+  },
+  "created_utc": "2026-10-25T12:32:15.521892+00:00",
+  "disk_free_bytes_at_inventory": 12325453824,
+  "four_downloads_max_source_bytes": 1582836328,
+  "free_disk_reserve_bytes": 1500000000,
+  "full_object_choice": {
+    "get_count": 60,
+    "historical_range_get_count_for_two_days_each": 37,
+    "same_day_multi_address_scan": true,
+    "tradeoff": "Whole-object SHA and local Parquet scan simplify evidence; measured 2023 range projections saved only about3.8%. April2022 group-match density is unknown and no outcome filtering is allowed."
+  },
+  "loose_pyc_or_narrative_source_docs_required": false,
+  "payload_requests_at_report": 0,
+  "remaining_before_payload": [
+    "Root final collector/config approval",
+    "Historical emitter-address evidence approval"
+  ],
+  "retention_policy": "Keep all sealed daily archives locally; remove only new reproducible loose Parquet after whole-member SHA+CRC verification. Root may persist archives later; this collector never uploads or removes archives.",
+  "schema": "phase4_execution_feasibility_decision_v1",
+  "selected_window": {
+    "days": 30,
+    "end_utc_exclusive": "2022-04-18T00:00:00Z",
+    "start_utc": "2022-03-19T00:00:00Z"
+  },
+  "source_bytes": 7141246236,
+  "status": "feasible_after_root_freeze_and_address_provenance_gate",
+  "timing_estimates": {
+    "certainty": "Estimate only. Concurrent throughput, full-GET speed, object retries, archive hashing and source variation are not yet measured.",
+    "ideal_fourway_seconds": [
+      884,
+      1077
+    ],
+    "practical_planning_minutes": [
+      20,
+      35
+    ],
+    "prior_range_based_sequential_seconds": [
+      3537,
+      4307
+    ]
+  },
+  "worker_policy": {
+    "decode_and_seal_workers": 1,
+    "download_workers": 4,
+    "reason": "8 GiB cgroup memory limit, observed ~4.83 GB anonymous use; single column-wise decoder limits incremental live arrays, with explicit Arrow unused-pool release."
+  }
+}

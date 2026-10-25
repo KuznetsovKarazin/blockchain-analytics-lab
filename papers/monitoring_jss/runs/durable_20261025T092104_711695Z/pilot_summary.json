@@ -1,0 +1,2289 @@
+{
+  "cells": [
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "uninterrupted_r1",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1247,
+      "fault": null,
+      "file_hashes": {
+        "decisions.jsonl.gz": "d0bc39c0c015983b21dbcbc4410f51e1b3e8bb133a842a921555906d9d868a26"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.024017056000957382,
+      "finished_utc": "2026-10-25T09:21:06.499009+00:00",
+      "initial_process_elapsed_seconds": 1.7920342039997195,
+      "initial_returncode": 0,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 24866816,
+      "post_crash_observation": null,
+      "private_bytes_after_close": 4245092,
+      "private_file_hashes": {
+        "local.sqlite": "19e1160c4fb125cb6acfee763514d26a401821f12c3d19b5c9b91e5684fcc2f4",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "b77a1e5d600434dafbcd1574c7200ddea26d960e0073fe86d132630b99954796",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+      },
+      "repetition": 1,
+      "replay_loop_seconds_this_process": 1.5846354730001622,
+      "restart_open_validate_restore_seconds": 0.019160197998644435,
+      "restart_pending_drain_seconds": 0.00012647000039578415,
+      "restart_process_to_complete_seconds": null,
+      "resume_returncode": null,
+      "resumed_cursor": -1,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.000632441000561812,
+          "n": 5,
+          "p50": 0.0006197529983182903,
+          "p95": 0.0006307086001470452,
+          "p99": 0.0006320945204788586
+        },
+        "local_commit_seconds": {
+          "max": 0.013150230999599444,
+          "n": 1247,
+          "p50": 0.0004921800009469735,
+          "p95": 0.0018146437994801092,
+          "p99": 0.005442774980547254
+        },
+        "sink_commit_seconds": {
+          "max": 0.0009501700005785096,
+          "n": 5,
+          "p50": 0.00062845600041328,
+          "p95": 0.0009155880004982464,
+          "p99": 0.000943253600562457
+        },
+        "state_serialization_seconds": {
+          "max": 0.015188190000117174,
+          "n": 1247,
+          "p50": 0.0004128910004510544,
+          "p95": 0.0010003912993852282,
+          "p99": 0.0010505102809838717
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.6039338589998806
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "before_local_commit_r1",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1238,
+      "fault": "before_local_commit",
+      "file_hashes": {
+        "decisions.jsonl.gz": "289217cab7bcbdec113a3d838ce1953ed24fe520b5f34036d2a1a8e206159a2d"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.022540665000633453,
+      "finished_utc": "2026-10-25T09:21:08.239048+00:00",
+      "initial_process_elapsed_seconds": 0.11950891699962085,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25038848,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 8,
+        "decisions": 9,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "before_local_commit",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:06.651601+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 0,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "unacknowledged": 0,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "b92bdb716b12c1c5065887eb62f3ef12ac005488fe578553cbe17a01bd5d769f",
+          "local.sqlite-wal": "60531e86d3552d081a35ccc280a8cc7415179d52391687aa30f2a6787d82b526",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "5175f00a1d511b88c1c12d150f999136271e4a39a6d1da1b8f12cba8865bf4d9",
+          "sink.sqlite-wal": "1f082eaeb52d4000b416a0149feb0d9584444c1f00a164fce61bf84ee4eec8f9"
+        }
+      },
+      "private_bytes_after_close": 4512524,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "f866f591adb73cd94eafa1c5dee85ab86807eaaf0af87575889a8f0a41afe033",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "b92bdb716b12c1c5065887eb62f3ef12ac005488fe578553cbe17a01bd5d769f",
+        "unclean_snapshot/local.sqlite-wal": "60531e86d3552d081a35ccc280a8cc7415179d52391687aa30f2a6787d82b526",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "5175f00a1d511b88c1c12d150f999136271e4a39a6d1da1b8f12cba8865bf4d9",
+        "unclean_snapshot/sink.sqlite-wal": "1f082eaeb52d4000b416a0149feb0d9584444c1f00a164fce61bf84ee4eec8f9"
+      },
+      "repetition": 1,
+      "replay_loop_seconds_this_process": 1.3897212379997654,
+      "restart_open_validate_restore_seconds": 0.004823729999770876,
+      "restart_pending_drain_seconds": 2.208299883932341e-05,
+      "restart_process_to_complete_seconds": 1.591062105999299,
+      "resume_returncode": 0,
+      "resumed_cursor": 8,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0007459929984179325,
+          "n": 5,
+          "p50": 0.0004252899998391513,
+          "p95": 0.0007316193987207953,
+          "p99": 0.0007431182784785051
+        },
+        "local_commit_seconds": {
+          "max": 0.013659407999512041,
+          "n": 1238,
+          "p50": 0.0004745390006064554,
+          "p95": 0.0010177788507462475,
+          "p99": 0.00264969936069974
+        },
+        "sink_commit_seconds": {
+          "max": 0.0005858120002812939,
+          "n": 5,
+          "p50": 0.00041615599911892787,
+          "p95": 0.0005650568004057277,
+          "p99": 0.0005816609603061806
+        },
+        "state_serialization_seconds": {
+          "max": 0.01988217799953418,
+          "n": 1238,
+          "p50": 0.00040318199989997083,
+          "p95": 0.0007976723009960549,
+          "p99": 0.0012961045604060785
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.3945752039999206
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "after_local_commit_r1",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1237,
+      "fault": "after_local_commit",
+      "file_hashes": {
+        "decisions.jsonl.gz": "3b54e87d7a84f65b48a445bb9085c5cdd561c70a741e54e7d10df52f94eaa0e7"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.015598627000144916,
+      "finished_utc": "2026-10-25T09:21:09.770568+00:00",
+      "initial_process_elapsed_seconds": 0.06680200100163347,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25038848,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 9,
+        "decisions": 10,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "after_local_commit",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:08.337224+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 1,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "unacknowledged": 1,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "3fbcaa00c3d849394091da737c39aa71761b7a4edafaa07634d04fc9e09874eb",
+          "local.sqlite-wal": "5e19b6706cea1839bdd1dc97584a98dd5616d4427ec767a27b76dc9906c04bcd",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "a970499e0cf5577545a8c20d8136bbc4c856329607c03063a5540f4fd99b4476",
+          "sink.sqlite-wal": "7e141ba08e45c3c66b65f00154a230344ef9dce32e86f479e935324d3b0e77a4"
+        }
+      },
+      "private_bytes_after_close": 4537244,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "f866f591adb73cd94eafa1c5dee85ab86807eaaf0af87575889a8f0a41afe033",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "3fbcaa00c3d849394091da737c39aa71761b7a4edafaa07634d04fc9e09874eb",
+        "unclean_snapshot/local.sqlite-wal": "5e19b6706cea1839bdd1dc97584a98dd5616d4427ec767a27b76dc9906c04bcd",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "a970499e0cf5577545a8c20d8136bbc4c856329607c03063a5540f4fd99b4476",
+        "unclean_snapshot/sink.sqlite-wal": "7e141ba08e45c3c66b65f00154a230344ef9dce32e86f479e935324d3b0e77a4"
+      },
+      "repetition": 1,
+      "replay_loop_seconds_this_process": 1.274162816000171,
+      "restart_open_validate_restore_seconds": 0.0024969180012703873,
+      "restart_pending_drain_seconds": 0.0018786469991027843,
+      "restart_process_to_complete_seconds": 1.4342659800004185,
+      "resume_returncode": 0,
+      "resumed_cursor": 9,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0006932939995749621,
+          "n": 5,
+          "p50": 0.0005255609994492261,
+          "p95": 0.0006735781997122103,
+          "p99": 0.0006893508396024117
+        },
+        "local_commit_seconds": {
+          "max": 0.003694681001434219,
+          "n": 1237,
+          "p50": 0.0004976790005457588,
+          "p95": 0.0010454410006786935,
+          "p99": 0.002220347959737418
+        },
+        "sink_commit_seconds": {
+          "max": 0.0011543769996933406,
+          "n": 5,
+          "p50": 0.0006092469993745908,
+          "p95": 0.001057004599715583,
+          "p99": 0.001134902519697789
+        },
+        "state_serialization_seconds": {
+          "max": 0.002281905000927509,
+          "n": 1237,
+          "p50": 0.0003406329997233115,
+          "p95": 0.0006988041997828987,
+          "p99": 0.0007996152794657982
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.2785518620003131
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "after_sink_commit_r1",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 1,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1237,
+      "fault": "after_sink_commit",
+      "file_hashes": {
+        "decisions.jsonl.gz": "1ed8d5b435bb1305012d9b14dd867be4a3a5ff3d5fc31a53761def83a5abb7f8"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "afea52bc70f178b694c956dad4304e74d7fb35df18a24f38de9aae8601ab55db"
+        }
+      },
+      "final_database_handoff_seconds": 0.017920226000569528,
+      "finished_utc": "2026-10-25T09:21:11.314706+00:00",
+      "initial_process_elapsed_seconds": 0.06919973900039622,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25030656,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 9,
+        "decisions": 10,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "after_sink_commit",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:09.873024+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "unacknowledged": 1,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "c86789e60f21ef5df9360056fcd34d7fd83f84e60ef3c4839846dd28a712185c",
+          "local.sqlite-wal": "f1f92dc3aa67398fb8b67ccceca5a8297195dbfe030947ac1d38e4a1c1368023",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "27162dc9aa01fba2b93e7d7917084f95d2356930f6842091a2bba5d944c79e78",
+          "sink.sqlite-wal": "46c2ded6e60194c0f6ef4d33b7b7790b5caa7c063e4e47baad73706c5aee2d54"
+        }
+      },
+      "private_bytes_after_close": 4553863,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "afea52bc70f178b694c956dad4304e74d7fb35df18a24f38de9aae8601ab55db",
+        "sink.sqlite": "6224b67d0457790d0e855e6a5070ecb240ee20705b3d7e7581e3767ebd7f0453",
+        "sink_attempts.json": "c318c74c168801c56f5c9c4d450c83352b5cf01968ca146a6097619ab19d6a6c",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "c86789e60f21ef5df9360056fcd34d7fd83f84e60ef3c4839846dd28a712185c",
+        "unclean_snapshot/local.sqlite-wal": "f1f92dc3aa67398fb8b67ccceca5a8297195dbfe030947ac1d38e4a1c1368023",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "27162dc9aa01fba2b93e7d7917084f95d2356930f6842091a2bba5d944c79e78",
+        "unclean_snapshot/sink.sqlite-wal": "46c2ded6e60194c0f6ef4d33b7b7790b5caa7c063e4e47baad73706c5aee2d54"
+      },
+      "repetition": 1,
+      "replay_loop_seconds_this_process": 1.293771418999313,
+      "restart_open_validate_restore_seconds": 0.0026191720007773256,
+      "restart_pending_drain_seconds": 0.002470449000611552,
+      "restart_process_to_complete_seconds": 1.4431955559994094,
+      "resume_returncode": 0,
+      "resumed_cursor": 9,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 6,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0012510230008047074,
+          "n": 5,
+          "p50": 0.0005611950000457,
+          "p95": 0.0011640320008154958,
+          "p99": 0.001233624800806865
+        },
+        "local_commit_seconds": {
+          "max": 0.004423017000590335,
+          "n": 1237,
+          "p50": 0.0004899870000372175,
+          "p95": 0.0010368083992943872,
+          "p99": 0.0023828183198202238
+        },
+        "sink_commit_seconds": {
+          "max": 0.0011890690002474003,
+          "n": 5,
+          "p50": 0.0004896869995718589,
+          "p95": 0.0010784046000480883,
+          "p99": 0.0011669361202075379
+        },
+        "state_serialization_seconds": {
+          "max": 0.0013982849995954894,
+          "n": 1237,
+          "p50": 0.0003855399991152808,
+          "p95": 0.000714397799310973,
+          "p99": 0.0008827826403285144
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.2988936090005154
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "after_ack_r1",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1237,
+      "fault": "after_ack",
+      "file_hashes": {
+        "decisions.jsonl.gz": "8dd9e458475f3444986c71bc309946c6b5add997ddc6d275aabac4a2445c02b8"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.016477880000820733,
+      "finished_utc": "2026-10-25T09:21:12.883428+00:00",
+      "initial_process_elapsed_seconds": 0.07254553900020255,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25034752,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 9,
+        "decisions": 10,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "after_ack",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:11.425607+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "unacknowledged": 0,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "d8980adc2fdc68d71d69954d8e8bb393fc77f74eafa0d500d5d731298dea8643",
+          "local.sqlite-wal": "b6f0efa0935bb75b61f5ab75ee9d940a96abb3394d7028e7aef4f275f0765acb",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "d58a13dc26c8724b13fe3751091ea5e3d5314bbc221238ed2e2e952cb3f33d2f",
+          "sink.sqlite-wal": "9d438f63eea6855ca8ed1c5b30d95a8b37688f97148516ddff7528825e87a6e0"
+        }
+      },
+      "private_bytes_after_close": 4557844,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "f866f591adb73cd94eafa1c5dee85ab86807eaaf0af87575889a8f0a41afe033",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "d8980adc2fdc68d71d69954d8e8bb393fc77f74eafa0d500d5d731298dea8643",
+        "unclean_snapshot/local.sqlite-wal": "b6f0efa0935bb75b61f5ab75ee9d940a96abb3394d7028e7aef4f275f0765acb",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "d58a13dc26c8724b13fe3751091ea5e3d5314bbc221238ed2e2e952cb3f33d2f",
+        "unclean_snapshot/sink.sqlite-wal": "9d438f63eea6855ca8ed1c5b30d95a8b37688f97148516ddff7528825e87a6e0"
+      },
+      "repetition": 1,
+      "replay_loop_seconds_this_process": 1.3101887249995343,
+      "restart_open_validate_restore_seconds": 0.002507243001673487,
+      "restart_pending_drain_seconds": 2.3064998458721675e-05,
+      "restart_process_to_complete_seconds": 1.457642252000369,
+      "resume_returncode": 0,
+      "resumed_cursor": 9,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0005915909987379564,
+          "n": 4,
+          "p50": 0.000523863500347943,
+          "p95": 0.0005902222489567067,
+          "p99": 0.0005913172487817064
+        },
+        "local_commit_seconds": {
+          "max": 0.00692486699881556,
+          "n": 1237,
+          "p50": 0.00045754900020256173,
+          "p95": 0.0010956089990941116,
+          "p99": 0.0024222096795710993
+        },
+        "sink_commit_seconds": {
+          "max": 0.000421373999415664,
+          "n": 4,
+          "p50": 0.00035342150022188434,
+          "p95": 0.0004169242494754144,
+          "p99": 0.00042048404942761407
+        },
+        "state_serialization_seconds": {
+          "max": 0.014955500000723987,
+          "n": 1237,
+          "p50": 0.0003953460000047926,
+          "p95": 0.0006981931986956624,
+          "p99": 0.0008639957991545092
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.3127269950000482
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "uninterrupted_r2",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1247,
+      "fault": null,
+      "file_hashes": {
+        "decisions.jsonl.gz": "b85bedbebcfdaffc9b55396a0182e9e8c0c86cd371cc351efd6ebe322a658a43"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.025533961001201533,
+      "finished_utc": "2026-10-25T09:21:14.393053+00:00",
+      "initial_process_elapsed_seconds": 1.4816833510012657,
+      "initial_returncode": 0,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 24940544,
+      "post_crash_observation": null,
+      "private_bytes_after_close": 4245092,
+      "private_file_hashes": {
+        "local.sqlite": "19e1160c4fb125cb6acfee763514d26a401821f12c3d19b5c9b91e5684fcc2f4",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "b77a1e5d600434dafbcd1574c7200ddea26d960e0073fe86d132630b99954796",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+      },
+      "repetition": 2,
+      "replay_loop_seconds_this_process": 1.3106506650001393,
+      "restart_open_validate_restore_seconds": 0.010343308000301477,
+      "restart_pending_drain_seconds": 2.1351999748731032e-05,
+      "restart_process_to_complete_seconds": null,
+      "resume_returncode": null,
+      "resumed_cursor": -1,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0015087009996932466,
+          "n": 5,
+          "p50": 0.00037411300036183093,
+          "p95": 0.0014204441999027039,
+          "p99": 0.001491049639735138
+        },
+        "local_commit_seconds": {
+          "max": 0.005488381000759546,
+          "n": 1247,
+          "p50": 0.00046749400098633487,
+          "p95": 0.0011048717997255153,
+          "p99": 0.002565605159907136
+        },
+        "sink_commit_seconds": {
+          "max": 0.0005745050002587959,
+          "n": 5,
+          "p50": 0.0004890159998467425,
+          "p95": 0.000558609000290744,
+          "p99": 0.0005713258002651855
+        },
+        "state_serialization_seconds": {
+          "max": 0.005699528001059662,
+          "n": 1247,
+          "p50": 0.0003572269997675903,
+          "p95": 0.0007036587008769857,
+          "p99": 0.001082889579629407
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.321024087999831
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "before_local_commit_r2",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1238,
+      "fault": "before_local_commit",
+      "file_hashes": {
+        "decisions.jsonl.gz": "9347e63511a9a094fae2918d6f9064eefcd69af3b398fee75f4fcedd5227e243"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.018305521000002045,
+      "finished_utc": "2026-10-25T09:21:15.966002+00:00",
+      "initial_process_elapsed_seconds": 0.07085685699894384,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25038848,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 8,
+        "decisions": 9,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "before_local_commit",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:14.492035+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 0,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "unacknowledged": 0,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "a886068780dbce3ba5603b1e10374e838b82dcf3f327887606de1c8e445301dc",
+          "local.sqlite-wal": "68e223f44af186f9a1319e4a7d99e9b03959832e09c3dd2ecdece472c3b0a5c1",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "bfc13ca90ecb821af3d3f4af89115eabfdb2687f92bf8489e71532fb1714eca7",
+          "sink.sqlite-wal": "62c646269f0d0aa9481cce82d090735f38c47bc7a98c2f8a503f3e3fccf3574b"
+        }
+      },
+      "private_bytes_after_close": 4512524,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "f866f591adb73cd94eafa1c5dee85ab86807eaaf0af87575889a8f0a41afe033",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "a886068780dbce3ba5603b1e10374e838b82dcf3f327887606de1c8e445301dc",
+        "unclean_snapshot/local.sqlite-wal": "68e223f44af186f9a1319e4a7d99e9b03959832e09c3dd2ecdece472c3b0a5c1",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "bfc13ca90ecb821af3d3f4af89115eabfdb2687f92bf8489e71532fb1714eca7",
+        "unclean_snapshot/sink.sqlite-wal": "62c646269f0d0aa9481cce82d090735f38c47bc7a98c2f8a503f3e3fccf3574b"
+      },
+      "repetition": 2,
+      "replay_loop_seconds_this_process": 1.3102663150002627,
+      "restart_open_validate_restore_seconds": 0.0026487569994060323,
+      "restart_pending_drain_seconds": 2.154200046788901e-05,
+      "restart_process_to_complete_seconds": 1.4751479700007621,
+      "resume_returncode": 0,
+      "resumed_cursor": 8,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0006707699994876748,
+          "n": 5,
+          "p50": 0.0006341250009427313,
+          "p95": 0.0006682279996311991,
+          "p99": 0.0006702615995163797
+        },
+        "local_commit_seconds": {
+          "max": 0.008313021999128978,
+          "n": 1238,
+          "p50": 0.0004801380000571953,
+          "p95": 0.0009125183998548886,
+          "p99": 0.0025033841596996346
+        },
+        "sink_commit_seconds": {
+          "max": 0.0006200530006026383,
+          "n": 5,
+          "p50": 0.00047210099910444114,
+          "p95": 0.0006041632004780695,
+          "p99": 0.0006168750405777246
+        },
+        "state_serialization_seconds": {
+          "max": 0.008655538000311935,
+          "n": 1238,
+          "p50": 0.00033175449971167836,
+          "p95": 0.0008901249992049997,
+          "p99": 0.000977979799336026
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.3129441459986992
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "after_local_commit_r2",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1237,
+      "fault": "after_local_commit",
+      "file_hashes": {
+        "decisions.jsonl.gz": "d3df8158bdbf91c2bfa609c4069e930bdf6d862d099fdaa9fef858a2a866839a"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.014933036000002176,
+      "finished_utc": "2026-10-25T09:21:17.457150+00:00",
+      "initial_process_elapsed_seconds": 0.06626565700025822,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25042944,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 9,
+        "decisions": 10,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "after_local_commit",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:16.065376+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 1,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "unacknowledged": 1,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "e93f5438920db7f6716ffe89cf1bcaa3ee5f1c04b51456e6a32190558a5ff072",
+          "local.sqlite-wal": "40976b737b15c9dc92af1352f24c9bc02534da30f435f580475aee75e6f75e6c",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "4202583399ecf038e3cfbcac5d958d56f95c8d898de58b03fb3d5623a53be7fa",
+          "sink.sqlite-wal": "0458e162ac1635b201b90d4c5066a24179db1c1f9d63828f4904220bad4bf462"
+        }
+      },
+      "private_bytes_after_close": 4537244,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "f866f591adb73cd94eafa1c5dee85ab86807eaaf0af87575889a8f0a41afe033",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "e93f5438920db7f6716ffe89cf1bcaa3ee5f1c04b51456e6a32190558a5ff072",
+        "unclean_snapshot/local.sqlite-wal": "40976b737b15c9dc92af1352f24c9bc02534da30f435f580475aee75e6f75e6c",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "4202583399ecf038e3cfbcac5d958d56f95c8d898de58b03fb3d5623a53be7fa",
+        "unclean_snapshot/sink.sqlite-wal": "0458e162ac1635b201b90d4c5066a24179db1c1f9d63828f4904220bad4bf462"
+      },
+      "repetition": 2,
+      "replay_loop_seconds_this_process": 1.2368566320001264,
+      "restart_open_validate_restore_seconds": 0.002881396998418495,
+      "restart_pending_drain_seconds": 0.0013726670003961772,
+      "restart_process_to_complete_seconds": 1.3941150169994216,
+      "resume_returncode": 0,
+      "resumed_cursor": 9,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0018528790005802875,
+          "n": 5,
+          "p50": 0.0003820649999397574,
+          "p95": 0.001603383400288294,
+          "p99": 0.0018029798805218888
+        },
+        "local_commit_seconds": {
+          "max": 0.010760215000118478,
+          "n": 1237,
+          "p50": 0.00045281199891178403,
+          "p95": 0.0009849485995800948,
+          "p99": 0.0022319196010357712
+        },
+        "sink_commit_seconds": {
+          "max": 0.0009604259994375752,
+          "n": 5,
+          "p50": 0.0004813349987671245,
+          "p95": 0.0008825525994325289,
+          "p99": 0.000944851319436566
+        },
+        "state_serialization_seconds": {
+          "max": 0.0026642510001693154,
+          "n": 1237,
+          "p50": 0.0003753950004465878,
+          "p95": 0.0006248919999052305,
+          "p99": 0.0007379523996496576
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.2411234249993868
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "after_sink_commit_r2",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 1,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1237,
+      "fault": "after_sink_commit",
+      "file_hashes": {
+        "decisions.jsonl.gz": "f382b8445dae3c5525d974f7997691429d909db4c4095c5310d6fc61a5133b74"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "afea52bc70f178b694c956dad4304e74d7fb35df18a24f38de9aae8601ab55db"
+        }
+      },
+      "final_database_handoff_seconds": 0.02069109399963054,
+      "finished_utc": "2026-10-25T09:21:18.965159+00:00",
+      "initial_process_elapsed_seconds": 0.0671425119999185,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25042944,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 9,
+        "decisions": 10,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "after_sink_commit",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:17.557030+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "unacknowledged": 1,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "84e15b162864d7deaf16f6b85b819f43aa75119a611b8f244b639df634b46f12",
+          "local.sqlite-wal": "108da51c1ade5d9b9c4bd9654d6b0d30f62fdfb74d285f21f96fac44e19ef24e",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "a316895e5d16a73918d580691408257df1c65229e6e142854a6d7c1314e7a751",
+          "sink.sqlite-wal": "0aae4fe27de1508331d4a8331c427499ea2ec76edc811ae48b2ffad75484deed"
+        }
+      },
+      "private_bytes_after_close": 4553863,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "afea52bc70f178b694c956dad4304e74d7fb35df18a24f38de9aae8601ab55db",
+        "sink.sqlite": "6224b67d0457790d0e855e6a5070ecb240ee20705b3d7e7581e3767ebd7f0453",
+        "sink_attempts.json": "c318c74c168801c56f5c9c4d450c83352b5cf01968ca146a6097619ab19d6a6c",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "84e15b162864d7deaf16f6b85b819f43aa75119a611b8f244b639df634b46f12",
+        "unclean_snapshot/local.sqlite-wal": "108da51c1ade5d9b9c4bd9654d6b0d30f62fdfb74d285f21f96fac44e19ef24e",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "a316895e5d16a73918d580691408257df1c65229e6e142854a6d7c1314e7a751",
+        "unclean_snapshot/sink.sqlite-wal": "0aae4fe27de1508331d4a8331c427499ea2ec76edc811ae48b2ffad75484deed"
+      },
+      "repetition": 2,
+      "replay_loop_seconds_this_process": 1.2415136599993275,
+      "restart_open_validate_restore_seconds": 0.002792302000671043,
+      "restart_pending_drain_seconds": 0.001263110998479533,
+      "restart_process_to_complete_seconds": 1.4085473069990257,
+      "resume_returncode": 0,
+      "resumed_cursor": 9,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 6,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0006648550006502774,
+          "n": 5,
+          "p50": 0.00047432399878744036,
+          "p95": 0.0006332766006380552,
+          "p99": 0.0006585393206478329
+        },
+        "local_commit_seconds": {
+          "max": 0.014615537998906802,
+          "n": 1237,
+          "p50": 0.0004529710004135268,
+          "p95": 0.0009503744007815858,
+          "p99": 0.001994601879705442
+        },
+        "sink_commit_seconds": {
+          "max": 0.0008741660003579454,
+          "n": 5,
+          "p50": 0.0003539830013323808,
+          "p95": 0.0007803288001014152,
+          "p99": 0.0008553985603066395
+        },
+        "state_serialization_seconds": {
+          "max": 0.006214814000486513,
+          "n": 1237,
+          "p50": 0.0003310779993626056,
+          "p95": 0.0007430370005749865,
+          "p99": 0.0009275336406426534
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.2455802599997696
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "after_ack_r2",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1237,
+      "fault": "after_ack",
+      "file_hashes": {
+        "decisions.jsonl.gz": "ab87c1a16e67a40410f520456dfc965d9a34bd35913f6fc61c853bd28347d5c8"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.018559705998995923,
+      "finished_utc": "2026-10-25T09:21:20.449819+00:00",
+      "initial_process_elapsed_seconds": 0.06119631100045808,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 24997888,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 9,
+        "decisions": 10,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "after_ack",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:19.065241+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "unacknowledged": 0,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "2ae90a27c4dcbae5b7a8874953fd441e0d3dc08c61499a29d93485a86b655205",
+          "local.sqlite-wal": "39f03591ec8e02a9ce8540b631cdea6505ac4cdfda9adbb5c6e678ad208a3ee7",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "0b8e43112234497fab52a25f29753e0e6e64133e0e254f5de06ea62eae87be23",
+          "sink.sqlite-wal": "b313eaf3cab411f1482028c931691a62acb2706d50aea8c87db6b67bd4bc68e8"
+        }
+      },
+      "private_bytes_after_close": 4557844,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "f866f591adb73cd94eafa1c5dee85ab86807eaaf0af87575889a8f0a41afe033",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "2ae90a27c4dcbae5b7a8874953fd441e0d3dc08c61499a29d93485a86b655205",
+        "unclean_snapshot/local.sqlite-wal": "39f03591ec8e02a9ce8540b631cdea6505ac4cdfda9adbb5c6e678ad208a3ee7",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "0b8e43112234497fab52a25f29753e0e6e64133e0e254f5de06ea62eae87be23",
+        "unclean_snapshot/sink.sqlite-wal": "b313eaf3cab411f1482028c931691a62acb2706d50aea8c87db6b67bd4bc68e8"
+      },
+      "repetition": 2,
+      "replay_loop_seconds_this_process": 1.231364871999176,
+      "restart_open_validate_restore_seconds": 0.00348685800054227,
+      "restart_pending_drain_seconds": 2.2894999347045086e-05,
+      "restart_process_to_complete_seconds": 1.383838466999805,
+      "resume_returncode": 0,
+      "resumed_cursor": 9,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.000547163999726763,
+          "n": 4,
+          "p50": 0.0004555155001071398,
+          "p95": 0.0005413801498434622,
+          "p99": 0.0005460072297501029
+        },
+        "local_commit_seconds": {
+          "max": 0.0031805830003577285,
+          "n": 1237,
+          "p50": 0.00045521500032918993,
+          "p95": 0.0008674000004248242,
+          "p99": 0.0020791483998618796
+        },
+        "sink_commit_seconds": {
+          "max": 0.0005309589996613795,
+          "n": 4,
+          "p50": 0.0005051155003457097,
+          "p95": 0.0005305398998643795,
+          "p99": 0.0005308751797019795
+        },
+        "state_serialization_seconds": {
+          "max": 0.002011458000197308,
+          "n": 1237,
+          "p50": 0.0003873330006172182,
+          "p95": 0.0007020304008619862,
+          "p99": 0.0008784609205758903
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.2348834080003144
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "uninterrupted_r3",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1247,
+      "fault": null,
+      "file_hashes": {
+        "decisions.jsonl.gz": "5c415a53f89fb63e7ae6f756664150dc88e698fc2d77cf2a84b69d7ddef42386"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.0156755139996676,
+      "finished_utc": "2026-10-25T09:21:21.861924+00:00",
+      "initial_process_elapsed_seconds": 1.3861601869994047,
+      "initial_returncode": 0,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 24936448,
+      "post_crash_observation": null,
+      "private_bytes_after_close": 4245092,
+      "private_file_hashes": {
+        "local.sqlite": "19e1160c4fb125cb6acfee763514d26a401821f12c3d19b5c9b91e5684fcc2f4",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "b77a1e5d600434dafbcd1574c7200ddea26d960e0073fe86d132630b99954796",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+      },
+      "repetition": 3,
+      "replay_loop_seconds_this_process": 1.2055607290003536,
+      "restart_open_validate_restore_seconds": 0.009896265999486786,
+      "restart_pending_drain_seconds": 2.157199924113229e-05,
+      "restart_process_to_complete_seconds": null,
+      "resume_returncode": null,
+      "resumed_cursor": -1,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0006356160010909662,
+          "n": 5,
+          "p50": 0.0005858109998371219,
+          "p95": 0.0006303582009422826,
+          "p99": 0.0006345644410612294
+        },
+        "local_commit_seconds": {
+          "max": 0.003357923998919432,
+          "n": 1247,
+          "p50": 0.00044850499944004696,
+          "p95": 0.0008013043992832542,
+          "p99": 0.002030317079661471
+        },
+        "sink_commit_seconds": {
+          "max": 0.00038289699841698166,
+          "n": 5,
+          "p50": 0.0003633369997260161,
+          "p95": 0.00038267859890765975,
+          "p99": 0.0003828533185151173
+        },
+        "state_serialization_seconds": {
+          "max": 0.001732026999889058,
+          "n": 1247,
+          "p50": 0.00035458399906929117,
+          "p95": 0.0008043043997531641,
+          "p99": 0.000939489399497688
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.2154871599996113
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "before_local_commit_r3",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1238,
+      "fault": "before_local_commit",
+      "file_hashes": {
+        "decisions.jsonl.gz": "305963dbea731391928a3cad33172c2bdf1d96b7688f7e1248fb880ebeba2791"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.018800436999299563,
+      "finished_utc": "2026-10-25T09:21:23.374038+00:00",
+      "initial_process_elapsed_seconds": 0.06656345000010333,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25038848,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 8,
+        "decisions": 9,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "before_local_commit",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:21.960410+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 0,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "unacknowledged": 0,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "94109230adf5ec62718c79b6ae6372d4905eab68c6fc3bb9d2911a7470c96573",
+          "local.sqlite-wal": "a5f6f89631da834c79fbb0e86a6b0ff9afb9d638956d7b2bf715e92bb8130dd7",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "3c65c46c8cf0c9567b1d6dfb23417a30ae2bb4b3eb90d62a0d98193fdc1d144a",
+          "sink.sqlite-wal": "489479ec15f41aecc96c20c0fa826ccd8b10a4cbd7dba2d582e9b482f8640470"
+        }
+      },
+      "private_bytes_after_close": 4512524,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "f866f591adb73cd94eafa1c5dee85ab86807eaaf0af87575889a8f0a41afe033",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "94109230adf5ec62718c79b6ae6372d4905eab68c6fc3bb9d2911a7470c96573",
+        "unclean_snapshot/local.sqlite-wal": "a5f6f89631da834c79fbb0e86a6b0ff9afb9d638956d7b2bf715e92bb8130dd7",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "3c65c46c8cf0c9567b1d6dfb23417a30ae2bb4b3eb90d62a0d98193fdc1d144a",
+        "unclean_snapshot/sink.sqlite-wal": "489479ec15f41aecc96c20c0fa826ccd8b10a4cbd7dba2d582e9b482f8640470"
+      },
+      "repetition": 3,
+      "replay_loop_seconds_this_process": 1.2596742830010044,
+      "restart_open_validate_restore_seconds": 0.002520614998502424,
+      "restart_pending_drain_seconds": 2.2023001292836852e-05,
+      "restart_process_to_complete_seconds": 1.4151172530000622,
+      "resume_returncode": 0,
+      "resumed_cursor": 8,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0005457520001073135,
+          "n": 5,
+          "p50": 0.00042303600093873683,
+          "p95": 0.0005231940001976909,
+          "p99": 0.000541240400125389
+        },
+        "local_commit_seconds": {
+          "max": 0.012912264999613399,
+          "n": 1238,
+          "p50": 0.00042807899899344193,
+          "p95": 0.0009072954997463958,
+          "p99": 0.0020924680202006056
+        },
+        "sink_commit_seconds": {
+          "max": 0.00065829100094561,
+          "n": 5,
+          "p50": 0.0005776289999630535,
+          "p95": 0.0006502668005850864,
+          "p99": 0.0006566861608735052
+        },
+        "state_serialization_seconds": {
+          "max": 0.02884132100007264,
+          "n": 1238,
+          "p50": 0.00038442350069090025,
+          "p95": 0.0007275016507264808,
+          "p99": 0.000770745190548041
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.262224932999743
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "after_local_commit_r3",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1237,
+      "fault": "after_local_commit",
+      "file_hashes": {
+        "decisions.jsonl.gz": "7269d135a5aa494540ac86e915010797ac5966b2145d39de8f3e257e8105c8dc"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.0271598030012683,
+      "finished_utc": "2026-10-25T09:21:24.946243+00:00",
+      "initial_process_elapsed_seconds": 0.06776616999923135,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25034752,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 9,
+        "decisions": 10,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "after_local_commit",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:23.479001+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 1,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "unacknowledged": 1,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "e51c68c271aad2cb37745ed80e858b9b0fa0d06f23c59e4139561722c207a9d5",
+          "local.sqlite-wal": "8aea3f391c4bacd800c098e8cf3d65b8879361b3b6bd0841b78033df18c238ba",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "0bd34ec31cce8836c040b665e32c45c74dceca12527635f0d464874fc5f1c203",
+          "sink.sqlite-wal": "01c005b5a469b5aeda9c44837e3a3f25cfb365a4222c0a38f046cec65360231b"
+        }
+      },
+      "private_bytes_after_close": 4537244,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "f866f591adb73cd94eafa1c5dee85ab86807eaaf0af87575889a8f0a41afe033",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "e51c68c271aad2cb37745ed80e858b9b0fa0d06f23c59e4139561722c207a9d5",
+        "unclean_snapshot/local.sqlite-wal": "8aea3f391c4bacd800c098e8cf3d65b8879361b3b6bd0841b78033df18c238ba",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "0bd34ec31cce8836c040b665e32c45c74dceca12527635f0d464874fc5f1c203",
+        "unclean_snapshot/sink.sqlite-wal": "01c005b5a469b5aeda9c44837e3a3f25cfb365a4222c0a38f046cec65360231b"
+      },
+      "repetition": 3,
+      "replay_loop_seconds_this_process": 1.2924349450004229,
+      "restart_open_validate_restore_seconds": 0.003051532999961637,
+      "restart_pending_drain_seconds": 0.0015434130000357982,
+      "restart_process_to_complete_seconds": 1.4694722460008052,
+      "resume_returncode": 0,
+      "resumed_cursor": 9,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0005097269986436004,
+          "n": 5,
+          "p50": 0.00039809899863030296,
+          "p95": 0.0005096827990200836,
+          "p99": 0.000509718158718897
+        },
+        "local_commit_seconds": {
+          "max": 0.01272964900090301,
+          "n": 1237,
+          "p50": 0.0004506489985942608,
+          "p95": 0.0009437819997401681,
+          "p99": 0.002439342239522396
+        },
+        "sink_commit_seconds": {
+          "max": 0.0010021380003308877,
+          "n": 5,
+          "p50": 0.00028015199859510176,
+          "p95": 0.0008610458004113752,
+          "p99": 0.0009739195603469852
+        },
+        "state_serialization_seconds": {
+          "max": 0.014713615000800928,
+          "n": 1237,
+          "p50": 0.0004442690005816985,
+          "p95": 0.0006736721996276174,
+          "p99": 0.0010350483198271836
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.2970425599996815
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "after_sink_commit_r3",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 1,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1237,
+      "fault": "after_sink_commit",
+      "file_hashes": {
+        "decisions.jsonl.gz": "b3e0f635d0128fd661a8547ce6d7a086bf3953e71062d77e6934e8770f441d0f"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "afea52bc70f178b694c956dad4304e74d7fb35df18a24f38de9aae8601ab55db"
+        }
+      },
+      "final_database_handoff_seconds": 0.016405261998443166,
+      "finished_utc": "2026-10-25T09:21:26.522509+00:00",
+      "initial_process_elapsed_seconds": 0.06230863400014641,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25038848,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 9,
+        "decisions": 10,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "after_sink_commit",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:25.047513+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "unacknowledged": 1,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "767f278fde10218623a4ba619efbd5d7509295cef9cf02d5a1f3011ed30b037f",
+          "local.sqlite-wal": "1935308c7f2311f072a6ef3ae3384a3801a7ecb82e2e0e7ee75ff8ca20158fcc",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "8dbe5be194962efb6dd982432a663bc1a097d9816520c5f73a79957aa1a17b87",
+          "sink.sqlite-wal": "b2343036453614196549f2b622602a263b206b12af129530b1114cab0ed60c2a"
+        }
+      },
+      "private_bytes_after_close": 4553863,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "afea52bc70f178b694c956dad4304e74d7fb35df18a24f38de9aae8601ab55db",
+        "sink.sqlite": "6224b67d0457790d0e855e6a5070ecb240ee20705b3d7e7581e3767ebd7f0453",
+        "sink_attempts.json": "c318c74c168801c56f5c9c4d450c83352b5cf01968ca146a6097619ab19d6a6c",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "767f278fde10218623a4ba619efbd5d7509295cef9cf02d5a1f3011ed30b037f",
+        "unclean_snapshot/local.sqlite-wal": "1935308c7f2311f072a6ef3ae3384a3801a7ecb82e2e0e7ee75ff8ca20158fcc",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "8dbe5be194962efb6dd982432a663bc1a097d9816520c5f73a79957aa1a17b87",
+        "unclean_snapshot/sink.sqlite-wal": "b2343036453614196549f2b622602a263b206b12af129530b1114cab0ed60c2a"
+      },
+      "repetition": 3,
+      "replay_loop_seconds_this_process": 1.3222422969993204,
+      "restart_open_validate_restore_seconds": 0.002530237999962992,
+      "restart_pending_drain_seconds": 0.0018314809985895408,
+      "restart_process_to_complete_seconds": 1.4762045410006976,
+      "resume_returncode": 0,
+      "resumed_cursor": 9,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 6,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0010995949996868148,
+          "n": 5,
+          "p50": 0.0007176399994932581,
+          "p95": 0.0010242435997497522,
+          "p99": 0.0010845247196994024
+        },
+        "local_commit_seconds": {
+          "max": 0.007598345999213052,
+          "n": 1237,
+          "p50": 0.000494124000397278,
+          "p95": 0.0012164422001660607,
+          "p99": 0.0022703694002848395
+        },
+        "sink_commit_seconds": {
+          "max": 0.0010777070001495304,
+          "n": 5,
+          "p50": 0.0005052500000601867,
+          "p95": 0.0009829616003116824,
+          "p99": 0.0010587579201819608
+        },
+        "state_serialization_seconds": {
+          "max": 0.0028277360015636077,
+          "n": 1237,
+          "p50": 0.00033846999940578826,
+          "p95": 0.0007650296000065283,
+          "p99": 0.0009555243996874197
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.3266174959990167
+    },
+    {
+      "all_outbox_acknowledged": true,
+      "cell": "after_ack_r3",
+      "database_bytes_after_close": 2121728,
+      "decision_count": 1247,
+      "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+      "duplicate_delivery_attempts": 0,
+      "entry_integrity": {
+        "local": "ok",
+        "sink": "ok"
+      },
+      "events_processed_this_process": 1237,
+      "fault": "after_ack",
+      "file_hashes": {
+        "decisions.jsonl.gz": "1095c8626dc34c6b81a55f77de731f39f8d6e52fe94e677664f6c2339cfdfa06"
+      },
+      "final_cursor": 1246,
+      "final_database_handoff": {
+        "local.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 2084864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456"
+        },
+        "sink.sqlite": {
+          "checkpoint_truncate_result": [
+            0,
+            0,
+            0
+          ],
+          "final_journal_mode": "delete",
+          "sealed_bytes": 36864,
+          "sealed_integrity": "ok",
+          "sealed_sha256": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd"
+        }
+      },
+      "final_database_handoff_seconds": 0.018474325999704888,
+      "finished_utc": "2026-10-25T09:21:28.151932+00:00",
+      "initial_process_elapsed_seconds": 0.08825937199981126,
+      "initial_returncode": 73,
+      "input_identity": {
+        "config_sha256": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+        "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+        "durable_source_sha256": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+        "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+      },
+      "outbox_acknowledged": 5,
+      "outbox_rows": 5,
+      "peak_rss_bytes": 25030656,
+      "post_crash_observation": {
+        "boundary_checks": {
+          "correct_point": true,
+          "expected_cursor": true,
+          "expected_decisions": true,
+          "expected_outbox": true,
+          "expected_pending": true,
+          "expected_sink": true,
+          "integrity_ok": true
+        },
+        "cursor": 9,
+        "decisions": 10,
+        "integrity": [
+          "ok",
+          "ok"
+        ],
+        "marker": {
+          "exit_code": 73,
+          "point": "after_ack",
+          "seq": 9,
+          "utc": "2026-10-25T09:21:26.644756+00:00"
+        },
+        "original_unclean_files_unchanged_before_restart": true,
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "unacknowledged": 0,
+        "unclean_file_sha256": {
+          "local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "local.sqlite-shm": "23774f299e64d86bfa2a69a236e6ff243710454e04c81484c892cd322fde33b4",
+          "local.sqlite-wal": "1f77f329465c4ac00093ce3fcb830720dcc83fc604ee397561b4ed72b467dd00",
+          "sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "sink.sqlite-shm": "0112d6e31268663c0007a2bfa17ed09a49599ba933e65504b2f73b6087512934",
+          "sink.sqlite-wal": "8db3f6801145df4873172475b4d708406c444fccb42bbe4698c362f236713365"
+        }
+      },
+      "private_bytes_after_close": 4557844,
+      "private_file_hashes": {
+        "local.sqlite": "373ef122ec6020ab0d365a249795432e03bbaac9f837913277382afa3c04e79b",
+        "sealed/local.sqlite": "6171631361600e0198af9784c2a8360910c80fde0046397b517fe8cf51964456",
+        "sealed/sink.sqlite": "dc0e33d27c8ce04c2bf391429d1081eb3e22053ca6f682ec6327601894b671dd",
+        "sink.sqlite": "f866f591adb73cd94eafa1c5dee85ab86807eaaf0af87575889a8f0a41afe033",
+        "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+        "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+        "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/local.sqlite-shm": "23774f299e64d86bfa2a69a236e6ff243710454e04c81484c892cd322fde33b4",
+        "unclean_snapshot/local.sqlite-wal": "1f77f329465c4ac00093ce3fcb830720dcc83fc604ee397561b4ed72b467dd00",
+        "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+        "unclean_snapshot/sink.sqlite-shm": "0112d6e31268663c0007a2bfa17ed09a49599ba933e65504b2f73b6087512934",
+        "unclean_snapshot/sink.sqlite-wal": "8db3f6801145df4873172475b4d708406c444fccb42bbe4698c362f236713365"
+      },
+      "repetition": 3,
+      "replay_loop_seconds_this_process": 1.3348386190009478,
+      "restart_open_validate_restore_seconds": 0.002810951000355999,
+      "restart_pending_drain_seconds": 2.4476999897160567e-05,
+      "restart_process_to_complete_seconds": 1.5106661219997477,
+      "resume_returncode": 0,
+      "resumed_cursor": 9,
+      "rss_scope": "process high-water after replay and DB result materialization, before final handoff/backups/gzip export",
+      "schema_version": "durable_replay_cell_v1",
+      "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+      "sink_delivery_attempts": 5,
+      "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+      "sink_unique_effects": 5,
+      "sqlite": {
+        "journal_mode": "wal",
+        "page_size": 4096,
+        "sqlite_version": "3.53.1",
+        "synchronous": 2,
+        "wal_autocheckpoint_pages": 1000
+      },
+      "stage_distributions": {
+        "ack_commit_seconds": {
+          "max": 0.0008113320000120439,
+          "n": 4,
+          "p50": 0.0006025114998919889,
+          "p95": 0.0007877417998315649,
+          "p99": 0.000806613959975948
+        },
+        "local_commit_seconds": {
+          "max": 0.004087151999556227,
+          "n": 1237,
+          "p50": 0.0004973779996362282,
+          "p95": 0.0011283382002147849,
+          "p99": 0.0023507562808663444
+        },
+        "sink_commit_seconds": {
+          "max": 0.0018193890009570168,
+          "n": 4,
+          "p50": 0.00040239600093627814,
+          "p95": 0.0016090995010017645,
+          "p99": 0.001777331100965966
+        },
+        "state_serialization_seconds": {
+          "max": 0.002953045001049759,
+          "n": 1237,
+          "p50": 0.0003676939995784778,
+          "p95": 0.0007963784002640751,
+          "p99": 0.0009729958804382519
+        }
+      },
+      "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+      "storage_scope": "database_bytes counts final operational local+sink SQLite files; private_bytes additionally includes sealed copies, diagnostic unclean snapshots and exported sink audit records",
+      "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+      "worker_to_loop_end_seconds": 1.3376832100002503
+    }
+  ],
+  "checks": {
+    "all_final_states_decisions_sink_effects_equal": true,
+    "cursor_and_outbox_consistent": true,
+    "duplicate_attempts_match_boundary": true,
+    "source_input_unchanged": true
+  },
+  "run_id": "durable_20261025T092104_711695Z",
+  "schema_version": "durable_replay_summary_v1"
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "durable_quarantine_v1",
+  "checked_utc": "2026-10-25T09:17:42.653132+00:00",
+  "status": "quarantined_all_15_cells",
+  "use_for_results": false,
+  "reason": "After-process verification found one final DB SHA/size mismatch and five cell directories with unrecorded SQLite sidecars; a copy of after_ack_r2 produced malformed-database errors.",
+  "cause": "unresolved; not attributed to SQLite, OS, disk or runtime",
+  "changes": [
+    {
+      "cell": "before_local_commit_r1",
+      "mismatches": [],
+      "unrecorded_files": [
+        "local.sqlite-shm",
+        "sink.sqlite-shm",
+        "local.sqlite-wal",
+        "sink.sqlite-wal"
+      ]
+    },
+    {
+      "cell": "after_ack_r1",
+      "mismatches": [],
+      "unrecorded_files": [
+        "local.sqlite-shm",
+        "sink.sqlite-shm",
+        "local.sqlite-wal",
+        "sink.sqlite-wal"
+      ]
+    },
+    {
+      "cell": "before_local_commit_r2",
+      "mismatches": [],
+      "unrecorded_files": [
+        "local.sqlite-shm",
+        "sink.sqlite-shm",
+        "local.sqlite-wal",
+        "sink.sqlite-wal"
+      ]
+    },
+    {
+      "cell": "after_ack_r2",
+      "mismatches": [
+        {
+          "path": "local.sqlite",
+          "expected_sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242",
+          "actual_sha256": "6221c6733d2a9fa171fbb00cd759bbc895bba6930d0d4592e8983db12d3671e3",
+          "actual_bytes": 1732608
+        }
+      ],
+      "unrecorded_files": [
+        "local.sqlite-shm",
+        "sink.sqlite-shm",
+        "local.sqlite-wal",
+        "sink.sqlite-wal"
+      ]
+    },
+    {
+      "cell": "after_local_commit_r3",
+      "mismatches": [],
+      "unrecorded_files": [
+        "local.sqlite-shm",
+        "sink.sqlite-shm",
+        "local.sqlite-wal",
+        "sink.sqlite-wal"
+      ]
+    }
+  ],
+  "original_summaries_preserved": true,
+  "next_step": "Explicit final checkpoint/sealed artifact mitigation and new unique run; does not retrospectively repair this run."
+}

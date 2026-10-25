@@ -1,7 +1,9 @@
 # Delayed feedback and temporal calibration contract
 
 Implementation status: scheduling and provenance utilities implemented and unit
-tested. This is not a completed Elliptic re-evaluation or fitted adaptive model.
+tested. A separate bounded actual-model experiment is now documented in
+`ELLIPTIC_PILOT_PROTOCOL.md` and `SESSION_3_REPORT_RU.md`; this utility itself
+does not fit an estimator.
 
 ## Release phase
 
@@ -65,8 +67,8 @@ time when an estimator was fitted.
 
 Threshold optimization and model fitting remain separate procedures. Merely
 tagging scores with a model version does not prove they came from that estimator;
-the future runner must save estimator/config hashes, fitting indices and the
-calibration-score artifact. The registry is in memory, not a transactional
+the separate bounded runner now saves estimator/config hashes, fitting indices
+and calibration-score artifacts for independent verification. The registry is in memory, not a transactional
 checkpoint/outbox. Durable crash recovery remains a separate task.
 
 ## Validation and remaining work
@@ -76,7 +78,8 @@ invariance, unknown labels, explicit initial-history availability, disjoint
 calibration, insufficient classes, scoring failure, wrong-model scores and
 atomic fallback. No detection metric is reported from these fixtures.
 
-Before the actual Elliptic experiment, freeze the estimator configurations,
+The bounded Elliptic pilot froze its estimator configurations and reported one
+seed; before the wider study, fix the remaining estimator configurations,
 minimum class counts, seeds, threshold objective, stable-ID ties and completed-
 batch budget rounding. Use a score cache keyed by model version. Publish known-
 label coverage beside precision/recall and report unknown alerted rows. Keep

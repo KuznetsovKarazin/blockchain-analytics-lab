@@ -1,0 +1,2036 @@
+{
+  "audit_peak_rss_bytes": 455479296,
+  "audit_process_cpu_seconds": 73.113890418,
+  "audit_resource_scope": "This independent auditor process only, including sequential full ZIP reads and bounded direct ZIP_STORED member views, with no raw extraction; excludes collection/replay.",
+  "audit_wall_seconds": 73.87130823799816,
+  "auditor": "papers/monitoring_jss/qa/phase4_acquisition_independent_review.py",
+  "auditor_sha256": "c7c96b69e875f7f2ffd5d02031cec35787958dc68598a775bf51f16bb23a1438",
+  "config_sha256": "deb0bed056df051a3c90d511f3a64f20aac36782b3382526f82e4b570117eaa4",
+  "days": [
+    {
+      "address_rows_scanned": 2107211,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 335808066,
+        "members": 14,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-19.zip",
+        "sha256": "71854cc7494cdb571364cacf69f799ae634b0483049fd2a56534f9bd605c97bf"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5435513,
+          "sha256": "b7bc056d53531aca19ffeb408f6bc3fac98dce71084f388dbfc22e5bc9cee07f"
+        },
+        "logs.parquet": {
+          "bytes": 214750793,
+          "sha256": "6e176037531ea68e0af9da257237ef73fdf2d13af015bcecbe9b10f7d2724c32"
+        }
+      },
+      "day": "2022-03-19",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x2414bbe2d15475c94fa88854fe9ae39ef8153e5f9c3b8720354ac3984f31a92b",
+        "block_number": 14413493,
+        "event_time_ns": 1647648009000000000,
+        "parent_hash": "0x9fb096b120a8b11d67da74af0eae42bc4f6a80b59d557155161d17a7fe100c8e",
+        "transaction_count": 172
+      },
+      "full_headers": 6449,
+      "last_header": {
+        "block_hash": "0x5bc0a6131743900bac13a02f247fec61bf7f453ebf0fed77e47cb1890c54c59c",
+        "block_number": 14419941,
+        "event_time_ns": 1647734394000000000,
+        "parent_hash": "0x4c2fd174269e9aeb6e35f17dbe5138dc5818cf68bdb90b59b5f62477ee73b0a1",
+        "transaction_count": 218
+      },
+      "population_counts": {
+        "beanstalk_diamond": 380,
+        "euler_core": 392
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 315353,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 380,
+          "sha256": "c30a4748f4206986eaf68a903efb223cb6046ebd883e0ef43ea0f97a6f20f81e"
+        },
+        "euler_core": {
+          "bytes": 324052,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 392,
+          "sha256": "fd60ae515b986272c2d2b22099080dc56601bc04244e2a3a75c7fc5f83751938"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [
+        {
+          "bytes": 113246208,
+          "path": ".logs.parquet.IyDgG5",
+          "sha256": "dbb3d0c6980300eebee4c0198ed0095a7c62ba2fd268523fa5a9410258417981"
+        }
+      ],
+      "within_day_parent_links": 6448
+    },
+    {
+      "address_rows_scanned": 2068065,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 229236275,
+        "members": 14,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-20.zip",
+        "sha256": "c36311dedd803fef5a9867646ce0a6a86b30cd203df8efb4c6fc057476e02499"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5423296,
+          "sha256": "a759353efd0c5fe4fcecb4015d77f38691ae496a69f251984e8c86de20e643e9"
+        },
+        "logs.parquet": {
+          "bytes": 212638027,
+          "sha256": "e2f0e832923aeaa9f07b58daeaf5ba3b991dc58842c071ed044b2a62182db7ca"
+        }
+      },
+      "day": "2022-03-20",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x9aeb45ba4940a577fbcbeeef684b143bd2a5075f49d2ffc7eceeabdbf5437881",
+        "block_number": 14419942,
+        "event_time_ns": 1647734411000000000,
+        "parent_hash": "0x5bc0a6131743900bac13a02f247fec61bf7f453ebf0fed77e47cb1890c54c59c",
+        "transaction_count": 345
+      },
+      "full_headers": 6426,
+      "last_header": {
+        "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+        "block_number": 14426367,
+        "event_time_ns": 1647820790000000000,
+        "parent_hash": "0xc19592e9d73b892d197a0d9e7b4e4854a7f3f6b6d04f462dd19fefb2d557d722",
+        "transaction_count": 114
+      },
+      "population_counts": {
+        "beanstalk_diamond": 376,
+        "euler_core": 907
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 308552,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 376,
+          "sha256": "57a309c967454d8b5b4f6bcd56982731979ad0cd98d4447303919ba55a4c7252"
+        },
+        "euler_core": {
+          "bytes": 747334,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 907,
+          "sha256": "87d49e36d5b4548fc28756be3a73d659a0beafa7f5a81a8ded87a7e5937d1585"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [
+        {
+          "bytes": 8388608,
+          "path": ".logs.parquet.partial.puSwT2",
+          "sha256": "55ca9f0655ed5617be5529cbd5a96d18a734c36f95f9d97746d6b436ce52d724"
+        }
+      ],
+      "within_day_parent_links": 6425
+    },
+    {
+      "address_rows_scanned": 1981742,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 381176226,
+        "members": 15,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-21.zip",
+        "sha256": "c7455fb4ff37599dab09ceacb8cb7703c901844d0dfd3265b873756bcb6e4db7"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5384684,
+          "sha256": "8c1b29780dc286eed6cb39699dc6d458e2a18183bd0ceb4b2f47ffa251a19577"
+        },
+        "logs.parquet": {
+          "bytes": 205373841,
+          "sha256": "1f3531b14db6dfd2b90ecdd55be629b90fe031a25ff4fda51764244dbdcfc85b"
+        }
+      },
+      "day": "2022-03-21",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x3a7c735d59cd360d19e19bcadc34dd0855306bb0c73e82a330b652a9ba50c8bd",
+        "block_number": 14426368,
+        "event_time_ns": 1647820800000000000,
+        "parent_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+        "transaction_count": 214
+      },
+      "full_headers": 6407,
+      "last_header": {
+        "block_hash": "0xfd590b488c05740406793884abce6438d341e5e8c3522810b3c931fd6102df00",
+        "block_number": 14432774,
+        "event_time_ns": 1647907193000000000,
+        "parent_hash": "0x6203a9c74ba911c64bfdc504c89dd506342c5ef16adeb1927847b69ea27391ee",
+        "transaction_count": 137
+      },
+      "population_counts": {
+        "beanstalk_diamond": 440,
+        "euler_core": 988
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 365788,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 440,
+          "sha256": "26364d3c240b79677f1675febf1c9d07fc76cad8aa52ea88193ec77eafdce3a1"
+        },
+        "euler_core": {
+          "bytes": 815845,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 988,
+          "sha256": "e081c7750aec25d5b5c71ef5d30e73586c1cccab9a883824ae8c325b2220c582"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [
+        {
+          "bytes": 98828288,
+          "path": ".logs.parquet.hatAVp",
+          "sha256": "14a494464ac3df5694ce70eeae5655cc552cbd90d8ab53d250e85c86c6a30012"
+        },
+        {
+          "bytes": 68681728,
+          "path": ".logs.parquet.partial.P41nXT",
+          "sha256": "ad0b2c00d5dd6b649ab90276eda21476acbc6d7839a2d74fd51827d35c944c12"
+        }
+      ],
+      "within_day_parent_links": 6406
+    },
+    {
+      "address_rows_scanned": 2001547,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 328163433,
+        "members": 14,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-22.zip",
+        "sha256": "5e338145fd1d149742e1d49c4777f32de155921744b5bf84d56550349b7553fc"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5418037,
+          "sha256": "cdfe56041f99852e2917079dc6447647de00d619304fceaeb6aa5117ccaf31a6"
+        },
+        "logs.parquet": {
+          "bytes": 209053921,
+          "sha256": "be098f7ba004dc4bd7fdd6612636eb451b8c36df9b6fad12d8aa690b6bdd1c57"
+        }
+      },
+      "day": "2022-03-22",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xa4bc2f39d0710575a7ff166c485ae2261cabceb5eb3ed1cb011d3dfefcdb0371",
+        "block_number": 14432775,
+        "event_time_ns": 1647907202000000000,
+        "parent_hash": "0xfd590b488c05740406793884abce6438d341e5e8c3522810b3c931fd6102df00",
+        "transaction_count": 67
+      },
+      "full_headers": 6446,
+      "last_header": {
+        "block_hash": "0x61cf5b1b644d7d2dc23edb825d99b4eba623e6ba0d8af4f7ed2d4f6322a452c3",
+        "block_number": 14439220,
+        "event_time_ns": 1647993584000000000,
+        "parent_hash": "0xfa831bf0e5c6ae5fb55ba60601cdcb64b41cea99547a4020b7fb2b3e5dedd3dc",
+        "transaction_count": 326
+      },
+      "population_counts": {
+        "beanstalk_diamond": 324,
+        "euler_core": 2206
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 273175,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 324,
+          "sha256": "bec5ab23cda7b93f6c573dde2383db6ec0d0e6cf1e2737a2e52d976d00ac00db"
+        },
+        "euler_core": {
+          "bytes": 1844330,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 2206,
+          "sha256": "171d073081ff210f28fbc958c4f97450bb3f43de9ddbb1282793dc6e1ac269aa"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [
+        {
+          "bytes": 109838336,
+          "path": ".logs.parquet.thyLwo",
+          "sha256": "9da57adc57c7edd4d1ca3978da52f3dba9257a38041137b9eeb3ab8b92602815"
+        }
+      ],
+      "within_day_parent_links": 6445
+    },
+    {
+      "address_rows_scanned": 2060183,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 223956253,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-23.zip",
+        "sha256": "f8e21d0c2dd93cf0bd935ffa471b816561d33a5de4d4f3181449a44d7ed84760"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5430276,
+          "sha256": "cead4e45283c15ac9ca01b2d5e3bfbd37362e2434a41ca23cb8b32f2d9b03c21"
+        },
+        "logs.parquet": {
+          "bytes": 215313447,
+          "sha256": "7244b57fd5dedd4dd8c56c6bb02381e0ba5973845bc576accff88b8ccaee0850"
+        }
+      },
+      "day": "2022-03-23",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x93bc77c54247d1b0b46e1c94f8513f5f9d4d075d3381a8f238c733c930f350d6",
+        "block_number": 14439221,
+        "event_time_ns": 1647993607000000000,
+        "parent_hash": "0x61cf5b1b644d7d2dc23edb825d99b4eba623e6ba0d8af4f7ed2d4f6322a452c3",
+        "transaction_count": 206
+      },
+      "full_headers": 6440,
+      "last_header": {
+        "block_hash": "0xb65137da608094f20819d61b04c1d96e1b84e81e1b7a630191014269d423338b",
+        "block_number": 14445660,
+        "event_time_ns": 1648079986000000000,
+        "parent_hash": "0x6c6c8234a6f464a6044a6015bc920070c06850f3543d52396de35755d11faaa5",
+        "transaction_count": 475
+      },
+      "population_counts": {
+        "beanstalk_diamond": 289,
+        "euler_core": 1485
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 233047,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 289,
+          "sha256": "c3d7321c78e5711f1169bf34a42d8508ceade9d5d788464a593c8da0ca7ab5cb"
+        },
+        "euler_core": {
+          "bytes": 1245735,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 1485,
+          "sha256": "275ccc4a39a47a5cc307079bc088041d65e7865867543a8a7fee13f88154550a"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6439
+    },
+    {
+      "address_rows_scanned": 2039424,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 217492928,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-24.zip",
+        "sha256": "0f6e3e23f2940e0555b437649c9e03f9251c8f80929f1d1e8175c7233afb82cc"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5413688,
+          "sha256": "48d16cecc901a009a9f3b0c590758c5933659c534d5fd6b1a7bc8c19b8ecb500"
+        },
+        "logs.parquet": {
+          "bytes": 209361886,
+          "sha256": "97e3de904c12297d65110629b7702786ad48a9cee6b0ee374e1bc9c06c40ca42"
+        }
+      },
+      "day": "2022-03-24",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xe5961d69b78fe8f45cba550404745f9e8594ba7e3f2891d53045d5665d9313d3",
+        "block_number": 14445661,
+        "event_time_ns": 1648080036000000000,
+        "parent_hash": "0xb65137da608094f20819d61b04c1d96e1b84e81e1b7a630191014269d423338b",
+        "transaction_count": 137
+      },
+      "full_headers": 6424,
+      "last_header": {
+        "block_hash": "0xfc1fd7e34b9a7809a6666a82b48e95c32748558f755dc38f020eb045ac97af23",
+        "block_number": 14452084,
+        "event_time_ns": 1648166393000000000,
+        "parent_hash": "0xa497f79ef31743f7e81f674426f2dbeeb5db64694e65ea403dc28a3550e1f6eb",
+        "transaction_count": 67
+      },
+      "population_counts": {
+        "beanstalk_diamond": 413,
+        "euler_core": 777
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 336567,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 413,
+          "sha256": "8db688428ef4e968f5ce1a2bc8f842317b5a4c76f13bb98d9af0c4e4cbe26806"
+        },
+        "euler_core": {
+          "bytes": 651037,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 777,
+          "sha256": "1ad6e0d4ea40eb7a8b407249be8e698169f0587823d44230ac29cb670aaef2a8"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6423
+    },
+    {
+      "address_rows_scanned": 2045153,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 219057640,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-25.zip",
+        "sha256": "f7d147f7335717e9304505edc2b137d2ab6ef2ade9b4832b0983ff9a305877ea"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5417614,
+          "sha256": "383500a63c63868ed5587982a29af36b273b59a771e55dc155e41e2de960fff9"
+        },
+        "logs.parquet": {
+          "bytes": 211069237,
+          "sha256": "142669a3a66a28ef066ed6e385a56a00f381aacdcee8e800cdfca5cf0eef7c31"
+        }
+      },
+      "day": "2022-03-25",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xc76c66a2ccc69cf8379baee842de519156094d6ad86228cfd5620758332f2e0f",
+        "block_number": 14452085,
+        "event_time_ns": 1648166400000000000,
+        "parent_hash": "0xfc1fd7e34b9a7809a6666a82b48e95c32748558f755dc38f020eb045ac97af23",
+        "transaction_count": 48
+      },
+      "full_headers": 6424,
+      "last_header": {
+        "block_hash": "0x7d770ef6751772c00a22dd51df668825a54bd5abb6ad730a39132fa9ee2b6b2d",
+        "block_number": 14458508,
+        "event_time_ns": 1648252776000000000,
+        "parent_hash": "0x068529a68e83797896b6361077b078571377691f2c670b947c7da66a3f06bf77",
+        "transaction_count": 361
+      },
+      "population_counts": {
+        "beanstalk_diamond": 367,
+        "euler_core": 648
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 299206,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 367,
+          "sha256": "bf5cd91c84896b3660f07f5e20280be1fb5cfa0e2114f79724879a6ac7d3ba9c"
+        },
+        "euler_core": {
+          "bytes": 541825,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 648,
+          "sha256": "3037fb53964ce9276a1c2720de89d3baac73fb134f8b67fa85ff914097d0b496"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6423
+    },
+    {
+      "address_rows_scanned": 2084808,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 213288443,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-26.zip",
+        "sha256": "05c950d4feddfbc027b1f8cd4b56dbe072f9dfc4fcbcb88536681388f37d27a6"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5390577,
+          "sha256": "19462fdfb1e7d207a2fad4356eb9ee0890c99e9382dd62c23a84afd685d67658"
+        },
+        "logs.parquet": {
+          "bytes": 205229531,
+          "sha256": "4a9b6f810570cca7112bdeee92f578fddc0c3809ef56c9a93b92785bfc3a0219"
+        }
+      },
+      "day": "2022-03-26",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xdcbd1e92ae446795d737590cca74d5639e1c5cce665f0b8c21acd609589b94fe",
+        "block_number": 14458509,
+        "event_time_ns": 1648252815000000000,
+        "parent_hash": "0x7d770ef6751772c00a22dd51df668825a54bd5abb6ad730a39132fa9ee2b6b2d",
+        "transaction_count": 213
+      },
+      "full_headers": 6407,
+      "last_header": {
+        "block_hash": "0x23dad7f1f55511e7ce204242ee3e2682ef08f827f6d747a7972e758c5c1d47b5",
+        "block_number": 14464915,
+        "event_time_ns": 1648339193000000000,
+        "parent_hash": "0x80763987e332ba9f630a4473eafe72b70aa0ca58c7d6c400c485fccb7164d913",
+        "transaction_count": 224
+      },
+      "population_counts": {
+        "beanstalk_diamond": 409,
+        "euler_core": 717
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 338865,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 409,
+          "sha256": "e0928e5b0155e4b093281d64a0d9817e2c84c14aad3b7079c1692774a8757a92"
+        },
+        "euler_core": {
+          "bytes": 604020,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 717,
+          "sha256": "ae090faa3bf20be7d8f5a14bbe042306e33fdcc2879d36fed2e2007bfaa1b03b"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6406
+    },
+    {
+      "address_rows_scanned": 2099514,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 218895078,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-27.zip",
+        "sha256": "3a1593016315c47561758a0c29b63c136670108f2a1a1fd17888ca8fa5533698"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5382415,
+          "sha256": "dae68e7a3134f064fb2ee4770fbe5c21e2d37b8dc9d6922edceb794989510ea3"
+        },
+        "logs.parquet": {
+          "bytes": 211036256,
+          "sha256": "80f2b137392ce6e06c0c944ede725fc84338018250504e51402cdfed40e22eb2"
+        }
+      },
+      "day": "2022-03-27",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x05ca151cbf986531c6ab2693b77f2965ff34b6312aa0cf8cfc1a0eac32e115e9",
+        "block_number": 14464916,
+        "event_time_ns": 1648339205000000000,
+        "parent_hash": "0x23dad7f1f55511e7ce204242ee3e2682ef08f827f6d747a7972e758c5c1d47b5",
+        "transaction_count": 108
+      },
+      "full_headers": 6395,
+      "last_header": {
+        "block_hash": "0x02d988c2e175ddb84f4d9d374996b15285361b792c2610a67c75cb1e94cdf682",
+        "block_number": 14471310,
+        "event_time_ns": 1648425581000000000,
+        "parent_hash": "0x348b497cd37c1b4b5cbc277008d89a33d1b527bba0624f47e4dd645c0a033ef8",
+        "transaction_count": 371
+      },
+      "population_counts": {
+        "beanstalk_diamond": 426,
+        "euler_core": 478
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 353317,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 426,
+          "sha256": "1b7f201867b5492cab685538ca9cb2b58c4dfad43a00b7aab2b79871b59566bd"
+        },
+        "euler_core": {
+          "bytes": 400682,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 478,
+          "sha256": "fd0e4736821eb1589bbd63acd7ea97991359f853364e4518bead590a474787f7"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6394
+    },
+    {
+      "address_rows_scanned": 2186950,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 394254535,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-28.zip",
+        "sha256": "404584f2c57d77c1fd850982b3942f0c2ef885481de8f28d78dfbc6e332cc4b4"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5437568,
+          "sha256": "b63a39b79b75fcf727612b3e67cec76493c61f89b79fedb9909e735179f2eea2"
+        },
+        "logs.parquet": {
+          "bytes": 386229920,
+          "sha256": "2521de0e898e01f047d3388a6644da3a515973db11338dbf994e84e3128a8ca8"
+        }
+      },
+      "day": "2022-03-28",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xcb98e3a7a39d6eba6212b61266c0e7ae7e060876ae55bef4b0553bcf34bab100",
+        "block_number": 14471311,
+        "event_time_ns": 1648425669000000000,
+        "parent_hash": "0x02d988c2e175ddb84f4d9d374996b15285361b792c2610a67c75cb1e94cdf682",
+        "transaction_count": 301
+      },
+      "full_headers": 6463,
+      "last_header": {
+        "block_hash": "0x69e2d15fc1bc195961e68d716b123ce344b562588a73899c11cab578482ac94e",
+        "block_number": 14477773,
+        "event_time_ns": 1648511996000000000,
+        "parent_hash": "0xac323614dfc83c4b7015e1b5ad94e5236005aba94cb7aff23544e873e078dd42",
+        "transaction_count": 45
+      },
+      "population_counts": {
+        "beanstalk_diamond": 474,
+        "euler_core": 536
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 399142,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 474,
+          "sha256": "276745d13a3612cfcfd23d9248eb571f5ce3ad7b5ca6b9455ad4e9d644483324"
+        },
+        "euler_core": {
+          "bytes": 448079,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 536,
+          "sha256": "3fcce03fc24bc8b22b80dbb30f3897e4116d9190164d4d39c600593129da9afe"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 3,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6462
+    },
+    {
+      "address_rows_scanned": 2185267,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 395340559,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-29.zip",
+        "sha256": "726ec76b0b81588a9a234ef45a255ee76bd705fc4e3284bb6c3d3bf4a6e46d84"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5460130,
+          "sha256": "271acb170ece0ab48ffc4505c9e9214bebd569d83ce0bed5cc969a39108164b7"
+        },
+        "logs.parquet": {
+          "bytes": 387102488,
+          "sha256": "a198cce2bd7f301f3ab31120e0328aed5a79d95b28feaadb924393b306da0eda"
+        }
+      },
+      "day": "2022-03-29",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x780d67cf9845665946102f8587da15a9281e6394881ef69282cad2622b161943",
+        "block_number": 14477774,
+        "event_time_ns": 1648512002000000000,
+        "parent_hash": "0x69e2d15fc1bc195961e68d716b123ce344b562588a73899c11cab578482ac94e",
+        "transaction_count": 79
+      },
+      "full_headers": 6452,
+      "last_header": {
+        "block_hash": "0x93545f523a30a894f95076e420add44e54f17335cbf1e959f8dd3cbf795aa32e",
+        "block_number": 14484225,
+        "event_time_ns": 1648598381000000000,
+        "parent_hash": "0x90f1bd4f7b50e0cc2df06759a3f83d76c47f8a34706797e67261fa9ceb4cc4e1",
+        "transaction_count": 275
+      },
+      "population_counts": {
+        "beanstalk_diamond": 570,
+        "euler_core": 667
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 484574,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 570,
+          "sha256": "ac17efaa8724afe966078759cbc19bf4580ec87abed29ea5ea4188281e6db6ea"
+        },
+        "euler_core": {
+          "bytes": 556337,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 667,
+          "sha256": "e132d0556b9594c38eabe54412fe5de059bcbdf3dae3ec7e75d782d8e437d709"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 3,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6451
+    },
+    {
+      "address_rows_scanned": 2149017,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 227171425,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-30.zip",
+        "sha256": "dc045e6e14def566b6ded799319d425069bf43ca855e9e05f920f6b08ee50d8e"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5410741,
+          "sha256": "bc86cf5c9218564bae5d3c0ffc41fce1b34451e754154b12e40c10780a94c497"
+        },
+        "logs.parquet": {
+          "bytes": 219114966,
+          "sha256": "5e5297148e91c81fed70556af54ed479c3b0f67d8c8437b12d2029d5000157f7"
+        }
+      },
+      "day": "2022-03-30",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x23908e34b854de869d7430a7171a73b617f4aa23c433872fc96e841e37e68870",
+        "block_number": 14484226,
+        "event_time_ns": 1648598424000000000,
+        "parent_hash": "0x93545f523a30a894f95076e420add44e54f17335cbf1e959f8dd3cbf795aa32e",
+        "transaction_count": 227
+      },
+      "full_headers": 6394,
+      "last_header": {
+        "block_hash": "0x64f572f5ac9993b3a527a82a635fb99a3e60fb55388f87384442babc37db8187",
+        "block_number": 14490619,
+        "event_time_ns": 1648684773000000000,
+        "parent_hash": "0x6582e6ee5cff3eb01276086c40f9b9b9e482b099944f10aa6a8d11ccf8d0b0a1",
+        "transaction_count": 685
+      },
+      "population_counts": {
+        "beanstalk_diamond": 478,
+        "euler_core": 620
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 406515,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 478,
+          "sha256": "6386e410deabbf5cb5f8de6360fde5d6674f4b9dee99e43db2986c43ac378ffe"
+        },
+        "euler_core": {
+          "bytes": 516914,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 620,
+          "sha256": "499f5fced4578087b461a7eec1d32725bf53d56c81df3594601768bcbbac661f"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6393
+    },
+    {
+      "address_rows_scanned": 2072783,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 224918546,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-03-31.zip",
+        "sha256": "c342bb00f5b9d337de2cdcec1260ea8cbfc68f680c5f35491573067b24a3a3ab"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5424551,
+          "sha256": "c4b3618468347990c77365f748ed3c9ad764d7b82c1de1a15ef3c030dce03a83"
+        },
+        "logs.parquet": {
+          "bytes": 216715085,
+          "sha256": "10a5bad290e99aeecd8fb895572920d7e7c63ed3398d45c2cefe4d4d96a19628"
+        }
+      },
+      "day": "2022-03-31",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x851a9fa55dc903e69e7279498af9d99a7d6cb0f78cc527ae352e5d5849144e2c",
+        "block_number": 14490620,
+        "event_time_ns": 1648684803000000000,
+        "parent_hash": "0x64f572f5ac9993b3a527a82a635fb99a3e60fb55388f87384442babc37db8187",
+        "transaction_count": 296
+      },
+      "full_headers": 6414,
+      "last_header": {
+        "block_hash": "0xba079017e34778e071d26698d4cd9a64689487ac91218836ef5d608ec392b3ee",
+        "block_number": 14497033,
+        "event_time_ns": 1648771196000000000,
+        "parent_hash": "0xfa5d196ebe60cc7dfb241e73a54d4c836577ec152e75120338b89016a8bf55c5",
+        "transaction_count": 326
+      },
+      "population_counts": {
+        "beanstalk_diamond": 466,
+        "euler_core": 791
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 390803,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 466,
+          "sha256": "00168049b5f2608bad44158e3be062293fe2ce2dc0e88b4ae7043aea52b8a707"
+        },
+        "euler_core": {
+          "bytes": 660768,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 791,
+          "sha256": "b7f9427c80da36f7b0febb9c65bfb27ce873f791495d0307890a660432b4f6c8"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6413
+    },
+    {
+      "address_rows_scanned": 2028447,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 220298207,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-01.zip",
+        "sha256": "5c8eb5c65e46d8e9d9b34f51d14b60acd2ecb4c2a4e88874008e5a8e07ec6c54"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5466704,
+          "sha256": "b393412ecaa42ae1bef0d80ced9dd85fee13ddaf36e91794a8eaea892b0fbd27"
+        },
+        "logs.parquet": {
+          "bytes": 212248069,
+          "sha256": "9a9a92fe8470af2e967331b0a0b68efbe33dc2547c7f2cea59df317feac0fa8e"
+        }
+      },
+      "day": "2022-04-01",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xd302a01cec2bbf658e8004453caadc1158ffebe178c18cecb0a82255c8066ec6",
+        "block_number": 14497034,
+        "event_time_ns": 1648771221000000000,
+        "parent_hash": "0xba079017e34778e071d26698d4cd9a64689487ac91218836ef5d608ec392b3ee",
+        "transaction_count": 221
+      },
+      "full_headers": 6431,
+      "last_header": {
+        "block_hash": "0x2135909374b8417480188a37e66cd43df615e881394f681122b3bcef647b719f",
+        "block_number": 14503464,
+        "event_time_ns": 1648857574000000000,
+        "parent_hash": "0xc2fe436228c5200ac6e30b88a3745be85f741b94fdf5c0c648a55fcb37b13724",
+        "transaction_count": 292
+      },
+      "population_counts": {
+        "beanstalk_diamond": 426,
+        "euler_core": 585
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 364590,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 426,
+          "sha256": "4938cefec77351765ae431cf067bf9aecbbea343fe612fab5a7ab055a551aa79"
+        },
+        "euler_core": {
+          "bytes": 487274,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 585,
+          "sha256": "682f85ef653cf16f92d309f1656557afb28fbde4af3a4e97e8d756dc42b91ec6"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6430
+    },
+    {
+      "address_rows_scanned": 2116440,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 221281215,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-02.zip",
+        "sha256": "caccf6ceeeffb7573e23956e3923056e041cc3dd1bcac109ab84319f0e09cb12"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5389617,
+          "sha256": "70f17167490eb63112885eba1a1067cdfcdae8e6cc600270ae009086ca5c2d42"
+        },
+        "logs.parquet": {
+          "bytes": 213416360,
+          "sha256": "74fe8f0b0f0d86b4b03ec7110181d5240666d0b948054af3b39fb28ed0ad8add"
+        }
+      },
+      "day": "2022-04-02",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x26ff0dcab2104a92bd9bfffcd07dff4bcb9cf69e78cea357d5bc588f53357b67",
+        "block_number": 14503465,
+        "event_time_ns": 1648857608000000000,
+        "parent_hash": "0x2135909374b8417480188a37e66cd43df615e881394f681122b3bcef647b719f",
+        "transaction_count": 64
+      },
+      "full_headers": 6357,
+      "last_header": {
+        "block_hash": "0x8046e971970507fe4c2d96e124fe9f6ad8f97d8be2507e5b4d88e2395187045b",
+        "block_number": 14509821,
+        "event_time_ns": 1648943999000000000,
+        "parent_hash": "0xb52e536dbcbdb32345269d2a88b26f9e2de99ccc882720dbad51b912ef4a2104",
+        "transaction_count": 42
+      },
+      "population_counts": {
+        "beanstalk_diamond": 499,
+        "euler_core": 417
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 413815,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 499,
+          "sha256": "b5bcdd2659502bc382bce4466c8a7c2c53a42c196e1730296108add191c0c55b"
+        },
+        "euler_core": {
+          "bytes": 348512,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 417,
+          "sha256": "6bea1ff648706539451e4f9acdab53124f3fe3c6d4ef6554b1b565847398773b"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6356
+    },
+    {
+      "address_rows_scanned": 2135156,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 387054993,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-03.zip",
+        "sha256": "930f6f19a1883f21a597c13fd45a2fa9045e2e9fc1e24cad1cf1fc33b02021c9"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5417754,
+          "sha256": "53c810efc560d7cfc873337841d2f13daeaf702304689034ecae6f3a4ebe64a7"
+        },
+        "logs.parquet": {
+          "bytes": 379010992,
+          "sha256": "7a6b1f80b89a432d1138be68840778fb7bb7bff34d269422c92b93ec627b1985"
+        }
+      },
+      "day": "2022-04-03",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xdd82b0cb8b3906e314d08c9b619907e14bd0008d8a72f092209d94a1a7712486",
+        "block_number": 14509822,
+        "event_time_ns": 1648944006000000000,
+        "parent_hash": "0x8046e971970507fe4c2d96e124fe9f6ad8f97d8be2507e5b4d88e2395187045b",
+        "transaction_count": 163
+      },
+      "full_headers": 6426,
+      "last_header": {
+        "block_hash": "0xa8c51d35c3cbbe8626cec8896a8c3e3201eadb0923383ef3d7fe0cb943cd933c",
+        "block_number": 14516247,
+        "event_time_ns": 1649030398000000000,
+        "parent_hash": "0xe4445fbcd5fd3c9a5aa26db0d63bfeceb50644f8736c10428c7f918449e384a8",
+        "transaction_count": 51
+      },
+      "population_counts": {
+        "beanstalk_diamond": 583,
+        "euler_core": 482
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 494247,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 583,
+          "sha256": "cf51d7adce5c7955f8e3f33928cd3aa41c4445480798480dd2fa08cf5049cf30"
+        },
+        "euler_core": {
+          "bytes": 401732,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 482,
+          "sha256": "e33f8f992b8c03406a196a3b1051aa93f30c0da269fd0ba4909ecec4ad3f99e2"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 3,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6425
+    },
+    {
+      "address_rows_scanned": 2052366,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 213742347,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-04.zip",
+        "sha256": "3b627972cc574f368d9ddbeadc1da1262b3c2fc2c89306af62fdbbbe887f13cb"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5331573,
+          "sha256": "c2b8031b8e3c758023e706048816ed57372bd2f4810bc8974143a14b0c128386"
+        },
+        "logs.parquet": {
+          "bytes": 205945708,
+          "sha256": "fde7167a8aaf80cf1ce3e99a13ef910100266716ff70bebe6c3c5c657838541e"
+        }
+      },
+      "day": "2022-04-04",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x67012298d3e80f00cf2c3400f26361edce7072c875454c68d2056979cb9b3a7b",
+        "block_number": 14516248,
+        "event_time_ns": 1649030400000000000,
+        "parent_hash": "0xa8c51d35c3cbbe8626cec8896a8c3e3201eadb0923383ef3d7fe0cb943cd933c",
+        "transaction_count": 390
+      },
+      "full_headers": 6323,
+      "last_header": {
+        "block_hash": "0x9b0abc6a16daddd8c8ffa8b5d2e9d820b197fb37f60d3da9de475769bdadbd0d",
+        "block_number": 14522570,
+        "event_time_ns": 1649116769000000000,
+        "parent_hash": "0x727fb36f701209bab710cae7be35e67ae4aa2e1d0b374bc0d9162ee291feb62b",
+        "transaction_count": 559
+      },
+      "population_counts": {
+        "beanstalk_diamond": 584,
+        "euler_core": 303
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 507833,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 584,
+          "sha256": "8e348fa6ab7cb72e31901b9bbe4a0447de34592b9a0e0cbc1ac591b36d11fd23"
+        },
+        "euler_core": {
+          "bytes": 252742,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 303,
+          "sha256": "2974dc39323b591433c5363f84684f2b80ffe022998c1490e072232329388b65"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6322
+    },
+    {
+      "address_rows_scanned": 2027721,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 207671386,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-05.zip",
+        "sha256": "c9bcfdd789f9af73d1e1c47127b08c7c4102c9e37971cbd792fcf1b1886205ae"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5417248,
+          "sha256": "4d32717bb6dd9ab8191bbe05cc28f98ea020ca104e63e4c23a9df0c4eece4c13"
+        },
+        "logs.parquet": {
+          "bytes": 199882208,
+          "sha256": "e7ff835e02a1a8cd73c5d4bf01d5314410ecaed64a4b7aa13eb3cc748fe6404f"
+        }
+      },
+      "day": "2022-04-05",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x6a827e7cb07a17e1449a677b92a7473cc5b5873ae728ddc5e23b00717022e448",
+        "block_number": 14522571,
+        "event_time_ns": 1649116809000000000,
+        "parent_hash": "0x9b0abc6a16daddd8c8ffa8b5d2e9d820b197fb37f60d3da9de475769bdadbd0d",
+        "transaction_count": 427
+      },
+      "full_headers": 6436,
+      "last_header": {
+        "block_hash": "0x7e8f3ad4eee3fc5b30a1f4c164a8359e97ca3e32c4d0bcfb03f48625186ec92c",
+        "block_number": 14529006,
+        "event_time_ns": 1649203195000000000,
+        "parent_hash": "0x487e7d145973613c703581f385d9b86b9ec82ef4bfd4fe5a38fcf96010416c16",
+        "transaction_count": 325
+      },
+      "population_counts": {
+        "beanstalk_diamond": 454,
+        "euler_core": 307
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 381305,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 454,
+          "sha256": "6723b51eabbfc03d4fc8d7f5b3329cdcba7ae260a6cf9e03810564856e3925c4"
+        },
+        "euler_core": {
+          "bytes": 258034,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 307,
+          "sha256": "3e6a9c3ce4fa48abdce92b7f1a4226ab4c5f509132f6aeb11e010012752f4a85"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6435
+    },
+    {
+      "address_rows_scanned": 2092781,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 223213087,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-06.zip",
+        "sha256": "d9ba25384d3b324877e5ab49e65170964488bd33804985f6012ce80192a54d4f"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5416650,
+          "sha256": "dbdc1a71ba0c48b6dbd5029ba303b5f857c15ba84f107ac1d1ea77aea082d50a"
+        },
+        "logs.parquet": {
+          "bytes": 215079450,
+          "sha256": "57d9f85ba7459ed93e1be06bf6c8f344909f7effd62f52295f0576f0fc80e8bd"
+        }
+      },
+      "day": "2022-04-06",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x7f3773b3c418011aeba5eb670a20698256bc30c3cadc10d10901fe46f1e89eab",
+        "block_number": 14529007,
+        "event_time_ns": 1649203222000000000,
+        "parent_hash": "0x7e8f3ad4eee3fc5b30a1f4c164a8359e97ca3e32c4d0bcfb03f48625186ec92c",
+        "transaction_count": 33
+      },
+      "full_headers": 6418,
+      "last_header": {
+        "block_hash": "0x19378531744594617d0cbba48786288635965eb9675c88478aae85d7bd48530f",
+        "block_number": 14535424,
+        "event_time_ns": 1649289571000000000,
+        "parent_hash": "0x89b49fcea696c01225493f8aa1b509fd1ff203ad2281d1eaf4ca662c6c3f1c6b",
+        "transaction_count": 312
+      },
+      "population_counts": {
+        "beanstalk_diamond": 579,
+        "euler_core": 599
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 489355,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 579,
+          "sha256": "91d1bfe66d07f8dc3a72f3acf3af4aa712366dc4614ed05719a13809a31d5c32"
+        },
+        "euler_core": {
+          "bytes": 499379,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 599,
+          "sha256": "a215a980a04d97f564c7728769131dafc6829a6648cd593e608a0f4bd61d5c9c"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6417
+    },
+    {
+      "address_rows_scanned": 1985557,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 266793799,
+        "members": 14,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-07.zip",
+        "sha256": "503d9bca7e9def75b3bc3b83ecde4775ccdfb2d93eb4c0c10f334dec363307ca"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5407090,
+          "sha256": "2fecb92e9f75c8a438247f3c56dd973b79b990ab90384c1b8a5fdb01a3e8db4d"
+        },
+        "logs.parquet": {
+          "bytes": 205917707,
+          "sha256": "4ac088bce7ef2c174a39431f169a3b7b3ebbf9a8449ed3c0ecb87170308ffe96"
+        }
+      },
+      "day": "2022-04-07",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x135739bdbb2bdfdad27d1d0e6a9d339052e1ffd502ed562f37db0515bef1644e",
+        "block_number": 14535425,
+        "event_time_ns": 1649289635000000000,
+        "parent_hash": "0x19378531744594617d0cbba48786288635965eb9675c88478aae85d7bd48530f",
+        "transaction_count": 366
+      },
+      "full_headers": 6422,
+      "last_header": {
+        "block_hash": "0x234490c47acb4bbdb7841a3a9f36af871f074b20ae123d05ad9e594a7314135a",
+        "block_number": 14541846,
+        "event_time_ns": 1649375989000000000,
+        "parent_hash": "0x17ff4d524ff47e79f9c5a671297f7611346e1df1fb3fb36b73ab997ae36c19d2",
+        "transaction_count": 284
+      },
+      "population_counts": {
+        "beanstalk_diamond": 565,
+        "euler_core": 680
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 483008,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 565,
+          "sha256": "e5e7bbd806d820a07d5fe0d7c11179844f47794b8bbe7e299960bd6a6c448161"
+        },
+        "euler_core": {
+          "bytes": 565553,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 680,
+          "sha256": "817b1c5e6fe328b63729cf2026ea54661f1c4de6aa55603c23f8734011adef32"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [
+        {
+          "bytes": 52690944,
+          "path": ".logs.parquet.iqKg53",
+          "sha256": "cece2c2d3cea45e4c4660940e33116968e9e702a4eec76652327020074af0089"
+        }
+      ],
+      "within_day_parent_links": 6421
+    },
+    {
+      "address_rows_scanned": 2002890,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 216447920,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-08.zip",
+        "sha256": "316f3f26c27066bd99a44c309b6aac45ffbe57bef2a45f5d0e7586e253827250"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5345148,
+          "sha256": "1b515d0f58017776701376cbed723bd37c71fe21ab1fcbf7bea712b18409dc08"
+        },
+        "logs.parquet": {
+          "bytes": 208400388,
+          "sha256": "3ba4e291be07f018c8102cbb2dcf6c68d3bb2fe89b49bc0767447c08386a816a"
+        }
+      },
+      "day": "2022-04-08",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xe5124cac443ceacbc5eb29b8077c3e73afec49e7828954c81e327b1d160e1882",
+        "block_number": 14541847,
+        "event_time_ns": 1649376013000000000,
+        "parent_hash": "0x234490c47acb4bbdb7841a3a9f36af871f074b20ae123d05ad9e594a7314135a",
+        "transaction_count": 89
+      },
+      "full_headers": 6338,
+      "last_header": {
+        "block_hash": "0x5ce2e47fb187e94c346fb9c7799479213fa02df4b7bc75bb8d92c0f4a0f0173b",
+        "block_number": 14548184,
+        "event_time_ns": 1649462394000000000,
+        "parent_hash": "0x3b8d5c93576aa5b5a44f2b88cc58eece347f5b0275739e252774ba5ae3163586",
+        "transaction_count": 25
+      },
+      "population_counts": {
+        "beanstalk_diamond": 557,
+        "euler_core": 635
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 466381,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 557,
+          "sha256": "5912c02519d24db9503e6d2ca52fa6f0162a758006ac7c5eb5484f9c1908a234"
+        },
+        "euler_core": {
+          "bytes": 527849,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 635,
+          "sha256": "90b4df49c6872501418da1f8f391f880e2ffba034bcdedb3aa64d381405e8020"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6337
+    },
+    {
+      "address_rows_scanned": 2038121,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 212141391,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-09.zip",
+        "sha256": "0e72b4e3604c2e888193c06e73f993a6c30244637f1ddc1646d48cda9e9ea2fa"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5394894,
+          "sha256": "7269edf7f4fb5ca52fc715302a8705018706b62653d0af8afd0177baf6f209c2"
+        },
+        "logs.parquet": {
+          "bytes": 203724490,
+          "sha256": "cfff42bab3633a118a8d4638e8311b1bfb7761ec4a3aaa21bc1ded08e36f26ae"
+        }
+      },
+      "day": "2022-04-09",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x47ea8aba0d1b728abdd71bf7e8c098d0acf8fae308a3084b006677d00d959efc",
+        "block_number": 14548185,
+        "event_time_ns": 1649462400000000000,
+        "parent_hash": "0x5ce2e47fb187e94c346fb9c7799479213fa02df4b7bc75bb8d92c0f4a0f0173b",
+        "transaction_count": 243
+      },
+      "full_headers": 6429,
+      "last_header": {
+        "block_hash": "0x5b2759c64893251b6a020809bcab6e4a04a25fbf3f7a022a0ad923ca4644d3a0",
+        "block_number": 14554613,
+        "event_time_ns": 1649548795000000000,
+        "parent_hash": "0xdd56f25485add55025bac3161f182bb1972fd1df51154c8ae2eac2bd5677c362",
+        "transaction_count": 73
+      },
+      "population_counts": {
+        "beanstalk_diamond": 977,
+        "euler_core": 531
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 848578,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 977,
+          "sha256": "c7b57eb23baf1fe420c44b43a156cddb328bfee063cb7404ebf3c0ed1c12661c"
+        },
+        "euler_core": {
+          "bytes": 442584,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 531,
+          "sha256": "6b6474a80aa437770f0bc850db82103be378aefcb57aeaddb9038e0af946bb39"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6428
+    },
+    {
+      "address_rows_scanned": 1958423,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 207870322,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-10.zip",
+        "sha256": "fce443922b7da4866c0987cf58629113ed7a79e69cd67e1ae2d51632ba57b7d8"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5390402,
+          "sha256": "f12181930ed6abeb1f756d893398c1b85a811d2c2954003ccf68009087c4ce80"
+        },
+        "logs.parquet": {
+          "bytes": 199329323,
+          "sha256": "15ca2a1231f68c38bd318aa7ad064677f77af0c806a3fdbe8384d3b151bc3dcf"
+        }
+      },
+      "day": "2022-04-10",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x28e2ee0ca3f931ba645514cf1698770b1505a1ae1c090c9b1f9668ad556cf36e",
+        "block_number": 14554614,
+        "event_time_ns": 1649548801000000000,
+        "parent_hash": "0x5b2759c64893251b6a020809bcab6e4a04a25fbf3f7a022a0ad923ca4644d3a0",
+        "transaction_count": 274
+      },
+      "full_headers": 6401,
+      "last_header": {
+        "block_hash": "0xc24d1511bf7c3360de18da43d60f9e93b2b2381d0e10f9fece76a810d20efee4",
+        "block_number": 14561014,
+        "event_time_ns": 1649635199000000000,
+        "parent_hash": "0x3447fc812b675c474bb4faa5843538563e679b01f050bba1767c3b64eed5061e",
+        "transaction_count": 99
+      },
+      "population_counts": {
+        "beanstalk_diamond": 944,
+        "euler_core": 718
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 823295,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 944,
+          "sha256": "6f820c3f9e302d6b7c94d273ddb746568aecd542348edf0e1995ee33ce9f690f"
+        },
+        "euler_core": {
+          "bytes": 603438,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 718,
+          "sha256": "f66ccb375e976f3a6a8bc62fa10ea7c6df917fe5ea5f141fa70b04f3e822b276"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6400
+    },
+    {
+      "address_rows_scanned": 2032445,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 217777398,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-11.zip",
+        "sha256": "f1118e148a3b2fb8729e304573b5640111b72ec1d3a07671eabba995800d64ae"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5441589,
+          "sha256": "9644da749b276d06b1b90ef80c8652814f10c2cf374bf03d60f01384ec8471a3"
+        },
+        "logs.parquet": {
+          "bytes": 209310419,
+          "sha256": "be23d705243dd023ba937932be517d8e7e641397161807dda95e78cb400dd958"
+        }
+      },
+      "day": "2022-04-11",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x5faa0acb5ff08233e3b77b6856aa1dc284d93d63774940a5cd1250c96590aa54",
+        "block_number": 14561015,
+        "event_time_ns": 1649635203000000000,
+        "parent_hash": "0xc24d1511bf7c3360de18da43d60f9e93b2b2381d0e10f9fece76a810d20efee4",
+        "transaction_count": 289
+      },
+      "full_headers": 6447,
+      "last_header": {
+        "block_hash": "0xde59d4142edc13a11c2622e0dbc567f61b011de598cdaaec8558afd69fdc97aa",
+        "block_number": 14567461,
+        "event_time_ns": 1649721585000000000,
+        "parent_hash": "0x92de488b2ad8273c5cb863cd69ffcc2c1815bae5f9d7a10c437f4cbaff6d5fbf",
+        "transaction_count": 328
+      },
+      "population_counts": {
+        "beanstalk_diamond": 918,
+        "euler_core": 620
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 769311,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 918,
+          "sha256": "ed3d3afffbee2e701e5ab0dae17e8ccb6919d59a209e08d8ba20fd7bc4696928"
+        },
+        "euler_core": {
+          "bytes": 520675,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 620,
+          "sha256": "b33ba07cb45c9cb6b9b62f191da58cfc503366623347893b151d8ab2639e3105"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6446
+    },
+    {
+      "address_rows_scanned": 1998707,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 215468000,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-12.zip",
+        "sha256": "86505fb6208baa0f8656512b24d8da5dfad8bf19c1fd9022738ac608aef54a4d"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5435642,
+          "sha256": "2ef76e54bc4b7affea8f4a3adb8b5117730034595a32397ccb3942e435c1c652"
+        },
+        "logs.parquet": {
+          "bytes": 206413790,
+          "sha256": "8f7ca98fa70a8ee6a7f219417b1ff150b420ab0ecf2fb99d0555e2c1ae473e2a"
+        }
+      },
+      "day": "2022-04-12",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x138bd67c28680e3a5397e6e401ddc9941ef4014a019a33d6207411140fb53b83",
+        "block_number": 14567462,
+        "event_time_ns": 1649721614000000000,
+        "parent_hash": "0xde59d4142edc13a11c2622e0dbc567f61b011de598cdaaec8558afd69fdc97aa",
+        "transaction_count": 141
+      },
+      "full_headers": 6446,
+      "last_header": {
+        "block_hash": "0x15a80239d1941648b41e563402578d463d2b578740823e77f7db32ccfa45f3e8",
+        "block_number": 14573907,
+        "event_time_ns": 1649807981000000000,
+        "parent_hash": "0x9e26647ac163080421fa36c49e8ebc898cc7ad10efb7f921808e3c1352ede78e",
+        "transaction_count": 320
+      },
+      "population_counts": {
+        "beanstalk_diamond": 1890,
+        "euler_core": 331
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 1608690,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 1890,
+          "sha256": "bc6cdcfc430fa5b92553d1a49d47d94025430556c8aa22b6301699a33b8aca98"
+        },
+        "euler_core": {
+          "bytes": 274636,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 331,
+          "sha256": "1006c139cab0954f3a5a3c9aa4b07f82647bb03f2803c369d678a6d41a913c01"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6445
+    },
+    {
+      "address_rows_scanned": 2011322,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 215967852,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-13.zip",
+        "sha256": "051741d288e9129e02839788d202ee243841f72229b94595d69e0684369076f4"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5325994,
+          "sha256": "05a94774bbe58700cba4cfa99d0aa0b4a5aa0dcdc31245866c1e6b4745abf4f2"
+        },
+        "logs.parquet": {
+          "bytes": 206424521,
+          "sha256": "475a539653eeca9dffa63e283b7c8fa5866f1d2789051e037946ba23bdee1084"
+        }
+      },
+      "day": "2022-04-13",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x348eef42ad05b4e19a6bf1a79dc8aef3df401c730ce65255dc2a4d660da10978",
+        "block_number": 14573908,
+        "event_time_ns": 1649808014000000000,
+        "parent_hash": "0x15a80239d1941648b41e563402578d463d2b578740823e77f7db32ccfa45f3e8",
+        "transaction_count": 179
+      },
+      "full_headers": 6312,
+      "last_header": {
+        "block_hash": "0x89100c9a5545689a6cda17a5b4f2f15fd09f2625748acbea4fdb799791fec929",
+        "block_number": 14580219,
+        "event_time_ns": 1649894396000000000,
+        "parent_hash": "0xe80d8fac90e59413ceb8e589be2ceecb71f4b834edd39594b3c286dce767edb4",
+        "transaction_count": 11
+      },
+      "population_counts": {
+        "beanstalk_diamond": 2418,
+        "euler_core": 553
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 2055978,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 2418,
+          "sha256": "e69984adfa20db5e5a795fd8adf39fe3ce5a8658fe320107fe33a901033ea8d9"
+        },
+        "euler_core": {
+          "bytes": 459764,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 553,
+          "sha256": "e6b026192bfb54cdea4bc8ab52cfa1c91bc3eab5a4d7e18cd61a5ac70be697dc"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6311
+    },
+    {
+      "address_rows_scanned": 2033140,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 214490546,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-14.zip",
+        "sha256": "d676328cf5523003fc3f1e88d6d49c40650e0135c0039e8c19598070d6e085ca"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5380705,
+          "sha256": "021d2099526dbd6f4f8337efee2945006ea24cc37f1f0ef2190a5a71ca6d45cd"
+        },
+        "logs.parquet": {
+          "bytes": 204897680,
+          "sha256": "126c11ef86c8ebe07fc86edd8c2dc10fc76a0de1158630af6332483c60fd4c1b"
+        }
+      },
+      "day": "2022-04-14",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x8af3a3d64bff86b349606d0c07e3c932b1217472a2d2342b27fd73e2c94a9e2f",
+        "block_number": 14580220,
+        "event_time_ns": 1649894406000000000,
+        "parent_hash": "0x89100c9a5545689a6cda17a5b4f2f15fd09f2625748acbea4fdb799791fec929",
+        "transaction_count": 363
+      },
+      "full_headers": 6408,
+      "last_header": {
+        "block_hash": "0x02cbbe98d228c3e2bd2a61a1fc97d7c202e212f37a79dc8c0cad0fe8df70104a",
+        "block_number": 14586627,
+        "event_time_ns": 1649980798000000000,
+        "parent_hash": "0x677f3ae03b0923b0183eac33598b22396d8c204ab23279b7dd63f1d24528cc1b",
+        "transaction_count": 273
+      },
+      "population_counts": {
+        "beanstalk_diamond": 2584,
+        "euler_core": 372
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 2175814,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 2584,
+          "sha256": "ff2f7f6e84ff0c2dff895e730c16e83ced206b0372fe071f3f47114f50063fc4"
+        },
+        "euler_core": {
+          "bytes": 310758,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 372,
+          "sha256": "d5296dec2e9828db9eb087710bb7dceb47b380a78cf4a5f0d3accb64e41c8d99"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6407
+    },
+    {
+      "address_rows_scanned": 2008375,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 217370126,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-15.zip",
+        "sha256": "fdaaa4304d9cb7a59e2b27acdba915089969427d80741afdfde331addfd20efd"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5417635,
+          "sha256": "f9a3189b101fcc388ec1e7944c81cab8ab80464f69775271e8bfc0f30bc78055"
+        },
+        "logs.parquet": {
+          "bytes": 206785294,
+          "sha256": "1c5c79126021902594627b0fe7b4eb24d32d3629b52593c50347b35d7bcd372c"
+        }
+      },
+      "day": "2022-04-15",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xa72935f878287279f330da496614c5041c5a022f5dd4a4213e0bfcacd12b4bf2",
+        "block_number": 14586628,
+        "event_time_ns": 1649980836000000000,
+        "parent_hash": "0x02cbbe98d228c3e2bd2a61a1fc97d7c202e212f37a79dc8c0cad0fe8df70104a",
+        "transaction_count": 213
+      },
+      "full_headers": 6421,
+      "last_header": {
+        "block_hash": "0xc2a928ec840eee69de5e9dbafa3dd4c6be857ea3e647de6b2048556f69beb239",
+        "block_number": 14593048,
+        "event_time_ns": 1650067199000000000,
+        "parent_hash": "0xcc9e091f343f69fe3c4fedbcbbbb900966b06513936196f5e32a131f4270110b",
+        "transaction_count": 361
+      },
+      "population_counts": {
+        "beanstalk_diamond": 3725,
+        "euler_core": 343
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 3152433,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 3725,
+          "sha256": "fd0d4fc73d1ee4490f639e6f5556734d015c638fe5b62f3c1f24db37e0affff7"
+        },
+        "euler_core": {
+          "bytes": 285856,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 343,
+          "sha256": "c852aa1f133c5ead6646ebf6c684429dfe08bfa32d4da3a22cf0fc3454c0365f"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6420
+    },
+    {
+      "address_rows_scanned": 2122988,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 219543314,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-16.zip",
+        "sha256": "60f55b12bb02072bbc9cf73ba085ee41afceac958a233ab7c6842023ab22cdb9"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5342501,
+          "sha256": "290249584bf3f723d81c933570e517cea984201ee91eb0379841dd82a1920c50"
+        },
+        "logs.parquet": {
+          "bytes": 209011121,
+          "sha256": "df9b4d7d57502c40cb4510a7d41cc457295cea8a0ff6220aebf7a8c071aa42c3"
+        }
+      },
+      "day": "2022-04-16",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0xe8d30160b8be9b9595298053840e91fc4886bf3807bf5999a0c5e145defcee91",
+        "block_number": 14593049,
+        "event_time_ns": 1650067256000000000,
+        "parent_hash": "0xc2a928ec840eee69de5e9dbafa3dd4c6be857ea3e647de6b2048556f69beb239",
+        "transaction_count": 363
+      },
+      "full_headers": 6404,
+      "last_header": {
+        "block_hash": "0x65b2627ef87d58fca74db8e122f4a39763f0c16faf6bb8f594fcdbd56aa82cc8",
+        "block_number": 14599452,
+        "event_time_ns": 1650153595000000000,
+        "parent_hash": "0x56b72b7f73e6675503f3fb369e05d611f1fcf9a738b8313059ebc9ee5af7ec39",
+        "transaction_count": 226
+      },
+      "population_counts": {
+        "beanstalk_diamond": 3736,
+        "euler_core": 392
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 3138776,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 3736,
+          "sha256": "160bfef47d35a785adc35a31c14f2a1f800eea0640e6c7f431c851a77070bfce"
+        },
+        "euler_core": {
+          "bytes": 326488,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 392,
+          "sha256": "6e73f9d968a5f04068060775066edcf4b182eabdc2c4c74635b99da43e81c0f3"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 2,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6403
+    },
+    {
+      "address_rows_scanned": 2220977,
+      "all_archive_members_crc_sha_bytes_verified": true,
+      "archive": {
+        "bytes": 399478524,
+        "members": 13,
+        "path": "data/raw/monitoring_jss/windows/protocol_window_20261025T123312_675327Z/archives/2022-04-17.zip",
+        "sha256": "f6c6cdfbebd1397196f550a3937d1436b79cf8a2bc41d5c3de6d3aba4d936311"
+      },
+      "canonical_whole_source_hashes": {
+        "headers.parquet": {
+          "bytes": 5392294,
+          "sha256": "304f0c853fd47a34481d65bd2886a9a83ced8ae050096f38aad12aa5172629a7"
+        },
+        "logs.parquet": {
+          "bytes": 390316788,
+          "sha256": "a2f226a04329b1aa3a2caf483c605e1cbf66bf968cafb89102a0cda072088012"
+        }
+      },
+      "day": "2022-04-17",
+      "explicit_zero_populations": [],
+      "first_header": {
+        "block_hash": "0x36f8288c74c519a60b4f5144d7f804507d8b111a4b8f786f4eabdd955340462f",
+        "block_number": 14599453,
+        "event_time_ns": 1650153612000000000,
+        "parent_hash": "0x65b2627ef87d58fca74db8e122f4a39763f0c16faf6bb8f594fcdbd56aa82cc8",
+        "transaction_count": 40
+      },
+      "full_headers": 6431,
+      "last_header": {
+        "block_hash": "0xdf9838492703c7821d0099c1f9264c578a926bcf8a2065e80eb43bda93ac2bc7",
+        "block_number": 14605883,
+        "event_time_ns": 1650239986000000000,
+        "parent_hash": "0xb73c34b2f14d0549cfa60ef11db683a61a4cffd8e25d7e324a284c80528d5ded",
+        "transaction_count": 244
+      },
+      "population_counts": {
+        "beanstalk_diamond": 2084,
+        "euler_core": 345
+      },
+      "population_outputs": {
+        "beanstalk_diamond": {
+          "bytes": 1749942,
+          "complete": true,
+          "path": "beanstalk_diamond_logs.jsonl",
+          "population_id": "beanstalk_diamond",
+          "rows": 2084,
+          "sha256": "0513cfe35498f448b555381be4db0f3aa0f045fd6ada2416f0ab37abf0b62d61"
+        },
+        "euler_core": {
+          "bytes": 288120,
+          "complete": true,
+          "path": "euler_core_logs.jsonl",
+          "population_id": "euler_core",
+          "rows": 345,
+          "sha256": "5f310b7bc56e00fd8c0b74bc615c4b91343cd35259b3d53b05e72b620668b52a"
+        }
+      },
+      "removed_field_present": false,
+      "row_groups_scanned": 3,
+      "status": "PASS",
+      "unexpected_archive_members": [],
+      "within_day_parent_links": 6430
+    }
+  ],
+  "failures": [],
+  "findings": [
+    {
+      "count": 6,
+      "finding": "Additional collector-unrequested files were included by recursive sealing; all are inventoried and CRC/SHA checked. Only canonical named sources feed the independent projection. Cause not established; originals preserved.",
+      "severity": "nonblocking_storage/provenance"
+    }
+  ],
+  "finished_utc": "2026-10-25T12:42:04.247161+00:00",
+  "frozen_source_hashes": {
+    "acquire_protocol_logs.py": "d4d8654cb94b0e07b3e5dcd214466d5888fefc42769c79f582b279fc08a29357",
+    "acquire_protocol_window.py": "d02e882489ea4143dc61b6f512df1b7ba3fa188fa53163c66da52a42804e4416"
+  },
+  "imports_production_modules": false,
+  "inventory_review": {
+    "listing_pages": [
+      {
+        "bytes": 12494,
+        "path": "papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/logs_2022-03_page1.xml",
+        "sha256": "a4fa3ab3ca8f30a6a881306ca858a5ae4eee1105b57c94ad7804443874b8d000"
+      },
+      {
+        "bytes": 12496,
+        "path": "papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/blocks_2022-03_page1.xml",
+        "sha256": "28d13f4044f74d245a4de952ad3fb77eea9972e0bd82c6b70482fec34f319a50"
+      },
+      {
+        "bytes": 12100,
+        "path": "papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/logs_2022-04_page1.xml",
+        "sha256": "3f742859873740aa741ead9b5f68c7e9aeaaa9899f11bf1a1f17a81c419b30f8"
+      },
+      {
+        "bytes": 12102,
+        "path": "papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/blocks_2022-04_page1.xml",
+        "sha256": "94c10235117b1aab8420bc146353c14756fdd238e336b2d471f2cc078d6b8b3f"
+      }
+    ],
+    "selected_source_bytes": 7141246236,
+    "selected_source_objects": 60
+  },
+  "limitations": [
+    "Completeness is relative to the frozen, completely listed upstream partitions; no independent full-chain receipt acquisition.",
+    "Window edges are not anchored to independently acquired blocks outside the window.",
+    "Historical observed time, label availability, and absent removed fields remain unknown.",
+    "This is acquisition QA only; no benign-background, attack recall, false-positive, or independent-test claim."
+  ],
+  "manifest_sha256": "7505e42dec974609355d388313e7b446354f8c78a57421245e52b8107787431b",
+  "network_requests": 0,
+  "population_contract_sha256": "29334843003ed2f3c6634cc1ca239c5a7020b2d9a02d875ecc23314d05f1b2fd",
+  "run": "papers/monitoring_jss/runs/protocol_window_20261025T123312_675327Z",
+  "schema": "phase4_independent_acquisition_review_v1",
+  "started_utc": "2026-10-25T12:40:50.376254+00:00",
+  "status": "PASS",
+  "totals": {
+    "address_rows_scanned": 61947520,
+    "archive_bytes": 7685369834,
+    "archive_members": 396,
+    "cross_day_parent_links": 29,
+    "days": 30,
+    "full_headers": 192391,
+    "full_source_objects": 60,
+    "population_days": 60,
+    "population_logs": {
+      "beanstalk_diamond": 28935,
+      "euler_core": 19425
+    },
+    "unexpected_archive_bytes": 451674112,
+    "unexpected_archive_members": 6,
+    "within_day_parent_links": 192361
+  }
+}

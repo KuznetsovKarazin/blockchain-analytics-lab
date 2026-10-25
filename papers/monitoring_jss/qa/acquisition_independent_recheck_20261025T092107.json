@@ -1,0 +1,172 @@
+{
+  "adversarial_hardened_current_source": {
+    "global_log_order_reversed": {
+      "reason": "global log_index is inconsistent with transaction order",
+      "rejected": true
+    },
+    "header_cache_changed_size": {
+      "reason": "header cache mismatch",
+      "rejected": true
+    },
+    "header_cache_changed_url": {
+      "reason": "header cache mismatch",
+      "rejected": true
+    },
+    "header_cache_changed_version_id": {
+      "reason": "header cache mismatch",
+      "rejected": true
+    },
+    "same_transaction_hash_multiple_positions": {
+      "reason": "same transaction hash at multiple positions",
+      "rejected": true
+    }
+  },
+  "adversarial_original_snapshot": {
+    "global_log_order_reversed": {
+      "rejected": false
+    },
+    "header_cache_changed_size": {
+      "rejected": false
+    },
+    "header_cache_changed_url": {
+      "rejected": false
+    },
+    "header_cache_changed_version_id": {
+      "rejected": false
+    },
+    "same_transaction_hash_multiple_positions": {
+      "rejected": false
+    }
+  },
+  "audit_script_sha256": "a0e26c89bb3e5441726e7914b3335ffa7e852c4ec5fcf98e509f9e231ec4b774",
+  "checked_utc": "2026-10-25T09:21:07.293468+00:00",
+  "checks": {
+    "all_header_parent_links": true,
+    "all_logs_match_full_headers": true,
+    "cached_ranges_size_and_hash": true,
+    "complete_address_scan": true,
+    "current_validator_accepts_real_data": true,
+    "full_header_hash_and_size": true,
+    "global_log_order": true,
+    "hardened_adversarial_cases_rejected": true,
+    "header_numbers_and_hashes_unique": true,
+    "output_execution_order": true,
+    "outputs_size_and_hash": true,
+    "partition_inventory_single_object_matches": true,
+    "range_index_matches_run": true,
+    "range_source_identity_matches_run": true,
+    "retained_headers_exact": true,
+    "retained_source_positions_exact": true,
+    "snapshot_hash_matches_run": true,
+    "transaction_hash_positions_unique": true,
+    "unit_tests_pass": true,
+    "whole_logs_object_sha_is_null": true
+  },
+  "counts": {
+    "cached_ranges": 37,
+    "full_headers": 7118,
+    "matches_per_group": [
+      353,
+      363,
+      349,
+      182
+    ],
+    "matching_headers": 215,
+    "null_addresses": 0,
+    "parent_links": 7117,
+    "retained_logs": 1247,
+    "row_groups": 4,
+    "source_rows": 2416676,
+    "transactions": 218
+  },
+  "current_source_differs_from_completed_run": true,
+  "current_source_sha256": "d4d8654cb94b0e07b3e5dcd214466d5888fefc42769c79f582b279fc08a29357",
+  "files": [
+    {
+      "bytes": 1039160,
+      "path": "data/raw/monitoring_jss/protocol_logs/2023-03-01/protocol_logs_20261025T083346_282558Z/selected_logs.jsonl",
+      "rows": 1247,
+      "sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+    },
+    {
+      "bytes": 53957,
+      "path": "data/raw/monitoring_jss/protocol_logs/2023-03-01/protocol_logs_20261025T083346_282558Z/matching_headers.jsonl",
+      "rows": 215,
+      "sha256": "aca54bab0ecd38d5b0106fec6ef76a1644bec1f356316344b8806972f535522d"
+    }
+  ],
+  "findings": [
+    {
+      "id": "ACQ-01",
+      "issue": "Header cache ignored URL,size,version identity on reuse; current code rejects each change independently. Original run fetched headers fresh.",
+      "original_location": "acquire_protocol_logs_source.py:162-170",
+      "status": "resolved_current_code_original_run_unaffected"
+    },
+    {
+      "id": "ACQ-02",
+      "issue": "Original validator missed hash-to-position conflicts and reversed block-global log order; current code rejects both. Real saved rows pass both independent checks.",
+      "original_location": "acquire_protocol_logs_source.py:190-222",
+      "status": "resolved_current_code_original_run_unaffected"
+    }
+  ],
+  "limitations": [
+    "Requires existing private raw cache; the script fails on uncached spans and never downloads.",
+    "Offline address projection independently checks membership and all retained source positions; other payload columns are code-reviewed and output-validated, not all independently re-decoded.",
+    "Historical partition listing is preserved evidence, not a current source inventory query.",
+    "Euler core all-topic emitter events are not equivalent to token cash outflows. No detection, training, losses or independent attack-case claim.",
+    "Archive parent continuity does not establish consensus finality or historical observation/label times.",
+    "Projection transferred 96.22% of logs object plus full headers; do not infer large byte savings from projection alone.",
+    "Acquisition timestamp duration is not a separately timed complete subprocess runtime; logs byte budget excludes header transfer."
+  ],
+  "partition_listing": {
+    "captured_evidence": [
+      {
+        "checked_utc": "2026-10-25T08:36:40.770779+00:00",
+        "is_truncated": "false",
+        "objects": [
+          {
+            "ETag": "\"0b9b1c95fa46d3a2d47665734cfc2571-7\"",
+            "Key": "v1.0/eth/logs/date=2023-03-01/part-00000-f66f43c5-ca46-452e-8e6f-f2f2dfb24829-c000.snappy.parquet",
+            "Size": "460261684"
+          }
+        ],
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2023-03-01%2F"
+      },
+      {
+        "checked_utc": "2026-10-25T08:36:46.031874+00:00",
+        "is_truncated": "false",
+        "objects": [
+          {
+            "ETag": "\"a208684c8cee85f8d193a061ce54de69\"",
+            "Key": "v1.0/eth/blocks/date=2023-03-01/part-00000-b750e33e-7fdd-47bc-b52d-f7835851062a-c000.snappy.parquet",
+            "Size": "6163058"
+          }
+        ],
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2023-03-01%2F"
+      }
+    ],
+    "path": "papers/monitoring_jss/qa/acquisition_partition_listing.json",
+    "sha256": "8ab25f2711dfbca399fac1a7602b5ae3c29eac9fd2440dd41d46255f07cdc935"
+  },
+  "passed": true,
+  "resource_scope": {
+    "acquisition_elapsed_seconds_from_utc": 222.380791,
+    "audit_network_requests": 0,
+    "cached_range_bytes": 442875951,
+    "header_network_bytes": 6163058,
+    "logs_source_bytes": 460261684,
+    "peak_rss_bytes": 482467840,
+    "projection_transfer_ratio": 0.9622264168311695,
+    "rss_scope": "whole Linux acquisition process high-water, including column decoding"
+  },
+  "run_manifest": "papers/monitoring_jss/runs/protocol_logs_20261025T083346_282558Z/acquisition_manifest.json",
+  "run_manifest_sha256": "95ddf39a3d4ec0c7791bc4888fe0d51933177c52dd62f62277564eadffee3828",
+  "schema_version": "independent_offline_acquisition_review_v1",
+  "source_snapshot_sha256": "d37931267328079b786259aeafd850528f42e772ae508b9df5bb5d26625821e8",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "log": "test_budget_blocks_unbounded_read (test_acquire_protocol_logs.AcquisitionTests.test_budget_blocks_unbounded_read) ... ok\ntest_changed_etag_fails_before_accepting_range (test_acquire_protocol_logs.AcquisitionTests.test_changed_etag_fails_before_accepting_range) ... ok\ntest_corrupt_cached_range_is_not_silently_reused (test_acquire_protocol_logs.AcquisitionTests.test_corrupt_cached_range_is_not_silently_reused) ... ok\ntest_duplicate_log_does_not_disappear (test_acquire_protocol_logs.AcquisitionTests.test_duplicate_log_does_not_disappear) ... ok\ntest_global_log_order_must_follow_transaction_order (test_acquire_protocol_logs.AcquisitionTests.test_global_log_order_must_follow_transaction_order) ... ok\ntest_header_cache_identity_includes_url_size_and_version (test_acquire_protocol_logs.AcquisitionTests.test_header_cache_identity_includes_url_size_and_version) ... ok\ntest_header_mismatch_rejected (test_acquire_protocol_logs.AcquisitionTests.test_header_mismatch_rejected) ... ok\ntest_one_transaction_hash_cannot_have_two_positions (test_acquire_protocol_logs.AcquisitionTests.test_one_transaction_hash_cannot_have_two_positions) ... ok\ntest_range_read_uses_if_match_and_cache (test_acquire_protocol_logs.AcquisitionTests.test_range_read_uses_if_match_and_cache) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.005s\n\nOK\n",
+    "run": 9
+  }
+}

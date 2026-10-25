@@ -1,0 +1,285 @@
+{
+  "schema": "monitoring_label_source_provenance_v1",
+  "created_utc": "2026-10-25T09:15:00.958663+00:00",
+  "sources": {
+    "euler_protocol": {
+      "url": "https://www.euler.finance/blog/war-peace-behind-the-scenes-of-eulers-240m-exploit-recovery",
+      "publication_date": "2024-01-10",
+      "kind": "protocol retrospective",
+      "snapshots": [
+        "euler_primary.html"
+      ]
+    },
+    "euler_slowmist": {
+      "url": "https://slowmist.medium.com/slowmist-an-analysis-of-the-attack-on-euler-finance-5143abc0d5ad",
+      "publication_date": "2023-03-15",
+      "kind": "authored security analysis",
+      "snapshots": [
+        "web_label_sources_web.json"
+      ]
+    },
+    "euler_beosin": {
+      "url": "https://official.beosin.com/resources/analysis-of-the-euler-finance%E2%80%99s-197m-exploit",
+      "publication_date": "2023-03-15",
+      "kind": "authored security analysis",
+      "snapshots": [
+        "web_euler_additional_primary.json"
+      ]
+    },
+    "euler_blocksec": {
+      "url": "https://blocksec.com/blog/euler-finance-incident-the-largest-hack-of-2023",
+      "publication_date": "2024-02-09",
+      "kind": "authored security analysis; malformed hash transcriptions are not labels",
+      "snapshots": [
+        "euler_blocksec.html"
+      ]
+    },
+    "euler_coinbase": {
+      "url": "https://www.coinbase.com/blog/euler-compromise-investigation-part-1-the-exploit",
+      "publication_date": "2023-04-19",
+      "kind": "authored security analysis",
+      "snapshots": [
+        "web_euler_additional_primary.json"
+      ]
+    },
+    "bean_protocol": {
+      "url": "https://bean.money/blog/beanstalk-governance-exploit",
+      "publication_date": "2022-04-19",
+      "kind": "protocol announcement",
+      "snapshots": [
+        "web_label_sources_web.json"
+      ]
+    },
+    "bean_nv": {
+      "url": "https://medium.com/@nvy_0x/the-beanstalk-bean-exploit-b038f4d324ea",
+      "publication_date": "2022-04-20",
+      "kind": "protocol-linked technical analysis, itself includes source aggregation",
+      "snapshots": [
+        "web_label_sources_web.json"
+      ]
+    },
+    "bean_beosin": {
+      "url": "https://official.beosin.com/resources/beosins-analysis-of-the-beanstalk-exploit",
+      "publication_date": "2022-04-18",
+      "kind": "authored security analysis",
+      "snapshots": [
+        "web_bean_beosin.json"
+      ]
+    },
+    "bean_sharkteam": {
+      "url": "https://sharkteam.org/report/analysis/20220419001A_en.pdf",
+      "publication_date": "2022-04-19",
+      "kind": "authored security analysis PDF; retrieved text",
+      "snapshots": [
+        "web_labels_round2.json"
+      ]
+    },
+    "explorer_euler_first": {
+      "url": "https://etherscan.io/tx/0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
+      "publication_date": null,
+      "kind": "primary explorer record retrieved through indexed web extraction; not an RPC receipt",
+      "snapshots": [
+        "web_first_explorer_records.json"
+      ],
+      "direct_http_page_fetch": "HTTP 403 for first Euler/Bean attack pages; cached/indexed evidence used"
+    },
+    "explorer_euler_steth": {
+      "url": "https://etherscan.io/tx/0x3097830e9921e4063d334acb82f6a79374f76f0b1a8f857e89b89bc58df1f311",
+      "publication_date": null,
+      "kind": "primary explorer record retrieved through indexed web extraction; not an RPC receipt",
+      "snapshots": [
+        "web_labels_round2.json"
+      ],
+      "direct_http_page_fetch": "HTTP 403 for first Euler/Bean attack pages; cached/indexed evidence used"
+    },
+    "explorer_bean_attack": {
+      "url": "https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+      "publication_date": null,
+      "kind": "primary explorer record retrieved through indexed web extraction; not an RPC receipt",
+      "snapshots": [
+        "web_labels_round2.json"
+      ],
+      "direct_http_page_fetch": "HTTP 403 for first Euler/Bean attack pages; cached/indexed evidence used"
+    },
+    "explorer_bean_proposal18": {
+      "url": "https://etherscan.io/tx/0x68cdec0ac76454c3b0f7af0b8a3895db00adf6daaf3b50a99716858c4fa54c6f",
+      "publication_date": null,
+      "kind": "primary explorer record retrieved through indexed web extraction; not an RPC receipt",
+      "snapshots": [
+        "web_first_explorer_records.json"
+      ],
+      "direct_http_page_fetch": "HTTP 403 for first Euler/Bean attack pages; cached/indexed evidence used"
+    }
+  },
+  "snapshots": [
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/attack_day_partition_listing.json",
+      "filename": "attack_day_partition_listing.json",
+      "bytes": 4558,
+      "sha256": "37742193a857ee281730e8071f09fd3a52a4fd23e03127a3773c9b684f8fb28f",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/aws_blocks_2022-04-17_listing.xml",
+      "filename": "aws_blocks_2022-04-17_listing.xml",
+      "bytes": 678,
+      "sha256": "2c66348813366e0cad8db033b3a1c62ea18e0d18f2adc21d2173b9130fdc0405",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/aws_blocks_2023-03-13_listing.xml",
+      "filename": "aws_blocks_2023-03-13_listing.xml",
+      "bytes": 678,
+      "sha256": "3233ccadc609bf0873a0f74c05b3612f021ecf5c207f5fc7ff389cb5bb1de436",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/aws_logs_2022-04-17_listing.xml",
+      "filename": "aws_logs_2022-04-17_listing.xml",
+      "bytes": 676,
+      "sha256": "1622f328282a636197e77a49c7553f9d49f0a548999fe277da895d56a63e0f8a",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/aws_logs_2023-03-13_listing.xml",
+      "filename": "aws_logs_2023-03-13_listing.xml",
+      "bytes": 676,
+      "sha256": "e6a8a275e1aa9117328c5871b9d47ea93da36dca70048244f7aad0dea9296067",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/aws_transactions_2022-04-17_listing.xml",
+      "filename": "aws_transactions_2022-04-17_listing.xml",
+      "bytes": 692,
+      "sha256": "3dd397c1a27c151fc09b8449564c16c914e3a91ad3afdcf4e9077f950d8f0d18",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/aws_transactions_2023-03-13_listing.xml",
+      "filename": "aws_transactions_2023-03-13_listing.xml",
+      "bytes": 693,
+      "sha256": "fa423a5d5b2485f61ba850aad777945d02b3ff8fc3dc2ddceeb923573d3e6d9a",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/drpc_probe.json",
+      "filename": "drpc_probe.json",
+      "bytes": 326,
+      "sha256": "2ffc5f91a8fa86935bcba0a015d879838e6e341c2430c07082086417ad8eb901",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/euler_blocksec.html",
+      "filename": "euler_blocksec.html",
+      "bytes": 173587,
+      "sha256": "55341e601b6fd0053ef86973cfd5fedc4f94294084593e4ea9dfc2b15cb4fb3e",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/euler_primary.html",
+      "filename": "euler_primary.html",
+      "bytes": 328155,
+      "sha256": "aecdb08e3cb47287e0d83535526a07389509b03509bd2ff0259bc7fa490cf220",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/first_probes.json",
+      "filename": "first_probes.json",
+      "bytes": 960,
+      "sha256": "ec749da8ea2c66e697442892480dfd965bb294de75e9e63507f39ace38dde884",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/source_fetches.json",
+      "filename": "source_fetches.json",
+      "bytes": 1531,
+      "sha256": "495e89aaf8b0b41d543ceaee42434675e5306bba13e69a24b51bff31bc709d1a",
+      "hash_scope": "exact_local_file_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/web_euler_additional_primary.json",
+      "filename": "web_euler_additional_primary.json",
+      "bytes": 30772,
+      "sha256": "3f14e90edff8c0523b6ca7a56f8179e9630ed068704192e8fbfb3dbe660d3e5b",
+      "hash_scope": "retrieved_search_tool_response_serialized_as_UTF8_JSON_not_original_remote_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/web_first_explorer_records.json",
+      "filename": "web_first_explorer_records.json",
+      "bytes": 20612,
+      "sha256": "4dde62fa10048f5f67e1e84bdfc7ff0fec00497e2ceae2548da124f7d9749505",
+      "hash_scope": "retrieved_search_tool_response_serialized_as_UTF8_JSON_not_original_remote_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/web_label_sources_web.json",
+      "filename": "web_label_sources_web.json",
+      "bytes": 30773,
+      "sha256": "b58f9b87cd43ac9477967295fcd7c32be9ef9d8b57cb26b68111554fec51da39",
+      "hash_scope": "retrieved_search_tool_response_serialized_as_UTF8_JSON_not_original_remote_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/web_labels_round2.json",
+      "filename": "web_labels_round2.json",
+      "bytes": 23230,
+      "sha256": "6401987f53041dfec2fc285d75b054c67110501d4e026ee89a3fb900e37e3d75",
+      "hash_scope": "retrieved_search_tool_response_serialized_as_UTF8_JSON_not_original_remote_bytes",
+      "embedded_in_repository": false
+    },
+    {
+      "evidence_archive_relative_path": "label_evidence_20261025/web_bean_beosin.json",
+      "filename": "web_bean_beosin.json",
+      "bytes": 415,
+      "sha256": "343bc5686c30dcaaa018aa2bff4ccb2d9a30b13c7261319fe1abfe95171a372c",
+      "hash_scope": "retrieved_search_tool_response_serialized_as_UTF8_JSON_not_original_remote_bytes",
+      "embedded_in_repository": false
+    }
+  ],
+  "bounded_failed_endpoint_probes": [
+    {
+      "name": "cloudflare_trial_receipt",
+      "url": "https://web3-trial.cloudflare-eth.com/v1/mainnet",
+      "method": "POST",
+      "retrieved_utc": "2026-10-25T09:06:53.432131+00:00",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "name": "blockscout_euler_tx",
+      "url": "https://eth.blockscout.com/api/v2/transactions/0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
+      "method": "GET",
+      "retrieved_utc": "2026-10-25T09:06:53.432985+00:00",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://eth.drpc.org",
+      "payload": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "eth_getTransactionReceipt",
+        "params": [
+          "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+        ]
+      },
+      "retrieved_utc": "2026-10-25T09:08:17.710033+00:00",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "snapshot_caveat": "Search snapshots contain indexed/extracted provider text, not original webpage/JSON-RPC bytes. HTML snapshots are exact downloaded HTTP bodies. Source hashes identify this research snapshot, not historical on-chain state.",
+  "source_publication_caveat": "Publication date and present-day retrieved time do not prove historical label availability.",
+  "licensing": "No report or provider redistribution grant established. This repository stores factual identifiers, short analysis and source/hash metadata only. Full website snapshots and any future raw chain records remain separate private evidence.",
+  "primary_repository_population_provenance": "../populations/source_provenance_20261025.json"
+}

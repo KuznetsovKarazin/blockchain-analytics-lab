@@ -1,0 +1,204 @@
+{
+  "schema": "monitoring_incident_label_manifest_v1",
+  "curated_utc": "2026-10-25T09:15:00.958663+00:00",
+  "status": "candidate_not_eligible",
+  "chain_id": 1,
+  "comparison_results_used_for_label_selection": false,
+  "historical_observed_time": null,
+  "historical_label_available_time": null,
+  "label_availability_policy": "Publication dates are source metadata, not historical operational observation or adjudication times. Do not inject them as live delayed-feedback timestamps.",
+  "sources_reference": "source_provenance_20261025.json",
+  "exposure_audit_reference": "../exposure_audit_20261025.json",
+  "raw_rpc_receipts_acquired_in_this_label_pass": false,
+  "raw_blockchain_partition_bytes_acquired_in_this_label_pass": 0,
+  "label_join_policy": "Join externally adjudicated transaction hashes after population acquisition. The source-list order is not canonical transaction order. Unknown times/indices remain null.",
+  "independence_verified": false,
+  "candidate_id": "candidate_euler_20230313",
+  "protocol": "Euler V1",
+  "incident_date": "2023-03-13",
+  "prior_exposure_level": "L2_curation_and_unlabelled_global_block_aggregation",
+  "population_config_reference": "../populations/euler_v1_core_day_20230301.json",
+  "attack_day_acquisition_plan": "euler_20230313_acquisition_plan.json",
+  "exploit_transactions": [
+    {
+      "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
+      "role": "exploit_execution",
+      "positive_incident_label": true,
+      "actor_role": "reported_frontrunning_executor",
+      "source_ids": [
+        "euler_slowmist",
+        "euler_beosin",
+        "explorer_euler_first"
+      ],
+      "evidence_level": "authored_reports_plus_indexed_primary_explorer_metadata_not_full_receipt",
+      "event_date_utc": "2023-03-13",
+      "block_number": 16817996,
+      "block_hash": null,
+      "transaction_index": 0,
+      "block_timestamp_utc": "2023-03-13T08:50:59Z",
+      "execution_status": "success_reported_by_explorer",
+      "full_receipt_path": null,
+      "receipt_sha256": null
+    },
+    {
+      "tx_hash": "0x71a908be0bef6174bccc3d493becdfd28395d78898e355d451cb52f7bac38617",
+      "role": "exploit_execution",
+      "positive_incident_label": true,
+      "actor_role": "reported_main_executor",
+      "source_ids": [
+        "euler_slowmist",
+        "euler_beosin"
+      ],
+      "evidence_level": "cross_checked_authored_reports_pending_raw_chain_validation",
+      "event_date_utc": "2023-03-13",
+      "block_number": null,
+      "block_hash": null,
+      "transaction_index": null,
+      "block_timestamp_utc": null,
+      "execution_status": null,
+      "full_receipt_path": null,
+      "receipt_sha256": null
+    },
+    {
+      "tx_hash": "0x62bd3d31a7b75c098ccf28bc4d4af8c4a191b4b9e451fab4232258079e8b18c4",
+      "role": "exploit_execution",
+      "positive_incident_label": true,
+      "actor_role": "reported_main_executor",
+      "source_ids": [
+        "euler_slowmist",
+        "euler_beosin"
+      ],
+      "evidence_level": "cross_checked_authored_reports_pending_raw_chain_validation",
+      "event_date_utc": "2023-03-13",
+      "block_number": null,
+      "block_hash": null,
+      "transaction_index": null,
+      "block_timestamp_utc": null,
+      "execution_status": null,
+      "full_receipt_path": null,
+      "receipt_sha256": null
+    },
+    {
+      "tx_hash": "0x465a6780145f1efe3ab52f94c006065575712d2003d83d85481f3d110ed131d9",
+      "role": "exploit_execution",
+      "positive_incident_label": true,
+      "actor_role": "reported_main_executor",
+      "source_ids": [
+        "euler_slowmist",
+        "euler_beosin"
+      ],
+      "evidence_level": "cross_checked_authored_reports_pending_raw_chain_validation",
+      "event_date_utc": "2023-03-13",
+      "block_number": null,
+      "block_hash": null,
+      "transaction_index": null,
+      "block_timestamp_utc": null,
+      "execution_status": null,
+      "full_receipt_path": null,
+      "receipt_sha256": null
+    },
+    {
+      "tx_hash": "0x3097830e9921e4063d334acb82f6a79374f76f0b1a8f857e89b89bc58df1f311",
+      "role": "exploit_execution",
+      "positive_incident_label": true,
+      "actor_role": "reported_main_executor",
+      "source_ids": [
+        "euler_slowmist",
+        "euler_beosin",
+        "explorer_euler_steth"
+      ],
+      "evidence_level": "authored_reports_plus_indexed_primary_explorer_metadata_not_full_receipt",
+      "event_date_utc": "2023-03-13",
+      "block_number": 16818085,
+      "block_hash": null,
+      "transaction_index": 4,
+      "block_timestamp_utc": "2023-03-13T09:08:59Z",
+      "execution_status": "success_reported_by_explorer",
+      "full_receipt_path": null,
+      "receipt_sha256": null
+    },
+    {
+      "tx_hash": "0x47ac3527d02e6b9631c77fad1cdee7bfa77a8a7bfd4880dccbda5146ace4088f",
+      "role": "exploit_execution",
+      "positive_incident_label": true,
+      "actor_role": "reported_main_executor",
+      "source_ids": [
+        "euler_slowmist",
+        "euler_beosin"
+      ],
+      "evidence_level": "cross_checked_authored_reports_pending_raw_chain_validation",
+      "event_date_utc": "2023-03-13",
+      "block_number": null,
+      "block_hash": null,
+      "transaction_index": null,
+      "block_timestamp_utc": null,
+      "execution_status": null,
+      "full_receipt_path": null,
+      "receipt_sha256": null
+    }
+  ],
+  "context_transactions_not_positive_labels": [
+    {
+      "tx_hash": "0xdae809e4a1ddf77c39d44a4acfe6165bedbc19a385c4b241242cc9bd582a80b9",
+      "role": "post_exploit_proceeds_transfer_to_main_exploiter",
+      "positive_incident_label": false,
+      "source_ids": [
+        "euler_protocol"
+      ],
+      "source_reported_timestamp_utc": "2023-03-13T11:38:11Z",
+      "timestamp_precision": "second",
+      "chain_timestamp_independently_verified": false,
+      "full_receipt_path": null
+    },
+    {
+      "tx_hash": "0x44b559c86ca8ccac5c16df507516ef19c06042a48cdbd865cb9db4c52d15ea17",
+      "role": "onchain_message_about_frontrunning",
+      "positive_incident_label": false,
+      "source_ids": [
+        "euler_protocol"
+      ],
+      "source_reported_timestamp_utc": "2023-03-13T12:08:35Z",
+      "timestamp_precision": "second",
+      "chain_timestamp_independently_verified": false,
+      "full_receipt_path": null
+    },
+    {
+      "tx_hash": "0xb0308ee113c541e7c6f4623e833417524d68fd6267d23f43d9041f583c14343f",
+      "role": "recovery_transfer_to_protocol",
+      "positive_incident_label": false,
+      "source_ids": [
+        "euler_protocol"
+      ],
+      "source_reported_timestamp_utc": "2023-03-25T15:08:00Z",
+      "timestamp_precision": "minute",
+      "chain_timestamp_independently_verified": false,
+      "full_receipt_path": null
+    }
+  ],
+  "rejected_source_transcriptions": [
+    {
+      "reported_string": "0x71a908be0bef6174bccc3d493becdfd28395d8898e355d451cb52f7bac38617",
+      "source_id": "euler_blocksec",
+      "reason": "63 hexadecimal digits; not a valid 32-byte transaction hash. Preserve as rejected source transcription; do not pad or silently repair."
+    },
+    {
+      "reported_string": "0x465a6780145f1efe3ab52f94c006065575712d2003d83d85481f3d110ed13d9",
+      "source_id": "euler_blocksec",
+      "reason": "63 hexadecimal digits; not a valid 32-byte transaction hash. Preserve as rejected source transcription; do not pad or silently repair."
+    }
+  ],
+  "completeness": {
+    "report_claim": "SlowMist explicitly reports six attack transactions. The same six valid hashes appear in Beosin.",
+    "source_id": "euler_slowmist",
+    "complete_attack_set_independently_verified": false,
+    "scope": "Six reported exploit executions within one incident; not six independent incidents and not every preparatory, failed, proceeds, repayment or recovery transaction.",
+    "pending": "Retrieve all six successful receipts/transactions with headers, order them, verify core log intersection, and reconcile against the complete day population."
+  },
+  "mechanism_and_role_cautions": [
+    "Flash-loan repayment and Euler Repay events inside an exploit transaction are constituent execution steps, not victim recovery transactions.",
+    "The 11:38 transfer is reported as proceeds sent to the main exploiter, not money returned to Euler.",
+    "All-topic core logs include internal accounting; Withdraw is not an external token outflow measure.",
+    "Source-date commits do not establish deployed module/ABI state. Missing health checks require historical code/traces beyond logs alone.",
+    "Only two of six ordered chain coordinates are supported by retrieved explorer records in this pass; do not infer four missing coordinates."
+  ]
+}

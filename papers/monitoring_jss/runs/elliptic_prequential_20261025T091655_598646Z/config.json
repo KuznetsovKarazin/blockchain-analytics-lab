@@ -1,0 +1,127 @@
+{
+  "schema_version": "elliptic_prequential_pilot_config_v1",
+  "status": "frozen_for_bounded_retrospective_pilot",
+  "purpose": "bounded retrospective feature-subset benchmark with causal label release; not an online-availability or independent external evaluation",
+  "features": {
+    "csv_zero_based_positions": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "count": 18,
+    "excluded": "txID, time step, undefined direct columns4/8/16, address-derived local columns23..94, graph aggregate columns95..166",
+    "source_original_csv_columns": 167,
+    "caveat": "selected original features remain globally standardized by the supplied corpus; direct-feature reconstruction and historical availability are not independently remeasured here; shared-address dependence remains"
+  },
+  "initial_fit_steps": [
+    1,
+    30
+  ],
+  "initial_calibration_steps": [
+    31,
+    34
+  ],
+  "initial_label_availability": "all known labels from steps1..34 are explicitly declared available before prediction35",
+  "evaluation_steps": [
+    35,
+    49
+  ],
+  "evaluation_role": "previously studied exploratory steps; not untouched test data",
+  "delays": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "label_release": "step s label released only after all predictions/decisions at s+d; first usable at s+d+1",
+  "unknown_label": "unknown remains unknown, never used as negative in fitting, calibration or metrics",
+  "calibration": {
+    "recent_labelled_steps": 4,
+    "min_positive": 10,
+    "min_negative": 10,
+    "minimum_role": "declared feasibility guard, not an optimized or statistically sufficient sample-size claim",
+    "objective": "maximum F1 on known labels of the disjoint calibration cohort, score>=threshold",
+    "objective_ties": "largest threshold; evaluate all unique candidate scores and a no-alert threshold",
+    "fit_exclusion": "all calibration steps and IDs excluded from fitting the candidate model/scaler",
+    "update_cadence": "only when the available known-label train/calibration cohort changes; no redundant refit at step35",
+    "fallback": "retain entire previous model+threshold pair on insufficient classes, calibration failure or failed model fit; never use the old threshold with a newly fitted model"
+  },
+  "policies": [
+    "fixed_pair_with_batch_cap",
+    "retrained_pair_with_batch_cap"
+  ],
+  "budget": {
+    "fraction": 0.005,
+    "integer_divisor": 200,
+    "rounding": "k=floor(N_all_completed_batch/200); no forced minimum",
+    "admission": "score>=calibration threshold then highest qualifying scores up to k",
+    "ties": "descending score then ascending integer txID",
+    "waiting": "decisions available only after full step batch; steps not converted to seconds",
+    "unknowns_in_population": true,
+    "unused_capacity_reported": true
+  },
+  "seed": 0,
+  "threads": 1,
+  "model_configs": {
+    "lightgbm": {
+      "n_estimators": 400,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "max_depth": -1,
+      "min_child_samples": 20,
+      "subsample": 1.0,
+      "colsample_bytree": 1.0,
+      "reg_lambda": 1.0,
+      "class_weight": null,
+      "random_state": 0,
+      "n_jobs": 1,
+      "deterministic": true,
+      "force_col_wise": true,
+      "verbosity": -1
+    },
+    "logistic": {
+      "scaler": "StandardScaler fitted only on candidate training rows",
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 2000,
+      "tol": 1e-06,
+      "class_weight": null,
+      "random_state": 0
+    }
+  },
+  "early_stopping": false,
+  "hyperparameter_search": false,
+  "fixed_baseline": "fit once per model; compute fixed predictions once and reference across delays",
+  "replications": "one declared seed for initial engineering experiment; no repeated seeds unless justified by a new question",
+  "metrics": [
+    "known-label AP",
+    "known-alert precision",
+    "known-positive recall",
+    "known-label F1",
+    "all/known/unknown alerts",
+    "known-label and alert coverage",
+    "raw/capped actual load",
+    "unused cap",
+    "fallback reasons",
+    "measured fit/calibration/prediction duration"
+  ],
+  "distribution": "raw features, labels, model artifacts, exact cohort IDs and per-transaction outputs retained privately; publish scripts, hashes and aggregates subject to source terms",
+  "model_input_dtype": "float32",
+  "required_lightgbm_version": "4.6.0",
+  "feature_mapping_source_commit": "a5dbbcc655783003d942d0d54ad8404f0b7b3b93"
+}

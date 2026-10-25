@@ -114,12 +114,12 @@ def adversarial(module):
     return results
 
 
-def review():
+def review(run_id=RUN, partition_listing=None):
     import pyarrow as pa
     import pyarrow.compute as pc
     import pyarrow.parquet as pq
 
-    manifest_path = PAPER / "runs" / RUN / "acquisition_manifest.json"
+    manifest_path = PAPER / "runs" / run_id / "acquisition_manifest.json"
     manifest = json.loads(manifest_path.read_text())
     source_path = PAPER / "acquire_protocol_logs.py"
     snapshot_path = manifest_path.parent / "acquire_protocol_logs_source.py"
@@ -183,7 +183,7 @@ def review():
         if tx_positions.setdefault(row["transaction_hash"], position) != position:
             checks["transaction_hash_positions_unique"] = False
 
-    listing_path = Path(__file__).with_name("acquisition_partition_listing.json")
+    listing_path = Path(partition_listing).resolve() if partition_listing else Path(__file__).with_name("acquisition_partition_listing.json")
     listing = json.loads(listing_path.read_text())
     source_identities = (index["source"], manifest["header_acquisition"])
     checks["partition_inventory_single_object_matches"] = all(entry["is_truncated"] == "false"
@@ -213,9 +213,10 @@ def review():
         "files": list(files.values()),
         "tests": {"run": result.testsRun, "failures": len(result.failures), "errors": len(result.errors), "log": log.getvalue()},
         "adversarial_original_snapshot": old_adversarial, "adversarial_hardened_current_source": new_adversarial,
-        "findings": [
+        "findings": ([
             {"id": "ACQ-01", "status": "resolved_current_code_original_run_unaffected", "original_location": "acquire_protocol_logs_source.py:162-170", "issue": "Header cache ignored URL,size,version identity on reuse; current code rejects each change independently. Original run fetched headers fresh."},
-            {"id": "ACQ-02", "status": "resolved_current_code_original_run_unaffected", "original_location": "acquire_protocol_logs_source.py:190-222", "issue": "Original validator missed hash-to-position conflicts and reversed block-global log order; current code rejects both. Real saved rows pass both independent checks."}],
+            {"id": "ACQ-02", "status": "resolved_current_code_original_run_unaffected", "original_location": "acquire_protocol_logs_source.py:190-222", "issue": "Original validator missed hash-to-position conflicts and reversed block-global log order; current code rejects both. Real saved rows pass both independent checks."}]
+            if not all(case["rejected"] for case in old_adversarial.values()) else []),
         "resource_scope": {"acquisition_elapsed_seconds_from_utc": elapsed,
             "logs_source_bytes": index["source"]["size"], "cached_range_bytes": manifest["logs_range_acquisition"]["total_cached_range_bytes"],
             "header_network_bytes": manifest["header_acquisition"]["network_bytes_this_process"],
@@ -227,16 +228,18 @@ def review():
             "Historical partition listing is preserved evidence, not a current source inventory query.",
             "Euler core all-topic emitter events are not equivalent to token cash outflows. No detection, training, losses or independent attack-case claim.",
             "Archive parent continuity does not establish consensus finality or historical observation/label times.",
-            "Projection transferred96.22% of logs object plus full headers; do not claim large byte savings.",
+            f"Projection transferred {manifest['projection_transfer_ratio']:.2%} of logs object plus full headers; do not infer large byte savings from projection alone.",
             "Acquisition timestamp duration is not a separately timed complete subprocess runtime; logs byte budget excludes header transfer."],
     }
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--run", default=RUN)
+    parser.add_argument("--partition-listing", type=Path)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    report = review()
+    report = review(args.run, args.partition_listing)
     encoded = json.dumps(report, indent=2, sort_keys=True, allow_nan=False) + "\n"
     if args.output:
         args.output.write_text(encoded)

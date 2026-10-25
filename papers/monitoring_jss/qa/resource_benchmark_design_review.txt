@@ -1,0 +1,174 @@
+PHASE 5 PRE-MEASUREMENT DESIGN REVIEW
+Reviewer scope: existing local code/docs only; no new measurements or external actions.
+Read: research_plan_extracted.txt (P2.04 and RQ3), protocol.json v0.5, STATUS/HANDOFF,
+budget_policy_replay.py, event_log_replay.py, accepted phase4 summary in parent context.
+
+DECISION
+Proceed with a bounded local service/resource experiment. This closes an engineering
+measurement gap for this implementation; it cannot close the independent-incident,
+semantic-detection, historical-arrival, network/finality, or JSS-ready-novelty gaps.
+Freeze this design, exact code/input hashes, order, repetitions and queue equations
+before obtaining any measurements. Existing phase4 outcome exposure is declared.
+No policy/threshold tuning, no new attack join and no change to phase4 sources.
+
+PRIMARY MATRIX (30 actual timing runs)
+Two populations: exact acquired Euler 19,425 rows / Beanstalk 28,935 rows across
+[2022-03-19, 2022-04-18). Three unchanged policies at B=5. Five fresh-process
+repetitions for every cell: 2 x 3 x 5 = 30. All 30 files streamed chronologically;
+state starts cold once per process and persists across day boundaries. Keep the
+same full-window BudgetConfig, so policy_version/event decisions match the accepted
+phase4 B5 cells exactly. Repetitions characterize execution variability, not new
+incidents or extra scientific sample size. Freeze one seeded randomized run order,
+or a balanced rotation of the six cells per repetition. Never choose best repeats.
+
+MEASUREMENT WRAPPER
+Import frozen production helpers by exact file hash. Preserve decode_event and
+PolicyReplayState.process byte-for-byte. A new external wrapper may instrument:
+1 buffered source readline; 2 json.loads; 3 syntactic decode_event; 4 process;
+5 decision JSON serialization; 6 buffered gzip write; 7 measured total record loop.
+The core stage combines validation, fingerprints, features, score, grouping,
+admission, bookkeeping and output construction. It is incorrect to call it only
+scoring or to infer separate substage timings without a separately verified
+instrumented implementation. Do not optimize repeated policy_version hashing in
+this experiment: it is part of current code cost. Report included/excluded stages.
+Preflight file SHA validation, interpreter/import startup, first/last file open,
+gzip close, final-state/checkpoint serialization, manifest hashing and packaging
+are separate preparation/finalization stages, not hidden inside per-record costs.
+Use perf_counter_ns, process_time_ns, and record clock metadata. Define p50/p95/p99
+by nearest-rank ceil(p*N)-1; publish N and each repetition separately. Summarize
+across five repetitions by median/min/max, not an unqualified pooled confidence
+interval. Throughput is N / measured loop wall time; startup/end-to-end subprocess
+time is a separate metric. Report byte counts and compression level six.
+Buffered write completion is not durable notification delivery. Gzip close tail
+and optional fsync have distinct timings; never retroactively label every prior
+record as persistently delivered at its write-call return.
+
+TIMING OVERHEAD AND MEMORY TRAPS
+Full source hash preflight warms OS cache. Call the main experiment warm/cache-
+uncontrolled local replay; do not claim cold storage throughput or flush host
+caches. Fresh process is not fresh page cache. Record platform, CPU, visible CPU
+count/affinity, cgroup limits if readable, Python/dependencies, RAM, filesystem,
+thread settings, and competing-load limitation. Serial workers only; consistent
+single-CPU affinity when supported. Same host and explicit runner controls improve
+comparability but do not make shared hardware a controlled dedicated benchmark.
+Per-event timing Python lists and stored decisions can be O(N) themselves. Prefer
+fixed-width preallocated timing arrays and include their allocated bytes; or write
+timings to a separate stream with overhead separately named. Never preload all
+input or retain decision dicts just to compare. Post-run comparison can stream
+closed artifacts outside measured worker.
+Peak RSS of whole worker includes interpreter, buffers, measurement arrays and
+serialization. Report start/current/peak with exact sampling point; do not call its
+difference exact Python state size. resource.ru_maxrss is a high-water mark, not
+current RSS. Reading final_state after loop can create a second copy and pollute
+peak. Report loop RSS before materializing state.to_dict, then finalization peak.
+
+MEMORY-GROWTH SUPPLEMENT (24 FRESH-PROCESS DESCRIPTIVE PROBES)
+Two emitters x three unchanged B5 policies x row prefixes [1000,5000,10000,full]
+= 24 fresh workers, one worker for each exact prefix. Each worker streams input
+from the start and stops at its configured row count. The production BudgetConfig
+still spans all 30 days; changing its window_end_ns would change policy_version.
+No measurement arrays or retained per-record decisions. Sample initial RSS and
+then final current RSS/ru_maxrss BEFORE state.to_dict or checkpoint serialization.
+Only after those measurements count exact serialized JSON checkpoint bytes and
+save/hash the checkpoint. Therefore earlier prefix serialization cannot pollute
+later-prefix RSS: each point has its own process. Peak/current measurements are
+specific to the documented implementation and platform. A fresh process does not
+make a cold filesystem cache. Save final row and accepted counts, seen/order-key
+ledger cardinalities, rolling-window cardinality, daily-counter and alert-ID
+cardinalities. Full checkpoints/decision digests must equal accepted phase4; exact
+prefix state can be checked by independent replay or accepted-decision-derived
+invariants. No raw-input preloading. No parallel measurement workers.
+These are single descriptive probes per prefix, not statistical memory evidence.
+Nested prefixes are dependent workloads and volume/time/composition covary. Do not
+interpret a fitted slope as a causal per-day growth law. Seen and order_keys
+cardinality equals N here and demonstrates O(N) retention; the rolling deque is
+bounded by activity in 60 event-time seconds, not by a constant item count.
+The experiment does not establish indefinite bounded-memory operation.
+
+VIRTUAL QUEUE SCENARIOS (POSTPROCESS EACH ACCEPTED TIMING TRACE)
+Exactly five predeclared arrival schedules: historical event gaps at speed1;
+historical event gaps divided by1,000,000; constant rates1,000,10,000,100,000
+records per second. These are models, not wall-clock paced executions. For gap
+schedules use (event_time_ns[i]-event_time_ns[0])//speed, preserving canonical
+order for equal-time logs. Constant-rate arrivals are i*1,000,000,000//rate for
+zero-based i; exact integer division avoids accumulated interval rounding.
+Historical event_time_ns and policy clocks remain unchanged in every schedule.
+Events in the same block have simultaneous modeled gap-schedule arrivals; this
+reflects timestamp resolution, not independently observed network batches.
+FIFO recursion: start_i=max(arrival_i,finish_(i-1));
+finish_i=start_i+measured_service_i. Declare service exactly: measured local record
+path including chosen read/parse/decode/core/decision write costs, excluding trace
+sidecar instrumentation and finalization. Clock-call overhead remains measured;
+record10,000 adjacent counter-call pairs descriptively, never subtract an estimated
+overhead from measured service. Main wall-throughput still includes instrumentation;
+it is not interchangeable with virtual service throughput.
+Queue wait=start-arrival; response=finish-arrival. Define whether occupancy counts
+in-service records and how exact arrival/completion ties are ordered. Completion
+at time t frees the server before an arrival at t; equal-time arrivals retain
+input order. Independently recompute waiting, response and occupancy summaries.
+No new acquisition/finality-delay grid or bounded-buffer drop policy is part of
+this minimal study. Inferring dropped alerts by deleting rows from a precomputed
+stateful decision stream is invalid: drops alter future features and decisions.
+Queue compression never refills/resets budgets; exact semantic decisions are
+invariant. Postprocessed occupancy is not a materialized buffer and cannot be
+explained by or multiplied into measured worker RSS. Offline service traces may
+not transfer to a physically paced process because caching/scheduling can differ.
+Buffered output-call completion is not durable notification delivery; final gzip
+close and fsync are separate stages. Queue results are explicitly local-software
+scenario response, not observed attack latency, live SLA, network or finality.
+
+ACCEPTANCE GATES
+G1: frozen production SHA values: budget_policy_replay.py
+549450dfc7db970ee039f17ef2c86d7a75820acc5b7128c46e340d1ebaf31726;
+event_log_replay.py a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2.
+All exact phase4 input hashes/counts and new wrapper/config/ordering captured.
+G2: every full run's canonical decision-stream digest and final-state digest
+matches accepted phase4 B5 counterpart; compare decompressed canonical JSON, not
+gzip bytes with variable headers. Prefix runs match canonical decision prefix,
+with an independent checkpoint/prefix oracle for state if needed. Memory probes must yield the same full final state and semantic digest.
+G3: all events processed, no duplicate alert IDs, no daily cap violations, no
+historical observed_time substituted, logical policy clocks unchanged.
+G4: all durations nonnegative, stage sums consistent with total under explicit
+clock-boundary overhead; record overhead residual, do not silently subtract it.
+Clock and JSON serialization overhead calibration is descriptive only.
+G5: independent queue oracle fixtures cover empty input, simultaneous arrivals,
+service exceeding gaps, exact finish/arrival ties, integer constant-rate rounding,
+compressed-gap ties, and single-record traces;
+actual scenario aggregates independently recomputed from stored traces.
+G6: final artifacts closed, CRC/SHA/EOF verified and immediately sealed from /tmp
+before atomic export, matching phase4 preservation strategy. Never modify prior
+failed or accepted evidence. Include unique IDs, exact commands and environment.
+G7: source tests and independent semantic/hash audit pass before acceptance;
+failed runs retained/excluded and rerun only with documented unchanged computation
+or explicitly new method version. No result-dependent run omission.
+
+CONCLUSION
+The strongest valid next claim is a measured implementation cost and explicit
+queue/retention boundary on a known finite workload, plus exact semantic
+preservation. Even excellent throughput cannot establish detection usefulness,
+live SLA, real-time finality, online raw feature completeness, or JSS readiness.
+
+PRE-EXECUTION IMPLEMENTATION REVIEW (STABLE SOURCE)
+Reviewed resource_benchmark.py SHA256
+4b88010091e8b8e51cf120a35a0b36309e966b8fb07f3dd82f548fc9b68e8cbf,
+and tests/test_resource_benchmark.py SHA256
+e188bcbdf3b9585c5a411691a6e01b8aae5463b69470b229338b4b4bad61ce7c.
+Original budget_policy_replay.py/event_log_replay.py remain external immutable
+imports. Static review PASS after schedule name mismatch fixed to event_gaps.
+Trace encoding/write intervals are explicitly outside six-stage service and are
+reported as limited instrumentation intervals, not complete observer overhead.
+Independent policy semantics are not introduced in the wrapper; input/source SHA,
+canonical decision SHA, full final-state SHA, EOF/count, partition identity,
+postrun input hashes and artifact readback checks reject mismatches.
+RSS is captured before output close, full state materialization or verification.
+Each memory prefix requires a separate invocation; no per-record arrays survive.
+Tests cover exact semantic preservation in fresh subprocesses for all policies,
+memory prefix isolation, input/source/reference/partition/count failures,
+overwrite refusal, queue hand calculations, independent interval occupancy,
+precision/ties/invalid schedules/zero duration. They are meaningful wrappers and
+queue-contract tests; using production core for synthetic expected decisions is
+not an independent proof of that already-audited core. Actual reference matching
+and independent actual-data audit remain required before accepting measurements.
+Known limitation: checkpoint serialization latency is not measured; only compact
+bytes are reported. Scope must remain cached syntactic JSONL-to-buffered-local-gzip,
+not full original aggregation/acquisition runner, ABI analysis or durable delivery.

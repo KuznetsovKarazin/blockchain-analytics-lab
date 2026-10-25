@@ -1,0 +1,22 @@
+{
+  "schema_version": "durable_replay_config_v1",
+  "scope": "bounded local process-crash recovery on one Euler core-event day",
+  "core": {
+    "address": "0x27182842e098f60e3d576794a5bffb0777e025d3",
+    "chain_id": 1,
+    "window_seconds": 60,
+    "threshold_count": 10,
+    "cooldown_seconds": 300,
+    "daily_budget": 5
+  },
+  "playback_origin": "2026-10-25T00:00:00+00:00",
+  "repetitions": 3,
+  "fault_target": "first emitted notification in each cell",
+  "fault_points": ["before_local_commit", "after_local_commit", "after_sink_commit", "after_ack"],
+  "crash_exit_code": 73,
+  "journal_mode": "WAL",
+  "synchronous": "FULL",
+  "clock_contract": "deterministic event-time offsets; availability, feature-ready and decision clocks equal by declared zero modeled service delay; actual persistence costs measured separately",
+  "sink_contract": "separate local SQLite database with unique alert_id and matching-payload enforcement; a duplicate delivery attempt is recorded without a second logical sink effect",
+  "limits": ["single writer", "local same-machine SQLite test sink", "process termination only", "no kernel crash, power-loss or physical-disk durability claim", "no external network or operator delivery measurement", "no cross-chain or live reorg support"]
+}

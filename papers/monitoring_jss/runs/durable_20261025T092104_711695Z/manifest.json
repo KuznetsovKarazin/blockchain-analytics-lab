@@ -1,0 +1,43 @@
+{
+  "base_commit": "23129bdcff24508bb690a6747c3c4900d8ae8dbd",
+  "checks": {
+    "all_final_states_decisions_sink_effects_equal": true,
+    "cursor_and_outbox_consistent": true,
+    "duplicate_attempts_match_boundary": true,
+    "source_input_unchanged": true
+  },
+  "command": [
+    "papers/monitoring_jss/durable_replay.py",
+    "--input",
+    "data/raw/monitoring_jss/protocol_logs/2023-03-01/protocol_logs_20261025T083346_282558Z/selected_logs.jsonl"
+  ],
+  "finished_utc": "2026-10-25T09:21:28.195092+00:00",
+  "input_path": "data/raw/monitoring_jss/protocol_logs/2023-03-01/protocol_logs_20261025T083346_282558Z/selected_logs.jsonl",
+  "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a",
+  "limits": [
+    "single writer",
+    "local same-machine SQLite test sink",
+    "process termination only",
+    "no kernel crash, power-loss or physical-disk durability claim",
+    "no external network or operator delivery measurement",
+    "no cross-chain or live reorg support"
+  ],
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "private_path": "data/raw/monitoring_jss/durable/durable_20261025T092104_711695Z",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "run_id": "durable_20261025T092104_711695Z",
+  "runtime_device_id": 27,
+  "runtime_filesystem_fragment_bytes": 4096,
+  "runtime_path": "/tmp/durable_runtime_niqjesmf",
+  "runtime_storage": "Operational SQLite/WAL files live in a unique local temporary directory. Only closed, sealed files and preserved unclean diagnostic snapshots are copied to the workspace evidence directory.",
+  "schema_version": "durable_replay_run_v1",
+  "source_hashes": {
+    "durable_replay.py": "0256e57838897b37fcef5f4a698e37c837200a6145d693bfd5e079aa74d1b5bc",
+    "durable_replay_config.json": "ea3bffa4bedffd748b5102ff87ec2b91d46f75a19f6374c20b18111955d78639",
+    "event_log_replay.py": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+    "test_durable_replay.py": "6fe13ac7f74fb8615bcb45538adc2aff6bda91fa5b1f62402225a7df66c4b3f3"
+  },
+  "sqlite_version": "3.53.1",
+  "started_utc": "2026-10-25T09:21:04.713177+00:00",
+  "status": "complete"
+}

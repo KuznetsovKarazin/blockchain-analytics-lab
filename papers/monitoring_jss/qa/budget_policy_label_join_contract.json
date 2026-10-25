@@ -1,0 +1,38 @@
+{
+  "schema_version": "budget_policy_label_join_qa_contract_v1",
+  "created_at_utc": "2026-10-25T12:40:33.880882+00:00",
+  "status": "synthetic_checks_passed_actual_join_not_run",
+  "source_sha256": {
+    "evaluate_budget_policy_labels.py": "684c8e24e45a4be4d5d5030aa4da71cb8a708902cac11c3e19296b5406d39765",
+    "budget_policy_label_join_config.json": "2d5a3ef985ad85bf058bd764e90ac966b8a26eef68eca04a28187f8840a8f2f4",
+    "tests/test_budget_policy_label_join.py": "ea69cf1468172684a81b6c6702ce67d0bc0bab308a0ed776c29ee519f94d5d75",
+    "incidents/labels/beanstalk_20220417_labels.json": "3518e1c753a3f0ba31b6977ab5b4f3811c5a3846569e1e930922af9084115046"
+  },
+  "synthetic_test_command": "python -m pytest -q papers/monitoring_jss/tests/test_budget_policy_label_join.py",
+  "synthetic_test_result": {
+    "passed": 8,
+    "failed": 0
+  },
+  "tested_requirements": [
+    "Positive-hash membership and exact raw source alignment",
+    "Raw/group/candidate/rejection/emitted accounting",
+    "Same-block prior transactions excluded from before-positive-block prefix",
+    "Explicit absence of observed positive membership",
+    "Reject mismatched source identity, length, label-used flag, count algebra and frozen positive time",
+    "Closed gzip SHA-256, count and CRC checks"
+  ],
+  "execution_requirements": [
+    "Join freeze chronology precedes study started_at_utc",
+    "Study and all 18 cells complete; frozen source/config/input and result digests unchanged",
+    "All 18 decision gzip streams read to EOF with exact hashes/counts",
+    "Nine Beanstalk cells source-aligned with the 30 exact selected daily inputs",
+    "Report-level positive block joined to hashed acquisition headers",
+    "Original labels and run provenance copy match fixed 3518e1c753a3f0ba31b6977ab5b4f3811c5a3846569e1e930922af9084115046",
+    "Output new artifacts only; never invoke policies or edit original labels"
+  ],
+  "unresolved_scientific_claims": [
+    "One prior-L2 incident, no independent recall or nine independent tests",
+    "No false-positive, receipt-success, observed response latency, atomic interception or prevention claim",
+    "Missing positive emitter membership remains explicitly absent; no invented notification"
+  ]
+}

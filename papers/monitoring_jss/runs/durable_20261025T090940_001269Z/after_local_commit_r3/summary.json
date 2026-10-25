@@ -1,0 +1,89 @@
+{
+  "all_outbox_acknowledged": true,
+  "database_bytes_after_close": 2121728,
+  "decision_count": 1247,
+  "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+  "duplicate_delivery_attempts": 0,
+  "entry_integrity": {
+    "local": "ok",
+    "sink": "ok"
+  },
+  "events_processed_this_process": 1237,
+  "file_hashes": {
+    "decisions.jsonl.gz": "1dad29a52747664c3599c070cc849a832a46d9b77fd154c335d24fb1a44e557f"
+  },
+  "final_cursor": 1246,
+  "finished_utc": "2026-10-25T09:10:00.493386+00:00",
+  "input_identity": {
+    "config_sha256": "5395f4caf3f402fc28f42bb1e20d6455026a0550f999c9c26f579493405cd381",
+    "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+    "durable_source_sha256": "ffd422ae98e1c40b215738132f0fc49fb9bd3d26ebd457e390d302d89039fb65",
+    "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+  },
+  "outbox_acknowledged": 5,
+  "outbox_rows": 5,
+  "peak_rss_bytes": 24440832,
+  "private_bytes_after_close": 2415516,
+  "private_file_hashes": {
+    "local.sqlite": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242",
+    "sink.sqlite": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc",
+    "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+    "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725",
+    "unclean_snapshot/local.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+    "unclean_snapshot/local.sqlite-shm": "e90e930a116844df04bce5a5791e1d2d81d142e6ded277af89214ebd3bb90c3a",
+    "unclean_snapshot/local.sqlite-wal": "5c1e0ded23f7e5d965c0b7ec2b776db777ba517d970ef91173f3c6a7b4878ba2",
+    "unclean_snapshot/sink.sqlite": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+    "unclean_snapshot/sink.sqlite-shm": "dd364b300c2bd4218ceaa3b31171652194ecd7c1ad6436126c37b519dd991e5a",
+    "unclean_snapshot/sink.sqlite-wal": "61ad80faa03f0c813b1a5087f5a5a4d0e5bb0918f07e6e8343223c882ed83f1e"
+  },
+  "replay_loop_seconds_this_process": 1.2861698369997612,
+  "restart_open_validate_restore_seconds": 0.0028891900001326576,
+  "restart_pending_drain_seconds": 0.0016294030001517967,
+  "resumed_cursor": 9,
+  "schema_version": "durable_replay_cell_v1",
+  "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+  "sink_delivery_attempts": 5,
+  "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+  "sink_unique_effects": 5,
+  "sqlite": {
+    "journal_mode": "wal",
+    "page_size": 4096,
+    "sqlite_version": "3.53.1",
+    "synchronous": 2,
+    "wal_autocheckpoint_pages": 1000
+  },
+  "stage_distributions": {
+    "ack_commit_seconds": {
+      "max": 0.0004390009999042377,
+      "n": 5,
+      "p50": 0.000398219000089739,
+      "p95": 0.00043273159990349087,
+      "p99": 0.00043774711990408834
+    },
+    "local_commit_seconds": {
+      "max": 0.003234359000089171,
+      "n": 1237,
+      "p50": 0.00047347300005640136,
+      "p95": 0.0010868978002690714,
+      "p99": 0.0021410557605122515
+    },
+    "sink_commit_seconds": {
+      "max": 0.0012902629996460746,
+      "n": 5,
+      "p50": 0.0006063030004952452,
+      "p95": 0.0012700683997536543,
+      "p99": 0.0012862240796675905
+    },
+    "state_serialization_seconds": {
+      "max": 0.005407695999565476,
+      "n": 1237,
+      "p50": 0.00039741799992043525,
+      "p95": 0.0007208011998955044,
+      "p99": 0.0013151367197133386
+    }
+  },
+  "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+  "storage_scope": "database_bytes counts final local+sink SQLite files; private_bytes additionally includes diagnostic unclean snapshots and exported sink audit records",
+  "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+  "worker_to_loop_end_seconds": 1.2907020499997088
+}

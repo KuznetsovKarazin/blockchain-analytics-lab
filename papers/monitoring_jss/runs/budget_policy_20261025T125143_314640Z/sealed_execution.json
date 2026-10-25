@@ -1,0 +1,56 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/tmp/budget-policy-sealed-gl3gl1in/papers/monitoring_jss/budget_policy_replay.py",
+    "--config",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/budget_policy_study_config.json",
+    "--input-manifest",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/protocol_window_20261025T123312_675327Z/manifest.json",
+    "--run-id",
+    "budget_policy_20261025T125143_314640Z"
+  ],
+  "environment": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "failed_observed_archive": {
+    "all_member_sha256_size_crc_match": true,
+    "bytes": 95563460,
+    "members": 102,
+    "path": "/workspace/scratch/159bf77d8682/monitoring-work/data/raw/monitoring_jss/budget/budget_policy_20261025T124444_450736Z_failed_observed.zip",
+    "sha256": "55850a4214d7ef9e89d24b77297ffe58e58fea65fc7b3b3c5a0e22025c6aedd1"
+  },
+  "failed_run_id": "budget_policy_20261025T124444_450736Z",
+  "labels_joined": false,
+  "path_resolution": {
+    "config_realpath": "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/budget_policy_study_config.json",
+    "data_realpath": "/workspace/scratch/159bf77d8682/monitoring-work/data",
+    "data_symlink": "/tmp/budget-policy-sealed-gl3gl1in/data",
+    "input_manifest_realpath": "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/protocol_window_20261025T123312_675327Z/manifest.json",
+    "original_root": "/workspace/scratch/159bf77d8682/monitoring-work",
+    "runtime_root": "/tmp/budget-policy-sealed-gl3gl1in",
+    "staged_paper": "/tmp/budget-policy-sealed-gl3gl1in/papers/monitoring_jss"
+  },
+  "policy_or_parameter_changes": false,
+  "preservation_scope": "Closed outputs sealed before workspace export; cause of prior corruption remains unknown",
+  "reason": "technical artifact-preservation retry; unchanged approved computation",
+  "run_id": "budget_policy_20261025T125143_314640Z",
+  "schema_version": "budget_policy_sealed_retry_v1",
+  "sealed_at_utc": "2026-10-25T12:52:27.921417+00:00",
+  "source_hashes": {
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/budget_policy_replay.py": "549450dfc7db970ee039f17ef2c86d7a75820acc5b7128c46e340d1ebaf31726",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/budget_policy_study_config.json": "7b83aaa220f5527f58faf801fbc3977c657ef9f6a427d7523136694e0a41ea0d",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/event_log_replay.py": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/incidents/labels/beanstalk_20220417_labels.json": "3518e1c753a3f0ba31b6977ab5b4f3811c5a3846569e1e930922af9084115046",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/common_window_inventory.json": "6135153b5496370a82374edb4f41d39d8b79086fb0db8d6d73332da5d015bacb",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/budget_policy_label_join_design_20261025T124034_554024Z/join_freeze.json": "7562d0958d4e840c457c50a947bde7be8398aa345995b1694a2b0fd6ea7eb9ab",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/protocol_window_20261025T123312_675327Z/manifest.json": "7505e42dec974609355d388313e7b446354f8c78a57421245e52b8107787431b",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/tests/test_budget_policy_replay.py": "984f87d3630f66b288016d8c01b36331bcf43f806915d6d92c3df42613f168c0"
+  },
+  "started_at_utc": "2026-10-25T12:51:43.314640+00:00",
+  "wrapper_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "papers/monitoring_jss/seal_budget_policy_retry.py"
+  ],
+  "wrapper_sha256": "13289f69dd2dda31b999d491b825f553dc4934b6d58d9ccf3a1fb1cadfca5694"
+}

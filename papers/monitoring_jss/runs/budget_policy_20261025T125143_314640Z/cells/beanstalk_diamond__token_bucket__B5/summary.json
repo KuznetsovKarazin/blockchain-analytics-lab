@@ -1,0 +1,45 @@
+{
+  "accepted_events": 28935,
+  "accepted_feature_stream_sha256": "40480ba521aeadd13c5a656f0083343b7acc5760b3cb851846d0915e6a6d91fe",
+  "artifacts": {
+    "daily.json": "106f7992467a79548a142b16ea00973485248a9c5713277c7a75cac4dbc019df",
+    "decisions.jsonl.gz": "27410d934779e66c1de1db8389726a30e64345478a30d7f669302a070f64ccce",
+    "final_state.json.gz": "34a699af3825117c71ffa7aa23c3591b3121f4e2ae581c620109b7dd795e7032",
+    "hourly.json": "0dc24946d91a9871240b0d133d22ba1a2ac684b37995ae2ad603a0d7f558ae65"
+  },
+  "cell_id": "beanstalk_diamond__token_bucket__B5",
+  "daily_budget": 5,
+  "days": 30,
+  "days_at_cap": 2,
+  "decision_log": {
+    "path": "cells/beanstalk_diamond__token_bucket__B5/decisions.jsonl.gz",
+    "rows": 28935,
+    "sha256": "27410d934779e66c1de1db8389726a30e64345478a30d7f669302a070f64ccce"
+  },
+  "first_notification_time_ns": 1647648009000000000,
+  "group_candidates": 1042,
+  "hard_cap_exceedances": 0,
+  "identity_ledger_entries": 28935,
+  "last_notification_time_ns": 1650192853000000000,
+  "notifications": 42,
+  "order_key_ledger_entries": 28935,
+  "policy": "token_bucket",
+  "population_id": "beanstalk_diamond",
+  "primary_budget": true,
+  "raw_trigger_active_hours": 130,
+  "raw_trigger_active_hours_with_notification": 42,
+  "raw_triggers": 1108,
+  "records": 28935,
+  "state_semantics": "finite-horizon exact identity/order ledgers; orderly checkpoint, no crash-safe delivery",
+  "suppression_counts": {
+    "below_threshold": 27827,
+    "budget": 50,
+    "grouped": 66,
+    "token": 950
+  },
+  "unique_alert_ids": 42,
+  "unknown_observed_time": 28935,
+  "unknown_removed": 28935,
+  "unused_daily_slots": 108,
+  "window_entries_at_end": 4
+}

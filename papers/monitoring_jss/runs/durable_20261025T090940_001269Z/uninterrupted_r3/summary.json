@@ -1,0 +1,83 @@
+{
+  "all_outbox_acknowledged": true,
+  "database_bytes_after_close": 2121728,
+  "decision_count": 1247,
+  "decisions_sha256": "e52c080fc5a87e12b5ecfa72a23a85b9e9a26f724bc3f8468433e17df91a1ba6",
+  "duplicate_delivery_attempts": 0,
+  "entry_integrity": {
+    "local": "ok",
+    "sink": "ok"
+  },
+  "events_processed_this_process": 1247,
+  "file_hashes": {
+    "decisions.jsonl.gz": "e34fe93067cfc7730e53545c84af2cd951600d5b5b944a9013f453e5b11ddabb"
+  },
+  "final_cursor": 1246,
+  "finished_utc": "2026-10-25T09:09:57.445886+00:00",
+  "input_identity": {
+    "config_sha256": "5395f4caf3f402fc28f42bb1e20d6455026a0550f999c9c26f579493405cd381",
+    "core_source_sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+    "durable_source_sha256": "ffd422ae98e1c40b215738132f0fc49fb9bd3d26ebd457e390d302d89039fb65",
+    "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+  },
+  "outbox_acknowledged": 5,
+  "outbox_rows": 5,
+  "peak_rss_bytes": 24592384,
+  "private_bytes_after_close": 2123364,
+  "private_file_hashes": {
+    "local.sqlite": "3425538904def41af5ffb04aa019d354645241a4670aea2a16be92a8de0d71f1",
+    "sink.sqlite": "06dfcff9c46d87c2ed448b6e92bfa5650d8d04bc58ead09e45ec5558e93ca7ae",
+    "sink_attempts.json": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309",
+    "sink_effects.json": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+  },
+  "replay_loop_seconds_this_process": 1.3215094460001637,
+  "restart_open_validate_restore_seconds": 0.014944088999982341,
+  "restart_pending_drain_seconds": 2.671000038390048e-05,
+  "resumed_cursor": -1,
+  "schema_version": "durable_replay_cell_v1",
+  "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+  "sink_delivery_attempts": 5,
+  "sink_effects_sha256": "21f15c4bd703fd5151913dd129708a449a8febcbe2ffea2a0100b6b367eef6d5",
+  "sink_unique_effects": 5,
+  "sqlite": {
+    "journal_mode": "wal",
+    "page_size": 4096,
+    "sqlite_version": "3.53.1",
+    "synchronous": 2,
+    "wal_autocheckpoint_pages": 1000
+  },
+  "stage_distributions": {
+    "ack_commit_seconds": {
+      "max": 0.0005269530001896783,
+      "n": 5,
+      "p50": 0.00037685700044676196,
+      "p95": 0.0005168238001715508,
+      "p99": 0.0005249271601860528
+    },
+    "local_commit_seconds": {
+      "max": 0.005272137000247312,
+      "n": 1247,
+      "p50": 0.00046611200014012866,
+      "p95": 0.0019218762993659768,
+      "p99": 0.002576791980009147
+    },
+    "sink_commit_seconds": {
+      "max": 0.0052185560007274034,
+      "n": 5,
+      "p50": 0.0004927110003336566,
+      "p95": 0.004291887000545102,
+      "p99": 0.005033222200690943
+    },
+    "state_serialization_seconds": {
+      "max": 0.006532884999614907,
+      "n": 1247,
+      "p50": 0.0003379790005055838,
+      "p95": 0.0006877345001157666,
+      "p99": 0.0008525028798067066
+    }
+  },
+  "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d",
+  "storage_scope": "database_bytes counts final local+sink SQLite files; private_bytes additionally includes diagnostic unclean snapshots and exported sink audit records",
+  "timing_scope": "process-local open/input hash/check/restore, pending-drain, loop and commit calls measured; process spawn and total restart separately parent measured; deterministic modeled decision clock excludes these durations",
+  "worker_to_loop_end_seconds": 1.3364914420008063
+}

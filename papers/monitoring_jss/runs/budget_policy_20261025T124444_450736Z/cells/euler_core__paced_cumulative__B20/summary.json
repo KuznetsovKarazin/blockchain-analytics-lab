@@ -1,0 +1,44 @@
+{
+  "accepted_events": 19425,
+  "accepted_feature_stream_sha256": "019f93cd4997542468f3d46a4e54c0e044621c9eb2e54e3bf99d709ece00cdec",
+  "artifacts": {
+    "daily.json": "c4339d0817779b39f5f6fc6c1c79999ac5399f3104fcdae034c3cbf1afee6e32",
+    "decisions.jsonl.gz": "4ffccb9512db63707f321a5332ca89839995ce851c51ca3d813f6731ffd6ec49",
+    "final_state.json.gz": "fa9800db3978347ad4daf3a019b439d02df16e2b878b1e0615c85af8e9d4d9c4",
+    "hourly.json": "e1404e415c21882259d98b232f2cbc3d8dfbbd7fdd83abd7d23a2d49548ceaa4"
+  },
+  "cell_id": "euler_core__paced_cumulative__B20",
+  "daily_budget": 20,
+  "days": 30,
+  "days_at_cap": 0,
+  "decision_log": {
+    "path": "cells/euler_core__paced_cumulative__B20/decisions.jsonl.gz",
+    "rows": 19425,
+    "sha256": "4ffccb9512db63707f321a5332ca89839995ce851c51ca3d813f6731ffd6ec49"
+  },
+  "first_notification_time_ns": 1647681598000000000,
+  "group_candidates": 543,
+  "hard_cap_exceedances": 0,
+  "identity_ledger_entries": 19425,
+  "last_notification_time_ns": 1650203061000000000,
+  "notifications": 188,
+  "order_key_ledger_entries": 19425,
+  "policy": "paced_cumulative",
+  "population_id": "euler_core",
+  "primary_budget": false,
+  "raw_trigger_active_hours": 156,
+  "raw_trigger_active_hours_with_notification": 152,
+  "raw_triggers": 1890,
+  "records": 19425,
+  "state_semantics": "finite-horizon exact identity/order ledgers; orderly checkpoint, no crash-safe delivery",
+  "suppression_counts": {
+    "below_threshold": 17535,
+    "grouped": 1347,
+    "quota": 355
+  },
+  "unique_alert_ids": 188,
+  "unknown_observed_time": 19425,
+  "unknown_removed": 19425,
+  "unused_daily_slots": 412,
+  "window_entries_at_end": 3
+}

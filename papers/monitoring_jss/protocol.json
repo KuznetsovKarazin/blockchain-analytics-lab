@@ -1,5 +1,5 @@
 {
-  "schema_version": "article2_monitoring_protocol_draft_v0.3",
+  "schema_version": "article2_monitoring_protocol_draft_v0.6",
   "status": "draft-not-frozen",
   "created_local_date": "2026-10-25",
   "title": "Operational Evaluation of Blockchain Monitoring Pipelines under Alert Budgets and Delayed Feedback",
@@ -11,8 +11,10 @@
     "verified_base_sha": "049239566bc5ecadec1691eb64279ce7b204a86d",
     "dependency_repository": "https://github.com/KuznetsovKarazin/blockchain-detector-eval",
     "dependency_pin": "dc1ba8876f3f163c27c48f3a39292fc47f71bf18",
-    "new_scientific_experiments_completed": false,
-    "new_software_feasibility_experiments_completed": true
+    "new_scientific_experiments_completed": true,
+    "new_software_feasibility_experiments_completed": true,
+    "scientific_experiment_scope": "Exploratory retrospective direct18 benchmark with simulated label delays; no confirmatory independent attack evaluation.",
+    "confirmatory_external_attack_evaluation_completed": false
   },
   "time_model": {
     "event_fields": [
@@ -68,7 +70,9 @@
         "budget_exceedance"
       ],
       "grouping": "first notification immediate; suppress related later triggers by a predeclared rule",
-      "ties": "deterministic rule to_be_frozen before evaluation"
+      "ties": "deterministic rule to_be_frozen before evaluation",
+      "bounded_study_config": "budget_policy_study_config.json",
+      "bounded_study_status": "Frozen and executed 18 cells with independent verification; full scientific cross-method grid remains draft."
     },
     "elliptic": {
       "mode": "completed_batch",
@@ -111,15 +115,25 @@
       "contract": "DELAYED_FEEDBACK_CONTRACT.md",
       "window": "latest four available source steps containing known labels; excluded from fitting",
       "activation": "strictly increasing successful prediction steps; explicit optional initial activation step",
-      "estimator_fitted": false,
-      "full_study_class_minima_frozen": false
+      "estimator_fitted": true,
+      "full_study_class_minima_frozen": false,
+      "actual_pilot": "runs/elliptic_prequential_20261025T091655_598646Z",
+      "observed_threshold_role": "All 150 evaluated batches fill the cap; admitted sets equal unconditional top-k, so this pilot does not identify a threshold-calibration benefit."
+    },
+    "elliptic_feature_scope": {
+      "predictors": 18,
+      "definition": "ELLIPTIC_PILOT_PROTOCOL.md",
+      "availability": "Source-reconstructed direct subset of supplied globally normalized vectors; not raw online feature validation.",
+      "primary_audit": "qa/elliptic_primary_source_availability_review.json"
     }
   },
   "data": {
     "development_cases": [
       "Ronin",
       "Nomad",
-      "previously studied custody drain"
+      "previously studied custody drain",
+      "Euler March13 diagnostic",
+      "Beanstalk April17 after phase4 outcome inspection"
     ],
     "external_incidents_proposed": "2-4",
     "other_protocols_or_mechanism_families_min_proposed": 2,
@@ -137,10 +151,21 @@
     "false_alarm_estimation": "requires adjudication of alerts, complete or sampled with known inclusion probabilities",
     "previous_elliptic_steps_35_49_status": "development/exploratory re-evaluation; not a new untouched external test",
     "prior_exposure_audit": "incidents/exposure_audit_20261025.json",
-    "candidate_exposure_summary": "Euler and Beanstalk have catalog/curation exposure (L2), not positive K4 evaluation use in the checked scope; BSC L0 only in checked sources. All remain ineligible pending complete case requirements."
+    "candidate_exposure_summary": "Euler and Beanstalk have catalog/curation exposure (L2), not positive K4 evaluation use in the checked scope; BSC L0 only in checked sources. All remain ineligible pending complete case requirements.",
+    "euler_current_role": "Development diagnostic after viewing March13 rule/budget results. Do not tune on this outcome and later call the same case an untouched test.",
+    "beanstalk_current_role": "Previously curated L2 incident and now development diagnostic after inspecting frozen phase4 outcomes; cannot be reused as an untouched test for policies informed by this result.",
+    "continuous_window_completed": {
+      "start_utc": "2022-03-19T00:00:00Z",
+      "end_utc_exclusive": "2022-04-18T00:00:00Z",
+      "days": 30,
+      "emitter_populations": 2,
+      "independent_incidents": 0,
+      "selection_label_informed": true,
+      "source_scope": "Complete enumerated daily AWS core/Diamond emitter populations, not all protocol activity or all chain receipts."
+    }
   },
   "pilot": {
-    "scope": "one ordinary day and one intensive fragment; one detector and two modes",
+    "scope": "Bounded experiments listed below, including a continuous two-emitter 30-day allocation study; not confirmatory independent attack evaluation.",
     "measure": [
       "runtime",
       "RAM",
@@ -150,13 +175,13 @@
       "duplicate_alert_id_behavior"
     ],
     "purpose": "feasibility and implementation correctness, not confirmatory scientific evidence",
-    "implementation_scope": "Original header pilot plus separately configured Euler core event-log pilot; no receipts/traces, learned detector, actual adaptive fitting, cross-chain features or incident recall.",
+    "implementation_scope": "Measured header and protocol-event replay, bounded actual two-model delayed-feedback benchmark, and local process-crash recovery with a specified idempotent SQLite sink; no live end-to-end or independent incident comparison.",
     "config_file": "pilot_config.json",
     "timing_interpretation": "Local file read/decode/core/write measured. x1 and compressed arrival schedules use a virtual FIFO clock with measured service costs; no wall-clock pacing, real network or historical observation latency is claimed.",
-    "status": "bounded_feasibility_complete_and_verified",
+    "status": "bounded_phase5_resource_study_complete_and_independently_verified",
     "selection": "One date chosen in advance, 2024-03-04 UTC; intensive hour is the maximum sum of transaction_count within that same date, earliest hour breaks ties. Workload-only exploratory selection; not an independent incident.",
     "historical_finality": "Offline canonical archive assumption; no live finality observation and no numerical confirmation delay imposed. Reorg handling unsupported.",
-    "recovery_scope": "ReplayState snapshot round-trip and deterministic log-replay tests; no external notification delivery guarantee or transactional durable outbox claim.",
+    "recovery_scope": "12 actual process exits plus three uninterrupted repeats on one Euler day; atomic local state/decision/outbox and separate idempotent SQLite test sink. Conditional unique sink effects, not arbitrary-network exactly-once, kernel-crash or power-loss validation.",
     "accepted_run": "runs/pilot_20261025T081404_015172Z",
     "verification": "qa/verify_20261025T081539_946082Z/verification.json",
     "full_grid_ready": false,
@@ -173,6 +198,172 @@
       "semantic_decisions_equal_across_cells": true,
       "historical_observed_and_removed": "unknown/null",
       "completeness": "enumerated AWS partition; not independent full-receipt verification"
+    },
+    "event_log_attack_day": {
+      "run": "runs/event_logs_attack_20261025T092349_917377Z",
+      "acquisition": "runs/protocol_logs_20261025T091457_496507Z",
+      "day": "2023-03-13",
+      "source_events": 3283,
+      "cells": 6,
+      "reported_execution_transactions": 6,
+      "reported_incidents": 1,
+      "exposure": "L2 plus current development diagnostic",
+      "emitted_within_reported_executions": 0,
+      "all_day_budget_slots_used_before_first_reported_execution": true,
+      "future_holdout_role": false,
+      "full_receipts_obtained": false
+    },
+    "elliptic": {
+      "run": "runs/elliptic_prequential_20261025T091655_598646Z",
+      "protocol": "ELLIPTIC_PILOT_PROTOCOL.md",
+      "models": [
+        "LightGBM",
+        "logistic regression"
+      ],
+      "cells": 10,
+      "fitted_estimators": 100,
+      "evaluation_rows_per_cell": 67504,
+      "known_positive_rows": 1083,
+      "decision_rows": 675040,
+      "seed": 0,
+      "budget_fraction": 0.005,
+      "delays": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "total_notifications_per_cell": 328,
+      "fixed_lightgbm_known_true_positives": 73,
+      "adaptive_lightgbm_known_true_positives_in_delay_order": [
+        42,
+        46,
+        52,
+        68
+      ],
+      "unknowns_not_negatives": true,
+      "full_grid": false
+    },
+    "durability": {
+      "accepted_run": "runs/durable_20261025T092104_711695Z",
+      "quarantined_run": "runs/durable_20261025T090940_001269Z",
+      "contract": "DURABILITY_CONTRACT.md",
+      "accepted_cells": 15,
+      "actual_crashes": 12,
+      "cause_of_first_run_artifact_corruption": "unestablished",
+      "sealed_archive_independently_verified": true
+    },
+    "continuous_budget_study": {
+      "protocol": "BUDGET_POLICY_STUDY_PROTOCOL.md",
+      "design_freeze": "runs/budget_policy_design_20261025T122801_063002Z/design_freeze.json",
+      "acquisition": "runs/protocol_window_20261025T123312_675327Z",
+      "accepted_run": "runs/budget_policy_20261025T125143_314640Z",
+      "excluded_run": "runs/budget_policy_20261025T124444_450736Z",
+      "label_join": "runs/budget_policy_label_join_20261025T125414_524570Z",
+      "days": 30,
+      "source_address_rows_scanned": 61947520,
+      "euler_events": 19425,
+      "beanstalk_events": 28935,
+      "policies": [
+        "greedy",
+        "paced_cumulative",
+        "token_bucket"
+      ],
+      "daily_budgets": [
+        1,
+        5,
+        20
+      ],
+      "primary_daily_budget": 5,
+      "cells": 18,
+      "decision_rows": 435240,
+      "hard_cap_exceedances": 0,
+      "clock": "integer historical block-event time as logical simulation time, never observed-time substitution",
+      "coupled_grouping_and_allocation": true,
+      "primary_euler_notifications": [
+        119,
+        105,
+        71
+      ],
+      "primary_beanstalk_notifications": [
+        49,
+        47,
+        42
+      ],
+      "primary_euler_raw_active_hours_covered": [
+        94,
+        98,
+        71
+      ],
+      "primary_beanstalk_raw_active_hours_covered": [
+        34,
+        47,
+        42
+      ],
+      "beanstalk_positive_execution_logs": 6,
+      "beanstalk_raw_triggers_per_cell": 3,
+      "beanstalk_positive_execution_notifications_all_nine_cells": 0,
+      "reported_incidents": 1,
+      "independent_scientific_incidents": 0,
+      "excluded_run_reason": "Five decision gzip artifacts changed/truncated after recorded hashes; cause unestablished. Same-code retry sealed in isolated staging before export.",
+      "semantic_audit": "qa/budget_policy_actual_independent_review.json",
+      "integrity_audit": "qa/budget_policy_retry_integrity_independent_review.json",
+      "label_audit": "qa/budget_policy_label_independent_review.json"
+    },
+    "local_resource_study": {
+      "protocol": "RESOURCE_BENCHMARK_PROTOCOL.md",
+      "config": "resource_benchmark_config.json",
+      "initial_run": "runs/resource_20261025T134648_038458Z",
+      "technical_repeat": "runs/resource_20261025T135508_936231Z",
+      "initial_role": "Semantically valid; known concurrent reference audit; retained in full.",
+      "repeat_role": "Identical full technical repetition with other known local agent tasks held; shared host still uncontrolled.",
+      "per_series": {
+        "timing_workers": 30,
+        "memory_prefix_workers": 24,
+        "timing_decisions": 725400,
+        "memory_prefix_decisions": 241080,
+        "virtual_queue_scenarios": 150,
+        "independent_incidents": 0
+      },
+      "source_and_job_equivalence_verified": true,
+      "production_policy_unchanged": true,
+      "local_service_stages": [
+        "read",
+        "parse",
+        "syntactic_decode",
+        "aggregate_core",
+        "JSON_encode",
+        "buffered_gzip_write"
+      ],
+      "queue_schedules": [
+        {
+          "kind": "event_gaps",
+          "scale": 1
+        },
+        {
+          "kind": "event_gaps",
+          "scale": 1000000
+        },
+        {
+          "events_per_second": 1000,
+          "kind": "constant_rate"
+        },
+        {
+          "events_per_second": 10000,
+          "kind": "constant_rate"
+        },
+        {
+          "events_per_second": 100000,
+          "kind": "constant_rate"
+        }
+      ],
+      "memory_result": "Exact seen and order-key ledgers retain N entries each; checkpoint sizes and whole-process pre-serialization RSS measured at independent-process nested prefixes.",
+      "scope": "Local cached instrumented processing and modeled finite FIFO, not live arrival, durable notification or dedicated-host causal speed comparisons.",
+      "independent_audits": [
+        "qa/resource_benchmark_actual_independent_review.json",
+        "qa/resource_benchmark_repeat_independent_review.json",
+        "qa/resource_benchmark_repeat_equivalence_review.json"
+      ]
     }
   },
   "evaluation": {
@@ -277,6 +468,40 @@
         "Added strict activation-step guard against stale model updates.",
         "Distinguished full scanned address population from retained payload size, and measured preparation cost from local replay and virtual queueing."
       ]
+    },
+    {
+      "date": "2026-10-25",
+      "scope": "v0.4 bounded learned-model, incident-day and process-crash experiments",
+      "changes": [
+        "Restricted Elliptic to18 declared direct predictors before fitting after primary-source evidence that local93 includes future address history; retained global-normalization and dependence caveats.",
+        "Executed10cells/100fits under one declared seed and budget; no adaptive LightGBM improvement here; threshold nonbinding in all150batches.",
+        "Replayed unchanged Euler rule on March13: all5slots consumed before six reported exploit executions; no notifications within those transactions.",
+        "Verified12real process-crash recoveries under an explicit idempotent local sink; excluded first durability run for changed/corrupt DB artifacts, cause unknown.",
+        "No parameter search, full scientific grid or journal submission."
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "scope": "v0.5 continuous-window causal budget allocation",
+      "changes": [
+        "Acquired and independently verified all 30 daily log/header partitions for two fixed emitters in one shared, label-informed window.",
+        "Compared three policies and three hard daily caps using integer event-time and state carried across midnight; all 435,240 decisions independently checked.",
+        "Reported actual notification loads beside nominal caps; coverage of more raw-trigger hours does not establish attack-detection quality.",
+        "All nine Beanstalk cells issued zero notifications on six reported exploit logs and three raw triggers, separating hard-budget, quota and token rejection.",
+        "Excluded the first run with corrupted outputs, preserved observed bytes, and accepted an identical sealed retry only after independent integrity and semantic checks.",
+        "The full scientific comparison, independent attack-generalization evaluation and journal submission remain incomplete."
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "scope": "v0.6 local service/resource measurement",
+      "changes": [
+        "Measured30fresh timing workers and24memory prefix workers per series with unchanged phase4 policies; all decisions/states independently verified.",
+        "Retained initial known-concurrency series and completed identical technical repetition without parameter selection; both sealed and audited.",
+        "Separated measured stages, whole-loop instrumentation cost, approximate OS RSS, exact serialized state size and virtual FIFO queues.",
+        "Documented unbounded identity retention over finite data; no independent attack, live latency, durable sink or JSS-readiness claim."
+      ]
     }
-  ]
+  ],
+  "freeze_blockers_scope": "These blockers apply to the full scientific comparison. Each completed bounded study has its own immutable design and execution freeze."
 }

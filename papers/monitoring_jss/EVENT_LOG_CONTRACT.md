@@ -90,6 +90,8 @@ establishes live RPC or end-to-end production latency.
 
 Snapshot round trips test orderly deterministic continuation. They do not
 establish arbitrary-crash exactly-once delivery. Durable outbox/checkpoint
-boundaries, fault injection and restart timing remain future work. Compression
+boundaries and process-crash injection are now tested separately under the
+conditional local-sink contract in `DURABILITY_CONTRACT.md`. They are not a
+guarantee of this original in-memory pilot. Compression
 also changes playback-day budget semantics for multi-day experiments; this
 single-day result does not settle the full-study clock convention.

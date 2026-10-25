@@ -1,0 +1,133 @@
+{
+  "schema_version": "budget_allocation_prefreeze_review_v1",
+  "review_date_utc": "2026-10-25",
+  "decision": "PASS_DESIGN_FREEZE_FOR_EXPLORATORY_CONTINUOUS_WORKLOAD_STUDY",
+  "new_window_policy_outcomes_examined": false,
+  "base_commit_at_review": "d6d46261c3948ff3c32c25880807c79002f70793",
+  "reviewed_existing_core": {
+    "path": "papers/monitoring_jss/event_log_replay.py",
+    "sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2",
+    "contract": "papers/monitoring_jss/EVENT_LOG_CONTRACT.md",
+    "finding": "The existing cooldown is anchored on the last emitted notification. Grouped and budget-rejected raw triggers do not advance that anchor. Therefore changing budget admission changes subsequent grouped candidate streams."
+  },
+  "window_revision_before_new_outcomes": {
+    "superseded_proposal": "Separate Euler March2023 and Beanstalk April2022 thirty-day windows.",
+    "approved_proposed_start_inclusive": "2022-03-19T00:00:00Z",
+    "approved_proposed_end_exclusive": "2022-04-18T00:00:00Z",
+    "full_utc_days": 30,
+    "populations": [
+      "Euler V1 core emitter",
+      "Beanstalk Diamond emitter"
+    ],
+    "reason": "A shared Ethereum source partition can be scanned once per date for both predeclared emitters, reducing acquisition time and temporary-storage cost.",
+    "selection_disclosure": "The window ends after the already-known Beanstalk incident day. Selection is label-informed and resource-motivated, not a random background sample or an independent incident holdout. Euler March13 remains previously observed development/supplementary evidence.",
+    "required_before_execution": "Freeze exact historical emitter addresses and evidence that they were deployed/relevant throughout the proposed period. An inactive emitter remains a reported zero/low-activity population; do not replace dates or addresses after seeing policy outcomes.",
+    "completeness": "All thirty source dates, including zero-selected-log dates, must have enumerated complete source partitions and validation status. Missing partitions make the primary run incomplete; do not silently join across gaps or shorten the window after outcomes."
+  },
+  "common_stream_contract": {
+    "clock": "t is original event_time_ns in integer POSIX nanoseconds, in canonical block/transaction/log order. UTC day is floor(t/T), with T=86400000000000. Do not replace this clock with replay speed, CPU-dependent completion time or first-event-relative time.",
+    "causality_scope": "Prefix-causal historical logical-time simulation. The experiment does not establish when source logs/features were observed operationally, nor live notification latency.",
+    "detector": "All accepted logs from the predeclared emitter; count in (t-60 seconds,t], including current; raw trigger iff count>=10.",
+    "grouping": "A raw trigger is a candidate iff no prior emission exists or t-last_emitted_ns>=300000000000. Grouped and rejected rows do not extend cooldown. Only actual emission changes last_emitted_ns.",
+    "initial_state": "At the exact window start: empty rolling log history, no prior emitted notification, empty seen-ID state, zero daily emitted counts; token bucket full once. This is an explicit cold-start experiment, not an unobserved pre-window steady state.",
+    "continuous_state": "Do not reset rolling feature history, watermark, deduplication identities, grouping anchor or token credit at file/UTC-day boundaries. Grouping across midnight remains active.",
+    "budget_scope": "Recommended primary contract: independent B=5 per emitter per UTC day per policy. Two emitters can therefore produce up to ten combined notifications per day. A shared cross-emitter budget would be a different study and must not be substituted silently.",
+    "rejected_candidates": "Discard immediately; do not buffer, replay at credit release, or emit automatically when time passes without a new eligible event.",
+    "invalid_duplicate_late": "Rejected duplicate, conflicting or late deliveries cannot refill/reset/consume an allocator or alter grouping. A decreasing accepted logical timestamp fails before mutation."
+  },
+  "policies": {
+    "greedy": {
+      "admit": "candidate and emitted_on_current_utc_day < 5",
+      "reset": "Only the daily emitted count changes with UTC day."
+    },
+    "paced_cumulative_quota": {
+      "released_quota": "q(t)=min(5,1+(5*(t mod T))//T), using integer arithmetic.",
+      "release_times_utc": [
+        "00:00:00",
+        "04:48:00",
+        "09:36:00",
+        "14:24:00",
+        "19:12:00"
+      ],
+      "admit": "candidate and emitted_on_current_utc_day < q(t)",
+      "carry": "Unused released quota accumulates within the current UTC day. It expires at midnight; the new day begins with one released unit. A late first event sees all units released earlier that day.",
+      "interpretation": "This constrains cumulative expenditure, not the minimum spacing between emissions. After inactivity, several emissions can occur subject to the unchanged 300-second cooldown."
+    },
+    "token_bucket_capacity_one": {
+      "representation": "Integer credit in [0,T], where T credit units equal one token. Capacity=T, refill adds five credit units per elapsed nanosecond.",
+      "initialization": "credit=T and last_refill_ns=window_start_ns, exactly once at experiment start.",
+      "refill": "For each accepted event at t: credit=min(T,credit+5*(t-last_refill_ns)); last_refill_ns=t. This may be calculated before grouping; spending still requires a candidate.",
+      "admit": "candidate and credit==T and emitted_on_current_utc_day<5; on emission subtract T and increment the current-day emitted count.",
+      "midnight": "Carry credit and last_refill_ns continuously. Reset only the daily emitted count; do not refill a token just because UTC midnight passed.",
+      "rejection": "A grouped row or quota/cap rejection consumes no credit. Natural time refill is retained. No deferred emission follows.",
+      "implied_spacing": "Any two emissions must be at least T/5=17280000000000 ns (4h48m) apart, including across midnight. With capacity one and this refill rate the explicit five-per-UTC-day cap is defensive/redundant for a correct monotone implementation; retain and test it."
+    }
+  },
+  "grouping_fairness_and_attribution": {
+    "primary_comparison": "End-to-end detector/grouping/admission policy comparison: every policy gets identical accepted input events and identical raw scores, but its own last-notified grouping state and allocator state.",
+    "required_invariants": [
+      "Identical accepted-event identities and scores across all three policies",
+      "Identical raw-trigger flags across policies",
+      "Policy-specific candidate, grouped, quota-rejected, daily-cap-rejected and emitted counts reconcile exactly"
+    ],
+    "invalid_analysis": "Do not describe the primary run as three allocators applied to an identical pregrouped candidate stream. Do not interpret a lower rejection fraction over each policy's different candidate denominator as isolated allocation efficiency.",
+    "recommended_secondary_crosscheck": "Freeze a shadow policy-independent reference stream before outcomes: after every raw trigger at least300s after the previous reference candidate, emit a reference candidate and advance the reference anchor regardless of any budget decision. Feed those same candidates to each allocator without policy-dependent regrouping. Report this separately as an allocation-only diagnostic, not as the unchanged primary grouping contract.",
+    "if_secondary_omitted": "The primary workload comparison remains valid, but attribute results to coupled grouping plus allocation and make no isolated-budget-mechanism claim."
+  },
+  "metrics_to_freeze": [
+    "Per emitter, policy and UTC day: accepted logs, raw triggers, grouped rows, candidates, quota rejections, hard-day-cap rejections, emitted notifications, unused daily capacity and fraction of all raw triggers emitted.",
+    "Include all thirty dates in totals and daily distributions; show zero-log days explicitly. Report active-day summaries only as separately labelled supplementary quantities.",
+    "First/last emission UTC time, time of fifth emission when present, inter-emission gaps across the entire continuous window, and a fixed 24-bin UTC hour histogram. These are allocation/workload descriptions, not attack-detection quality.",
+    "For pre-frozen source transaction memberships, report matching selected logs and their raw/grouped/rejected/emitted statuses, alongside budget/credit immediately before the earliest reported execution. Missing membership or no emission must be explicit, not converted to a false-negative or recall estimate.",
+    "Distinguish event-time allocation timestamps from measured local processing costs. If feature computation is shared across policies, do not present allocation-only timings as three separately measured end-to-end detector pipelines."
+  ],
+  "essential_tests": [
+    "Paced: one nanosecond before, exactly at, and after all five release boundaries; late first event; unused within-day carry and midnight expiry.",
+    "Token: full initial token exactly once; rejection at17280s-1ns; admission exactly at17280s; fractional credit retained; long inactivity never accumulates more than one token.",
+    "Midnight: last emission shortly before midnight cannot receive a fresh bucket token at midnight; daily counts reset but rolling count and300s grouping anchor do not.",
+    "Same-timestamp events use exact canonical order; an allocator-only cooldown0 fixture tests quota arithmetic, while integration fixtures retain cooldown300s.",
+    "A rejected candidate is never emitted later without a new event; rejected/grouped records never advance last_emitted or spend quota. Exact duplicate and late replay cannot change any policy state.",
+    "A synthetic prefix where greedy emits and paced rejects must produce the expected different subsequent grouping eligibility; the common raw stream must remain identical.",
+    "Prefix invariance under arbitrary appended future inputs; chunk/file partition invariance; checkpoint round-trip equivalence including credit, last_refill_ns, UTC counts, rolling state, identities and grouping anchor.",
+    "Long gaps and zero-selected-log days; all thirty midnight crossings; strict nondecreasing logical time; per-day emission count<=5, paced emitted<=released quota, and token inter-emission gap>=17280s.",
+    "Different replay speed and injected CPU/write delays cannot change semantic policy decisions because allocation uses the fixed source-time clock.",
+    "Persist policy/config hashes and policy-namespaced notification IDs. If the durable wrapper is extended, include all new allocator fields in atomic state/outbox checkpoints and repeat its meaningful crash-boundary tests."
+  ],
+  "remaining_prefreeze_gates": [
+    "No blocking design definition remains for freezing this configuration and starting complete-window acquisition.",
+    "The implementation must pass the listed exact-boundary, causal-prefix and state-continuity checks before policy comparisons. Rejection-reason precedence should be deterministic: grouped before allocation; hard daily cap before quota/token shortage.",
+    "Historical deployment/population attribution is being verified separately; a historical source code snapshot alone is not proof of deployed facets/ABI. This does not require changing the declared all-topic fixed-address workload or adding receipt/semantic decoding.",
+    "Freeze executed implementation, complete inventory/input hashes and the existing label manifest before replay; preserve the stated scope and report every planned cell."
+  ],
+  "blocked_claims": [
+    "Pacing was independently validated by rescuing the already-observed Euler incident.",
+    "The two emitters or thirty days provide thirty independent attack trials.",
+    "Unknown background transactions are negative labels, or source transaction membership provides complete incident recall.",
+    "Compressed playback preserves a daily budget when the allocator uses playback UTC day.",
+    "All three primary policies had an identical grouped candidate stream."
+  ],
+  "execution_performed_in_this_review": "Read-only design/config/source review and epoch/cell-count checks; no new payload acquisition, policy outcome comparison, model fit, tuning, main implementation edit or GitHub write.",
+  "reviewed_frozen_design_files": {
+    "config_path": "papers/monitoring_jss/budget_policy_study_config.json",
+    "config_sha256": "7b83aaa220f5527f58faf801fbc3977c657ef9f6a427d7523136694e0a41ea0d",
+    "protocol_path": "papers/monitoring_jss/BUDGET_POLICY_STUDY_PROTOCOL.md",
+    "protocol_sha256": "e99c17c6ae00f3d1f66adb1ad51b9c797cc8d9589862d19d5e2a870da6787d2c",
+    "label_manifest_sha256": "3518e1c753a3f0ba31b6977ab5b4f3811c5a3846569e1e930922af9084115046",
+    "coordinates_verified": true,
+    "exact_30_full_utc_days": true,
+    "cells": 18,
+    "primary_budget": 5,
+    "predeclared_sensitivity_budgets": [
+      1,
+      20
+    ],
+    "per_emitter_budget_explicit": true,
+    "common_candidate_secondary_included": false,
+    "secondary_omission_accepted_because_end_to_end_grouping_coupling_is_explicit": true,
+    "inventory_complete": true,
+    "inventory_pairs": 30,
+    "inventory_whole_source_bytes": 7141246236,
+    "inventory_payload_requests_at_review": 0,
+    "new_policy_results_seen": false
+  }
+}

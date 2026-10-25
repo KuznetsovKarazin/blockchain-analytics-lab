@@ -1,0 +1,2194 @@
+{
+  "audit_script_sha256": "122b7173dc7538c301339f47473126d018dedf1880622d5d2a7fc6285949481c",
+  "cells": [
+    {
+      "cell": "uninterrupted_r1",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "fresh_baseline_cursor": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true
+      },
+      "errors": [],
+      "fault": null,
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": null,
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "5e3979c37bc468aa43f5a2d26b1b45289d40e34bf85192ccd7431533970bf6eb",
+      "unclean_database": null,
+      "unrecorded_private_files": {}
+    },
+    {
+      "cell": "before_local_commit_r1",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": false,
+        "checkpoint_state_matches_entire_prefix": false,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": false,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": false,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": false,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "before_local_commit",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1081,
+        "decisions": 1082,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "f144644bed2f81c2596c1fc0bca82e25616d7196d8ee778738cf8a90b2608732"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "before_local_commit",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:41.601931+00:00"
+      },
+      "passed": false,
+      "private_hash_mismatches": {},
+      "summary_sha256": "7614a596aeb8017e743beebd6ac18f661d46ca907cf81f66373e607eba375362",
+      "unclean_database": {
+        "acknowledged": 0,
+        "cursor": 8,
+        "decisions": 9,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 0,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "state_sha256": "124ebd850ff0b3ba7fe29e42fba1b87296e5c81029f42e66d4e24551cca9f78d"
+      },
+      "unrecorded_private_files": {
+        "local.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "c5cc7e8d266e284dfe4f5a3963f1ac34d48a840c70bcdc6da42f25faf6a10219"
+        },
+        "local.sqlite-wal": {
+          "bytes": 4264232,
+          "sha256": "76b8502d0b074dab7d6ddfe1983dfa802d2f3a8865124dd3a6a2cdfee82e7f7e"
+        },
+        "sink.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "4ced821f1e18c28dc8024eb90bb61bd6ba0234332d2ad20a8f416bf14ef54320"
+        },
+        "sink.sqlite-wal": {
+          "bytes": 140112,
+          "sha256": "a9be323f6e75d71c71555f486a0e53400be07de7264e92cbd31dad2e39c768d7"
+        }
+      }
+    },
+    {
+      "cell": "after_local_commit_r1",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "after_local_commit",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "after_local_commit",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:43.266560+00:00"
+      },
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "daddb928789412317197a95ea27c9e0d0307e6bedab419acd9ca4e66c774b77a",
+      "unclean_database": {
+        "acknowledged": 0,
+        "cursor": 9,
+        "decisions": 10,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 1,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "state_sha256": "528c8a8895e6108b37376a5a8132f7861bc2b8ad033a0b2d748d93fc0b8196b3"
+      },
+      "unrecorded_private_files": {}
+    },
+    {
+      "cell": "after_sink_commit_r1",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "after_sink_commit",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 1,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 6,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "after_sink_commit",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:44.808031+00:00"
+      },
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "acca53349e392b9dacd700a571f4f16454b851d19c524b02deeb7b31ab0a1c20",
+      "unclean_database": {
+        "acknowledged": 0,
+        "cursor": 9,
+        "decisions": 10,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "state_sha256": "528c8a8895e6108b37376a5a8132f7861bc2b8ad033a0b2d748d93fc0b8196b3"
+      },
+      "unrecorded_private_files": {}
+    },
+    {
+      "cell": "after_ack_r1",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": false,
+        "checkpoint_state_matches_entire_prefix": false,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": false,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": false,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": false,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "after_ack",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 111,
+        "decisions": 112,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "b9d9b358a120cca3c7789852ee3f0477a4b87553252f8197721c530f0f0bb760"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "after_ack",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:46.771361+00:00"
+      },
+      "passed": false,
+      "private_hash_mismatches": {},
+      "summary_sha256": "b4ed59f6789e54cd45147717a0ab0e6bd31f857057a7ab00e9d7a6abe2e2d116",
+      "unclean_database": {
+        "acknowledged": 1,
+        "cursor": 9,
+        "decisions": 10,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "state_sha256": "528c8a8895e6108b37376a5a8132f7861bc2b8ad033a0b2d748d93fc0b8196b3"
+      },
+      "unrecorded_private_files": {
+        "local.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "0f78cb7c4e280cf4df548cd4d98fc5295d1299967c636221fb7f83913ee64beb"
+        },
+        "local.sqlite-wal": {
+          "bytes": 2699264,
+          "sha256": "9564362bb2faf0b2f2b6d9688336ea4cb3f6376f29aad2fb29a88bd1feefa417"
+        },
+        "sink.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "56d5f5dc66a6a3792cb56d1f6c1b9ad3df78395dc8408b1baf2017d346698a57"
+        },
+        "sink.sqlite-wal": {
+          "bytes": 140112,
+          "sha256": "6fc7f8ad49ae4a635564e226c8ceb41d5df682325ff665fdb8e9a96e28ab3812"
+        }
+      }
+    },
+    {
+      "cell": "uninterrupted_r2",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "fresh_baseline_cursor": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true
+      },
+      "errors": [],
+      "fault": null,
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": null,
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "e3a4b725148196776522afc59ce8f20a07a3c631636e14ef8cda50e8c3d7a4a5",
+      "unclean_database": null,
+      "unrecorded_private_files": {}
+    },
+    {
+      "cell": "before_local_commit_r2",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": false,
+        "checkpoint_state_matches_entire_prefix": false,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": false,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": false,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": false,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "before_local_commit",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1104,
+        "decisions": 1105,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "0e96d330af0ab42b9942b851121801da4a7958e3d9201454d7298cdb2fbaf877"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "before_local_commit",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:49.916271+00:00"
+      },
+      "passed": false,
+      "private_hash_mismatches": {},
+      "summary_sha256": "4e83ae3efe90bb8841abb38001ed9e3f5b3cea43a513c28e437a9db7fa65f622",
+      "unclean_database": {
+        "acknowledged": 0,
+        "cursor": 8,
+        "decisions": 9,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 0,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "state_sha256": "124ebd850ff0b3ba7fe29e42fba1b87296e5c81029f42e66d4e24551cca9f78d"
+      },
+      "unrecorded_private_files": {
+        "local.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "468fe0554257d9af5119ab1ba8feb6aa4160c0f02ba241063fffe8b5f172b955"
+        },
+        "local.sqlite-wal": {
+          "bytes": 4264232,
+          "sha256": "7ae55a811db966dbee24e841b88e76301bdad6be2afee0b63ec87815ab0784bb"
+        },
+        "sink.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "2de348cddb679b178ec3b845a45057d2c5a336f6105d6f1f576e4a4710a42dae"
+        },
+        "sink.sqlite-wal": {
+          "bytes": 140112,
+          "sha256": "b6b6de430e1f876ff2cfc433d22c946a2da3a96c77aee4f9a844a0e7ddd140d3"
+        }
+      }
+    },
+    {
+      "cell": "after_local_commit_r2",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "after_local_commit",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "after_local_commit",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:51.415512+00:00"
+      },
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "ef9ab0013cec5641fbb8d5f06432a93037e5902e4e0409aa018c56821928d8a0",
+      "unclean_database": {
+        "acknowledged": 0,
+        "cursor": 9,
+        "decisions": 10,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 1,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "state_sha256": "528c8a8895e6108b37376a5a8132f7861bc2b8ad033a0b2d748d93fc0b8196b3"
+      },
+      "unrecorded_private_files": {}
+    },
+    {
+      "cell": "after_sink_commit_r2",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "after_sink_commit",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 1,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 6,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "after_sink_commit",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:52.881621+00:00"
+      },
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "354f9e932a129fc36120b094cb54adf052b986c16b6f32ea9f9df91746a8a54d",
+      "unclean_database": {
+        "acknowledged": 0,
+        "cursor": 9,
+        "decisions": 10,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "state_sha256": "528c8a8895e6108b37376a5a8132f7861bc2b8ad033a0b2d748d93fc0b8196b3"
+      },
+      "unrecorded_private_files": {}
+    },
+    {
+      "cell": "after_ack_r2",
+      "checks": {
+        "all_1247_decisions": true,
+        "canonical_decisions_hash": true,
+        "database_size_matches": false,
+        "declared_zero_service_clock": true,
+        "exit73_seq9_marker": true,
+        "final_database_readable": false,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "no_unrecorded_private_files": false,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": false,
+        "resume_cursor_matches_snapshot": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [
+        "final disposable DB copy: DatabaseError: database disk image is malformed"
+      ],
+      "fault": "after_ack",
+      "final_database": null,
+      "marker": {
+        "exit_code": 73,
+        "point": "after_ack",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:54.374572+00:00"
+      },
+      "passed": false,
+      "private_hash_mismatches": {
+        "local.sqlite": {
+          "actual": {
+            "bytes": 1732608,
+            "sha256": "6221c6733d2a9fa171fbb00cd759bbc895bba6930d0d4592e8983db12d3671e3"
+          },
+          "expected_sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+        }
+      },
+      "summary_sha256": "d8d45dd8c3e96b8100e089571ff98295995eea8858040a3bb400aa130e85f4d2",
+      "unclean_database": {
+        "acknowledged": 1,
+        "cursor": 9,
+        "decisions": 10,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "state_sha256": "528c8a8895e6108b37376a5a8132f7861bc2b8ad033a0b2d748d93fc0b8196b3"
+      },
+      "unrecorded_private_files": {
+        "local.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "e5afc311e6b3d36a17fc62a5ccec02898e38ea73e22eb7b3676d33ef3f8adc7e"
+        },
+        "local.sqlite-wal": {
+          "bytes": 4264232,
+          "sha256": "1fe0cf3461f7291f70c45a19d944ed504d003d8be5050be1d1fb93adbe64a723"
+        },
+        "sink.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "617b33df08d8e5b2b129e09fa7aa6b2ad628c9982292bc3a5c94e996b3593b13"
+        },
+        "sink.sqlite-wal": {
+          "bytes": 140112,
+          "sha256": "3e7d615b518849110eeca2fe66c5d469308331a8134e95c20b23ff531b1a4eba"
+        }
+      }
+    },
+    {
+      "cell": "uninterrupted_r3",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "fresh_baseline_cursor": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true
+      },
+      "errors": [],
+      "fault": null,
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": null,
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "6088131f0744555a169ab8db3bd07584914c9e19ad15adca77bd08f9ff552b74",
+      "unclean_database": null,
+      "unrecorded_private_files": {}
+    },
+    {
+      "cell": "before_local_commit_r3",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "before_local_commit",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "before_local_commit",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:57.513436+00:00"
+      },
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "3e3f9159404ddfe63428227ce2ad71a24dfcdb1bc532e2c35123a41e35b7c436",
+      "unclean_database": {
+        "acknowledged": 0,
+        "cursor": 8,
+        "decisions": 9,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 0,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "state_sha256": "124ebd850ff0b3ba7fe29e42fba1b87296e5c81029f42e66d4e24551cca9f78d"
+      },
+      "unrecorded_private_files": {}
+    },
+    {
+      "cell": "after_local_commit_r3",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": false,
+        "checkpoint_state_matches_entire_prefix": false,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": false,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": false,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": false,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "after_local_commit",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1030,
+        "decisions": 1031,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "9c2438f44fe89be7d84cb3825504f51a292c496d4c98444ac2f6e8ac5a0398e2"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "after_local_commit",
+        "seq": 9,
+        "utc": "2026-10-25T09:09:59.082622+00:00"
+      },
+      "passed": false,
+      "private_hash_mismatches": {},
+      "summary_sha256": "092b47a56fa0e30c4456677592bf9739adc9a4d0db592bdf31c11b40852795b1",
+      "unclean_database": {
+        "acknowledged": 0,
+        "cursor": 9,
+        "decisions": 10,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 1,
+        "sink_attempts": 0,
+        "sink_effects": 0,
+        "state_sha256": "528c8a8895e6108b37376a5a8132f7861bc2b8ad033a0b2d748d93fc0b8196b3"
+      },
+      "unrecorded_private_files": {
+        "local.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "77ce37d509295c74390220ef14251cec7005f17da8c2a5ada62f8d9a4f04ae9d"
+        },
+        "local.sqlite-wal": {
+          "bytes": 4227152,
+          "sha256": "43daf4a90cf11ceee1871d0aac8bdbb1227552ca3ac716cb16965dca8bb85195"
+        },
+        "sink.sqlite-shm": {
+          "bytes": 32768,
+          "sha256": "c399dc7c198e3bb0b56779c4e5c768421822de886b6597e7670004e1623cba32"
+        },
+        "sink.sqlite-wal": {
+          "bytes": 140112,
+          "sha256": "5b8dbbe59585d8bbb3178031398f15a86a0dfa5cdbe9a3aeea5f740a80e276b2"
+        }
+      }
+    },
+    {
+      "cell": "after_sink_commit_r3",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "after_sink_commit",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 1,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 6,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "after_sink_commit",
+        "seq": 9,
+        "utc": "2026-10-25T09:10:00.585138+00:00"
+      },
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "c4b70d05ed5d3587134c5947431712966a1dcf8926552e37683545930d7e4b07",
+      "unclean_database": {
+        "acknowledged": 0,
+        "cursor": 9,
+        "decisions": 10,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "state_sha256": "528c8a8895e6108b37376a5a8132f7861bc2b8ad033a0b2d748d93fc0b8196b3"
+      },
+      "unrecorded_private_files": {}
+    },
+    {
+      "cell": "after_ack_r3",
+      "checks": {
+        "all_1247_decisions": true,
+        "attempt_ids_refer_to_effects": true,
+        "attempts_match_fault_boundary": true,
+        "canonical_decisions_hash": true,
+        "checkpoint_state_hash": true,
+        "checkpoint_state_matches_entire_prefix": true,
+        "database_size_matches": true,
+        "decision_payloads_equal_gzip": true,
+        "declared_zero_service_clock": true,
+        "exact_cursor_and_sequences": true,
+        "exit73_seq9_marker": true,
+        "final_database_readable": true,
+        "final_integrity": true,
+        "five_acknowledged_outbox_payloads": true,
+        "five_unique_matching_sink_effects": true,
+        "gzip_full_read_crc": true,
+        "gzip_sha256": true,
+        "historical_times_unknown": true,
+        "local_sink_identity": true,
+        "no_unrecorded_private_files": true,
+        "pilot_embeds_cell_summary": true,
+        "prior_euler_semantics_equal": true,
+        "recorded_private_hashes_match": true,
+        "resume_cursor_matches_snapshot": true,
+        "sink_export_matches_db": true,
+        "successful_worker_stage_counts": true,
+        "timing_scope_inequalities": true,
+        "unclean_copy_readable": true,
+        "unclean_exact_prefix_checkpoint": true,
+        "unclean_exact_prefix_payloads": true,
+        "unclean_expected_boundary": true,
+        "unclean_integrity": true,
+        "unclean_snapshot_hashes": true
+      },
+      "errors": [],
+      "fault": "after_ack",
+      "final_database": {
+        "acknowledged": 5,
+        "cursor": 1246,
+        "decisions": 1247,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 5,
+        "sink_attempts": 5,
+        "sink_effects": 5,
+        "state_sha256": "70a8f86bc087a091aaba55d52e8b74c59f356cb50f99731d27d1b767fc355a0d"
+      },
+      "marker": {
+        "exit_code": 73,
+        "point": "after_ack",
+        "seq": 9,
+        "utc": "2026-10-25T09:10:01.934720+00:00"
+      },
+      "passed": true,
+      "private_hash_mismatches": {},
+      "summary_sha256": "90293a124dbd83719ccaaf2df0ee40e7766ef61219c5b4f2fe43f0b3d0105db6",
+      "unclean_database": {
+        "acknowledged": 1,
+        "cursor": 9,
+        "decisions": 10,
+        "duplicate_attempts": 0,
+        "integrity": {
+          "local": [
+            [
+              "ok"
+            ]
+          ],
+          "sink": [
+            [
+              "ok"
+            ]
+          ]
+        },
+        "outbox": 1,
+        "sink_attempts": 1,
+        "sink_effects": 1,
+        "state_sha256": "528c8a8895e6108b37376a5a8132f7861bc2b8ad033a0b2d748d93fc0b8196b3"
+      },
+      "unrecorded_private_files": {}
+    }
+  ],
+  "checked_utc": "2026-10-25T09:17:40.185171+00:00",
+  "global_checks": {
+    "all_decision_exports_equal": true,
+    "copied_config_hash_matches": true,
+    "exact_15_cells": true,
+    "expected_cell_names": true,
+    "input_sha_matches": true,
+    "original_private_files_unchanged_by_audit": true,
+    "prior_semantic_hash_recomputed": true,
+    "snapshot_source_hashes": true,
+    "twelve_fault_markers": true
+  },
+  "limitations": [
+    "Artifact review only; no worker, fault or production replay rerun. SQLite recovery occurs only in disposable copies containing captured sidecars.",
+    "Markers plus preserved source and completed parent guard support reported os._exit(73) injections. Raw child return codes are checked in code but not separately serialized as OS receipts.",
+    "No arbitrary crash-location coverage: four selected boundaries at the first notification only, three repetitions each.",
+    "Conditional single-writer, same-machine SQLite sink contract; not general exactly-once network delivery, power-loss durability, kernel-crash recovery or live reorg handling.",
+    "No independent reconstruction of perf_counter observations/quantiles: only published scope, counts and internal inequalities can be audited from persisted summaries.",
+    "Any failed recorded DB hash or malformed recovered-copy state invalidates accepting the whole run as final durable evidence until resolved; preserve original evidence, never rewrite hashes to force a pass."
+  ],
+  "manifest_sha256": "951c2b978a7195a964fb7ad07f44237ebee9a7c91e3e21b50938fe0428e2da26",
+  "measurement_review": [
+    {
+      "finding": "Deterministic availability/feature-ready/decision clocks have zero modeled service delay. Persistence timings are separate observations; they do not measure externally delivered alert latency.",
+      "location": "source_snapshot/durable_replay.py:134-187"
+    },
+    {
+      "finding": "State serialization timer includes both checkpoint and decision JSON. local_commit_seconds includes BEGIN, inserts/update and COMMIT, not only COMMIT.",
+      "location": "source_snapshot/durable_replay.py:167-182"
+    },
+    {
+      "finding": "Sink timer includes the whole local sink transaction; ack timer includes BEGIN/update/COMMIT. The after-sink fault permits an extra attempt while unique matching alert_id prevents another effect.",
+      "location": "source_snapshot/durable_replay.py:115-127"
+    },
+    {
+      "finding": "Worker-to-loop-end excludes final DB export, close, gzip and summary. RSS is sampled after materializing decision/effect/attempt lists, before export/close. Stage statistics in fault cells describe only the successful resumed worker; aborted-worker samples are not preserved.",
+      "location": "source_snapshot/durable_replay.py:188-230"
+    },
+    {
+      "finding": "Parent initial/restart process elapsed values include process launch, execution, exports and exit; restart measurement excludes preceding crash inspection/snapshot work.",
+      "location": "source_snapshot/durable_replay.py:307-341"
+    }
+  ],
+  "original_private_inventory_before": {
+    "after_ack_r1/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919388279079736,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "after_ack_r1/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919386756264004,
+      "sha256": "0f78cb7c4e280cf4df548cd4d98fc5295d1299967c636221fb7f83913ee64beb"
+    },
+    "after_ack_r1/local.sqlite-wal": {
+      "bytes": 2699264,
+      "mtime_ns": 1792919386763046983,
+      "sha256": "9564362bb2faf0b2f2b6d9688336ea4cb3f6376f29aad2fb29a88bd1feefa417"
+    },
+    "after_ack_r1/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919388279079736,
+      "sha256": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc"
+    },
+    "after_ack_r1/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919386759936352,
+      "sha256": "56d5f5dc66a6a3792cb56d1f6c1b9ad3df78395dc8408b1baf2017d346698a57"
+    },
+    "after_ack_r1/sink.sqlite-wal": {
+      "bytes": 140112,
+      "mtime_ns": 1792919386759936352,
+      "sha256": "6fc7f8ad49ae4a635564e226c8ceb41d5df682325ff665fdb8e9a96e28ab3812"
+    },
+    "after_ack_r1/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919388321717638,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "after_ack_r1/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919388321819441,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "after_ack_r1/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919386751113450,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_ack_r1/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919386756264004,
+      "sha256": "e181c169b964ab80ce6a3d88f19f42967f994af5dae964e1009fab9a9a42e830"
+    },
+    "after_ack_r1/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 177192,
+      "mtime_ns": 1792919386767721103,
+      "sha256": "762595b6c1d9aa24d5a8b2fd73cacb6460c8f39aaf7c32eac122e46df3e33302"
+    },
+    "after_ack_r1/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919386754395090,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_ack_r1/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919386759936352,
+      "sha256": "55b35b581e946087a8897dfc63b85d9d85ac423afb624e7f913e985df05aa1a0"
+    },
+    "after_ack_r1/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 61832,
+      "mtime_ns": 1792919386767721103,
+      "sha256": "f459e3f7774dbb219a65b4a93fa913a47747e1f51de67760fa6c5d8f0a2065b4"
+    },
+    "after_ack_r2/local.sqlite": {
+      "bytes": 1732608,
+      "mtime_ns": 1792919395207229295,
+      "sha256": "6221c6733d2a9fa171fbb00cd759bbc895bba6930d0d4592e8983db12d3671e3"
+    },
+    "after_ack_r2/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919394436559401,
+      "sha256": "e5afc311e6b3d36a17fc62a5ccec02898e38ea73e22eb7b3676d33ef3f8adc7e"
+    },
+    "after_ack_r2/local.sqlite-wal": {
+      "bytes": 4264232,
+      "mtime_ns": 1792919395243230073,
+      "sha256": "1fe0cf3461f7291f70c45a19d944ed504d003d8be5050be1d1fb93adbe64a723"
+    },
+    "after_ack_r2/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919395879243802,
+      "sha256": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc"
+    },
+    "after_ack_r2/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919394437005873,
+      "sha256": "617b33df08d8e5b2b129e09fa7aa6b2ad628c9982292bc3a5c94e996b3593b13"
+    },
+    "after_ack_r2/sink.sqlite-wal": {
+      "bytes": 140112,
+      "mtime_ns": 1792919394491213839,
+      "sha256": "3e7d615b518849110eeca2fe66c5d469308331a8134e95c20b23ff531b1a4eba"
+    },
+    "after_ack_r2/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919395932394942,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "after_ack_r2/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919395932699100,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "after_ack_r2/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919394354742881,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_ack_r2/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919394359137467,
+      "sha256": "3ff62a26953dd6afb490a01f43ff1b2052eedfff4a0f3a31eb3fdcfee406cc05"
+    },
+    "after_ack_r2/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 177192,
+      "mtime_ns": 1792919394371211248,
+      "sha256": "73ea22a9091507a2056be6f06858e703bab288ff2598f2c8cfc767b78705383c"
+    },
+    "after_ack_r2/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919394357253811,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_ack_r2/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919394362339738,
+      "sha256": "269039b82fa8cba0371a34ef172afc1edc469d62a960ccf8333f40854004ddbb"
+    },
+    "after_ack_r2/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 61832,
+      "mtime_ns": 1792919394367211162,
+      "sha256": "e12a567f09b868f1a16d7b13dee2339a49f3b5fb859697d86e66992855020108"
+    },
+    "after_ack_r3/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919403179400914,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "after_ack_r3/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919403179400914,
+      "sha256": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc"
+    },
+    "after_ack_r3/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919403220973248,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "after_ack_r3/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919403221056733,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "after_ack_r3/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919401915518309,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_ack_r3/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919401920094974,
+      "sha256": "02fe491dc165f3dd0eb62717f0366b946224e3c0e7be3033f4f30ebab8c01d9e"
+    },
+    "after_ack_r3/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 177192,
+      "mtime_ns": 1792919401931374058,
+      "sha256": "4895cc558f1c17245fd15e1e0c803ff0b013478e55a35606d14a3280041f2517"
+    },
+    "after_ack_r3/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919401918439201,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_ack_r3/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919401923326018,
+      "sha256": "30b8708dd10877e3e7c6d80fb43bd3ebf47fcccc27e0c8339f8c89faf00c489c"
+    },
+    "after_ack_r3/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 61832,
+      "mtime_ns": 1792919401927373972,
+      "sha256": "a205b8677a139a4d71b687075e687bcffa8049a45f3e397565d9011b5a5da382"
+    },
+    "after_local_commit_r1/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919384619000658,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "after_local_commit_r1/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919384619000658,
+      "sha256": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc"
+    },
+    "after_local_commit_r1/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919384676612374,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "after_local_commit_r1/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919384676737543,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "after_local_commit_r1/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919383246659286,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_local_commit_r1/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919383251974168,
+      "sha256": "c54c52129619ac6506fd1e356c82511c68b86dd669cd5a6766be8236cc74b38e"
+    },
+    "after_local_commit_r1/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 173072,
+      "mtime_ns": 1792919383258971273,
+      "sha256": "b152626ac0d122046c392ed5f14d71aae63e947d013e634c2559f1e8e609dd66"
+    },
+    "after_local_commit_r1/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919383249643819,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_local_commit_r1/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919383255205292,
+      "sha256": "b9642f253a1a10a90f1cf4d76247f3078fe1993bd22469a7b9e765015df696dd"
+    },
+    "after_local_commit_r1/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 45352,
+      "mtime_ns": 1792919383255205292,
+      "sha256": "9e2fcc0a179cc8c667b954787e3a54a8884334a0c02aca02190f95ceeef8669f"
+    },
+    "after_local_commit_r2/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919392747176190,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "after_local_commit_r2/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919392747176190,
+      "sha256": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc"
+    },
+    "after_local_commit_r2/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919392794886682,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "after_local_commit_r2/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919392794988986,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "after_local_commit_r2/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919391398468984,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_local_commit_r2/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919391402303878,
+      "sha256": "ba2bc145ccbf9f3422965e1f24ca46d4332b997c22d4608a9b8de552448268d4"
+    },
+    "after_local_commit_r2/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 173072,
+      "mtime_ns": 1792919391411147348,
+      "sha256": "6ef4a10b0595e9459b73da5516690f8ae85bba87248dfd6799e7fda166e892e2"
+    },
+    "after_local_commit_r2/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919391400852453,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_local_commit_r2/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919391405244715,
+      "sha256": "6672aa5981900c6393dadfdb7e9cc4098f51e0b3d0a416dd899b2bb7946bb404"
+    },
+    "after_local_commit_r2/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 45352,
+      "mtime_ns": 1792919391405244715,
+      "sha256": "f5fcb9953e13622ed510cea7a802e414bbff75bbf61805bdc01480940e669268"
+    },
+    "after_local_commit_r3/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919400431341779,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "after_local_commit_r3/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919399136234135,
+      "sha256": "77ce37d509295c74390220ef14251cec7005f17da8c2a5ada62f8d9a4f04ae9d"
+    },
+    "after_local_commit_r3/local.sqlite-wal": {
+      "bytes": 4227152,
+      "mtime_ns": 1792919399859329471,
+      "sha256": "43daf4a90cf11ceee1871d0aac8bdbb1227552ca3ac716cb16965dca8bb85195"
+    },
+    "after_local_commit_r3/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919400431341779,
+      "sha256": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc"
+    },
+    "after_local_commit_r3/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919399136597041,
+      "sha256": "c399dc7c198e3bb0b56779c4e5c768421822de886b6597e7670004e1623cba32"
+    },
+    "after_local_commit_r3/sink.sqlite-wal": {
+      "bytes": 140112,
+      "mtime_ns": 1792919399203315355,
+      "sha256": "5b8dbbe59585d8bbb3178031398f15a86a0dfa5cdbe9a3aeea5f740a80e276b2"
+    },
+    "after_local_commit_r3/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919400473707585,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "after_local_commit_r3/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919400473787606,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "after_local_commit_r3/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919399066973408,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_local_commit_r3/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919399071049484,
+      "sha256": "e90e930a116844df04bce5a5791e1d2d81d142e6ded277af89214ebd3bb90c3a"
+    },
+    "after_local_commit_r3/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 173072,
+      "mtime_ns": 1792919399079312687,
+      "sha256": "5c1e0ded23f7e5d965c0b7ec2b776db777ba517d970ef91173f3c6a7b4878ba2"
+    },
+    "after_local_commit_r3/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919399069299610,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_local_commit_r3/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919399073913405,
+      "sha256": "dd364b300c2bd4218ceaa3b31171652194ecd7c1ad6436126c37b519dd991e5a"
+    },
+    "after_local_commit_r3/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 45352,
+      "mtime_ns": 1792919399073913405,
+      "sha256": "61ad80faa03f0c813b1a5087f5a5a4d0e5bb0918f07e6e8343223c882ed83f1e"
+    },
+    "after_sink_commit_r1/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919386603043525,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "after_sink_commit_r1/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919386603043525,
+      "sha256": "2cdbf1c54166e2b39c45679705ed537f9127cca229d494197c12471b41599926"
+    },
+    "after_sink_commit_r1/sink_attempts.json": {
+      "bytes": 832,
+      "mtime_ns": 1792919386661333745,
+      "sha256": "c318c74c168801c56f5c9c4d450c83352b5cf01968ca146a6097619ab19d6a6c"
+    },
+    "after_sink_commit_r1/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919386661483931,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "after_sink_commit_r1/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919384784193889,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_sink_commit_r1/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919384789554099,
+      "sha256": "ef5a94808753d3f15989bc2a1239a2ef093f6c3aa5f0288774acb9daf5d987dd"
+    },
+    "after_sink_commit_r1/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 173072,
+      "mtime_ns": 1792919384803004634,
+      "sha256": "b551db620cd19764dff7d541cb5b8e6fe73c031d99cff9980aa6c7766a785ad8"
+    },
+    "after_sink_commit_r1/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919384787664023,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_sink_commit_r1/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919384793510736,
+      "sha256": "0bd4109d1f48690bcf77fc0b5eeb6a1582404cdc6ed368328a28c2d6e54af5d3"
+    },
+    "after_sink_commit_r1/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 61832,
+      "mtime_ns": 1792919384803004634,
+      "sha256": "3a6d29a55d9f2fa8114b692f6fb8eabca231a6e6910d37d92d2173ac08b851f4"
+    },
+    "after_sink_commit_r2/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919394223208054,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "after_sink_commit_r2/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919394227208140,
+      "sha256": "2cdbf1c54166e2b39c45679705ed537f9127cca229d494197c12471b41599926"
+    },
+    "after_sink_commit_r2/sink_attempts.json": {
+      "bytes": 832,
+      "mtime_ns": 1792919394274844805,
+      "sha256": "c318c74c168801c56f5c9c4d450c83352b5cf01968ca146a6097619ab19d6a6c"
+    },
+    "after_sink_commit_r2/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919394275028712,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "after_sink_commit_r2/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919392866948060,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_sink_commit_r2/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919392870404158,
+      "sha256": "4e70cbc214d4bcde9a7ad0e44a7093b28ae694b251caa09f5d169d931138faf8"
+    },
+    "after_sink_commit_r2/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 173072,
+      "mtime_ns": 1792919392875178953,
+      "sha256": "df09c64baecdfdb3f9a4f6d98d121e11788ada4a3cea0e115c0c4bb145c9215a"
+    },
+    "after_sink_commit_r2/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919392869009323,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_sink_commit_r2/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919392872676780,
+      "sha256": "4081788f3042bab42de7bde5b22af14aeea815fe9184359243c0830c105710fa"
+    },
+    "after_sink_commit_r2/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 61832,
+      "mtime_ns": 1792919392875178953,
+      "sha256": "c1c030ed3fb7b214cf3188730d773f71470f6360dbfb6cd8995782c68d2cc423"
+    },
+    "after_sink_commit_r3/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919401723369583,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "after_sink_commit_r3/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919401723369583,
+      "sha256": "2cdbf1c54166e2b39c45679705ed537f9127cca229d494197c12471b41599926"
+    },
+    "after_sink_commit_r3/sink_attempts.json": {
+      "bytes": 832,
+      "mtime_ns": 1792919401769834753,
+      "sha256": "c318c74c168801c56f5c9c4d450c83352b5cf01968ca146a6097619ab19d6a6c"
+    },
+    "after_sink_commit_r3/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919401769947853,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "after_sink_commit_r3/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919400563140230,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_sink_commit_r3/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919400566993521,
+      "sha256": "416babdc6c11765c141a93e1f305dd98e0374b89f98aa3f0d2945a4a5641b075"
+    },
+    "after_sink_commit_r3/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 173072,
+      "mtime_ns": 1792919400579344965,
+      "sha256": "a3b290cf85169e43688e1c52e140c5a10388b32e6716dc62d2e7e90049fe81a6"
+    },
+    "after_sink_commit_r3/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919400565501384,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "after_sink_commit_r3/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919400570734492,
+      "sha256": "39310aa94882683e7aee0cab34f9e7111e257c96a738d2813cb950ac05b84366"
+    },
+    "after_sink_commit_r3/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 61832,
+      "mtime_ns": 1792919400579344965,
+      "sha256": "7c1b343bc3cfd8e3ccbf2affa6b6f39fa89b1d6c9569dcac331a2196338c6564"
+    },
+    "before_local_commit_r1/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919383010965914,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "before_local_commit_r1/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919381667676431,
+      "sha256": "c5cc7e8d266e284dfe4f5a3963f1ac34d48a840c70bcdc6da42f25faf6a10219"
+    },
+    "before_local_commit_r1/local.sqlite-wal": {
+      "bytes": 4264232,
+      "mtime_ns": 1792919382466954161,
+      "sha256": "76b8502d0b074dab7d6ddfe1983dfa802d2f3a8865124dd3a6a2cdfee82e7f7e"
+    },
+    "before_local_commit_r1/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919383010965914,
+      "sha256": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc"
+    },
+    "before_local_commit_r1/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919381668049703,
+      "sha256": "4ced821f1e18c28dc8024eb90bb61bd6ba0234332d2ad20a8f416bf14ef54320"
+    },
+    "before_local_commit_r1/sink.sqlite-wal": {
+      "bytes": 140112,
+      "mtime_ns": 1792919381746938603,
+      "sha256": "a9be323f6e75d71c71555f486a0e53400be07de7264e92cbd31dad2e39c768d7"
+    },
+    "before_local_commit_r1/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919383056451731,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "before_local_commit_r1/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919383056530309,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "before_local_commit_r1/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919381581337007,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "before_local_commit_r1/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919381586544417,
+      "sha256": "14d69ceb612b13c08335c407ceabb86e3cbc6746460f98eb4a3daa74f3c5b83c"
+    },
+    "before_local_commit_r1/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 148352,
+      "mtime_ns": 1792919381594935319,
+      "sha256": "250e57526f03af798491b87bafaab70a0b904d6177a6bde5bc07b29481204b20"
+    },
+    "before_local_commit_r1/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919381584612458,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "before_local_commit_r1/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919381589639326,
+      "sha256": "39967497cb289144237dc7ee57de4a9c1a120eb6a883710738f545c23d3e8b48"
+    },
+    "before_local_commit_r1/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 45352,
+      "mtime_ns": 1792919381589639326,
+      "sha256": "9a869cf837fa67db3b22873063697a95ffc2912852fc92f16224f62e25fdec62"
+    },
+    "before_local_commit_r2/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919391275144413,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "before_local_commit_r2/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919389975311444,
+      "sha256": "468fe0554257d9af5119ab1ba8feb6aa4160c0f02ba241063fffe8b5f172b955"
+    },
+    "before_local_commit_r2/local.sqlite-wal": {
+      "bytes": 4264232,
+      "mtime_ns": 1792919390779133706,
+      "sha256": "7ae55a811db966dbee24e841b88e76301bdad6be2afee0b63ec87815ab0784bb"
+    },
+    "before_local_commit_r2/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919391275144413,
+      "sha256": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc"
+    },
+    "before_local_commit_r2/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919389975862454,
+      "sha256": "2de348cddb679b178ec3b845a45057d2c5a336f6105d6f1f576e4a4710a42dae"
+    },
+    "before_local_commit_r2/sink.sqlite-wal": {
+      "bytes": 140112,
+      "mtime_ns": 1792919390035117644,
+      "sha256": "b6b6de430e1f876ff2cfc433d22c946a2da3a96c77aee4f9a844a0e7ddd140d3"
+    },
+    "before_local_commit_r2/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919391319828430,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "before_local_commit_r2/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919391319914239,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "before_local_commit_r2/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919389896028298,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "before_local_commit_r2/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919389900435774,
+      "sha256": "8de17a6fda86e4de5c047542f750b91157f61eed6a194d4c450125d33a39811e"
+    },
+    "before_local_commit_r2/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 148352,
+      "mtime_ns": 1792919389911114968,
+      "sha256": "90d2654cb1506757c80f224fca7ea7a010ed9d9531c1f0ac7809648c34242268"
+    },
+    "before_local_commit_r2/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919389898653571,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "before_local_commit_r2/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919389904011487,
+      "sha256": "1eccdcf9478f3eeb376b728d001668748a14ae7e9be7e74803ba1d27e11df6cb"
+    },
+    "before_local_commit_r2/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 45352,
+      "mtime_ns": 1792919389904011487,
+      "sha256": "708b84c54b67b418a49b9bd60f42f7a4da6b7f8e85746828d4e1cd85a0d14e94"
+    },
+    "before_local_commit_r3/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919398951309933,
+      "sha256": "344cec39a3788c04dddfd1c125c7bbefd49ffc962c60acd80022d891279b0242"
+    },
+    "before_local_commit_r3/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919398955310019,
+      "sha256": "37d214d4fa1e369d5c1f4ce36491af40643944a8978942ee68e8d94316246fcc"
+    },
+    "before_local_commit_r3/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919398993651743,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "before_local_commit_r3/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919398993936832,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "before_local_commit_r3/unclean_snapshot/local.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919397497567814,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "before_local_commit_r3/unclean_snapshot/local.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919397501224860,
+      "sha256": "8c94b9bc9ca583e53fb148856cedeb2f088039cdaffdb42406c12c8a80b0c11e"
+    },
+    "before_local_commit_r3/unclean_snapshot/local.sqlite-wal": {
+      "bytes": 148352,
+      "mtime_ns": 1792919397507278858,
+      "sha256": "5621b6ac708e1af33c5d12fb31ac35294059bdcd487ce9d50c359fbc296f8cfb"
+    },
+    "before_local_commit_r3/unclean_snapshot/sink.sqlite": {
+      "bytes": 4096,
+      "mtime_ns": 1792919397499579242,
+      "sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977"
+    },
+    "before_local_commit_r3/unclean_snapshot/sink.sqlite-shm": {
+      "bytes": 32768,
+      "mtime_ns": 1792919397504149873,
+      "sha256": "d0ae0eb648c059296bc23b2a45af13bac1a079aed26fc36de81f7e056d63698c"
+    },
+    "before_local_commit_r3/unclean_snapshot/sink.sqlite-wal": {
+      "bytes": 45352,
+      "mtime_ns": 1792919397504149873,
+      "sha256": "da89406f543f4d71c5ceae1b9029a8d0c0705852391a8fde21c2a66e7cc22a79"
+    },
+    "uninterrupted_r1/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919381462932468,
+      "sha256": "3425538904def41af5ffb04aa019d354645241a4670aea2a16be92a8de0d71f1"
+    },
+    "uninterrupted_r1/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919381462932468,
+      "sha256": "06dfcff9c46d87c2ed448b6e92bfa5650d8d04bc58ead09e45ec5558e93ca7ae"
+    },
+    "uninterrupted_r1/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919381504844481,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "uninterrupted_r1/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919381504944151,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "uninterrupted_r2/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919389759111686,
+      "sha256": "3425538904def41af5ffb04aa019d354645241a4670aea2a16be92a8de0d71f1"
+    },
+    "uninterrupted_r2/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919389759111686,
+      "sha256": "06dfcff9c46d87c2ed448b6e92bfa5650d8d04bc58ead09e45ec5558e93ca7ae"
+    },
+    "uninterrupted_r2/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919389801290090,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "uninterrupted_r2/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919389801369439,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    },
+    "uninterrupted_r3/local.sqlite": {
+      "bytes": 2084864,
+      "mtime_ns": 1792919397383276190,
+      "sha256": "3425538904def41af5ffb04aa019d354645241a4670aea2a16be92a8de0d71f1"
+    },
+    "uninterrupted_r3/sink.sqlite": {
+      "bytes": 36864,
+      "mtime_ns": 1792919397383276190,
+      "sha256": "06dfcff9c46d87c2ed448b6e92bfa5650d8d04bc58ead09e45ec5558e93ca7ae"
+    },
+    "uninterrupted_r3/sink_attempts.json": {
+      "bytes": 693,
+      "mtime_ns": 1792919397426216114,
+      "sha256": "fd3ce7e7ae051007a8ab3c67f2a730fa3a55e831dd11e87f114162f64ef38309"
+    },
+    "uninterrupted_r3/sink_effects.json": {
+      "bytes": 943,
+      "mtime_ns": 1792919397426299720,
+      "sha256": "ba064b0638202f471bfb1d1fd1b730bfe37dda62cd37f0fcd229c6aad9a43725"
+    }
+  },
+  "passed": false,
+  "prior_semantic_reference": {
+    "actual_semantic_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+    "cell": "day_x1_r1",
+    "run": "event_logs_20261025T084327_927529Z",
+    "trace_sha256": "9a0fa3e89dcb07f3cc1f7a041b93a64a99f3574688fb556261d3232f1d1f96ec"
+  },
+  "raw_changes_during_audit": {},
+  "run_id": "durable_20261025T090940_001269Z",
+  "schema_version": "durable_independent_review_v1"
+}

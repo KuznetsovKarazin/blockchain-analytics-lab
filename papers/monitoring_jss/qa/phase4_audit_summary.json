@@ -1,0 +1,56 @@
+{
+  "schema_version": "phase4_audit_public_summary_v1",
+  "reports": [
+    {
+      "report": "qa/budget_policy_failed_run_independent_review.json",
+      "sha256": "6ec64caffca518bcfe6b1151483ef85c396ed0f6bdf90f6c8c3be6fc370668b4",
+      "bytes": 422246,
+      "status": "FAIL",
+      "private_detailed_report": true
+    },
+    {
+      "report": "qa/budget_policy_retry_integrity_independent_review.json",
+      "sha256": "bce0222af5f60ab8cffa656021393090aaa66ae3b4955dca7a9850d4b2538ce2",
+      "bytes": 860367,
+      "status": "PASS",
+      "private_detailed_report": true
+    },
+    {
+      "report": "qa/budget_policy_actual_independent_review.json",
+      "sha256": "59b1146341b3865f4919edc680480d1f56e2358eb5f9c5bcdfeb16124cb024b6",
+      "bytes": 40617,
+      "status": "PASS",
+      "private_detailed_report": false
+    },
+    {
+      "report": "qa/budget_policy_label_independent_review.json",
+      "sha256": "392208a82da967063732c5bf1539e5179d446ede9307c4fd329bca35bd60197b",
+      "bytes": 3886,
+      "status": true,
+      "private_detailed_report": false
+    },
+    {
+      "report": "qa/phase4_acquisition_independent_review.json",
+      "sha256": "c6cb1db123b3fef9adb63aee3efb7c87a54be5cd0b7ee0e8cbd02192018c71ab",
+      "bytes": 76840,
+      "status": "PASS",
+      "private_detailed_report": false
+    }
+  ],
+  "accepted_run": "budget_policy_20261025T125143_314640Z",
+  "excluded_run": "budget_policy_20261025T124444_450736Z",
+  "excluded_reason": "Five changed/truncated decision gzip artifacts; cause unknown. Original reports and observed bytes preserved.",
+  "accepted_decisions_independently_recomputed": 435240,
+  "complete_final_states": 18,
+  "daily_aggregates": 540,
+  "hourly_aggregates": 12960,
+  "source_address_rows_scanned": 61947520,
+  "whole_source_objects": 60,
+  "header_count": 192391,
+  "within_day_links": 192361,
+  "cross_day_links": 29,
+  "label_join_independent_rows": 260415,
+  "reported_incidents": 1,
+  "independent_incident_test": false,
+  "note": "Detailed hourly outputs and integrity reports containing per-record excerpts are retained in the private evidence package. Public code and hashes reproduce or verify them."
+}

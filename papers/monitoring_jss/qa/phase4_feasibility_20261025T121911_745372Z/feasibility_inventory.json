@@ -1,0 +1,2310 @@
+{
+  "attack_outcomes_evaluated": false,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "papers/monitoring_jss/qa/phase4_window_inventory.py"
+  ],
+  "decision": "Metadata inventory only. Protocol, population, byte caps and durable checkpoint policy require root freeze before any payload collection.",
+  "disk_at_inventory": {
+    "free_bytes": 12329017344,
+    "total_bytes": 33770192896,
+    "used_bytes": 19706413056
+  },
+  "finished_utc": "2026-10-25T12:19:18.641996+00:00",
+  "inventory_semantics": "AWS object discoverability and listed identities only; neither row completeness nor chain receipt completeness established by listing.",
+  "measured_prior_acquisitions": [
+    {
+      "actual_cpu_seconds": null,
+      "cached_range_bytes": 442875951,
+      "cpu_note": "Prior manifests measure wall acquisition and RSS, not process CPU seconds.",
+      "day": "2023-03-01",
+      "header_bytes": 6163058,
+      "manifest": "papers/monitoring_jss/runs/protocol_logs_20261025T083346_282558Z/acquisition_manifest.json",
+      "manifest_sha256": "95ddf39a3d4ec0c7791bc4888fe0d51933177c52dd62f62277564eadffee3828",
+      "payload_groups": 4,
+      "peak_rss_bytes": 482467840,
+      "projection_transfer_ratio": 0.9622264168311695,
+      "range_transfer_elapsed_seconds": 198.46000224999898,
+      "row_groups": 4,
+      "wall_acquisition_seconds": 222.380791
+    },
+    {
+      "actual_cpu_seconds": null,
+      "cached_range_bytes": 439276436,
+      "cpu_note": "Prior manifests measure wall acquisition and RSS, not process CPU seconds.",
+      "day": "2023-03-13",
+      "header_bytes": 6186785,
+      "manifest": "papers/monitoring_jss/runs/protocol_logs_20261025T091457_496507Z/acquisition_manifest.json",
+      "manifest_sha256": "24676a2a8c7ca28ac3f8a946667d6d90ae8f6773c3de8191e48788667b02abcd",
+      "payload_groups": 4,
+      "peak_rss_bytes": 502349824,
+      "projection_transfer_ratio": 0.9619144818153462,
+      "range_transfer_elapsed_seconds": 240.83817481799724,
+      "row_groups": 4,
+      "wall_acquisition_seconds": 268.670333
+    }
+  ],
+  "payload_requests": 0,
+  "run_id": "phase4_feasibility_20261025T121911_745372Z",
+  "same_day_multi_address_reuse": {
+    "cache_identity": [
+      "url",
+      "size",
+      "etag",
+      "version_id"
+    ],
+    "existing_cli": "repeat --address; complete single address-column scan uses membership in the address union",
+    "restriction": "Do not reuse a selected single-emitter JSONL as complete input for another emitter; rescan the complete address column and project all matches for the new frozen union.",
+    "scope": "A single Ethereum source day can serve multiple emitters with separate population projections. These two target windows do not overlap in date, so they share no raw daily bytes.",
+    "supported_in_principle": true
+  },
+  "schema": "phase4_metadata_only_window_feasibility_v1",
+  "script_sha256": "2db01b622ce8e6cfec87ede9d4552ec65e5e6d1196dbc6815fcd6e4e2f81bf9f",
+  "source_metadata_pages": [
+    {
+      "all_pages_complete": true,
+      "month": "2023-03",
+      "objects": [
+        {
+          "etag": "\"0b9b1c95fa46d3a2d47665734cfc2571-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-01/part-00000-f66f43c5-ca46-452e-8e6f-f2f2dfb24829-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:09:40.000Z",
+          "size": 460261684
+        },
+        {
+          "etag": "\"008e56df2f70762af152d04ee113b9f3-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-02/part-00000-8c726f08-7b98-48f8-8abd-d3eb8e388e6d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:07:20.000Z",
+          "size": 472654752
+        },
+        {
+          "etag": "\"5c279171607a31db4edfa9bfa5fe206b-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-03/part-00000-22b43a22-199b-4f4c-9292-52a703407183-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:12:59.000Z",
+          "size": 473164683
+        },
+        {
+          "etag": "\"4ff20da0c83fbbf0d2bdb2d8fb7e7d73-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-04/part-00000-f249978c-67b3-45d9-89c3-b1666f283d25-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:09:13.000Z",
+          "size": 481486748
+        },
+        {
+          "etag": "\"433f4e339dcdd5abde4b2829927bb0ff-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-05/part-00000-faa11f50-a0d0-4c94-bb0a-39fb2dff4b44-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:04:53.000Z",
+          "size": 478365830
+        },
+        {
+          "etag": "\"f5088ea71aef54f66421b0793dc7d173-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-06/part-00000-252e6889-1479-4f58-9034-287a225af5b1-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:04:39.000Z",
+          "size": 474363412
+        },
+        {
+          "etag": "\"229bef59c4e9eca44835c96abc503c93-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-07/part-00000-cb6334e9-5dfb-4ef9-b71e-11860d607806-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:07:50.000Z",
+          "size": 473654817
+        },
+        {
+          "etag": "\"5480e07e728c82461ce4e830b34a7922-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-08/part-00000-a7d9a015-4a37-4d6c-afe0-4efc3a0564b9-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:04.000Z",
+          "size": 478972650
+        },
+        {
+          "etag": "\"7ee3e58ce87a66b13ad2e889dfc707da-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-09/part-00000-4886168e-ddda-4ae5-b5a2-4d53c9222d0f-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:15.000Z",
+          "size": 483333000
+        },
+        {
+          "etag": "\"3032aa8230462e69d7cdafed2fd3a1a1-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-10/part-00000-3db9a2fa-65b9-45ee-a8cb-87b5d4367421-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:11.000Z",
+          "size": 483744317
+        },
+        {
+          "etag": "\"2887db674685fc43249f1ff6de0311ef-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-11/part-00000-8d623792-d01a-4e65-b662-a697ef1f774f-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:29:30.000Z",
+          "size": 441997265
+        },
+        {
+          "etag": "\"1bc39054a889026d1a819d1f2a52e8c8-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-12/part-00000-cb49afe7-4633-46bc-b528-686aa378eb2d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:42.000Z",
+          "size": 468120138
+        },
+        {
+          "etag": "\"9ce67d9d2464ed6ecbeae2fda39ded88-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-13/part-00000-2b4d1fd8-2a91-4f4f-aeae-99a922dcc953-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:15.000Z",
+          "size": 456668908
+        },
+        {
+          "etag": "\"e6ca74bfe612993ab21af1dc8007bea9-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-14/part-00000-47978141-99cf-4e5c-9bc5-5c752ee86bcc-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:07:10.000Z",
+          "size": 453809323
+        },
+        {
+          "etag": "\"502f94baa3df51f662953b164df35738-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-15/part-00000-d7cfba04-13a0-45a8-89e1-f249707f4b9a-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:06:38.000Z",
+          "size": 459706498
+        },
+        {
+          "etag": "\"dee08e8a3aea65c43eb31714232f8261-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-16/part-00000-8cd72f5d-d043-463b-ac6f-7faa33a1a7b8-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:15:30.000Z",
+          "size": 466567248
+        },
+        {
+          "etag": "\"27587a0c7831a7ecee6babc034d53737-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-17/part-00000-1f21254d-d0cc-4c4e-b2e0-340956ebea38-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:16:59.000Z",
+          "size": 455179038
+        },
+        {
+          "etag": "\"73c0af95168d2dde4ec73021b3a39120-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-18/part-00000-78bfab20-4434-4ef7-81a7-f17ae5496e5e-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:09:00.000Z",
+          "size": 453587635
+        },
+        {
+          "etag": "\"bad3c0ec605a4bdc6d79f1785d551fe1-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-19/part-00000-698d7ec2-77f0-481b-accf-d342d16ab000-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:52.000Z",
+          "size": 448238601
+        },
+        {
+          "etag": "\"66f77cbb999ff5cc4003138364ab4ab7-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-20/part-00000-c69a58f1-5afd-400d-8717-8b00a6e276f0-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:07:43.000Z",
+          "size": 462863597
+        },
+        {
+          "etag": "\"de3e2c04111205a825be3ce7f8166bd2-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-21/part-00000-91096c2a-bfb7-4911-adf2-5337ac4395f5-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:08:57.000Z",
+          "size": 456066091
+        },
+        {
+          "etag": "\"27a47cd9f19f04bf4468b6d168afca01-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-22/part-00000-3e7fd23a-5d6a-4d34-9b2a-b07fc2a02990-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:17:21.000Z",
+          "size": 464681270
+        },
+        {
+          "etag": "\"418b61742d16a63402920ba4d2c0b75c-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-23/part-00000-d705c886-1b85-48fc-b0e3-7cc2849920bd-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:46.000Z",
+          "size": 486476351
+        },
+        {
+          "etag": "\"b9f9d90eb73e8ffff061795d2cf06bb3-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-24/part-00000-41008558-71d7-45e5-a09f-1fe7b65f7194-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:34.000Z",
+          "size": 458269469
+        },
+        {
+          "etag": "\"dc7817aba4996720db10a37f7db74258-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-25/part-00000-16dce10a-51cc-4060-bb77-deb27edbd37e-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:08:23.000Z",
+          "size": 447009285
+        },
+        {
+          "etag": "\"7a91fab333c79127862334c0f83cfb37-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-26/part-00000-ee69ec74-0019-45ca-9f70-e70bace1af9a-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:04.000Z",
+          "size": 448072057
+        },
+        {
+          "etag": "\"c9490dc2af40fa63279c348a66f73ba9-8\"",
+          "key": "v1.0/eth/logs/date=2023-03-27/part-00000-91f037ee-23b7-4fbb-bfdf-9e6c603abbe0-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:06:58.000Z",
+          "size": 472477932
+        },
+        {
+          "etag": "\"a57476dfc77c2565b38de4e7943b51fb-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-28/part-00000-f401591f-f9ba-4966-afc2-ea9d2e9d3f38-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:58.000Z",
+          "size": 457999995
+        },
+        {
+          "etag": "\"f3171a071e7b5821fbbf28155fae8962-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-29/part-00000-da93900b-1143-4aeb-8730-359ba4b01a5c-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:07:14.000Z",
+          "size": 455212848
+        },
+        {
+          "etag": "\"1cb394ffd994822ad2b0820619ddb0cf-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-30/part-00000-235d0368-cde2-420f-8ada-cbfcc578f8c6-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:59.000Z",
+          "size": 445951625
+        },
+        {
+          "etag": "\"6d9a4d53d17aa200e64ac84961c8c058-7\"",
+          "key": "v1.0/eth/logs/date=2023-03-31/part-00000-14acd47b-0ea7-4052-a2b1-b9606d5c7905-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:08:30.000Z",
+          "size": 455815045
+        }
+      ],
+      "pages": [
+        {
+          "bytes": 12494,
+          "elapsed_seconds": 6.833447998997144,
+          "is_truncated": false,
+          "retrieved_utc": "2026-10-25T12:19:18.579431+00:00",
+          "sha256": "cce5dc0b046342d5cda1defc9d57e2fbb170fc135ead24ff7024e9951053b378",
+          "snapshot": "logs_2023-03_page1.xml",
+          "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2023-03-&max-keys=1000"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2023-03-",
+      "table": "logs"
+    },
+    {
+      "all_pages_complete": true,
+      "month": "2023-03",
+      "objects": [
+        {
+          "etag": "\"a208684c8cee85f8d193a061ce54de69\"",
+          "key": "v1.0/eth/blocks/date=2023-03-01/part-00000-b750e33e-7fdd-47bc-b52d-f7835851062a-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:50.000Z",
+          "size": 6163058
+        },
+        {
+          "etag": "\"30168055733436e980becb724502759e\"",
+          "key": "v1.0/eth/blocks/date=2023-03-02/part-00000-1e17a642-d02b-4b5f-949c-084c9c36c270-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:42.000Z",
+          "size": 6175444
+        },
+        {
+          "etag": "\"ba568071c1eacf2b01a82c842ea395ac\"",
+          "key": "v1.0/eth/blocks/date=2023-03-03/part-00000-a242eda0-6aca-4cae-a752-e1c4702177a1-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:42.000Z",
+          "size": 6155659
+        },
+        {
+          "etag": "\"6640249787cac1f2c82800679ca625a7\"",
+          "key": "v1.0/eth/blocks/date=2023-03-04/part-00000-471fa316-b3a8-4452-bed6-6a977a88feb5-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6164203
+        },
+        {
+          "etag": "\"872a7ef329c5d112101bb04ad8f067d1\"",
+          "key": "v1.0/eth/blocks/date=2023-03-05/part-00000-5323241e-2153-4b19-a205-1e9a46427ecc-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6135128
+        },
+        {
+          "etag": "\"e3724e287a96df9f40b0f117b76e80b1\"",
+          "key": "v1.0/eth/blocks/date=2023-03-06/part-00000-509b1280-f459-4814-8b8f-eefd6673c20c-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:42.000Z",
+          "size": 6152210
+        },
+        {
+          "etag": "\"fadc73c914edaad906b6b597912ab661\"",
+          "key": "v1.0/eth/blocks/date=2023-03-07/part-00000-b4cf1401-e8ae-478c-9c6d-72e7f6cbd1a2-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:42.000Z",
+          "size": 6172151
+        },
+        {
+          "etag": "\"63c8140080b1b9c993cbeb2ff60e597a\"",
+          "key": "v1.0/eth/blocks/date=2023-03-08/part-00000-a6aa5b61-8b9c-4f1c-9c72-0464b3bf4c67-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:42.000Z",
+          "size": 6183506
+        },
+        {
+          "etag": "\"074e9cfd7ea7e974f913c1db074f8a75\"",
+          "key": "v1.0/eth/blocks/date=2023-03-09/part-00000-72dbd9a6-8e35-42a4-8521-29e04968db1f-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:42.000Z",
+          "size": 6189739
+        },
+        {
+          "etag": "\"ba3392719dbf1970eab4f6be388cbbdf\"",
+          "key": "v1.0/eth/blocks/date=2023-03-10/part-00000-1d60a82d-3b22-48e4-a036-b7d3815dbf70-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:42.000Z",
+          "size": 6159620
+        },
+        {
+          "etag": "\"bd5ee84de1318562ad5629bf23829034\"",
+          "key": "v1.0/eth/blocks/date=2023-03-11/part-00000-0568bbd6-d6a2-4476-888b-223a47570610-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:47.000Z",
+          "size": 6157286
+        },
+        {
+          "etag": "\"4694f0521dc4cd2bf404b3bfde556df1\"",
+          "key": "v1.0/eth/blocks/date=2023-03-12/part-00000-f896d346-fee4-4747-89be-2221f92a8238-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:42.000Z",
+          "size": 6168293
+        },
+        {
+          "etag": "\"0da7a8533f1cbd1c61c557b268ccff97\"",
+          "key": "v1.0/eth/blocks/date=2023-03-13/part-00000-de87cb26-3d9e-4815-b5e9-b3b9c4ae4d03-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:48.000Z",
+          "size": 6186785
+        },
+        {
+          "etag": "\"954cd76fbbc4ef036b6baf62d404cb8f\"",
+          "key": "v1.0/eth/blocks/date=2023-03-14/part-00000-729d3518-ab7b-4d83-9e3d-9b15479068e0-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:47.000Z",
+          "size": 6199817
+        },
+        {
+          "etag": "\"d03efe6cbcdda22aa740f229f27e4306\"",
+          "key": "v1.0/eth/blocks/date=2023-03-15/part-00000-c8def1a5-50f8-421c-b51c-7ba56df2d17a-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:49.000Z",
+          "size": 6153067
+        },
+        {
+          "etag": "\"bbc1f727f73779dd50aa0143c297a010\"",
+          "key": "v1.0/eth/blocks/date=2023-03-16/part-00000-e8bdf406-0d70-45b7-ab99-3986e53b5180-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:47.000Z",
+          "size": 6179119
+        },
+        {
+          "etag": "\"7414f664e98a392f85b31065fec9d135\"",
+          "key": "v1.0/eth/blocks/date=2023-03-17/part-00000-f6490ef4-eb6a-4003-a730-1064aa517208-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6179754
+        },
+        {
+          "etag": "\"70da34a150a0dde25680dd9d193f2d7e\"",
+          "key": "v1.0/eth/blocks/date=2023-03-18/part-00000-d9f762ac-74b9-4595-b12b-f85bb6b54e2d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:44.000Z",
+          "size": 6194726
+        },
+        {
+          "etag": "\"3d385f0882366ed9864bc9793ff3381b\"",
+          "key": "v1.0/eth/blocks/date=2023-03-19/part-00000-91e1c330-62f1-4ce1-862d-d718982d6d6d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6142489
+        },
+        {
+          "etag": "\"29e5d20caa5d42ce269ccbbcf1c77556\"",
+          "key": "v1.0/eth/blocks/date=2023-03-20/part-00000-5f194aaf-cc6c-467b-9209-a5f7ae6f929e-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6179818
+        },
+        {
+          "etag": "\"29580bf4b73c3e2e68560a4232b15697\"",
+          "key": "v1.0/eth/blocks/date=2023-03-21/part-00000-ecf7eac0-5105-4861-8be0-1e629b261131-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6206946
+        },
+        {
+          "etag": "\"28a387335f66704541d25285e7c1bdd2\"",
+          "key": "v1.0/eth/blocks/date=2023-03-22/part-00000-3a4bb79c-0f78-4361-ba46-fa128bd3f204-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6200151
+        },
+        {
+          "etag": "\"50226d5bce6b7c32acea6736a624a408\"",
+          "key": "v1.0/eth/blocks/date=2023-03-23/part-00000-a46771cd-4239-49ce-b66d-ed285f4c4120-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:44.000Z",
+          "size": 6148436
+        },
+        {
+          "etag": "\"b0bd726f45faed875f8868cbc987676c\"",
+          "key": "v1.0/eth/blocks/date=2023-03-24/part-00000-75da38d7-2536-4f93-83dd-a52e6d4d7c5d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:44.000Z",
+          "size": 6193091
+        },
+        {
+          "etag": "\"5af20359c0f3c3270b65c6beadcf09c7\"",
+          "key": "v1.0/eth/blocks/date=2023-03-25/part-00000-5a79ca1e-743e-498a-a034-f22b9871e8d8-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6174582
+        },
+        {
+          "etag": "\"5c31ef83253ff0ce46b1b2ff4f445354\"",
+          "key": "v1.0/eth/blocks/date=2023-03-26/part-00000-fe85e9df-9f56-4032-91b5-c8790f558824-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6149072
+        },
+        {
+          "etag": "\"d19a8c3802f2d30f399aa9d83225363a\"",
+          "key": "v1.0/eth/blocks/date=2023-03-27/part-00000-d106e7cb-9d45-43d1-811a-218279abe32d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:43.000Z",
+          "size": 6208851
+        },
+        {
+          "etag": "\"3b4f91788f66a5e857f8077cef4077c3\"",
+          "key": "v1.0/eth/blocks/date=2023-03-28/part-00000-8214c52a-fec7-4db5-a774-b624288f464f-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:44.000Z",
+          "size": 6189775
+        },
+        {
+          "etag": "\"a9b258cb4b166a3de6b479c09eabcbcf\"",
+          "key": "v1.0/eth/blocks/date=2023-03-29/part-00000-292c1d1d-af8a-4fa6-9b7b-e481653dafb4-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:44.000Z",
+          "size": 6200502
+        },
+        {
+          "etag": "\"09156670ddd9d96b4766efebb2bccda0\"",
+          "key": "v1.0/eth/blocks/date=2023-03-30/part-00000-f9aff739-0e98-43f6-afad-308475b594e0-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:44.000Z",
+          "size": 6183544
+        },
+        {
+          "etag": "\"af3fbdf4f15922723440210746d1ad0f\"",
+          "key": "v1.0/eth/blocks/date=2023-03-31/part-00000-5542f35b-3e7e-413b-8d0a-cab46a86689f-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:44.000Z",
+          "size": 6192690
+        }
+      ],
+      "pages": [
+        {
+          "bytes": 12496,
+          "elapsed_seconds": 6.890735629000119,
+          "is_truncated": false,
+          "retrieved_utc": "2026-10-25T12:19:18.637788+00:00",
+          "sha256": "a492770e6e93de697ee0790c9c20eed2df6b2e75f2b3ef51db88cb741706edfc",
+          "snapshot": "blocks_2023-03_page1.xml",
+          "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2023-03-&max-keys=1000"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2023-03-",
+      "table": "blocks"
+    },
+    {
+      "all_pages_complete": true,
+      "month": "2022-04",
+      "objects": [
+        {
+          "etag": "\"2445163c6e14b72deb49df2562d6f76e-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-01/part-00000-2057e4fd-957d-4c1b-860e-46f888d7e946-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:02:58.000Z",
+          "size": 212248069
+        },
+        {
+          "etag": "\"ad1078b217f2ae0a37c90ee8878eeba0-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-02/part-00000-fcea0575-1f40-4e18-a482-0c44cb375445-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:03.000Z",
+          "size": 213416360
+        },
+        {
+          "etag": "\"9ad8a4e4a36a66ebfc976fd4d87d21b2-6\"",
+          "key": "v1.0/eth/logs/date=2022-04-03/part-00000-9d73465b-2761-402e-8b53-7a3630f3da17-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:00.000Z",
+          "size": 379010992
+        },
+        {
+          "etag": "\"1d4e61992909689408bbf54ff2094aca-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-04/part-00000-5f6ab99c-797a-4ab5-bf90-bf3e84991ba6-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:15.000Z",
+          "size": 205945708
+        },
+        {
+          "etag": "\"396d5539001346f4fbe4e21e48384238-3\"",
+          "key": "v1.0/eth/logs/date=2022-04-05/part-00000-619d04e1-907b-4e75-a0fe-0367733530cb-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:10.000Z",
+          "size": 199882208
+        },
+        {
+          "etag": "\"bbf2929bb7dcb49d1f2b52fa20bd763c-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-06/part-00000-0c3f558e-0d27-4ac8-9e44-4981fdd84f4d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:18.000Z",
+          "size": 215079450
+        },
+        {
+          "etag": "\"1396497d25eadca879d0742c03be72af-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-07/part-00000-18d2bca1-4d19-47c9-b0e3-bc5047cda2cf-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:20.000Z",
+          "size": 205917707
+        },
+        {
+          "etag": "\"29dc8402861fff4b114d66600dd7221a-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-08/part-00000-e4cf700d-9ec7-411c-821f-a852d97074f1-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:06:27.000Z",
+          "size": 208400388
+        },
+        {
+          "etag": "\"798e4ad192c0a3c53ddbca117d09fd56-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-09/part-00000-1f67072e-203e-4188-af72-805971f65f00-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:47.000Z",
+          "size": 203724490
+        },
+        {
+          "etag": "\"12a8534ac495fcf1815b3ea3ef4b33b6-3\"",
+          "key": "v1.0/eth/logs/date=2022-04-10/part-00000-69338c47-a5fc-4c41-bfc1-8f3e465dc38d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:39.000Z",
+          "size": 199329323
+        },
+        {
+          "etag": "\"5c5146b16a520e803d3e5c2ecee6d8c8-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-11/part-00000-995225bd-1165-4e01-bf14-3ffd70402722-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:00.000Z",
+          "size": 209310419
+        },
+        {
+          "etag": "\"c04721169b6149eb3dfe4f7f450643f7-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-12/part-00000-41f3494c-a34c-49ad-a0ad-fa660b0f2d89-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:37.000Z",
+          "size": 206413790
+        },
+        {
+          "etag": "\"0437f97c97e57b1bd337eb5c60f29009-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-13/part-00000-c02d69c3-af1b-4f6c-8f2b-581afd5b5121-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:08:31.000Z",
+          "size": 206424521
+        },
+        {
+          "etag": "\"0b201bace5c35952c138b0be01325a10-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-14/part-00000-31410db3-86de-4ecf-9938-f6338af93261-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:05:37.000Z",
+          "size": 204897680
+        },
+        {
+          "etag": "\"03cf3ac8e66a745f191f858bbe318143-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-15/part-00000-ca14edbc-c4ac-43ae-bbfd-90d082384622-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:05.000Z",
+          "size": 206785294
+        },
+        {
+          "etag": "\"0157c229973dd4bb50fdb0d284c6f6a5-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-16/part-00000-708098d5-0582-457e-b798-9ab542dd80b3-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:02:51.000Z",
+          "size": 209011121
+        },
+        {
+          "etag": "\"9d63c3c0526ded8a1d6113ab41251ad0-6\"",
+          "key": "v1.0/eth/logs/date=2022-04-17/part-00000-d446ec27-2a7a-4a4b-aef9-2ad1fc2c190e-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:02:53.000Z",
+          "size": 390316788
+        },
+        {
+          "etag": "\"549eddae636adb0e85a39c9c893128e7-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-18/part-00000-d3fd3330-d854-4191-921e-9841f49546b6-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:21.000Z",
+          "size": 215501701
+        },
+        {
+          "etag": "\"baf442512874c2698f27da56bf373f6c-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-19/part-00000-efb1ccb4-b0f2-43f0-82ef-a40700b3563f-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:05.000Z",
+          "size": 210428117
+        },
+        {
+          "etag": "\"1c3e5c30153583e95db4f1b749a99545-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-20/part-00000-4f11f066-9e92-4793-8ed9-bc6808b5cd87-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:05.000Z",
+          "size": 202103098
+        },
+        {
+          "etag": "\"521ce8c20558c2018c1d99eb47b8460f-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-21/part-00000-0563aaae-958d-4262-9e14-4ccca973ff16-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:02:36.000Z",
+          "size": 211854848
+        },
+        {
+          "etag": "\"43cb7903b24e8223480b83b00de39cd1-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-22/part-00000-158049b5-b177-4b14-880b-483ba4d74052-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:04.000Z",
+          "size": 211559885
+        },
+        {
+          "etag": "\"790e3405b33c5198f64033847af93ada-6\"",
+          "key": "v1.0/eth/logs/date=2022-04-23/part-00000-9c7b5b68-7043-4280-ae4e-0703422b5678-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:09:29.000Z",
+          "size": 382025583
+        },
+        {
+          "etag": "\"53795bfa94caff9af7bbf3ca04b37d1a-6\"",
+          "key": "v1.0/eth/logs/date=2022-04-24/part-00000-5330332b-31a6-4624-8d67-5edb3c104c87-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:18:06.000Z",
+          "size": 383814846
+        },
+        {
+          "etag": "\"a3f2a8f3341a6df555fb8cb174e96094-6\"",
+          "key": "v1.0/eth/logs/date=2022-04-25/part-00000-64e87d5d-9154-4054-96c7-4346f4ac0214-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:08:01.000Z",
+          "size": 375781377
+        },
+        {
+          "etag": "\"f4b37b133daae0c12bafc8681ad4dac1-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-26/part-00000-da32e202-3cfd-4946-92fa-e11e6eae5582-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:20.000Z",
+          "size": 216450303
+        },
+        {
+          "etag": "\"0f0be7240f13833579648c630ad12333-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-27/part-00000-aa360550-552f-44d4-a463-06f3fad06d06-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:05.000Z",
+          "size": 212137388
+        },
+        {
+          "etag": "\"ada726a7416bd4cbefe61fa424400f41-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-28/part-00000-1c496660-1f31-44c2-a685-852af3369bfe-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:19.000Z",
+          "size": 216993847
+        },
+        {
+          "etag": "\"82d7598f4753fc10630cad2cf0f6a57c-4\"",
+          "key": "v1.0/eth/logs/date=2022-04-29/part-00000-7f8d22c6-d861-4f63-858e-1a73ef87e8d5-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:47.000Z",
+          "size": 217506153
+        },
+        {
+          "etag": "\"227e7e2acd06e891cd86469270c1aca6-6\"",
+          "key": "v1.0/eth/logs/date=2022-04-30/part-00000-b9f8f61d-573c-47ee-9fcc-1cd417cfcc07-c000.snappy.parquet",
+          "last_modified": "2025-09-30T20:03:28.000Z",
+          "size": 388428003
+        }
+      ],
+      "pages": [
+        {
+          "bytes": 12100,
+          "elapsed_seconds": 6.863109665999218,
+          "is_truncated": false,
+          "retrieved_utc": "2026-10-25T12:19:18.610898+00:00",
+          "sha256": "3f742859873740aa741ead9b5f68c7e9aeaaa9899f11bf1a1f17a81c419b30f8",
+          "snapshot": "logs_2022-04_page1.xml",
+          "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-04-&max-keys=1000"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-04-",
+      "table": "logs"
+    },
+    {
+      "all_pages_complete": true,
+      "month": "2022-04",
+      "objects": [
+        {
+          "etag": "\"6979c2429b7dd5aa180d62776e15706e\"",
+          "key": "v1.0/eth/blocks/date=2022-04-01/part-00000-e8b40355-3041-40b1-afe5-5c2510d67b20-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5466704
+        },
+        {
+          "etag": "\"f6480709acf0872fdbe261dcf4993ac3\"",
+          "key": "v1.0/eth/blocks/date=2022-04-02/part-00000-6961c16e-fd4c-4493-b54e-af5e77eae42d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5389617
+        },
+        {
+          "etag": "\"de072ffc0af6621d4be9bdb41c4bb81d\"",
+          "key": "v1.0/eth/blocks/date=2022-04-03/part-00000-e77e848e-6fcb-4fce-87ad-0d21b9ae1eb0-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5417754
+        },
+        {
+          "etag": "\"8bc55192f0b7885542e699511aca4994\"",
+          "key": "v1.0/eth/blocks/date=2022-04-04/part-00000-77b35342-4b9f-4b3a-964f-06e8e79981d8-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:37.000Z",
+          "size": 5331573
+        },
+        {
+          "etag": "\"aeb8b19ba75786b60dbe3024abfcd277\"",
+          "key": "v1.0/eth/blocks/date=2022-04-05/part-00000-4ef159a1-bf2f-4dc3-b582-0a423e2df242-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5417248
+        },
+        {
+          "etag": "\"9b691108b608f6753145e17c1d23661b\"",
+          "key": "v1.0/eth/blocks/date=2022-04-06/part-00000-09bfde89-6fe1-4712-9570-9007a41be99e-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5416650
+        },
+        {
+          "etag": "\"1f690a90f22fc50920029e4607ce4d87\"",
+          "key": "v1.0/eth/blocks/date=2022-04-07/part-00000-2e7f24ec-4c83-4ec3-b9ff-e65a6131e815-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5407090
+        },
+        {
+          "etag": "\"1d221a47ce23aed31e7a06a3ccb9ffd6\"",
+          "key": "v1.0/eth/blocks/date=2022-04-08/part-00000-2de506d9-3dc0-4b68-a018-b08fffbbc18c-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:39.000Z",
+          "size": 5345148
+        },
+        {
+          "etag": "\"ccf6013b956acabbd9b4019b216f5842\"",
+          "key": "v1.0/eth/blocks/date=2022-04-09/part-00000-93265593-b8ff-4072-b731-fa713da5712f-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:39.000Z",
+          "size": 5394894
+        },
+        {
+          "etag": "\"28380371d2d77a43af60ed688111c474\"",
+          "key": "v1.0/eth/blocks/date=2022-04-10/part-00000-09116deb-cd5b-44b0-b57e-bc05526a0109-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:46.000Z",
+          "size": 5390402
+        },
+        {
+          "etag": "\"a4d5e352b905106cbd57031cf1c59100\"",
+          "key": "v1.0/eth/blocks/date=2022-04-11/part-00000-d6f6ee51-12ae-4479-9d16-d5d251f31c4f-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5441589
+        },
+        {
+          "etag": "\"9d18122c393b8f41d9c38e3b8d6abe26\"",
+          "key": "v1.0/eth/blocks/date=2022-04-12/part-00000-201cf8d3-ce81-44f2-bc64-83aed74536b0-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:57:07.000Z",
+          "size": 5435642
+        },
+        {
+          "etag": "\"c9d3a4286b4e31d386171e7ec0c4b439\"",
+          "key": "v1.0/eth/blocks/date=2022-04-13/part-00000-442af023-90e9-421d-9fa3-6caa25f6421d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:39.000Z",
+          "size": 5325994
+        },
+        {
+          "etag": "\"7ad8a98e1c69d87e9869c78233bab5e3\"",
+          "key": "v1.0/eth/blocks/date=2022-04-14/part-00000-86f57835-aba0-4e10-b8f7-6ced11b86827-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5380705
+        },
+        {
+          "etag": "\"20aac4d51baa4371cf8402f8ffe44840\"",
+          "key": "v1.0/eth/blocks/date=2022-04-15/part-00000-cba9f4cd-dd8a-465a-b922-dbef6a173599-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5417635
+        },
+        {
+          "etag": "\"fa38df593bc3692720a366f04a10dbd5\"",
+          "key": "v1.0/eth/blocks/date=2022-04-16/part-00000-6e4f7693-6226-48ae-90da-f8356e62b3e1-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:37.000Z",
+          "size": 5342501
+        },
+        {
+          "etag": "\"1d4bb0598e87ac11f28f92782f443982\"",
+          "key": "v1.0/eth/blocks/date=2022-04-17/part-00000-16b58699-d097-4d80-bff7-067b6768736c-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5392294
+        },
+        {
+          "etag": "\"f83e0c735cb4b197fe5abaf7539c43b5\"",
+          "key": "v1.0/eth/blocks/date=2022-04-18/part-00000-84f4571b-29bb-4e51-aef2-d8c6319ab40b-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:39.000Z",
+          "size": 5351068
+        },
+        {
+          "etag": "\"d625316ba0fafc3f03662a73d12c1af2\"",
+          "key": "v1.0/eth/blocks/date=2022-04-19/part-00000-1656834c-e403-4b99-b748-059332f01e9a-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:39.000Z",
+          "size": 5375825
+        },
+        {
+          "etag": "\"2feb75b15b2eb9cc68f409c4d0afb7c6\"",
+          "key": "v1.0/eth/blocks/date=2022-04-20/part-00000-0f518c6e-eeaf-486a-80f4-ab2789298410-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:39.000Z",
+          "size": 5398668
+        },
+        {
+          "etag": "\"757049d67e996962b518599ad3b7a4e9\"",
+          "key": "v1.0/eth/blocks/date=2022-04-21/part-00000-bdb87a43-d168-418d-b431-9cd4ddcb3fed-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:44.000Z",
+          "size": 5285386
+        },
+        {
+          "etag": "\"658ac946b7e5f07a0d944ae41353e754\"",
+          "key": "v1.0/eth/blocks/date=2022-04-22/part-00000-edb60bbc-9405-4b62-9658-572949ddee6d-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5384968
+        },
+        {
+          "etag": "\"0799ace5ed0151f6b8ea3b8ae1e04757\"",
+          "key": "v1.0/eth/blocks/date=2022-04-23/part-00000-86678f06-d4c5-4da3-ac35-8333b5b87c8e-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5348470
+        },
+        {
+          "etag": "\"f07bed39a9cf1cf01c4d1324ea7ed058\"",
+          "key": "v1.0/eth/blocks/date=2022-04-24/part-00000-68722fad-0a68-47f7-96c7-ed180e2f9995-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5329101
+        },
+        {
+          "etag": "\"c7d313e147ebb2c6d8f925b8a0ddc00e\"",
+          "key": "v1.0/eth/blocks/date=2022-04-25/part-00000-4de6b185-575d-4132-a85c-34a0d8e6246a-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:37.000Z",
+          "size": 5332406
+        },
+        {
+          "etag": "\"0356a402b01a4f63ab662cb83fe90961\"",
+          "key": "v1.0/eth/blocks/date=2022-04-26/part-00000-348e0bd0-f0dc-402a-bb45-b9a2a7123c3e-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5322865
+        },
+        {
+          "etag": "\"922bc564f31d9cd1721178cc4ce26a09\"",
+          "key": "v1.0/eth/blocks/date=2022-04-27/part-00000-ea52a198-83ff-4d83-9904-f3fbbcc642d6-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5377584
+        },
+        {
+          "etag": "\"60c0c38734d5324a5010e6da257abc4d\"",
+          "key": "v1.0/eth/blocks/date=2022-04-28/part-00000-2157f227-9416-4f90-ad98-7d356a38b1e0-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:39.000Z",
+          "size": 5341283
+        },
+        {
+          "etag": "\"260c0692378d1c3787378618feea5414\"",
+          "key": "v1.0/eth/blocks/date=2022-04-29/part-00000-c2996d15-d36b-48f6-8dc7-1150d06da7b6-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:39.000Z",
+          "size": 5371964
+        },
+        {
+          "etag": "\"c8a7ccccd3a266218d2f9af71af04f0c\"",
+          "key": "v1.0/eth/blocks/date=2022-04-30/part-00000-e189a140-40b2-48f6-9531-6d004543e9b8-c000.snappy.parquet",
+          "last_modified": "2025-09-30T19:56:38.000Z",
+          "size": 5339847
+        }
+      ],
+      "pages": [
+        {
+          "bytes": 12102,
+          "elapsed_seconds": 6.8187954039967735,
+          "is_truncated": false,
+          "retrieved_utc": "2026-10-25T12:19:18.567266+00:00",
+          "sha256": "94c10235117b1aab8420bc146353c14756fdd238e336b2d471f2cc078d6b8b3f",
+          "snapshot": "blocks_2022-04_page1.xml",
+          "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-04-&max-keys=1000"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-04-",
+      "table": "blocks"
+    }
+  ],
+  "started_utc": "2026-10-25T12:19:11.745533+00:00",
+  "windows": [
+    {
+      "all_days_exactly_one_log_and_one_header_object": true,
+      "complete_inventory_days": 30,
+      "days": [
+        {
+          "blocks": [
+            {
+              "etag": "\"a208684c8cee85f8d193a061ce54de69\"",
+              "key": "v1.0/eth/blocks/date=2023-03-01/part-00000-b750e33e-7fdd-47bc-b52d-f7835851062a-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:50.000Z",
+              "size": 6163058
+            }
+          ],
+          "blocks_bytes": 6163058,
+          "blocks_object_count": 1,
+          "day": "2023-03-01",
+          "logs": [
+            {
+              "etag": "\"0b9b1c95fa46d3a2d47665734cfc2571-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-01/part-00000-f66f43c5-ca46-452e-8e6f-f2f2dfb24829-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:09:40.000Z",
+              "size": 460261684
+            }
+          ],
+          "logs_bytes": 460261684,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"30168055733436e980becb724502759e\"",
+              "key": "v1.0/eth/blocks/date=2023-03-02/part-00000-1e17a642-d02b-4b5f-949c-084c9c36c270-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:42.000Z",
+              "size": 6175444
+            }
+          ],
+          "blocks_bytes": 6175444,
+          "blocks_object_count": 1,
+          "day": "2023-03-02",
+          "logs": [
+            {
+              "etag": "\"008e56df2f70762af152d04ee113b9f3-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-02/part-00000-8c726f08-7b98-48f8-8abd-d3eb8e388e6d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:07:20.000Z",
+              "size": 472654752
+            }
+          ],
+          "logs_bytes": 472654752,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"ba568071c1eacf2b01a82c842ea395ac\"",
+              "key": "v1.0/eth/blocks/date=2023-03-03/part-00000-a242eda0-6aca-4cae-a752-e1c4702177a1-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:42.000Z",
+              "size": 6155659
+            }
+          ],
+          "blocks_bytes": 6155659,
+          "blocks_object_count": 1,
+          "day": "2023-03-03",
+          "logs": [
+            {
+              "etag": "\"5c279171607a31db4edfa9bfa5fe206b-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-03/part-00000-22b43a22-199b-4f4c-9292-52a703407183-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:12:59.000Z",
+              "size": 473164683
+            }
+          ],
+          "logs_bytes": 473164683,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"6640249787cac1f2c82800679ca625a7\"",
+              "key": "v1.0/eth/blocks/date=2023-03-04/part-00000-471fa316-b3a8-4452-bed6-6a977a88feb5-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6164203
+            }
+          ],
+          "blocks_bytes": 6164203,
+          "blocks_object_count": 1,
+          "day": "2023-03-04",
+          "logs": [
+            {
+              "etag": "\"4ff20da0c83fbbf0d2bdb2d8fb7e7d73-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-04/part-00000-f249978c-67b3-45d9-89c3-b1666f283d25-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:09:13.000Z",
+              "size": 481486748
+            }
+          ],
+          "logs_bytes": 481486748,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"872a7ef329c5d112101bb04ad8f067d1\"",
+              "key": "v1.0/eth/blocks/date=2023-03-05/part-00000-5323241e-2153-4b19-a205-1e9a46427ecc-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6135128
+            }
+          ],
+          "blocks_bytes": 6135128,
+          "blocks_object_count": 1,
+          "day": "2023-03-05",
+          "logs": [
+            {
+              "etag": "\"433f4e339dcdd5abde4b2829927bb0ff-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-05/part-00000-faa11f50-a0d0-4c94-bb0a-39fb2dff4b44-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:04:53.000Z",
+              "size": 478365830
+            }
+          ],
+          "logs_bytes": 478365830,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"e3724e287a96df9f40b0f117b76e80b1\"",
+              "key": "v1.0/eth/blocks/date=2023-03-06/part-00000-509b1280-f459-4814-8b8f-eefd6673c20c-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:42.000Z",
+              "size": 6152210
+            }
+          ],
+          "blocks_bytes": 6152210,
+          "blocks_object_count": 1,
+          "day": "2023-03-06",
+          "logs": [
+            {
+              "etag": "\"f5088ea71aef54f66421b0793dc7d173-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-06/part-00000-252e6889-1479-4f58-9034-287a225af5b1-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:04:39.000Z",
+              "size": 474363412
+            }
+          ],
+          "logs_bytes": 474363412,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"fadc73c914edaad906b6b597912ab661\"",
+              "key": "v1.0/eth/blocks/date=2023-03-07/part-00000-b4cf1401-e8ae-478c-9c6d-72e7f6cbd1a2-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:42.000Z",
+              "size": 6172151
+            }
+          ],
+          "blocks_bytes": 6172151,
+          "blocks_object_count": 1,
+          "day": "2023-03-07",
+          "logs": [
+            {
+              "etag": "\"229bef59c4e9eca44835c96abc503c93-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-07/part-00000-cb6334e9-5dfb-4ef9-b71e-11860d607806-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:07:50.000Z",
+              "size": 473654817
+            }
+          ],
+          "logs_bytes": 473654817,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"63c8140080b1b9c993cbeb2ff60e597a\"",
+              "key": "v1.0/eth/blocks/date=2023-03-08/part-00000-a6aa5b61-8b9c-4f1c-9c72-0464b3bf4c67-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:42.000Z",
+              "size": 6183506
+            }
+          ],
+          "blocks_bytes": 6183506,
+          "blocks_object_count": 1,
+          "day": "2023-03-08",
+          "logs": [
+            {
+              "etag": "\"5480e07e728c82461ce4e830b34a7922-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-08/part-00000-a7d9a015-4a37-4d6c-afe0-4efc3a0564b9-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:04.000Z",
+              "size": 478972650
+            }
+          ],
+          "logs_bytes": 478972650,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"074e9cfd7ea7e974f913c1db074f8a75\"",
+              "key": "v1.0/eth/blocks/date=2023-03-09/part-00000-72dbd9a6-8e35-42a4-8521-29e04968db1f-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:42.000Z",
+              "size": 6189739
+            }
+          ],
+          "blocks_bytes": 6189739,
+          "blocks_object_count": 1,
+          "day": "2023-03-09",
+          "logs": [
+            {
+              "etag": "\"7ee3e58ce87a66b13ad2e889dfc707da-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-09/part-00000-4886168e-ddda-4ae5-b5a2-4d53c9222d0f-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:15.000Z",
+              "size": 483333000
+            }
+          ],
+          "logs_bytes": 483333000,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"ba3392719dbf1970eab4f6be388cbbdf\"",
+              "key": "v1.0/eth/blocks/date=2023-03-10/part-00000-1d60a82d-3b22-48e4-a036-b7d3815dbf70-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:42.000Z",
+              "size": 6159620
+            }
+          ],
+          "blocks_bytes": 6159620,
+          "blocks_object_count": 1,
+          "day": "2023-03-10",
+          "logs": [
+            {
+              "etag": "\"3032aa8230462e69d7cdafed2fd3a1a1-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-10/part-00000-3db9a2fa-65b9-45ee-a8cb-87b5d4367421-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:11.000Z",
+              "size": 483744317
+            }
+          ],
+          "logs_bytes": 483744317,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"bd5ee84de1318562ad5629bf23829034\"",
+              "key": "v1.0/eth/blocks/date=2023-03-11/part-00000-0568bbd6-d6a2-4476-888b-223a47570610-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:47.000Z",
+              "size": 6157286
+            }
+          ],
+          "blocks_bytes": 6157286,
+          "blocks_object_count": 1,
+          "day": "2023-03-11",
+          "logs": [
+            {
+              "etag": "\"2887db674685fc43249f1ff6de0311ef-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-11/part-00000-8d623792-d01a-4e65-b662-a697ef1f774f-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:29:30.000Z",
+              "size": 441997265
+            }
+          ],
+          "logs_bytes": 441997265,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"4694f0521dc4cd2bf404b3bfde556df1\"",
+              "key": "v1.0/eth/blocks/date=2023-03-12/part-00000-f896d346-fee4-4747-89be-2221f92a8238-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:42.000Z",
+              "size": 6168293
+            }
+          ],
+          "blocks_bytes": 6168293,
+          "blocks_object_count": 1,
+          "day": "2023-03-12",
+          "logs": [
+            {
+              "etag": "\"1bc39054a889026d1a819d1f2a52e8c8-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-12/part-00000-cb49afe7-4633-46bc-b528-686aa378eb2d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:42.000Z",
+              "size": 468120138
+            }
+          ],
+          "logs_bytes": 468120138,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"0da7a8533f1cbd1c61c557b268ccff97\"",
+              "key": "v1.0/eth/blocks/date=2023-03-13/part-00000-de87cb26-3d9e-4815-b5e9-b3b9c4ae4d03-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:48.000Z",
+              "size": 6186785
+            }
+          ],
+          "blocks_bytes": 6186785,
+          "blocks_object_count": 1,
+          "day": "2023-03-13",
+          "logs": [
+            {
+              "etag": "\"9ce67d9d2464ed6ecbeae2fda39ded88-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-13/part-00000-2b4d1fd8-2a91-4f4f-aeae-99a922dcc953-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:15.000Z",
+              "size": 456668908
+            }
+          ],
+          "logs_bytes": 456668908,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"954cd76fbbc4ef036b6baf62d404cb8f\"",
+              "key": "v1.0/eth/blocks/date=2023-03-14/part-00000-729d3518-ab7b-4d83-9e3d-9b15479068e0-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:47.000Z",
+              "size": 6199817
+            }
+          ],
+          "blocks_bytes": 6199817,
+          "blocks_object_count": 1,
+          "day": "2023-03-14",
+          "logs": [
+            {
+              "etag": "\"e6ca74bfe612993ab21af1dc8007bea9-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-14/part-00000-47978141-99cf-4e5c-9bc5-5c752ee86bcc-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:07:10.000Z",
+              "size": 453809323
+            }
+          ],
+          "logs_bytes": 453809323,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"d03efe6cbcdda22aa740f229f27e4306\"",
+              "key": "v1.0/eth/blocks/date=2023-03-15/part-00000-c8def1a5-50f8-421c-b51c-7ba56df2d17a-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:49.000Z",
+              "size": 6153067
+            }
+          ],
+          "blocks_bytes": 6153067,
+          "blocks_object_count": 1,
+          "day": "2023-03-15",
+          "logs": [
+            {
+              "etag": "\"502f94baa3df51f662953b164df35738-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-15/part-00000-d7cfba04-13a0-45a8-89e1-f249707f4b9a-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:06:38.000Z",
+              "size": 459706498
+            }
+          ],
+          "logs_bytes": 459706498,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"bbc1f727f73779dd50aa0143c297a010\"",
+              "key": "v1.0/eth/blocks/date=2023-03-16/part-00000-e8bdf406-0d70-45b7-ab99-3986e53b5180-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:47.000Z",
+              "size": 6179119
+            }
+          ],
+          "blocks_bytes": 6179119,
+          "blocks_object_count": 1,
+          "day": "2023-03-16",
+          "logs": [
+            {
+              "etag": "\"dee08e8a3aea65c43eb31714232f8261-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-16/part-00000-8cd72f5d-d043-463b-ac6f-7faa33a1a7b8-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:15:30.000Z",
+              "size": 466567248
+            }
+          ],
+          "logs_bytes": 466567248,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"7414f664e98a392f85b31065fec9d135\"",
+              "key": "v1.0/eth/blocks/date=2023-03-17/part-00000-f6490ef4-eb6a-4003-a730-1064aa517208-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6179754
+            }
+          ],
+          "blocks_bytes": 6179754,
+          "blocks_object_count": 1,
+          "day": "2023-03-17",
+          "logs": [
+            {
+              "etag": "\"27587a0c7831a7ecee6babc034d53737-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-17/part-00000-1f21254d-d0cc-4c4e-b2e0-340956ebea38-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:16:59.000Z",
+              "size": 455179038
+            }
+          ],
+          "logs_bytes": 455179038,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"70da34a150a0dde25680dd9d193f2d7e\"",
+              "key": "v1.0/eth/blocks/date=2023-03-18/part-00000-d9f762ac-74b9-4595-b12b-f85bb6b54e2d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:44.000Z",
+              "size": 6194726
+            }
+          ],
+          "blocks_bytes": 6194726,
+          "blocks_object_count": 1,
+          "day": "2023-03-18",
+          "logs": [
+            {
+              "etag": "\"73c0af95168d2dde4ec73021b3a39120-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-18/part-00000-78bfab20-4434-4ef7-81a7-f17ae5496e5e-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:09:00.000Z",
+              "size": 453587635
+            }
+          ],
+          "logs_bytes": 453587635,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"3d385f0882366ed9864bc9793ff3381b\"",
+              "key": "v1.0/eth/blocks/date=2023-03-19/part-00000-91e1c330-62f1-4ce1-862d-d718982d6d6d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6142489
+            }
+          ],
+          "blocks_bytes": 6142489,
+          "blocks_object_count": 1,
+          "day": "2023-03-19",
+          "logs": [
+            {
+              "etag": "\"bad3c0ec605a4bdc6d79f1785d551fe1-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-19/part-00000-698d7ec2-77f0-481b-accf-d342d16ab000-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:52.000Z",
+              "size": 448238601
+            }
+          ],
+          "logs_bytes": 448238601,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"29e5d20caa5d42ce269ccbbcf1c77556\"",
+              "key": "v1.0/eth/blocks/date=2023-03-20/part-00000-5f194aaf-cc6c-467b-9209-a5f7ae6f929e-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6179818
+            }
+          ],
+          "blocks_bytes": 6179818,
+          "blocks_object_count": 1,
+          "day": "2023-03-20",
+          "logs": [
+            {
+              "etag": "\"66f77cbb999ff5cc4003138364ab4ab7-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-20/part-00000-c69a58f1-5afd-400d-8717-8b00a6e276f0-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:07:43.000Z",
+              "size": 462863597
+            }
+          ],
+          "logs_bytes": 462863597,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"29580bf4b73c3e2e68560a4232b15697\"",
+              "key": "v1.0/eth/blocks/date=2023-03-21/part-00000-ecf7eac0-5105-4861-8be0-1e629b261131-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6206946
+            }
+          ],
+          "blocks_bytes": 6206946,
+          "blocks_object_count": 1,
+          "day": "2023-03-21",
+          "logs": [
+            {
+              "etag": "\"de3e2c04111205a825be3ce7f8166bd2-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-21/part-00000-91096c2a-bfb7-4911-adf2-5337ac4395f5-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:08:57.000Z",
+              "size": 456066091
+            }
+          ],
+          "logs_bytes": 456066091,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"28a387335f66704541d25285e7c1bdd2\"",
+              "key": "v1.0/eth/blocks/date=2023-03-22/part-00000-3a4bb79c-0f78-4361-ba46-fa128bd3f204-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6200151
+            }
+          ],
+          "blocks_bytes": 6200151,
+          "blocks_object_count": 1,
+          "day": "2023-03-22",
+          "logs": [
+            {
+              "etag": "\"27a47cd9f19f04bf4468b6d168afca01-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-22/part-00000-3e7fd23a-5d6a-4d34-9b2a-b07fc2a02990-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:17:21.000Z",
+              "size": 464681270
+            }
+          ],
+          "logs_bytes": 464681270,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"50226d5bce6b7c32acea6736a624a408\"",
+              "key": "v1.0/eth/blocks/date=2023-03-23/part-00000-a46771cd-4239-49ce-b66d-ed285f4c4120-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:44.000Z",
+              "size": 6148436
+            }
+          ],
+          "blocks_bytes": 6148436,
+          "blocks_object_count": 1,
+          "day": "2023-03-23",
+          "logs": [
+            {
+              "etag": "\"418b61742d16a63402920ba4d2c0b75c-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-23/part-00000-d705c886-1b85-48fc-b0e3-7cc2849920bd-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:46.000Z",
+              "size": 486476351
+            }
+          ],
+          "logs_bytes": 486476351,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"b0bd726f45faed875f8868cbc987676c\"",
+              "key": "v1.0/eth/blocks/date=2023-03-24/part-00000-75da38d7-2536-4f93-83dd-a52e6d4d7c5d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:44.000Z",
+              "size": 6193091
+            }
+          ],
+          "blocks_bytes": 6193091,
+          "blocks_object_count": 1,
+          "day": "2023-03-24",
+          "logs": [
+            {
+              "etag": "\"b9f9d90eb73e8ffff061795d2cf06bb3-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-24/part-00000-41008558-71d7-45e5-a09f-1fe7b65f7194-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:34.000Z",
+              "size": 458269469
+            }
+          ],
+          "logs_bytes": 458269469,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"5af20359c0f3c3270b65c6beadcf09c7\"",
+              "key": "v1.0/eth/blocks/date=2023-03-25/part-00000-5a79ca1e-743e-498a-a034-f22b9871e8d8-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6174582
+            }
+          ],
+          "blocks_bytes": 6174582,
+          "blocks_object_count": 1,
+          "day": "2023-03-25",
+          "logs": [
+            {
+              "etag": "\"dc7817aba4996720db10a37f7db74258-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-25/part-00000-16dce10a-51cc-4060-bb77-deb27edbd37e-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:08:23.000Z",
+              "size": 447009285
+            }
+          ],
+          "logs_bytes": 447009285,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"5c31ef83253ff0ce46b1b2ff4f445354\"",
+              "key": "v1.0/eth/blocks/date=2023-03-26/part-00000-fe85e9df-9f56-4032-91b5-c8790f558824-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6149072
+            }
+          ],
+          "blocks_bytes": 6149072,
+          "blocks_object_count": 1,
+          "day": "2023-03-26",
+          "logs": [
+            {
+              "etag": "\"7a91fab333c79127862334c0f83cfb37-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-26/part-00000-ee69ec74-0019-45ca-9f70-e70bace1af9a-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:04.000Z",
+              "size": 448072057
+            }
+          ],
+          "logs_bytes": 448072057,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"d19a8c3802f2d30f399aa9d83225363a\"",
+              "key": "v1.0/eth/blocks/date=2023-03-27/part-00000-d106e7cb-9d45-43d1-811a-218279abe32d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:43.000Z",
+              "size": 6208851
+            }
+          ],
+          "blocks_bytes": 6208851,
+          "blocks_object_count": 1,
+          "day": "2023-03-27",
+          "logs": [
+            {
+              "etag": "\"c9490dc2af40fa63279c348a66f73ba9-8\"",
+              "key": "v1.0/eth/logs/date=2023-03-27/part-00000-91f037ee-23b7-4fbb-bfdf-9e6c603abbe0-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:06:58.000Z",
+              "size": 472477932
+            }
+          ],
+          "logs_bytes": 472477932,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"3b4f91788f66a5e857f8077cef4077c3\"",
+              "key": "v1.0/eth/blocks/date=2023-03-28/part-00000-8214c52a-fec7-4db5-a774-b624288f464f-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:44.000Z",
+              "size": 6189775
+            }
+          ],
+          "blocks_bytes": 6189775,
+          "blocks_object_count": 1,
+          "day": "2023-03-28",
+          "logs": [
+            {
+              "etag": "\"a57476dfc77c2565b38de4e7943b51fb-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-28/part-00000-f401591f-f9ba-4966-afc2-ea9d2e9d3f38-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:58.000Z",
+              "size": 457999995
+            }
+          ],
+          "logs_bytes": 457999995,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"a9b258cb4b166a3de6b479c09eabcbcf\"",
+              "key": "v1.0/eth/blocks/date=2023-03-29/part-00000-292c1d1d-af8a-4fa6-9b7b-e481653dafb4-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:44.000Z",
+              "size": 6200502
+            }
+          ],
+          "blocks_bytes": 6200502,
+          "blocks_object_count": 1,
+          "day": "2023-03-29",
+          "logs": [
+            {
+              "etag": "\"f3171a071e7b5821fbbf28155fae8962-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-29/part-00000-da93900b-1143-4aeb-8730-359ba4b01a5c-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:07:14.000Z",
+              "size": 455212848
+            }
+          ],
+          "logs_bytes": 455212848,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"09156670ddd9d96b4766efebb2bccda0\"",
+              "key": "v1.0/eth/blocks/date=2023-03-30/part-00000-f9aff739-0e98-43f6-afad-308475b594e0-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:44.000Z",
+              "size": 6183544
+            }
+          ],
+          "blocks_bytes": 6183544,
+          "blocks_object_count": 1,
+          "day": "2023-03-30",
+          "logs": [
+            {
+              "etag": "\"1cb394ffd994822ad2b0820619ddb0cf-7\"",
+              "key": "v1.0/eth/logs/date=2023-03-30/part-00000-235d0368-cde2-420f-8ada-cbfcc578f8c6-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:59.000Z",
+              "size": 445951625
+            }
+          ],
+          "logs_bytes": 445951625,
+          "logs_object_count": 1
+        }
+      ],
+      "end_day_inclusive": "2023-03-30",
+      "estimated_projection_bytes_using_measured_euler_ratio": 13576264102,
+      "estimated_sequential_wall_seconds_range": [
+        6723,
+        8507
+      ],
+      "expected_days": 30,
+      "full_object_bytes_total": 14104203889,
+      "headers_total_bytes": 185246822,
+      "logs_day_max_bytes": 486476351,
+      "logs_day_min_bytes": 441997265,
+      "logs_days_over_current_500MB_cap": [],
+      "logs_total_bytes": 13918957067,
+      "projection_estimate_limit": "Extrapolation from two Euler days. Match distribution for remaining days/Beanstalk is unknown until a complete address scan; not a measured coverage claim.",
+      "protocol": "Euler",
+      "raw_archives_stored_bytes_approx_range": [
+        13576264102,
+        14104203889
+      ],
+      "start_day": "2023-03-01",
+      "whole_source_projection_sha256_claim": false
+    },
+    {
+      "all_days_exactly_one_log_and_one_header_object": true,
+      "complete_inventory_days": 30,
+      "days": [
+        {
+          "blocks": [
+            {
+              "etag": "\"6979c2429b7dd5aa180d62776e15706e\"",
+              "key": "v1.0/eth/blocks/date=2022-04-01/part-00000-e8b40355-3041-40b1-afe5-5c2510d67b20-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5466704
+            }
+          ],
+          "blocks_bytes": 5466704,
+          "blocks_object_count": 1,
+          "day": "2022-04-01",
+          "logs": [
+            {
+              "etag": "\"2445163c6e14b72deb49df2562d6f76e-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-01/part-00000-2057e4fd-957d-4c1b-860e-46f888d7e946-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:02:58.000Z",
+              "size": 212248069
+            }
+          ],
+          "logs_bytes": 212248069,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"f6480709acf0872fdbe261dcf4993ac3\"",
+              "key": "v1.0/eth/blocks/date=2022-04-02/part-00000-6961c16e-fd4c-4493-b54e-af5e77eae42d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5389617
+            }
+          ],
+          "blocks_bytes": 5389617,
+          "blocks_object_count": 1,
+          "day": "2022-04-02",
+          "logs": [
+            {
+              "etag": "\"ad1078b217f2ae0a37c90ee8878eeba0-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-02/part-00000-fcea0575-1f40-4e18-a482-0c44cb375445-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:03.000Z",
+              "size": 213416360
+            }
+          ],
+          "logs_bytes": 213416360,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"de072ffc0af6621d4be9bdb41c4bb81d\"",
+              "key": "v1.0/eth/blocks/date=2022-04-03/part-00000-e77e848e-6fcb-4fce-87ad-0d21b9ae1eb0-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5417754
+            }
+          ],
+          "blocks_bytes": 5417754,
+          "blocks_object_count": 1,
+          "day": "2022-04-03",
+          "logs": [
+            {
+              "etag": "\"9ad8a4e4a36a66ebfc976fd4d87d21b2-6\"",
+              "key": "v1.0/eth/logs/date=2022-04-03/part-00000-9d73465b-2761-402e-8b53-7a3630f3da17-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:00.000Z",
+              "size": 379010992
+            }
+          ],
+          "logs_bytes": 379010992,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"8bc55192f0b7885542e699511aca4994\"",
+              "key": "v1.0/eth/blocks/date=2022-04-04/part-00000-77b35342-4b9f-4b3a-964f-06e8e79981d8-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:37.000Z",
+              "size": 5331573
+            }
+          ],
+          "blocks_bytes": 5331573,
+          "blocks_object_count": 1,
+          "day": "2022-04-04",
+          "logs": [
+            {
+              "etag": "\"1d4e61992909689408bbf54ff2094aca-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-04/part-00000-5f6ab99c-797a-4ab5-bf90-bf3e84991ba6-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:15.000Z",
+              "size": 205945708
+            }
+          ],
+          "logs_bytes": 205945708,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"aeb8b19ba75786b60dbe3024abfcd277\"",
+              "key": "v1.0/eth/blocks/date=2022-04-05/part-00000-4ef159a1-bf2f-4dc3-b582-0a423e2df242-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5417248
+            }
+          ],
+          "blocks_bytes": 5417248,
+          "blocks_object_count": 1,
+          "day": "2022-04-05",
+          "logs": [
+            {
+              "etag": "\"396d5539001346f4fbe4e21e48384238-3\"",
+              "key": "v1.0/eth/logs/date=2022-04-05/part-00000-619d04e1-907b-4e75-a0fe-0367733530cb-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:10.000Z",
+              "size": 199882208
+            }
+          ],
+          "logs_bytes": 199882208,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"9b691108b608f6753145e17c1d23661b\"",
+              "key": "v1.0/eth/blocks/date=2022-04-06/part-00000-09bfde89-6fe1-4712-9570-9007a41be99e-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5416650
+            }
+          ],
+          "blocks_bytes": 5416650,
+          "blocks_object_count": 1,
+          "day": "2022-04-06",
+          "logs": [
+            {
+              "etag": "\"bbf2929bb7dcb49d1f2b52fa20bd763c-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-06/part-00000-0c3f558e-0d27-4ac8-9e44-4981fdd84f4d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:18.000Z",
+              "size": 215079450
+            }
+          ],
+          "logs_bytes": 215079450,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"1f690a90f22fc50920029e4607ce4d87\"",
+              "key": "v1.0/eth/blocks/date=2022-04-07/part-00000-2e7f24ec-4c83-4ec3-b9ff-e65a6131e815-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5407090
+            }
+          ],
+          "blocks_bytes": 5407090,
+          "blocks_object_count": 1,
+          "day": "2022-04-07",
+          "logs": [
+            {
+              "etag": "\"1396497d25eadca879d0742c03be72af-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-07/part-00000-18d2bca1-4d19-47c9-b0e3-bc5047cda2cf-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:20.000Z",
+              "size": 205917707
+            }
+          ],
+          "logs_bytes": 205917707,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"1d221a47ce23aed31e7a06a3ccb9ffd6\"",
+              "key": "v1.0/eth/blocks/date=2022-04-08/part-00000-2de506d9-3dc0-4b68-a018-b08fffbbc18c-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:39.000Z",
+              "size": 5345148
+            }
+          ],
+          "blocks_bytes": 5345148,
+          "blocks_object_count": 1,
+          "day": "2022-04-08",
+          "logs": [
+            {
+              "etag": "\"29dc8402861fff4b114d66600dd7221a-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-08/part-00000-e4cf700d-9ec7-411c-821f-a852d97074f1-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:06:27.000Z",
+              "size": 208400388
+            }
+          ],
+          "logs_bytes": 208400388,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"ccf6013b956acabbd9b4019b216f5842\"",
+              "key": "v1.0/eth/blocks/date=2022-04-09/part-00000-93265593-b8ff-4072-b731-fa713da5712f-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:39.000Z",
+              "size": 5394894
+            }
+          ],
+          "blocks_bytes": 5394894,
+          "blocks_object_count": 1,
+          "day": "2022-04-09",
+          "logs": [
+            {
+              "etag": "\"798e4ad192c0a3c53ddbca117d09fd56-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-09/part-00000-1f67072e-203e-4188-af72-805971f65f00-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:47.000Z",
+              "size": 203724490
+            }
+          ],
+          "logs_bytes": 203724490,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"28380371d2d77a43af60ed688111c474\"",
+              "key": "v1.0/eth/blocks/date=2022-04-10/part-00000-09116deb-cd5b-44b0-b57e-bc05526a0109-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:46.000Z",
+              "size": 5390402
+            }
+          ],
+          "blocks_bytes": 5390402,
+          "blocks_object_count": 1,
+          "day": "2022-04-10",
+          "logs": [
+            {
+              "etag": "\"12a8534ac495fcf1815b3ea3ef4b33b6-3\"",
+              "key": "v1.0/eth/logs/date=2022-04-10/part-00000-69338c47-a5fc-4c41-bfc1-8f3e465dc38d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:39.000Z",
+              "size": 199329323
+            }
+          ],
+          "logs_bytes": 199329323,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"a4d5e352b905106cbd57031cf1c59100\"",
+              "key": "v1.0/eth/blocks/date=2022-04-11/part-00000-d6f6ee51-12ae-4479-9d16-d5d251f31c4f-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5441589
+            }
+          ],
+          "blocks_bytes": 5441589,
+          "blocks_object_count": 1,
+          "day": "2022-04-11",
+          "logs": [
+            {
+              "etag": "\"5c5146b16a520e803d3e5c2ecee6d8c8-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-11/part-00000-995225bd-1165-4e01-bf14-3ffd70402722-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:00.000Z",
+              "size": 209310419
+            }
+          ],
+          "logs_bytes": 209310419,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"9d18122c393b8f41d9c38e3b8d6abe26\"",
+              "key": "v1.0/eth/blocks/date=2022-04-12/part-00000-201cf8d3-ce81-44f2-bc64-83aed74536b0-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:57:07.000Z",
+              "size": 5435642
+            }
+          ],
+          "blocks_bytes": 5435642,
+          "blocks_object_count": 1,
+          "day": "2022-04-12",
+          "logs": [
+            {
+              "etag": "\"c04721169b6149eb3dfe4f7f450643f7-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-12/part-00000-41f3494c-a34c-49ad-a0ad-fa660b0f2d89-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:37.000Z",
+              "size": 206413790
+            }
+          ],
+          "logs_bytes": 206413790,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"c9d3a4286b4e31d386171e7ec0c4b439\"",
+              "key": "v1.0/eth/blocks/date=2022-04-13/part-00000-442af023-90e9-421d-9fa3-6caa25f6421d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:39.000Z",
+              "size": 5325994
+            }
+          ],
+          "blocks_bytes": 5325994,
+          "blocks_object_count": 1,
+          "day": "2022-04-13",
+          "logs": [
+            {
+              "etag": "\"0437f97c97e57b1bd337eb5c60f29009-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-13/part-00000-c02d69c3-af1b-4f6c-8f2b-581afd5b5121-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:08:31.000Z",
+              "size": 206424521
+            }
+          ],
+          "logs_bytes": 206424521,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"7ad8a98e1c69d87e9869c78233bab5e3\"",
+              "key": "v1.0/eth/blocks/date=2022-04-14/part-00000-86f57835-aba0-4e10-b8f7-6ced11b86827-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5380705
+            }
+          ],
+          "blocks_bytes": 5380705,
+          "blocks_object_count": 1,
+          "day": "2022-04-14",
+          "logs": [
+            {
+              "etag": "\"0b201bace5c35952c138b0be01325a10-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-14/part-00000-31410db3-86de-4ecf-9938-f6338af93261-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:05:37.000Z",
+              "size": 204897680
+            }
+          ],
+          "logs_bytes": 204897680,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"20aac4d51baa4371cf8402f8ffe44840\"",
+              "key": "v1.0/eth/blocks/date=2022-04-15/part-00000-cba9f4cd-dd8a-465a-b922-dbef6a173599-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5417635
+            }
+          ],
+          "blocks_bytes": 5417635,
+          "blocks_object_count": 1,
+          "day": "2022-04-15",
+          "logs": [
+            {
+              "etag": "\"03cf3ac8e66a745f191f858bbe318143-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-15/part-00000-ca14edbc-c4ac-43ae-bbfd-90d082384622-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:05.000Z",
+              "size": 206785294
+            }
+          ],
+          "logs_bytes": 206785294,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"fa38df593bc3692720a366f04a10dbd5\"",
+              "key": "v1.0/eth/blocks/date=2022-04-16/part-00000-6e4f7693-6226-48ae-90da-f8356e62b3e1-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:37.000Z",
+              "size": 5342501
+            }
+          ],
+          "blocks_bytes": 5342501,
+          "blocks_object_count": 1,
+          "day": "2022-04-16",
+          "logs": [
+            {
+              "etag": "\"0157c229973dd4bb50fdb0d284c6f6a5-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-16/part-00000-708098d5-0582-457e-b798-9ab542dd80b3-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:02:51.000Z",
+              "size": 209011121
+            }
+          ],
+          "logs_bytes": 209011121,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"1d4bb0598e87ac11f28f92782f443982\"",
+              "key": "v1.0/eth/blocks/date=2022-04-17/part-00000-16b58699-d097-4d80-bff7-067b6768736c-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5392294
+            }
+          ],
+          "blocks_bytes": 5392294,
+          "blocks_object_count": 1,
+          "day": "2022-04-17",
+          "logs": [
+            {
+              "etag": "\"9d63c3c0526ded8a1d6113ab41251ad0-6\"",
+              "key": "v1.0/eth/logs/date=2022-04-17/part-00000-d446ec27-2a7a-4a4b-aef9-2ad1fc2c190e-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:02:53.000Z",
+              "size": 390316788
+            }
+          ],
+          "logs_bytes": 390316788,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"f83e0c735cb4b197fe5abaf7539c43b5\"",
+              "key": "v1.0/eth/blocks/date=2022-04-18/part-00000-84f4571b-29bb-4e51-aef2-d8c6319ab40b-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:39.000Z",
+              "size": 5351068
+            }
+          ],
+          "blocks_bytes": 5351068,
+          "blocks_object_count": 1,
+          "day": "2022-04-18",
+          "logs": [
+            {
+              "etag": "\"549eddae636adb0e85a39c9c893128e7-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-18/part-00000-d3fd3330-d854-4191-921e-9841f49546b6-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:21.000Z",
+              "size": 215501701
+            }
+          ],
+          "logs_bytes": 215501701,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"d625316ba0fafc3f03662a73d12c1af2\"",
+              "key": "v1.0/eth/blocks/date=2022-04-19/part-00000-1656834c-e403-4b99-b748-059332f01e9a-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:39.000Z",
+              "size": 5375825
+            }
+          ],
+          "blocks_bytes": 5375825,
+          "blocks_object_count": 1,
+          "day": "2022-04-19",
+          "logs": [
+            {
+              "etag": "\"baf442512874c2698f27da56bf373f6c-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-19/part-00000-efb1ccb4-b0f2-43f0-82ef-a40700b3563f-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:05.000Z",
+              "size": 210428117
+            }
+          ],
+          "logs_bytes": 210428117,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"2feb75b15b2eb9cc68f409c4d0afb7c6\"",
+              "key": "v1.0/eth/blocks/date=2022-04-20/part-00000-0f518c6e-eeaf-486a-80f4-ab2789298410-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:39.000Z",
+              "size": 5398668
+            }
+          ],
+          "blocks_bytes": 5398668,
+          "blocks_object_count": 1,
+          "day": "2022-04-20",
+          "logs": [
+            {
+              "etag": "\"1c3e5c30153583e95db4f1b749a99545-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-20/part-00000-4f11f066-9e92-4793-8ed9-bc6808b5cd87-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:05.000Z",
+              "size": 202103098
+            }
+          ],
+          "logs_bytes": 202103098,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"757049d67e996962b518599ad3b7a4e9\"",
+              "key": "v1.0/eth/blocks/date=2022-04-21/part-00000-bdb87a43-d168-418d-b431-9cd4ddcb3fed-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:44.000Z",
+              "size": 5285386
+            }
+          ],
+          "blocks_bytes": 5285386,
+          "blocks_object_count": 1,
+          "day": "2022-04-21",
+          "logs": [
+            {
+              "etag": "\"521ce8c20558c2018c1d99eb47b8460f-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-21/part-00000-0563aaae-958d-4262-9e14-4ccca973ff16-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:02:36.000Z",
+              "size": 211854848
+            }
+          ],
+          "logs_bytes": 211854848,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"658ac946b7e5f07a0d944ae41353e754\"",
+              "key": "v1.0/eth/blocks/date=2022-04-22/part-00000-edb60bbc-9405-4b62-9658-572949ddee6d-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5384968
+            }
+          ],
+          "blocks_bytes": 5384968,
+          "blocks_object_count": 1,
+          "day": "2022-04-22",
+          "logs": [
+            {
+              "etag": "\"43cb7903b24e8223480b83b00de39cd1-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-22/part-00000-158049b5-b177-4b14-880b-483ba4d74052-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:04.000Z",
+              "size": 211559885
+            }
+          ],
+          "logs_bytes": 211559885,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"0799ace5ed0151f6b8ea3b8ae1e04757\"",
+              "key": "v1.0/eth/blocks/date=2022-04-23/part-00000-86678f06-d4c5-4da3-ac35-8333b5b87c8e-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5348470
+            }
+          ],
+          "blocks_bytes": 5348470,
+          "blocks_object_count": 1,
+          "day": "2022-04-23",
+          "logs": [
+            {
+              "etag": "\"790e3405b33c5198f64033847af93ada-6\"",
+              "key": "v1.0/eth/logs/date=2022-04-23/part-00000-9c7b5b68-7043-4280-ae4e-0703422b5678-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:09:29.000Z",
+              "size": 382025583
+            }
+          ],
+          "logs_bytes": 382025583,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"f07bed39a9cf1cf01c4d1324ea7ed058\"",
+              "key": "v1.0/eth/blocks/date=2022-04-24/part-00000-68722fad-0a68-47f7-96c7-ed180e2f9995-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5329101
+            }
+          ],
+          "blocks_bytes": 5329101,
+          "blocks_object_count": 1,
+          "day": "2022-04-24",
+          "logs": [
+            {
+              "etag": "\"53795bfa94caff9af7bbf3ca04b37d1a-6\"",
+              "key": "v1.0/eth/logs/date=2022-04-24/part-00000-5330332b-31a6-4624-8d67-5edb3c104c87-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:18:06.000Z",
+              "size": 383814846
+            }
+          ],
+          "logs_bytes": 383814846,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"c7d313e147ebb2c6d8f925b8a0ddc00e\"",
+              "key": "v1.0/eth/blocks/date=2022-04-25/part-00000-4de6b185-575d-4132-a85c-34a0d8e6246a-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:37.000Z",
+              "size": 5332406
+            }
+          ],
+          "blocks_bytes": 5332406,
+          "blocks_object_count": 1,
+          "day": "2022-04-25",
+          "logs": [
+            {
+              "etag": "\"a3f2a8f3341a6df555fb8cb174e96094-6\"",
+              "key": "v1.0/eth/logs/date=2022-04-25/part-00000-64e87d5d-9154-4054-96c7-4346f4ac0214-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:08:01.000Z",
+              "size": 375781377
+            }
+          ],
+          "logs_bytes": 375781377,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"0356a402b01a4f63ab662cb83fe90961\"",
+              "key": "v1.0/eth/blocks/date=2022-04-26/part-00000-348e0bd0-f0dc-402a-bb45-b9a2a7123c3e-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5322865
+            }
+          ],
+          "blocks_bytes": 5322865,
+          "blocks_object_count": 1,
+          "day": "2022-04-26",
+          "logs": [
+            {
+              "etag": "\"f4b37b133daae0c12bafc8681ad4dac1-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-26/part-00000-da32e202-3cfd-4946-92fa-e11e6eae5582-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:20.000Z",
+              "size": 216450303
+            }
+          ],
+          "logs_bytes": 216450303,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"922bc564f31d9cd1721178cc4ce26a09\"",
+              "key": "v1.0/eth/blocks/date=2022-04-27/part-00000-ea52a198-83ff-4d83-9904-f3fbbcc642d6-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5377584
+            }
+          ],
+          "blocks_bytes": 5377584,
+          "blocks_object_count": 1,
+          "day": "2022-04-27",
+          "logs": [
+            {
+              "etag": "\"0f0be7240f13833579648c630ad12333-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-27/part-00000-aa360550-552f-44d4-a463-06f3fad06d06-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:05.000Z",
+              "size": 212137388
+            }
+          ],
+          "logs_bytes": 212137388,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"60c0c38734d5324a5010e6da257abc4d\"",
+              "key": "v1.0/eth/blocks/date=2022-04-28/part-00000-2157f227-9416-4f90-ad98-7d356a38b1e0-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:39.000Z",
+              "size": 5341283
+            }
+          ],
+          "blocks_bytes": 5341283,
+          "blocks_object_count": 1,
+          "day": "2022-04-28",
+          "logs": [
+            {
+              "etag": "\"ada726a7416bd4cbefe61fa424400f41-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-28/part-00000-1c496660-1f31-44c2-a685-852af3369bfe-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:19.000Z",
+              "size": 216993847
+            }
+          ],
+          "logs_bytes": 216993847,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"260c0692378d1c3787378618feea5414\"",
+              "key": "v1.0/eth/blocks/date=2022-04-29/part-00000-c2996d15-d36b-48f6-8dc7-1150d06da7b6-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:39.000Z",
+              "size": 5371964
+            }
+          ],
+          "blocks_bytes": 5371964,
+          "blocks_object_count": 1,
+          "day": "2022-04-29",
+          "logs": [
+            {
+              "etag": "\"82d7598f4753fc10630cad2cf0f6a57c-4\"",
+              "key": "v1.0/eth/logs/date=2022-04-29/part-00000-7f8d22c6-d861-4f63-858e-1a73ef87e8d5-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:47.000Z",
+              "size": 217506153
+            }
+          ],
+          "logs_bytes": 217506153,
+          "logs_object_count": 1
+        },
+        {
+          "blocks": [
+            {
+              "etag": "\"c8a7ccccd3a266218d2f9af71af04f0c\"",
+              "key": "v1.0/eth/blocks/date=2022-04-30/part-00000-e189a140-40b2-48f6-9531-6d004543e9b8-c000.snappy.parquet",
+              "last_modified": "2025-09-30T19:56:38.000Z",
+              "size": 5339847
+            }
+          ],
+          "blocks_bytes": 5339847,
+          "blocks_object_count": 1,
+          "day": "2022-04-30",
+          "logs": [
+            {
+              "etag": "\"227e7e2acd06e891cd86469270c1aca6-6\"",
+              "key": "v1.0/eth/logs/date=2022-04-30/part-00000-b9f8f61d-573c-47ee-9fcc-1cd417cfcc07-c000.snappy.parquet",
+              "last_modified": "2025-09-30T20:03:28.000Z",
+              "size": 388428003
+            }
+          ],
+          "logs_bytes": 388428003,
+          "logs_object_count": 1
+        }
+      ],
+      "end_day_inclusive": "2022-04-30",
+      "estimated_projection_bytes_using_measured_euler_ratio": 7204301491,
+      "estimated_sequential_wall_seconds_range": [
+        3568,
+        4513
+      ],
+      "expected_days": 30,
+      "full_object_bytes_total": 7481972332,
+      "headers_total_bytes": 161272875,
+      "logs_day_max_bytes": 390316788,
+      "logs_day_min_bytes": 199329323,
+      "logs_days_over_current_500MB_cap": [],
+      "logs_total_bytes": 7320699457,
+      "projection_estimate_limit": "Extrapolation from two Euler days. Match distribution for remaining days/Beanstalk is unknown until a complete address scan; not a measured coverage claim.",
+      "protocol": "Beanstalk",
+      "raw_archives_stored_bytes_approx_range": [
+        7204301491,
+        7481972332
+      ],
+      "start_day": "2022-04-01",
+      "whole_source_projection_sha256_claim": false
+    }
+  ]
+}

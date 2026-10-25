@@ -1,0 +1,89 @@
+{
+  "schema_version": "budget_policy_study_config_v1",
+  "status": "design_fixed_before_new_payload_acquisition_and_policy_results",
+  "study_type": "exploratory_continuous_two_emitter_workload_comparison",
+  "window": {
+    "start_utc": "2022-03-19T00:00:00Z",
+    "end_utc": "2022-04-18T00:00:00Z",
+    "start_ns": 1647648000000000000,
+    "end_ns": 1650240000000000000,
+    "days": 30,
+    "end_exclusive": true
+  },
+  "emitters": [
+    {
+      "id": "euler_core",
+      "address": "0x27182842e098f60e3d576794a5bffb0777e025d3",
+      "chain_id": 1
+    },
+    {
+      "id": "beanstalk_diamond",
+      "address": "0xc1e088fc1323b20bcbee9bd1b9fc9546db5624c5",
+      "chain_id": 1
+    }
+  ],
+  "detector": {
+    "window_seconds": 60,
+    "threshold_count": 10,
+    "cooldown_seconds": 300
+  },
+  "policies": [
+    "greedy",
+    "paced_cumulative",
+    "token_bucket"
+  ],
+  "budgets": [
+    1,
+    5,
+    20
+  ],
+  "primary_budget": 5,
+  "budget_scope": "independent hard daily cap per emitter and cell; no shared cross-emitter budget",
+  "time_model": "original integer event_time_ns as logical simulation clock, UTC; not historical observed_time or measured processing time",
+  "ordering": [
+    "block_number",
+    "transaction_index",
+    "log_index"
+  ],
+  "initial_state": "cold start at window start: empty rolling window, no last notification; retain state across files and midnight",
+  "greedy": "All B daily credits available at UTC midnight; unused credits expire at day end.",
+  "paced_cumulative": "At elapsed t nanoseconds of a UTC day, quota=min(B,1+floor(B*t/T)) for B>0, else zero; T=86400000000000. Unused released credits carry within the day and expire at its end.",
+  "token_bucket": "Capacity one token, initially one at window start; refill continuously at B/T tokens per nanosecond, including across midnight, capped at one. No midnight token reset; separate hard daily cap B. Integer credit units: one token=T; refill units=elapsed_ns*B. B=0 never emits.",
+  "grouping": "Apply 300-second event-time cooldown anchored only on the last notification actually admitted by the same cell. Grouped and budget-rejected triggers do not change the anchor.",
+  "rejection": "Drop immediately; no delayed queue, retrospective selection or replay of rejected candidates.",
+  "duplicates_and_late": "Exact redeliveries and unseen deliveries below canonical watermark do not alter features, policy clock, budget or grouping. Conflicting identities/order keys fail.",
+  "metrics": [
+    "events and raw triggers",
+    "group candidates and grouping suppressions",
+    "notifications and suppression counts by reason",
+    "daily and UTC-hour notification counts including verified empty days",
+    "days at cap, unused daily slots and hard-cap exceedances",
+    "raw-trigger-active hours with at least one notification",
+    "first and last notification event-time per day",
+    "exact notification-set overlap between policies"
+  ],
+  "metrics_interpretation": "Descriptive workload, admission and temporal distribution, not false-positive rate, precision, attack recall or prevented loss. Candidate streams differ because grouping follows actual notifications; raw trigger streams must agree.",
+  "labels_separate": {
+    "label_manifest": "incidents/labels/beanstalk_20220417_labels.json",
+    "join": "After closing all decisions, join only report-level exploit_execution transaction hashes. Preparation/proposal hashes stay context and unknown outcome, not positive or negative labels.",
+    "incident_unit": "one previously curated L2 Beanstalk incident; no independent attack-generalization estimate",
+    "temporal_interpretation": "Notifications on exploit logs are at committed event time; they cannot demonstrate interruption of the atomic transaction. Unknown historical receipt/arrival times remain unknown.",
+    "euler_2023": "Already observed development diagnostic outside the primary window; not rerun as an untouched test."
+  },
+  "selection_disclosure": "The common window contains exactly 30 full UTC days ending after the known Beanstalk incident day. Its choice uses incident timing and resource constraints, before any new payload or policy outcome. It is neither random background sampling nor an untouched incident test. Both emitters share Ethereum days and are dependent observations.",
+  "acquisition": {
+    "inventory": "qa/phase4_common_window_feasibility_20261025T122103_763107Z/common_window_inventory.json",
+    "population": "All topic logs at each selected emitter from every enumerated daily partition; no transaction, topic, score or incident filtering.",
+    "completeness": "Require every one of 30 daily logs/header pairs, exact source object identity, full address scan, selected payload/header joins and uninterrupted header-chain links within and between days. Missing data are failures, never zero-event days.",
+    "retain": "Full source objects in SHA-256/CRC-verified private daily archives, compact selected inputs, executed source and provenance.",
+    "receipts": "Not required for address-stream workload comparisons; full receipt/status and exact deployed ABI remain outside the established scope."
+  },
+  "execution": {
+    "cells": 18,
+    "repetitions": 1,
+    "purpose": "deterministic functional comparison; no hardware throughput or timing benchmark",
+    "freeze": "Copy and hash executed sources, config, inventory and label manifest before replay; verify unchanged after completion.",
+    "full_window_required": true,
+    "post_result_tuning": false
+  }
+}

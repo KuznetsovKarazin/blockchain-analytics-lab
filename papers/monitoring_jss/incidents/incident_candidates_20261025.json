@@ -2,7 +2,7 @@
   "schema": "monitoring_incident_candidates_v1",
   "research_date": "2026-10-25",
   "purpose": "Pre-comparison acquisition triage; not a frozen test set",
-  "comparison_results_seen": false,
+  "comparison_results_seen": true,
   "known_excluded_cases": [
     "Ronin",
     "Nomad",
@@ -72,6 +72,18 @@
     "bridgeguard_artifact": {
       "url": "https://anonymous.4open.science/r/BridgeGuard-220E/",
       "kind": "author-linked artifact; empty web extraction"
+    },
+    "euler_beosin": {
+      "url": "https://official.beosin.com/resources/analysis-of-the-euler-finance%E2%80%99s-197m-exploit",
+      "kind": "authored security analysis"
+    },
+    "bean_beosin": {
+      "url": "https://official.beosin.com/resources/beosins-analysis-of-the-beanstalk-exploit",
+      "kind": "authored security analysis"
+    },
+    "bean_sharkteam": {
+      "url": "https://sharkteam.org/report/analysis/20220419001A_en.pdf",
+      "kind": "authored security analysis PDF; retrieved text"
     }
   },
   "candidates": [
@@ -119,7 +131,8 @@
       "source_ids": [
         "euler_protocol",
         "euler_labels",
-        "euler_context"
+        "euler_context",
+        "euler_beosin"
       ],
       "seed_attack_transactions": [
         "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
@@ -129,9 +142,9 @@
         "0x3097830e9921e4063d334acb82f6a79374f76f0b1a8f857e89b89bc58df1f311",
         "0x47ac3527d02e6b9631c77fad1cdee7bfa77a8a7bfd4880dccbda5146ace4088f"
       ],
-      "attack_label_note": "Six transaction IDs are report-derived seeds, not independently verified raw labels. Keep the frontrunning transaction distinct from the main actor but group all into one incident for uncertainty.",
+      "attack_label_note": "Six valid hashes are cross-checked between authored SlowMist and Beosin analyses; SlowMist reports six executions. Two have indexed Etherscan block/time/order confirmation. No full raw RPC receipts or independently complete attack set were acquired in the label pass; see label manifest. One incident, not six independent cases.",
       "population_proposal": "Bounded first population: all Euler V1 core-emitted logs for 2023-03-01 UTC, one emitter and no topic filter. This is narrower than all protocol transactions. Full-window population and semantic ABI deployment checks remain pending.",
-      "availability": "The initial PublicNode RPC probe returned HTTP 403, including eth_chainId, and acquired no Euler data through that endpoint. Separate acquisition runs must be consulted for subsequent one-day log availability; no complete 45-day corpus is established by this registry.",
+      "availability": "Ordinary-day core logs were acquired separately in protocol_logs_20261025T083346_282558Z. This label pass fetched untruncated March13 AWS object listings only, not attack-day partition bytes. PublicNode earlier returned HTTP403; bounded Cloudflare/dRPC receipt probes now returned HTTP503/403. No complete45-day corpus or full Ethereum RPC receipt is established here.",
       "scientific_caution": "A finalized receipt-based alert after an atomic exploit cannot prevent that transaction; evaluate subsequent opportunities only under explicit scenario timing.",
       "prior_exposure": {
         "prior_exposure_level": "L2_curation_and_unlabelled_global_block_aggregation",
@@ -216,12 +229,22 @@
         "audit_reference": "exposure_audit_20261025.json"
       },
       "population_config": "populations/euler_v1_core_day_20230301.json",
-      "population_semantic_caution": "Core Withdraw includes internal balance changes, eToken transfers and donations; do not interpret its sum as external token outflow or losses."
+      "population_semantic_caution": "Core Withdraw includes internal balance changes, eToken transfers and donations; do not interpret its sum as external token outflow or losses.",
+      "label_manifest": "labels/euler_20230313_labels.json",
+      "attack_day_acquisition_plan": "labels/euler_20230313_acquisition_plan.json",
+      "label_verification_status": "cross_source_hash_list_plus_partial_primary_explorer_metadata_pending_raw_receipts",
+      "current_article_exposure": {
+        "run": "../runs/event_logs_attack_20261025T092349_917377Z",
+        "role": "development_diagnostic",
+        "outcome_viewed": true,
+        "future_untouched_holdout": false,
+        "note": "This does not rewrite historical L2 exposure. Any policy tuned using this outcome must be tested elsewhere."
+      }
     },
     {
       "status": "candidate_not_eligible",
-      "raw_corpus_acquired": false,
-      "prehistory_verified": false,
+      "raw_corpus_acquired": true,
+      "prehistory_verified": true,
       "independence_verified": false,
       "exposure_check": "Scoped repository audit completed; see exposure_audit_20261025.json. Preserve reported prior exposure and unaudited-scope limitations.",
       "observed_time_historical": null,
@@ -261,7 +284,9 @@
       "priority": 2,
       "source_ids": [
         "bean_protocol",
-        "bean_technical"
+        "bean_technical",
+        "bean_beosin",
+        "bean_sharkteam"
       ],
       "seed_attack_transactions": [
         "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
@@ -277,7 +302,7 @@
         }
       ],
       "population_proposal": "Alternative bounded population: all Beanstalk Diamond-emitted logs for 2022-04-01 UTC. Historical source snapshots differ in VoteList indexing; resolve on-chain DiamondCut activation before semantic decoding.",
-      "availability": "Receipt retrieval from public Ethereum endpoint returned HTTP 403. Explorer page also returned HTTP 403. No raw event or contiguous history downloaded.",
+      "availability": "Complete 30-day selected Diamond log population acquired and independently checked; six reported exploit-transaction logs observed. Full receipts and the complete historical deployed ABI remain unverified.",
       "scientific_caution": "Single atomic incident. Preparation and exploit execution need separate labels; a detector designed after reading the exploit is exploratory unless held out at protocol level.",
       "prior_exposure": {
         "prior_exposure_level": "L2_curation_plus_registry",
@@ -339,7 +364,25 @@
       },
       "population_config": "populations/beanstalk_diamond_day_20220401_candidate.json",
       "incident_date_caveat": "Historical DeFiHackLabs README and S2 record 2022-04-16; current candidate registry uses actual attack date 2022-04-17. Do not copy the S2 catalogue heading date into replay-window or event labels.",
-      "attack_label_note": "Keep proposal 0x68cdec... separate from exploit 0xcd314...; presence in a parsed exclusion set is not independent attack adjudication."
+      "attack_label_note": "Exploit cd314... is independently identified by Beosin and SharkTeam and supported by indexed Etherscan success/block/time. Proposal68cdec... is independently identified at2022-04-16T10:54:45Z and remains contextual. Full receipts and completeness unresolved; see label manifest.",
+      "label_manifest": "labels/beanstalk_20220417_labels.json",
+      "attack_day_acquisition_plan": "labels/beanstalk_20220417_acquisition_plan.json",
+      "label_verification_status": "authored_attack_role_plus_primary_explorer_metadata_pending_raw_receipt",
+      "prehistory_verified_scope": "29 complete UTC days before the execution date plus the full execution day, for the selected Diamond emitter only; not the original proposed 45-day window.",
+      "current_acquisition": {
+        "run": "protocol_window_20261025T123312_675327Z",
+        "start_utc": "2022-03-19T00:00:00Z",
+        "end_utc_exclusive": "2022-04-18T00:00:00Z",
+        "selected_logs": 28935,
+        "full_receipts": false,
+        "independent_source_audit": "../qa/phase4_acquisition_independent_review.json"
+      },
+      "current_article_exposure": {
+        "level": "L2 prior curation plus observed phase4 comparison outcomes",
+        "role": "development_diagnostic",
+        "future_untouched_test_eligible": false,
+        "note": "Do not tune a policy on the all-nine-cell failure then claim this same case as independent validation."
+      }
     },
     {
       "status": "candidate_not_eligible",
@@ -468,5 +511,6 @@
     "All ordinary/background protocol-address rows inside binary K4 feature tables",
     "Deleted uncommitted scratch work or every Git branch"
   ],
-  "exposure_audit_summary": "Checked repository scope found L2 catalogue/curation exposure for Euler and Beanstalk, and L0 for BSC Token Hub. No L3/L4 targeted positive-use evidence was found; this is not proof of globally unseen incidents or final eligibility."
+  "exposure_audit_summary": "Checked repository scope found L2 catalogue/curation exposure for Euler and Beanstalk, and L0 for BSC Token Hub. No L3/L4 targeted positive-use evidence was found; this is not proof of globally unseen incidents or final eligibility.",
+  "last_updated_utc": "2026-10-25T13:02:42.895227+00:00"
 }

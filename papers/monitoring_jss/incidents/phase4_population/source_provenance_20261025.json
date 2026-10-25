@@ -1,0 +1,348 @@
+{
+  "schema": "phase4_population_provenance_v1",
+  "curated_at_utc": "2026-10-25T12:30:27.922558+00:00",
+  "purpose": "Primary address, deployment, upgrade and event-semantics sources for proposed shared calendar window; not outcome evaluation.",
+  "historical_runtime_caveat": "Repository commit time and Git blob verification establish source provenance, not deployed bytecode, facet/module activation time or ABI validity at a historical block.",
+  "private_source_archive_directory": "phase4_population_sources/",
+  "source_files": [
+    {
+      "key": "bean_upgrade_file",
+      "url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md",
+      "git_blob_sha": "de4a5629f11cc3fe9816fb3e13e2015c23bd7330",
+      "private_snapshot_name": "bean_upgrade_file.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "0ce1496097eeb61c8bc94523a257443c07551c5ff825c1df85e251a9b90fa189",
+      "bytes": 343193,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "bean_season",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e9f49910e287e7a7afaa6db8f536b7194728b0af/protocol/contracts/farm/facets/SeasonFacet/SeasonFacet.sol",
+      "git_blob_sha": "19763dc11bac72477ec565d2e7604b52c09d1cc2",
+      "private_snapshot_name": "bean_season.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "6db2609ba734e0500c40c87768d091a22d656f52041434a2a92d3506a59e47f5",
+      "bytes": 2528,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "bean_pause_source",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e9f49910e287e7a7afaa6db8f536b7194728b0af/protocol/contracts/farm/facets/GovernanceFacet/GovernanceFacet.sol",
+      "git_blob_sha": "800e830cd08714acca9bd0ad117bd56a94d1f015",
+      "private_snapshot_name": "bean_pause_source.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "27938091a8fd181e62246d9f365e3d5523d8b825b1c562243ffa9d6db908efad",
+      "bytes": 9326,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "euler_initial_address",
+      "url": "https://github.com/euler-legacy-xyz/euler-contracts/blob/756b6d9b1f68da7e81083bf7c0d46e295358a9c6/addresses/euler-addresses-mainnet.json",
+      "git_blob_sha": "061fb633149fafab004430629909607f538b3555",
+      "private_snapshot_name": "euler_initial_address.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "954f25dce6e2d391fe5f058129aee6a22fdf7f621bf49fba122b1875a51815ae",
+      "bytes": 233,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "euler_202203_address",
+      "url": "https://github.com/euler-legacy-xyz/euler-contracts/blob/85c8e473f2fc4d814eb5c98070db5e00730d2de1/addresses/euler-addresses-mainnet.json",
+      "git_blob_sha": "3af3afd2834268556fc911a1300644e7fc404c58",
+      "private_snapshot_name": "euler_202203_address.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "4d5aa19727bee768ca71311c346f560b6f209b58bcfbd69096f8c37c998bc4b7",
+      "bytes": 1548,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "euler_readme_202203",
+      "url": "https://github.com/euler-legacy-xyz/euler-contracts/blob/85c8e473f2fc4d814eb5c98070db5e00730d2de1/README.md",
+      "git_blob_sha": "bb68f6d596ffce9af224cb28795142764598b6ec",
+      "private_snapshot_name": "euler_readme_202203.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "318dd4f6119a0e26ca0d127731afb96fa06e8df052296ee7a22ef5d94f558618",
+      "bytes": 893,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "euler_events_202203",
+      "url": "https://github.com/euler-legacy-xyz/euler-contracts/blob/85c8e473f2fc4d814eb5c98070db5e00730d2de1/contracts/Events.sol",
+      "git_blob_sha": "a03d503451aeee89394a8e1c427a649293be0f52",
+      "private_snapshot_name": "euler_events_202203.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "e6aba499e89b588b7639649804cbb8f6e4ede243e62de1a8f6824d08982870a8",
+      "bytes": 3254,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "euler_core_202203",
+      "url": "https://github.com/euler-legacy-xyz/euler-contracts/blob/85c8e473f2fc4d814eb5c98070db5e00730d2de1/contracts/Euler.sol",
+      "git_blob_sha": "a473eedbb168ed1cbbb7c1d72a31b0a971bdbc29",
+      "private_snapshot_name": "euler_core_202203.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "dd4f0707ff8618cf81128a0bf44743b8903ee2f678b351d62b05b08839c5d4b9",
+      "bytes": 2331,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "euler_202204_address",
+      "url": "https://github.com/euler-legacy-xyz/euler-contracts/blob/bb7ef7aaa600199cc82c95ae870f347bc56934b5/addresses/euler-addresses-mainnet.json",
+      "git_blob_sha": "fda8851761ed5b438ca43ea5b1426b2bd16b7930",
+      "private_snapshot_name": "euler_202204_address.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "daec447533da904fa3a3aee11e810247b58928be938fd70fae20d0350a91357e",
+      "bytes": 1548,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "euler_events_202204",
+      "url": "https://github.com/euler-legacy-xyz/euler-contracts/blob/bb7ef7aaa600199cc82c95ae870f347bc56934b5/contracts/Events.sol",
+      "git_blob_sha": "a03d503451aeee89394a8e1c427a649293be0f52",
+      "private_snapshot_name": "euler_events_202204.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "e6aba499e89b588b7639649804cbb8f6e4ede243e62de1a8f6824d08982870a8",
+      "bytes": 3254,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "bean_pre202203_constants",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/be22be2e92be1bdd7e7f4c4ce2b9df69ba7684ab/protocol/test/utils/constants.js",
+      "git_blob_sha": "3fa99f6bec76b3e5c1b19dcbd4c2abbc35b60ff2",
+      "private_snapshot_name": "bean_pre202203_constants.txt",
+      "source_snapshot_embedded_in_repository": false,
+      "sha256": "78d28ac001776ba190e4cd3d2f93b4e376219faec6cb465c6dca2ab5198bf29b",
+      "bytes": 447,
+      "git_blob_matches_retrieved_content": true
+    },
+    {
+      "key": "bean_pre202203_readme",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/be22be2e92be1bdd7e7f4c4ce2b9df69ba7684ab/readme.md",
+      "git_blob_sha": "8253b8ccdcf9c1471fb1b684dbcce03c946be94e",
+      "sha256": "7249525fb56f2f6b67611650dc28b174f6af720450374a7644b50e6f0377dbd8",
+      "bytes": 3813,
+      "git_blob_matches_retrieved_content": true,
+      "snapshot_reuse_note": "Current fetch_file response exposed matching Git blob SHA but truncated content. Exact bytes reused from the already verified March-30 snapshot with the same Git blob identity.",
+      "private_snapshot_name": "../candidate_population/source_snapshots/bean/readme.md",
+      "source_snapshot_embedded_in_repository": false
+    }
+  ],
+  "github_history_metadata": [
+    {
+      "key": "euler_before",
+      "url": "https://api.github.com/repos/euler-legacy-xyz/euler-contracts/commits?until=2022-03-19T00:00:00Z&per_page=1",
+      "entries": [
+        {
+          "sha": "85c8e473f2fc4d814eb5c98070db5e00730d2de1",
+          "author_date": "2022-03-17T19:06:52Z",
+          "committer_date": "2022-03-17T19:06:52Z",
+          "message": "eip3: New mainnet module implementation address",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/85c8e473f2fc4d814eb5c98070db5e00730d2de1"
+        }
+      ]
+    },
+    {
+      "key": "bean_prewindow_commit",
+      "url": "https://api.github.com/repos/BeanstalkFarms/Beanstalk/commits?until=2022-03-19T00:00:00Z&per_page=1",
+      "entries": [
+        {
+          "sha": "be22be2e92be1bdd7e7f4c4ce2b9df69ba7684ab",
+          "author_date": "2022-03-17T22:47:41Z",
+          "committer_date": "2022-03-17T22:47:41Z",
+          "message": "Update whitepaper version 1.9.0 (#57)\n\n* Update whitepaper version 1.9.0\r\n\r\n* Update whitepaper",
+          "url": "https://github.com/BeanstalkFarms/Beanstalk/commit/be22be2e92be1bdd7e7f4c4ce2b9df69ba7684ab"
+        }
+      ]
+    },
+    {
+      "key": "bean_upgrades",
+      "url": "https://api.github.com/repos/BeanstalkFarms/Agronomics-Handbook/commits?path=misc/upgrade-history.md&per_page=1",
+      "entries": [
+        {
+          "sha": "8785281b09d5557d2a54f00b1c752dd4a7afef89",
+          "author_date": "2024-10-28T20:23:12Z",
+          "committer_date": "2024-10-28T20:23:12Z",
+          "message": "Update upgrade-history.md",
+          "url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/commit/8785281b09d5557d2a54f00b1c752dd4a7afef89"
+        }
+      ]
+    },
+    {
+      "key": "euler_address_history",
+      "url": "https://api.github.com/repos/euler-legacy-xyz/euler-contracts/commits?path=addresses/euler-addresses-mainnet.json&until=2022-03-19T00:00:00Z&per_page=30",
+      "entries": [
+        {
+          "sha": "85c8e473f2fc4d814eb5c98070db5e00730d2de1",
+          "author_date": "2022-03-17T19:06:52Z",
+          "committer_date": "2022-03-17T19:06:52Z",
+          "message": "eip3: New mainnet module implementation address",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/85c8e473f2fc4d814eb5c98070db5e00730d2de1"
+        },
+        {
+          "sha": "60ed91a495f2dba3e082514f8704f29b646dac42",
+          "author_date": "2022-02-08T18:58:56Z",
+          "committer_date": "2022-02-08T18:58:56Z",
+          "message": "IRMClassMega deployments",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/60ed91a495f2dba3e082514f8704f29b646dac42"
+        },
+        {
+          "sha": "1b4b24bb1432a2fc29612d62042fd6473f9c1345",
+          "author_date": "2022-01-26T19:01:54Z",
+          "committer_date": "2022-01-26T19:01:54Z",
+          "message": "upgrade RiskManager on mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/1b4b24bb1432a2fc29612d62042fd6473f9c1345"
+        },
+        {
+          "sha": "a6a7fe4afa7b5fd094bd6f4f8e07a5951a665ea3",
+          "author_date": "2021-12-20T21:04:51Z",
+          "committer_date": "2021-12-20T21:04:51Z",
+          "message": "upgrade swap module on mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/a6a7fe4afa7b5fd094bd6f4f8e07a5951a665ea3"
+        },
+        {
+          "sha": "7c00b82bcb5dc7ea10ec24b9b7b5aa938fa4fe51",
+          "author_date": "2021-12-11T03:51:00Z",
+          "committer_date": "2021-12-11T03:51:00Z",
+          "message": "new view deployed to mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/7c00b82bcb5dc7ea10ec24b9b7b5aa938fa4fe51"
+        },
+        {
+          "sha": "8968f35f2df376fe6dbc9dfec8258dc89ee8c15d",
+          "author_date": "2021-12-10T02:45:17Z",
+          "committer_date": "2021-12-10T02:45:17Z",
+          "message": "upgrade mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/8968f35f2df376fe6dbc9dfec8258dc89ee8c15d"
+        },
+        {
+          "sha": "f2eb3d9e48d1b535d91307691fc02bf5b4d18dbc",
+          "author_date": "2021-12-07T13:30:33Z",
+          "committer_date": "2021-12-07T13:30:33Z",
+          "message": "deploy Swap module to mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/f2eb3d9e48d1b535d91307691fc02bf5b4d18dbc"
+        },
+        {
+          "sha": "69e251349113ced09cfb6fe649be49747b2e7068",
+          "author_date": "2021-12-02T13:53:12Z",
+          "committer_date": "2021-12-02T13:58:44Z",
+          "message": "Swap module generated interfaces",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/69e251349113ced09cfb6fe649be49747b2e7068"
+        },
+        {
+          "sha": "a9f7773b42d18951033d498ca7e94ea07d2350ad",
+          "author_date": "2021-11-30T00:57:57Z",
+          "committer_date": "2021-11-30T00:57:57Z",
+          "message": "deploy IRM classes to mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/a9f7773b42d18951033d498ca7e94ea07d2350ad"
+        },
+        {
+          "sha": "9201c44f786b8abc35dc5ac5705be2350f743ffa",
+          "author_date": "2021-11-30T00:17:58Z",
+          "committer_date": "2021-11-30T00:17:58Z",
+          "message": "more deployed mainnet addresses",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/9201c44f786b8abc35dc5ac5705be2350f743ffa"
+        },
+        {
+          "sha": "df359cfaa399c01a62b1f64767460715eb7df4d3",
+          "author_date": "2021-11-29T14:03:48Z",
+          "committer_date": "2021-11-29T14:03:48Z",
+          "message": "mainnet addresses",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/df359cfaa399c01a62b1f64767460715eb7df4d3"
+        },
+        {
+          "sha": "756b6d9b1f68da7e81083bf7c0d46e295358a9c6",
+          "author_date": "2021-11-26T04:44:27Z",
+          "committer_date": "2021-11-26T04:44:27Z",
+          "message": "initial mainnet addresses",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/756b6d9b1f68da7e81083bf7c0d46e295358a9c6"
+        }
+      ]
+    },
+    {
+      "key": "euler_window_source_history",
+      "url": "https://api.github.com/repos/euler-legacy-xyz/euler-contracts/commits?path=addresses/euler-addresses-mainnet.json&since=2022-03-19T00:00:00Z&until=2022-04-18T00:00:00Z&per_page=30",
+      "entries": [
+        {
+          "sha": "bb7ef7aaa600199cc82c95ae870f347bc56934b5",
+          "author_date": "2022-04-10T12:21:09Z",
+          "committer_date": "2022-04-10T12:21:09Z",
+          "message": "eip-8.1: upgrade Markets module, mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/bb7ef7aaa600199cc82c95ae870f347bc56934b5"
+        },
+        {
+          "sha": "f68fd25f85b4b0a06b210509aef17eeacfbfe82f",
+          "author_date": "2022-04-09T22:21:32Z",
+          "committer_date": "2022-04-09T22:21:32Z",
+          "message": "eip-8 deployed to mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/f68fd25f85b4b0a06b210509aef17eeacfbfe82f"
+        },
+        {
+          "sha": "c904b7d93e1863a1793e274a781beb5e4bcc39e5",
+          "author_date": "2022-03-29T17:26:30Z",
+          "committer_date": "2022-03-29T17:26:30Z",
+          "message": "new view address for mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/c904b7d93e1863a1793e274a781beb5e4bcc39e5"
+        }
+      ]
+    }
+  ],
+  "supplemental_explorer_snapshot": {
+    "private_snapshot_name": "explorer_creation_pause_tool_snapshot.json",
+    "sha256": "fbc3c6ab4846c4084cb16372f4d5abe1ca941850d84332af330da1abc04da9cd",
+    "hash_scope": "Serialized web-tool response, including errors; not raw page HTML and not JSON-RPC receipt bytes.",
+    "urls": [
+      "https://etherscan.io/tx/0xf682db192d879c022952eeab136a5d81b07e6ca207ee887f823f5d2b738b1257",
+      "https://etherscan.io/tx/0x40b23cea3aa6e1a7dd89bbcd24c67f6fa1f6d663d7609f14046cd6cf50b6ce86",
+      "https://etherscan.io/tx/0xb9835af8de4553435bc4fd5c09d34975f554d3bf8b9d51cd068282c94d3d37a1"
+    ],
+    "result": "Euler creation page retrieved. Beanstalk creation and pause pages failed in this bounded attempt; corresponding claims rely on the official catalogue, not a successfully retrieved explorer page."
+  },
+  "additional_protocol_authored_context_urls": [
+    "https://bean.money/blog/beanstalk-governance-exploit",
+    "https://bean.money/blog/beanstalk-farms-2022-roundup",
+    "https://bean.money/blog/beanstalk-one-year-anniversary",
+    "https://github.com/BeanstalkFarms/Beanstalk-Governance-Proposals/blob/master/bip/bip-21-replant.md"
+  ],
+  "license_scope": [
+    "Beanstalk Solidity files inspected carry MIT SPDX identifiers. Official prose/catalogue content is not assumed to share that license.",
+    "Euler historical README states GPL-2.0-or-later except RiskManager.sol and Liquidation.sol, originally BSL 1.1 with automatic GPL-2.0 relicensing dated 2023-12-13. The inspected Euler core/events files carry GPL-2.0-or-later.",
+    "Code licenses do not automatically license third-party explorer renderings or data-provider distributions. No upstream source snapshots are embedded in this repository metadata."
+  ],
+  "existing_inputs": [
+    {
+      "repository_path": "papers/monitoring_jss/incidents/exposure_audit_20261025.json",
+      "sha256": "3942ff01b628a532a8ace13ada726bca7f4a0d97f09dfa3d6ea7cca5c26c9f00",
+      "modified_by_this_phase": false
+    },
+    {
+      "repository_path": "papers/monitoring_jss/incidents/labels/beanstalk_20220417_labels.json",
+      "sha256": "3518e1c753a3f0ba31b6977ab5b4f3811c5a3846569e1e930922af9084115046",
+      "modified_by_this_phase": false
+    },
+    {
+      "repository_path": "papers/monitoring_jss/incidents/labels/euler_20230313_labels.json",
+      "sha256": "145bdb4c60aed2f67648c71aad99a40c2865b49e502f0d389562d9f6d5d0360a",
+      "modified_by_this_phase": false
+    },
+    {
+      "repository_path": "papers/monitoring_jss/incidents/labels/event_logs_attack_20261025T092349_917377Z_raw_join.json",
+      "sha256": "862e2c0868208e87a150e7ba7b0f7db96644d6228a6bd2765bc1743d23aff480",
+      "modified_by_this_phase": false
+    },
+    {
+      "repository_path": "papers/monitoring_jss/incidents/populations/source_provenance_20261025.json",
+      "sha256": "15787044e3e5e1c513086ae7148f6023c03f683a171d727458e9361a25e2f1fd",
+      "modified_by_this_phase": false
+    },
+    {
+      "private_input_name": "research_plan_extracted.txt",
+      "sha256": "b8efa00ba0d244f503d979ea4f4f1c2675da4fb57e21fc918280b1c4767173ff",
+      "sections_consulted": [
+        "P2.01",
+        "P2.02",
+        "P2.03",
+        "P2.04",
+        "P2.06"
+      ]
+    }
+  ]
+}

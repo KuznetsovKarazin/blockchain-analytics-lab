@@ -1,0 +1,446 @@
+{
+  "schema": "phase4_population_contract_proposal_v1",
+  "curated_at_utc": "2026-10-25T12:30:27.922558+00:00",
+  "status": "population_design_proposal_not_a_policy_execution_freeze",
+  "source_provenance_reference": "source_provenance_20261025.json",
+  "scope": "Metadata and eligibility assessment only. No 30-day raw payload acquisition, policy replay or new outcome inspection performed by this phase.",
+  "decision_history": {
+    "initial_candidates_not_selected": [
+      {
+        "protocol": "Euler V1",
+        "start_utc_inclusive": "2023-03-01T00:00:00Z",
+        "end_utc_exclusive": "2023-03-31T00:00:00Z",
+        "days": 30,
+        "full_days_before_incident_date": 12,
+        "reason": "Separate 2023 period is costlier and contains already inspected March-1/March-13 diagnostics; post-attack/recovery regime is not ordinary background."
+      },
+      {
+        "protocol": "Beanstalk",
+        "start_utc_inclusive": "2022-04-01T00:00:00Z",
+        "end_utc_exclusive": "2022-05-01T00:00:00Z",
+        "days": 30,
+        "full_days_before_incident_date": 16,
+        "reason": "Includes long paused tail, governance removal on April 17 and write-function removal on April 19; 30 calendar days do not mean 30 active or pre-attack days."
+      }
+    ],
+    "revision_before_new_payload": true,
+    "revision_reason": "Parent chose one shared upstream Ethereum window because separate 30-day periods exceed practical disk/time scope; selection explicitly retains known Beanstalk incident on the last day.",
+    "selection_label_informed": true,
+    "selection_uses_new_policy_outcomes": false
+  },
+  "primary_window": {
+    "chain_id": 1,
+    "network": "Ethereum mainnet",
+    "start_utc_inclusive": "2022-03-19T00:00:00Z",
+    "end_utc_exclusive": "2022-04-18T00:00:00Z",
+    "consecutive_calendar_days": 30,
+    "planned_population_days": 60,
+    "full_calendar_days_before_beanstalk_execution_date": 29,
+    "known_preparation_date_within_those_days": "2022-04-16",
+    "independent_external_test_eligibility": false,
+    "representative_background_claim_allowed": false,
+    "certified_benign_negative_days": 0,
+    "acquisition_unit": "One complete upstream Ethereum log partition scan per UTC day; select both emitters without filtering topics, transaction hashes, scores or attack labels; retain separate population IDs.",
+    "completeness_is_pending": true,
+    "block_bounds": null,
+    "incident_units_in_current_labels_within_window": 1
+  },
+  "populations": [
+    {
+      "population_id": "ethereum_euler_v1_core_emitter",
+      "protocol": "Euler V1",
+      "emitter_addresses": [
+        "0x27182842e098f60e3d576794a5bffb0777e025d3"
+      ],
+      "topics_filter": null,
+      "role": "Unlabelled cross-protocol workload on the same 30 UTC days; no known Euler attack label in this window is supplied. This is not a certified benign or independently sampled background population.",
+      "pre_window_address_source_keys": [
+        "euler_initial_address",
+        "euler_202203_address"
+      ],
+      "source_identified_as_mainnet_before_start": true,
+      "creation": {
+        "tx_hash": "0xf682db192d879c022952eeab136a5d81b07e6ca207ee887f823f5d2b738b1257",
+        "block_number": 13687582,
+        "transaction_index": 191,
+        "timestamp_utc": "2021-11-26T04:13:05Z",
+        "created_address": "0x27182842e098f60e3d576794a5bffb0777e025d3",
+        "status": "success_reported_by_explorer",
+        "evidence": "Explorer rendering includes Created address and Genesis log; corroborated by same-day official initial-mainnet address source. No full JSON receipt acquired.",
+        "url": "https://etherscan.io/tx/0xf682db192d879c022952eeab136a5d81b07e6ca207ee887f823f5d2b738b1257"
+      },
+      "source_history_during_window": [
+        {
+          "sha": "bb7ef7aaa600199cc82c95ae870f347bc56934b5",
+          "author_date": "2022-04-10T12:21:09Z",
+          "committer_date": "2022-04-10T12:21:09Z",
+          "message": "eip-8.1: upgrade Markets module, mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/bb7ef7aaa600199cc82c95ae870f347bc56934b5"
+        },
+        {
+          "sha": "f68fd25f85b4b0a06b210509aef17eeacfbfe82f",
+          "author_date": "2022-04-09T22:21:32Z",
+          "committer_date": "2022-04-09T22:21:32Z",
+          "message": "eip-8 deployed to mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/f68fd25f85b4b0a06b210509aef17eeacfbfe82f"
+        },
+        {
+          "sha": "c904b7d93e1863a1793e274a781beb5e4bcc39e5",
+          "author_date": "2022-03-29T17:26:30Z",
+          "committer_date": "2022-03-29T17:26:30Z",
+          "message": "new view address for mainnet",
+          "url": "https://github.com/euler-legacy-xyz/euler-contracts/commit/c904b7d93e1863a1793e274a781beb5e4bcc39e5"
+        }
+      ],
+      "upgrade_caveat": "Source records describe mainnet EIP-8 deployment April 9 and EIP-8.1 Markets upgrade April 10; exact chain activation coordinates remain unresolved. Core address is unchanged between March-17 and April-10 sources; unchanged Events.sol blob does not prove unchanged execution semantics.",
+      "runtime_abi_historical_proof": false,
+      "source_coverage": "Core-emitter logs, including delegatecalled module emissions; excludes separate eToken/dToken proxy emissions and underlying token transfer logs unless their emitter is the selected core. Does not enumerate all protocol calls or transactions.",
+      "semantic_limits": [
+        "Do not apply the February-2023 ABI retroactively to 2022 without validation.",
+        "Withdraw is internal accounting evidence, not an external outflow measure.",
+        "AssetStatus.timestamp is an event argument; use joined block header timestamp for source UTC allocation.",
+        "InstallerInstallModule source-commit field and repository history do not themselves prove runtime bytecode equivalence."
+      ]
+    },
+    {
+      "population_id": "ethereum_beanstalk_diamond_emitter",
+      "protocol": "Beanstalk",
+      "emitter_addresses": [
+        "0xc1e088fc1323b20bcbee9bd1b9fc9546db5624c5"
+      ],
+      "topics_filter": null,
+      "role": "Incident-conditioned workload and one descriptive L2 incident; candidate for operational budget comparison after separate freeze and acquisition QA.",
+      "pre_window_address_source_keys": [
+        "bean_pre202203_readme",
+        "bean_pre202203_constants"
+      ],
+      "source_identified_as_mainnet_before_start": true,
+      "creation_catalogue_block": 12974075,
+      "creation_catalogue_date": "2021-08-06",
+      "old_bean_token_address_context_only": "0xdc59ac4fefa32293a95889dc396682858d52e5db",
+      "old_bean_context_is_not_an_additional_emitter": true,
+      "runtime_abi_historical_proof": false,
+      "source_coverage": "All logs emitted by the Diamond address, including facet code via delegatecall; not all protocol transactions, internal calls, asset flows, pool events or underlying token logs.",
+      "official_catalogue_discontinuities_and_context": [
+        {
+          "date_catalogued_utc": "2021-08-06",
+          "block_number_catalogued": 12974075,
+          "tx_hash": "0x40b23cea3aa6e1a7dd89bbcd24c67f6fa1f6d663d7609f14046cd6cf50b6ce86",
+          "tx_url": "https://etherscan.io/tx/0x40b23cea3aa6e1a7dd89bbcd24c67f6fa1f6d663d7609f14046cd6cf50b6ce86",
+          "description": "Contract Creation",
+          "source_commit_reference": "ccce0fa18a83cc09f6a889c302b6e509230a486f",
+          "event_modified_catalogue_field": "n/a",
+          "inside_primary_window_by_catalogued_date": false,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2021-08-06",
+          "block_number_catalogued": 12974077,
+          "tx_hash": "0xec462c02a2e4442db62179b70a7c07f812b237e127a5b24ba192f796f8013db6",
+          "tx_url": "https://etherscan.io/tx/0xec462c02a2e4442db62179b70a7c07f812b237e127a5b24ba192f796f8013db6",
+          "description": "`init` Call",
+          "source_commit_reference": "ccce0fa18a83cc09f6a889c302b6e509230a486f",
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": false,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-03-12",
+          "block_number_catalogued": 14369158,
+          "tx_hash": "0x72d3f6028b59c266adfcce265b1c2492a968964d3bbe0406758f7dde292d7882",
+          "tx_url": "https://etherscan.io/tx/0x72d3f6028b59c266adfcce265b1c2492a968964d3bbe0406758f7dde292d7882",
+          "description": "BIP-13",
+          "source_commit_reference": "a50d46ce3d78c6075946d7178d1c9511b2e52ff1",
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": false,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-01",
+          "block_number_catalogued": 14498034,
+          "tx_hash": "0x1aa7e6521d30e8aba53e6d0bb249e81f31ef87bd2d71a21c93e263ca45401463",
+          "tx_url": "https://etherscan.io/tx/0x1aa7e6521d30e8aba53e6d0bb249e81f31ef87bd2d71a21c93e263ca45401463",
+          "description": "Hotfix: Omniscia Audit Update",
+          "source_commit_reference": "ee4720cdb449d5b6ff2b789083792c4395628674",
+          "event_modified_catalogue_field": "See below",
+          "inside_primary_window_by_catalogued_date": true,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-01",
+          "block_number_catalogued": 14498058,
+          "tx_hash": "0xcf50d8ba88000f8189fbc01010967d0e35292c8c8159d42860727b3c822c9db2",
+          "tx_url": "https://etherscan.io/tx/0xcf50d8ba88000f8189fbc01010967d0e35292c8c8159d42860727b3c822c9db2",
+          "description": "Hotfix: Omniscia Audit Update",
+          "source_commit_reference": "ee4720cdb449d5b6ff2b789083792c4395628674",
+          "event_modified_catalogue_field": "See below",
+          "inside_primary_window_by_catalogued_date": true,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-01",
+          "block_number_catalogued": 14498067,
+          "tx_hash": "0x4b5bbf55340c03d65272d732f5098d9f4591a52e8729e8e6a22da40e25d87405",
+          "tx_url": "https://etherscan.io/tx/0x4b5bbf55340c03d65272d732f5098d9f4591a52e8729e8e6a22da40e25d87405",
+          "description": "Hotfix: Omniscia Audit Update",
+          "source_commit_reference": "ee4720cdb449d5b6ff2b789083792c4395628674",
+          "event_modified_catalogue_field": "`VoteList`",
+          "inside_primary_window_by_catalogued_date": true,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-07",
+          "block_number_catalogued": 14541362,
+          "tx_hash": "0x7025511ca92d341fa5d79ddcfaf201a73131c0a79ab9fa4b2e02e50c1e04e0b8",
+          "tx_url": "https://etherscan.io/tx/0x7025511ca92d341fa5d79ddcfaf201a73131c0a79ab9fa4b2e02e50c1e04e0b8",
+          "description": "BIP-14",
+          "source_commit_reference": "2fd2f19df3b3ee7493d49fa254a2f1e80f854f58",
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": true,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-07",
+          "block_number_catalogued": 14541420,
+          "tx_hash": "0x7f126e28b9e0441fcfe0753df16c9aa4ca27dc89d57bb7d8f29a282f96f19375",
+          "tx_url": "https://etherscan.io/tx/0x7f126e28b9e0441fcfe0753df16c9aa4ca27dc89d57bb7d8f29a282f96f19375",
+          "description": "BIP-15",
+          "source_commit_reference": "8bf07346e06ecd0ce96ef7ff62c47e87f60b4d93",
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": true,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-08",
+          "block_number_catalogued": 14547427,
+          "tx_hash": "0x47f8937e3d03a68e512d67665cdc61cbcfbb122d71a3b5c2817186ddf476e8ef",
+          "tx_url": "https://etherscan.io/tx/0x47f8937e3d03a68e512d67665cdc61cbcfbb122d71a3b5c2817186ddf476e8ef",
+          "description": "BIP-16",
+          "source_commit_reference": "f5e69b76cd83e8c1c3291bbfe366a4e88a2761d6",
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": true,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-17",
+          "block_number_catalogued": 14602790,
+          "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+          "tx_url": "https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+          "description": "BIP-18 (Governance exploit)",
+          "source_commit_reference": null,
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": true,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-17",
+          "block_number_catalogued": 14603731,
+          "tx_hash": "0xb9835af8de4553435bc4fd5c09d34975f554d3bf8b9d51cd068282c94d3d37a1",
+          "tx_url": "https://etherscan.io/tx/0xb9835af8de4553435bc4fd5c09d34975f554d3bf8b9d51cd068282c94d3d37a1",
+          "description": "Pause",
+          "source_commit_reference": null,
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": true,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-17",
+          "block_number_catalogued": 14603734,
+          "tx_hash": "0x4eb26f11b3e7d66f15d4cd12b248cc5a2eb9df8353777f88939961ffbb92e880",
+          "tx_url": "https://etherscan.io/tx/0x4eb26f11b3e7d66f15d4cd12b248cc5a2eb9df8353777f88939961ffbb92e880",
+          "description": "Remove governance functions",
+          "source_commit_reference": null,
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": true,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-18",
+          "block_number_catalogued": 14611125,
+          "tx_hash": "0xb62d4e4f251430ea91a6ff1214ffdfc588643b156b170aa9c7f3615521661a1a",
+          "tx_url": "https://etherscan.io/tx/0xb62d4e4f251430ea91a6ff1214ffdfc588643b156b170aa9c7f3615521661a1a",
+          "description": "Remove exploiter's Beans",
+          "source_commit_reference": null,
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": false,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-04-19",
+          "block_number_catalogued": 14618005,
+          "tx_hash": "0x09ea1f5898f9440e327e70702af9c17761cf13d9882adcec58faf9d68d9d5057",
+          "tx_url": "https://etherscan.io/tx/0x09ea1f5898f9440e327e70702af9c17761cf13d9882adcec58faf9d68d9d5057",
+          "description": "Remove all write functions",
+          "source_commit_reference": null,
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": false,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        },
+        {
+          "date_catalogued_utc": "2022-08-06",
+          "block_number_catalogued": 15289539,
+          "tx_hash": "0x4145c840808dc2e56950182e3718d1bb356fcc2956027a601c9a975c0b97f718",
+          "tx_url": "https://etherscan.io/tx/0x4145c840808dc2e56950182e3718d1bb356fcc2956027a601c9a975c0b97f718",
+          "description": "BIP-21 - Unpause",
+          "source_commit_reference": null,
+          "event_modified_catalogue_field": "-",
+          "inside_primary_window_by_catalogued_date": false,
+          "evidence": "official retrospective upgrade catalogue; not a retrieved receipt or runtime-bytecode check",
+          "timestamp_utc": null,
+          "transaction_index": null,
+          "receipt_status": null,
+          "source_url": "https://github.com/BeanstalkFarms/Agronomics-Handbook/blob/8785281b09d5557d2a54f00b1c752dd4a7afef89/misc/upgrade-history.md"
+        }
+      ],
+      "pause_semantics": "Pre-incident GovernanceFacet.pause sets s.paused, clears oracle initialization, stores block.timestamp and emits Pause. SeasonFacet.sunrise explicitly rejects while paused. This does not prove every function or every emission is blocked. Catalogue separately records governance-function removal April 17 and all-write-function removal April 19, the latter outside this shared window.",
+      "semantic_limits": [
+        "VoteList(address,uint32[],bool[],uint256) keeps the same signature while bips changes from indexed to nonindexed in the April-1 hotfix sequence (blocks 14498034,14498058,14498067). Topic0 alone cannot choose the decoder. Verify actual upgrade logs and within-block order before semantic decoding.",
+        "Proposal.start is emitted as season(), not a Unix timestamp; period is the governance season period. Never use these fields as UTC arrival time.",
+        "Commit is emitted by both ordinary commit and emergencyCommit; logs alone cannot establish which check path ran.",
+        "Proposal omits initializer/calldata/facet-cut payload; attack mechanism needs transaction input and potentially traces/state beyond the Diamond logs.",
+        "Pause.timestamp is emitted from block.timestamp in the inspected source, but block-header join remains the common event-time source."
+      ]
+    }
+  ],
+  "labels_and_exposure": {
+    "existing_manifests_preserved": true,
+    "beanstalk_label_reference": "../labels/beanstalk_20220417_labels.json",
+    "beanstalk_execution_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+    "beanstalk_execution_source_block": 14602790,
+    "beanstalk_execution_source_time_utc": "2022-04-17T12:24:16Z",
+    "beanstalk_source_transaction_index": null,
+    "beanstalk_full_receipt_acquired": false,
+    "beanstalk_complete_attack_set_independently_verified": false,
+    "beanstalk_proposals_are_context_not_additional_incidents": true,
+    "beanstalk_historical_date_caveat": "Historical S2/DeFiHackLabs date April 16 is not the exploit execution day; April 16 proposals and April 17 execution remain distinct roles.",
+    "prior_exposure": "Both protocols retain prior L2 catalogue/curation exposure. No K4 positive-case use was found within the audited scope; this is not proof of absence of all prior knowledge, ordinary protocol rows or deleted/unaudited artifacts.",
+    "current_euler_exposure": "March-1 and March-13 2023 event replays and the six-execution descriptive join have already been inspected. Any policy informed by them treats that incident as development diagnostics.",
+    "euler_separate_diagnostic_reference": "../labels/event_logs_attack_20261025T092349_917377Z_raw_join.json",
+    "euler_six_executions_incident_units": 1,
+    "euler_2023_labels_not_imported_into_2022_window": true,
+    "source_list_order_is_not_canonical_order": true,
+    "publication_dates_are_not_label_available_time": true,
+    "unlabelled_notifications_are_not_false_positives": true
+  },
+  "time_and_budget_requirements_for_separate_execution_freeze": {
+    "interval_convention": "[start_utc_inclusive,end_utc_exclusive)",
+    "canonical_source_order": [
+      "block_number",
+      "transaction_index",
+      "log_index"
+    ],
+    "event_time": "Joined canonical block-header timestamp; shared within a block. Retain integer epoch seconds and block/hash identity.",
+    "historical_observed_time": null,
+    "budget_clock_must_be_explicit": true,
+    "recommended_daily_key_for_source_calendar_budget_scenarios": "population_id + UTC date derived from preserved historical event_time; disclose this as the source-calendar simulation convention, not measured historical decision time.",
+    "operational_clock_alternative": "If budgets are allocated by modeled decision time, preserve an uncompressed historical/scenario time axis and allocate after modeled delays. A decision crossing midnight belongs to that declared operational day; do not backdate it.",
+    "stress_warning": "At x1e6, 30 source days compress to about 2.592 seconds. Wall-clock playback date is not 30 historical daily budgets. Stress pacing and logical budget/label clocks must be independently specified.",
+    "state_boundaries": "Specify initial state/warm-up, carry grouping and feature history across midnight, and reset only the declared daily budget. A day file is not an automatic full-state reset.",
+    "population_scope": "Separate budgets per named emitter population unless a shared operator budget is explicitly predeclared. Shared upstream acquisition does not imply shared alert budget.",
+    "zero_log_days": "Retain all 30 days. Distinguish verified zero selected logs after complete partition scan from missing/incomplete data; no implicit benign label.",
+    "post_hoc_time_repair_disallowed": true
+  },
+  "eligibility": {
+    "permitted_design_role_now": "Candidate shared-window population contract for descriptive operational evaluation; not an independent incident test set.",
+    "closed_by_primary_metadata": [
+      "Historical core/diamond address identity before start",
+      "Euler deployment before proposed window",
+      "Beanstalk source-catalogued upgrade/pause/governance discontinuities",
+      "Explicit source/ABI and event-time limitations",
+      "Preserved L2 exposure and one-incidence unit for Beanstalk"
+    ],
+    "unresolved_before_comparative_claims": [
+      "Formal policy/window/budget-clock/state and warm-up freeze",
+      "Actual acquisition and completeness QA for all 30 UTC days and both emitters",
+      "Beanstalk raw hash/header/log join and full receipt status; exhaustive attack scope remains unverified",
+      "Historical module/facet activation and runtime ABI proof where semantic decoding is used",
+      "Monitoring-rule mechanism observability; all-topic counts alone are not mechanism validation",
+      "Independent human label review and declared feedback availability model",
+      "External independence and broader case coverage: shared window supplies one L2 incident, not the planned 2–4 new independent cases"
+    ],
+    "both_incident_candidates_eligible": false,
+    "optional_neutral_workload_interpretation": "Euler core over the same shared dates supplies an unlabelled second protocol workload without a supplied attack label; window selection is nevertheless informed by the Beanstalk endpoint. Do not call it a random or independently selected ordinary period."
+  },
+  "acquisition_acceptance_requirements": {
+    "minimum_retained_log_fields": [
+      "chain_id",
+      "address",
+      "block_number",
+      "block_hash",
+      "transaction_hash",
+      "transaction_index",
+      "log_index",
+      "topics",
+      "data",
+      "block_timestamp_utc"
+    ],
+    "event_identity": [
+      "chain_id",
+      "block_hash",
+      "transaction_hash",
+      "log_index"
+    ],
+    "preserve_all_matches": "Retain matching logs for both predeclared emitter addresses, including administrative or unknown topics; deduplicate by declared chain identity with conflict checks.",
+    "day_completeness": "Archive upstream object/version/row-group scan coverage, selected-row counts per emitter, payload hashes, and full-day headers with continuous block numbers, parent-hash links and timestamp boundaries. A successful selected-row join alone does not prove full-day coverage.",
+    "event_order": "Validate non-null canonical block/transaction/log coordinates and deterministic ordering; same timestamps do not imply unspecified or simultaneous transaction order.",
+    "partition_rule": "Upstream partition labels must be checked against actual header timestamps. Records outside [start,end) must be reported and handled by a frozen boundary rule, not silently accepted.",
+    "zero_days": "Record validated zero selected events separately from missing objects, failed requests, unread row groups and incomplete joins.",
+    "receipt_limit": "Selected logs and joined headers are not full transaction receipts or execution traces; do not infer receipt JSON acquisition or full mechanism coverage from their presence."
+  }
+}

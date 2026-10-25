@@ -1,0 +1,44 @@
+{
+  "mismatches": [
+    {
+      "gzip_error": "EOFError('Compressed file ended before the end-of-stream marker was reached')",
+      "observed_bytes": 1522191,
+      "observed_sha256": "5875dbf90296aed686eae1215edf89da23c0b9cf416941a1a94c7605def7fd97",
+      "path": "cells/euler_core__greedy__B20/decisions.jsonl.gz",
+      "recorded_sha256": "6c7a6cc9734a89ccbaed9cd1d409d181e6ff100235ac6ac3f7606846dad9b906"
+    },
+    {
+      "gzip_error": "EOFError('Compressed file ended before the end-of-stream marker was reached')",
+      "observed_bytes": 2512657,
+      "observed_sha256": "6b0ec8cd1f60cf6553898c3a76fa68c73363864c98829d4dd484a2e4e1350fb3",
+      "path": "cells/beanstalk_diamond__paced_cumulative__B1/decisions.jsonl.gz",
+      "recorded_sha256": "76236d9dd0440c3d31549be3728c217149d84d4346d4af769b989abfacc87952"
+    },
+    {
+      "gzip_error": "EOFError('Compressed file ended before the end-of-stream marker was reached')",
+      "observed_bytes": 2810772,
+      "observed_sha256": "db91f697549c3c7242c2169fd724218ae78f5493af88e9388d863c62b5bca4c5",
+      "path": "cells/beanstalk_diamond__token_bucket__B1/decisions.jsonl.gz",
+      "recorded_sha256": "8ed21199cfa5c8ae1aa9b4c1496beb1f5c0c88a48299d6ee9f4b8f21b8a2cab1"
+    },
+    {
+      "gzip_error": "EOFError('Compressed file ended before the end-of-stream marker was reached')",
+      "observed_bytes": 2436839,
+      "observed_sha256": "fc9081f3a6682201f022991f99eb5ed4d8c88aae4ffa1cc7420baf32eb9a86bc",
+      "path": "cells/beanstalk_diamond__token_bucket__B5/decisions.jsonl.gz",
+      "recorded_sha256": "2154151a3def8974dc72917857b34b25b465b1f34ebf7c528c362a1c1b963175"
+    },
+    {
+      "gzip_error": "EOFError('Compressed file ended before the end-of-stream marker was reached')",
+      "observed_bytes": 2783612,
+      "observed_sha256": "bf84ab8419022c7e4102823c976a599ca79ef2458d3f262fc9f7f3a4b1908713",
+      "path": "cells/beanstalk_diamond__token_bucket__B20/decisions.jsonl.gz",
+      "recorded_sha256": "0003df42062300816c0a933bb7e64fd1971ce8eb9d1b3c26a3a222157b8cecf1"
+    }
+  ],
+  "quarantined_at_utc": "2026-10-25T12:51:43.788229+00:00",
+  "reason": "five gzip decision artifacts changed after recorded hashes; cause unknown",
+  "records_repaired": false,
+  "replacement_run_id": "budget_policy_20261025T125143_314640Z",
+  "status": "quarantined_not_accepted"
+}

@@ -1,0 +1,168 @@
+{
+  "adversarial_hardened_current_source": {
+    "global_log_order_reversed": {
+      "reason": "global log_index is inconsistent with transaction order",
+      "rejected": true
+    },
+    "header_cache_changed_size": {
+      "reason": "header cache mismatch",
+      "rejected": true
+    },
+    "header_cache_changed_url": {
+      "reason": "header cache mismatch",
+      "rejected": true
+    },
+    "header_cache_changed_version_id": {
+      "reason": "header cache mismatch",
+      "rejected": true
+    },
+    "same_transaction_hash_multiple_positions": {
+      "reason": "same transaction hash at multiple positions",
+      "rejected": true
+    }
+  },
+  "adversarial_original_snapshot": {
+    "global_log_order_reversed": {
+      "reason": "global log_index is inconsistent with transaction order",
+      "rejected": true
+    },
+    "header_cache_changed_size": {
+      "reason": "header cache mismatch",
+      "rejected": true
+    },
+    "header_cache_changed_url": {
+      "reason": "header cache mismatch",
+      "rejected": true
+    },
+    "header_cache_changed_version_id": {
+      "reason": "header cache mismatch",
+      "rejected": true
+    },
+    "same_transaction_hash_multiple_positions": {
+      "reason": "same transaction hash at multiple positions",
+      "rejected": true
+    }
+  },
+  "audit_script_sha256": "a0e26c89bb3e5441726e7914b3335ffa7e852c4ec5fcf98e509f9e231ec4b774",
+  "checked_utc": "2026-10-25T09:21:04.290239+00:00",
+  "checks": {
+    "all_header_parent_links": true,
+    "all_logs_match_full_headers": true,
+    "cached_ranges_size_and_hash": true,
+    "complete_address_scan": true,
+    "current_validator_accepts_real_data": true,
+    "full_header_hash_and_size": true,
+    "global_log_order": true,
+    "hardened_adversarial_cases_rejected": true,
+    "header_numbers_and_hashes_unique": true,
+    "output_execution_order": true,
+    "outputs_size_and_hash": true,
+    "partition_inventory_single_object_matches": true,
+    "range_index_matches_run": true,
+    "range_source_identity_matches_run": true,
+    "retained_headers_exact": true,
+    "retained_source_positions_exact": true,
+    "snapshot_hash_matches_run": true,
+    "transaction_hash_positions_unique": true,
+    "unit_tests_pass": true,
+    "whole_logs_object_sha_is_null": true
+  },
+  "counts": {
+    "cached_ranges": 37,
+    "full_headers": 7125,
+    "matches_per_group": [
+      998,
+      934,
+      992,
+      359
+    ],
+    "matching_headers": 435,
+    "null_addresses": 0,
+    "parent_links": 7124,
+    "retained_logs": 3283,
+    "row_groups": 4,
+    "source_rows": 2411557,
+    "transactions": 676
+  },
+  "current_source_differs_from_completed_run": false,
+  "current_source_sha256": "d4d8654cb94b0e07b3e5dcd214466d5888fefc42769c79f582b279fc08a29357",
+  "files": [
+    {
+      "bytes": 2746074,
+      "path": "data/raw/monitoring_jss/protocol_logs/2023-03-13/protocol_logs_20261025T091457_496507Z/selected_logs.jsonl",
+      "rows": 3283,
+      "sha256": "3fe5c86e9eb6fa9134f28237d28a1df469974aee5eb89d74707e0a2be849b498"
+    },
+    {
+      "bytes": 109169,
+      "path": "data/raw/monitoring_jss/protocol_logs/2023-03-13/protocol_logs_20261025T091457_496507Z/matching_headers.jsonl",
+      "rows": 435,
+      "sha256": "dee75226f256b13811d3e9081eb57286d0b76bd5b1a3741945d4a4d92f12aebd"
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "Requires existing private raw cache; the script fails on uncached spans and never downloads.",
+    "Offline address projection independently checks membership and all retained source positions; other payload columns are code-reviewed and output-validated, not all independently re-decoded.",
+    "Historical partition listing is preserved evidence, not a current source inventory query.",
+    "Euler core all-topic emitter events are not equivalent to token cash outflows. No detection, training, losses or independent attack-case claim.",
+    "Archive parent continuity does not establish consensus finality or historical observation/label times.",
+    "Projection transferred 96.19% of logs object plus full headers; do not infer large byte savings from projection alone.",
+    "Acquisition timestamp duration is not a separately timed complete subprocess runtime; logs byte budget excludes header transfer."
+  ],
+  "partition_listing": {
+    "captured_evidence": [
+      {
+        "is_truncated": "false",
+        "objects": [
+          {
+            "ETag": "\"9ce67d9d2464ed6ecbeae2fda39ded88-7\"",
+            "Key": "v1.0/eth/logs/date=2023-03-13/part-00000-2b4d1fd8-2a91-4f4f-aeae-99a922dcc953-c000.snappy.parquet",
+            "LastModified": "2025-09-30T20:05:15.000Z",
+            "Size": "456668908"
+          }
+        ],
+        "raw_listing_sha256": "e6a8a275e1aa9117328c5871b9d47ea93da36dca70048244f7aad0dea9296067",
+        "raw_listing_source_path": "/workspace/scratch/159bf77d8682/label_evidence_20261025/aws_logs_2023-03-13_listing.xml",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2023-03-13%2F"
+      },
+      {
+        "is_truncated": "false",
+        "objects": [
+          {
+            "ETag": "\"0da7a8533f1cbd1c61c557b268ccff97\"",
+            "Key": "v1.0/eth/blocks/date=2023-03-13/part-00000-de87cb26-3d9e-4815-b5e9-b3b9c4ae4d03-c000.snappy.parquet",
+            "LastModified": "2025-09-30T19:56:48.000Z",
+            "Size": "6186785"
+          }
+        ],
+        "raw_listing_sha256": "3233ccadc609bf0873a0f74c05b3612f021ecf5c207f5fc7ff389cb5bb1de436",
+        "raw_listing_source_path": "/workspace/scratch/159bf77d8682/label_evidence_20261025/aws_blocks_2023-03-13_listing.xml",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2023-03-13%2F"
+      }
+    ],
+    "path": "papers/monitoring_jss/qa/euler_incident_day_partition_listing.json",
+    "sha256": "fe94ba3a18ce5825dedb07d291641570732eff5a2174cba47f9df1fae6221b5f"
+  },
+  "passed": true,
+  "resource_scope": {
+    "acquisition_elapsed_seconds_from_utc": 268.670333,
+    "audit_network_requests": 0,
+    "cached_range_bytes": 439276436,
+    "header_network_bytes": 6186785,
+    "logs_source_bytes": 456668908,
+    "peak_rss_bytes": 502349824,
+    "projection_transfer_ratio": 0.9619144818153462,
+    "rss_scope": "whole Linux acquisition process high-water, including column decoding"
+  },
+  "run_manifest": "papers/monitoring_jss/runs/protocol_logs_20261025T091457_496507Z/acquisition_manifest.json",
+  "run_manifest_sha256": "24676a2a8c7ca28ac3f8a946667d6d90ae8f6773c3de8191e48788667b02abcd",
+  "schema_version": "independent_offline_acquisition_review_v1",
+  "source_snapshot_sha256": "d4d8654cb94b0e07b3e5dcd214466d5888fefc42769c79f582b279fc08a29357",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "log": "test_budget_blocks_unbounded_read (test_acquire_protocol_logs.AcquisitionTests.test_budget_blocks_unbounded_read) ... ok\ntest_changed_etag_fails_before_accepting_range (test_acquire_protocol_logs.AcquisitionTests.test_changed_etag_fails_before_accepting_range) ... ok\ntest_corrupt_cached_range_is_not_silently_reused (test_acquire_protocol_logs.AcquisitionTests.test_corrupt_cached_range_is_not_silently_reused) ... ok\ntest_duplicate_log_does_not_disappear (test_acquire_protocol_logs.AcquisitionTests.test_duplicate_log_does_not_disappear) ... ok\ntest_global_log_order_must_follow_transaction_order (test_acquire_protocol_logs.AcquisitionTests.test_global_log_order_must_follow_transaction_order) ... ok\ntest_header_cache_identity_includes_url_size_and_version (test_acquire_protocol_logs.AcquisitionTests.test_header_cache_identity_includes_url_size_and_version) ... ok\ntest_header_mismatch_rejected (test_acquire_protocol_logs.AcquisitionTests.test_header_mismatch_rejected) ... ok\ntest_one_transaction_hash_cannot_have_two_positions (test_acquire_protocol_logs.AcquisitionTests.test_one_transaction_hash_cannot_have_two_positions) ... ok\ntest_range_read_uses_if_match_and_cache (test_acquire_protocol_logs.AcquisitionTests.test_range_read_uses_if_match_and_cache) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.009s\n\nOK\n",
+    "run": 9
+  }
+}
