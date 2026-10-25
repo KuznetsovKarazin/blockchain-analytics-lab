@@ -1,0 +1,120 @@
+{
+  "candidate": "revest_ethereum_20220327",
+  "design_or_population_freeze_created": false,
+  "gates": [
+    {
+      "gate": "incident_identity",
+      "open_requirement_or_scope": "Ethereum, 27 March 2022. Exact positive executions and completeness still need separate adjudication; loss magnitude is not an inclusion variable.",
+      "source": [
+        "../PHASE5_ELIGIBILITY_REVIEW.md",
+        "https://docs.revest.finance/resources/security-checklist",
+        "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5"
+      ],
+      "status": "confirmed_from_existing_primary_sources"
+    },
+    {
+      "gate": "historical_exposure",
+      "open_requirement_or_scope": "Disclose S2 catalogue exposure and current postmortem/metadata reading. Do not call the incident untouched. Other branches/private work and binary background rows remain outside scope.",
+      "source": [
+        "metadata_audit.json"
+      ],
+      "status": "scoped_audit_complete_L1"
+    },
+    {
+      "gate": "targeted_loader_membership",
+      "open_requirement_or_scope": "Both exact current/old functions omit Revest in price-only and all-mainnet modes because the Solidity text has no literal flash substring. This does not establish actual mislabeled background contamination.",
+      "source": [
+        "metadata_audit.json",
+        "audit_revest_metadata.py"
+      ],
+      "status": "confirmed_absent_in_four_targeted_calls"
+    },
+    {
+      "gate": "historical_attack_day_input",
+      "open_requirement_or_scope": "No claim about all ordinary protocol rows on other dates or every experiment ever run.",
+      "source": [
+        "metadata_audit.json"
+      ],
+      "status": "absent_in_three_preserved_K4_date_lists"
+    },
+    {
+      "gate": "historical_contract_population",
+      "open_requirement_or_scope": "Resolve pre-window entry point, vault, FNFT handler and registry addresses plus activation/upgrade boundaries from historical deployment evidence. PoC hardcoded addresses and later patched contracts are insufficient.",
+      "source": [
+        "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5",
+        "https://docs.revest.finance/resources/security-checklist",
+        "deployment_review.md",
+        "deployment_review.json"
+      ],
+      "status": "OPEN_HISTORICAL_SOURCE_MAP_COMPLETED_NOT_ONCHAIN_VERIFIED"
+    },
+    {
+      "gate": "feature_and_rule_freeze",
+      "open_requirement_or_scope": "Define semantic observation unit, availability, features, scoring and missing-data/abstention rules before candidate payload or scores. Do not derive a Revest-specific rule and label its evaluation held out.",
+      "source": [
+        "../../protocol.json",
+        "../../EVENT_LOG_CONTRACT.md"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "gate": "candidate_window_freeze",
+      "open_requirement_or_scope": "Choose exact 30-60-day population window before acquisition/outcomes. Current proposal: [2022-02-26,2022-03-28) UTC; 29 complete days before incident date plus incident day. Warm-up/evaluation boundary still to be frozen.",
+      "source": [
+        "../PHASE5_ELIGIBILITY_REVIEW.md"
+      ],
+      "status": "PROPOSED_NOT_FROZEN"
+    },
+    {
+      "gate": "continuous_data_completeness",
+      "open_requirement_or_scope": "All60 logs/blocks daily metadata listings for the proposed30-day window are complete and nonempty; payload completeness and Revest extraction remain unverified. Nine dates overlap earlier generic archives for other emitters. Freeze population/cohort before acquiring evaluation-stream payload; deployment-provenance receipts/state can be investigated separately.",
+      "source": [
+        "../../runs/protocol_window_20261025T123312_675327Z/manifest.json",
+        "../source_availability_phase6/run_20261025T145900Z/availability.json"
+      ],
+      "status": "OPEN_60_SOURCE_LISTINGS_COMPLETE_NO_NEW_PAYLOAD"
+    },
+    {
+      "gate": "positive_transaction_inventory",
+      "open_requirement_or_scope": "One pinned README link is metadata only, not a complete verified positive label set. Independently separate execution, preparation, failed attempts and post-exploit movement using primary reports and chain receipts after the permitted freeze.",
+      "source": [
+        "metadata_audit.json"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "gate": "observation_and_finality_contract",
+      "open_requirement_or_scope": "Define when all records required by a transaction-level feature are available. Historical observed_time remains null; do not use block time as actual arrival time. Claim receipt/trace completeness only if acquired.",
+      "source": [
+        "../../protocol.json"
+      ],
+      "status": "OPEN_FOR_NEW_SEMANTIC_UNIT"
+    },
+    {
+      "gate": "cohort_and_stopping_rule",
+      "open_requirement_or_scope": "Freeze inclusion/exclusion and stopping rules for the intended 2-4 incidents across at least two mechanism families before comparisons. Revest alone is not the full cohort; retain failures and avoid success-based replacement.",
+      "source": [
+        "../PHASE5_ELIGIBILITY_REVIEW.md",
+        "../../protocol.json"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "gate": "source_distribution",
+      "open_requirement_or_scope": "Publish only owned audit code, metadata, immutable source URLs and hashes. Do not include full third-party PoC in Git or user-facing package; repository LICENSE is Apache-2.0 while the exact PoC says SPDX UNLICENSED. Raw provider/label distribution terms remain separate.",
+      "source": [
+        "source_fixture_provenance.json"
+      ],
+      "status": "RESTRICTED_NO_PERMISSION_INFERRED"
+    }
+  ],
+  "independent_holdout_admitted": false,
+  "metadata_audit_sha256": "9ca46d7bd407599b4a210abb2cdab031cdbd92511e2753e13700085b7ddf726b",
+  "new_detector_outcomes_inspected": false,
+  "next_bounded_task": "Historical deployment metadata and semantic feature contract on development fixtures, followed by complete pre-outcome cohort/population freeze. No incident payload acquisition or new case evaluation is admitted by this file.",
+  "raw_incident_payload_acquired": false,
+  "recorded_utc": "2026-10-25T14:57:07.108253+00:00",
+  "schema_version": "revest_candidate_gate_status_v1",
+  "source_metadata_freeze_is_scientific_cohort_freeze": false,
+  "status": "candidate_not_eligible"
+}

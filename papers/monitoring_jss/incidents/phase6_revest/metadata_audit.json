@@ -1,0 +1,219 @@
+{
+  "conclusion": {
+    "L2_from_these_two_loader_paths": "not established; targeted fixture omitted by both modes of both exact loaders",
+    "actual_attack_row_training_or_evaluation_exposure": "not found in listed dates; global absence not established",
+    "all_mainnet_exclusion_loader_selected": false,
+    "confirmed_historical_exposure": "L1_catalogue",
+    "current_study_exposure": "Case metadata and public postmortem inspected; no new incident payload or detector result inspected.",
+    "independent_holdout_admitted": false,
+    "price_only_positive_cohort_selected": false
+  },
+  "created_utc": "2026-10-25T14:54:02.494138+00:00",
+  "execution": {
+    "detector_scores_or_outcomes_obtained": false,
+    "network_or_process_attempts_during_audit": [],
+    "new_chain_payload_acquired": false,
+    "solidity_compiled": false,
+    "solidity_or_exploit_executed": false
+  },
+  "fixture_scope": "One pinned Revest PoC as inert text; original root and 2022 READMEs; exact current and old Python metadata loaders.",
+  "k4_manifest_date_overlap": [
+    {
+      "attack_day_listed": false,
+      "days_checked": 49,
+      "evidence_scope": "Previously audited manifest date inventory; no feature rows or outcomes inspected here.",
+      "execution_commit": "40e792530b98dd8a83f291d95197d7cd55d981d0",
+      "hosting_ref": "2c2c7723cb9fa42ff46fb6f252652056a74f9223",
+      "path": "results/kan/k4_20261023_200340"
+    },
+    {
+      "attack_day_listed": false,
+      "days_checked": 49,
+      "evidence_scope": "Previously audited manifest date inventory; no feature rows or outcomes inspected here.",
+      "execution_commit": "09867e89e6420efb7c2fbb1e46c3b4528bb75305",
+      "hosting_ref": "2c2c7723cb9fa42ff46fb6f252652056a74f9223",
+      "path": "results/kan/k4_20261024_080035"
+    },
+    {
+      "attack_day_listed": false,
+      "days_checked": 49,
+      "evidence_scope": "Previously audited manifest date inventory; no feature rows or outcomes inspected here.",
+      "execution_commit": "de55dc478e5313a6861e56744078f9bd224d4ade",
+      "hosting_ref": "77bf3d8a3aed1bf394fd850903e7fd59ad129187",
+      "path": "results/kan/k4_20261024_204829"
+    }
+  ],
+  "limitations": [
+    "Targeted source fixture is not a complete rerun of the whole incident catalogue.",
+    "Exclusion-loader omission does not prove any actual mislabeled Revest transaction entered K4 background rows.",
+    "All binary background rows, all branches, private drafts, deleted work and personal prior knowledge are outside scope.",
+    "An upstream PoC fork block or hardcoded contract address is metadata, not verified deployment/population evidence.",
+    "The README transaction link is not a complete or adjudicated positive set.",
+    "The missing literal flash gate is reported unchanged; this audit does not change K4 or book results."
+  ],
+  "loader_calls": [
+    {
+      "first_failing_gate": "literal_flash_substring_in_solidity",
+      "gates": {
+        "fork_block_metadata": 14465356,
+        "literal_flash_substring_in_solidity": false,
+        "mainnet_fork_found": true,
+        "price_keyword_in_heading": false,
+        "readme_tx_link_count": 1,
+        "source_tx_link_count": 0
+      },
+      "heading": "20220327 Revest Finance - Reentrancy",
+      "incidents": [],
+      "link_semantics": "Catalogue links only, not independently adjudicated complete positive labels.",
+      "loader": "current",
+      "price_only": true,
+      "raw_metadata_transaction_links": [
+        "0xe0b0c2672b760bef4e2851e91c69c8c0ad135c6987bbf1f43f5846d89e691428"
+      ]
+    },
+    {
+      "first_failing_gate": "literal_flash_substring_in_solidity",
+      "gates": {
+        "fork_block_metadata": 14465356,
+        "literal_flash_substring_in_solidity": false,
+        "mainnet_fork_found": true,
+        "price_keyword_in_heading": false,
+        "readme_tx_link_count": 1,
+        "source_tx_link_count": 0
+      },
+      "heading": "20220327 Revest Finance - Reentrancy",
+      "incidents": [],
+      "link_semantics": "Catalogue links only, not independently adjudicated complete positive labels.",
+      "loader": "current",
+      "price_only": false,
+      "raw_metadata_transaction_links": [
+        "0xe0b0c2672b760bef4e2851e91c69c8c0ad135c6987bbf1f43f5846d89e691428"
+      ]
+    },
+    {
+      "first_failing_gate": "literal_flash_substring_in_solidity",
+      "gates": {
+        "fork_block_metadata": 14465356,
+        "literal_flash_substring_in_solidity": false,
+        "mainnet_fork_found": true,
+        "price_keyword_in_heading": false,
+        "readme_tx_link_count": 1,
+        "source_tx_link_count": 0
+      },
+      "heading": "20220327 Revest Finance - Reentrancy",
+      "incidents": [],
+      "link_semantics": "Catalogue links only, not independently adjudicated complete positive labels.",
+      "loader": "old",
+      "price_only": true,
+      "raw_metadata_transaction_links": [
+        "0xe0b0c2672b760bef4e2851e91c69c8c0ad135c6987bbf1f43f5846d89e691428"
+      ]
+    },
+    {
+      "first_failing_gate": "literal_flash_substring_in_solidity",
+      "gates": {
+        "fork_block_metadata": 14465356,
+        "literal_flash_substring_in_solidity": false,
+        "mainnet_fork_found": true,
+        "price_keyword_in_heading": false,
+        "readme_tx_link_count": 1,
+        "source_tx_link_count": 0
+      },
+      "heading": "20220327 Revest Finance - Reentrancy",
+      "incidents": [],
+      "link_semantics": "Catalogue links only, not independently adjudicated complete positive labels.",
+      "loader": "old",
+      "price_only": false,
+      "raw_metadata_transaction_links": [
+        "0xe0b0c2672b760bef4e2851e91c69c8c0ad135c6987bbf1f43f5846d89e691428"
+      ]
+    }
+  ],
+  "python": "3.12.14",
+  "repo_provenance": [
+    {
+      "bytes": 133925,
+      "git_blob_sha": "70f9a8201a4d3205b841f948eb6d23ee1b876a69",
+      "path": "results/security/s2_v1/incidents.csv",
+      "sha256": "6f129aec0e9f31d930e374625992600d4cb25ce5892968c8698ae1b2642ccf8e"
+    },
+    {
+      "bytes": 24178,
+      "git_blob_sha": "627bc94dd9040a3eebf517f8629e579f6a66626b",
+      "path": "papers/monitoring_jss/incidents/exposure_audit_20261025.json",
+      "sha256": "3942ff01b628a532a8ace13ada726bca7f4a0d97f09dfa3d6ea7cca5c26c9f00"
+    }
+  ],
+  "s2_registry_matches": [
+    {
+      "csv_line": 70,
+      "row": {
+        "cause_class": "reentrancy",
+        "cause_text": "Reentrancy",
+        "component": "no bridge keyword in title",
+        "date": "2022-03-27",
+        "loss_parse": "usd",
+        "loss_usd": "11200000.0",
+        "loss_usd_lenient": "11200000.0",
+        "lost_text": "$11.2 million",
+        "name": "Revest Finance",
+        "year": "2022"
+      }
+    }
+  ],
+  "schema_version": "revest_targeted_metadata_exposure_audit_v1",
+  "script_sha256": "f91e1ade187b5cf7221ac1bcfbb6d66719265ed1797b09510eec1e2dfefe5d39",
+  "source_provenance": [
+    {
+      "bytes": 10816,
+      "fixture_path": "main_defi_loader.py",
+      "git_blob_sha": "6972ae660e24f787c2f779fd4cfd0083a1a7d25c",
+      "ref": "77bf3d8a3aed1bf394fd850903e7fd59ad129187",
+      "repository": "KuznetsovKarazin/blockchain-detector-eval",
+      "repository_path": "src/bal/data/defi.py",
+      "sha256": "52931e09a7f985b68a22d9a67bc0112693c6e45f359d0929fd43918c8fa1b7c6",
+      "url": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/src/bal/data/defi.py"
+    },
+    {
+      "bytes": 8223,
+      "fixture_path": "old_defi_loader.py",
+      "git_blob_sha": "b7a257e0c273d8eefa8649b73367f4cde6bb7613",
+      "ref": "2c2c7723cb9fa42ff46fb6f252652056a74f9223",
+      "repository": "KuznetsovKarazin/blockchain-detector-eval",
+      "repository_path": "src/bal/data/defi.py",
+      "sha256": "fa4e0674745a07fd38d5d7bfd7d5164516480cb665d7cb1409d783e120015042",
+      "url": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/2c2c7723cb9fa42ff46fb6f252652056a74f9223/src/bal/data/defi.py"
+    },
+    {
+      "bytes": 159534,
+      "fixture_path": "DeFiHackLabs/README.md",
+      "git_blob_sha": "260f213c3399a7555614f3bafa698e5b7d60c095",
+      "ref": "23c7bd83ccb4524972a9493617fcc8764ab6269b",
+      "repository": "SunWeb3Sec/DeFiHackLabs",
+      "repository_path": "README.md",
+      "sha256": "6e904fcc02a8c571f4fdcd4825a018c5ccc75e7731ad24e7c9185bebbee2fa1e",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/README.md"
+    },
+    {
+      "bytes": 62904,
+      "fixture_path": "DeFiHackLabs/past/2022/README.md",
+      "git_blob_sha": "0a4a65c2b249ce5c7f454a1a199fa9ce63751b30",
+      "ref": "23c7bd83ccb4524972a9493617fcc8764ab6269b",
+      "repository": "SunWeb3Sec/DeFiHackLabs",
+      "repository_path": "past/2022/README.md",
+      "sha256": "e7668ddd37e305db9052d4f208bb3b87d1e75956950739d5e9f1fd66f4c26267",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/past/2022/README.md"
+    },
+    {
+      "bytes": 2658,
+      "fixture_path": "DeFiHackLabs/src/test/2022-03/Revest_exp.sol",
+      "git_blob_sha": "97fefc5a3d06a9453f12182f74e4a36b6a2570f7",
+      "ref": "23c7bd83ccb4524972a9493617fcc8764ab6269b",
+      "repository": "SunWeb3Sec/DeFiHackLabs",
+      "repository_path": "src/test/2022-03/Revest_exp.sol",
+      "sha256": "46b9e755db3871c6cbf2e2bbcaf4c47ac9170ccbc6ffc52dc548379195e141ea",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/src/test/2022-03/Revest_exp.sol"
+    }
+  ],
+  "status": "PASS"
+}

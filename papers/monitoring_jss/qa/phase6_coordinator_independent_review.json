@@ -1,0 +1,495 @@
+{
+  "schema_version": "phase6_coordinator_independent_review_v1",
+  "reviewed_utc": "2026-10-25T15:07:51.450745+00:00",
+  "status": "PASS",
+  "reviewer": "independent phase5_packaging agent",
+  "scope": "Read-only precommit coordinator consistency review of phase6 metadata, eligibility and recorded stages3-5 publication; independent existing loader/XML audits reviewed, not rerun.",
+  "repo_head_at_review": "1fedf5515a3178a08a9f43f98e50d70868a1d877",
+  "network_calls": 0,
+  "production_tests_or_measurements_run": 0,
+  "repo_files_modified_by_reviewer": 0,
+  "uploads_or_commits": 0,
+  "checks": [
+    {
+      "check": "all_five_frozen_sources_and_config_match",
+      "status": "PASS",
+      "evidence": {
+        "list_source_metadata.py": {
+          "sha256": "8dba9315456778920f1f51ae166204b97ca05c4c56e1e9868e145d617382ca12",
+          "matches": true
+        },
+        "listing_config.json": {
+          "sha256": "109b81dae0470f33c24e01c5d582c34b30bd50791ee731ad0c653074bd359855",
+          "matches": true
+        },
+        "PROTOCOL.md": {
+          "sha256": "60d8c04faee9f299ebea98c15e0571ef8bfacf17cf0cb2e6a5a9d0955e7bb940",
+          "matches": true
+        },
+        "test_list_source_metadata.py": {
+          "sha256": "ae4b1e9909b063278911d58673677129521dfcd6be772cf4b6b10346b9aaaea9",
+          "matches": true
+        },
+        "offline_checks.json": {
+          "sha256": "8ccd9f6b3616e65dab90847b4a0002fc456d2f74922c8bf952e88958fb0591c4",
+          "matches": true
+        }
+      }
+    },
+    {
+      "check": "freeze_referenced_by_run_and_independent_audit",
+      "status": "PASS",
+      "evidence": {
+        "sha256": "b2e172847bfe68d696c724975806c5cfe90a5d65300fd1502e00dada633c5877"
+      }
+    },
+    {
+      "check": "report_hashes_match_prior_offline_audits",
+      "status": "PASS",
+      "evidence": {
+        "json_sha256": "7957fd0c2f6ddd868dcca80ae71e2984429da94e5bc186440797a5a35f5c2f20",
+        "csv_sha256": "ccaeb6b3bb1bd56d8c6095764fb0deb6c7b69663e90814c10013b570441145f4"
+      }
+    },
+    {
+      "check": "exact_proposed_window_30_days_two_tables",
+      "status": "PASS",
+      "evidence": {
+        "interval_utc": "[2022-02-26, 2022-03-28)",
+        "partitions": 60,
+        "days": 30
+      }
+    },
+    {
+      "check": "independently_recomputed_public_object_counts_and_sizes",
+      "status": "PASS",
+      "evidence": {
+        "logs": {
+          "partitions_requested": 30,
+          "complete_nonempty_listings": 30,
+          "complete_empty_listings": 0,
+          "listed_objects": 30,
+          "listed_object_bytes_metadata": 6242470841
+        },
+        "blocks": {
+          "partitions_requested": 30,
+          "complete_nonempty_listings": 30,
+          "complete_empty_listings": 0,
+          "listed_objects": 30,
+          "listed_object_bytes_metadata": 162402110
+        }
+      }
+    },
+    {
+      "check": "60_complete_one_object_one_page_listings",
+      "status": "PASS",
+      "evidence": {
+        "pages": 60,
+        "objects": 60,
+        "http_statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "check": "metadata_byte_count_and_zero_payload_scope",
+      "status": "PASS",
+      "evidence": {
+        "received_xml_bytes": 40620,
+        "listed_payload_bytes": 6404872951,
+        "payload_requests_in_prior_independent_audit": 0,
+        "caveat": "No external traffic log; metadata does not establish payload accessibility, decoding, continuity, emitter completeness or incident eligibility."
+      }
+    },
+    {
+      "check": "all_60_csv_rows_match_public_json",
+      "status": "PASS",
+      "evidence": {
+        "rows": 60
+      }
+    },
+    {
+      "check": "freeze_precedes_every_recorded_request",
+      "status": "PASS",
+      "evidence": {
+        "frozen_utc": "2026-10-25T14:58:14.932958+00:00",
+        "run_started_utc": "2026-10-25T14:58:27.989517+00:00",
+        "run_completed_utc": "2026-10-25T14:59:50.395890+00:00"
+      }
+    },
+    {
+      "check": "existing_offline_tests_and_independent_xml_audit_pass",
+      "status": "PASS",
+      "evidence": {
+        "tests": 5,
+        "subtests": 11,
+        "xml_and_receipt_pairs_previously_verified": 60,
+        "audits_not_rerun": true
+      }
+    },
+    {
+      "check": "protocol_v07_remains_draft_and_candidate_ineligible",
+      "status": "PASS",
+      "evidence": {
+        "status": "candidate_not_eligible",
+        "historical_exposure": "L1 catalogue confirmed in scoped audit; neither mode of two pinned K4 loaders selects the targeted Revest fixture",
+        "evidence": "incidents/phase6_revest/",
+        "source_metadata_run": "incidents/source_availability_phase6/run_20261025T145900Z",
+        "proposed_window_utc": [
+          "2022-02-26T00:00:00Z",
+          "2022-03-28T00:00:00Z"
+        ],
+        "scientific_window_or_cohort_frozen": false,
+        "listed_daily_partitions": 60,
+        "listed_objects": 60,
+        "listed_payload_bytes_not_downloaded": 6404872951,
+        "source_xml_bytes_received": 40620,
+        "historical_registry_bindings_verified": false,
+        "raw_candidate_event_payload_acquired": false,
+        "new_detector_outcomes_inspected": false,
+        "independent_holdout_admitted": false
+      }
+    },
+    {
+      "check": "publication_local_receipts_are_consistent",
+      "status": "PASS",
+      "evidence": {
+        "published_commit": "09fa5825b4e27dc35e1d43b2f46e14ba1fa13a02",
+        "exact_tree": "3ef6b10f4ae3674cefa2e5025db648d6c4736717",
+        "full_receipt_sha256": "9764eae034323dd30c388549accb12e20c5b5a08a91a410b29dd21aa7de224c0",
+        "reviewer_network_calls": 0,
+        "scope": "Offline consistency with recorded remote responses; no fresh network publication check."
+      }
+    },
+    {
+      "check": "no_existing_measured_or_book_sources_changed_since_phase5",
+      "status": "PASS",
+      "evidence": {
+        "base": "1fedf5515a3178a08a9f43f98e50d70868a1d877",
+        "changed_path_count": 27,
+        "existing_paths_modified": [
+          "papers/monitoring_jss/.gitattributes",
+          "papers/monitoring_jss/HANDOFF_RU.txt",
+          "papers/monitoring_jss/PROTOCOL.md",
+          "papers/monitoring_jss/STATUS.md",
+          "papers/monitoring_jss/protocol.json",
+          "papers/monitoring_jss/result_ledger.json"
+        ],
+        "new_executable_sources": [
+          "papers/monitoring_jss/incidents/phase6_revest/audit_revest_metadata.py",
+          "papers/monitoring_jss/incidents/source_availability_phase6/list_source_metadata.py",
+          "papers/monitoring_jss/incidents/source_availability_phase6/test_list_source_metadata.py"
+        ],
+        "all_changes": [
+          {
+            "status": "M",
+            "path": "papers/monitoring_jss/.gitattributes"
+          },
+          {
+            "status": "M",
+            "path": "papers/monitoring_jss/HANDOFF_RU.txt"
+          },
+          {
+            "status": "M",
+            "path": "papers/monitoring_jss/PROTOCOL.md"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/SESSION_6_REPORT_RU.md"
+          },
+          {
+            "status": "M",
+            "path": "papers/monitoring_jss/STATUS.md"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/phase6_revest/README.md"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/phase6_revest/audit_revest_metadata.py"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/phase6_revest/candidate_gate_status.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/phase6_revest/deployment_review.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/phase6_revest/deployment_review.md"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/phase6_revest/independent_review.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/phase6_revest/metadata_audit.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/phase6_revest/source_fixture_provenance.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/PROTOCOL.md"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/RESULTS.md"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/design_freeze.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/list_source_metadata.py"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/listing_config.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/offline_checks.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z/availability.csv"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z/availability.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z/independent_audit.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z/postrun_verification.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/incidents/source_availability_phase6/test_list_source_metadata.py"
+          },
+          {
+            "status": "M",
+            "path": "papers/monitoring_jss/protocol.json"
+          },
+          {
+            "status": "A",
+            "path": "papers/monitoring_jss/qa/publication_success_20261025_phase6.json"
+          },
+          {
+            "status": "M",
+            "path": "papers/monitoring_jss/result_ledger.json"
+          }
+        ]
+      }
+    },
+    {
+      "check": "full_third_party_poc_absent_from_staged_new_files",
+      "status": "PASS",
+      "evidence": {
+        "new_solidity_files": 0,
+        "scope": "Staged repository only; final package not yet built."
+      }
+    },
+    {
+      "check": "staged_content_matches_reviewed_worktree",
+      "status": "PASS",
+      "evidence": {
+        "unstaged_paths": []
+      }
+    },
+    {
+      "check": "git_staged_whitespace_check",
+      "status": "PASS",
+      "evidence": {
+        "output": ""
+      }
+    },
+    {
+      "check": "report_status_protocol_scope_manually_reviewed",
+      "status": "PASS",
+      "evidence": {
+        "metadata": "All three distinguish listing availability from payload/coverage evidence; reports retain ETag opacity and draft cohort status.",
+        "exposure": "Scoped L1 catalogue exposure retained; no global non-exposure, untouched holdout or actual K4 contamination asserted.",
+        "deployment": "Historical source candidates are not verified on-chain activation intervals; missing creation/state/deployed-code checks remain explicit.",
+        "scientific_claim": "No independent incident admitted; no new detector outcomes/positive-label join; full scientific comparison unfinished.",
+        "production": "Only new metadata/eligibility audit code added; prior decoder, detector, budget and resource measurement sources unchanged.",
+        "publication": "Stages3-5 published exact tree with distinct snapshot commit; older blocked receipts treated historically.",
+        "review_method": "Read current report/status/protocol alongside local reports, JSON counts and recorded audit evidence; no tests, network or experiments rerun."
+      }
+    },
+    {
+      "check": "additional_independent_revest_consistency_review",
+      "status": "PASS",
+      "evidence": {
+        "reviewer": "phase5_packaging/static_review",
+        "blockers": [],
+        "metadata_audit_sha256": "9ca46d7bd407599b4a210abb2cdab031cdbd92511e2753e13700085b7ddf726b",
+        "source_identity_records_agree": 5,
+        "repository_input_hashes_match": 2,
+        "loader_calls": 4,
+        "saved_date_lists": 3,
+        "dates_per_list": 49,
+        "eligibility_gates": 12,
+        "deployment_source_files": 9,
+        "historical_candidates": 5,
+        "scope_wording": "README, deployment JSON/MD, candidate gates, SESSION_6_REPORT_RU, STATUS and protocol preserve scoped L1, no actual K4 contamination established, candidate_not_eligible, no scientific freeze/new event payload/scores.",
+        "network_calls": 0,
+        "repo_edits": 0,
+        "audit_reruns": 0
+      }
+    }
+  ],
+  "errors": [],
+  "reviewed_file_hashes": [
+    {
+      "path": "papers/monitoring_jss/.gitattributes",
+      "bytes": 504,
+      "sha256": "1a87421b09b90f44b420bf9b85bfcc1c70392649b1afba73b5c68769e0554aa1"
+    },
+    {
+      "path": "papers/monitoring_jss/HANDOFF_RU.txt",
+      "bytes": 5947,
+      "sha256": "2ee0c7361e00ac3013bfb4d036a9abf2541babd1e1a5ceca535ed2e7f252140b"
+    },
+    {
+      "path": "papers/monitoring_jss/PROTOCOL.md",
+      "bytes": 8637,
+      "sha256": "26a7ec12fd56cdd39601ce149dc9b7a7478fb1d5b94d4fe0ab1ec06034cb01be"
+    },
+    {
+      "path": "papers/monitoring_jss/SESSION_6_REPORT_RU.md",
+      "bytes": 10291,
+      "sha256": "7933b13fca5c8731fcfdad76be5c35fe38983779d7e2f829728d46fb2aef06be"
+    },
+    {
+      "path": "papers/monitoring_jss/STATUS.md",
+      "bytes": 5868,
+      "sha256": "a3f860522d1ae5024e20800b23de9464a4c91b7cb4300dffae8da4470dbec218"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase6_revest/README.md",
+      "bytes": 5561,
+      "sha256": "2c9937e86c7410024a8407c11b2d39e23d4469dbe4c384299a261781ccb50b2d"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase6_revest/audit_revest_metadata.py",
+      "bytes": 10474,
+      "sha256": "f91e1ade187b5cf7221ac1bcfbb6d66719265ed1797b09510eec1e2dfefe5d39"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase6_revest/candidate_gate_status.json",
+      "bytes": 6400,
+      "sha256": "636b903d3ec58b6e79721492b923f85d5106f74e5ba7089f7287efeb30791032"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase6_revest/deployment_review.json",
+      "bytes": 10232,
+      "sha256": "770ecd4a7a0ff00636b7a241c1749ad5cdce33c3583647de3e5442e28e272ea1"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase6_revest/deployment_review.md",
+      "bytes": 8640,
+      "sha256": "ecef44cd6a484d18f962da7d4d6112483f91dcf110c80c4f72fad2b4a3a50269"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase6_revest/independent_review.json",
+      "bytes": 3518,
+      "sha256": "f87a3d220b0843133ae9bcc4e50edcd30d54664ae414b580e133a6342f261674"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase6_revest/metadata_audit.json",
+      "bytes": 9556,
+      "sha256": "9ca46d7bd407599b4a210abb2cdab031cdbd92511e2753e13700085b7ddf726b"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase6_revest/source_fixture_provenance.json",
+      "bytes": 4731,
+      "sha256": "b5354e702c22e6ae2171bae365c1ce06ea1e70b87cd848f9024e04d0eda9b812"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/PROTOCOL.md",
+      "bytes": 2596,
+      "sha256": "60d8c04faee9f299ebea98c15e0571ef8bfacf17cf0cb2e6a5a9d0955e7bb940"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/RESULTS.md",
+      "bytes": 1676,
+      "sha256": "32159676b121de458f6c76018814588a0a1d4cf5fd1638fc6162fec2f63c528d"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/design_freeze.json",
+      "bytes": 699,
+      "sha256": "b2e172847bfe68d696c724975806c5cfe90a5d65300fd1502e00dada633c5877"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/list_source_metadata.py",
+      "bytes": 12500,
+      "sha256": "8dba9315456778920f1f51ae166204b97ca05c4c56e1e9868e145d617382ca12"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/listing_config.json",
+      "bytes": 8443,
+      "sha256": "109b81dae0470f33c24e01c5d582c34b30bd50791ee731ad0c653074bd359855"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/offline_checks.json",
+      "bytes": 417,
+      "sha256": "8ccd9f6b3616e65dab90847b4a0002fc456d2f74922c8bf952e88958fb0591c4"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z/availability.csv",
+      "bytes": 3262,
+      "sha256": "ccaeb6b3bb1bd56d8c6095764fb0deb6c7b69663e90814c10013b570441145f4"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z/availability.json",
+      "bytes": 82537,
+      "sha256": "7957fd0c2f6ddd868dcca80ae71e2984429da94e5bc186440797a5a35f5c2f20"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z/independent_audit.json",
+      "bytes": 1870,
+      "sha256": "0b35bfc14417ca6ccedd5ae51afd5e8190d1d458341c13658dd79e83dc6ea5b1"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z/postrun_verification.json",
+      "bytes": 10354,
+      "sha256": "9e754cccebdd56b7f66de406a0104cc4793e170a29b154ea05e5fe7f32085a11"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/source_availability_phase6/test_list_source_metadata.py",
+      "bytes": 4878,
+      "sha256": "ae4b1e9909b063278911d58673677129521dfcd6be772cf4b6b10346b9aaaea9"
+    },
+    {
+      "path": "papers/monitoring_jss/protocol.json",
+      "bytes": 25222,
+      "sha256": "c93fa028bf9ee92a8383e00b37ab14e9c6810b601fe42281a958431cc7fc7546"
+    },
+    {
+      "path": "papers/monitoring_jss/qa/publication_success_20261025_phase6.json",
+      "bytes": 931,
+      "sha256": "d2db4e8b5fb44ed208a5348db9fda7eefb55c5f1c252d81583bbb27c83ff945b"
+    },
+    {
+      "path": "papers/monitoring_jss/result_ledger.json",
+      "bytes": 8890,
+      "sha256": "89e8f926ab9fbb70b3f48ee659343d97db2be82d3f13c36db7809b14aa37b1d1"
+    }
+  ],
+  "limitations": [
+    "Raw XML semantic reconstruction and exact loader replays were separately audited earlier; this review rechecks their digests and aggregates rather than rerunning them.",
+    "Publication verified here only against saved recorded API responses; no live remote request.",
+    "Precommit review covers exact listed file digests; later artifact packaging/publication requires its own receipt."
+  ]
+}

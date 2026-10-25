@@ -1,0 +1,93 @@
+{
+  "attack_date_present_in_any_inventory": false,
+  "audited_report_sha256": "9ca46d7bd407599b4a210abb2cdab031cdbd92511e2753e13700085b7ddf726b",
+  "audited_script_sha256": "f91e1ade187b5cf7221ac1bcfbb6d66719265ed1797b09510eec1e2dfefe5d39",
+  "catalogue_link_count": 1,
+  "confirmed_exposure": "L1_catalogue",
+  "created_utc": "2026-10-25T14:55:41.827562+00:00",
+  "current_raw_manifest_date_inventory_independently_matches": true,
+  "each_inventory_days": 49,
+  "fixture_files_verified": [
+    {
+      "bytes": 10816,
+      "git_blob_sha": "6972ae660e24f787c2f779fd4cfd0083a1a7d25c",
+      "path": "main_defi_loader.py",
+      "sha256": "52931e09a7f985b68a22d9a67bc0112693c6e45f359d0929fd43918c8fa1b7c6"
+    },
+    {
+      "bytes": 8223,
+      "git_blob_sha": "b7a257e0c273d8eefa8649b73367f4cde6bb7613",
+      "path": "old_defi_loader.py",
+      "sha256": "fa4e0674745a07fd38d5d7bfd7d5164516480cb665d7cb1409d783e120015042"
+    },
+    {
+      "bytes": 159534,
+      "git_blob_sha": "260f213c3399a7555614f3bafa698e5b7d60c095",
+      "path": "DeFiHackLabs/README.md",
+      "sha256": "6e904fcc02a8c571f4fdcd4825a018c5ccc75e7731ad24e7c9185bebbee2fa1e"
+    },
+    {
+      "bytes": 62904,
+      "git_blob_sha": "0a4a65c2b249ce5c7f454a1a199fa9ce63751b30",
+      "path": "DeFiHackLabs/past/2022/README.md",
+      "sha256": "e7668ddd37e305db9052d4f208bb3b87d1e75956950739d5e9f1fd66f4c26267"
+    },
+    {
+      "bytes": 2658,
+      "git_blob_sha": "97fefc5a3d06a9453f12182f74e4a36b6a2570f7",
+      "path": "DeFiHackLabs/src/test/2022-03/Revest_exp.sol",
+      "sha256": "46b9e755db3871c6cbf2e2bbcaf4c47ac9170ccbc6ffc52dc548379195e141ea"
+    }
+  ],
+  "independent_loader_calls": [
+    {
+      "loader": "current",
+      "price_only": true,
+      "returned_records": 0
+    },
+    {
+      "loader": "current",
+      "price_only": false,
+      "returned_records": 0
+    },
+    {
+      "loader": "old",
+      "price_only": true,
+      "returned_records": 0
+    },
+    {
+      "loader": "old",
+      "price_only": false,
+      "returned_records": 0
+    }
+  ],
+  "k4_inventory_runs_checked": 3,
+  "limits": [
+    "Offline check of supplied pinned source bytes and preserved provenance, no fresh remote verification.",
+    "Two old K4 date sets verified against preserved prior audit inventory; current date set additionally checked against the saved current raw manifest.",
+    "Targeted fixture omission from both loader modes does not demonstrate actual attack-row contamination or global absence of prior exposure.",
+    "No complete cohort rebuild, no historical deployment/ABI verification, no admitted independent holdout."
+  ],
+  "mainnet_fork_metadata": 14465356,
+  "new_network_or_chain_data_acquired": false,
+  "original_and_independent_rerun_equal_except_creation_time": true,
+  "price_keyword_in_heading_absent": true,
+  "repository_files_modified": false,
+  "s2_physical_line": 70,
+  "schema_version": "revest_metadata_independent_review_v1",
+  "solidity_literal_flash_absent": true,
+  "solidity_or_exploit_executed": false,
+  "source_predicates": [
+    {
+      "first_filter": "not m or m.group(1) != 'mainnet' or (not re.search('flash', src, re.I))",
+      "later_price_filter": "price_only and (not re.search(PRICE_WORDS, head.lower()))",
+      "loader": "current"
+    },
+    {
+      "first_filter": "not m or m.group(1) != 'mainnet' or (not re.search('flash', src, re.I))",
+      "later_price_filter": "price_only and (not re.search(PRICE_WORDS, head.lower()))",
+      "loader": "old"
+    }
+  ],
+  "status": "PASS"
+}

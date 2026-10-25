@@ -1,123 +1,84 @@
 # Article 2 status — 25 October 2026
 
-**Phase 5 local resource measurement is complete and independently verified:
-30 timing workers, 24 fresh-prefix memory probes and 150 modeled FIFO scenarios
-per series. A fully identical technical repeat followed a documented concurrent
-audit in the original series; both remain preserved. Independent incident
-validation and the full scientific comparison remain incomplete.**
+**Stages 3–5 are published. Phase 6 completes bounded Revest metadata,
+historical-source and source-listing checks. No new independent attack case
+is admitted.** Latest report: [SESSION_6_REPORT_RU.md](SESSION_6_REPORT_RU.md).
+Protocol: `protocol.json` v0.7, still draft for the full scientific comparison.
 
-Repository: KuznetsovKarazin/blockchain-analytics-lab; branch: paper/monitoring-jss.
+Repository: KuznetsovKarazin/blockchain-analytics-lab, branch paper/monitoring-jss.
 Companion pin unchanged: dc1ba8876f3f163c27c48f3a39292fc47f71bf18.
-Historical book scripts/results are unchanged. Current report:
-[SESSION_5_REPORT_RU.md](SESSION_5_REPORT_RU.md). Prior continuous-window report:
-[SESSION_4_REPORT_RU.md](SESSION_4_REPORT_RU.md). Previous stage:
-[SESSION_3_REPORT_RU.md](SESSION_3_REPORT_RU.md).
+Book source/results and scripts/run_all.sh are untouched.
 
-## New findings
+## Current findings
 
-- Resource repeat `resource_20261025T135508_936231Z`: all 725,400 decisions equal
-  the accepted phase4 B5 semantics; all 24 prefix states independently reconstructed.
-  The five-run median instrumented-loop throughput is about 11.1–12.1k records/s;
-  per-run p95 service medians span166–199microseconds across the six cells.
-- B5 bounds notifications, not processing volume or retained identities. Every
-  accepted event adds one seen and one order-key entry. Full greedy checkpoints
-  are4,506,512bytes (Euler) and6,692,443bytes (Beanstalk); memory is not indefinitely bounded.
-- Queue results are lossless finite-trace simulations, not historical/live latency.
-  RSS is a whole-process OS estimate sampled before checkpoint serialization.
-- Initial resource series is semantically valid but has known concurrent reference
-  audit activity; identical sources/jobs were fully repeated with known local tasks held.
-  Shared-platform interference remains uncontrolled; no causal policy-speed superiority.
-- Full suite:165tests+92subtests. Both sealed runs and150scenarios per run independently PASS.
-- Renewed Git publication was blocked by automatic risk review on content/destination
-  authorization. No commit/ref update; remote remains23129bd. Local history retained in bundle.
+- Exact old/current K4 metadata loaders both omit the targeted pinned Revest
+  fixture in both modes: the required literal `flash` is absent. The S2 row
+  establishes scoped historical L1 catalogue exposure. This does not establish
+  actual K4 contamination, global non-exposure or a blind test.
+- A historical SDK registry differs from current documentation. Source-level
+  registry setters can change bindings without dedicated mapping-change events.
+  Historical creation, deployed-code equivalence and routing intervals remain
+  unverified; a complete protocol population is not yet established.
+- The proposed 30-day window [2022-02-26,2022-03-28) has 60 complete nonempty daily
+  source listings, one object per logs/blocks day. Only 40,620 XML bytes were received;
+  listed payload size 6,404,872,951 bytes was not downloaded. This is metadata
+  availability, not data completeness. Independent listing audit PASS.
+- Metadata audit, twelve eligibility gates and deployment review:
+  `incidents/phase6_revest/`. Frozen listing protocol, code, 5 tests + 11 subtests and
+  actual independent verification: `incidents/source_availability_phase6/`.
+  No new candidate event payload, detector scores, fitted rule or positive-label
+  join. Revest remains `candidate_not_eligible`.
 
+## Accepted work from previous stages
 
-- A shared continuous window, March19–April17 2022, contains 19,425 Euler core
-  and 28,935 Beanstalk Diamond logs. All 30 source partitions and 192,391
-  consecutive headers were independently verified. This is an incident-conditioned
-  window, not random background or an independent attack test.
-- Eighteen cells compare greedy, paced cumulative and token-bucket admission
-  at daily caps 1/5/20. All 435,240 decisions, 540 daily and 12,960 hourly
-  aggregates match an independent oracle; no hard-cap exceedances.
-- At cap five, Euler notifications are 119/105/71 and Beanstalk 49/47/42.
-  Paced admission covers more raw-trigger-active hours here, but this is a
-  workload metric and does not establish better attack detection.
-- All nine Beanstalk cells issue zero notifications on the six logs of the
-  reported exploit execution. Three raw triggers are rejected by the hard daily
-  cap, unreleased quota or unavailable token. Unused daily allowance does not
-  guarantee immediate admission. This L2 case is now a development diagnostic.
-- The first comparison run failed final integrity checks on five decision gzip
-  files and is excluded. A retry using identical computation in isolated staging
-  was sealed before export and passed independent integrity and semantic checks.
-  The corruption cause remains unknown.
-- Current full suite: 146 tests and 73 subtests pass. Pre-execution independent
-  checks cover 390,888 synthetic decisions and 744 checkpoint continuations.
-
-- Elliptic: 10 cells, 100 fitted estimators and 675,040 decisions on a declared
-  direct18 subset. At 328 notifications per cell, fixed LightGBM found 73 known
-  positives; retraining at delays 0/1/2/4 found 42/46/52/68. All 150 batches filled
-  the cap, so this result reflects ranking and does not demonstrate a threshold-
-  calibration benefit. Most LightGBM alerts have unknown labels.
-- Primary-source review found future address history within the purported local
-  Elliptic features. The reduced subset is still a retrospective supplied-feature
-  benchmark with global normalization/dependence caveats, not an online repair.
-- Euler March13: unchanged workload rule used all five daily notifications before
-  the first of six reported exploit executions. Their 196 raw triggers were all
-  budget-suppressed. These six executions comprise one L2 incident; after viewing
-  this outcome, Euler is a development diagnostic, not a future untouched test.
-- Process crashes: 12 actual terminations and resumes plus three uninterrupted
-  cells recover identical 1,247 decisions and five unique local sink effects.
-  After sink commit/before ack, six delivery attempts produce five effects under
-  the specified idempotent sink contract. No general network exactly-once claim.
-- Full test suite: 82 passed and 39 subtests passed. Independent checks include
-  actual models/scores, fitting/calibration cohorts, compressed logs, SQLite
-  states, preserved crash snapshots and sealed evidence archives.
-
-## Evidence status
-
-| Evidence | Run | Status |
+| Evidence | Main result | Scientific scope |
 |---|---|---|
-| Header pilot | pilot_20261025T081404_015172Z | accepted |
-| Original header attempt | pilot_20261025T081159_554384Z | excluded: truncated gzip |
-| Euler March1 acquisition/replay | protocol_logs_20261025T083346_282558Z / event_logs_20261025T084327_927529Z | accepted |
-| Elliptic acquisition | elliptic_data_20261025T090822_439609Z | accepted original v1 |
-| Elliptic actual-model experiment | elliptic_prequential_20261025T091655_598646Z | accepted, exploratory |
-| Euler March13 acquisition/replay | protocol_logs_20261025T091457_496507Z / event_logs_attack_20261025T092349_917377Z | accepted, descriptive |
-| First durability attempt | durable_20261025T090940_001269Z | excluded: changed/corrupt DB artifacts and stale sidecars |
-| Replacement durability experiment | durable_20261025T092104_711695Z | accepted after independent sealed-archive verification |
-| Continuous 30-day acquisition | protocol_window_20261025T123312_675327Z | accepted; both selected emitters |
-| First allocation comparison | budget_policy_20261025T124444_450736Z | excluded: five changed/truncated gzip artifacts |
-| Sealed allocation retry | budget_policy_20261025T125143_314640Z | accepted; identical code/config/inputs |
-| Beanstalk post-decision label join | budget_policy_label_join_20261025T125414_524570Z | accepted, one L2 diagnostic only |
+| Header and Euler event pilots | Ordered ingestion, prefix/duplicate/restart checks | Bounded feasibility; no independent attack evaluation |
+| Elliptic direct18 actual estimator study | 10 cells, 100 fits, 675040 decisions; fixed LGBM 73 known TP versus adaptive 42/46/52/68 at 328 notifications | One seed; supplied globally normalized features; already studied steps; all 150 batch thresholds nonbinding |
+| Euler and Beanstalk joins | Zero emitted notifications within reported exploit executions under studied settings | Two development diagnostics; executions/policy cells are not independent incidents |
+| Continuous two-emitter budget study | 30 days, 18 cells, 435240 decisions; no cap exceedance | Incident-conditioned window; workload coverage is not detection quality |
+| Local process-crash recovery | 12 actual terminations plus 3 baselines; 5 unique effects under specified idempotent SQLite sink | Conditional local reliability, not arbitrary-network exactly-once |
+| Resource measurement | Two 54-worker series, 150 modeled queues each; repeat median loop throughput about 11–12k events/s | Shared host/warm cache descriptive measurements, not live throughput or latency |
+| State growth | seen/order_keys each N; full greedy state 4,506,512 and 6,692,443 bytes | Notification cap does not bound retained identities or all processing |
 
-All paths are under `runs/`. All excluded attempts retain original reports and
-observed bytes. Their causes are unestablished; their timing results are not
-used as accepted evidence. Hardening the artifact handoff is not presented as
-proof of the original corruption cause.
+The resource initial series is valid with known concurrent audit activity and
+was retained alongside an identical technical repeat; it is not a corrupt or
+excluded run. Full production suite at phase 5: 165 tests + 92 subtests. Phase 6 changes
+no measured decoder/policy/resource source. See SESSION_3/4/5_REPORT_RU.md and
+result_ledger.json for exact runs, counts, evidence and limitations.
 
-Raw datasets, exact cohorts, models, decisions and database evidence are retained
-privately. Git contains code, frozen configs/source snapshots, aggregate results
-and hashes. Source distribution terms are not inferred from a code license.
+Excluded original header, durability and budget-comparison attempts remain
+preserved with unchanged failure records. Their corruption causes are unknown.
+Do not repair expected hashes or substitute them for accepted sealed retries.
+
+## Publication and evidence
+
+Stages 3–5 were published as 09fa5825b4e27dc35e1d43b2f46e14ba1fa13a02,
+parent 23129bdcff24508bb690a6747c3c4900d8ae8dbd. Its tree
+3ef6b10f4ae3674cefa2e5025db648d6c4736717 exactly equals local snapshot 1fedf551.
+The API snapshot commit and preserved local ancestry have different commit IDs.
+The lease-protected non-force update and fresh ref/tree fetch passed. The prior
+publication rejection was resolved by the user's explicit content/destination
+permission. See qa/publication_success_20261025_phase6.json; old rejection
+receipts and old reports describe their historical state, not a current block.
+
+Git contains owned code, configs, aggregate results and provenance. Raw datasets,
+models and per-record evidence are in previously saved private packages. Thirty
+phase4 source archives are durable; reclaimed local ZIP caches are not missing
+acquisitions. The phase6 package adds metadata evidence and retrieval instructions,
+not the full third-party PoC or older large experiment archives.
 
 ## Remaining work
 
-| Package | Completed bounded work | Still required for broader claims |
-|---|---|---|
-| P2.01 | Header/core-log ingestion, order, provenance | Semantic ABI/deployment evidence, receipts/traces and cross-chain availability where needed |
-| P2.02 | Actual fit/calibrate/release experiment; 18-cell causal budget allocation | Wider predeclared model comparisons; distinguish threshold, ranking and admission effects |
-| P2.03 | Exposure/label audit; complete 30-day two-emitter population and one-day diagnostics | Independent eligible cases, additional windows and adjudication of unknown alerts |
-| P2.04 | Extraction, prepared-feature modeling, local replay and persistence measurements | Controlled performance study, live/finality scope and more workloads |
-| P2.05 | Real local process crashes with conditional idempotent sink | Other fault positions, remote delivery, kernel/power-loss only if claimed |
-| P2.06 | Reproducible negative findings; learned-model and continuous-window tables/figures | Independent scientific comparisons and justified uncertainty |
+Resolve historical deployment/registry provenance; design semantic features on
+declared development cases; freeze the candidate frame, population, windows,
+methods and exclusion/stopping rules before acquiring evaluation-stream payloads.
+Historical creation/state evidence can be gathered separately as provenance.
+Revest alone does not meet 2–4 incidents across at least 2 families. Euler/Beanstalk
+cannot become untouched tests after their outcomes have informed development.
+BSC remains reserved pending complete chain data and positive-transaction evidence.
+Unknown alerts are not negatives; false-alarm estimation needs adjudication.
 
-Next, obtain eligible independent cases and label evidence, define semantic
-features before their outcomes, and separate workload coverage from incident
-quality. Do not tune on Euler or Beanstalk and reuse them as untouched tests.
-Already studied Elliptic steps remain exploratory. Article 1 and the book retain
-their agreed priority; submission and correspondence are not authorized here.
-
-The prior GitHub publication was rejected without a reason. The last verified
-remote head is 23129bdcff24508bb690a6747c3c4900d8ae8dbd; later work is local and
-preserved in portable evidence bundles. Thirty source archives were durably saved
-and verified local cache copies reclaimed; their exact location/SHA index is
-retained privately. Do not interpret absent local source ZIPs as failed acquisition.
+Full scientific comparisons, controlled live/remote measurements and justified
+uncertainty remain open. Keep the agreed priority of Article 1 and the book.
+No manuscript submission, release or external correspondence is authorized here.

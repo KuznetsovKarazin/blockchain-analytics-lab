@@ -1,0 +1,329 @@
+{
+  "days": 30,
+  "endpoint": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/",
+  "endpoint_basis": "Existing acquire_protocol_logs.py BASE constant; no provider discovery",
+  "interpretation": "Listing object existence, exact keys, byte-size metadata and opaque ETag only; no content hash, payload readability, header continuity, emitter completeness, incident truth or holdout eligibility claim",
+  "max_keys_per_page": 1000,
+  "max_pages_per_prefix": 2,
+  "max_requests_total": 120,
+  "max_response_bytes": 1048576,
+  "max_response_bytes_total": 125829120,
+  "on_provider_or_network_error": "Stop unstarted requests; at most four requests already in flight; preserve inconclusive/partial result; no alternate provider",
+  "operation": "GET bucket root with list-type=2; S3 ListObjectsV2 only",
+  "partitions": [
+    {
+      "day_utc": "2022-02-26",
+      "prefix": "v1.0/eth/logs/date=2022-02-26/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-02-26",
+      "prefix": "v1.0/eth/blocks/date=2022-02-26/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-02-27",
+      "prefix": "v1.0/eth/logs/date=2022-02-27/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-02-27",
+      "prefix": "v1.0/eth/blocks/date=2022-02-27/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-02-28",
+      "prefix": "v1.0/eth/logs/date=2022-02-28/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-02-28",
+      "prefix": "v1.0/eth/blocks/date=2022-02-28/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-01",
+      "prefix": "v1.0/eth/logs/date=2022-03-01/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-01",
+      "prefix": "v1.0/eth/blocks/date=2022-03-01/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-02",
+      "prefix": "v1.0/eth/logs/date=2022-03-02/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-02",
+      "prefix": "v1.0/eth/blocks/date=2022-03-02/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-03",
+      "prefix": "v1.0/eth/logs/date=2022-03-03/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-03",
+      "prefix": "v1.0/eth/blocks/date=2022-03-03/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-04",
+      "prefix": "v1.0/eth/logs/date=2022-03-04/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-04",
+      "prefix": "v1.0/eth/blocks/date=2022-03-04/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-05",
+      "prefix": "v1.0/eth/logs/date=2022-03-05/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-05",
+      "prefix": "v1.0/eth/blocks/date=2022-03-05/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-06",
+      "prefix": "v1.0/eth/logs/date=2022-03-06/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-06",
+      "prefix": "v1.0/eth/blocks/date=2022-03-06/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-07",
+      "prefix": "v1.0/eth/logs/date=2022-03-07/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-07",
+      "prefix": "v1.0/eth/blocks/date=2022-03-07/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-08",
+      "prefix": "v1.0/eth/logs/date=2022-03-08/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-08",
+      "prefix": "v1.0/eth/blocks/date=2022-03-08/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-09",
+      "prefix": "v1.0/eth/logs/date=2022-03-09/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-09",
+      "prefix": "v1.0/eth/blocks/date=2022-03-09/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-10",
+      "prefix": "v1.0/eth/logs/date=2022-03-10/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-10",
+      "prefix": "v1.0/eth/blocks/date=2022-03-10/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-11",
+      "prefix": "v1.0/eth/logs/date=2022-03-11/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-11",
+      "prefix": "v1.0/eth/blocks/date=2022-03-11/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-12",
+      "prefix": "v1.0/eth/logs/date=2022-03-12/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-12",
+      "prefix": "v1.0/eth/blocks/date=2022-03-12/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-13",
+      "prefix": "v1.0/eth/logs/date=2022-03-13/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-13",
+      "prefix": "v1.0/eth/blocks/date=2022-03-13/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-14",
+      "prefix": "v1.0/eth/logs/date=2022-03-14/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-14",
+      "prefix": "v1.0/eth/blocks/date=2022-03-14/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-15",
+      "prefix": "v1.0/eth/logs/date=2022-03-15/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-15",
+      "prefix": "v1.0/eth/blocks/date=2022-03-15/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-16",
+      "prefix": "v1.0/eth/logs/date=2022-03-16/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-16",
+      "prefix": "v1.0/eth/blocks/date=2022-03-16/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-17",
+      "prefix": "v1.0/eth/logs/date=2022-03-17/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-17",
+      "prefix": "v1.0/eth/blocks/date=2022-03-17/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-18",
+      "prefix": "v1.0/eth/logs/date=2022-03-18/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-18",
+      "prefix": "v1.0/eth/blocks/date=2022-03-18/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-19",
+      "prefix": "v1.0/eth/logs/date=2022-03-19/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-19",
+      "prefix": "v1.0/eth/blocks/date=2022-03-19/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-20",
+      "prefix": "v1.0/eth/logs/date=2022-03-20/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-20",
+      "prefix": "v1.0/eth/blocks/date=2022-03-20/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-21",
+      "prefix": "v1.0/eth/logs/date=2022-03-21/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-21",
+      "prefix": "v1.0/eth/blocks/date=2022-03-21/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-22",
+      "prefix": "v1.0/eth/logs/date=2022-03-22/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-22",
+      "prefix": "v1.0/eth/blocks/date=2022-03-22/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-23",
+      "prefix": "v1.0/eth/logs/date=2022-03-23/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-23",
+      "prefix": "v1.0/eth/blocks/date=2022-03-23/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-24",
+      "prefix": "v1.0/eth/logs/date=2022-03-24/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-24",
+      "prefix": "v1.0/eth/blocks/date=2022-03-24/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-25",
+      "prefix": "v1.0/eth/logs/date=2022-03-25/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-25",
+      "prefix": "v1.0/eth/blocks/date=2022-03-25/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-26",
+      "prefix": "v1.0/eth/logs/date=2022-03-26/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-26",
+      "prefix": "v1.0/eth/blocks/date=2022-03-26/",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-27",
+      "prefix": "v1.0/eth/logs/date=2022-03-27/",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-27",
+      "prefix": "v1.0/eth/blocks/date=2022-03-27/",
+      "table": "blocks"
+    }
+  ],
+  "payload_downloads_allowed": false,
+  "proposed_incident_context": "Revest; existing context only, no new labels requested",
+  "redirects_allowed": false,
+  "retries": 0,
+  "schema_version": "phase6_proposed_source_metadata_config_v1",
+  "scope": "Proposal-level listing feasibility, not final scientific cohort or incident-outcome evaluation",
+  "tables": [
+    "logs",
+    "blocks"
+  ],
+  "timeout_seconds": 30,
+  "window_end_utc_exclusive": "2022-03-28T00:00:00Z",
+  "window_start_utc": "2022-02-26T00:00:00Z",
+  "workers": 4
+}

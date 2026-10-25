@@ -1,0 +1,217 @@
+{
+  "coordinator_review": {
+    "notes": "Source identities and source-level findings verified; historical deployment remains unverified. Creation/upgrade evidence can be acquired as provenance before freezing evaluation-stream payload selection.",
+    "official_pages_reopened": true,
+    "source_bytes_rehashed": 9
+  },
+  "current_docs_addresses_not_admitted_for_march2022": {
+    "AddressRegistry": "0xd2c6eb7527ab1e188638b86f2c14bbad5a431d78",
+    "FNFTHandler": "0xa07e6a51420ecfcb081917f40423d29529705e8a",
+    "Revest": "0x9f551f75db1c301236496a2b4f7cecb2d1b2b242",
+    "TokenVaultV2": "0xd672f1e3411c23edbb49e8eb6c6b1564b2bf8e17",
+    "initial_hardened_entry_point_from_security_checklist": "0x36c2732f1b2ed69cf17133ab01f2876b614a2f27"
+  },
+  "detector_scores_inspected": false,
+  "exploit_code_executed": false,
+  "gates_before_payload": [
+    "declared exposure/candidate frame and estimand",
+    "historical creation/code/registry/routing intervals",
+    "exact emitter membership and per-emitter/shared budget semantics",
+    "fixed continuous window and completeness rules",
+    "unchanged method bytes/budgets/endpoints and separate frozen label join"
+  ],
+  "historical_registry": {
+    "address": "0xd721a90dd7e010c8c5e022cc0100c55ac78e0fc4",
+    "chain_id": 1,
+    "constants_blob": "8ccfa8d5a3b607ddd79b5e2bfa9beec07fb767f1",
+    "onchain_creation_or_activation_verified": false,
+    "same_constants_at_commit": "4ac04eee298368639adf084084010eb26b3d23e0",
+    "same_constants_commit_time_utc": "2022-03-24T19:14:11Z",
+    "sdk_commit": "dcdf919452f9cee67b0fb4bda73b14a5da6c20d9",
+    "sdk_committer_time_utc": "2022-02-18T21:52:26Z",
+    "source_role": "SDK ROUTER using RevestAddressRegistry ABI"
+  },
+  "historical_source_commit": {
+    "commit": "f4b5a5a898d202a5040f72ec7b1196de5f05e5f8",
+    "committer_time_utc": "2022-02-25T19:59:02Z",
+    "deployed_code_equivalence_verified": false,
+    "repository": "Revest-Finance/RevestContracts",
+    "tree": "371e4ddf17793201be19fa3cb3a1a6cf8ab2d17a",
+    "unsigned": true
+  },
+  "incident_era_component_candidates": [
+    {
+      "activation_intervals": null,
+      "address": "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+      "chain_id": 1,
+      "creation_receipt_verified": false,
+      "prewindow_registry_binding_verified": false,
+      "role": "Revest entry point",
+      "source_role_verified": true,
+      "source_url": "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5"
+    },
+    {
+      "activation_intervals": null,
+      "address": "0x226124e83868812d3dae87eb3c5f28047e1070b7",
+      "chain_id": 1,
+      "creation_receipt_verified": false,
+      "prewindow_registry_binding_verified": false,
+      "role": "LockManager",
+      "source_role_verified": true,
+      "source_url": "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5"
+    },
+    {
+      "activation_intervals": null,
+      "address": "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f",
+      "chain_id": 1,
+      "creation_receipt_verified": false,
+      "prewindow_registry_binding_verified": false,
+      "role": "Legacy TokenVault",
+      "source_role_verified": true,
+      "source_url": "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5"
+    },
+    {
+      "activation_intervals": null,
+      "address": "0xe952bda8c06481506e4731c4f54ced2d4ab81659",
+      "chain_id": 1,
+      "creation_receipt_verified": false,
+      "prewindow_registry_binding_verified": false,
+      "role": "FNFTHandler",
+      "source_role_verified": true,
+      "source_url": "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5"
+    }
+  ],
+  "metadata_queries": [
+    "https://api.github.com/repos/Revest-Finance/RevestContracts/commits?sha=master&until=2022-02-25T23:59:59Z&per_page=3",
+    "https://api.github.com/repos/Revest-Finance/RevestContracts/commits?sha=master&until=2022-03-26T23:59:59Z&per_page=3",
+    "https://api.github.com/repos/Revest-Finance/Revest-SDK/commits?until=2022-02-25T23:59:59Z&per_page=1",
+    "https://api.github.com/repos/Revest-Finance/Revest-SDK/commits?sha=master&since=2022-02-26T00:00:00Z&until=2022-03-28T00:00:00Z&per_page=100"
+  ],
+  "new_features_designed": false,
+  "not_supported_by_logs_alone": [
+    "historical registry activation timeline",
+    "deployed ABI equivalence",
+    "call nesting and intermediate state",
+    "native-token movements",
+    "failed/reverted actions",
+    "live observed arrival",
+    "complete asset/balance reconstruction"
+  ],
+  "primary_pages": [
+    {
+      "published_date": "2022-03-28",
+      "role": "dated official attribution of four incident-era components",
+      "url": "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5"
+    },
+    {
+      "role": "current deployment identities, not historical population",
+      "url": "https://docs.revest.finance/resources/contract-links.md"
+    },
+    {
+      "role": "official patch/replacement history warning",
+      "url": "https://docs.revest.finance/resources/security-checklist"
+    },
+    {
+      "role": "official source repository linkage",
+      "url": "https://dev.revest.finance/"
+    }
+  ],
+  "proposed_window": {
+    "days": 30,
+    "end_utc_exclusive": "2022-03-28T00:00:00Z",
+    "frozen": false,
+    "incident_conditioned": true,
+    "start_utc": "2022-02-26T00:00:00Z"
+  },
+  "raw_revest_payload_acquired": false,
+  "retrieval_limits": [
+    "Four official historical component explorer links returned HTTP403",
+    "No historical RPC calls or creation receipts acquired"
+  ],
+  "reusable_capability": "complete enumerated Ethereum address-column scan, all selected emitter topics/data and header order; fixed syntactic workload count/allocation evaluation",
+  "review_date": "2026-10-25",
+  "schema_version": "revest_population_eligibility_metadata_v1",
+  "scientific_role": "candidate protocol-held-out workload allocation test with declared prior exposure; no blind attack test",
+  "source_files": [
+    {
+      "bytes": 4173,
+      "fixture_path": "RevestContracts/RevestAddressRegistry.sol",
+      "git_blob_recomputed_matches": true,
+      "git_blob_sha": "101755f2b55420379538e37457b42a22d6101d5c",
+      "sha256": "3f84a7b0cc0838e1dcb6c6af8d9410b4fd08c13f1f35229d33fb6f391922e6e4",
+      "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/RevestAddressRegistry.sol"
+    },
+    {
+      "bytes": 1682,
+      "fixture_path": "RevestContracts/IAddressRegistry.sol",
+      "git_blob_recomputed_matches": true,
+      "git_blob_sha": "6648909fd2a782dc606040cb9096fd5d9aed8720",
+      "sha256": "2a83eb61c24f79ec537b0992e7def7cddb72ab3f9e5d26c062112989abea5c72",
+      "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/interfaces/IAddressRegistry.sol"
+    },
+    {
+      "bytes": 2812,
+      "fixture_path": "RevestContracts/RevestAccessControl.sol",
+      "git_blob_recomputed_matches": true,
+      "git_blob_sha": "278273ba5b435f95f943022ed1c44e7cedaddb94",
+      "sha256": "755632a5faffb51baa7851de9bb9461df83a3163570ebf3e77ed6349a179af98",
+      "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/utils/RevestAccessControl.sol"
+    },
+    {
+      "bytes": 16211,
+      "fixture_path": "RevestContracts/Revest.sol",
+      "git_blob_recomputed_matches": true,
+      "git_blob_sha": "62f36d068c80e05d5bfd5f9fda53f289f67444dd",
+      "sha256": "0342e2f35f29ff9840cefbde514b938f63053840d8326621fb8eb25ab0ce6977",
+      "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/Revest.sol"
+    },
+    {
+      "bytes": 4513,
+      "fixture_path": "RevestContracts/FNFTHandler.sol",
+      "git_blob_recomputed_matches": true,
+      "git_blob_sha": "349531e50b43d35e8739ee709793049e9cfa0171",
+      "sha256": "f3509df24ee9f84f0da6e1d0f7ae1f0c892eb694ac35a1f66911c603e1628639",
+      "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/FNFTHandler.sol"
+    },
+    {
+      "bytes": 9464,
+      "fixture_path": "RevestContracts/TokenVault.sol",
+      "git_blob_recomputed_matches": true,
+      "git_blob_sha": "1e377013f275ddc2cef070648ebad2d5a795d9ce",
+      "sha256": "bc348e939be244d2de9a8151883f1cbcd3eb1cd792359a4a0ad45582e348f57a",
+      "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/TokenVault.sol"
+    },
+    {
+      "bytes": 38762,
+      "fixture_path": "Revest-SDK/constants.js",
+      "git_blob_recomputed_matches": true,
+      "git_blob_sha": "8ccfa8d5a3b607ddd79b5e2bfa9beec07fb767f1",
+      "sha256": "8b5455fb5f1e640398a55117c27301b6c65e4ccac0de5e521e7ac1c3bd7710e2",
+      "url": "https://github.com/Revest-Finance/Revest-SDK/blob/dcdf919452f9cee67b0fb4bda73b14a5da6c20d9/src/constants.js"
+    },
+    {
+      "bytes": 8099,
+      "fixture_path": "Revest-SDK/index.js",
+      "git_blob_recomputed_matches": true,
+      "git_blob_sha": "e7358cafa7b7bfcf5e6a714cbfc1d27a66c73ec3",
+      "sha256": "d00d66ba38089c04f7fbf4763098851bf8ea66c8212a8dbe20ddcf5308b49f35",
+      "url": "https://github.com/Revest-Finance/Revest-SDK/blob/dcdf919452f9cee67b0fb4bda73b14a5da6c20d9/src/index.js"
+    },
+    {
+      "bytes": 35149,
+      "fixture_path": "GPL-3.0-LICENSE.txt",
+      "git_blob_recomputed_matches": true,
+      "git_blob_sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/LICENSE"
+    }
+  ],
+  "source_findings": {
+    "component_registry_pointer_mutable_in_source": true,
+    "log_only_scan_can_certify_no_registry_changes": false,
+    "registry_mapping_setters_emit_dedicated_change_events": false,
+    "single_entry_point_equals_all_protocol_events": false,
+    "source_level_only": true
+  },
+  "status": "not_admitted_pending_historical_deployment_and_population_gates"
+}

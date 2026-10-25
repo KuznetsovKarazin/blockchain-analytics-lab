@@ -1,0 +1,77 @@
+{
+  "normalization_scope": "Four legacy local cache files had exactly one extra terminal LF. Only separate private fixture copies removed that LF, and the resulting bytes matched newly retrieved upstream Git blob IDs exactly. The original caches and prior audits remain unchanged. The newly fetched PoC is exact upstream text.",
+  "original_cached_sources_modified": false,
+  "private_fixture_reacquisition": "Retrieve each source URL at its exact ref, preserve bytes, place at fixture_path, and verify both hashes before offline audit. Never compile or execute the Solidity text.",
+  "retrieval": "GitHub connector fetch_file at exact pinned refs; source bytes verified by both Git blob SHA and SHA-256",
+  "schema_version": "revest_source_fixture_provenance_v1",
+  "source_license_observation": {
+    "full_poc_distribution": "Excluded from Git and user-facing package; immutable URLs/hashes and owned audit code only.",
+    "license_git_blob_sha": "786c662b3750bea8e27b0ded6304959139011f25",
+    "license_sha256": "aa728951f2cd7399efd5fcb214cde9e8c12a4ebb3cf08222e7256b933a102bae",
+    "permission_inferred": false,
+    "poc_spdx_identifier": "UNLICENSED",
+    "repository_license_label": "Apache-2.0",
+    "repository_license_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/LICENSE"
+  },
+  "sources": [
+    {
+      "bytes": 10816,
+      "git_blob_sha": "6972ae660e24f787c2f779fd4cfd0083a1a7d25c",
+      "legacy_extra_final_lf_removed_in_private_copy": 1,
+      "original_cache_sha256_preserved": "a832f7d06b9efb433d237aebe9df3b60194583fe7fc861f5c2392a5dcbc880dc",
+      "path": "main_defi_loader.py",
+      "ref": "77bf3d8a3aed1bf394fd850903e7fd59ad129187",
+      "repository": "KuznetsovKarazin/blockchain-detector-eval",
+      "repository_path": "src/bal/data/defi.py",
+      "sha256": "52931e09a7f985b68a22d9a67bc0112693c6e45f359d0929fd43918c8fa1b7c6",
+      "url": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/src/bal/data/defi.py"
+    },
+    {
+      "bytes": 8223,
+      "git_blob_sha": "b7a257e0c273d8eefa8649b73367f4cde6bb7613",
+      "legacy_extra_final_lf_removed_in_private_copy": 1,
+      "original_cache_sha256_preserved": "16c3d68c0f1534a9e86aad0d4aee86a1a9f0c2161032a3d8b67d9704895ea800",
+      "path": "old_defi_loader.py",
+      "ref": "2c2c7723cb9fa42ff46fb6f252652056a74f9223",
+      "repository": "KuznetsovKarazin/blockchain-detector-eval",
+      "repository_path": "src/bal/data/defi.py",
+      "sha256": "fa4e0674745a07fd38d5d7bfd7d5164516480cb665d7cb1409d783e120015042",
+      "url": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/2c2c7723cb9fa42ff46fb6f252652056a74f9223/src/bal/data/defi.py"
+    },
+    {
+      "bytes": 159534,
+      "git_blob_sha": "260f213c3399a7555614f3bafa698e5b7d60c095",
+      "legacy_extra_final_lf_removed_in_private_copy": 1,
+      "original_cache_sha256_preserved": "e6aac9800775d131645a3db86d9cef8e9f1ff387d4da5ae6fdb5d365fe8c2538",
+      "path": "DeFiHackLabs/README.md",
+      "ref": "23c7bd83ccb4524972a9493617fcc8764ab6269b",
+      "repository": "SunWeb3Sec/DeFiHackLabs",
+      "repository_path": "README.md",
+      "sha256": "6e904fcc02a8c571f4fdcd4825a018c5ccc75e7731ad24e7c9185bebbee2fa1e",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/README.md"
+    },
+    {
+      "bytes": 62904,
+      "git_blob_sha": "0a4a65c2b249ce5c7f454a1a199fa9ce63751b30",
+      "legacy_extra_final_lf_removed_in_private_copy": 1,
+      "original_cache_sha256_preserved": "51cebe40cdf78942491ae7bdee4a79450ff2b527f3b7c93b571ae5097ae88f6b",
+      "path": "DeFiHackLabs/past/2022/README.md",
+      "ref": "23c7bd83ccb4524972a9493617fcc8764ab6269b",
+      "repository": "SunWeb3Sec/DeFiHackLabs",
+      "repository_path": "past/2022/README.md",
+      "sha256": "e7668ddd37e305db9052d4f208bb3b87d1e75956950739d5e9f1fd66f4c26267",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/past/2022/README.md"
+    },
+    {
+      "bytes": 2658,
+      "fetched_via": "GitHub connector fetch_file at pinned ref; Solidity used as text only",
+      "git_blob_sha": "97fefc5a3d06a9453f12182f74e4a36b6a2570f7",
+      "path": "DeFiHackLabs/src/test/2022-03/Revest_exp.sol",
+      "ref": "23c7bd83ccb4524972a9493617fcc8764ab6269b",
+      "repository": "SunWeb3Sec/DeFiHackLabs",
+      "repository_path": "src/test/2022-03/Revest_exp.sol",
+      "sha256": "46b9e755db3871c6cbf2e2bbcaf4c47ac9170ccbc6ffc52dc548379195e141ea",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/src/test/2022-03/Revest_exp.sol"
+    }
+  ]
+}

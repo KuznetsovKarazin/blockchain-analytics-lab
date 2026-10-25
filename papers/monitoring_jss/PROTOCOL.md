@@ -5,8 +5,9 @@ The agreed research questions and full experiment matrix remain in `protocol.jso
 This document specifies the original header feasibility pilot. The separate
 Euler event-log extension is defined in `EVENT_LOG_CONTRACT.md`; implemented
 label scheduling and calibration bookkeeping are in `DELAYED_FEEDBACK_CONTRACT.md`.
-See `protocol.json` v0.6 and `SESSION_5_REPORT_RU.md` for the latest status,
-including the learned-model, durable recovery, continuous-budget and local-resource extensions.
+See `protocol.json` v0.7 and `SESSION_6_REPORT_RU.md` for the latest status,
+including the learned-model, durable recovery, continuous-budget, local-resource
+and metadata-only external-case eligibility extensions.
 This document does not preregister a
 completed independent attack-detection experiment.
 

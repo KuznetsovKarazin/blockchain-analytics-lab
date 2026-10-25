@@ -4,3 +4,6 @@ runs/**/counts_by_step.csv whitespace=cr-at-eol
 # Preserve immutable matplotlib SVG paths and stdlib CSV CRLF bytes recorded in SHA manifests.
 runs/resource_*/resource_*.csv whitespace=cr-at-eol
 runs/resource_*/resource_benchmark_primary.svg whitespace=-blank-at-eol
+
+# Preserve the recorded stdlib CSV bytes from the phase 6 metadata query.
+incidents/source_availability_phase6/run_*/availability.csv whitespace=cr-at-eol

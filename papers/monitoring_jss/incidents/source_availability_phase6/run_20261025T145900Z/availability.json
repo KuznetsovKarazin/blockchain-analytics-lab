@@ -1,0 +1,2092 @@
+{
+  "completed_utc": "2026-10-25T14:59:50.395890+00:00",
+  "config_sha256": "109b81dae0470f33c24e01c5d582c34b30bd50791ee731ad0c653074bd359855",
+  "cwd": "/workspace/scratch/159bf77d8682/monitoring-work",
+  "endpoint": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/",
+  "etag_interpretation": "Opaque listing metadata only, not an object SHA or content validation",
+  "execution_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "papers/monitoring_jss/incidents/source_availability_phase6/list_source_metadata.py",
+    "--config",
+    "papers/monitoring_jss/incidents/source_availability_phase6/listing_config.json",
+    "--freeze",
+    "papers/monitoring_jss/incidents/source_availability_phase6/design_freeze.json",
+    "--output",
+    "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z",
+    "--raw-output",
+    "/workspace/scratch/159bf77d8682/phase6_source_listings/run_20261025T145900Z"
+  ],
+  "freeze_sha256": "b2e172847bfe68d696c724975806c5cfe90a5d65300fd1502e00dada633c5877",
+  "not_proven": [
+    "Parquet payload retrieval/readability",
+    "header continuity",
+    "complete selected-emitter stream",
+    "contract deployment or incident identity",
+    "independent scientific cohort eligibility"
+  ],
+  "partitions": [
+    {
+      "day_utc": "2022-02-26",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"673b9aeaa5621831b502d37bd07f031d\"",
+          "key": "v1.0/eth/blocks/date=2022-02-26/part-00000-a894af6a-fc16-47ff-ace0-9094957f4876-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:37.000Z",
+          "size_bytes": 5412324,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "d4a9641d4b1f0587360ea3249994ecdceac23ae5cede88da755005adc584597b",
+          "elapsed_seconds": 7.310919899999135,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-02-26_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-02-26%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:27.991894+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-02-26/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-02-26",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"b1a39249661a807471e500f287f163be-4\"",
+          "key": "v1.0/eth/logs/date=2022-02-26/part-00000-a2cbe129-c479-4665-82fe-9b6021bdd395-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:06:27.000Z",
+          "size_bytes": 201570743,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "59fbbd97dad3415666bc07a5c1898a1fb76e15503fe21768013369e420c047f7",
+          "elapsed_seconds": 7.297905225001159,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-02-26_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-02-26%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:27.989964+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-02-26/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-02-27",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"c9c612eeb1578d635a2e0aeba23a9f46\"",
+          "key": "v1.0/eth/blocks/date=2022-02-27/part-00000-3daf764e-ed05-4cc1-b889-cb69cfc25bb5-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:37.000Z",
+          "size_bytes": 5451156,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "af166a35b918619ea45327d35ab96e37af0718652c7e97d32fd4527d8d113f3f",
+          "elapsed_seconds": 7.276288504999684,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-02-27_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-02-27%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:27.993271+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-02-27/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-02-27",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"e3ff4d4f43e4758fc8da447f9ef74fba-4\"",
+          "key": "v1.0/eth/logs/date=2022-02-27/part-00000-93246583-f94e-4df0-9d1a-7e12b0d7dcea-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:38.000Z",
+          "size_bytes": 206228147,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "a7dec31debc0eef449347b3483278142b174c38fdb29f7b95bed0c2e34f4c702",
+          "elapsed_seconds": 7.274966394998046,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-02-27_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-02-27%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:27.992697+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-02-27/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-02-28",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"3e2e87d2f3634e363b60a0fa95dd8ec9\"",
+          "key": "v1.0/eth/blocks/date=2022-02-28/part-00000-dedfdffd-18a8-43bd-b668-2e326185572b-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5416319,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "3dfe34de90f993fd36bc632a7f014721e53474dbe44e4268b39c1a7cc68eb110",
+          "elapsed_seconds": 5.3020538199998555,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-02-28_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-02-28%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:35.269993+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-02-28/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-02-28",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"ddd6ab6150528616e62a43d61a52a3ba-3\"",
+          "key": "v1.0/eth/logs/date=2022-02-28/part-00000-e720205f-eedd-4bf9-8902-c31bd2e3d584-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:39.000Z",
+          "size_bytes": 200271038,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "97a62c15c08059bb1d99c77f61f84ad73d07bd9dbf05d1f113e101878a413579",
+          "elapsed_seconds": 5.302205402000254,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-02-28_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-02-28%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:35.268318+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-02-28/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-01",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"90dfe2569ba1fdf47d5c635965512dff\"",
+          "key": "v1.0/eth/blocks/date=2022-03-01/part-00000-8bcb39ff-b5e7-4665-b958-a11de962bd6d-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5478384,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "fa1a74b5804b5c9d501338fe8a150f115e7f6caaefb07ef3c1b5058bb814eadb",
+          "elapsed_seconds": 5.230812026002241,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-01_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-01%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:35.304094+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-01/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-01",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"2c58702fd44bac72f5daf102e036d432-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-01/part-00000-f63a0063-13ff-4d97-a591-32a6980f5ab4-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:33.000Z",
+          "size_bytes": 210554140,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "69471e0eb2a003a186f1820e3e70d6e57e14c756665b002173f0498f7023c692",
+          "elapsed_seconds": 5.2445416470000055,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-01_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-01%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:35.288709+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-01/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-02",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"ac126bc52fa04fd67e05e86d5e773488\"",
+          "key": "v1.0/eth/blocks/date=2022-03-02/part-00000-3955e1ef-314d-4ee0-b8f7-b37eb339360b-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:37.000Z",
+          "size_bytes": 5400274,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "79744c67496d96a97aee26595b6e1f1ad5f6b47172e7e86f3749f4369892cf0b",
+          "elapsed_seconds": 5.42304973499995,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-02_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-02%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:40.535331+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-02/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-02",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"a1ef1b2895e4e5cb0df5e7c25ad768d0-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-02/part-00000-c1bb0c1a-fa73-4591-ac07-ac80e7deed94-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:15:09.000Z",
+          "size_bytes": 208358485,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "ec41ace6e8b6b941f8d14d3b476387ad9c340900ee84e137a14f1203ea8cf417",
+          "elapsed_seconds": 5.380272308000713,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-02_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-02%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:40.533738+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-02/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-03",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"37f53aaeec39048c9d70c5a62d76e778\"",
+          "key": "v1.0/eth/blocks/date=2022-03-03/part-00000-a0d7c520-56fa-4707-9c18-e02a56e463ab-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5426027,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "1a8d87364e1d2efcffd9e883e394a611d8046a645f1244e3415bd1c8fae4035d",
+          "elapsed_seconds": 5.3779840400020475,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-03_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-03%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:40.572490+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-03/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-03",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"be139dcbcf1c7c98e19eb227ed59c7c7-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-03/part-00000-ab44e055-e120-4529-81b4-7510c60db525-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:32.000Z",
+          "size_bytes": 204500982,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "fb3222cb87d7592a77f8d6a672fe7645c1a8ac81b2171e6f5d242ed58b93b907",
+          "elapsed_seconds": 5.337768733999837,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-03_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-03%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:40.571040+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-03/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-04",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"e49c18c577fcc220a89416574325aa3a\"",
+          "key": "v1.0/eth/blocks/date=2022-03-04/part-00000-fcb7dedb-7788-4cc9-869d-67b9517bf5de-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:37.000Z",
+          "size_bytes": 5467377,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "b61eb047b8e8d63b4c8ce4c2b430046ed77e37e668eccf115dbac1118aeeadaf",
+          "elapsed_seconds": 5.555394301001797,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-04_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-04%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:45.914565+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-04/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-04",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"206d0562a02eb948fca70e72c7f4d4e0-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-04/part-00000-b57fd428-161f-41f5-93be-6f701ebc5676-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:52.000Z",
+          "size_bytes": 207844309,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "7dbbaa73b65f5514e17cb62682a608889d16b5c0cdcb7a68d37665a05fddf841",
+          "elapsed_seconds": 5.595169337000698,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-04_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-04%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:45.911320+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-04/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-05",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"d859130b7c924dad8e60c61e580c09df\"",
+          "key": "v1.0/eth/blocks/date=2022-03-05/part-00000-4c454d9a-242f-4d60-b705-daa0b60bb943-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5347993,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "70cb87ff82bacc606aa7dede9374d4dbbda1e572e640b2ab7c3e26ad84de9fe8",
+          "elapsed_seconds": 5.476371294000273,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-05_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-05%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:45.958965+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-05/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-05",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"f26a0533d616e824b5edd0a2abf6cce8-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-05/part-00000-52404826-a7af-410e-891a-35fdb6225eeb-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:32.000Z",
+          "size_bytes": 202620921,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "83ad018ed4e2693c16826875117405d2965e3dcabb6cc555fba434b1b2d2a0e8",
+          "elapsed_seconds": 5.4840236119998735,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-05_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-05%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:45.950948+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-05/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-06",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"14aacaf7a47493f06c82b4a14d531970\"",
+          "key": "v1.0/eth/blocks/date=2022-03-06/part-00000-5ed15365-c12e-4af1-83ab-5c9ef8d06846-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5384647,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "98b4f0b722b34f498a14dffa19eae208578b31dd65f830d2e68042e2fcf2a18b",
+          "elapsed_seconds": 5.15925796999727,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-06_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-06%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:51.439347+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-06/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-06",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"aeed6f8be259c114d06644d105f37897-3\"",
+          "key": "v1.0/eth/logs/date=2022-03-06/part-00000-9878182c-a4cf-4d42-a288-d1e92148184d-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:04.000Z",
+          "size_bytes": 198358111,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "7f66a6de9776e3b0c92237e55f77ef4faf0727e2b8d6a56ebb06f33aac304729",
+          "elapsed_seconds": 5.170521478001319,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-06_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-06%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:51.435785+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-06/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-07",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"1fc4dbbd9e4668c0727554bb072fea4a\"",
+          "key": "v1.0/eth/blocks/date=2022-03-07/part-00000-47a90ddc-5e3e-4b29-9c05-0395c6cdba16-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5437642,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "dd31e2882a0f45c05da4dc166449a2d912519a180d7576f9b365e88db2b08e4f",
+          "elapsed_seconds": 5.099745686002279,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-07_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-07%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:51.506993+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-07/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-07",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"90bb1a69ea996fe401ad9eec9ac89372-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-07/part-00000-841d3fc4-76f4-4e1c-9d51-9d15fccac2c9-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:38.000Z",
+          "size_bytes": 209243081,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "499974c5684417feaee90ce3687d02f5783228b7fff888bb861df593e63aab8e",
+          "elapsed_seconds": 5.134142718001385,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-07_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-07%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:51.470915+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-07/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-08",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"3c5eed264055f74254c1178b83b10f35\"",
+          "key": "v1.0/eth/blocks/date=2022-03-08/part-00000-fd62af27-a093-46cb-87e6-5523e151a4ea-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:37.000Z",
+          "size_bytes": 5414404,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "a62917b15be1b203cf75b0cebc315630f77db18fc42dee34d3ca4309f83bdcf9",
+          "elapsed_seconds": 5.097465699000168,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-08_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-08%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:56.605578+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-08/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-08",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"38e095fcc3eea7a714a405c35dd857ee-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-08/part-00000-fc066e7c-4e6c-462e-962d-813fad485fe8-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:57.000Z",
+          "size_bytes": 210568102,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "be3639407d5ac54d69a9746e2ff23058bf18d975d89503b6c1679876442c974d",
+          "elapsed_seconds": 5.103931472000113,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-08_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-08%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:56.599378+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-08/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-09",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"a9daa0aaa13c0572a801fb28fd0ef4fe\"",
+          "key": "v1.0/eth/blocks/date=2022-03-09/part-00000-c1c6bcdf-bdcc-4f6d-9ca9-ba36d1aeebbf-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:44.000Z",
+          "size_bytes": 5474804,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "87d8f2ffa66204e67fc30469e419353c4360763804931f710ac3226f79fd24ce",
+          "elapsed_seconds": 5.098064834000979,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-09_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-09%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:56.616374+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-09/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-09",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"0ddbcf3cc792fd762143e0bc4799e520-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-09/part-00000-b8f352f5-46ee-4b35-b926-a51c639030ef-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:54.000Z",
+          "size_bytes": 215499069,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "9ccf5d4340bd66ea844ea0f78cbe2708bb4eae8bc10bae2cd4a15b9c6aa29971",
+          "elapsed_seconds": 5.095216839999921,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-09_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-09%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:58:56.607504+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-09/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-10",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"3d3a6aa4b9d8efa7664c68dfe1f77ca3\"",
+          "key": "v1.0/eth/blocks/date=2022-03-10/part-00000-7bba816f-2b21-41c7-9f7f-15525dfe31f2-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5460800,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "0cf03b0d1b6ad8eec0d9c73760d4431bc6db872fc52cc0ad9ba2dab411e15675",
+          "elapsed_seconds": 5.319096297000215,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-10_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-10%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:01.704647+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-10/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-10",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"771f71d449fdbf292dfefd006dd7a3a8-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-10/part-00000-a82aa3f9-55b7-4681-9554-358940846deb-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:09.000Z",
+          "size_bytes": 217272686,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "6e8cbd250db769e2599c8d7c71b51ad948dbbbc22b0df279f2631e1cddc9aa9b",
+          "elapsed_seconds": 5.36248673999944,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-10_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-10%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:01.703985+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-10/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-11",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"1d71639325e31d3ded1d1cedf61c86ea\"",
+          "key": "v1.0/eth/blocks/date=2022-03-11/part-00000-048c9752-b0b5-4f1f-9a56-1c59ca9c7d78-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5333816,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "6ec359b9990a2a9f509912778c92576f4ecae9b3230a80c7eca197e1d2b4c96f",
+          "elapsed_seconds": 5.308490395000263,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-11_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-11%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:01.714934+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-11/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-11",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"4d9e7364f37ac4a09c1a04818102604b-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-11/part-00000-7535e3ff-816f-4bb1-bc76-ed12edd5f3ca-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:09.000Z",
+          "size_bytes": 203830101,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "7d27db754fab6550faec524b394d770b3d9f4e9ec8ce34df8f7ea0ce6dd8dc6c",
+          "elapsed_seconds": 5.317884994998167,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-11_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-11%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:01.705299+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-11/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-12",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"e71ff33d69b0eb15321c7cadae2ea317\"",
+          "key": "v1.0/eth/blocks/date=2022-03-12/part-00000-7b93520f-ad25-4ac6-95cb-ea3cb5dfa91e-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5447151,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "67728cbcb1a71c3657c5a1e16e566a6f9035823980c8291a327c360a34d6c174",
+          "elapsed_seconds": 6.626112235997425,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-12_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-12%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:07.026130+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-12/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-12",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"0108a92f1073ad59b05d78c669752708-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-12/part-00000-9626d526-a30a-47ef-b776-dda3051a6ed6-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:16.000Z",
+          "size_bytes": 207539624,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "ab7427d3f8007bcee94c011d7fbb1dd2535f41050947869e3aeca235c0f85e10",
+          "elapsed_seconds": 6.586592441999528,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-12_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-12%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:07.024263+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-12/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-13",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"e56e1da0349e7b85bf8a194e1f5a0c77\"",
+          "key": "v1.0/eth/blocks/date=2022-03-13/part-00000-95de76c6-ec49-4789-807a-8d276888327a-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:44.000Z",
+          "size_bytes": 5309703,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "19adf4fe3a01e3fa42cc280eba52d1e59a76b07fb3fea6ff7fe8e50eb46bbaed",
+          "elapsed_seconds": 6.544377059002727,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-13_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-13%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:07.070109+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-13/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-13",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"003d1348ae0ddeaeec39548f8799fa01-3\"",
+          "key": "v1.0/eth/logs/date=2022-03-13/part-00000-7cf88830-5a49-409a-a8d8-0b3c1814ae81-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:08.000Z",
+          "size_bytes": 198794836,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "1eb755aab6affc147b7d7f3899ed78ff126551e6c3213ec5d39bb46daa2f8d49",
+          "elapsed_seconds": 6.539665281001362,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-13_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-13%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:07.030511+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-13/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-14",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"e3eb131b0b07873448c8e4927ef27ed7\"",
+          "key": "v1.0/eth/blocks/date=2022-03-14/part-00000-f94c71e7-64e1-443a-bebe-acfeebbfe315-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:37.000Z",
+          "size_bytes": 5423104,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "950abd25fb5b0242078ce34753f3ee137683dedcd2efcacc46a0a76fc1f59b82",
+          "elapsed_seconds": 5.327300626999204,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-14_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-14%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:13.611381+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-14/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-14",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"a29b95be80dac560cc68fb88bc8f3aa4-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-14/part-00000-db3bc64b-d7b5-402e-be6c-7db66a2dcb41-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:15:48.000Z",
+          "size_bytes": 208901991,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "dab243ed4abc37148e2c7c6dab24e3ce19639baf20a3e088216315e5c26bf388",
+          "elapsed_seconds": 5.325164130998019,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-14_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-14%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:13.570695+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-14/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-15",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"ad38fdd22a0522e33c05fc20737eb206\"",
+          "key": "v1.0/eth/blocks/date=2022-03-15/part-00000-5005dfa9-c159-48a7-864f-0906801282d7-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:41.000Z",
+          "size_bytes": 5399907,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "7c67eef7ece2e1ab1ded4861f88c456f64ea2a3c5ebc13e82a13ac200b520239",
+          "elapsed_seconds": 5.242226499998651,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-15_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-15%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:13.653182+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-15/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-15",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"e716fd2f786d6a1dccea502887cd82dd-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-15/part-00000-2d22278a-9cbb-4649-adfd-9a389da5c5ee-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:52.000Z",
+          "size_bytes": 214540783,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "8bce5256f5420affb9dc9e99dc9c7847044dac015ef474ff3abe3af611f12720",
+          "elapsed_seconds": 5.315585348998866,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-15_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-15%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:13.615074+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-15/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-16",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"8e75d42fd3ae4e2efc454dfc23abdb7c\"",
+          "key": "v1.0/eth/blocks/date=2022-03-16/part-00000-2267b0b0-accd-4790-85a8-70baf17e9f85-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:44.000Z",
+          "size_bytes": 5382424,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "6857ddcc9cd958a375283ca623d1de66753020a8e97516595e71ddea06be2759",
+          "elapsed_seconds": 5.3257011780006,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-16_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-16%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:18.898208+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-16/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-16",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"ae42fbc98e9603ee012b45bab7e3f65d-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-16/part-00000-10e8c2c8-e774-4657-bee7-4f40314d87d3-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:44.000Z",
+          "size_bytes": 212988187,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "a27db93afa5f554de7efa6a7c412f4b342dc0dd24030463a2d67282ce9eb5fcb",
+          "elapsed_seconds": 5.333269221999217,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-16_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-16%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:18.897571+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-16/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-17",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"656d09c5513eb706f419b305fb6da98a\"",
+          "key": "v1.0/eth/blocks/date=2022-03-17/part-00000-0bc9c962-affb-43ac-b16a-fda84b208ae4-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:37.000Z",
+          "size_bytes": 5435602,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "94d5bd2de3c50144ed17dffb7f46680e98afd49501543b019a71e510d4f3d2a9",
+          "elapsed_seconds": 5.2554920360016695,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-17_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-17%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:18.939202+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-17/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-17",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"4c2fdd7246186bedcc1342ee0f84e3a5-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-17/part-00000-8a49ad94-cdc9-403f-a0b6-be108d247325-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:52.000Z",
+          "size_bytes": 208937106,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "cc10ece9cdca55e68dd792b2a74bd3d1876f5aa1ff1c7a420dde0ea42bbcc76c",
+          "elapsed_seconds": 5.2993805870028154,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-17_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-17%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:18.931176+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-17/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-18",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"148d7e1fce91379991d0b3106fe73864\"",
+          "key": "v1.0/eth/blocks/date=2022-03-18/part-00000-caf0d5c9-3956-4baa-b111-5338c5f92e96-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5402152,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "e3c1f07f577bd96c9b09e98bce626fd69efc4666729d78b6709bbf41665c7a6c",
+          "elapsed_seconds": 5.302527084000758,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-18_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-18%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:24.224433+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-18/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-18",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"8aefe45607aeda9425b3793e38f2ad25-3\"",
+          "key": "v1.0/eth/logs/date=2022-03-18/part-00000-10a4bfe2-6235-4d85-8104-e1a1565eda4b-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:17.000Z",
+          "size_bytes": 200221460,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "1cdaf11942f6c14810048524a7cb93185912d894afaeac57131508d74d009a0a",
+          "elapsed_seconds": 5.326354387998435,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-18_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-18%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:24.195782+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-18/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-19",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"c2aa102102f3872b1b5e418874975c96\"",
+          "key": "v1.0/eth/blocks/date=2022-03-19/part-00000-59017e11-691f-4501-b55d-1a89f7bf6f81-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:45.000Z",
+          "size_bytes": 5435513,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "b4d031ab68ae5a1a4d394197d3aac6ad63503d3c45ad9378417521dc22d7fd05",
+          "elapsed_seconds": 5.316048614000465,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-19_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-19%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:24.234506+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-19/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-19",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"57ab04f1e55fca5036113cd4054c998b-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-19/part-00000-0da82ed1-69e2-4ebc-83de-88724f9412bd-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:15.000Z",
+          "size_bytes": 214750793,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "5d91263b722c672d27676c5e6b418e47762e6a9dde6db16d8f42fdf5527aed08",
+          "elapsed_seconds": 5.315425206998043,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-19_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-19%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:24.231236+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-19/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-20",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"ecd7987e1ad072a1b6965727225d5057\"",
+          "key": "v1.0/eth/blocks/date=2022-03-20/part-00000-ea040adf-bf55-45a5-a60a-b3e13d407c8e-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5423296,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "3d4ad4563a0d4cfe6dd9129ebaee7b1b80f98346a2e6fda9b13e33b7bc528690",
+          "elapsed_seconds": 5.42056720400069,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-20_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-20%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:29.527953+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-20/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-20",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"3853b42ea49d672fdeeada0d03d07c29-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-20/part-00000-a0bb96ce-1b0c-4f5f-8eec-9440a6555faa-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:15:27.000Z",
+          "size_bytes": 212638027,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "1e76b54b35d8faecfb4fb4a36e851f30e68a2f201871331d7385b59bd2c6b128",
+          "elapsed_seconds": 5.420260081999004,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-20_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-20%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:29.522595+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-20/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-21",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"859880d8641bc11faee4bffe546caab2\"",
+          "key": "v1.0/eth/blocks/date=2022-03-21/part-00000-f10af45a-2119-4718-b5eb-1b99f88c0d78-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5384684,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "7113b2518fca91120241174d8294de282b24ae4901158bec58e3f31adf71a6c7",
+          "elapsed_seconds": 5.347364026998548,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-21_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-21%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:29.550952+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-21/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-21",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"c24bdd89d544b517762b3f797428044e-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-21/part-00000-bc86baed-ffef-4ac8-ab3e-27ce39c370d5-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:15.000Z",
+          "size_bytes": 205373841,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "ba1cbc13c4503aff08f2f12992ac02a6b1d1974082cc231af0c36a2fa416b683",
+          "elapsed_seconds": 5.396004422997066,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-21_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-21%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:29.547154+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-21/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-22",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"57b32676bf930be305088ff70985591c\"",
+          "key": "v1.0/eth/blocks/date=2022-03-22/part-00000-7d67f67f-ccae-4df9-9a81-0e431a25b3f4-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:37.000Z",
+          "size_bytes": 5418037,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "836c7a850385e87cd08c2ee8d585e53cdf58e4212c15f0c1a515e3e2f085fbf7",
+          "elapsed_seconds": 5.154949300998851,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-22_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-22%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:34.944008+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-22/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-22",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"3c582d0e45137179f629b83a1ac48b8d-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-22/part-00000-bd511563-40b2-499f-94c8-123940b7ccd4-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:18.000Z",
+          "size_bytes": 209053921,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "ed3657ce513490d090d480fec094189c859e0ae82fce826f1dce1699208ae16a",
+          "elapsed_seconds": 5.1958363440026005,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-22_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-22%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:34.899449+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-22/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-23",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"da456f69e3788d19932858f438edfeb6\"",
+          "key": "v1.0/eth/blocks/date=2022-03-23/part-00000-f828c053-3e9b-4a80-8d2b-4f58c5f37552-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5430276,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "83a4da0f72a90b8d6ca6392ef6afa5cf6c5b1d51a73b5833a7b0691d71f2f8de",
+          "elapsed_seconds": 5.126672659996984,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-23_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-23%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:34.949226+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-23/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-23",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"913cea77fe45e1e4e6bd543cd3965a2b-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-23/part-00000-d116f391-7a79-4b8c-a2f3-9884a3dc5ad5-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:50.000Z",
+          "size_bytes": 215313447,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "efd57d923fb831456f83713da4f2824efbcb3d0e10835e650b784bbc90af120f",
+          "elapsed_seconds": 5.141305716999341,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-23_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-23%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:34.945158+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-23/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-24",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"e283f164ef4ee146d9d6355e9e813e24\"",
+          "key": "v1.0/eth/blocks/date=2022-03-24/part-00000-b0e8d925-96b3-41b7-bb4c-2a2201b62875-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5413688,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "52960c715579cc50d9ce4666d01df8579e9e3c5af4de0861a8ac3753cb10ae10",
+          "elapsed_seconds": 5.3285760079998,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-24_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-24%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:40.087145+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-24/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-24",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"316906683e87afb0e0dfa1cf2adfbebe-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-24/part-00000-04d4f3c7-db52-4968-84ee-634b7dc227a1-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:16:32.000Z",
+          "size_bytes": 209361886,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "3e2517afe71741854410a38e56898b73839c9570b034f723d182f6f29d9a02dc",
+          "elapsed_seconds": 5.283940306999284,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-24_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-24%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:40.076564+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-24/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-25",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"b9a45241e0739b1c4f5c7a99bbad615e\"",
+          "key": "v1.0/eth/blocks/date=2022-03-25/part-00000-44feeeed-26ab-461d-81f7-0a229718c523-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:38.000Z",
+          "size_bytes": 5417614,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "b2cf34edb2a797cf0a0224678ae1668c4729dcfdfd5ebb06f4c9e91fca548536",
+          "elapsed_seconds": 5.316500197001005,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-25_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-25%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:40.099440+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-25/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-25",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"da1e7e96b09e0537ed794bd6d3200958-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-25/part-00000-993b7fc3-f1b2-4319-882f-ab5e2b04952d-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:05.000Z",
+          "size_bytes": 211069237,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "2ba0deec021905bb91ca52a6737bc31bfbd6f23f2cd018bfe61089f0e5a9dd58",
+          "elapsed_seconds": 5.325944606000121,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-25_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-25%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:40.098155+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-25/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-26",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"d04c0fd14991f09b970a8d1df2fcfae5\"",
+          "key": "v1.0/eth/blocks/date=2022-03-26/part-00000-aa61308a-d9d8-4d86-a609-944f58b04930-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:39.000Z",
+          "size_bytes": 5390577,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "dffa2c01c97a31c990fa622d94be10cee66e8c09f701585c6213825c3b69f0f4",
+          "elapsed_seconds": 4.882608482999785,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-26_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-26%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:45.426348+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-26/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-26",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"8a53e35837365fe2ee7b02fe9cd1cd39-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-26/part-00000-bcfc3f70-452a-40c6-97bc-5555f69ba8ab-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:02:51.000Z",
+          "size_bytes": 205229531,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "33b2b14c80446671c91376049aa2d325bc3798dc6c2a831094a5f326a69a6214",
+          "elapsed_seconds": 5.024662647996593,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-26_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-26%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:45.361925+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-26/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    },
+    {
+      "day_utc": "2022-03-27",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"32071b46692aa45a12321f660098563d\"",
+          "key": "v1.0/eth/blocks/date=2022-03-27/part-00000-3de5fe2b-e3b4-48a7-a17e-2389833fb746-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T19:56:37.000Z",
+          "size_bytes": 5382415,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 678,
+          "body_complete": true,
+          "body_sha256": "9a3c2e476789de0a34d0da3dec6fee2f69abae739af85788fc3ecd3c32504250",
+          "elapsed_seconds": 4.966615102002834,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-27_blocks_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2022-03-27%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:45.427700+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/blocks/date=2022-03-27/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "blocks"
+    },
+    {
+      "day_utc": "2022-03-27",
+      "listing_complete": true,
+      "objects": [
+        {
+          "etag_opaque": "\"7a33c53721243acee1513d8731b56150-4\"",
+          "key": "v1.0/eth/logs/date=2022-03-27/part-00000-6466310f-e52d-4606-aeb6-a5e3617ef243-c000.snappy.parquet",
+          "last_modified_metadata": "2025-09-30T20:03:12.000Z",
+          "size_bytes": 211036256,
+          "storage_class_metadata": "INTELLIGENT_TIERING"
+        }
+      ],
+      "pages": [
+        {
+          "body_bytes": 676,
+          "body_complete": true,
+          "body_sha256": "c87a28bd2ba2d863399d36c65fa02c0ee176ba804a8216183bb52ee88627badd",
+          "elapsed_seconds": 4.9224173500006145,
+          "http_status": 200,
+          "is_truncated": false,
+          "method": "GET",
+          "page": 1,
+          "parsed_object_count": 1,
+          "raw_response_file": "2022-03-27_logs_page01.xml",
+          "request_kind": "S3 ListObjectsV2 metadata",
+          "request_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2022-03-27%2F&max-keys=1000",
+          "started_utc": "2026-10-25T14:59:45.426969+00:00"
+        }
+      ],
+      "prefix": "v1.0/eth/logs/date=2022-03-27/",
+      "requests_attempted": 1,
+      "status": "listed_nonempty",
+      "table": "logs"
+    }
+  ],
+  "requests_attempted": 60,
+  "response_bytes": 40620,
+  "schema_version": "source_partition_listing_availability_v1",
+  "scope": "Proposal-level metadata feasibility only; no object payloads, incident outcomes, scores or new labels retrieved.",
+  "script_sha256": "8dba9315456778920f1f51ae166204b97ca05c4c56e1e9868e145d617382ca12",
+  "started_utc": "2026-10-25T14:58:27.989517+00:00",
+  "status": "metadata_listing_complete",
+  "summary_by_table": {
+    "blocks": {
+      "complete_empty_listings": 0,
+      "complete_nonempty_listings": 30,
+      "listed_object_bytes_metadata": 162402110,
+      "listed_objects": 30,
+      "partitions_requested": 30
+    },
+    "logs": {
+      "complete_empty_listings": 0,
+      "complete_nonempty_listings": 30,
+      "listed_object_bytes_metadata": 6242470841,
+      "listed_objects": 30,
+      "partitions_requested": 30
+    }
+  }
+}
