@@ -1,0 +1,286 @@
+{
+  "schema_version": "event_log_independent_review_v1",
+  "run_id": "event_logs_20261025T084327_927529Z",
+  "verdict": "PASS_FOR_SINGLE_DAY_ENGINEERING_SCOPE",
+  "all_checks_pass": true,
+  "review_script_sha256": "628f0f5a434237c63ac6ce9c7f793977ed3cbb9539285a59b2728dd488e91b41",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "review_method": "Independent prefix-count/group/budget oracle and direct FIFO arithmetic; production module not imported; no training, live fetch or pilot rerun.",
+  "source_and_input_hashes_verified": true,
+  "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a",
+  "source_snapshot": [
+    {
+      "path": "event_log_replay.py",
+      "sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2"
+    },
+    {
+      "path": "event_log_pilot_config.json",
+      "sha256": "f19f2b177741c37c23b5c841b8129295fb197c0ecc33638a305220351ce2971c"
+    },
+    {
+      "path": "test_event_log_replay.py",
+      "sha256": "e61084cad64fae8955dd4ad3b27411ae17223d9b1514659a52e1dd81a6ec6dc8"
+    }
+  ],
+  "cells_checked": 6,
+  "decisions_checked": 7482,
+  "gzip_logs_checked": 12,
+  "input_events": 1247,
+  "transactions": 218,
+  "blocks": 215,
+  "same_semantics_all_six_cells": true,
+  "ranges_all_cells": {
+    "wall_replay_seconds": {
+      "min": 0.11167914399993606,
+      "max": 0.1587393689997043
+    },
+    "peak_rss_after_replay_bytes": {
+      "min": 18481152,
+      "max": 18481152
+    },
+    "local_service_throughput_events_per_second": {
+      "min": 8401.399207722823,
+      "max": 12112.144275298584
+    },
+    "service_p99_seconds": {
+      "min": 0.00042800931954843624,
+      "max": 0.0008082141201703052
+    },
+    "virtual_queue_wait_p99_seconds": {
+      "min": 0.0014488960472226573,
+      "max": 0.058767076187393505
+    },
+    "virtual_buffer_complete_p99_seconds": {
+      "min": 0.00159211385063827,
+      "max": 0.058838894127690985
+    },
+    "pending_at_arrival_max": {
+      "min": 19,
+      "max": 523
+    }
+  },
+  "cells": [
+    {
+      "cell": "day_x1_r1",
+      "counts": {
+        "events": 1247,
+        "notifications": 5,
+        "raw_triggers": 146,
+        "unknown_observed": 1247,
+        "unknown_removed": 1247
+      },
+      "suppression_counts": {
+        "below_threshold": 1101,
+        "None": 5,
+        "grouped": 16,
+        "budget": 125
+      },
+      "wall_replay_seconds": 0.13236223700005212,
+      "peak_rss_after_replay_bytes": 18481152,
+      "local_service_throughput_events_per_second": 10100.918381765452,
+      "service_p99_seconds": 0.0005919362806707795,
+      "virtual_queue_wait_p99_seconds": 0.0016350524791778284,
+      "virtual_buffer_complete_p99_seconds": 0.0018669849587604392,
+      "pending_at_arrival_max": 19,
+      "x1_queued_same_timestamp_count": 1032,
+      "all_checks_pass": true
+    },
+    {
+      "cell": "day_x1_r2",
+      "counts": {
+        "events": 1247,
+        "notifications": 5,
+        "raw_triggers": 146,
+        "unknown_observed": 1247,
+        "unknown_removed": 1247
+      },
+      "suppression_counts": {
+        "below_threshold": 1101,
+        "None": 5,
+        "grouped": 16,
+        "budget": 125
+      },
+      "wall_replay_seconds": 0.11415838199991413,
+      "peak_rss_after_replay_bytes": 18481152,
+      "local_service_throughput_events_per_second": 11766.635923893691,
+      "service_p99_seconds": 0.00044017909998729,
+      "virtual_queue_wait_p99_seconds": 0.0014488960472226573,
+      "virtual_buffer_complete_p99_seconds": 0.00159211385063827,
+      "pending_at_arrival_max": 19,
+      "x1_queued_same_timestamp_count": 1032,
+      "all_checks_pass": true
+    },
+    {
+      "cell": "day_x1_r3",
+      "counts": {
+        "events": 1247,
+        "notifications": 5,
+        "raw_triggers": 146,
+        "unknown_observed": 1247,
+        "unknown_removed": 1247
+      },
+      "suppression_counts": {
+        "below_threshold": 1101,
+        "None": 5,
+        "grouped": 16,
+        "budget": 125
+      },
+      "wall_replay_seconds": 0.1587393689997043,
+      "peak_rss_after_replay_bytes": 18481152,
+      "local_service_throughput_events_per_second": 8401.399207722823,
+      "service_p99_seconds": 0.0005808019599862745,
+      "virtual_queue_wait_p99_seconds": 0.00233290203854267,
+      "virtual_buffer_complete_p99_seconds": 0.0024664618777751443,
+      "pending_at_arrival_max": 19,
+      "x1_queued_same_timestamp_count": 1032,
+      "all_checks_pass": true
+    },
+    {
+      "cell": "day_x1000000_r1",
+      "counts": {
+        "events": 1247,
+        "notifications": 5,
+        "raw_triggers": 146,
+        "unknown_observed": 1247,
+        "unknown_removed": 1247
+      },
+      "suppression_counts": {
+        "below_threshold": 1101,
+        "None": 5,
+        "grouped": 16,
+        "budget": 125
+      },
+      "wall_replay_seconds": 0.14221322200046416,
+      "peak_rss_after_replay_bytes": 18481152,
+      "local_service_throughput_events_per_second": 9347.095696753677,
+      "service_p99_seconds": 0.0008082141201703052,
+      "virtual_queue_wait_p99_seconds": 0.05147500403030628,
+      "virtual_buffer_complete_p99_seconds": 0.051529808429789804,
+      "pending_at_arrival_max": 516,
+      "x1_queued_same_timestamp_count": null,
+      "all_checks_pass": true
+    },
+    {
+      "cell": "day_x1000000_r2",
+      "counts": {
+        "events": 1247,
+        "notifications": 5,
+        "raw_triggers": 146,
+        "unknown_observed": 1247,
+        "unknown_removed": 1247
+      },
+      "suppression_counts": {
+        "below_threshold": 1101,
+        "None": 5,
+        "grouped": 16,
+        "budget": 125
+      },
+      "wall_replay_seconds": 0.15735675599989918,
+      "peak_rss_after_replay_bytes": 18481152,
+      "local_service_throughput_events_per_second": 8518.493760027684,
+      "service_p99_seconds": 0.0005670256199846332,
+      "virtual_queue_wait_p99_seconds": 0.058767076187393505,
+      "virtual_buffer_complete_p99_seconds": 0.058838894127690985,
+      "pending_at_arrival_max": 523,
+      "x1_queued_same_timestamp_count": null,
+      "all_checks_pass": true
+    },
+    {
+      "cell": "day_x1000000_r3",
+      "counts": {
+        "events": 1247,
+        "notifications": 5,
+        "raw_triggers": 146,
+        "unknown_observed": 1247,
+        "unknown_removed": 1247
+      },
+      "suppression_counts": {
+        "below_threshold": 1101,
+        "None": 5,
+        "grouped": 16,
+        "budget": 125
+      },
+      "wall_replay_seconds": 0.11167914399993606,
+      "peak_rss_after_replay_bytes": 18481152,
+      "local_service_throughput_events_per_second": 12112.144275298584,
+      "service_p99_seconds": 0.00042800931954843624,
+      "virtual_queue_wait_p99_seconds": 0.026414078446267218,
+      "virtual_buffer_complete_p99_seconds": 0.0266167136263385,
+      "pending_at_arrival_max": 323,
+      "x1_queued_same_timestamp_count": null,
+      "all_checks_pass": true
+    }
+  ],
+  "gzip_logs": [
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1_r1/decisions.jsonl.gz",
+      "sha256": "9a0fa3e89dcb07f3cc1f7a041b93a64a99f3574688fb556261d3232f1d1f96ec",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1_r1/timing.jsonl.gz",
+      "sha256": "728de143599fa547fbbcaddc6c8fa7e62fcd1c4e67b32f381a9a3a566de1e70b",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1_r2/decisions.jsonl.gz",
+      "sha256": "1af22f0f3475b0e8b819c7bffbea8fd1405da0b991db68eab9e9f09ce7e40ac7",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1_r2/timing.jsonl.gz",
+      "sha256": "86b1de4835c6cea055a214cabbd6112b5fd0d06933672eedf048f74a9520715d",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1_r3/decisions.jsonl.gz",
+      "sha256": "f198e5b00aefd83d83836a93a555908c08a303478d55f62edbe9106a3bb813c1",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1_r3/timing.jsonl.gz",
+      "sha256": "d5205901323c2e8967bef8ff47829d7ed80ce70f35b97712d15fd7758fe5d9f3",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1000000_r1/decisions.jsonl.gz",
+      "sha256": "087c924746f1037ae444098cb7a64bc1154e993aa18200d1d1dc48195f1e2697",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1000000_r1/timing.jsonl.gz",
+      "sha256": "68633d651d5e44afede99fb7b800d37803009d5746004af11b2548468b883944",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1000000_r2/decisions.jsonl.gz",
+      "sha256": "de36b26ea6e1063e28c2c6c9442d996c60a778bd58efc18221aa500a9b35b4dc",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1000000_r2/timing.jsonl.gz",
+      "sha256": "274db5907b81b9dc0d3934c16eb03d32fda3783be21870f4abae128eb3b0e1f1",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1000000_r3/decisions.jsonl.gz",
+      "sha256": "775ced10e1008d6e4eaffb45da6a27dc4adbe1ab0038a84b2dd069d56893f3cc",
+      "gzip_crc_eof_verified": true
+    },
+    {
+      "path": "papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1000000_r3/timing.jsonl.gz",
+      "sha256": "40c28e442da140debd3d511960dcdc7574d0b5046e639c71737e9f881a055332",
+      "gzip_crc_eof_verified": true
+    }
+  ],
+  "limitations": [
+    "One preselected Euler protocol-day, no attack labels and no precision/recall or attack-detection claim.",
+    "At x1, every nonzero queue wait occurs within equal historical block-timestamp groups. These synthetic simultaneous arrivals are not observed arrival bursts; observed_time remains null.",
+    "Service is measured local buffered JSONL read, JSON/hex decode, count/group/budget and buffered gzip decision write. Virtual FIFO wait and buffer-complete offset are computed from these durations, not measured historical/live latency.",
+    "The buffer-complete distribution covers every input log, including suppressed/non-trigger rows; it is not an alert-only operator delivery metric. No fsync or remote operator delivery is timed.",
+    "Replay-loop wall time includes decisions-file close and loop overhead but excludes acquisition, Parquet work, post-replay timing export/verification and summary. RSS is worker high-water through replay, includes state/metric buffers, excludes later validation reads; audit verifies recorded values and scope, not an independent remeasurement.",
+    "Initial count window is empty. Grouping uses original event time and last emitted alert; daily budget uses playback decision day. Compressed-mode equality in this one-day fixture does not establish budget invariance across arbitrary day boundaries.",
+    "Persisted gzip SHA and full decompression verify this run's files; orderly state snapshots do not prove arbitrary-crash or transactional-outbox recovery."
+  ]
+}

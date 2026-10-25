@@ -2,7 +2,11 @@
 
 Status: **draft, not frozen for confirmatory comparisons**. Date: 25 October 2026.
 The agreed research questions and full experiment matrix remain in `protocol.json`.
-This document specifies the bounded feasibility pilot. It does not preregister a
+This document specifies the original header feasibility pilot. The separate
+Euler event-log extension is defined in `EVENT_LOG_CONTRACT.md`; implemented
+label scheduling and calibration bookkeeping are in `DELAYED_FEEDBACK_CONTRACT.md`.
+See `protocol.json` v0.3 and `SESSION_2_REPORT_RU.md` for the later status.
+This document does not preregister a
 completed independent attack-detection experiment.
 
 ## Evidence and scope
@@ -113,11 +117,12 @@ population, 30–60-day continuous windows, input completeness and licenses. New
 candidate incidents are not eligible solely because they differ from Ronin,
 Nomad and custody: check earlier book/K4 usage too.
 
-For Elliptic, replace the old delay arithmetic with an explicit release queue.
+For Elliptic, the replacement release queue is now implemented and checked;
+actual estimator fitting and re-evaluation remain outstanding.
 The draft convention releases step s labels after predictions at step s+d;
 they first affect step s+d+1. Zero delay still predicts before reveal. The old
 M2 `DELAY=2` uses a different phase convention and is not a zero-delay-ready
-implementation. Define initial labelled history, a disjoint temporal calibration
+implementation. The implemented contract requires initial labelled history, a disjoint temporal calibration
 window for each retrained model, a compatible fallback, stable-ID ties and unknown
 label coverage before running 0/1/2/4 delays. Keep steps as steps.
 

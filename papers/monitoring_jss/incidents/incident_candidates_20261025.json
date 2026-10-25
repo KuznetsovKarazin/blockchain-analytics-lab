@@ -80,7 +80,7 @@
       "raw_corpus_acquired": false,
       "prehistory_verified": false,
       "independence_verified": false,
-      "exposure_check": "Only absence from inherited Ronin/Nomad/custody exclusion list checked. Search all prior code, book experiments and K4 before eligibility.",
+      "exposure_check": "Scoped repository audit completed; see exposure_audit_20261025.json. Preserve reported prior exposure and unaudited-scope limitations.",
       "observed_time_historical": null,
       "label_available_time_historical": null,
       "licensing": "No redistribution license for report-derived labels or provider bulk data established. Publish identifiers, extraction code and provenance only until terms are checked.",
@@ -93,7 +93,7 @@
         "explicit missing-range ledger"
       ],
       "eligibility_gates": [
-        "repository-wide prior-exposure audit",
+        "disclose completed scoped prior-exposure audit and resolve any material unaudited source exposure",
         "contract and event population frozen",
         "complete contiguous history with hashes and gaps checked",
         "attack transaction list independently cross-checked",
@@ -130,16 +130,100 @@
         "0x47ac3527d02e6b9631c77fad1cdee7bfa77a8a7bfd4880dccbda5146ace4088f"
       ],
       "attack_label_note": "Six transaction IDs are report-derived seeds, not independently verified raw labels. Keep the frontrunning transaction distinct from the main actor but group all into one incident for uncertainty.",
-      "population_proposal": "Freeze Euler V1 core and selected lending market contracts from historical deployment/configuration, not attacker-address sampling.",
-      "availability": "Ethereum historical receipts/logs are defined by JSON-RPC; no Euler raw data acquired. PublicNode endpoint probe returned HTTP 403, including eth_chainId; this does not establish global unavailability.",
-      "scientific_caution": "A finalized receipt-based alert after an atomic exploit cannot prevent that transaction; evaluate subsequent opportunities only under explicit scenario timing."
+      "population_proposal": "Bounded first population: all Euler V1 core-emitted logs for 2023-03-01 UTC, one emitter and no topic filter. This is narrower than all protocol transactions. Full-window population and semantic ABI deployment checks remain pending.",
+      "availability": "The initial PublicNode RPC probe returned HTTP 403, including eth_chainId, and acquired no Euler data through that endpoint. Separate acquisition runs must be consulted for subsequent one-day log availability; no complete 45-day corpus is established by this registry.",
+      "scientific_caution": "A finalized receipt-based alert after an atomic exploit cannot prevent that transaction; evaluate subsequent opportunities only under explicit scenario timing.",
+      "prior_exposure": {
+        "prior_exposure_level": "L2_curation_and_unlabelled_global_block_aggregation",
+        "targeted_transaction_experiment_found": false,
+        "attack_day_in_k4_manifests": false,
+        "k4_curation": {
+          "present_in_price_only_positive_cohort": false,
+          "present_in_all_mainnet_exclusion_hash_set": true,
+          "hashes": [
+            "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+          ],
+          "source": "targeted replay of actual pinned PoC/README text through both loaders; no exploit execution"
+        },
+        "eligible_by_prior_exposure_audit": "not automatically excluded; retain with disclosed prior cataloguing/curation and aggregate block exposure; eligibility still depends on independent data/label/coverage gates",
+        "evidence_keys": [
+          "s2_incidents",
+          "s2_parse_only",
+          "m1_daily",
+          "m1_scope",
+          "k4_current_incidents",
+          "k4_current_manifest",
+          "k4_curation",
+          "k4_keyword_chain_filter",
+          "euler_source_registry",
+          "euler_poc_attack_hash"
+        ],
+        "historical_registry": [
+          {
+            "file": "results/security/s2_v1/incidents.csv",
+            "line": 211,
+            "record": {
+              "date": "2023-03-13",
+              "name": "EulerFinance",
+              "cause_text": "Business Logic Flaw",
+              "lost_text": "~$200M",
+              "loss_usd": "200000000.0",
+              "loss_parse": "usd",
+              "loss_usd_lenient": "200000000.0",
+              "cause_class": "business logic",
+              "component": "no bridge keyword in title",
+              "year": "2023"
+            }
+          },
+          {
+            "file": "results/security/s2_v1/summary.json",
+            "role": "included in top incident/loss summary"
+          }
+        ],
+        "generic_activity_exposure": {
+          "dataset": "analytics M1 Ethereum whole-chain headers",
+          "day": "2023-03-13",
+          "records": [
+            {
+              "day": "2023-03-13",
+              "policy": "fixed",
+              "alerts": "155",
+              "incidents": "11"
+            },
+            {
+              "day": "2023-03-13",
+              "policy": "rolling",
+              "alerts": "294",
+              "incidents": "72"
+            },
+            {
+              "day": "2023-03-13",
+              "policy": "ewma",
+              "alerts": "34",
+              "incidents": "7"
+            },
+            {
+              "day": "2023-03-13",
+              "policy": "quantile",
+              "alerts": "73",
+              "incidents": "13"
+            }
+          ],
+          "interpretation": "Whole-chain workload counts for the attack day were already evaluated without incident labels or attribution to Euler; cannot claim an entirely untouched calendar day."
+        },
+        "interpretation": "No named positive incident, attack-date input partition, attack-rank result or targeted detector training/evaluation was found for this candidate in any of the three retained historical/current K4 runs. K4 all-chain background rows on other dates were not decoded in this audit, so absence of every ordinary transaction involving the same protocol is not claimed.",
+        "checked_scope_only": true,
+        "audit_reference": "exposure_audit_20261025.json"
+      },
+      "population_config": "populations/euler_v1_core_day_20230301.json",
+      "population_semantic_caution": "Core Withdraw includes internal balance changes, eToken transfers and donations; do not interpret its sum as external token outflow or losses."
     },
     {
       "status": "candidate_not_eligible",
       "raw_corpus_acquired": false,
       "prehistory_verified": false,
       "independence_verified": false,
-      "exposure_check": "Only absence from inherited Ronin/Nomad/custody exclusion list checked. Search all prior code, book experiments and K4 before eligibility.",
+      "exposure_check": "Scoped repository audit completed; see exposure_audit_20261025.json. Preserve reported prior exposure and unaudited-scope limitations.",
       "observed_time_historical": null,
       "label_available_time_historical": null,
       "licensing": "No redistribution license for report-derived labels or provider bulk data established. Publish identifiers, extraction code and provenance only until terms are checked.",
@@ -152,7 +236,7 @@
         "explicit missing-range ledger"
       ],
       "eligibility_gates": [
-        "repository-wide prior-exposure audit",
+        "disclose completed scoped prior-exposure audit and resolve any material unaudited source exposure",
         "contract and event population frozen",
         "complete contiguous history with hashes and gaps checked",
         "attack transaction list independently cross-checked",
@@ -192,16 +276,77 @@
           "tx_hash": "0x9575e478d7c542558ecca52b27072fa1f1ec70679106bdbd62f3bb4d6c87a80d"
         }
       ],
-      "population_proposal": "Freeze historical Beanstalk Diamond/governance and relevant Silo/token events for all users. Verify historical ABI and facet changes.",
+      "population_proposal": "Alternative bounded population: all Beanstalk Diamond-emitted logs for 2022-04-01 UTC. Historical source snapshots differ in VoteList indexing; resolve on-chain DiamondCut activation before semantic decoding.",
       "availability": "Receipt retrieval from public Ethereum endpoint returned HTTP 403. Explorer page also returned HTTP 403. No raw event or contiguous history downloaded.",
-      "scientific_caution": "Single atomic incident. Preparation and exploit execution need separate labels; a detector designed after reading the exploit is exploratory unless held out at protocol level."
+      "scientific_caution": "Single atomic incident. Preparation and exploit execution need separate labels; a detector designed after reading the exploit is exploratory unless held out at protocol level.",
+      "prior_exposure": {
+        "prior_exposure_level": "L2_curation_plus_registry",
+        "targeted_transaction_experiment_found": false,
+        "attack_day_in_k4_manifests": false,
+        "k4_curation": {
+          "present_in_price_only_positive_cohort": false,
+          "present_in_all_mainnet_exclusion_hash_set": true,
+          "hashes": [
+            "0x68cdec0ac76454c3b0f7af0b8a3895db00adf6daaf3b50a99716858c4fa54c6f",
+            "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+          ],
+          "label_caveat": "First hash is a proposal/context transaction in current registry, not itself the completed theft; a parsed link is not sufficient attack adjudication.",
+          "source": "targeted replay of actual pinned PoC/README text through both loaders; no exploit execution"
+        },
+        "eligible_by_prior_exposure_audit": "not automatically excluded; retain with disclosed prior cataloguing/curation and corrected event date/label roles; eligibility still depends on independent data/label/coverage gates",
+        "evidence_keys": [
+          "s2_incidents",
+          "s2_parse_only",
+          "k4_current_incidents",
+          "k4_current_manifest",
+          "k4_curation",
+          "k4_keyword_chain_filter",
+          "bean_source_registry",
+          "bean_source_hash_links",
+          "bean_poc_mainnet",
+          "bean_poc_flash"
+        ],
+        "historical_registry": [
+          {
+            "file": "results/security/s2_v1/incidents.csv",
+            "line": 77,
+            "record": {
+              "date": "2022-04-16",
+              "name": "BeanstalkFarms",
+              "cause_text": "DAO + Flashloan",
+              "lost_text": "$182 million",
+              "loss_usd": "182000000.0",
+              "loss_parse": "usd",
+              "loss_usd_lenient": "182000000.0",
+              "cause_class": "flash-loan assisted (unspecified)",
+              "component": "no bridge keyword in title",
+              "year": "2022"
+            }
+          },
+          {
+            "file": "results/security/s2_v1/summary.json",
+            "role": "included in top incident/loss summary"
+          }
+        ],
+        "generic_activity_exposure": {
+          "M1_attack_day_included": false,
+          "reason": "M1 header years are 2023-2025; attack is April 2022."
+        },
+        "date_caveat": "Historical DeFiHackLabs README and S2 record 2022-04-16; current candidate registry uses actual attack date 2022-04-17. Do not copy the S2 catalogue heading date into replay-window or event labels.",
+        "interpretation": "No named positive incident, attack-date input partition, attack-rank result or targeted detector training/evaluation was found for this candidate in any of the three retained historical/current K4 runs. K4 all-chain background rows on other dates were not decoded in this audit, so absence of every ordinary transaction involving the same protocol is not claimed.",
+        "checked_scope_only": true,
+        "audit_reference": "exposure_audit_20261025.json"
+      },
+      "population_config": "populations/beanstalk_diamond_day_20220401_candidate.json",
+      "incident_date_caveat": "Historical DeFiHackLabs README and S2 record 2022-04-16; current candidate registry uses actual attack date 2022-04-17. Do not copy the S2 catalogue heading date into replay-window or event labels.",
+      "attack_label_note": "Keep proposal 0x68cdec... separate from exploit 0xcd314...; presence in a parsed exclusion set is not independent attack adjudication."
     },
     {
       "status": "candidate_not_eligible",
       "raw_corpus_acquired": false,
       "prehistory_verified": false,
       "independence_verified": false,
-      "exposure_check": "Only absence from inherited Ronin/Nomad/custody exclusion list checked. Search all prior code, book experiments and K4 before eligibility.",
+      "exposure_check": "Scoped repository audit completed; see exposure_audit_20261025.json. Preserve reported prior exposure and unaudited-scope limitations.",
       "observed_time_historical": null,
       "label_available_time_historical": null,
       "licensing": "No redistribution license for report-derived labels or provider bulk data established. Publish identifiers, extraction code and provenance only until terms are checked.",
@@ -214,7 +359,7 @@
         "explicit missing-range ledger"
       ],
       "eligibility_gates": [
-        "repository-wide prior-exposure audit",
+        "disclose completed scoped prior-exposure audit and resolve any material unaudited source exposure",
         "contract and event population frozen",
         "complete contiguous history with hashes and gaps checked",
         "attack transaction list independently cross-checked",
@@ -279,10 +424,49 @@
         "debug_traceTransaction": "error -32000: missing trie node",
         "complete_45_day_history": "not downloaded",
         "beacon_side_messages": "not downloaded"
+      },
+      "prior_exposure": {
+        "prior_exposure_level": "L0_no_historical_target_exposure_found_in_audited_repositories",
+        "targeted_transaction_experiment_found": false,
+        "attack_day_in_k4_manifests": false,
+        "k4_curation": {
+          "present_in_price_only_positive_cohort": false,
+          "present_in_all_mainnet_exclusion_hash_set": "not supported by Ethereum-mainnet-only filter; no matching PoC path found in pinned source tree",
+          "chain_scope": "K4 Ethereum mainnet only, unlike candidate chain_id 56"
+        },
+        "eligible_by_prior_exposure_audit": "retain as candidate; lowest observed historical exposure, but source-chain history and 30-60 day coverage remain separate blockers",
+        "evidence_keys": [
+          "s2_incidents",
+          "k4_current_incidents",
+          "k4_current_manifest",
+          "k4_keyword_chain_filter",
+          "bridges_scope",
+          "bridges_results",
+          "current_candidates"
+        ],
+        "historical_registry": [],
+        "current_article2_exposure": "Candidate research and one receipt probe already exist in the current article2 branch; this is feasibility/provenance exposure in the present study, not a prior detector-comparison result.",
+        "checked_scope_only": true,
+        "audit_reference": "exposure_audit_20261025.json"
       }
     }
   ],
   "common_label_policy": "Unlabelled transactions/days are unknown, not confirmed benign. Report actual reviewed-alert denominator; do not infer false positives from all non-attack time.",
-  "selection_note": "Selection based on evidence and acquisition feasibility only. Final acceptance/exclusion decisions must be logged before comparing monitoring methods. A receipt probe is not proof of complete historical availability.",
-  "related_work_correction": "BridgeGuard v2 reviewed 49 historical incidents, but section 3.3 describes 22 cross-chain-business-logic attacks supplying 203 labelled attack transactions. Neither 49 nor 203 is the count of independent incidents in that evaluation."
+  "selection_note": "Selection is based on evidence and acquisition feasibility. Prior-exposure audit retains all three candidates with disclosed L2/L0 status; none is eligible yet. Freeze final inclusion/exclusion and monitored populations before comparing methods. One-day logs or one receipt do not establish complete historical coverage.",
+  "related_work_correction": "BridgeGuard v2 reviewed 49 historical incidents, but section 3.3 describes 22 cross-chain-business-logic attacks supplying 203 labelled attack transactions. Neither 49 nor 203 is the count of independent incidents in that evaluation.",
+  "exposure_audit_reference": "exposure_audit_20261025.json",
+  "exposure_levels": {
+    "L0": "No historical target exposure found within explicitly audited material; not proof of global novelty.",
+    "L1": "Incident name/date/loss/cause in registry or aggregate statistics.",
+    "L2": "Label curation/exclusion metadata or unlabelled aggregate activity already processed; no targeted attack score evaluation found.",
+    "L3": "Target attack transaction used in training, calibration or evaluation.",
+    "L4": "Methods/rules/hyperparameters developed or selected using that case."
+  },
+  "exposure_scope_caveats": [
+    "Unuploaded/private book chapter drafts",
+    "Author personal knowledge or external unpublished experiments",
+    "All ordinary/background protocol-address rows inside binary K4 feature tables",
+    "Deleted uncommitted scratch work or every Git branch"
+  ],
+  "exposure_audit_summary": "Checked repository scope found L2 catalogue/curation exposure for Euler and Beanstalk, and L0 for BSC Token Hub. No L3/L4 targeted positive-use evidence was found; this is not proof of globally unseen incidents or final eligibility."
 }

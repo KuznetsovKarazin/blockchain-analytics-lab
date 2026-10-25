@@ -1,0 +1,546 @@
+{
+  "schema_version": "article2_prior_exposure_audit_v1",
+  "created_utc": "2026-10-25T08:33:44.183099+00:00",
+  "purpose": "Prior-exposure audit before external-case inclusion; not raw-data acquisition or detection evaluation.",
+  "scope": {
+    "analytics_repository": "KuznetsovKarazin/blockchain-analytics-lab",
+    "analytics_head_at_inspection": "aa5886d20866579eb8855bca36cfad54ac76dee8",
+    "detector": {
+      "detector_repository": "KuznetsovKarazin/blockchain-detector-eval",
+      "default_branch": "main",
+      "inspected_default_head": "77bf3d8a3aed1bf394fd850903e7fd59ad129187",
+      "known_pins": [
+        {
+          "commit": "dc1ba8876f3f163c27c48f3a39292fc47f71bf18",
+          "k4_present": false,
+          "tree_truncated": false
+        },
+        {
+          "commit": "2c2c7723cb9fa42ff46fb6f252652056a74f9223",
+          "k4_present": true,
+          "tree_truncated": false
+        }
+      ],
+      "k4_run_inventory": [
+        {
+          "path": "results/kan/k4_20261023_200340",
+          "hosting_ref": "2c2c7723cb9fa42ff46fb6f252652056a74f9223",
+          "execution_commit": "40e792530b98dd8a83f291d95197d7cd55d981d0",
+          "git_dirty": false,
+          "days": [
+            "2021-10-27",
+            "2022-06-16",
+            "2022-08-13",
+            "2022-08-16",
+            "2022-10-13",
+            "2022-10-14",
+            "2022-10-15",
+            "2022-11-08",
+            "2023-01-11",
+            "2023-03-17",
+            "2023-05-31",
+            "2023-06-06",
+            "2023-06-07",
+            "2023-07-21",
+            "2023-07-22",
+            "2023-07-23",
+            "2023-08-13",
+            "2023-08-14",
+            "2023-08-15",
+            "2023-08-19",
+            "2023-09-11",
+            "2023-10-08",
+            "2023-11-29",
+            "2023-12-11",
+            "2024-02-23",
+            "2024-06-09",
+            "2024-06-10",
+            "2024-06-11",
+            "2024-08-16",
+            "2024-09-04",
+            "2024-09-05",
+            "2024-09-06",
+            "2024-09-23",
+            "2024-10-01",
+            "2024-10-13",
+            "2024-11-14",
+            "2025-01-01",
+            "2025-02-11",
+            "2025-04-07",
+            "2025-06-23",
+            "2025-06-26",
+            "2025-07-24",
+            "2025-08-19",
+            "2025-11-10",
+            "2026-01-20",
+            "2026-03-02",
+            "2026-03-15",
+            "2026-04-20",
+            "2026-07-01"
+          ],
+          "incident_csv_blob_sha": "7fae3f3808defca4c133f68389a14b8ee9e3bc78",
+          "status": "historical superseded"
+        },
+        {
+          "path": "results/kan/k4_20261024_080035",
+          "hosting_ref": "2c2c7723cb9fa42ff46fb6f252652056a74f9223",
+          "execution_commit": "09867e89e6420efb7c2fbb1e46c3b4528bb75305",
+          "git_dirty": true,
+          "days": [
+            "2021-10-27",
+            "2022-06-16",
+            "2022-08-13",
+            "2022-08-16",
+            "2022-10-13",
+            "2022-10-14",
+            "2022-10-15",
+            "2022-11-08",
+            "2023-01-11",
+            "2023-03-17",
+            "2023-05-31",
+            "2023-06-06",
+            "2023-06-07",
+            "2023-07-21",
+            "2023-07-22",
+            "2023-07-23",
+            "2023-08-13",
+            "2023-08-14",
+            "2023-08-15",
+            "2023-08-19",
+            "2023-09-11",
+            "2023-10-08",
+            "2023-11-29",
+            "2023-12-11",
+            "2024-02-23",
+            "2024-06-09",
+            "2024-06-10",
+            "2024-06-11",
+            "2024-08-16",
+            "2024-09-04",
+            "2024-09-05",
+            "2024-09-06",
+            "2024-09-23",
+            "2024-10-01",
+            "2024-10-13",
+            "2024-11-14",
+            "2025-01-01",
+            "2025-02-11",
+            "2025-04-07",
+            "2025-06-23",
+            "2025-06-26",
+            "2025-07-24",
+            "2025-08-19",
+            "2025-11-10",
+            "2026-01-20",
+            "2026-03-02",
+            "2026-03-15",
+            "2026-04-20",
+            "2026-07-01"
+          ],
+          "incident_csv_blob_sha": "7fae3f3808defca4c133f68389a14b8ee9e3bc78",
+          "status": "historical superseded; dirty patch not independently reproduced"
+        },
+        {
+          "path": "results/kan/k4_20261024_204829",
+          "hosting_ref": "77bf3d8a3aed1bf394fd850903e7fd59ad129187",
+          "execution_commit": "de55dc478e5313a6861e56744078f9bd224d4ade",
+          "git_dirty": false,
+          "days": [
+            "2021-10-27",
+            "2022-06-16",
+            "2022-08-13",
+            "2022-08-16",
+            "2022-10-13",
+            "2022-10-14",
+            "2022-10-15",
+            "2022-11-08",
+            "2023-01-11",
+            "2023-03-17",
+            "2023-05-31",
+            "2023-06-06",
+            "2023-06-07",
+            "2023-07-21",
+            "2023-07-22",
+            "2023-07-23",
+            "2023-08-13",
+            "2023-08-14",
+            "2023-08-15",
+            "2023-08-19",
+            "2023-09-11",
+            "2023-10-08",
+            "2023-11-29",
+            "2023-12-11",
+            "2024-02-23",
+            "2024-06-09",
+            "2024-06-10",
+            "2024-06-11",
+            "2024-08-16",
+            "2024-09-04",
+            "2024-09-05",
+            "2024-09-06",
+            "2024-09-23",
+            "2024-10-01",
+            "2024-10-13",
+            "2024-11-14",
+            "2025-01-01",
+            "2025-02-11",
+            "2025-04-07",
+            "2025-06-23",
+            "2025-06-26",
+            "2025-07-24",
+            "2025-08-19",
+            "2025-11-10",
+            "2026-01-20",
+            "2026-03-02",
+            "2026-03-15",
+            "2026-04-20",
+            "2026-07-01"
+          ],
+          "incident_csv_blob_sha": "7fae3f3808defca4c133f68389a14b8ee9e3bc78",
+          "status": "current main release 0.6.0"
+        }
+      ],
+      "defihacklabs": {
+        "commit": "23c7bd83ccb4524972a9493617fcc8764ab6269b",
+        "euler_poc_blob_sha": "1b28e23efd669cbc6265f1ec3d4de8aa6d1b5e06",
+        "beanstalk_poc_blob_sha": "726e8de9a49c817ca1a9f32d7515d6a25989ad4a",
+        "readme_2022_blob_sha": "0a4a65c2b249ce5c7f454a1a199fa9ce63751b30",
+        "readme_2023_blob_sha": "d2bd688a9008d242d91528f6e49077bd8c023f61",
+        "tree_truncated": false
+      }
+    },
+    "main_source_doc_scan_files": 51,
+    "main_source_doc_scan_name_matches": 0,
+    "local_scanned_paths": [
+      "README.md",
+      "CHANGELOG.md",
+      "docs",
+      "scripts",
+      "src",
+      "results",
+      "papers/monitoring_jss/incidents"
+    ],
+    "not_audited": [
+      "Unuploaded/private book chapter drafts",
+      "Author personal knowledge or external unpublished experiments",
+      "All ordinary/background protocol-address rows inside binary K4 feature tables",
+      "Deleted uncommitted scratch work or every Git branch"
+    ]
+  },
+  "exposure_levels": {
+    "L0": "No historical target exposure found within explicitly audited material; not proof of global novelty.",
+    "L1": "Incident name/date/loss/cause in registry or aggregate statistics.",
+    "L2": "Label curation/exclusion metadata or unlabelled aggregate activity already processed; no targeted attack score evaluation found.",
+    "L3": "Target attack transaction used in training, calibration or evaluation.",
+    "L4": "Methods/rules/hyperparameters developed or selected using that case."
+  },
+  "candidates": [
+    {
+      "id": "candidate_euler_20230313",
+      "protocol": "Euler V1",
+      "incident_date": "2023-03-13",
+      "prior_exposure_level": "L2_curation_and_unlabelled_global_block_aggregation",
+      "historical_registry": [
+        {
+          "file": "results/security/s2_v1/incidents.csv",
+          "line": 211,
+          "record": {
+            "date": "2023-03-13",
+            "name": "EulerFinance",
+            "cause_text": "Business Logic Flaw",
+            "lost_text": "~$200M",
+            "loss_usd": "200000000.0",
+            "loss_parse": "usd",
+            "loss_usd_lenient": "200000000.0",
+            "cause_class": "business logic",
+            "component": "no bridge keyword in title",
+            "year": "2023"
+          }
+        },
+        {
+          "file": "results/security/s2_v1/summary.json",
+          "role": "included in top incident/loss summary"
+        }
+      ],
+      "generic_activity_exposure": {
+        "dataset": "analytics M1 Ethereum whole-chain headers",
+        "day": "2023-03-13",
+        "records": [
+          {
+            "day": "2023-03-13",
+            "policy": "fixed",
+            "alerts": "155",
+            "incidents": "11"
+          },
+          {
+            "day": "2023-03-13",
+            "policy": "rolling",
+            "alerts": "294",
+            "incidents": "72"
+          },
+          {
+            "day": "2023-03-13",
+            "policy": "ewma",
+            "alerts": "34",
+            "incidents": "7"
+          },
+          {
+            "day": "2023-03-13",
+            "policy": "quantile",
+            "alerts": "73",
+            "incidents": "13"
+          }
+        ],
+        "interpretation": "Whole-chain workload counts for the attack day were already evaluated without incident labels or attribution to Euler; cannot claim an entirely untouched calendar day."
+      },
+      "k4_curation": {
+        "present_in_price_only_positive_cohort": false,
+        "present_in_all_mainnet_exclusion_hash_set": true,
+        "hashes": [
+          "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+        ],
+        "source": "targeted replay of actual pinned PoC/README text through both loaders; no exploit execution"
+      },
+      "targeted_transaction_experiment_found": false,
+      "attack_day_in_k4_manifests": false,
+      "interpretation": "No named positive incident, attack-date input partition, attack-rank result or targeted detector training/evaluation was found for this candidate in any of the three retained historical/current K4 runs. K4 all-chain background rows on other dates were not decoded in this audit, so absence of every ordinary transaction involving the same protocol is not claimed.",
+      "eligible_by_prior_exposure_audit": "not automatically excluded; retain with disclosed prior cataloguing/curation and aggregate block exposure; eligibility still depends on independent data/label/coverage gates",
+      "evidence_keys": [
+        "s2_incidents",
+        "s2_parse_only",
+        "m1_daily",
+        "m1_scope",
+        "k4_current_incidents",
+        "k4_current_manifest",
+        "k4_curation",
+        "k4_keyword_chain_filter",
+        "euler_source_registry",
+        "euler_poc_attack_hash"
+      ]
+    },
+    {
+      "id": "candidate_beanstalk_20220417",
+      "protocol": "Beanstalk",
+      "incident_date": "2022-04-17",
+      "prior_exposure_level": "L2_curation_plus_registry",
+      "historical_registry": [
+        {
+          "file": "results/security/s2_v1/incidents.csv",
+          "line": 77,
+          "record": {
+            "date": "2022-04-16",
+            "name": "BeanstalkFarms",
+            "cause_text": "DAO + Flashloan",
+            "lost_text": "$182 million",
+            "loss_usd": "182000000.0",
+            "loss_parse": "usd",
+            "loss_usd_lenient": "182000000.0",
+            "cause_class": "flash-loan assisted (unspecified)",
+            "component": "no bridge keyword in title",
+            "year": "2022"
+          }
+        },
+        {
+          "file": "results/security/s2_v1/summary.json",
+          "role": "included in top incident/loss summary"
+        }
+      ],
+      "date_caveat": "Historical DeFiHackLabs README and S2 record 2022-04-16; current candidate registry uses actual attack date 2022-04-17. Do not copy the S2 catalogue heading date into replay-window or event labels.",
+      "generic_activity_exposure": {
+        "M1_attack_day_included": false,
+        "reason": "M1 header years are 2023-2025; attack is April 2022."
+      },
+      "k4_curation": {
+        "present_in_price_only_positive_cohort": false,
+        "present_in_all_mainnet_exclusion_hash_set": true,
+        "hashes": [
+          "0x68cdec0ac76454c3b0f7af0b8a3895db00adf6daaf3b50a99716858c4fa54c6f",
+          "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+        ],
+        "label_caveat": "First hash is a proposal/context transaction in current registry, not itself the completed theft; a parsed link is not sufficient attack adjudication.",
+        "source": "targeted replay of actual pinned PoC/README text through both loaders; no exploit execution"
+      },
+      "targeted_transaction_experiment_found": false,
+      "attack_day_in_k4_manifests": false,
+      "interpretation": "No named positive incident, attack-date input partition, attack-rank result or targeted detector training/evaluation was found for this candidate in any of the three retained historical/current K4 runs. K4 all-chain background rows on other dates were not decoded in this audit, so absence of every ordinary transaction involving the same protocol is not claimed.",
+      "eligible_by_prior_exposure_audit": "not automatically excluded; retain with disclosed prior cataloguing/curation and corrected event date/label roles; eligibility still depends on independent data/label/coverage gates",
+      "evidence_keys": [
+        "s2_incidents",
+        "s2_parse_only",
+        "k4_current_incidents",
+        "k4_current_manifest",
+        "k4_curation",
+        "k4_keyword_chain_filter",
+        "bean_source_registry",
+        "bean_source_hash_links",
+        "bean_poc_mainnet",
+        "bean_poc_flash"
+      ]
+    },
+    {
+      "id": "candidate_bsc_token_hub_20221006",
+      "protocol": "BSC Token Hub",
+      "incident_date": "2022-10-06",
+      "prior_exposure_level": "L0_no_historical_target_exposure_found_in_audited_repositories",
+      "historical_registry": [],
+      "registry_search": "No BSC Token Hub/Binance Bridge/BNB Bridge name match in historical S2. The S2 entry on 2022-10-06 is RES-Token, a different incident.",
+      "k4_curation": {
+        "present_in_price_only_positive_cohort": false,
+        "present_in_all_mainnet_exclusion_hash_set": "not supported by Ethereum-mainnet-only filter; no matching PoC path found in pinned source tree",
+        "chain_scope": "K4 Ethereum mainnet only, unlike candidate chain_id 56"
+      },
+      "targeted_transaction_experiment_found": false,
+      "attack_day_in_k4_manifests": false,
+      "bridge_experiments": "B1/B2 source configuration and output data summary contain Ronin and Nomad only; BSC Token Hub not included.",
+      "current_article2_exposure": "Candidate research and one receipt probe already exist in the current article2 branch; this is feasibility/provenance exposure in the present study, not a prior detector-comparison result.",
+      "eligible_by_prior_exposure_audit": "retain as candidate; lowest observed historical exposure, but source-chain history and 30-60 day coverage remain separate blockers",
+      "evidence_keys": [
+        "s2_incidents",
+        "k4_current_incidents",
+        "k4_current_manifest",
+        "k4_keyword_chain_filter",
+        "bridges_scope",
+        "bridges_results",
+        "current_candidates"
+      ]
+    }
+  ],
+  "evidence_urls": {
+    "s2_incidents": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab/blob/aa5886d20866579eb8855bca36cfad54ac76dee8/results/security/s2_v1/incidents.csv",
+    "s2_parse_only": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab/blob/aa5886d20866579eb8855bca36cfad54ac76dee8/scripts/s2_incident_statistics.py#L59",
+    "s2_source_manifest": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab/blob/aa5886d20866579eb8855bca36cfad54ac76dee8/results/security/s2_v1/manifest.json",
+    "m1_daily": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab/blob/aa5886d20866579eb8855bca36cfad54ac76dee8/results/monitoring/m1_v1/daily_alerts.csv",
+    "m1_scope": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab/blob/aa5886d20866579eb8855bca36cfad54ac76dee8/scripts/m1_block_stream.py#L48",
+    "analytics_cache_scope": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab/blob/aa5886d20866579eb8855bca36cfad54ac76dee8/scripts/d0_cache_aws.py#L18",
+    "k4_current_incidents": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/results/kan/k4_20261024_204829/incidents.csv",
+    "k4_current_manifest": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/results/kan/k4_20261024_204829/manifest.json",
+    "k4_old_incidents": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/2c2c7723cb9fa42ff46fb6f252652056a74f9223/results/kan/k4_20261024_080035/incidents.csv",
+    "k4_oldest_manifest": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/2c2c7723cb9fa42ff46fb6f252652056a74f9223/results/kan/k4_20261023_200340/manifest.json",
+    "k4_middle_manifest": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/2c2c7723cb9fa42ff46fb6f252652056a74f9223/results/kan/k4_20261024_080035/manifest.json",
+    "k4_curation": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/scripts/k4_extract_days.py#L215",
+    "k4_exclude_application": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/scripts/k4_extract_days.py#L156",
+    "k4_keyword_chain_filter": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/src/bal/data/defi.py#L80",
+    "k4_old_curation": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/2c2c7723cb9fa42ff46fb6f252652056a74f9223/scripts/k4_extract_days.py#L193",
+    "k4_old_keyword_chain_filter": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/2c2c7723cb9fa42ff46fb6f252652056a74f9223/src/bal/data/defi.py#L77",
+    "bridges_scope": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/src/bal/data/xchain.py#L68",
+    "bridges_results": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/results/bridges/b1_20261022_163601/data_summary.json",
+    "release_history": "https://github.com/KuznetsovKarazin/blockchain-detector-eval/blob/77bf3d8a3aed1bf394fd850903e7fd59ad129187/CHANGELOG.md#L7",
+    "bean_source_registry": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/past/2022/README.md#L2527",
+    "bean_source_hash_links": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/past/2022/README.md#L2549",
+    "bean_poc_mainnet": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/src/test/2022-04/Beanstalk_exp.sol#L26",
+    "bean_poc_flash": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/src/test/2022-04/Beanstalk_exp.sol#L80",
+    "euler_source_registry": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/past/2023/README.md#L4206",
+    "euler_poc_attack_hash": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/src/test/2023-03/Euler_exp.sol#L14",
+    "euler_poc_mainnet": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/23c7bd83ccb4524972a9493617fcc8764ab6269b/src/test/2023-03/Euler_exp.sol#L76",
+    "current_candidates": "https://github.com/KuznetsovKarazin/blockchain-analytics-lab/blob/aa5886d20866579eb8855bca36cfad54ac76dee8/papers/monitoring_jss/incidents/incident_candidates_20261025.json"
+  },
+  "k4_days_overlap": {
+    "all_three_runs_have_identical_49_calendar_dates": true,
+    "candidate_dates_checked": [
+      "2022-04-16",
+      "2022-04-17",
+      "2022-10-06",
+      "2023-03-13"
+    ],
+    "overlap": [],
+    "incident_csv_same_git_blob_all_runs": true
+  },
+  "targeted_loader_replay": [
+    {
+      "loader": "main",
+      "price_only": true,
+      "incidents": []
+    },
+    {
+      "loader": "main",
+      "price_only": false,
+      "incidents": [
+        {
+          "name": "BeanstalkFarms",
+          "date": "2022-04-16",
+          "heading": "20220416 BeanstalkFarms - DAO + Flashloan",
+          "sol": "src/test/2022-04/Beanstalk_exp.sol",
+          "txs": [
+            "0x68cdec0ac76454c3b0f7af0b8a3895db00adf6daaf3b50a99716858c4fa54c6f",
+            "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+          ]
+        },
+        {
+          "name": "EulerFinance",
+          "date": "2023-03-13",
+          "heading": "20230313 - EulerFinance - Business Logic Flaw",
+          "sol": "src/test/2023-03/Euler_exp.sol",
+          "txs": [
+            "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+          ]
+        }
+      ]
+    },
+    {
+      "loader": "old",
+      "price_only": true,
+      "incidents": []
+    },
+    {
+      "loader": "old",
+      "price_only": false,
+      "incidents": [
+        {
+          "name": "BeanstalkFarms",
+          "date": "2022-04-16",
+          "heading": "20220416 BeanstalkFarms - DAO + Flashloan",
+          "sol": "src/test/2022-04/Beanstalk_exp.sol",
+          "txs": [
+            "0x68cdec0ac76454c3b0f7af0b8a3895db00adf6daaf3b50a99716858c4fa54c6f",
+            "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+          ]
+        },
+        {
+          "name": "EulerFinance",
+          "date": "2023-03-13",
+          "heading": "20230313 - EulerFinance - Business Logic Flaw",
+          "sol": "src/test/2023-03/Euler_exp.sol",
+          "txs": [
+            "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+          ]
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "replace_candidates_due_to_prior_target_experiments": false,
+    "usable_description": "New transaction-level operational replay cases with disclosed prior catalogue/curation exposure.",
+    "avoid_description": "Three completely unseen or previously unknown incidents.",
+    "next_gate": "Freeze monitored populations, feature/rule access, inclusion/exclusion and label roles before comparative outputs; validate raw availability, complete 30-60-day periods and attack receipt order.",
+    "alternative_search": "Not necessary: no L3/L4 evidence found for these three cases."
+  },
+  "local_source_hashes": {
+    "results/security/s2_v1/incidents.csv": "6f129aec0e9f31d930e374625992600d4cb25ce5892968c8698ae1b2642ccf8e",
+    "results/security/s2_v1/summary.json": "b2eb7e0fc630b9c135637f3b1e8b46421e367e9c9007a713c12d0023d43d6b3f",
+    "results/security/s2_v1/manifest.json": "f2638275348f201020b32991c0d2c45b2ae31bfefbbcf2fbd63cc5225eb8f2d8",
+    "results/monitoring/m1_v1/daily_alerts.csv": "208bee32c7f720763da837ffefab04276ad117edd9e77bae2593bdae8f37d23d",
+    "scripts/s2_incident_statistics.py": "c57ad9018b0878eec301508a59f862de724bab0b7fb3910b3681eff55b2e1530",
+    "scripts/d0_cache_aws.py": "6e9e7981a552ba88bd172623dd43a585c66229201d87125e897303ef3359939d"
+  },
+  "repository_mutation_performed": false,
+  "poc_execution_performed": false,
+  "full_experiment_performed": false,
+  "additional_deFiHackLabs_heading_scan": [
+    {
+      "path": "past/2021/README.md",
+      "sha": "06a4a12c13ebfba5ca71413769e4f59c5bf2f849",
+      "target_poc_links": []
+    },
+    {
+      "path": "past/2024/README.md",
+      "sha": "2f73791ac12adc851371c5aa25f32e08ba9579e3",
+      "target_poc_links": []
+    },
+    {
+      "path": "past/2025/README.md",
+      "sha": "d1de7d9c5b46f0519b6c59feaae51155b3ee6eda",
+      "target_poc_links": []
+    }
+  ],
+  "targeted_loader_replay_scope": "Both target real PoC files and their complete pinned 2022/2023 README texts plus root README. Additional past README files were checked for references to the same target PoC paths; no competing target heading was found."
+}

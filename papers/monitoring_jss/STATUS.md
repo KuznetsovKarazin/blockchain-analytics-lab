@@ -1,59 +1,71 @@
 # Article 2 status — 25 October 2026
 
-**Bounded feasibility pilot completed and independently checked. The full research
-protocol remains draft; the article is not ready for submission.**
+**Header and Euler event-log feasibility pilots completed. Delayed-feedback
+scheduling and temporal calibration bookkeeping verified. The full scientific
+comparison remains draft; no independent attack-detection result is claimed.**
 
 Repository: KuznetsovKarazin/blockchain-analytics-lab; branch: paper/monitoring-jss.
-Starting HEAD: bb80caac70f8a289e719ec5b88dafa3767c1ef79.
-Companion dependency unchanged: dc1ba8876f3f163c27c48f3a39292fc47f71bf18.
+First pilot published at aa5886d20866579eb8855bca36cfad54ac76dee8.
+Companion dependency remains dc1ba8876f3f163c27c48f3a39292fc47f71bf18.
+Historical book scripts and results are unchanged.
 
-## Completed
+## Completed evidence
 
-- Reviewed the supplied plan and handoff, M1/M2 source, stored summaries,
-  data indexes, dependency and actual historical manifests (`source_audit.json`).
-- Added the draft operational contract, machine-readable schemas, a causal
-  finalized-header replay core, acquisition/runner and verification scripts.
-- Downloaded the indexed Ethereum block-header partition for 2024-03-04;
-  checked 7,167 blocks and 7,166 parent links. Selected the busiest hour, 17 UTC,
-  by input workload only: 300 blocks from the same day.
-- Executed 12 small cells: two periods, two virtual arrival schedules, three
-  independent worker repetitions. No model training or full research grid.
-- Passed 14 unit tests, 8 real-input QA checks and schema validation of all
-  44,802 final-run decisions. Independent reviewer recomputed FIFO queues,
-  counts and budgets from logs. All 24 final compressed logs match saved hashes.
-- Assembled three incident candidates and probed real BSC RPC availability.
-  No candidate yet passes independent-test eligibility.
+- Header pilot: 7,167 blocks, 12 cells and 44,802 decisions; see `SESSION_REPORT.md`.
+- Euler acquisition: complete address scan of 2,416,676 rows; all 1,247 matching
+  core logs from 218 transactions, linked to 215 blocks. All 7,118 daily headers,
+  7,117 parent links and 37 downloaded ranges checked independently.
+- Euler replay: six processes, 7,482 decisions; each emits 5 notifications from
+  146 raw workload triggers, with equal semantics across speeds and repetitions.
+  Measured local costs and modeled FIFO queues are reported separately.
+- Delayed feedback: delays 0/1/2/4, predict-before-release, disjoint temporal
+  calibration, whole-model/threshold fallback and stale-update protection.
+  No estimator has been fitted by this new utility.
+- Candidate exposure: Euler and Beanstalk occurred in earlier catalog/curation
+  sources, but were not K4 positive cases in the audited scope. BSC has no match
+  in the checked sources. All three remain candidates, not eligible tests.
+- Full monitoring test suite: 58 passed and 23 subtests passed. Independent
+  reviews additionally check acquisition, label scheduling and written logs.
 
-## Accepted evidence
+The current detailed report is `SESSION_2_REPORT_RU.md`. Protocol extensions
+are `EVENT_LOG_CONTRACT.md` and `DELAYED_FEEDBACK_CONTRACT.md`.
 
-Use `runs/pilot_20261025T081404_015172Z/` and `qa/verify_20261025T081539_946082Z/verification.json`.
-See `SESSION_REPORT.md` for the measured results, interpretation and commands.
-Per-record logs and raw data are retained privately; Git contains code, source
-snapshots, aggregate results and verification hashes.
+## Accepted and excluded runs
 
-The earlier run `pilot_20261025T081159_554384Z` is **quarantined/superseded**:
-independent validation found one truncated compressed decision log with a hash
-mismatch. Its original bytes/metadata are preserved, its integrity audit records
-failure, and none of its timing results are used in the session report. The cause
-of the truncation is not established. The accepted run independently passes the
-same integrity checks. An initial runtime success flag is not sufficient evidence.
+| Evidence | Path |
+|---|---|
+| Accepted header replay | `runs/pilot_20261025T081404_015172Z/` |
+| Accepted Euler acquisition | `runs/protocol_logs_20261025T083346_282558Z/` |
+| Accepted Euler log replay | `runs/event_logs_20261025T084327_927529Z/` |
+| Earlier header run, excluded | `runs/pilot_20261025T081159_554384Z/` |
+
+The excluded header run has one truncated gzip decision log and hash mismatch.
+Original bytes and failed integrity results are preserved. The cause is not
+established; its timing results are not used. Later accepted runs are checked
+on their written files rather than relying on process success alone.
+
+Raw data, downloaded ranges and per-record logs are preserved privately.
+Git contains code, exact executed snapshots, aggregate results and audit hashes.
+No raw upstream redistribution license is inferred from a software license.
 
 ## Work packages
 
 | Package | Actual state | Remaining |
 |---|---|---|
-| P2.01 | Header event/decision schema and causal replay verified | Receipts/logs/traces; cross-chain availability and watermark |
-| P2.02 | Fixed rule, causal cooldown, hard notification admission | Calibration, model-compatible fallback, temporal retraining, label queue |
-| P2.03 | Three candidates; one BSC attack receipt actually obtained | Prior-exposure audit, full attack labels, 30–60-day continuous populations |
-| P2.04 | Measured local header stages, RAM/disk; modeled FIFO queues | Real data-extraction pipeline and live/finality timing scope |
-| P2.05 | Duplicate/late/orderly snapshot continuation verified | Durable outbox, crash injection, delivery and recovery timing |
-| P2.06 | Reproducible exploratory pilot report | Independent scientific comparisons, uncertainty and transferable result |
+| P2.01 | Header and real protocol-event replay, ordering and provenance verified | Receipts/traces, deployed semantic ABI, cross-chain availability |
+| P2.02 | Hard budget and delayed-label/calibration state contracts verified | Fitted models, class minima, threshold objective, full temporal experiment |
+| P2.03 | Three candidates, exposure audit, two population definitions, one full Euler day | Eligible labelled cases and 30–60-day continuous populations |
+| P2.04 | Measured source extraction and local replay; modeled queueing | More source/population workloads and declared live/finality scope |
+| P2.05 | Duplicate/late delivery and orderly snapshot continuation | Durable outbox, arbitrary crashes, delivery and recovery timing |
+| P2.06 | Two reproducible exploratory reports with independent checks | Independent scientific comparisons and uncertainty |
 
-## Next executable task
+## Next bounded research step
 
-Audit prior exposure of Euler, Beanstalk and BSC Token Hub across the book and K4.
-For the first eligible mechanism, fix historical contracts/ABI/event population
-and test receipt/log availability for one full day before committing to a 45-day
-window. Keep label adjudication separate from detector settings. Build the new
-Elliptic label-availability queue and temporal calibration only after its phase
-convention is fixed. Article 1/book priorities remain unchanged.
+Complete eligible-case and monitored-population definitions, including exact
+attack transaction labels and historical deployment evidence where semantic
+features require it. Plan continuous windows with the measured extraction
+volume, retain prior-exposure categories, and fix the multi-day budget clock.
+For Elliptic, freeze actual estimator, calibration class minima, seeds and
+threshold objective before an exploratory rerun of already studied steps.
+These are evidence/design requirements, not a request for further permission.
+Article 1 and the book retain their agreed priority.

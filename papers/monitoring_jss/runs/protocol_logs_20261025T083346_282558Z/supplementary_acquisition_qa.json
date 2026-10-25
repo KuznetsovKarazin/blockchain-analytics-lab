@@ -1,0 +1,261 @@
+{
+  "schema_version": "protocol_log_supplementary_qa_v1",
+  "checked_utc": "2026-10-25T08:38:58.106198+00:00",
+  "all_checks_pass": true,
+  "checks": {
+    "headers_nonempty": true,
+    "all_headers_in_utc_day": true,
+    "unique_header_hashes": true,
+    "header_and_parent_hash_hex": true,
+    "consecutive_header_numbers": true,
+    "all_source_payload_matches_retained": true,
+    "per_row_group_count_matches": true,
+    "source_ordinals_unique": true,
+    "integer_nanoseconds": true,
+    "source_timestamps_integral_seconds": true,
+    "historical_observed_unknown": true,
+    "labels_unknown": true,
+    "all_cached_range_hashes_match": true,
+    "partition_listings_not_truncated": true,
+    "one_log_and_one_header_object": true
+  },
+  "all_header_rows": 7118,
+  "header_first_utc": "2023-03-01T00:00:11",
+  "header_last_utc": "2023-03-01T23:59:59",
+  "removed_field": {
+    "source_present": false,
+    "interpretation": "unknown; not replaced by false; archive assumed canonical and settled; no reorg claim"
+  },
+  "receipt_status": {
+    "source_present": false,
+    "interpretation": "not measured; receipts not fetched"
+  },
+  "completeness_scope": "all address rows and all matching events within the enumerated AWS log partition; no independent verification against every chain receipt",
+  "partition_listings": [
+    {
+      "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Flogs%2Fdate%3D2023-03-01%2F",
+      "checked_utc": "2026-10-25T08:36:40.770779+00:00",
+      "is_truncated": "false",
+      "objects": [
+        {
+          "Key": "v1.0/eth/logs/date=2023-03-01/part-00000-f66f43c5-ca46-452e-8e6f-f2f2dfb24829-c000.snappy.parquet",
+          "Size": "460261684",
+          "ETag": "\"0b9b1c95fa46d3a2d47665734cfc2571-7\""
+        }
+      ]
+    },
+    {
+      "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?list-type=2&prefix=v1.0%2Feth%2Fblocks%2Fdate%3D2023-03-01%2F",
+      "checked_utc": "2026-10-25T08:36:46.031874+00:00",
+      "is_truncated": "false",
+      "objects": [
+        {
+          "Key": "v1.0/eth/blocks/date=2023-03-01/part-00000-b750e33e-7fdd-47bc-b52d-f7835851062a-c000.snappy.parquet",
+          "Size": "6163058",
+          "ETag": "\"a208684c8cee85f8d193a061ce54de69\""
+        }
+      ]
+    }
+  ],
+  "cached_range_checks": [
+    {
+      "name": "124336469_1168180.bin",
+      "bytes": 1168180,
+      "sha256_matches": true
+    },
+    {
+      "name": "125504649_1588352.bin",
+      "bytes": 1588352,
+      "sha256_matches": true
+    },
+    {
+      "name": "127093001_1189503.bin",
+      "bytes": 1189503,
+      "sha256_matches": true
+    },
+    {
+      "name": "133314532_2112097.bin",
+      "bytes": 2112097,
+      "sha256_matches": true
+    },
+    {
+      "name": "135426629_48934356.bin",
+      "bytes": 48934356,
+      "sha256_matches": true
+    },
+    {
+      "name": "184360985_27978229.bin",
+      "bytes": 27978229,
+      "sha256_matches": true
+    },
+    {
+      "name": "2108740_48951654.bin",
+      "bytes": 48951654,
+      "sha256_matches": true
+    },
+    {
+      "name": "212339214_879978.bin",
+      "bytes": 879978,
+      "sha256_matches": true
+    },
+    {
+      "name": "213219192_1011814.bin",
+      "bytes": 1011814,
+      "sha256_matches": true
+    },
+    {
+      "name": "214231006_43505871.bin",
+      "bytes": 43505871,
+      "sha256_matches": true
+    },
+    {
+      "name": "257736877_1168187.bin",
+      "bytes": 1168187,
+      "sha256_matches": true
+    },
+    {
+      "name": "258905064_1594132.bin",
+      "bytes": 1594132,
+      "sha256_matches": true
+    },
+    {
+      "name": "260499196_1189488.bin",
+      "bytes": 1189488,
+      "sha256_matches": true
+    },
+    {
+      "name": "266720096_2109916.bin",
+      "bytes": 2109916,
+      "sha256_matches": true
+    },
+    {
+      "name": "268830012_48900160.bin",
+      "bytes": 48900160,
+      "sha256_matches": true
+    },
+    {
+      "name": "317730172_27837736.bin",
+      "bytes": 27837736,
+      "sha256_matches": true
+    },
+    {
+      "name": "345567908_879956.bin",
+      "bytes": 879956,
+      "sha256_matches": true
+    },
+    {
+      "name": "346447864_1011922.bin",
+      "bytes": 1011922,
+      "sha256_matches": true
+    },
+    {
+      "name": "347459786_43496287.bin",
+      "bytes": 43496287,
+      "sha256_matches": true
+    },
+    {
+      "name": "390956073_1168189.bin",
+      "bytes": 1168189,
+      "sha256_matches": true
+    },
+    {
+      "name": "392124262_1593825.bin",
+      "bytes": 1593825,
+      "sha256_matches": true
+    },
+    {
+      "name": "393718087_1189495.bin",
+      "bytes": 1189495,
+      "sha256_matches": true
+    },
+    {
+      "name": "399938530_1158782.bin",
+      "bytes": 1158782,
+      "sha256_matches": true
+    },
+    {
+      "name": "401097312_21766097.bin",
+      "bytes": 21766097,
+      "sha256_matches": true
+    },
+    {
+      "name": "422863409_12559942.bin",
+      "bytes": 12559942,
+      "sha256_matches": true
+    },
+    {
+      "name": "435423351_398867.bin",
+      "bytes": 398867,
+      "sha256_matches": true
+    },
+    {
+      "name": "435822218_443587.bin",
+      "bytes": 443587,
+      "sha256_matches": true
+    },
+    {
+      "name": "436265805_19568205.bin",
+      "bytes": 19568205,
+      "sha256_matches": true
+    },
+    {
+      "name": "455834010_543530.bin",
+      "bytes": 543530,
+      "sha256_matches": true
+    },
+    {
+      "name": "456377540_962513.bin",
+      "bytes": 962513,
+      "sha256_matches": true
+    },
+    {
+      "name": "457340053_564754.bin",
+      "bytes": 564754,
+      "sha256_matches": true
+    },
+    {
+      "name": "460196148_65536.bin",
+      "bytes": 65536,
+      "sha256_matches": true
+    },
+    {
+      "name": "4_2108736.bin",
+      "bytes": 2108736,
+      "sha256_matches": true
+    },
+    {
+      "name": "51060394_27879445.bin",
+      "bytes": 27879445,
+      "sha256_matches": true
+    },
+    {
+      "name": "78939839_879973.bin",
+      "bytes": 879973,
+      "sha256_matches": true
+    },
+    {
+      "name": "79819812_1012006.bin",
+      "bytes": 1012006,
+      "sha256_matches": true
+    },
+    {
+      "name": "80831818_43504651.bin",
+      "bytes": 43504651,
+      "sha256_matches": true
+    }
+  ],
+  "actual_log_range_bytes": 442875951,
+  "source_log_size_bytes": 460261684,
+  "log_projection_ratio": 0.9622264168311695,
+  "execution_notes": "Acquisition source script snapshot and exact command are in acquisition_manifest.json; no scientific detection performed.",
+  "post_run_code_hardening": {
+    "executed_source_sha256": "d37931267328079b786259aeafd850528f42e772ae508b9df5bb5d26625821e8",
+    "current_source_sha256": "d4d8654cb94b0e07b3e5dcd214466d5888fefc42769c79f582b279fc08a29357",
+    "reason": "Independent review added stricter header cache identity, one-to-one transaction positions and log ordering, custom emitter provenance, and header-day/hash guards. Live acquired data already satisfies these checks.",
+    "exact_executed_source": "acquire_protocol_logs_source.py",
+    "unit_test_count": 9,
+    "unit_tests_passed": true,
+    "hardened_validator_on_saved_raw_passed": true,
+    "source_script_unchanged_field_scope": "The acquisition manifest field records equality at run completion, before later hardening."
+  }
+}

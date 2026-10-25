@@ -1,0 +1,51 @@
+{
+  "base_commit": "aa5886d20866579eb8855bca36cfad54ac76dee8",
+  "cells": [
+    "day_x1_r1",
+    "day_x1_r2",
+    "day_x1_r3",
+    "day_x1000000_r1",
+    "day_x1000000_r2",
+    "day_x1000000_r3"
+  ],
+  "command": [
+    "papers/monitoring_jss/event_log_replay.py",
+    "--input",
+    "data/raw/monitoring_jss/protocol_logs/2023-03-01/protocol_logs_20261025T083346_282558Z/selected_logs.jsonl"
+  ],
+  "config_sha256": "f19f2b177741c37c23b5c841b8129295fb197c0ecc33638a305220351ce2971c",
+  "environment": {
+    "cpu_count": 9,
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "worker_threads": 1
+  },
+  "finished_utc": "2026-10-25T08:43:29.950355+00:00",
+  "frozen_sources_unchanged": true,
+  "input_config_unchanged": true,
+  "input_path": "data/raw/monitoring_jss/protocol_logs/2023-03-01/protocol_logs_20261025T083346_282558Z/selected_logs.jsonl",
+  "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a",
+  "modes_and_repeats_semantic_invariance": true,
+  "run_id": "event_logs_20261025T084327_927529Z",
+  "schema_version": "event_log_pilot_run_v1",
+  "scope": "one preselected protocol-day; six engineering runs; no attack labels, independent incidents or full method grid",
+  "seed": 0,
+  "source_snapshot": [
+    {
+      "path": "event_log_replay.py",
+      "sha256": "a5e414d052b7b340175575209ba94c58952ba440913268ca2effd192e5208ac2"
+    },
+    {
+      "path": "event_log_pilot_config.json",
+      "sha256": "f19f2b177741c37c23b5c841b8129295fb197c0ecc33638a305220351ce2971c"
+    },
+    {
+      "path": "test_event_log_replay.py",
+      "sha256": "e61084cad64fae8955dd4ad3b27411ae17223d9b1514659a52e1dd81a6ec6dc8"
+    }
+  ],
+  "started_utc": "2026-10-25T08:43:27.939279+00:00",
+  "status": "complete",
+  "worker_source": "workers execute the captured source_snapshot/event_log_replay.py with run-local config.json"
+}

@@ -39,6 +39,40 @@
       "path": "incidents/incident_candidates_20261025.json",
       "role": "acquisition triage, three candidates, zero eligible independent tests",
       "new_scientific_detection_result": false
+    },
+    {
+      "id": "candidate_exposure_20261025",
+      "path": "incidents/exposure_audit_20261025.json",
+      "role": "source/curation exposure audit of three candidates; not a new detection result",
+      "eligible_independent_cases": 0
+    },
+    {
+      "id": "protocol_logs_20261025T083346_282558Z",
+      "path": "runs/protocol_logs_20261025T083346_282558Z",
+      "role": "new bounded source acquisition: all 1247 matching Euler core logs from one AWS day partition, with header joins and range hashes",
+      "use_for_results": true,
+      "independent_scientific_incidents": 0
+    },
+    {
+      "id": "event_logs_20261025T084327_927529Z",
+      "path": "runs/event_logs_20261025T084327_927529Z",
+      "role": "six local replay cells on one protocol-day; measured processing and modeled FIFO; no attack labels",
+      "use_for_results": true,
+      "decision_rows": 7482,
+      "independent_scientific_incidents": 0
+    },
+    {
+      "id": "delayed_feedback_implementation_20261025",
+      "path": "qa/delayed_feedback_independent_review.json",
+      "role": "unit and independent-oracle verification of label queue, temporal partitions, score provenance bookkeeping and activation fallback",
+      "model_fitted": false,
+      "independent_scientific_incidents": 0
+    },
+    {
+      "id": "event_log_verification_20261025",
+      "path": "qa/event_log_independent_review.json",
+      "role": "independent recomputation of written real-input decisions and FIFO plus compressed-log integrity",
+      "new_detection_metric": false
     }
   ]
 }

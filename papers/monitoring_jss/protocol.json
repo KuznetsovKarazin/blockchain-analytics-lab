@@ -1,5 +1,5 @@
 {
-  "schema_version": "article2_monitoring_protocol_draft_v0.2",
+  "schema_version": "article2_monitoring_protocol_draft_v0.3",
   "status": "draft-not-frozen",
   "created_local_date": "2026-10-25",
   "title": "Operational Evaluation of Blockchain Monitoring Pipelines under Alert Budgets and Delayed Feedback",
@@ -103,9 +103,17 @@
     "in_sample_threshold_tuning_allowed": false,
     "model_version_association_required": true,
     "old_model_scores_for_new_model": "not automatic; requires separately defined procedure",
-    "insufficient_positives_fallback": "to_be_frozen",
+    "insufficient_positives_fallback": "Retain the entire active model/threshold pair; scheduling/provenance utility implemented, full-study class minima still to be frozen.",
     "feedback_assumption": "All historically labelled examples become available after the declared delay; selective alert-only feedback is outside the minimum claim.",
-    "elliptic_delay_convention_draft": "Prediction and decision for step t precede label release. Label from step s with integer delay d is released after step s+d and may first affect prediction s+d+1. Initial labelled development history and validation availability must be declared separately. Implement an explicit queue; do not reuse M2 known_upto=t-DELAY+1 for a d=0 sweep."
+    "elliptic_delay_convention_draft": "Prediction and decision for step t precede label release. Label from step s with integer delay d is released after step s+d and may first affect prediction s+d+1. Initial labelled development history and validation availability must be declared separately. Implement an explicit queue; do not reuse M2 known_upto=t-DELAY+1 for a d=0 sweep.",
+    "temporal_calibration_implementation": {
+      "file": "delayed_feedback.py",
+      "contract": "DELAYED_FEEDBACK_CONTRACT.md",
+      "window": "latest four available source steps containing known labels; excluded from fitting",
+      "activation": "strictly increasing successful prediction steps; explicit optional initial activation step",
+      "estimator_fitted": false,
+      "full_study_class_minima_frozen": false
+    }
   },
   "data": {
     "development_cases": [
@@ -127,11 +135,12 @@
     "exclusions_ledger_required": true,
     "no_known_attack_day_is_proven_negative": false,
     "false_alarm_estimation": "requires adjudication of alerts, complete or sampled with known inclusion probabilities",
-    "previous_elliptic_steps_35_49_status": "development/exploratory re-evaluation; not a new untouched external test"
+    "previous_elliptic_steps_35_49_status": "development/exploratory re-evaluation; not a new untouched external test",
+    "prior_exposure_audit": "incidents/exposure_audit_20261025.json",
+    "candidate_exposure_summary": "Euler and Beanstalk have catalog/curation exposure (L2), not positive K4 evaluation use in the checked scope; BSC L0 only in checked sources. All remain ineligible pending complete case requirements."
   },
   "pilot": {
     "scope": "one ordinary day and one intensive fragment; one detector and two modes",
-    "full_grid_authorized_in_this_protocol": false,
     "measure": [
       "runtime",
       "RAM",
@@ -141,7 +150,7 @@
       "duplicate_alert_id_behavior"
     ],
     "purpose": "feasibility and implementation correctness, not confirmatory scientific evidence",
-    "implementation_scope": "Single-chain finalized historical Ethereum block-header workload only. No receipts, traces, learned detector, delayed-label adaptation, cross-chain features or incident recall.",
+    "implementation_scope": "Original header pilot plus separately configured Euler core event-log pilot; no receipts/traces, learned detector, actual adaptive fitting, cross-chain features or incident recall.",
     "config_file": "pilot_config.json",
     "timing_interpretation": "Local file read/decode/core/write measured. x1 and compressed arrival schedules use a virtual FIFO clock with measured service costs; no wall-clock pacing, real network or historical observation latency is claimed.",
     "status": "bounded_feasibility_complete_and_verified",
@@ -149,7 +158,22 @@
     "historical_finality": "Offline canonical archive assumption; no live finality observation and no numerical confirmation delay imposed. Reorg handling unsupported.",
     "recovery_scope": "ReplayState snapshot round-trip and deterministic log-replay tests; no external notification delivery guarantee or transactional durable outbox claim.",
     "accepted_run": "runs/pilot_20261025T081404_015172Z",
-    "verification": "qa/verify_20261025T081539_946082Z/verification.json"
+    "verification": "qa/verify_20261025T081539_946082Z/verification.json",
+    "full_grid_ready": false,
+    "event_log_extension": {
+      "contract": "EVENT_LOG_CONTRACT.md",
+      "config": "event_log_pilot_config.json",
+      "acquisition_run": "runs/protocol_logs_20261025T083346_282558Z",
+      "replay_run": "runs/event_logs_20261025T084327_927529Z",
+      "population_day": "Euler V1 core all-topic emitter, 2023-03-01 UTC",
+      "events": 1247,
+      "transactions": 218,
+      "cells": 6,
+      "independent_attack_cases": 0,
+      "semantic_decisions_equal_across_cells": true,
+      "historical_observed_and_removed": "unknown/null",
+      "completeness": "enumerated AWS partition; not independent full-receipt verification"
+    }
   },
   "evaluation": {
     "local_stages": [
@@ -241,6 +265,17 @@
         "Use separate tx/log/trace index fields.",
         "Document old M2 delay convention and d=0 incompatibility.",
         "Full experiment grid remains draft and unexecuted."
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "scope": "v0.3 protocol-event feasibility and delayed-feedback implementation",
+      "changes": [
+        "Completed bounded Euler all-topic event acquisition and six real-input replay cells; source and decision logs independently audited.",
+        "Recorded prior candidate exposure rather than describing previously curated cases as untouched.",
+        "Implemented prediction-before-release queue, separate temporal calibration plans and whole-pair fallback; no model fitting or full scientific grid.",
+        "Added strict activation-step guard against stale model updates.",
+        "Distinguished full scanned address population from retained payload size, and measured preparation cost from local replay and virtual queueing."
       ]
     }
   ]

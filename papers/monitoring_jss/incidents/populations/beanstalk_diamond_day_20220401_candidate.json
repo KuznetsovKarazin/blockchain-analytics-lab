@@ -1,0 +1,983 @@
+{
+  "chain_id": 1,
+  "purpose": "one-day engineering acquisition and event-count replay; not an attack-detection test",
+  "status": "population_definition_v1_not_eligible",
+  "independent_eligible": false,
+  "exposure_audit_status": "checked_scope_audit_completed_with_prior_L2_exposure; broader unaudited scope remains",
+  "time_interval_convention": "start inclusive, end exclusive UTC",
+  "topics_filter": null,
+  "labels_policy": "No labels included in detector input. The selected ordinary candidate day is not certified attack-free.",
+  "historical_observed_time": null,
+  "source_snapshot_caveat": "A repository commit dated before a window supplies a reproducible source candidate. It is not proof that its entire bytecode/ABI was deployed then. Resolve installer/DiamondCut events and bytecode by historical block before semantic inference.",
+  "required_log_fields": [
+    "address",
+    "topics",
+    "data",
+    "block_number",
+    "block_hash",
+    "transaction_hash",
+    "transaction_index",
+    "log_index",
+    "removed"
+  ],
+  "required_header_fields": [
+    "number",
+    "hash",
+    "parent_hash",
+    "timestamp"
+  ],
+  "ordering": [
+    "block_number",
+    "transaction_index",
+    "log_index"
+  ],
+  "acquisition_rules": [
+    "Filter all emitter logs in the entire UTC interval, with no topic/event-type preselection.",
+    "Derive block bounds from verified block timestamps, not average seconds per block.",
+    "Keep all source partitions scanned and byte hashes in an acquisition manifest, including empty result partitions.",
+    "Join headers by canonical block hash where available; do not fabricate missing identity fields.",
+    "Include every matching transaction identifier; fetch complete receipts in a separate extension only when token-transfer/call-context features are introduced.",
+    "Quarantine removed logs, duplicate identities and inconsistent block hashes; never silently rewrite past decisions."
+  ],
+  "initial_detector_scope": "causal event-count or rate by core emitter; no monetary loss, external outflow, account health or prevention claim",
+  "topic_hash_rule": "Ethereum topic0 = Keccak-256 of the canonical event signature UTF-8; not NIST SHA3-256. No topic hashes are guessed in this config.",
+  "id": "beanstalk_diamond_20220401_candidate_v1",
+  "start_utc": "2022-04-01T00:00:00Z",
+  "end_utc": "2022-04-02T00:00:00Z",
+  "emitter_addresses": [
+    "0xc1e088fc1323b20bcbee9bd1b9fc9546db5624c5"
+  ],
+  "population_name": "all Ethereum Beanstalk Diamond-emitted event logs",
+  "source_repo": "https://github.com/BeanstalkFarms/Beanstalk",
+  "source_commit": "e0cf6b8dd7dbeacc809eda475f9bb1d6197b748b",
+  "source_commit_timestamp": "2022-03-30T22:54:51Z",
+  "source_files": [
+    {
+      "family": "bean",
+      "source_path": "protocol/abi/Beanstalk.json",
+      "git_blob_sha": "46582bb0e3d64fd56ef2163b17379327925943dd",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e0cf6b8dd7dbeacc809eda475f9bb1d6197b748b/protocol/abi/Beanstalk.json",
+      "sha256": "c67273ee44a43dbee453e688f679d9a1a2564c6e3b01ee62235ecf7b222347dd",
+      "bytes": 68643,
+      "git_blob_matches_retrieved_content": true,
+      "evidence_archive_relative_path": "source_snapshots/bean/protocol/abi/Beanstalk.json",
+      "source_snapshot_embedded_in_repository": false
+    },
+    {
+      "family": "bean",
+      "source_path": "protocol/contracts/farm/facets/GovernanceFacet/GovernanceFacet.sol",
+      "git_blob_sha": "93fc5a9fd9eabfc45cb10fcbe8d10d3c87091807",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e0cf6b8dd7dbeacc809eda475f9bb1d6197b748b/protocol/contracts/farm/facets/GovernanceFacet/GovernanceFacet.sol",
+      "sha256": "86d9ff324e5a3e8070c0f705e054fbd9a07e83a3fa2a5f0f72352bc9ca837302",
+      "bytes": 9646,
+      "git_blob_matches_retrieved_content": true,
+      "evidence_archive_relative_path": "source_snapshots/bean/protocol/contracts/farm/facets/GovernanceFacet/GovernanceFacet.sol",
+      "source_snapshot_embedded_in_repository": false
+    },
+    {
+      "family": "bean",
+      "source_path": "protocol/contracts/farm/Diamond.sol",
+      "git_blob_sha": "dcc6d93358071d128e15aaf5c792b46852d5bd94",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e0cf6b8dd7dbeacc809eda475f9bb1d6197b748b/protocol/contracts/farm/Diamond.sol",
+      "sha256": "794f951c182556a12bd7b8c75093131fd5bffea2817d355d5537e96953c3310a",
+      "bytes": 2117,
+      "git_blob_matches_retrieved_content": true,
+      "evidence_archive_relative_path": "source_snapshots/bean/protocol/contracts/farm/Diamond.sol",
+      "source_snapshot_embedded_in_repository": false
+    },
+    {
+      "family": "bean",
+      "source_path": "protocol/contracts/libraries/LibDiamond.sol",
+      "git_blob_sha": "6395154997ded1977a69a41760d5f4a01b169722",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e0cf6b8dd7dbeacc809eda475f9bb1d6197b748b/protocol/contracts/libraries/LibDiamond.sol",
+      "sha256": "d0d9f7c79f56f747ccbaa14cb76cae5d74a3057ca757bcc0d13ce9d26406c9fb",
+      "bytes": 12591,
+      "git_blob_matches_retrieved_content": true,
+      "evidence_archive_relative_path": "source_snapshots/bean/protocol/contracts/libraries/LibDiamond.sol",
+      "source_snapshot_embedded_in_repository": false
+    },
+    {
+      "family": "bean",
+      "source_path": "protocol/test/utils/constants.js",
+      "git_blob_sha": "3fa99f6bec76b3e5c1b19dcbd4c2abbc35b60ff2",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e0cf6b8dd7dbeacc809eda475f9bb1d6197b748b/protocol/test/utils/constants.js",
+      "sha256": "78d28ac001776ba190e4cd3d2f93b4e376219faec6cb465c6dca2ab5198bf29b",
+      "bytes": 447,
+      "git_blob_matches_retrieved_content": true,
+      "evidence_archive_relative_path": "source_snapshots/bean/protocol/test/utils/constants.js",
+      "source_snapshot_embedded_in_repository": false
+    },
+    {
+      "family": "bean",
+      "source_path": "readme.md",
+      "git_blob_sha": "8253b8ccdcf9c1471fb1b684dbcce03c946be94e",
+      "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e0cf6b8dd7dbeacc809eda475f9bb1d6197b748b/readme.md",
+      "sha256": "7249525fb56f2f6b67611650dc28b174f6af720450374a7644b50e6f0377dbd8",
+      "bytes": 3813,
+      "git_blob_matches_retrieved_content": true,
+      "evidence_archive_relative_path": "source_snapshots/bean/readme.md",
+      "source_snapshot_embedded_in_repository": false
+    }
+  ],
+  "address_source": "historical readme.md contract table and protocol/test/utils/constants.js",
+  "historical_bean_token": "0xdc59ac4fefa32293a95889dc396682858d52e5db",
+  "emitter_reason": "Diamond fallback delegates calls to facet implementations; delegated facet events are emitted at the Diamond address.",
+  "excluded_scope": [
+    "underlying ERC20/LP Transfer logs",
+    "native ETH value movement",
+    "internal call graph and code creation",
+    "current Beanstalk deployments and new BEAN token 0xBEA..."
+  ],
+  "semantic_cautions": [
+    "Proposal log does not contain proposed _init, _calldata or facet cut. Inspect transaction calldata or internal call trace as required.",
+    "Commit log alone does not distinguish normal commit from emergencyCommit; resolve input/call trace.",
+    "Logs do not prove that a future init address will contain malicious code; historical code state and execution context are required.",
+    "DiamondCut event contains init/facet payload but is emitted during execution; a finalized receipt-based decision cannot interrupt its transaction.",
+    "VoteList indexed uint32[] bips is a hash, not directly recoverable proposal IDs, in the ordinary source snapshot."
+  ],
+  "availability_from_logs_only": {
+    "event_rate": true,
+    "governance_vote_and_commit_events": true,
+    "proposal_payload_from_Proposal_log": false,
+    "normal_vs_emergency_commit_from_Commit_log": false,
+    "full_external_asset_drain_from_diamond_only": false,
+    "full_call_graph": false
+  },
+  "upgrade_resolution": "Reconstruct DiamondCut chronology and selector-to-facet mapping as-of each block (including intra-block ordering) and check facet runtime code. Do not assign ABI solely by Git commit timestamp or current Louper view.",
+  "historical_abi_status": "Two source ABI snapshots saved, with differing VoteList indexing; exact on-chain activation boundary unresolved.",
+  "pre_incident_source_snapshot": {
+    "commit": "e9f49910e287e7a7afaa6db8f536b7194728b0af",
+    "date": "2022-04-11T18:27:52Z",
+    "source_files": [
+      {
+        "family": "bean_attack",
+        "source_path": "protocol/abi/Beanstalk.json",
+        "git_blob_sha": "ff17d009bbfb11f99d141767ff026bd1623ba683",
+        "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e9f49910e287e7a7afaa6db8f536b7194728b0af/protocol/abi/Beanstalk.json",
+        "sha256": "347b28c12187186395af8a53581bf0d668933472e982062c2bc94b41c72358b8",
+        "bytes": 163326,
+        "git_blob_matches_retrieved_content": true,
+        "evidence_archive_relative_path": "source_snapshots/bean_attack/protocol/abi/Beanstalk.json",
+        "source_snapshot_embedded_in_repository": false
+      },
+      {
+        "family": "bean_attack",
+        "source_path": "protocol/contracts/farm/facets/GovernanceFacet/GovernanceFacet.sol",
+        "git_blob_sha": "800e830cd08714acca9bd0ad117bd56a94d1f015",
+        "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e9f49910e287e7a7afaa6db8f536b7194728b0af/protocol/contracts/farm/facets/GovernanceFacet/GovernanceFacet.sol",
+        "sha256": "27938091a8fd181e62246d9f365e3d5523d8b825b1c562243ffa9d6db908efad",
+        "bytes": 9326,
+        "git_blob_matches_retrieved_content": true,
+        "evidence_archive_relative_path": "source_snapshots/bean_attack/protocol/contracts/farm/facets/GovernanceFacet/GovernanceFacet.sol",
+        "source_snapshot_embedded_in_repository": false
+      },
+      {
+        "family": "bean_attack",
+        "source_path": "readme.md",
+        "git_blob_sha": "d88bb67ef460b7ae5f3fb8714fd7c75e6aca5ac6",
+        "url": "https://github.com/BeanstalkFarms/Beanstalk/blob/e9f49910e287e7a7afaa6db8f536b7194728b0af/readme.md",
+        "sha256": "d712658052fc2a4eace96795856ec88354fcbad6287a529e6625f12b210c32a4",
+        "bytes": 9947,
+        "git_blob_matches_retrieved_content": true,
+        "evidence_archive_relative_path": "source_snapshots/bean_attack/readme.md",
+        "source_snapshot_embedded_in_repository": false
+      }
+    ]
+  },
+  "ordinary_source_events": [
+    {
+      "name": "LPDeposit",
+      "signature": "LPDeposit(address,uint256,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "seeds",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "DiamondCut",
+      "signature": "DiamondCut((address,uint8,bytes4[])[],address,bytes)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "facetAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "enum IDiamondCut.FacetCutAction",
+              "name": "action",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes4[]",
+              "name": "functionSelectors",
+              "type": "bytes4[]"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct IDiamondCut.FacetCut[]",
+          "name": "_diamondCut",
+          "type": "tuple[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_init",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "_calldata",
+          "type": "bytes"
+        }
+      ]
+    },
+    {
+      "name": "Commit",
+      "signature": "Commit(address,uint32)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "bip",
+          "type": "uint32"
+        }
+      ]
+    },
+    {
+      "name": "Pause",
+      "signature": "Pause(address,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Proposal",
+      "signature": "Proposal(address,uint32,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "bip",
+          "type": "uint32"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "start",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "period",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Unpause",
+      "signature": "Unpause(address,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timePassed",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Unvote",
+      "signature": "Unvote(address,uint32,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "bip",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "roots",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Vote",
+      "signature": "Vote(address,uint32,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "bip",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "roots",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "VoteList",
+      "signature": "VoteList(address,uint32[],bool[],uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32[]",
+          "name": "bips",
+          "type": "uint32[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool[]",
+          "name": "votes",
+          "type": "bool[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "roots",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "BeanDeposit",
+      "signature": "BeanDeposit(address,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "beans",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "BeanWithdraw",
+      "signature": "BeanWithdraw(address,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "beans",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "LPWithdraw",
+      "signature": "LPWithdraw(address,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lp",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Deposit",
+      "signature": "Deposit(address,address,uint256,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bdv",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Withdraw",
+      "signature": "Withdraw(address,address,uint32,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "season",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ]
+    }
+  ],
+  "pre_incident_source_events": [
+    {
+      "name": "LPDeposit",
+      "signature": "LPDeposit(address,uint256,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "seeds",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "DiamondCut",
+      "signature": "DiamondCut((address,uint8,bytes4[])[],address,bytes)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "facetAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "enum IDiamondCut.FacetCutAction",
+              "name": "action",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes4[]",
+              "name": "functionSelectors",
+              "type": "bytes4[]"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct IDiamondCut.FacetCut[]",
+          "name": "_diamondCut",
+          "type": "tuple[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_init",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "_calldata",
+          "type": "bytes"
+        }
+      ]
+    },
+    {
+      "name": "Commit",
+      "signature": "Commit(address,uint32)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "bip",
+          "type": "uint32"
+        }
+      ]
+    },
+    {
+      "name": "Pause",
+      "signature": "Pause(address,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Proposal",
+      "signature": "Proposal(address,uint32,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "bip",
+          "type": "uint32"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "start",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "period",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Unpause",
+      "signature": "Unpause(address,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timePassed",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Unvote",
+      "signature": "Unvote(address,uint32,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "bip",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "roots",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Vote",
+      "signature": "Vote(address,uint32,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "bip",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "roots",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "VoteList",
+      "signature": "VoteList(address,uint32[],bool[],uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32[]",
+          "name": "bips",
+          "type": "uint32[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool[]",
+          "name": "votes",
+          "type": "bool[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "roots",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "BeanDeposit",
+      "signature": "BeanDeposit(address,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "beans",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "BeanWithdraw",
+      "signature": "BeanWithdraw(address,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "beans",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "LPWithdraw",
+      "signature": "LPWithdraw(address,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lp",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Deposit",
+      "signature": "Deposit(address,address,uint256,uint256,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "season",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bdv",
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "name": "Withdraw",
+      "signature": "Withdraw(address,address,uint32,uint256)",
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "season",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ]
+    }
+  ],
+  "start_timestamp": 1648771200,
+  "end_timestamp": 1648857600,
+  "start_block_number": null,
+  "end_block_number_exclusive": null,
+  "availability_status_note": "This config defines a bounded population; acquisition outcomes are recorded separately in immutable run manifests.",
+  "candidate_registry_id": "candidate_beanstalk_20220417",
+  "prior_exposure_level": "L2_curation_plus_registry",
+  "exposure_audit_reference": "../exposure_audit_20261025.json",
+  "source_snapshot_storage_note": "Primary source bytes are not embedded here; use source_provenance_20261025.json and its private-evidence paths or pinned upstream URLs.",
+  "incident_date_caveat": "Historical DeFiHackLabs README and S2 record 2022-04-16; current candidate registry uses actual attack date 2022-04-17. Do not copy the S2 catalogue heading date into replay-window or event labels."
+}

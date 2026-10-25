@@ -1,0 +1,148 @@
+{
+  "checks": {
+    "decision_before_buffered_output_complete": true,
+    "hard_budget": true,
+    "historical_observed_unknown": true,
+    "persisted_decisions_match": true,
+    "persisted_timings_match": true,
+    "removed_unknown_preserved": true,
+    "timestamps_causal": true,
+    "timing_stage_sum": true,
+    "unique_alert_ids": true
+  },
+  "command": [
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/source_snapshot/event_log_replay.py",
+    "--worker",
+    "--input",
+    "/workspace/scratch/159bf77d8682/monitoring-work/data/raw/monitoring_jss/protocol_logs/2023-03-01/protocol_logs_20261025T083346_282558Z/selected_logs.jsonl",
+    "--config",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/config.json",
+    "--cell",
+    "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/runs/event_logs_20261025T084327_927529Z/day_x1_r2",
+    "--speed",
+    "1",
+    "--rep",
+    "2"
+  ],
+  "counts": {
+    "events": 1247,
+    "notifications": 5,
+    "raw_triggers": 146,
+    "unknown_observed": 1247,
+    "unknown_removed": 1247
+  },
+  "distributions": {
+    "core_seconds": {
+      "max": 0.002177601999392209,
+      "n": 1247,
+      "p50": 2.4897000002965797e-05,
+      "p95": 5.5750999490555844e-05,
+      "p99": 0.00016096196017315368
+    },
+    "decode_seconds": {
+      "max": 0.0005316699998729746,
+      "n": 1247,
+      "p50": 2.095099989674054e-05,
+      "p95": 5.2155999674141655e-05,
+      "p99": 0.00012257666010555092
+    },
+    "notification_ready_offset_seconds": {
+      "max": 0.0024732980018598028,
+      "n": 1247,
+      "p50": 0.00024047199985943735,
+      "p95": 0.0008853955936501736,
+      "p99": 0.00159211385063827
+    },
+    "pending_at_arrival": {
+      "max": 19,
+      "n": 1247,
+      "p50": 2.0,
+      "p95": 7.0,
+      "p99": 14.0
+    },
+    "queue_wait_seconds": {
+      "max": 0.002037187005043961,
+      "n": 1247,
+      "p50": 0.00015418200018757489,
+      "p95": 0.0007672414998523893,
+      "p99": 0.0014488960472226573
+    },
+    "read_seconds": {
+      "max": 7.440199988195673e-05,
+      "n": 1247,
+      "p50": 3.909999577444978e-07,
+      "p95": 6.531000053655591e-06,
+      "p99": 9.080999989237164e-06
+    },
+    "service_seconds": {
+      "max": 0.002355390000047919,
+      "n": 1247,
+      "p50": 6.37459997960832e-05,
+      "p95": 0.00022989869994489713,
+      "p99": 0.00044017909998729
+    },
+    "write_seconds": {
+      "max": 0.0006963779997022357,
+      "n": 1247,
+      "p50": 1.1266999536019284e-05,
+      "p95": 8.042099980230008e-05,
+      "p99": 0.0002948105995528745
+    }
+  },
+  "finished_utc": "2026-10-25T08:43:28.540594+00:00",
+  "gzip_close_seconds": 0.00027761699948314345,
+  "input_bytes": 1039160,
+  "input_sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a",
+  "local_service_throughput_events_per_second": 11766.635923893691,
+  "log_sha256": {
+    "decisions.jsonl.gz": "1af22f0f3475b0e8b819c7bffbea8fd1405da0b991db68eab9e9f09ce7e40ac7",
+    "timing.jsonl.gz": "86b1de4835c6cea055a214cabbd6112b5fd0d06933672eedf048f74a9520715d"
+  },
+  "notifications_by_day": {
+    "2026-10-25": 5
+  },
+  "output_bytes": 261098,
+  "peak_rss_after_replay_bytes": 18481152,
+  "repetition": 2,
+  "rss_scope": "Linux worker high-water through replay including state and metric buffers; excludes subsequent validation reads",
+  "schema_version": "event_log_pilot_cell_v1",
+  "semantic_decisions_sha256": "be4d3fe13ee0c367bd73bc6d50387bb6ad3ecb211df2ec6955a3dea01267a29d",
+  "semantic_hash_exclusions": [
+    "playback stage timestamps",
+    "observed_time",
+    "label_available_time"
+  ],
+  "speed_factor": 1,
+  "started_utc": "2026-10-25T08:43:28.348887+00:00",
+  "suppression_counts": {
+    "None": 5,
+    "below_threshold": 1101,
+    "budget": 125,
+    "grouped": 16
+  },
+  "thread_count": 1,
+  "timing_scope": {
+    "excluded": [
+      "AWS acquisition",
+      "Parquet projection",
+      "header joining",
+      "ABI/monetary decoding",
+      "live RPC/finality",
+      "fsync/outbox/operator",
+      "metric buffer export and summary"
+    ],
+    "measured": [
+      "buffered JSONL read",
+      "JSON and raw-hex syntax decode",
+      "rolling count/group/budget core",
+      "buffered gzip decision write"
+    ],
+    "modeled": [
+      "FIFO arrivals",
+      "queue wait",
+      "notification-ready offset"
+    ],
+    "warning": "Original event_time and playback times have different epochs; compressed queue tests do not imply historical latency or production-day budget equivalence."
+  },
+  "wall_replay_seconds": 0.11415838199991413
+}
