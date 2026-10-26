@@ -1,0 +1,304 @@
+{
+  "schema_version": "article2_phase9_public_metadata_screen_v1",
+  "status": "COMPLETE_METADATA_SCREEN_NO_ADMISSION",
+  "date": "2026-10-26",
+  "frame": "All 13 existing catalogue entries with 2022-03-19 <= catalogue_date < 2022-04-18; no outside-frame additions.",
+  "result_counts": {
+    "rows": 13,
+    "METADATA_READY_FOR_HISTORICAL_GATES": 5,
+    "NOT_REALIZED_INCIDENT": 2,
+    "METADATA_UNRESOLVED_UNDER_CAP": 4,
+    "DEVELOPMENT_EXCLUDED": 2,
+    "scientific_cohort_admissions": 0,
+    "detector_scores_computed": 0
+  },
+  "status_meanings": {
+    "METADATA_READY_FOR_HISTORICAL_GATES": "Identity, occurrence, reported execution date and chain metadata support the next eligibility checks. This is not scientific admission, complete historical coverage or a verified UTC boundary.",
+    "NOT_REALIZED_INCIDENT": "This specific entry is a disclosed or prevented vulnerability record. It is not a positive attack example or a negative-labelled monitoring example; global absence of unreported attacks is not claimed.",
+    "METADATA_UNRESOLVED_UNDER_CAP": "Required metadata remains unestablished or conflicted in the bounded screen. Preserve the entry in the denominator.",
+    "DEVELOPMENT_EXCLUDED": "Prior development exclusion retained; no new independent-cohort admission."
+  },
+  "chain_evidence_note": "Ethereum/BSC attribution inferred from an official incident-specific explorer link is labelled primary_incident_locator_inference. It is not a fetched receipt or independent chain verification. Empty chain lists mean unresolved or not re-adjudicated, not no chain.",
+  "date_evidence_note": "Catalogue dates, report dates and execution dates are distinct. Every reported date keeps its evidence precision; null is unknown or inapplicable, not absence of an incident.",
+  "family_rule": "Use the earliest supported enabling violation, keeping financing and later effects separate. Disclosed-vulnerability mechanisms do not count toward realized-incident family diversity.",
+  "claim_limits": [
+    "All 13 entries remain represented.",
+    "No scientific incident was admitted and no detector score was computed in this metadata screen.",
+    "Historical deployment, population, routing, continuous data and positive-label gates remain separate.",
+    "The catalogue is label-informed and resource-conditioned; no representative sampling or global blindness is claimed.",
+    "The scientific methods were not changed using these metadata findings."
+  ],
+  "rows": [
+    {
+      "catalogue_line": 65,
+      "catalogue_date": "2022-03-20",
+      "case_name": "Li.Fi",
+      "metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "occurrence": "realized_unauthorized_incident",
+      "reported_execution_date": "2022-03-20",
+      "date_timezone_evidence": "UTC explicitly reported",
+      "reported_time_utc": "02:51",
+      "chain_names": [
+        "Ethereum"
+      ],
+      "chain_evidence_tier": "primary_incident_locator_inference",
+      "primary_family": "untrusted_external_call",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "Report-based incident mechanism; no scientific cohort admission.",
+      "brief_reason": "Incident metadata supports further historical checks; deployment and routing continuity remain open.",
+      "primary_source_urls": [
+        "https://blog.li.fi/20th-march-the-exploit-e9e1c5c03eb9"
+      ]
+    },
+    {
+      "catalogue_line": 66,
+      "catalogue_date": "2022-03-20",
+      "case_name": "Umbrella Network",
+      "metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "occurrence": "realized_unauthorized_incident",
+      "reported_execution_date": "2022-03-20",
+      "date_timezone_evidence": "report calendar date; timezone not specified; canonical UTC normalization remains open",
+      "reported_time_utc": null,
+      "chain_names": [
+        "Ethereum",
+        "BNB Smart Chain"
+      ],
+      "chain_evidence_tier": "explicit_official_protocol_statement",
+      "primary_family": "other_or_unresolved",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "Report-based incident mechanism; no scientific cohort admission.",
+      "brief_reason": "Both chains are stated; the mechanism and canonical UTC date remain unresolved.",
+      "primary_source_urls": [
+        "https://medium.com/umbrella-network/update-on-polar-stream-exploit-b2f4526327f2"
+      ]
+    },
+    {
+      "catalogue_line": 67,
+      "catalogue_date": "2022-03-21",
+      "case_name": "OneRing Finance",
+      "metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "occurrence": "realized_unauthorized_incident",
+      "reported_execution_date": "2022-03-21",
+      "date_timezone_evidence": "UTC explicitly reported",
+      "reported_time_utc": "18:44:10",
+      "chain_names": [
+        "Fantom"
+      ],
+      "chain_evidence_tier": "explicit_official_protocol_statement",
+      "primary_family": "price_oracle_manipulation",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "Report-based incident mechanism; no scientific cohort admission.",
+      "brief_reason": "Explicit execution date and chain are supported; historical population and coverage remain open.",
+      "primary_source_urls": [
+        "https://medium.com/oneringfinance/onering-finance-exploit-post-mortem-after-oshare-hack-602a529db99b"
+      ]
+    },
+    {
+      "catalogue_line": 68,
+      "catalogue_date": "2022-03-22",
+      "case_name": "CompoundTUSDSweepTokenBypass",
+      "metadata_status": "NOT_REALIZED_INCIDENT",
+      "occurrence": "disclosed_or_prevented_vulnerability_no_realized_incident_evidence",
+      "reported_execution_date": null,
+      "date_timezone_evidence": null,
+      "reported_time_utc": null,
+      "chain_names": [
+        "Ethereum"
+      ],
+      "chain_evidence_tier": "explicit_participating_auditor_statement",
+      "primary_family": "other_or_unresolved",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "No realized-incident family admission.",
+      "brief_reason": "The entry describes coordinated vulnerability remediation without reported fund loss, not a realized incident.",
+      "primary_source_urls": [
+        "https://www.openzeppelin.com/news/compound-tusd-integration-issue-retrospective"
+      ]
+    },
+    {
+      "catalogue_line": 69,
+      "catalogue_date": "2022-03-26",
+      "case_name": "Auctus",
+      "metadata_status": "METADATA_UNRESOLVED_UNDER_CAP",
+      "occurrence": "not_established_under_cap",
+      "reported_execution_date": null,
+      "date_timezone_evidence": null,
+      "reported_time_utc": null,
+      "chain_names": [],
+      "chain_evidence_tier": "UNRESOLVED_FROM_REQUIRED_PRIMARY_EVIDENCE",
+      "primary_family": "other_or_unresolved",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "Report-based incident mechanism; no scientific cohort admission.",
+      "brief_reason": "Official warning does not resolve occurrence, execution date or chain; chronology requires reconciliation.",
+      "primary_source_urls": [
+        "https://medium.com/auctus/action-required-critical-vulnerability-3d448d4d0dcb"
+      ]
+    },
+    {
+      "catalogue_line": 70,
+      "catalogue_date": "2022-03-27",
+      "case_name": "Revest Finance",
+      "metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "occurrence": "realized_unauthorized_incident",
+      "reported_execution_date": "2022-03-27",
+      "date_timezone_evidence": "UTC explicitly reported",
+      "reported_time_utc": "01:41",
+      "chain_names": [
+        "Ethereum"
+      ],
+      "chain_evidence_tier": "explicit_official_protocol_and_original_investigator_statement",
+      "primary_family": "reentrancy",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "Report-based incident mechanism; no scientific cohort admission.",
+      "brief_reason": "Incident metadata is supported; historical population and continuous routing require separate verification.",
+      "primary_source_urls": [
+        "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5",
+        "https://blocksec.com/blog/revest-finance-vulnerabilities-more-than-re-entrancy"
+      ]
+    },
+    {
+      "catalogue_line": 71,
+      "catalogue_date": "2022-03-29",
+      "case_name": "Redacted Cartel",
+      "metadata_status": "NOT_REALIZED_INCIDENT",
+      "occurrence": "disclosed_or_prevented_vulnerability_no_realized_incident_evidence",
+      "reported_execution_date": null,
+      "date_timezone_evidence": null,
+      "reported_time_utc": null,
+      "chain_names": [],
+      "chain_evidence_tier": "unresolved_or_not_applicable",
+      "primary_family": "authorization_or_privilege",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "vulnerability mechanism only; not a realized-incident family member",
+      "brief_reason": "The entry describes responsible disclosure and a patch; hypothetical theft is not a realized execution.",
+      "primary_source_urls": [
+        "https://medium.com/immunefi/redacted-cartel-custom-approval-logic-bugfix-review-9b2d039ca2c5"
+      ]
+    },
+    {
+      "catalogue_line": 72,
+      "catalogue_date": "2022-03-29",
+      "case_name": "Ronin Network",
+      "metadata_status": "DEVELOPMENT_EXCLUDED",
+      "occurrence": "not_readjudicated_development_exclusion",
+      "reported_execution_date": null,
+      "date_timezone_evidence": null,
+      "reported_time_utc": null,
+      "chain_names": [],
+      "chain_evidence_tier": "not_readjudicated",
+      "primary_family": null,
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "No realized-incident family admission.",
+      "brief_reason": "Prior development use excludes this entry from a fresh independent cohort.",
+      "primary_source_urls": []
+    },
+    {
+      "catalogue_line": 73,
+      "catalogue_date": "2022-04-09",
+      "case_name": "GYMNetwork",
+      "metadata_status": "METADATA_UNRESOLVED_UNDER_CAP",
+      "occurrence": "realized_unauthorized_incident",
+      "reported_execution_date": null,
+      "date_timezone_evidence": "conflicting report calendar date; timezone unspecified",
+      "reported_time_utc": null,
+      "chain_names": [],
+      "chain_evidence_tier": "unresolved_or_not_applicable",
+      "primary_family": "accounting_or_migration",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": "2022-04-10",
+      "family_scope": "report-based mechanism classification; not scientific cohort admission",
+      "brief_reason": "Catalogue April 9 conflicts with investigator-reported April 10; timezone and chain remain unresolved. The June incident is separate.",
+      "primary_source_urls": [
+        "https://medium.com/@Beosin_com/beosin-analysis-of-the-attack-on-gymdefi-e5a23bfd93fe"
+      ]
+    },
+    {
+      "catalogue_line": 74,
+      "catalogue_date": "2022-04-11",
+      "case_name": "Creat Future",
+      "metadata_status": "METADATA_UNRESOLVED_UNDER_CAP",
+      "occurrence": "not_established_under_cap",
+      "reported_execution_date": null,
+      "date_timezone_evidence": null,
+      "reported_time_utc": null,
+      "chain_names": [],
+      "chain_evidence_tier": "unresolved_or_not_applicable",
+      "primary_family": "other_or_unresolved",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "report-based mechanism classification; not scientific cohort admission",
+      "brief_reason": "No matching accessible primary report established identity, occurrence, date or chain.",
+      "primary_source_urls": []
+    },
+    {
+      "catalogue_line": 75,
+      "catalogue_date": "2022-04-12",
+      "case_name": "ElephantMoney",
+      "metadata_status": "METADATA_UNRESOLVED_UNDER_CAP",
+      "occurrence": "realized_unauthorized_incident",
+      "reported_execution_date": null,
+      "date_timezone_evidence": null,
+      "reported_time_utc": null,
+      "chain_names": [
+        "BNB Smart Chain"
+      ],
+      "chain_evidence_tier": "primary_incident_locator_inference",
+      "primary_family": "price_oracle_manipulation",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "report-based mechanism classification; not scientific cohort admission",
+      "brief_reason": "Actual exploit is supported, but April 12 publication metadata does not separately establish the UTC execution day.",
+      "primary_source_urls": [
+        "https://medium.com/elephant-money/reserve-exploit-52fd36ccc7e8"
+      ]
+    },
+    {
+      "catalogue_line": 76,
+      "catalogue_date": "2022-04-15",
+      "case_name": "Rikkei Finance",
+      "metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "occurrence": "realized_unauthorized_incident",
+      "reported_execution_date": "2022-04-15",
+      "date_timezone_evidence": "UTC explicitly reported",
+      "reported_time_utc": "03:18:38",
+      "chain_names": [
+        "BNB Smart Chain"
+      ],
+      "chain_evidence_tier": "primary_incident_locator_inference",
+      "primary_family": "authorization_or_privilege",
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "report-based mechanism classification; not scientific cohort admission",
+      "brief_reason": "Unauthorized oracle replacement precedes false valuation; full historical source and population checks remain open.",
+      "primary_source_urls": [
+        "https://rikkeifinance.medium.com/rikkei-finance-incident-investigation-report-b5b1745b0155",
+        "https://www.certik.com/blog/revisiting-rikkei-finance-exploit"
+      ]
+    },
+    {
+      "catalogue_line": 77,
+      "catalogue_date": "2022-04-16",
+      "case_name": "BeanstalkFarms",
+      "metadata_status": "DEVELOPMENT_EXCLUDED",
+      "occurrence": "not_readjudicated_development_exclusion",
+      "reported_execution_date": "2022-04-17",
+      "date_timezone_evidence": "retained project evidence only",
+      "reported_time_utc": null,
+      "chain_names": [],
+      "chain_evidence_tier": "not_readjudicated",
+      "primary_family": null,
+      "scientific_cohort_admission": false,
+      "source_reported_non_normalized_date": null,
+      "family_scope": "No realized-incident family admission.",
+      "brief_reason": "Prior development use excludes this entry; retained execution date is April 17, not catalogue April 16.",
+      "primary_source_urls": []
+    }
+  ]
+}
