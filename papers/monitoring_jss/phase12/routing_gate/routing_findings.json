@@ -1,0 +1,608 @@
+{
+  "acquisition_completed_utc": "2026-10-26T17:25:51.375163+00:00",
+  "administrative_history": {
+    "event_replay_performed": false,
+    "first_request_from_block": 13984588,
+    "first_request_http_status": 400,
+    "first_request_inclusive_blocks": 10000,
+    "first_request_to_block": 13994587,
+    "history_emptiness_established": false,
+    "log_retries": 0,
+    "provider_actual_threshold_or_reason_inferred": false,
+    "provider_error_code": 35,
+    "provider_error_message": "ranges over 10000 blocks are not supported on free plan",
+    "provider_fallbacks": 0,
+    "range_splits": 0,
+    "status": "UNAVAILABLE_AFTER_PRESERVED_PROVIDER_REFUSAL",
+    "successful_log_chunks": 0
+  },
+  "case_excluded": false,
+  "chain_id": 1,
+  "checkpoint_observations": [
+    {
+      "block_hash": "0x215605d842319a17d7d686b4d9822c6f2cef994ab3b91ced06a4098ab3eaf186",
+      "block_number": 13984588,
+      "enumerated_facets": [
+        {
+          "address": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+          "facet_position": 0,
+          "selectors": [
+            "0x1f931c1c"
+          ]
+        }
+      ],
+      "facet_count": 1,
+      "name": "creation",
+      "observation_time": "end_of_block",
+      "owner": "0xcb1e9fa11edd27098a6b2ff23cb6b79183ccf8ee",
+      "owner_unused_high_bits": "0x0",
+      "proof_requests": 5,
+      "provider_returned_account_storage_hash": "0xbfa38e01e9a040692277e740138a6555c1802f2ffac625ee66bcde12dd45caf6",
+      "provider_returned_code_hash": "0x95d2f2eee26fa378842082b872579b005c49847e1d767ef85620d743a5331d61",
+      "selector_count": 1,
+      "source_guided_cbridge_fields": {
+        "bridge": "0x0000000000000000000000000000000000000000",
+        "chain_id": 0,
+        "effective_configuration_proved": false,
+        "undeclared_high_bits": "0x0"
+      },
+      "status": "ENUMERATED_ARRAYS_AND_BACKREFERENCES_CONSISTENT",
+      "storage_keys_requested": 8,
+      "timestamp_utc": "2022-01-11T13:47:48.000000Z"
+    },
+    {
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "enumerated_facets": [
+        {
+          "address": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+          "facet_position": 0,
+          "selectors": [
+            "0x1f931c1c"
+          ]
+        },
+        {
+          "address": "0xd66d7a4f3ae46ac64e492fff4236b5d97ef1c961",
+          "facet_position": 1,
+          "selectors": [
+            "0xcdffacc6",
+            "0x52ef6b2c",
+            "0xadfca15e",
+            "0x7a0ed627",
+            "0x01ffc9a7"
+          ]
+        },
+        {
+          "address": "0xe7ec816130b0a2c006ec54682e08d2b38814294f",
+          "facet_position": 2,
+          "selectors": [
+            "0x8da5cb5b",
+            "0xf2fde38b"
+          ]
+        },
+        {
+          "address": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+          "facet_position": 3,
+          "selectors": [
+            "0x28225f0c",
+            "0x4f7c96b5",
+            "0xbfa1fc0a",
+            "0x7d7aecd3",
+            "0xcf76d313",
+            "0x2a7a7042"
+          ]
+        },
+        {
+          "address": "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+          "facet_position": 4,
+          "selectors": [
+            "0xd1026c9c",
+            "0x327a564d",
+            "0x2722a4a8"
+          ]
+        },
+        {
+          "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+          "facet_position": 5,
+          "selectors": [
+            "0x4fd34907",
+            "0xc2c134df",
+            "0x01c0a31a"
+          ]
+        },
+        {
+          "address": "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+          "facet_position": 6,
+          "selectors": [
+            "0xe18a8fdb",
+            "0x73bbd5c6"
+          ]
+        },
+        {
+          "address": "0x5aa32689e546f04e9a8dbfc4491bd9ef691528a5",
+          "facet_position": 7,
+          "selectors": [
+            "0xd9caed12"
+          ]
+        },
+        {
+          "address": "0xe73b96b69870e9db5a5283e674f9fe62c89cc7a2",
+          "facet_position": 8,
+          "selectors": [
+            "0xcc512aad",
+            "0xf72fa0cb"
+          ]
+        }
+      ],
+      "facet_count": 9,
+      "name": "start",
+      "observation_time": "end_of_block",
+      "owner": "0xcb1e9fa11edd27098a6b2ff23cb6b79183ccf8ee",
+      "owner_unused_high_bits": "0x0",
+      "proof_requests": 5,
+      "provider_returned_account_storage_hash": "0xb5981bb270d417aa020f491ccc7a9cd5f244f5e1c9cd624c8188798f3ac65ab3",
+      "provider_returned_code_hash": "0x95d2f2eee26fa378842082b872579b005c49847e1d767ef85620d743a5331d61",
+      "selector_count": 25,
+      "source_guided_cbridge_fields": {
+        "bridge": "0x5427fefa711eff984124bfbb1ab6fbf5e3da1820",
+        "chain_id": 1,
+        "effective_configuration_proved": false,
+        "undeclared_high_bits": "0x0"
+      },
+      "status": "ENUMERATED_ARRAYS_AND_BACKREFERENCES_CONSISTENT",
+      "storage_keys_requested": 64,
+      "timestamp_utc": "2022-02-18T23:59:54+00:00"
+    },
+    {
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "enumerated_facets": [
+        {
+          "address": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+          "facet_position": 0,
+          "selectors": [
+            "0x1f931c1c"
+          ]
+        },
+        {
+          "address": "0xd66d7a4f3ae46ac64e492fff4236b5d97ef1c961",
+          "facet_position": 1,
+          "selectors": [
+            "0xcdffacc6",
+            "0x52ef6b2c",
+            "0xadfca15e",
+            "0x7a0ed627",
+            "0x01ffc9a7"
+          ]
+        },
+        {
+          "address": "0xe7ec816130b0a2c006ec54682e08d2b38814294f",
+          "facet_position": 2,
+          "selectors": [
+            "0x8da5cb5b",
+            "0xf2fde38b"
+          ]
+        },
+        {
+          "address": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+          "facet_position": 3,
+          "selectors": [
+            "0x28225f0c",
+            "0x4f7c96b5",
+            "0xbfa1fc0a",
+            "0x7d7aecd3",
+            "0xcf76d313",
+            "0x2a7a7042"
+          ]
+        },
+        {
+          "address": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+          "facet_position": 4,
+          "selectors": [
+            "0xd1026c9c",
+            "0x327a564d",
+            "0x2722a4a8"
+          ]
+        },
+        {
+          "address": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+          "facet_position": 5,
+          "selectors": [
+            "0x4fd34907",
+            "0xc2c134df",
+            "0x01c0a31a"
+          ]
+        },
+        {
+          "address": "0x4f932770648a1f53c19342d38bc02dba06527246",
+          "facet_position": 6,
+          "selectors": [
+            "0xe18a8fdb",
+            "0x73bbd5c6"
+          ]
+        },
+        {
+          "address": "0x5aa32689e546f04e9a8dbfc4491bd9ef691528a5",
+          "facet_position": 7,
+          "selectors": [
+            "0xd9caed12"
+          ]
+        },
+        {
+          "address": "0x62f7dc4742ed19716fd4e4fd1aa79b6ec2dcced8",
+          "facet_position": 8,
+          "selectors": [
+            "0x536db266",
+            "0xfbb2d381",
+            "0xfcd8e49e",
+            "0x9afc19c7",
+            "0x124f1ead"
+          ]
+        }
+      ],
+      "facet_count": 9,
+      "name": "end",
+      "observation_time": "end_of_block",
+      "owner": "0xcb1e9fa11edd27098a6b2ff23cb6b79183ccf8ee",
+      "owner_unused_high_bits": "0x0",
+      "proof_requests": 5,
+      "provider_returned_account_storage_hash": "0xb6272ff07d05210022244f4b54475884eb797171e95d054b38647012ec2d7ed0",
+      "provider_returned_code_hash": "0x95d2f2eee26fa378842082b872579b005c49847e1d767ef85620d743a5331d61",
+      "selector_count": 28,
+      "source_guided_cbridge_fields": {
+        "bridge": "0x5427fefa711eff984124bfbb1ab6fbf5e3da1820",
+        "chain_id": 1,
+        "effective_configuration_proved": false,
+        "undeclared_high_bits": "0x0"
+      },
+      "status": "ENUMERATED_ARRAYS_AND_BACKREFERENCES_CONSISTENT",
+      "storage_keys_requested": 67,
+      "timestamp_utc": "2022-03-20T23:59:50+00:00"
+    }
+  ],
+  "constructor_to_creation_block_end_comparison": {
+    "checkpoint_is_block_end": true,
+    "constructor_transaction_position": 75,
+    "facet_array_equal": true,
+    "limit": "Constructor receipt describes its execution; later same-block transactions can validly change block-end state.",
+    "owner_equal": true,
+    "same_block_intervening_mutations_excluded": false,
+    "selector_mapping_equal": true
+  },
+  "detector_scores": 0,
+  "disposition": "CHECKPOINT_ARRAYS_OBSERVED_HISTORY_UNAVAILABLE",
+  "eligibility_rule_changed": false,
+  "endpoint_comparison": {
+    "changed_facet_address_and_changed_position_count": 0,
+    "changed_facet_address_count": 14,
+    "diamond_account_code_hash_equal": true,
+    "end_block": 14426367,
+    "facet_addresses_present_only_in_end_enumeration": [
+      "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+      "0x4f932770648a1f53c19342d38bc02dba06527246",
+      "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "0x62f7dc4742ed19716fd4e4fd1aa79b6ec2dcced8",
+      "0xb4b4f5d0119f27601471a9392d78788538d52e8c"
+    ],
+    "facet_addresses_present_only_in_start_enumeration": [
+      "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+      "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+      "0xe73b96b69870e9db5a5283e674f9fe62c89cc7a2"
+    ],
+    "known_source_bound_cbridge_facet": {
+      "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "end_bindings_of_those_selectors": {
+        "0x01c0a31a": {
+          "facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+          "selector_position": 2
+        },
+        "0x4fd34907": {
+          "facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+          "selector_position": 0
+        },
+        "0xc2c134df": {
+          "facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+          "selector_position": 1
+        }
+      },
+      "in_end_enumerated_array": false,
+      "in_start_enumerated_array": true,
+      "start_enumerated_selectors": [
+        "0x01c0a31a",
+        "0x4fd34907",
+        "0xc2c134df"
+      ],
+      "successor_code_or_semantics_verified": false
+    },
+    "owner_equal": true,
+    "position_only_change_count": 0,
+    "selectors_present_only_in_end_enumeration": [
+      "0x124f1ead",
+      "0x536db266",
+      "0x9afc19c7",
+      "0xfbb2d381",
+      "0xfcd8e49e"
+    ],
+    "selectors_present_only_in_start_enumeration": [
+      "0xcc512aad",
+      "0xf72fa0cb"
+    ],
+    "shared_enumerated_facet_address_count": 4,
+    "shared_selector_count": 23,
+    "shared_selectors_with_changed_facet_address": [
+      {
+        "end": {
+          "facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+          "selector_position": 2
+        },
+        "selector": "0x01c0a31a",
+        "start": {
+          "facet": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+          "selector_position": 2
+        }
+      },
+      {
+        "end": {
+          "facet": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+          "selector_position": 2
+        },
+        "selector": "0x2722a4a8",
+        "start": {
+          "facet": "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+          "selector_position": 2
+        }
+      },
+      {
+        "end": {
+          "facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+          "selector_position": 0
+        },
+        "selector": "0x28225f0c",
+        "start": {
+          "facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+          "selector_position": 0
+        }
+      },
+      {
+        "end": {
+          "facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+          "selector_position": 5
+        },
+        "selector": "0x2a7a7042",
+        "start": {
+          "facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+          "selector_position": 5
+        }
+      },
+      {
+        "end": {
+          "facet": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+          "selector_position": 1
+        },
+        "selector": "0x327a564d",
+        "start": {
+          "facet": "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+          "selector_position": 1
+        }
+      },
+      {
+        "end": {
+          "facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+          "selector_position": 1
+        },
+        "selector": "0x4f7c96b5",
+        "start": {
+          "facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+          "selector_position": 1
+        }
+      },
+      {
+        "end": {
+          "facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+          "selector_position": 0
+        },
+        "selector": "0x4fd34907",
+        "start": {
+          "facet": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+          "selector_position": 0
+        }
+      },
+      {
+        "end": {
+          "facet": "0x4f932770648a1f53c19342d38bc02dba06527246",
+          "selector_position": 1
+        },
+        "selector": "0x73bbd5c6",
+        "start": {
+          "facet": "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+          "selector_position": 1
+        }
+      },
+      {
+        "end": {
+          "facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+          "selector_position": 3
+        },
+        "selector": "0x7d7aecd3",
+        "start": {
+          "facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+          "selector_position": 3
+        }
+      },
+      {
+        "end": {
+          "facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+          "selector_position": 2
+        },
+        "selector": "0xbfa1fc0a",
+        "start": {
+          "facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+          "selector_position": 2
+        }
+      },
+      {
+        "end": {
+          "facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+          "selector_position": 1
+        },
+        "selector": "0xc2c134df",
+        "start": {
+          "facet": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+          "selector_position": 1
+        }
+      },
+      {
+        "end": {
+          "facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+          "selector_position": 4
+        },
+        "selector": "0xcf76d313",
+        "start": {
+          "facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+          "selector_position": 4
+        }
+      },
+      {
+        "end": {
+          "facet": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+          "selector_position": 0
+        },
+        "selector": "0xd1026c9c",
+        "start": {
+          "facet": "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+          "selector_position": 0
+        }
+      },
+      {
+        "end": {
+          "facet": "0x4f932770648a1f53c19342d38bc02dba06527246",
+          "selector_position": 0
+        },
+        "selector": "0xe18a8fdb",
+        "start": {
+          "facet": "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+          "selector_position": 0
+        }
+      }
+    ],
+    "shared_selectors_with_position_only_change": [],
+    "shared_selectors_with_unchanged_facet_and_position": [
+      "0x01ffc9a7",
+      "0x1f931c1c",
+      "0x52ef6b2c",
+      "0x7a0ed627",
+      "0x8da5cb5b",
+      "0xadfca15e",
+      "0xcdffacc6",
+      "0xd9caed12",
+      "0xf2fde38b"
+    ],
+    "source_guided_cbridge_fields_equal": true,
+    "source_guided_cbridge_raw_word_equal": true,
+    "start_block": 14233162,
+    "transition_count_time_cause_or_intermediate_epochs_established": false,
+    "unchanged_facet_and_position_count": 9
+  },
+  "evidence_tier": "Provider-returned enumerated facet/selector arrays and checked inverse keys at three block-end checkpoints; proof nodes not cryptographically verified.",
+  "historical_routing_proved": false,
+  "independent_actual_review_status": "PASS_INDEPENDENT_CHECKPOINT_EVIDENCE_AUDIT",
+  "limitations": [
+    "Provider-returned proof values and nodes were parsed and cross-checked; Merkle proofs were not verified against header state roots.",
+    "Enumeration and inverse checks cover listed array members. Unlisted or orphan selector-mapping keys are not excluded.",
+    "No successful event-history chunk was acquired. Missing history is not an empty history, and endpoint differences do not identify transition count, time, cause or intermediate epochs.",
+    "Equal endpoint owner and CBridge words do not exclude intermediate changes and restoration.",
+    "CBridge fields were read in diamond storage and decoded using source-bound layout; effective configuration and successor facet semantics remain unproved.",
+    "Creation-block-end agreement with the constructor receipt is consistency across different observation times; mutations after constructor transaction position 75 in that block are not excluded.",
+    "DiamondCut is emitted before a configurable delegatecall initializer; repeatable initCbridge and other relevant writer surfaces prevent an event-only list from automatically proving complete configuration history.",
+    "The observed union is a nomination set, not a complete historical facet roster or emitter population.",
+    "Exhaustive routing history is not a universal prerequisite for a fixed-address workload. The retained accepted routing/population discovery scope remains unchanged, without an automatic fallback."
+  ],
+  "method_threshold_warmup_population_or_window_changed": false,
+  "next_concrete_gate": {
+    "objective": "Establish a feasible, separately frozen evidence route for interval mutation history from a justified initial state, and close runtime/source identity for relevant nominated facets and initializer/writer effects before any complete-routing claim.",
+    "requires": "A new bounded source/capability and acquisition plan with independent review; preserve the closed provider refusal and all earlier observations.",
+    "status": "PROPOSAL_ONLY_NO_ACQUISITION_AUTHORIZED_BY_THIS_REPORT",
+    "unchanged_this_phase": [
+      "No log retry or range split",
+      "No provider fallback",
+      "No new incident payloads",
+      "No new facet code acquisition",
+      "No automatic population narrowing"
+    ]
+  },
+  "observed_union": {
+    "checkpoint_count": 3,
+    "complete_historical_population": false,
+    "enumerated_facet_address_count": 14,
+    "enumerated_facet_addresses": [
+      "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+      "0x4f932770648a1f53c19342d38bc02dba06527246",
+      "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "0x5aa32689e546f04e9a8dbfc4491bd9ef691528a5",
+      "0x62f7dc4742ed19716fd4e4fd1aa79b6ec2dcced8",
+      "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+      "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+      "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+      "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+      "0xd66d7a4f3ae46ac64e492fff4236b5d97ef1c961",
+      "0xe73b96b69870e9db5a5283e674f9fe62c89cc7a2",
+      "0xe7ec816130b0a2c006ec54682e08d2b38814294f"
+    ],
+    "enumerated_selector_count": 30,
+    "enumerated_selectors": [
+      "0x01c0a31a",
+      "0x01ffc9a7",
+      "0x124f1ead",
+      "0x1f931c1c",
+      "0x2722a4a8",
+      "0x28225f0c",
+      "0x2a7a7042",
+      "0x327a564d",
+      "0x4f7c96b5",
+      "0x4fd34907",
+      "0x52ef6b2c",
+      "0x536db266",
+      "0x73bbd5c6",
+      "0x7a0ed627",
+      "0x7d7aecd3",
+      "0x8da5cb5b",
+      "0x9afc19c7",
+      "0xadfca15e",
+      "0xbfa1fc0a",
+      "0xc2c134df",
+      "0xcc512aad",
+      "0xcdffacc6",
+      "0xcf76d313",
+      "0xd1026c9c",
+      "0xd9caed12",
+      "0xe18a8fdb",
+      "0xf2fde38b",
+      "0xf72fa0cb",
+      "0xfbb2d381",
+      "0xfcd8e49e"
+    ]
+  },
+  "request_accounting": {
+    "continuation_proof_rpc_methods": 15,
+    "continuation_retained_response_bytes": 345304,
+    "cumulative_retained_response_bytes": 375139,
+    "cumulative_rpc_methods": 20,
+    "fresh_headers_in_continuation": 0,
+    "initial_retained_response_bytes": 29835,
+    "initial_rpc_methods": 5,
+    "requested_block_slot_observations": 139,
+    "reused_chain_and_header_records": 4
+  },
+  "schema_version": "article2_phase12_routing_findings_v1",
+  "scientific_admissions": 0,
+  "scientific_contribution": "At the sampled endpoints, equal diamond code hashes coexist with different checked selector-to-facet bindings. This establishes a concrete distinction between runtime identity and sampled dispatch-state identity, without establishing continuous historical routing.",
+  "storage_context_address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+  "study_window": {
+    "end_exclusive_utc": "2022-03-21T00:00:00Z",
+    "start_inclusive_utc": "2022-02-19T00:00:00Z"
+  }
+}

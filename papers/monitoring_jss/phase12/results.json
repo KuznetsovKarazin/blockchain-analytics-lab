@@ -1,0 +1,194 @@
+{
+  "contribution": [
+    "Compiler-confirmed and independently reviewed historical storage interpretation specification.",
+    "Claim-specific distinction between fixed-address measurement requirements and complete historical-routing requirements.",
+    "Provider-returned checkpoint arrays differ despite equal reported diamond code hashes at the observed window endpoints; observed registry state must be distinguished from code identity and continuous history."
+  ],
+  "documentation_lookup": {
+    "backend_http_requests": "UNKNOWN",
+    "backend_transferred_bytes": "UNKNOWN",
+    "find_operations": 3,
+    "open_operations": 4,
+    "search_queries": 3,
+    "web_tool_calls": 3
+  },
+  "fixed_window_utc": [
+    "2022-02-19T00:00:00Z",
+    "2022-03-21T00:00:00Z"
+  ],
+  "historical_acquisition": {
+    "admin_attempt": {
+      "cause_beyond_returned_provider_error": "UNRESOLVED",
+      "completed_log_chunks": 0,
+      "disposition": "UNAVAILABLE_UNDER_FROZEN_CAP",
+      "enumerated_checkpoints": 0,
+      "error_http_status": 400,
+      "error_rpc_code": 35,
+      "event_history_observed": false,
+      "first_log_interval_inclusive": [
+        13984588,
+        13994587
+      ],
+      "independent_review": "PASS_PRESERVED_PROVIDER_REFUSAL_AND_ACCOUNTING",
+      "interval_blocks": 10000,
+      "retained_response_bytes": 29835,
+      "rpc_requests": 5,
+      "storage_keys_requested": 0,
+      "successful_chain_identifiers": 1,
+      "successful_checkpoint_headers": 3,
+      "successful_rpc_responses": 4
+    },
+    "administrative_history_status": "UNAVAILABLE_AFTER_PRESERVED_PROVIDER_REFUSAL",
+    "checkpoint_only_continuation": {
+      "checkpoints": [
+        {
+          "block_hash": "0x215605d842319a17d7d686b4d9822c6f2cef994ab3b91ced06a4098ab3eaf186",
+          "block_number": 13984588,
+          "facet_count": 1,
+          "name": "creation",
+          "owner": "0xcb1e9fa11edd27098a6b2ff23cb6b79183ccf8ee",
+          "proof_requests": 5,
+          "selector_count": 1,
+          "status": "ENUMERATED_ARRAYS_AND_BACKREFERENCES_CONSISTENT",
+          "storage_keys_requested": 8
+        },
+        {
+          "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+          "block_number": 14233162,
+          "facet_count": 9,
+          "name": "start",
+          "owner": "0xcb1e9fa11edd27098a6b2ff23cb6b79183ccf8ee",
+          "proof_requests": 5,
+          "selector_count": 25,
+          "status": "ENUMERATED_ARRAYS_AND_BACKREFERENCES_CONSISTENT",
+          "storage_keys_requested": 64
+        },
+        {
+          "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+          "block_number": 14426367,
+          "facet_count": 9,
+          "name": "end",
+          "owner": "0xcb1e9fa11edd27098a6b2ff23cb6b79183ccf8ee",
+          "proof_requests": 5,
+          "selector_count": 28,
+          "status": "ENUMERATED_ARRAYS_AND_BACKREFERENCES_CONSISTENT",
+          "storage_keys_requested": 67
+        }
+      ],
+      "constructor_to_creation_block_end_comparison": {
+        "checkpoint_is_block_end": true,
+        "constructor_transaction_position": 75,
+        "facet_array_equal": true,
+        "limit": "Constructor receipt describes its execution; later same-block transactions can validly change block-end state.",
+        "owner_equal": true,
+        "same_block_intervening_mutations_excluded": false,
+        "selector_mapping_equal": true
+      },
+      "distinct_discovered_facets": 14,
+      "distinct_discovered_selectors": 30,
+      "enumerated_checkpoints": 3,
+      "fresh_headers": 0,
+      "independent_review": "PASS_INDEPENDENT_CHECKPOINT_EVIDENCE_AUDIT",
+      "log_retries": 0,
+      "proofs_cryptographically_verified": false,
+      "provider_fallbacks": 0,
+      "retained_response_bytes": 345304,
+      "reused_successful_responses": 4,
+      "rpc_requests": 15,
+      "status": "CHECKPOINT_ARRAYS_OBSERVED_HISTORY_UNAVAILABLE",
+      "storage_key_count_unit": "Requested (block, slot) observations, not globally unique slot keys.",
+      "storage_keys_requested": 139,
+      "window_differences": {
+        "absent_from_end_enumeration": 2,
+        "activation_epochs": null,
+        "added_in_enumeration": 5,
+        "count_of_upgrade_transactions": null,
+        "facet_addresses_only_in_end_enumeration": 5,
+        "facet_addresses_only_in_start_enumeration": 5,
+        "owner_equal_at_window_checkpoints": true,
+        "shared_enumerated_facet_addresses": 4,
+        "shared_enumerated_selectors": 23,
+        "shared_selectors_with_changed_facet": 14,
+        "shared_selectors_with_position_only_change": 0,
+        "shared_selectors_with_unchanged_tuple": 9,
+        "source_guided_cbridge_word_equal_at_window_checkpoints": true
+      }
+    },
+    "cumulative_retained_response_bytes": 375139,
+    "cumulative_rpc_requests": 20,
+    "event_replay_performed": false,
+    "event_state_comparison_available": false,
+    "status": "CHECKPOINT_ARRAYS_OBSERVED_HISTORY_UNAVAILABLE"
+  },
+  "layout": {
+    "additional_review": [
+      "AST namespace-to-storage-pointer linkage",
+      "version-specific mapping-key padding",
+      "dynamic-array element formulas"
+    ],
+    "cbridge_namespace_hex": "0x86b79a219228d788dd4fea892f48eec79167ea6d19d7f61e274652b2797c5b12",
+    "compiler_diversity": false,
+    "compiler_invocations_total": 2,
+    "compiler_sha256": "003d75383e45212f9812d0b6add90329fd3b239e6c378d2882f61f9345896d99",
+    "compiler_version": "0.8.7+commit.e28d00a7",
+    "delegated_storage_context": {
+      "address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+      "applies_to": [
+        "diamond_namespace",
+        "cbridge_namespace"
+      ],
+      "caveat": "CBridge packed fields are source-guided interpretations at diamond storage, not effective bridge configuration unless the corresponding facet/routing is independently bound active at the checkpoint.",
+      "role": "diamond"
+    },
+    "diamond_namespace_hex": "0xc8fcad8db84d3cc18b4c41d551ea0ee66dd599cde068d998e57d5e09332c131c",
+    "formal_proof": false,
+    "independent_compiler_invocations": 1,
+    "layout_confirms": [
+      "exact imported types",
+      "relative member slots and byte offsets",
+      "fixed-array spans"
+    ],
+    "network_requests_total": 0,
+    "output_bytes": 6930,
+    "output_bytes_identical": true,
+    "owned_probe_files": 1,
+    "probe_deployed": false,
+    "producer_compiler_invocations": 1,
+    "producer_status_at_execution": "COMPILER_CONFIRMED_LAYOUT_READY_FOR_INDEPENDENT_REVIEW",
+    "same_pinned_compiler": true,
+    "semantic_inputs_identical": true,
+    "source_files": 44,
+    "status": "PASS_INDEPENDENT_LAYOUT_AND_FORMULA_REVIEW",
+    "unused_bits_assumed_zero": false,
+    "version_probes_total": 2
+  },
+  "limitations": [
+    "No administrative event history was acquired after the preserved provider refusal; the checkpoint evidence passed independent audit but cannot establish transition times or causes.",
+    "Source-guided CBridge field decoding does not establish effective configuration without active facet/routing evidence.",
+    "Checkpoint agreement and returned administrative logs cannot alone exclude unlogged writes or change-and-restore.",
+    "No evaluation, case admission or detector-performance conclusion follows from this phase."
+  ],
+  "next_step": {
+    "candidate_facet_addresses": 14,
+    "purpose": "Separately freeze bounded historical code binding for snapshot-nominated addresses and check administrative-history availability to identify supportable intervals and relevant remaining mutation paths.",
+    "scope": "Existing historical entrypoint/routing claim; no automatic case admission or all-frame scope amendment."
+  },
+  "schema": "article2_phase12_staged_results_v1",
+  "scientific_claims": {
+    "all_frame_scope_amendment_adopted": false,
+    "automatic_fixed_emitter_fallback": false,
+    "candidate_order_changed": false,
+    "complete_population_proved": false,
+    "cryptographic_state_proof_verified": false,
+    "full_routing_proved": false,
+    "label_join": false,
+    "measurement_methods_or_thresholds_changed": false,
+    "new_detector_scores": 0,
+    "new_incident_admissions": 0,
+    "weak_signal_or_missing_core_flow_exclusion_allowed": false,
+    "window_changed": false
+  },
+  "scope_disposition": "RETAIN_ACCEPTED_ROUTING_POPULATION_SCOPE_BOUNDED_DISCOVERY_ONLY",
+  "status": "COMPLETE_LAYOUT_AND_CHECKPOINTS_AUDITED_HISTORY_UNAVAILABLE",
+  "updated_at_utc": "2026-10-26T17:34:31.651694+00:00"
+}
