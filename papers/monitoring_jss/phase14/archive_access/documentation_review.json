@@ -1,0 +1,89 @@
+{
+  "documentation": [
+    {
+      "facts": [
+        "Legacy getLogs accepts integer fromBlock and toBlock, address and topic filters.",
+        "Maximum returned logs is documented as1000.",
+        "The logs endpoint does not document page/offset; current reviewed controller does not pass them through.",
+        "Example contains no blockHash/removed fields and includes a legacy0x zero quantity."
+      ],
+      "url": "https://docs.blockscout.com/devs/apis/rpc/logs"
+    },
+    {
+      "facts": [
+        "Per-instance access is marked for deprecation; this does not establish current access or require this study to create an account.",
+        "Default/request-plan rates vary; no authentication or rate-limit bypass will be attempted."
+      ],
+      "url": "https://docs.blockscout.com/devs/apis/requests-and-limits"
+    }
+  ],
+  "failed_documentation_routes": [
+    "https://eth.blockscout.com/api-docs returned404 viaweb",
+    "https://docs.blockscout.com/api-reference/get-logs inaccessible viaweb",
+    "GitHub blob open disabled viaweb; officialrepositoryfile subsequently read throughGitHubconnector"
+  ],
+  "limitations": [
+    "Documentation and upstream implementation inform the prospective parser; they are not a successful live capability test.",
+    "Short returned arrays indicate unsaturatedresponses under the documentedcap, not proof of complete indexcoverage.",
+    "Block and transaction positions are indexer-reported. Missingblockhash or removedstatus prevents claiming authenticated canonical mapping."
+  ],
+  "lookup_accounting": {
+    "backend_http_request_count": null,
+    "backend_response_bytes": null,
+    "github_connector_fetches": 8,
+    "new_chain_data_requests": 0,
+    "open_operations": 5,
+    "search_queries": 7,
+    "web_tool_calls": 4
+  },
+  "proposed_minimal_capture": "Two known-constructor topic0 controls, then one full fixed-window query for each of three topic0 signatures. FiveGETmaximum. No pagination guesses or adaptive splitting.",
+  "publication_rule": "Source bodies and complete tool renderings remain private; publish this owndata-only account and identifiers only.",
+  "reviewed_upstream_files": [
+    {
+      "commit": "9cd48cc0708d520f093ec8a8c37d9a998b258171",
+      "repository_path": "apps/block_scout_web/lib/block_scout_web/controllers/api/rpc/logs_controller.ex",
+      "retained_text_bytes": 7120,
+      "retained_text_sha256": "f81be0b80c90d4da595b2abdb1f626995f64137c497acebf17f8306c922a6ad1",
+      "url": "https://github.com/blockscout/blockscout/blob/9cd48cc0708d520f093ec8a8c37d9a998b258171/apps/block_scout_web/lib/block_scout_web/controllers/api/rpc/logs_controller.ex"
+    },
+    {
+      "commit": "9cd48cc0708d520f093ec8a8c37d9a998b258171",
+      "repository_path": "apps/block_scout_web/lib/block_scout_web/views/api/rpc/logs_view.ex",
+      "retained_text_bytes": 1244,
+      "retained_text_sha256": "31bdd799f79629cd1f7870237d1910ac2988c2f1457f438c8ccfa295925f2678",
+      "url": "https://github.com/blockscout/blockscout/blob/9cd48cc0708d520f093ec8a8c37d9a998b258171/apps/block_scout_web/lib/block_scout_web/views/api/rpc/logs_view.ex"
+    },
+    {
+      "commit": "9cd48cc0708d520f093ec8a8c37d9a998b258171",
+      "repository_path": "apps/block_scout_web/lib/block_scout_web/views/api/rpc/rpc_view.ex",
+      "retained_text_bytes": 2576,
+      "retained_text_sha256": "912c5ffb5fb6298ee00005c15d55712bec3ef61345da8ae6c63d733a64a096c2",
+      "url": "https://github.com/blockscout/blockscout/blob/9cd48cc0708d520f093ec8a8c37d9a998b258171/apps/block_scout_web/lib/block_scout_web/views/api/rpc/rpc_view.ex"
+    },
+    {
+      "commit": "9cd48cc0708d520f093ec8a8c37d9a998b258171",
+      "repository_path": "apps/explorer/lib/explorer/etherscan.ex",
+      "retained_text_bytes": 35398,
+      "retained_text_sha256": "90908190dd16217d64f32539b287d32e0a9e28bdbd2486e327c27916a58cdc38",
+      "url": "https://github.com/blockscout/blockscout/blob/9cd48cc0708d520f093ec8a8c37d9a998b258171/apps/explorer/lib/explorer/etherscan.ex"
+    },
+    {
+      "commit": "9cd48cc0708d520f093ec8a8c37d9a998b258171",
+      "repository_path": "apps/explorer/lib/explorer/etherscan/logs.ex",
+      "retained_text_bytes": 10473,
+      "retained_text_sha256": "484b780b065f5c5a880b41558abf24340cc7cc1d6d3149c213a47c01fd4be969",
+      "url": "https://github.com/blockscout/blockscout/blob/9cd48cc0708d520f093ec8a8c37d9a998b258171/apps/explorer/lib/explorer/etherscan/logs.ex"
+    }
+  ],
+  "reviewed_utc": "2026-10-26T19:14:08.473384+00:00",
+  "schema_observations": [
+    "Success envelope status1,messageOK,resultarray; empty result uses status0,messageNo logs found,result[]. Othererrors are failures.",
+    "Current upstream log serializer emits address,topics,data,blockNumber,timeStamp,gasPrice,gasUsed,logIndex,transactionHash,transactionIndex.",
+    "Topics are emitted as a four-element array with absent trailing entries potentiallynull.",
+    "No blockHash/removed is emitted by the reviewed upstream legacy serializer. Missing values must remain unavailable, not fabricated.",
+    "Address-filter implementation uses inclusive block bounds and limits output to1000; observed length1000 will be treated as saturated/unresolved.",
+    "Upstream source revision is not independently established as the deployed Ethereum-instance revision."
+  ],
+  "schema_version": "article2_phase14_blockscout_documentation_v1",
+  "status": "DOCUMENTED_QUERY_SCHEMA_NOT_LIVE_CHAIN_CAPABILITY"
+}

@@ -1,0 +1,376 @@
+{
+  "authenticated_chain_mapping": false,
+  "completed_window_topics": [
+    "DiamondCut",
+    "OwnershipTransferred",
+    "Inited"
+  ],
+  "controls": [
+    {
+      "block_hash_available": false,
+      "known_log_matched": true,
+      "removed_status_available": false,
+      "returned_rows": 1,
+      "topic": "OwnershipTransferred"
+    },
+    {
+      "block_hash_available": false,
+      "known_log_matched": true,
+      "removed_status_available": false,
+      "returned_rows": 1,
+      "topic": "DiamondCut"
+    }
+  ],
+  "detector_scores": 0,
+  "discovered_nonzero_facets": [
+    "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+    "0x4f932770648a1f53c19342d38bc02dba06527246",
+    "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+    "0x5aa32689e546f04e9a8dbfc4491bd9ef691528a5",
+    "0x62f7dc4742ed19716fd4e4fd1aa79b6ec2dcced8",
+    "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+    "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+    "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+    "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+    "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+    "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+    "0xd66d7a4f3ae46ac64e492fff4236b5d97ef1c961",
+    "0xe73b96b69870e9db5a5283e674f9fe62c89cc7a2",
+    "0xe7ec816130b0a2c006ec54682e08d2b38814294f"
+  ],
+  "discovered_selectors": [
+    "0x01c0a31a",
+    "0x01ffc9a7",
+    "0x124f1ead",
+    "0x1f931c1c",
+    "0x2722a4a8",
+    "0x28225f0c",
+    "0x2a7a7042",
+    "0x327a564d",
+    "0x4f7c96b5",
+    "0x4fd34907",
+    "0x52ef6b2c",
+    "0x536db266",
+    "0x73bbd5c6",
+    "0x7a0ed627",
+    "0x7d7aecd3",
+    "0x8da5cb5b",
+    "0x9afc19c7",
+    "0xadfca15e",
+    "0xbfa1fc0a",
+    "0xc2c134df",
+    "0xcc512aad",
+    "0xcdffacc6",
+    "0xcf76d313",
+    "0xd1026c9c",
+    "0xd9caed12",
+    "0xe18a8fdb",
+    "0xf2fde38b",
+    "0xf72fa0cb",
+    "0xfbb2d381",
+    "0xfcd8e49e"
+  ],
+  "disposition": "INDEXER_EVENT_CHECKPOINT_CONSISTENCY_ROUTING_UNRESOLVED",
+  "distinct_returned_event_blocks": 7,
+  "distinct_returned_event_transactions": 7,
+  "elapsed_seconds": 35.92532028799906,
+  "end_checkpoint_comparison": {
+    "facets_equal": true,
+    "owner_equal": true,
+    "selector_map_equal": true
+  },
+  "event_type_counts": {
+    "DiamondCut": 7,
+    "Inited": 1
+  },
+  "events": [
+    {
+      "block_hash": null,
+      "block_number": 14422640,
+      "decoded": {
+        "cuts": [
+          {
+            "action": 2,
+            "facet": "0x0000000000000000000000000000000000000000",
+            "selectors": [
+              "0xcf76d313",
+              "0x2a7a7042",
+              "0x2722a4a8",
+              "0x01c0a31a",
+              "0x73bbd5c6"
+            ]
+          }
+        ],
+        "event": "DiamondCut",
+        "initializer": "0x0000000000000000000000000000000000000000",
+        "initializer_calldata_bytes": 0,
+        "initializer_calldata_selector": null,
+        "initializer_calldata_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "initializer_effects_unclosed": false
+      },
+      "indexer_reported_timestamp_utc": "2022-03-20T10:11:45+00:00",
+      "log_index": 118,
+      "removed": null,
+      "transaction_hash": "0x75af6c3d48153989240ce55e1a35a21d1409fc9c3bf6a79e3ed99299511e245b",
+      "transaction_index": 57
+    },
+    {
+      "block_hash": null,
+      "block_number": 14425687,
+      "decoded": {
+        "cuts": [
+          {
+            "action": 2,
+            "facet": "0x0000000000000000000000000000000000000000",
+            "selectors": [
+              "0xcc512aad",
+              "0xf72fa0cb"
+            ]
+          }
+        ],
+        "event": "DiamondCut",
+        "initializer": "0x0000000000000000000000000000000000000000",
+        "initializer_calldata_bytes": 0,
+        "initializer_calldata_selector": null,
+        "initializer_calldata_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "initializer_effects_unclosed": false
+      },
+      "indexer_reported_timestamp_utc": "2022-03-20T21:29:12+00:00",
+      "log_index": 352,
+      "removed": null,
+      "transaction_hash": "0x07670642583c9b71f8f9be867543f69aaddab55521b24852841fe46407ee1cfa",
+      "transaction_index": 203
+    },
+    {
+      "block_hash": null,
+      "block_number": 14426018,
+      "decoded": {
+        "cuts": [
+          {
+            "action": 0,
+            "facet": "0x62f7dc4742ed19716fd4e4fd1aa79b6ec2dcced8",
+            "selectors": [
+              "0x536db266",
+              "0xfbb2d381",
+              "0xfcd8e49e",
+              "0x9afc19c7",
+              "0x124f1ead"
+            ]
+          }
+        ],
+        "event": "DiamondCut",
+        "initializer": "0x0000000000000000000000000000000000000000",
+        "initializer_calldata_bytes": 0,
+        "initializer_calldata_selector": null,
+        "initializer_calldata_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "initializer_effects_unclosed": false
+      },
+      "indexer_reported_timestamp_utc": "2022-03-20T22:43:23+00:00",
+      "log_index": 4,
+      "removed": null,
+      "transaction_hash": "0xa54ef7b5cf44bd4073a27d888208741fb3ad3f54129dd6d088a901597b70bcca",
+      "transaction_index": 4
+    },
+    {
+      "block_hash": null,
+      "block_number": 14426021,
+      "decoded": {
+        "cuts": [
+          {
+            "action": 1,
+            "facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+            "selectors": [
+              "0x28225f0c",
+              "0x4f7c96b5",
+              "0xbfa1fc0a",
+              "0x7d7aecd3"
+            ]
+          },
+          {
+            "action": 0,
+            "facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+            "selectors": [
+              "0xcf76d313",
+              "0x2a7a7042"
+            ]
+          }
+        ],
+        "event": "DiamondCut",
+        "initializer": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+        "initializer_calldata_bytes": 36,
+        "initializer_calldata_selector": "0xbfa1fc0a",
+        "initializer_calldata_sha256": "c84e213c5f95fcb188e9f25ff77fb674d7e3fc7f3573440108c6dd7fb073d55b",
+        "initializer_effects_unclosed": true
+      },
+      "indexer_reported_timestamp_utc": "2022-03-20T22:44:21+00:00",
+      "log_index": 221,
+      "removed": null,
+      "transaction_hash": "0xac80d3638fd3d6489608544599016273e3583833e2c0d619ea8cbc61a6a6cddf",
+      "transaction_index": 95
+    },
+    {
+      "block_hash": null,
+      "block_number": 14426029,
+      "decoded": {
+        "cuts": [
+          {
+            "action": 1,
+            "facet": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+            "selectors": [
+              "0xd1026c9c",
+              "0x327a564d"
+            ]
+          },
+          {
+            "action": 0,
+            "facet": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+            "selectors": [
+              "0x2722a4a8"
+            ]
+          }
+        ],
+        "event": "DiamondCut",
+        "initializer": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+        "initializer_calldata_bytes": 1124,
+        "initializer_calldata_selector": "0xd1026c9c",
+        "initializer_calldata_sha256": "f42f73d297f435bf512cb058ac99af972a533d0dd9160f4906e80c86633cede9",
+        "initializer_effects_unclosed": true
+      },
+      "indexer_reported_timestamp_utc": "2022-03-20T22:45:39+00:00",
+      "log_index": 63,
+      "removed": null,
+      "transaction_hash": "0xdb27df85fd626de70f76ab4b02670717c97811dc50d8c713300222c83c6a2b5e",
+      "transaction_index": 111
+    },
+    {
+      "block_hash": null,
+      "block_number": 14426037,
+      "decoded": {
+        "cuts": [
+          {
+            "action": 1,
+            "facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+            "selectors": [
+              "0x4fd34907",
+              "0xc2c134df"
+            ]
+          },
+          {
+            "action": 0,
+            "facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+            "selectors": [
+              "0x01c0a31a"
+            ]
+          }
+        ],
+        "event": "DiamondCut",
+        "initializer": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+        "initializer_calldata_bytes": 68,
+        "initializer_calldata_selector": "0x4fd34907",
+        "initializer_calldata_sha256": "6e2fca1b277d82bbe1ff8f9b7da9007a13b71172c87698693cea1d8a3f5e90be",
+        "initializer_effects_unclosed": true
+      },
+      "indexer_reported_timestamp_utc": "2022-03-20T22:47:14+00:00",
+      "log_index": 363,
+      "removed": null,
+      "transaction_hash": "0x55c4115cd3d0cf82d626eb160040af1ef5d557d529ae4d25263b1cd25189c708",
+      "transaction_index": 501
+    },
+    {
+      "block_hash": null,
+      "block_number": 14426037,
+      "decoded": {
+        "bridge": "0x5427fefa711eff984124bfbb1ab6fbf5e3da1820",
+        "chain_id": 1,
+        "event": "Inited",
+        "facet_attribution": "AMBIGUOUS_SHARED_EVENT_SIGNATURE"
+      },
+      "indexer_reported_timestamp_utc": "2022-03-20T22:47:14+00:00",
+      "log_index": 364,
+      "removed": null,
+      "transaction_hash": "0x55c4115cd3d0cf82d626eb160040af1ef5d557d529ae4d25263b1cd25189c708",
+      "transaction_index": 501
+    },
+    {
+      "block_hash": null,
+      "block_number": 14426048,
+      "decoded": {
+        "cuts": [
+          {
+            "action": 1,
+            "facet": "0x4f932770648a1f53c19342d38bc02dba06527246",
+            "selectors": [
+              "0xe18a8fdb"
+            ]
+          },
+          {
+            "action": 0,
+            "facet": "0x4f932770648a1f53c19342d38bc02dba06527246",
+            "selectors": [
+              "0x73bbd5c6"
+            ]
+          }
+        ],
+        "event": "DiamondCut",
+        "initializer": "0x0000000000000000000000000000000000000000",
+        "initializer_calldata_bytes": 0,
+        "initializer_calldata_selector": null,
+        "initializer_calldata_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "initializer_effects_unclosed": false
+      },
+      "indexer_reported_timestamp_utc": "2022-03-20T22:50:49+00:00",
+      "log_index": 275,
+      "removed": null,
+      "transaction_hash": "0xb09d468c330988ae3680e92accaf6c894ec78956dc53d27d845b2bbe7ec01420",
+      "transaction_index": 134
+    }
+  ],
+  "failure_detail": null,
+  "historical_routing_proved": false,
+  "http_gets": 5,
+  "index_completeness_proved": false,
+  "limits": [
+    "Successful controls test two known records at one block, not complete indexcoverage.",
+    "An unsaturated response schedule is not proof that the indexer contains every canonical event.",
+    "Missingblockhash and removedstatus staynull. Numeric positions and timestamps are indexer-reported, not cryptographically authenticated.",
+    "Nominal replay may match endpoints despite unlogged writes or initializer effects.",
+    "Inited-shaped records do not establish which facet emitted them or effective configuration.",
+    "No source/bytecode, labels, transfer/activity payloads or detector outcomes are queried."
+  ],
+  "new_network_requests_by_projection": 0,
+  "new_replay_executions_by_projection": 0,
+  "nominal_replay_error": null,
+  "nominal_replay_events_applied": 8,
+  "nominal_replay_performed": true,
+  "nonzero_initializer_event_count": 3,
+  "plan_sha256": "4dca02e73239f3c21de3cf4bcceeabd82f91a51b367751990796ab83ba8bd950",
+  "requests_sha256": "e0c205d3f281166c6ed4da86a4de914cc6b67d307461140e9c410bfef3e29d6a",
+  "retained_response_bytes": 15127,
+  "retained_window_records": 8,
+  "returned_cut_entries_by_action": {
+    "Add": 5,
+    "Remove": 2,
+    "Replace": 4
+  },
+  "returned_initializer_targets": [
+    "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+    "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+    "0xb4b4f5d0119f27601471a9392d78788538d52e8c"
+  ],
+  "returned_selector_references_by_action": {
+    "Add": 10,
+    "Remove": 7,
+    "Replace": 9
+  },
+  "runner_sha256": "5d6736e313ff0a60e931228b507d2118f24baaf0e1c1850ecd1a9a23cb4f4dd4",
+  "schema_version": "article2_phase14_indexer_history_findings_v1",
+  "scientific_admissions": 0,
+  "study_window_utc": [
+    "2022-02-19T00:00:00Z",
+    "2022-03-21T00:00:00Z"
+  ],
+  "summary_sha256": "08ec7dc243c314dfa7c9a30e73e467a96e61def14b169c6b14c245390438068e",
+  "window_records_missing_block_hash": 8,
+  "window_records_missing_removed_status": 8,
+  "window_schedule_complete_unsaturated": true
+}

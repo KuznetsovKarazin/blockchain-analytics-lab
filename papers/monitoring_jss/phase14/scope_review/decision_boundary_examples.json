@@ -1,0 +1,94 @@
+{
+  "status": "PASS_FOUR_FINAL_HYPOTHETICAL_METHOD_BOUNDARY_EXAMPLES",
+  "boundary_program_sha256": "a5eb23051324e1193c08dbbeabab098c03100af015d8766cdb6e4d320756b84e",
+  "examples": [
+    {
+      "name": "unavailable_source_is_not_measured_miss",
+      "stage": "coverage",
+      "hypothetical_input": {
+        "decisions_closed": true,
+        "positive_execution_verified": true,
+        "source_coverage_verified": false,
+        "method": "semantic",
+        "selected_core_emitter_transaction": false
+      },
+      "expected_status": "UNAVAILABLE_OBSERVATION",
+      "actual_output": {
+        "status": "UNAVAILABLE_OBSERVATION",
+        "known_execution_denominator": true,
+        "measured_miss": null,
+        "coverage_rate_reportable_for_incomplete_set": false
+      }
+    },
+    {
+      "name": "verified_no_core_log_remains_in_denominator",
+      "stage": "coverage",
+      "hypothetical_input": {
+        "decisions_closed": true,
+        "positive_execution_verified": true,
+        "source_coverage_verified": true,
+        "method": "semantic",
+        "selected_core_emitter_transaction": false
+      },
+      "expected_status": "NO_CORE_EMITTER_LOG",
+      "actual_output": {
+        "status": "NO_CORE_EMITTER_LOG",
+        "known_execution_denominator": true,
+        "measured_miss": true,
+        "miss_definition": "No emitted notification on this verified reference execution under the fixed input scope; not a scored benign label.",
+        "case_exclusion_allowed": false,
+        "population_expansion_allowed": false,
+        "complete_incident_miss_established": false,
+        "incident_limit": "Aggregate only after checking the complete independent incident execution inventory; one execution is not one incident."
+      }
+    },
+    {
+      "name": "downstream_positive_without_selection_rejected",
+      "stage": "coverage",
+      "hypothetical_input": {
+        "decisions_closed": true,
+        "positive_execution_verified": true,
+        "source_coverage_verified": true,
+        "method": "semantic",
+        "selected_core_emitter_transaction": false,
+        "raw_trigger": true,
+        "group_candidate": true,
+        "emitted_notification": true
+      },
+      "expected_status": "INCONSISTENT_DECISION_EVIDENCE",
+      "actual_output": {
+        "status": "INCONSISTENT_DECISION_EVIDENCE",
+        "known_execution_denominator": true,
+        "measured_miss": null
+      }
+    },
+    {
+      "name": "semantic_trigger_without_flow_and_history_rejected",
+      "stage": "coverage",
+      "hypothetical_input": {
+        "decisions_closed": true,
+        "positive_execution_verified": true,
+        "source_coverage_verified": true,
+        "method": "semantic",
+        "selected_core_emitter_transaction": true,
+        "positive_core_external_outflow": false,
+        "minimum_history_available": false,
+        "raw_trigger": true,
+        "group_candidate": true,
+        "emitted_notification": true
+      },
+      "expected_status": "INCONSISTENT_DECISION_EVIDENCE",
+      "actual_output": {
+        "status": "INCONSISTENT_DECISION_EVIDENCE",
+        "known_execution_denominator": true,
+        "measured_miss": null
+      }
+    }
+  ],
+  "example_count": 4,
+  "actual_cases_evaluated": 0,
+  "actual_measurements": 0,
+  "new_network_requests": 0,
+  "case_admissions": 0,
+  "prefreeze_revision_note": "An earlier four-example draft was preserved separately before adding strict downstream-implication checks; no actual case or measurement was involved."
+}

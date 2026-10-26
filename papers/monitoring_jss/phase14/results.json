@@ -1,0 +1,272 @@
+{
+  "schema": "article2_phase14_staged_results_v1",
+  "status": "COMPLETE_EVENT_CONSISTENCY_SCOPE_AMENDMENT_AND_METADATA_PREPARATION_AUDITED",
+  "updated_at_utc": "2026-10-26T19:36:06.812901+00:00",
+  "fixed_window_utc": [
+    "2022-02-19T00:00:00Z",
+    "2022-03-21T00:00:00Z"
+  ],
+  "administrative_capture": {
+    "http_gets": 5,
+    "retained_response_bytes": 15127,
+    "known_constructor_controls_matched": 2,
+    "completed_window_topic_queries": 3,
+    "returned_window_records": 8,
+    "event_type_counts": {
+      "DiamondCut": 7,
+      "Inited": 1,
+      "OwnershipTransferred": 0
+    },
+    "distinct_reported_transactions": 7,
+    "distinct_reported_blocks": 7,
+    "nominal_replay_events_applied": 8,
+    "nominal_seed_block_end": 14233162,
+    "comparison_block_end": 14426367,
+    "endpoint_comparison": {
+      "facets_equal": true,
+      "owner_equal": true,
+      "selector_map_equal": true
+    },
+    "selector_references_by_action": {
+      "Replace": 9,
+      "Remove": 7,
+      "Add": 10
+    },
+    "changed_endpoint_destinations": 14,
+    "changed_via_replace": 9,
+    "changed_via_remove_then_add": 5,
+    "new_in_end_enumeration": 5,
+    "nominal_selector_counts_including_seed": [
+      25,
+      20,
+      18,
+      23,
+      25,
+      26,
+      27,
+      27,
+      28
+    ],
+    "nonzero_initializer_events": 3,
+    "records_missing_block_hash": 8,
+    "records_missing_removed_status": 8,
+    "reported_event_date_utc": "2022-03-20",
+    "authenticated_chain_mapping": false,
+    "historical_routing_proved": false,
+    "index_completeness_proved": false,
+    "initializer_effects_modeled": false,
+    "outage_or_cause_claim": false,
+    "summary_sha256": "08ec7dc243c314dfa7c9a30e73e467a96e61def14b169c6b14c245390438068e",
+    "request_ledger_sha256": "e0c205d3f281166c6ed4da86a4de914cc6b67d307461140e9c410bfef3e29d6a",
+    "removed_and_not_readded_in_returned_window_sequence": 2
+  },
+  "scope_amendment": {
+    "status": "ADOPTED_PROSPECTIVE_FIXED_ADDRESS_SCOPE_BEFORE_AFFECTED_MEASUREMENT",
+    "accepted_utc": "2026-10-26T19:27:49.861713+00:00",
+    "original_frame_rows": 13,
+    "rows_pending_uniform_nomination": 9,
+    "existing_development_dispositions": 2,
+    "existing_non_realized_dispositions": 2,
+    "new_case_admissions": 0,
+    "exact_case_populations_frozen": false,
+    "evaluated_cohort_frozen": false,
+    "separate_measurement_and_label_join_freeze_required": true,
+    "old_dynamic_routing_question_preserved_unresolved": true,
+    "nomination_can_be_incident_informed": true,
+    "default_initialization": "independent_utc_day_reset",
+    "new_estimand": "Fixed documented address-set, core-emitter-selected transaction stream with all logs of selected transactions and explicit outer known-reference coverage.",
+    "forbidden_outcome_exclusions": [
+      "no core-emitted log",
+      "no qualifying core outflow",
+      "cold start",
+      "weak rank",
+      "no notification"
+    ],
+    "unavailable_source_is_not_empty_or_measured_miss": true
+  },
+  "inventory": {
+    "new_http_gets": 4,
+    "retained_response_bytes": 46920,
+    "reused_prior_listing_responses": 2,
+    "day_table_cells": 90,
+    "listed_objects": 90,
+    "declared_whole_object_bytes": 17414029046,
+    "phase6_overlap_identity_comparisons": 46,
+    "phase6_overlap_identity_mismatches": 0,
+    "whole_source_objects_downloaded": false,
+    "source_row_completeness_proved": false
+  },
+  "footer_probe": {
+    "date_utc": "2022-02-19",
+    "date_selection": "First date of the unchanged window, fixed before activity rows.",
+    "new_range_gets": 6,
+    "retained_response_bytes": 21179,
+    "sources_described": 3,
+    "source_metadata": {
+      "logs": {
+        "whole_object_bytes": 200751669,
+        "metadata_row_count": 1880963,
+        "row_groups": 2
+      },
+      "blocks": {
+        "whole_object_bytes": 5419161,
+        "metadata_row_count": 6407,
+        "row_groups": 1
+      },
+      "transactions": {
+        "whole_object_bytes": 361011091,
+        "metadata_row_count": 1150162,
+        "row_groups": 3
+      }
+    },
+    "new_packages_downloaded_or_installed": 0,
+    "row_data_read_or_decoded": false,
+    "statistics_values_exported_or_used_for_selection": false,
+    "same_pinned_decoder_in_independent_review": true,
+    "all_required_columns_compressed_bytes": 266018320,
+    "all_required_columns_merged_spans": 19,
+    "whole_three_objects_bytes": 567181921,
+    "address_only_logs_compressed_bytes": 5892710,
+    "address_only_logs_merged_spans": 2,
+    "calculated_data_page_bytes_acquired": false,
+    "measurement_kind": "Footer-derived physical compressed column spans; not measured download or predicate-dependent cost.",
+    "full_window_cost_established": false,
+    "whole_source_hashes_verified": false
+  },
+  "phase14_acquisition_totals": {
+    "http_gets": 15,
+    "retained_response_bytes": 83226,
+    "rpc_methods": 0,
+    "administrative_records_observed": 8,
+    "archive_row_pages_decoded": 0,
+    "detector_input_rows_acquired": 0,
+    "detector_scores": 0,
+    "new_case_admissions": 0,
+    "label_joins": 0,
+    "new_compiler_invocations": 0
+  },
+  "independent_actual_review_statuses": {
+    "administrative": "PASS_INDEPENDENT_INDEXER_RECORDS_AND_NOMINAL_REPLAY",
+    "inventory": "PASS_INDEPENDENT_METADATA_INVENTORY_AUDIT",
+    "footer": "PASS_INDEPENDENT_RETAINED_FOOTER_AUDIT"
+  },
+  "documentation_lookup_accounting": {
+    "archive_access": {
+      "backend_http_request_count": null,
+      "backend_response_bytes": null,
+      "github_connector_fetches": 8,
+      "new_chain_data_requests": 0,
+      "open_operations": 5,
+      "search_queries": 7,
+      "web_tool_calls": 4
+    },
+    "measurement_design": {
+      "tool_calls": 5,
+      "search_queries": 3,
+      "open_commands": 9,
+      "click_commands": 2,
+      "backend_http_requests": null,
+      "backend_response_bytes": null,
+      "new_chain_or_dataset_row_queries": 0
+    },
+    "backend_http_and_bytes_unknown": true,
+    "included_in_fifteen_acquisition_gets": false
+  },
+  "scientific_limits": {
+    "new_detection_performance_result": false,
+    "algorithmic_novelty_established": false,
+    "complete_protocol_activity_proved": false,
+    "complete_historical_routing_proved": false,
+    "new_attack_attribution": false,
+    "scope_change_closes_old_routing_gate": false,
+    "thresholds_grouping_budgets_changed": false,
+    "independent_utc_day_reset_retained": true
+  },
+  "next_step": "Complete uniform per-row address nomination and freeze the evaluated cohort, source coverage, executable adapter, initialization, missingness and label-join contract before detector inputs; seal decisions before labels.",
+  "input_bindings": [
+    {
+      "path": "papers/monitoring_jss/phase14/archive_access/blockscout_event_plan.json",
+      "sha256": "4dca02e73239f3c21de3cf4bcceeabd82f91a51b367751990796ab83ba8bd950"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/archive_access/root_archive_freeze.json",
+      "sha256": "781a68b573c4166525b06cafa68ce74fbeef7dcd419eddefe0fe9b156a43f2ac"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/archive_access/history_findings.json",
+      "sha256": "f81689e644a515ce282c9f5f5341fb4c1aef6b8b6965cec4c3617ae0075ad811"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/archive_access/event_timeline.json",
+      "sha256": "7a7c663eb6baf19b6997c76cf88536667c46db0740612755ef917c88e3660ba4"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/archive_access/EVENT_HISTORY.md",
+      "sha256": "30718f67534a2b94822828924e6950cd9a80e7e659e2ddad4ce2fff1d85d7854"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/archive_access/documentation_review.json",
+      "sha256": "3ccb2bebf599c0091cfc06634477164d329688055c8e0492d3a29a0e5c40af6d"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/fixed_address_amendment.json",
+      "sha256": "2ac0e669768fe8c0fe83901bab595ff5ffbe4acd37267cbf74280c7c78153bc9"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/frame_status.json",
+      "sha256": "3d3846bae27fc988218f5f68a4881ae40c5ea6728e26f12e4ba8df0cf66c8bc5"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/root_amendment_acceptance.json",
+      "sha256": "caece70fe9a7bd31bcc8913be285f04c2faca2a72719aad51203322018cea608"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/INDEPENDENT_CHALLENGE.md",
+      "sha256": "9841da4bbb8f883e7411d27c04bc2f003107523f2bff2c699bc7ecd7f99fec14"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/measurement_design/measurement_metadata_plan.json",
+      "sha256": "b573242f456f04705c266dbe73bff7c08e0032151baa0636abacc31039ec84e9"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/measurement_design/root_inventory_freeze.json",
+      "sha256": "5ad91a207a6b9f85aff6d93f9fba7c4d40fe43b9b876adf06cdbe004f632f895"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/measurement_design/first_day_footer_plan.json",
+      "sha256": "59c29d22f9877d4063f5e3d1e2a0e43bf015a693a302de3b84ad55a97839f341"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/measurement_design/root_footer_freeze.json",
+      "sha256": "f91eb17df8eaf8955384223a08e28c43ff38b58aadaae353ecb8eb30256e6b92"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/measurement_design/measurement_metadata_findings.json",
+      "sha256": "1a5dbf15685c1bfaefd1c7db23ca1da6583b32c277aece1ab9c246d93bcd7252"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/measurement_design/observation_contract_proposal.json",
+      "sha256": "e979ddcd3fd25df6399cd29b09b82666753f8f437bc85b4992b82808b636adb7"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/measurement_design/feasibility_audit.json",
+      "sha256": "1a70f350457cd2471749eddc27aec29a3c3db77cd739b699402aa1806d2e7ab7"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/measurement_design/method_documentation.json",
+      "sha256": "9a32f5028f6cd3699bffa614f767c0f3ea40259e35079b81025c4124dba78512"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/qa/archive_access_actual_review.json",
+      "sha256": "8915f3a6e0c1f877f96e50acacecfb3cc07079e29f2715ebe8ef1d8bec08280d"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/qa/measurement_inventory_actual_review.json",
+      "sha256": "e72e5403b3d3f14ec0f4d526b3e07bde10faf2e11d1ef558a4af02257b472cd2"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/qa/measurement_footer_actual_review.json",
+      "sha256": "0d20d2e91167ac2a4463e1d8f510cc9638dc767cc5dede0c4d16051ddf58662c"
+    }
+  ]
+}

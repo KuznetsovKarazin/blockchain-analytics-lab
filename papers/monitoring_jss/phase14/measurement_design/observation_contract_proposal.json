@@ -1,0 +1,91 @@
+{
+  "amount_contract": "Reuse frozen transfer_observation decoder: classify ERC20-shaped versus ERC721-shaped versus opaque logs. Parse raw integer amounts from bytes and retain decimal strings, never floating-point or cross-token sums. external_out_raw requires Transfer.from in fixed core and recipient external/nonzero. No native flow,balance loss,token compliance or economic-loss inference.",
+  "completeness_claim": "All matching logs and selected-transaction metadata in accepted listed source partitions; not independent proof of all chain receipts,cryptographic receipt roots or historical live availability.",
+  "core_rule": "Fix protocol-owned core address set from primary deployment/role metadata before affected measurement acquisition, scores or label joins. Do not add victim,attacker,token orfacet addresses from outcome/payload discovery.",
+  "coverage_unit": "Every UTC day/table/object in the accepted listing; do not silently drop a day or source part. Join all parts before dedup/order validation.",
+  "detector_scores": 0,
+  "empty_and_unavailable_days": "An empty selected day is valid only with complete accepted source/header/address-scan coverage; write an empty observation file and explicit zero counts. Missing/truncated/null source data remains unavailable. Zero flow,coldstart,noalerts orlowranks neverexclude a case orjustify changingcore.",
+  "fixed_address_amendment_adopted_by_this_document": false,
+  "header_fields": [
+    "block_number",
+    "block_hash",
+    "parent_hash",
+    "event_time_ns",
+    "transaction_count"
+  ],
+  "labels": "No attack labels in listing,selection,decoder,score,grouping oradmission. Any laterreported-execution join separatelyfrozen afterdecisionsclose.",
+  "lifi_example": {
+    "chain_id": 1,
+    "core_addresses": [
+      "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1"
+    ],
+    "core_nomination_status": "PROVISIONAL_REQUIRES_UNIFORM_ROW_REVIEW_AND_MEASUREMENT_FREEZE",
+    "daily_streams": 30,
+    "first_included_block": 14233163,
+    "known_first_excluded_block": 14426368,
+    "known_predecessor_block": 14233162,
+    "last_included_block": 14426367,
+    "window_utc": [
+      "2022-02-19T00:00:00Z",
+      "2022-03-21T00:00:00Z"
+    ]
+  },
+  "method_change_adopted": false,
+  "method_contract": "No detector changes adopted here. Any new driver must bind the existing monitor/decoder and preserve predeclared thresholds,19positive warmup,128history,4096token cap,300sgrouping and budget policies. Preserve daily reset semantics unless a separate prospective method amendment is explicitly accepted. Continuous source coverage does not itself imply continuous cross-day monitor state.",
+  "new_measurement_acquisition": false,
+  "nomination_exposure": "Record incident-informed provenance or prior exposure used to nominate a core. Do not claim globally label-independent population construction. The no-label-input guarantee applies to transaction selection, decoding, scoring, grouping and budget admission after the core has been frozen.",
+  "ordering_and_consistency": [
+    "Canonical strict log order(block_number,transaction_index,log_index); reject duplicate/conflicting block-log identities.",
+    "Canonical strict transaction order(block_number,transaction_index); same-block hashes and timestamps agree.",
+    "One metadata identity per selected transaction; successful integer receipt_status1 required. Unknown or contradictory status is UNAVAILABLE/INVALID, never silently assumed success.",
+    "All selected transaction logs have consistent identity and consecutive source log indices; all original core logs must occur byte-for-byte in expansion. This does not independently rule out missing leading/trailing provider logs.",
+    "Full daily header coverage, consecutive heights,parent links,increasing block times and cross-day continuity; endpoints must agree with accepted UTC anchors.",
+    "Validate normalized address/hash/byte syntax and nullability; preserve source-missing removed and observed_time fields as unknown."
+  ],
+  "purpose": "Reusable source-scoped observation contract. After the core address set is frozen, transaction selection and decoding use no label inputs. Historical core nomination itself may be incident-informed; LiFi is a feasibility target, not an admitted case.",
+  "raw_log_fields": [
+    "address",
+    "topics",
+    "data",
+    "transaction_index",
+    "log_index",
+    "transaction_hash",
+    "block_number",
+    "block_hash",
+    "event_time_ns"
+  ],
+  "schema_version": "article2_fixed_core_transaction_observation_contract_proposal_v1",
+  "scientific_admissions": 0,
+  "selected_transaction_fields": [
+    "chain_id",
+    "block_number",
+    "block_hash",
+    "transaction_hash",
+    "transaction_index",
+    "event_time_ns",
+    "dataset_execution_status"
+  ],
+  "selection_stages": [
+    {
+      "rule": "Scan every logs.address row in every listed row group for fixed core membership, with all topics. Retain exact canonical selected raw log bytes/fields and source object,row-group,row-index locators.",
+      "stage": 1
+    },
+    {
+      "rule": "Freeze selected transaction hashes as exactly transactions containing>=1core-emittedlog, sorted by block_number,transaction_index. Freeze identities/core counts/payload hashes before transfer decoding, scores or label joins.",
+      "stage": 2
+    },
+    {
+      "rule": "Scan every source transaction-hash column row group; expand only the frozen selected transactions to all emitted logs, without restricting emitter or topic. Join all required transaction metadata and headers. Do not expand the selected transaction set from token movements or incident descriptions.",
+      "stage": 3
+    }
+  ],
+  "separate_scope_decision": {
+    "nomination_boundary": "Scope adoption alone nominates no core and admits no case. Every proposed core, including the LiFi example, still requires the same uniform row-nomination review and a separate measurement freeze.",
+    "path": "phase14/scope_review/root_amendment_acceptance.json",
+    "sha256": "caece70fe9a7bd31bcc8913be285f04c2faca2a72719aad51203322018cea608",
+    "status": "PROSPECTIVE_ALL_FRAME_SCOPE_ADOPTED_SEPARATELY"
+  },
+  "source_independence": "Routing/source-runtime findings remain separate evidence. Exhaustive facet/initializer history is not a universal prerequisite for the separately adopted fixed-address source-scoped estimand. This proposed adapter nominates no row or core and admits no case.",
+  "status": "PROPOSED_ADAPTER_PENDING_UNIFORM_CORE_NOMINATION_AND_MEASUREMENT_FREEZE",
+  "time_model": "Exact block event time in integer nanoseconds for logical replay; historical observation/feature-ready/delivery times unknown."
+}

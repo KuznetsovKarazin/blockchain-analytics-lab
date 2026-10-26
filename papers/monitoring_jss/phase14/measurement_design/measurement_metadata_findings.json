@@ -1,0 +1,499 @@
+{
+  "case_admissions": 0,
+  "date_selection_rule": "First date of the unchanged window, selected before reading activity rows.",
+  "detector_scores": 0,
+  "first_day_all_required_columns": {
+    "compressed_payload_bytes": 266018320,
+    "merged_range_request_count": 19,
+    "payload_acquired": false,
+    "predicate_dependent_actual_payload_cost_known": false,
+    "projection_fraction_of_whole_object_bytes": {
+      "denominator": 567181921,
+      "numerator": 266018320
+    },
+    "whole_three_objects_bytes": 567181921
+  },
+  "first_day_projection_scenarios": [
+    {
+      "column_chunk_count": 2,
+      "columns": [
+        "address"
+      ],
+      "compressed_payload_bytes": 5892710,
+      "cost_origin": "Exact compressed offsets and sizes in the retained footer.",
+      "merged_range_request_count": 2,
+      "payload_acquired": false,
+      "scenario": "address_scan",
+      "table": "logs"
+    },
+    {
+      "column_chunk_count": 18,
+      "columns": [
+        "address",
+        "topics",
+        "data",
+        "transaction_index",
+        "log_index",
+        "transaction_hash",
+        "block_number",
+        "block_hash",
+        "block_timestamp"
+      ],
+      "compressed_payload_bytes": 190898456,
+      "cost_origin": "Exact compressed offsets and sizes in the retained footer.",
+      "merged_range_request_count": 2,
+      "payload_acquired": false,
+      "scenario": "all_required_columns",
+      "table": "logs"
+    },
+    {
+      "column_chunk_count": 4,
+      "columns": [
+        "address",
+        "transaction_hash"
+      ],
+      "compressed_payload_bytes": 56170582,
+      "cost_origin": "Exact compressed offsets and sizes in the retained footer.",
+      "merged_range_request_count": 4,
+      "payload_acquired": false,
+      "scenario": "selection_columns_union",
+      "table": "logs"
+    },
+    {
+      "column_chunk_count": 2,
+      "columns": [
+        "transaction_hash"
+      ],
+      "compressed_payload_bytes": 50277872,
+      "cost_origin": "Exact compressed offsets and sizes in the retained footer.",
+      "merged_range_request_count": 2,
+      "payload_acquired": false,
+      "scenario": "transaction_hash_scan",
+      "table": "logs"
+    },
+    {
+      "column_chunk_count": 5,
+      "columns": [
+        "number",
+        "hash",
+        "parent_hash",
+        "timestamp",
+        "transaction_count"
+      ],
+      "compressed_payload_bytes": 909431,
+      "cost_origin": "Exact compressed offsets and sizes in the retained footer.",
+      "merged_range_request_count": 5,
+      "payload_acquired": false,
+      "scenario": "all_required_columns",
+      "table": "blocks"
+    },
+    {
+      "column_chunk_count": 18,
+      "columns": [
+        "hash",
+        "transaction_index",
+        "block_hash",
+        "block_number",
+        "block_timestamp",
+        "receipt_status"
+      ],
+      "compressed_payload_bytes": 74210433,
+      "cost_origin": "Exact compressed offsets and sizes in the retained footer.",
+      "merged_range_request_count": 12,
+      "payload_acquired": false,
+      "scenario": "all_required_columns",
+      "table": "transactions"
+    },
+    {
+      "column_chunk_count": 3,
+      "columns": [
+        "hash"
+      ],
+      "compressed_payload_bytes": 73304230,
+      "cost_origin": "Exact compressed offsets and sizes in the retained footer.",
+      "merged_range_request_count": 3,
+      "payload_acquired": false,
+      "scenario": "transaction_hash_scan",
+      "table": "transactions"
+    }
+  ],
+  "first_day_sources": [
+    {
+      "day_utc": "2022-02-19",
+      "footer_bytes": 4537,
+      "footer_sha256": "0b77181758e382a416171e6adbacf5d14cbf4a9525b41cec15355557f1d0adae",
+      "key": "v1.0/eth/logs/date=2022-02-19/part-00000-1ea06460-3c77-4f14-b039-877c56df49f0-c000.snappy.parquet",
+      "row_count_metadata": 1880963,
+      "row_group_count": 2,
+      "schema": [
+        {
+          "name": "address",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "topics",
+          "nullable": true,
+          "type": "list<element: string>"
+        },
+        {
+          "name": "data",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "transaction_index",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "log_index",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "transaction_hash",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "block_number",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "block_hash",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "block_timestamp",
+          "nullable": true,
+          "type": "timestamp[ns]"
+        },
+        {
+          "name": "date",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "last_modified",
+          "nullable": true,
+          "type": "timestamp[ns]"
+        }
+      ],
+      "source_size_bytes": 200751669,
+      "table": "logs",
+      "trailer_sha256": "5e11ece8156093136515a19789d1e6dee362e227830f549dc921a8f3ed5e02b1"
+    },
+    {
+      "day_utc": "2022-02-19",
+      "footer_bytes": 5770,
+      "footer_sha256": "125baf3b8747e80afa291671c671a7a9f27b99b5a3d342f9fa11fc2e749d7179",
+      "key": "v1.0/eth/blocks/date=2022-02-19/part-00000-5b2c3ade-1ed6-41f1-b4e2-90e4cac395cb-c000.snappy.parquet",
+      "row_count_metadata": 6407,
+      "row_group_count": 1,
+      "schema": [
+        {
+          "name": "difficulty",
+          "nullable": true,
+          "type": "double"
+        },
+        {
+          "name": "hash",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "miner",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "nonce",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "number",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "size",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "timestamp",
+          "nullable": true,
+          "type": "timestamp[ns]"
+        },
+        {
+          "name": "total_difficulty",
+          "nullable": true,
+          "type": "double"
+        },
+        {
+          "name": "base_fee_per_gas",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "gas_limit",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "gas_used",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "extra_data",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "logs_bloom",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "parent_hash",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "state_root",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "receipts_root",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "transactions_root",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "sha3_uncles",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "transaction_count",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "date",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "last_modified",
+          "nullable": true,
+          "type": "timestamp[ns]"
+        }
+      ],
+      "source_size_bytes": 5419161,
+      "table": "blocks",
+      "trailer_sha256": "97d9aa2b6a450888ab66495edc52a463ad63fba9667d9833448fc7361eb49c7a"
+    },
+    {
+      "day_utc": "2022-02-19",
+      "footer_bytes": 10848,
+      "footer_sha256": "25abbb87539601d011d5f7d9ba75681043ce5678579a768a10471f7d845d2505",
+      "key": "v1.0/eth/transactions/date=2022-02-19/part-00000-a035f1e5-df43-4b3c-ab18-fd2173d17e23-c000.snappy.parquet",
+      "row_count_metadata": 1150162,
+      "row_group_count": 3,
+      "schema": [
+        {
+          "name": "gas",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "hash",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "input",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "nonce",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "value",
+          "nullable": true,
+          "type": "double"
+        },
+        {
+          "name": "block_number",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "block_hash",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "transaction_index",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "from_address",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "to_address",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "gas_price",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "receipt_cumulative_gas_used",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "receipt_gas_used",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "receipt_contract_address",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "receipt_status",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "receipt_effective_gas_price",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "transaction_type",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "max_fee_per_gas",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "max_priority_fee_per_gas",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "block_timestamp",
+          "nullable": true,
+          "type": "timestamp[ns]"
+        },
+        {
+          "name": "date",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "last_modified",
+          "nullable": true,
+          "type": "timestamp[ns]"
+        }
+      ],
+      "source_size_bytes": 361011091,
+      "table": "transactions",
+      "trailer_sha256": "4b51b0bbe03768ad89070ac1f1c53407e4996eb79f0a9ac58c7d89be8e3156c6"
+    }
+  ],
+  "footer_probe_date": "2022-02-19",
+  "full_listed_object_bytes_metadata_only": 17414029046,
+  "independent_actual_reviews": {
+    "footer": {
+      "path": "phase14/qa/measurement_footer_actual_review.json",
+      "sha256": "0d20d2e91167ac2a4463e1d8f510cc9638dc767cc5dede0c4d16051ddf58662c",
+      "status": "PASS_INDEPENDENT_RETAINED_FOOTER_AUDIT"
+    },
+    "inventory": {
+      "path": "phase14/qa/measurement_inventory_actual_review.json",
+      "sha256": "e72e5403b3d3f14ec0f4d526b3e07bde10faf2e11d1ef558a4af02257b472cd2",
+      "status": "PASS_INDEPENDENT_METADATA_INVENTORY_AUDIT"
+    }
+  },
+  "input_bindings": {
+    "footer_summary_sha256": "51a3c8735980acf89e2d851ad1f20e47afd2097df7bcd9b78df2c158a845421b",
+    "inventory_summary_sha256": "8b85676f2dbe50ff5e6f4d66d98cd9510017b906a3ba8249496624566ab4d26b",
+    "summary_program_sha256": "d7c12565473c6e81479f239a4cfc2349e219719ace1c179c83efb226ebdd4cc1"
+  },
+  "limits": [
+    "Object listing identities and byte sizes are metadata; opaque ETags are not SHA-256 content hashes.",
+    "Schema and physical column spans are established only for the three first-date objects; no 30-day cost is extrapolated.",
+    "The projected payload values describe exact footer-derived full-column ranges, not transferred data-page bytes or measured performance.",
+    "Actual predicate-dependent payload cost depends on source row groups reached after core-address/transaction-hash scans, which have not been performed.",
+    "Footer buffers may contain data-derived column statistics; these values were neither exported nor used for nomination, date selection or detector design.",
+    "The leading PAR1 used for local parsing was synthetic; source bytes are exactly the retained footer and trailer, not a whole Parquet file.",
+    "Independent footer reconstruction used a different API of the same pinned PyArrow version; it is not parser diversity.",
+    "Scope amendment acceptance alone nominates no core or case. Uniform per-row nomination and a separate measurement freeze remain necessary before detector input acquisition."
+  ],
+  "listed_objects": 90,
+  "listing_counts_by_table": {
+    "blocks": {
+      "days": 30,
+      "declared_object_bytes": 162756382,
+      "listed_objects": 30
+    },
+    "logs": {
+      "days": 30,
+      "declared_object_bytes": 6231857447,
+      "listed_objects": 30
+    },
+    "transactions": {
+      "days": 30,
+      "declared_object_bytes": 11019415217,
+      "listed_objects": 30
+    }
+  },
+  "listing_day_table_cells": 90,
+  "new_archive_metadata_bytes_total": 68099,
+  "new_archive_metadata_gets_total": 10,
+  "new_chain_row_observations": 0,
+  "new_footer_and_trailer_bytes": 21179,
+  "new_footer_range_requests": 6,
+  "new_listing_response_bytes": 46920,
+  "new_metadata_requests": 4,
+  "new_package_downloads_or_installs": 0,
+  "new_parquet_row_pages_read_or_decoded": 0,
+  "prior_phase6_all_overlapping_identities_equal": true,
+  "prior_phase6_overlapping_identity_comparisons": 46,
+  "reused_month_listing_count": 2,
+  "schema_version": "article2_phase14_measurement_metadata_findings_v1",
+  "scope": "AWS listing and deterministic first-day footer investigations only; administrative-event acquisition is accounted separately.",
+  "status": "INDEPENDENTLY_AUDITED_SOURCE_METADATA_FEASIBLE_MEASUREMENT_NOT_STARTED",
+  "window_days": 30,
+  "window_utc": [
+    "2022-02-19T00:00:00Z",
+    "2022-03-21T00:00:00Z"
+  ]
+}

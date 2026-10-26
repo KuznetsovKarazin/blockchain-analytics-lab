@@ -1,0 +1,47 @@
+{
+  "accessed_utc": "2026-10-26T19:22:15.927582+00:00",
+  "backend_http_requests": null,
+  "backend_response_bytes": null,
+  "click_commands": 2,
+  "new_chain_or_dataset_row_queries": 0,
+  "open_commands": 9,
+  "private_tool_receipt_sha256": "ed2020807dbe82381625d80aa260126896b45049ddd5c11566f3fd0e8bafb85c",
+  "public_material": "This owned summary only. Full documentation/search renderings are private and excluded from public artifacts.",
+  "purpose": "Provider-route and schema documentation only; no chain rows or SQL queries.",
+  "query_tool_discovery": "No tool whose name/description matched BigQuery,Allium,Athena orSnowflake was available; no credential search or login attempted.",
+  "schema_version": "article2_phase14_measurement_method_documentation_v1",
+  "search_queries": 3,
+  "sources": [
+    {
+      "finding": "AWS maintains the Ethereum v1.0/eth path in public bucket aws-public-blockchain, us-east-2; anonymous access is documented.",
+      "ref": "turn144view0",
+      "url": "https://registry.opendata.aws/aws-public-blockchain/"
+    },
+    {
+      "finding": "Ethereum blocks, transactions and logs are date-partitioned Parquet tables; the documented dataset is experimental.",
+      "ref": "turn145view0",
+      "url": "https://github.com/aws-solutions-library-samples/guidance-for-digital-assets-on-aws/blob/main/analytics/README.md"
+    },
+    {
+      "finding": "Schema lists raw log address/topics/data and position/hash/time fields, transaction receipt_status, and parent-linked block identifiers. Actual object schema still requires a footer check. Decoded token-transfer values are documented as double, so exact event amounts should be decoded from raw bytes.",
+      "ref": "turn147view0",
+      "url": "https://github.com/aws-solutions-library-samples/guidance-for-digital-assets-on-aws/blob/main/analytics/consumer/schema/eth.md"
+    },
+    {
+      "finding": "Current Ethereum dataset route is bigquery-public-data.goog_blockchain_ethereum_mainnet_us with logs, receipts, transactions and blocks; addresses are lowercase. Dataset tables use monthly block_timestamp partitions. No BigQuery query was attempted; actual schemas/access/cost remain unverified in this session.",
+      "ref": "turn145view1",
+      "url": "https://docs.cloud.google.com/blockchain-analytics/docs/schema"
+    },
+    {
+      "finding": "ethereum.raw.logs exposes raw topics separately as topic0..3, data, emitter and block/transaction/log positions; normalization must preserve absent topics correctly.",
+      "ref": "turn145view2",
+      "url": "https://docs.allium.so/historical-data/supported-blockchains/evm/ethereum/raw/logs"
+    },
+    {
+      "finding": "ethereum.raw.transactions documents receipt_status as1success/0failure and transaction/block identity fields. No Allium query/access or export was attempted.",
+      "ref": "turn145view3",
+      "url": "https://docs.allium.so/historical-data/supported-blockchains/evm/ethereum/raw/transactions"
+    }
+  ],
+  "tool_calls": 5
+}

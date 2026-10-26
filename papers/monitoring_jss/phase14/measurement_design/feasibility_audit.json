@@ -1,0 +1,115 @@
+{
+  "case_admissions": 0,
+  "contract_proposal_sha256": "e979ddcd3fd25df6399cd29b09b82666753f8f437bc85b4992b82808b636adb7",
+  "documentation_sha256": "9a32f5028f6cd3699bffa614f767c0f3ea40259e35079b81025c4124dba78512",
+  "documented_old_archive_local_presence": {
+    "2022-03-19": false,
+    "2022-03-20": false,
+    "meaning": "Prior whole-object archive identities exist in preserved QA metadata; corresponding original paths were absent in the current workspace. They are not claimed as current payload reuse. Recover and verify durable originals before considering any duplicate download."
+  },
+  "existing_pipeline_limits": [
+    "acquire_semantic_flow_inputs.group_core rejects empty input; a new adapter must represent valid covered empty days.",
+    "Old validate_listing requires exactly one daily object, whereas the reusable contract should support all enumerated parts within explicit caps.",
+    "Old semantic acquisition requires precisely10alreadysealedEuler cross-source bundles; this is development-specific plumbing, not a universal scientific requirement.",
+    "semantic_flow_replay.validate_config hardcodesEuler address,two2023days,knowncounts and54cells; use a separatelyfrozen newdriver rather thaneditingoldacceptedrunner/results.",
+    "src/bclab/aws.fetch_day has implicitretries and rewrites projectedParquet; notsuitable as-is for exact no-retry raw-range provenance."
+  ],
+  "input_bindings": [
+    {
+      "bytes": 24178,
+      "path": "acquire_protocol_logs.py",
+      "sha256": "d4d8654cb94b0e07b3e5dcd214466d5888fefc42769c79f582b279fc08a29357"
+    },
+    {
+      "bytes": 26118,
+      "path": "acquire_protocol_window.py",
+      "sha256": "d02e882489ea4143dc61b6f512df1b7ba3fa188fa53163c66da52a42804e4416"
+    },
+    {
+      "bytes": 32860,
+      "path": "acquire_semantic_flow_inputs.py",
+      "sha256": "bc752fa2fb8ae2747730d1eb213b64beb1faec7d43cc2a214d1edf73af3b884f"
+    },
+    {
+      "bytes": 29548,
+      "path": "semantic_flow_replay.py",
+      "sha256": "49597dfa39c6f1fa65be47d107bdf60696f8d26b82b13876bf1d587a593ac16a"
+    },
+    {
+      "bytes": 21660,
+      "path": "semantic_flow_monitor.py",
+      "sha256": "10ac4a7bc81b76c49be07ff8125136910cbacf2782708271d057b2094bfa60ad"
+    },
+    {
+      "bytes": 20698,
+      "path": "transfer_observation.py",
+      "sha256": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c"
+    },
+    {
+      "bytes": 5226,
+      "path": "semantic_flow_study_config.json",
+      "sha256": "4a3e038584158ba8b39b582291c18097f98a0fa67e70c46346c280b5cbb0cf3a"
+    },
+    {
+      "bytes": 37394,
+      "path": "protocol.json",
+      "sha256": "23e1bc4c581ddcbaa341680bad51d228f8d8633d9652fb03cb19e642c16bd124"
+    },
+    {
+      "bytes": 82537,
+      "path": "incidents/source_availability_phase6/run_20261025T145900Z/availability.json",
+      "sha256": "7957fd0c2f6ddd868dcca80ae71e2984429da94e5bc186440797a5a35f5c2f20"
+    },
+    {
+      "bytes": 22924,
+      "path": "qa/protocol_window_20261025T123312_675327Z_archive_extras.json",
+      "sha256": "08b8fddb11a8c77ec688347e054b1ebd19f05c382ab23d9c41db0e565b6fd4c5"
+    }
+  ],
+  "known_metadata": {
+    "march_listing_objects_each": 31,
+    "missing_existing_metadata": [
+      "logs/blocks2022-02-19through2022-02-25",
+      "transactionsall30days"
+    ],
+    "original_lifi_window_days": 30,
+    "phase6_overlap_days": 23,
+    "phase6_overlap_range": [
+      "2022-02-26",
+      "2022-03-20"
+    ],
+    "retained_complete_march_month_listings": [
+      "logs",
+      "blocks"
+    ]
+  },
+  "method_or_scope_changes_adopted": false,
+  "missing_measurement_inputs": [
+    "No accepted continuous LiFi core-emitter stream has been acquired.",
+    "No all-emitter log bundles or transaction status metadata for selected LiFi transactions.",
+    "No accepted full thirty-day header chain/cross-day coverage manifest.",
+    "No label-independent selected transaction manifest."
+  ],
+  "new_chain_or_dataset_row_queries": 0,
+  "new_detector_scores": 0,
+  "preferred_route": "AWS anonymous S3 daily raw logs,transactions,blocks with exact source/range receipts.",
+  "recommended_next_steps": [
+    "Freeze and run the four-prefix metadata inventory; noobjectpayload.",
+    "Afterinventory,freeze firstdate2022-02-19 threeobjects only:8-bytetrailer thenexact boundedParquetfooter perlogs/blocks/transactionobject, sixrangeGETs if onepart/table. No rows decoded.",
+    "Fromfooters report exact required-column compressed spans and requestcount forfullcolumnprojection plusbounds forlaterpredicate-dependentpayload. Do not call firstdatecost the total30day cost.",
+    "After uniform per-row core nomination and a separate acquisition/measurement freeze, acquire complete address columns and required headers; seal selection before all-emitter expansion; compute outcomes only after all input checks. The separately accepted scope amendment alone does not authorize a scientific core nomination or case admission."
+  ],
+  "reusable_components": [
+    "Exact raw transfer-shape decoder and integer amount aggregation.",
+    "Generic SemanticFlowMonitor configuration supports a fixed sorted coreaddressset.",
+    "Transaction-final count,budget policies and daily replay helper are separable from oldhardcodedconfig.",
+    "Existing validated rawcolumn-range/If-Match/SHA256 transport patterns; newsourceplans must keep exact retained rawranges ratherthanclaim sparsecontainers arewholeobjects."
+  ],
+  "schema_version": "article2_phase14_measurement_feasibility_audit_v1",
+  "separate_scope_acceptance": {
+    "core_nominations_and_measurement_freeze_pending": true,
+    "path": "phase14/scope_review/root_amendment_acceptance.json",
+    "sha256": "caece70fe9a7bd31bcc8913be285f04c2faca2a72719aad51203322018cea608"
+  },
+  "status": "READ_ONLY_AUDIT_AND_PROPOSED_OBSERVATION_CONTRACT"
+}
