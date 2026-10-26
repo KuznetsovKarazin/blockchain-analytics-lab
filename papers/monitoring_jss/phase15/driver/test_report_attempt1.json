@@ -1,0 +1,37 @@
+{
+  "schema_version": "phase15_driver_focused_test_report_v1",
+  "status": "PASS",
+  "completed_utc": "2026-10-26T20:16:26.300676+00:00",
+  "test_methods": 13,
+  "failures": 0,
+  "errors": 0,
+  "tests": [
+    "test_coverage_boolean_cannot_be_integer",
+    "test_covered_empty_window_has_810_zero_cells",
+    "test_cross_day_transaction_identity_and_order_checked",
+    "test_daily_feature_grouping_and_budget_resets",
+    "test_empty_day_still_requires_full_address_scan",
+    "test_exact_frozen_day_outputs_reused",
+    "test_extra_label_field_rejected",
+    "test_missing_day_rejected",
+    "test_selected_membership_cannot_silently_drop_transaction",
+    "test_source_audit_does_not_admit_measurement",
+    "test_tampered_empty_file_rejected",
+    "test_unavailable_empty_day_rejected",
+    "test_window_and_core_and_chain_cannot_be_relaxed"
+  ],
+  "input_kind": "synthetic invented observations and coverage attestations only",
+  "network_requests": 0,
+  "historical_payload_rows": 0,
+  "real_case_scores": 0,
+  "old_test_suites_run": 0,
+  "driver_sha256": "591a8e09cd1920496ad0acc8fb13a1f4c62a0a224b3d8925ec364fff91ed293d",
+  "test_source_sha256": "1ed946ae38179f9e15b775daaa66d0293e7ac18b7bb7f1e50d3ccb74e14f4c53",
+  "dependency_sha256": {
+    "semantic_flow_replay.py": "49597dfa39c6f1fa65be47d107bdf60696f8d26b82b13876bf1d587a593ac16a",
+    "semantic_flow_monitor.py": "10ac4a7bc81b76c49be07ff8125136910cbacf2782708271d057b2094bfa60ad",
+    "transfer_observation.py": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c",
+    "semantic_flow_study_config.json": "4a3e038584158ba8b39b582291c18097f98a0fa67e70c46346c280b5cbb0cf3a"
+  },
+  "scope": "New controller boundary checks. Direct frozen-routine equality is reuse verification, not an independently reimplemented algorithm oracle."
+}

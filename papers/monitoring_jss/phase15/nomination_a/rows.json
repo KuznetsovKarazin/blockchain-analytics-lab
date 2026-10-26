@@ -1,0 +1,492 @@
+{
+  "schema_version": "article2_phase15_nomination_a_v1",
+  "created_utc": "2026-10-26T20:15:10.870208+00:00",
+  "status": "TWO_FIXED_CORE_NOMINATIONS_PENDING_INDEPENDENT_REVIEW",
+  "rows": [
+    {
+      "nomination_status": "NOMINATED_PENDING_INDEPENDENT_REVIEW",
+      "measurement_ready": false,
+      "case_admitted": false,
+      "detector_scores_computed": 0,
+      "label_joins_performed": 0,
+      "reviewer_disposition": "PENDING_INDEPENDENT_REVIEW",
+      "source_tier": 3,
+      "source_tier_name": "primary_incident_or_investigator_component_description_plus_historical_identity_corroboration",
+      "incident_informed_nomination": true,
+      "global_unseen_or_blind_claim": false,
+      "core_rule": "Documented canonical public user entrypoint or core custody/vault for the named historical component/version/chain.",
+      "artifact_completeness_limit": "Complete qualifying records of the explicitly enumerated component set below; not every protocol-owned contract or complete active routing population.",
+      "source_readiness": {
+        "chain": "Ethereum",
+        "chain_id": 1,
+        "status": "DOCUMENTED_ARCHIVE_ROUTE_RETAINED_NOT_FULL_WINDOW_PAYLOAD_VERIFIED",
+        "route": "AWS public blockchain v1.0/eth/{logs,blocks,transactions}/date=YYYY-MM-DD/",
+        "coverage_tier": "Enumerated archive source partitions, not receipt-root authentication.",
+        "required_before_measurement": [
+          "Exact per-case full-window object inventory and identity freeze",
+          "Generic all-emitter selected-transaction bundle/status/header adapter and frozen driver",
+          "Independent complete observation audit",
+          "Separate positive-inventory/adjudication/label-join rules and exact root measurement acceptance"
+        ]
+      },
+      "new_exposure": "Read primary component/incident descriptions and current documentation; incidental mechanism, amount, token and execution-link text was exposed. No linked transaction/state/log/trace payload, exploit source, detector input or detector output was requested.",
+      "catalogue_line": 65,
+      "case_name": "Li.Fi",
+      "catalogue_date": "2022-03-20",
+      "prior_metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "prior_disposition_preserved": true,
+      "reported_execution_date": "2022-03-20",
+      "date_basis": "Retained Phase9 official incident review; unchanged.",
+      "primary_family": "untrusted_external_call",
+      "chain_names": [
+        "Ethereum"
+      ],
+      "window_utc": [
+        "2022-02-19T00:00:00Z",
+        "2022-03-21T00:00:00Z"
+      ],
+      "finite_sorted_addresses": [
+        "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1"
+      ],
+      "chosen_artifact": {
+        "id": "LIFI_BLOCKSEC_20220321_COMPONENT_PAIR",
+        "url": "https://blocksec.com/blog/li-fi-attack-a-cross-chain-bridge-vulnerability-no-it-s-due-to-unchecked-external-call",
+        "title": "LI.FI Attack: a Cross-chain Bridge Vulnerability? No, It’s Due to Unchecked External Call!",
+        "organization": "BlockSec",
+        "published_date": "2022-03-21",
+        "finite_set": "The protocol execution interface (link47) and separately linked implementation logic (link49).",
+        "locations": [
+          "Attack Transaction, interface link47",
+          "Code Analysis, logic link49",
+          "Lessons, entrypoint role"
+        ],
+        "address_mapping": "Exact linked addresses retained in Phase10 source discovery and corroborated by its checked creation/runtime records; no execution link followed in Phase15.",
+        "new_tool_source_ref": "turn151view0"
+      },
+      "artifact_records": [
+        {
+          "name": "LiFiDiamond execution interface",
+          "address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+          "include": true,
+          "qualifying_role": "canonical_public_user_entrypoint",
+          "reason": "The interface is the public entry for the named historical swap-and-bridge component. Historical README identifies a single diamond as the user-facing dispatcher."
+        },
+        {
+          "name": "CBridgeFacet implementation",
+          "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+          "include": false,
+          "reason": "Separately documented implementation logic; no independently documented qualifying direct user entrypoint or custody role. Delegatecall logic is not automatically core."
+        }
+      ],
+      "other_exclusions": "Attacker, user/spender and token addresses in the incident narrative are not deployment-roster records and do not nominate core. Current common entrypoint 0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae is not backdated.",
+      "tier_assessment": [
+        {
+          "tier": 1,
+          "status": "NOT_ESTABLISHED_IN_BOUNDED_ARTIFACTS",
+          "basis": "Retained official repository commit 7b41d7d3306f213480b167e9487071d1c959d4fb, dated 2022-03-17, has an untruncated 108-entry tree but no exported historical Ethereum deployment roster. Retained demo targets chain100 and references an absent staging export. Two new exact-repository searches yielded no usable historical manifest; the first had a malformed site operator and supplies no negative evidence. This is not an exhaustive history search."
+        },
+        {
+          "tier": 2,
+          "status": "ROLE_SUPPORTED_ADDRESS_NOT_ESTABLISHED_AT_THIS_TIER",
+          "basis": "Retained historical README documents one user-facing diamond and facets. Freshly opened official current address page lists a different common entrypoint without March2022 relevance; it cannot nominate the historical address."
+        },
+        {
+          "tier": 3,
+          "status": "NOMINATION_SUPPORTED_WITH_RETAINED_HISTORICAL_CORROBORATION",
+          "basis": "Original investigator component links plus retained checked creation, names, runtime and sampled historical code identify the historical diamond. Nomination remains incident-informed."
+        }
+      ],
+      "historical_identity": {
+        "address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+        "creation_block": 13984588,
+        "creation_utc": "2022-01-11T13:47:48Z",
+        "before_window_start": true,
+        "corroboration": "Phase10 successful factory creation/receipt/trace and Phase11 full runtime binding; Phase12-14 checkpoint and nominal event evidence retained.",
+        "limits": "Does not prove all historical protocol addresses, every writer or continuous routing. Fixed-address events require no such universal semantic claim."
+      },
+      "prior_exposure": "Original S2 and Phase9 reports, Phase10 incident-informed component discovery, Phase11-14 source/code/admin-history probes and archive metadata; no prior LiFi detector scores.",
+      "conflicts_or_ambiguities": [
+        "Original investigator calls the interface CBridgeFacet, while checked metadata/runtime identify a diamond dispatcher. The linked address, rather than informal function label, defines this fixed set.",
+        "User-held approved assets can fall outside core-sender external-out observations; this remains a possible coverage outcome and is not a selection exclusion."
+      ],
+      "retrieval_accounting": {
+        "search_queries": 2,
+        "explicit_document_retrievals": 2,
+        "combined_items": 4,
+        "successful_document_retrievals": 2,
+        "failed_document_retrievals": 0,
+        "cached_find_items": 1,
+        "unused_query_allowance": 1,
+        "unused_document_allowance": 4,
+        "backend_http_requests": "UNKNOWN",
+        "stop_reason": "Sufficient tier3 nomination evidence plus bounded higher-tier assessment; no need to exhaust allowance."
+      }
+    },
+    {
+      "nomination_status": "NOMINATED_PENDING_INDEPENDENT_REVIEW",
+      "measurement_ready": false,
+      "case_admitted": false,
+      "detector_scores_computed": 0,
+      "label_joins_performed": 0,
+      "reviewer_disposition": "PENDING_INDEPENDENT_REVIEW",
+      "source_tier": 3,
+      "source_tier_name": "primary_incident_or_investigator_component_description_plus_historical_identity_corroboration",
+      "incident_informed_nomination": true,
+      "global_unseen_or_blind_claim": false,
+      "core_rule": "Documented canonical public user entrypoint or core custody/vault for the named historical component/version/chain.",
+      "artifact_completeness_limit": "Complete qualifying records of the explicitly enumerated component set below; not every protocol-owned contract or complete active routing population.",
+      "source_readiness": {
+        "chain": "Ethereum",
+        "chain_id": 1,
+        "status": "DOCUMENTED_ARCHIVE_ROUTE_RETAINED_NOT_FULL_WINDOW_PAYLOAD_VERIFIED",
+        "route": "AWS public blockchain v1.0/eth/{logs,blocks,transactions}/date=YYYY-MM-DD/",
+        "coverage_tier": "Enumerated archive source partitions, not receipt-root authentication.",
+        "required_before_measurement": [
+          "Exact per-case full-window object inventory and identity freeze",
+          "Generic all-emitter selected-transaction bundle/status/header adapter and frozen driver",
+          "Independent complete observation audit",
+          "Separate positive-inventory/adjudication/label-join rules and exact root measurement acceptance"
+        ],
+        "revest_inventory_path": "papers/monitoring_jss/phase15/source_readiness/revest_inventory.json",
+        "revest_inventory_sha256": "e557dd3951fac2e3365cc837cfece34e83f693f6d2a6941b46bf476984759dac",
+        "retained_listing_cells_complete": 90,
+        "note": "Offline reconstruction from six retained monthly listings covers all30dates; it is metadata enumeration, not payload readability or observation completeness."
+      },
+      "new_exposure": "Read primary component/incident descriptions and current documentation; incidental mechanism, amount, token and execution-link text was exposed. No linked transaction/state/log/trace payload, exploit source, detector input or detector output was requested.",
+      "catalogue_line": 70,
+      "case_name": "Revest Finance",
+      "catalogue_date": "2022-03-27",
+      "prior_metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "prior_disposition_preserved": true,
+      "reported_execution_date": "2022-03-27",
+      "date_basis": "Official dated recovery report explicitly gives 2022-03-27 01:41 UTC for incident start, consistent with retained Phase9 review.",
+      "primary_family": "reentrancy",
+      "chain_names": [
+        "Ethereum"
+      ],
+      "window_utc": [
+        "2022-02-26T00:00:00Z",
+        "2022-03-28T00:00:00Z"
+      ],
+      "finite_sorted_addresses": [
+        "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+        "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f"
+      ],
+      "chosen_artifact": {
+        "id": "REVEST_OFFICIAL_20220328_FOUR_COMPONENT_STACK",
+        "url": "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5",
+        "title": "Revest Protocol Exploit Recovery Plan",
+        "organization": "Revest Finance",
+        "published_date": "2022-03-28",
+        "finite_set": "Explicit four-component historical Solidity stack paragraph: Revest, LockManager, TokenVault, FNFTHandler.",
+        "locations": [
+          "Opening statement, Ethereum and UTC date",
+          "Mechanism Behind the Exploit, four-component architecture paragraph and links30-33"
+        ],
+        "address_mapping": "Exact linked addresses retained in Phase6 deployment review and independently corroborated by Phase7 creation/constructor records.",
+        "new_tool_source_ref": "turn151view1"
+      },
+      "artifact_records": [
+        {
+          "name": "Revest entry point",
+          "address": "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+          "include": true,
+          "qualifying_role": "canonical_public_user_entrypoint",
+          "reason": "Explicitly identified as the public transaction entrypoint."
+        },
+        {
+          "name": "LockManager",
+          "address": "0x226124e83868812d3dae87eb3c5f28047e1070b7",
+          "include": false,
+          "qualifying_role": null,
+          "reason": "Lock-state support component, not documented here as a coequal public user entrypoint or custody vault."
+        },
+        {
+          "name": "Legacy TokenVault",
+          "address": "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f",
+          "include": true,
+          "qualifying_role": "core_custody_vault",
+          "reason": "Explicitly identified as the token-storage component."
+        },
+        {
+          "name": "FNFTHandler",
+          "address": "0xe952bda8c06481506e4731c4f54ced2d4ab81659",
+          "include": false,
+          "qualifying_role": null,
+          "reason": "FNFT mint/burn token implementation, not documented here as a coequal public entrypoint or underlying-token custody vault."
+        }
+      ],
+      "other_exclusions": "Historical address registry is an administrative lookup, not independently qualifying public-user/custody core. Modern registry/controller/vault/FNFT replacements are not substituted. Other-chain deployments are expressly described as secure in this incident report; the unauthorized incident chain retained here is Ethereum. No victim/attacker/token address list is used.",
+      "tier_assessment": [
+        {
+          "tier": 1,
+          "status": "NOT_ESTABLISHED_IN_BOUNDED_ARTIFACTS",
+          "basis": "Fresh official repository tree371e4ddf17793201be19fa3cb3a1a6cf8ab2d17a at retained pre-window commitf4b5a5a898d202a5040f72ec7b1196de5f05e5f8 has71entries and truncated=false; no deployment roster is identified in that tree. Example address-configuration files are not asserted to be production deployments. Retained SDK constants identify the registry, not a qualifying complete user-entry/custody set. A malformed initial site search supplies no negative evidence. This does not establish absence across all history."
+        },
+        {
+          "tier": 2,
+          "status": "HISTORICAL_SET_NOT_ESTABLISHED",
+          "basis": "Fresh official current directory mixes legacy vault with replacement controller/FNFT/registry identities. Retained security checklist confirms upgrades. No complete historical coequal set is established from this directory. An attempted canonical manual-withdrawal tutorial open failed with unsupported content type; its search snippet is not accepted as affirmative evidence."
+        },
+        {
+          "tier": 3,
+          "status": "NOMINATION_SUPPORTED_WITH_RETAINED_HISTORICAL_CORROBORATION",
+          "basis": "Official dated four-component stack explicitly supplies public entrypoint and custody roles, with historical Ethereum addresses corroborated in retained creation/constructor records. Both qualifying records are included, without selecting by transfer results."
+        }
+      ],
+      "historical_identity": [
+        {
+          "address": "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f",
+          "name": "TokenVault",
+          "creation_block": 13290580,
+          "creation_utc": "2021-09-24T20:16:10.000000Z",
+          "before_window_start": true,
+          "evidence_tier": "Retained successful explorer creation/constructor/source consistency; independently audited Phase7. No new payload."
+        },
+        {
+          "address": "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+          "name": "Revest",
+          "creation_block": 13290587,
+          "creation_utc": "2021-09-24T20:17:37.000000Z",
+          "before_window_start": true,
+          "evidence_tier": "Retained successful explorer creation/constructor/source consistency; independently audited Phase7. No new payload."
+        }
+      ],
+      "prior_exposure": "S2 catalogue and Phase5 official/investigator reports, Phase6-7 source/deployment records, incidental historical exploit snippets and Phase9 compiled source/state probes. No Revest detector outcome was inspected.",
+      "conflicts_or_ambiguities": [
+        "Registry points away from original controller by the terminal checkpoint. Preserve the original fixed set and full window; do not infer continuous active routing or silently substitute a replacement.",
+        "Catalogue loss magnitude differs from primary reports; neither value determines nomination."
+      ],
+      "retrieval_accounting": {
+        "search_queries": 2,
+        "explicit_document_retrievals": 4,
+        "combined_items": 6,
+        "successful_document_retrievals": 3,
+        "failed_document_retrievals": 1,
+        "cached_find_items": 3,
+        "unused_query_allowance": 1,
+        "unused_document_allowance": 2,
+        "backend_http_requests": "UNKNOWN",
+        "stop_reason": "Sufficient tier3 nomination evidence and bounded higher-tier assessment."
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/fixed_address_amendment.json",
+      "bytes": 14455,
+      "sha256": "2ac0e669768fe8c0fe83901bab595ff5ffbe4acd37267cbf74280c7c78153bc9"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/root_amendment_acceptance.json",
+      "bytes": 1977,
+      "sha256": "caece70fe9a7bd31bcc8913be285f04c2faca2a72719aad51203322018cea608"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/protocol/nomination_plan.json",
+      "bytes": 12999,
+      "sha256": "b3510a3ac297f96fd4111fc9fc15ddd0167fa24478bdea65b79d9fe4b028d48e"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/protocol/root_nomination_freeze.json",
+      "bytes": 510,
+      "sha256": "11ada58e3c1ecc0a1e5b28678c1bb5b83b1bcb6a69df5682c57ab0b7892b6a8c"
+    },
+    {
+      "path": "papers/monitoring_jss/phase9/cohort_protocol/screening_results.json",
+      "bytes": 62921,
+      "sha256": "9d85a3a412c09b45d95d009d901defd54042ef06f7ff39cc8276c876a2f4c613"
+    },
+    {
+      "path": "papers/monitoring_jss/phase10/source_discovery/identity_findings.json",
+      "bytes": 7086,
+      "sha256": "a14b8a614b9e5604c83d5695c9310b61d71d8df9d5160e7bad0671b5331e6c92"
+    },
+    {
+      "path": "papers/monitoring_jss/phase10/lifi_gate/gate_results.json",
+      "bytes": 12368,
+      "sha256": "dfc62bb18f4d315061e25e44f8033bce2acb2ccdba6e642bd871884c8347d043"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase6_revest/deployment_review.json",
+      "bytes": 10232,
+      "sha256": "770ecd4a7a0ff00636b7a241c1749ad5cdce33c3583647de3e5442e28e272ea1"
+    },
+    {
+      "path": "papers/monitoring_jss/incidents/phase7_revest/deployment_review.json",
+      "bytes": 35924,
+      "sha256": "8dab8279eb1c6da920811aee70c4f5e0cf83b2f4d882dd9f04f8b32dd24cddbe"
+    },
+    {
+      "path": "papers/monitoring_jss/phase9/revest_gate/gate_results.json",
+      "bytes": 4121,
+      "sha256": "f3e79f354d157809e008c9806e2d23e8ec0ba573883ff244ede1db8a544acb73"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/measurement_design/measurement_metadata_findings.json",
+      "bytes": 14448,
+      "sha256": "1a5dbf15685c1bfaefd1c7db23ca1da6583b32c277aece1ab9c246d93bcd7252"
+    }
+  ],
+  "new_retrieval_accounting": {
+    "search_queries": 4,
+    "explicit_document_retrievals": 6,
+    "combined_items": 10,
+    "cached_find_items": 4,
+    "web_calls": 5,
+    "github_fetch_calls": 1,
+    "successful_document_retrievals": 5,
+    "failed_document_retrievals": 1,
+    "new_detector_inputs": 0,
+    "new_scores": 0,
+    "new_label_joins": 0,
+    "new_case_admissions": 0,
+    "backend_http_counts_and_bytes": "UNKNOWN",
+    "clock": "All retrievals followed rootfreeze and completed before created_utc; exact per-call start times were not recorded. Rootfreeze-to-closure gives a conservative upper bound below30minutes.",
+    "root_freeze_utc": "2026-10-26T20:10:05.870837+00:00",
+    "freeze_to_closure_upper_bound_seconds": 304.999371
+  },
+  "operations": [
+    {
+      "id": "A1",
+      "type": "web_search_batch",
+      "rows": [
+        65,
+        70
+      ],
+      "queries": [
+        "site.github.com/lifinance/contracts \"5a9fD7\"",
+        "site.github.com/Revest-Finance \"deployments\" \"2021\""
+      ],
+      "result": "Both site operators were malformed; irrelevant results supply no primary nomination evidence. Both queries count.",
+      "receipt": "nom_a_search_1.json"
+    },
+    {
+      "id": "A2",
+      "type": "github_fetch",
+      "row": 70,
+      "url": "https://api.github.com/repos/Revest-Finance/RevestContracts/git/trees/371e4ddf17793201be19fa3cb3a1a6cf8ab2d17a?recursive=1",
+      "result": "Untruncated71-entrytree; reviewed paths only, no new source file payload.",
+      "receipt": "nom_a_retrieval_2_0.json"
+    },
+    {
+      "id": "A3",
+      "type": "web_search_batch",
+      "rows": [
+        65,
+        70
+      ],
+      "queries": [
+        "site:github.com/lifinance/contracts \"5a9fd7\"",
+        "site:docs.revest.finance TokenVault FNFTHandler Revest core contracts architecture"
+      ],
+      "result": "No usable historical LiFi manifest; located official Revest documentation.",
+      "receipt": "nom_a_retrieval_2_1.json"
+    },
+    {
+      "id": "A4",
+      "type": "web_open_batch",
+      "rows": [
+        65,
+        70,
+        70
+      ],
+      "urls": [
+        "https://blocksec.com/blog/li-fi-attack-a-cross-chain-bridge-vulnerability-no-it-s-due-to-unchecked-external-call",
+        "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5",
+        "https://docs.revest.finance/resources/contract-links"
+      ],
+      "result": "Threeprimarypagesopened.",
+      "receipt": "nom_a_sources_3.json"
+    },
+    {
+      "id": "A5",
+      "type": "web_open_batch",
+      "rows": [
+        65,
+        70
+      ],
+      "urls": [
+        "https://docs.li.fi/introduction/lifi-architecture/smart-contract-addresses",
+        "https://docs.revest.finance/tutorials/unlocking-your-fnft-manually"
+      ],
+      "result": "LiFi currentaddressesopened; Revesttutorialfailedunsupportedcontent-type. Failurecounted; no retry.",
+      "receipt": "nom_a_sources_4.json"
+    },
+    {
+      "id": "A6",
+      "type": "cached_find_batch",
+      "rows": [
+        70,
+        70,
+        70,
+        65
+      ],
+      "patterns": [
+        "deploy",
+        "harden",
+        "0x",
+        "5a9"
+      ],
+      "result": "Tool reported no match. These negative finds are not used as absence evidence.",
+      "receipt": "nom_a_sources_find.json"
+    }
+  ],
+  "private_receipt_bindings": [
+    {
+      "receipt_name": "nom_a_retrieval_2_0.json",
+      "bytes": 40767,
+      "sha256": "3cd60e7768b9956046443962e6350f4ded33b11bcaf410a7096735ac5bdf9f46",
+      "kind": "PRIVATE_TOOL_RENDERING_NOT_ORIGIN_HTTP_BYTES",
+      "public_copy": false
+    },
+    {
+      "receipt_name": "nom_a_retrieval_2_1.json",
+      "bytes": 26554,
+      "sha256": "07ddcadb09792dae92d84f01447bd9bfa0b0d685128189b4be5dedd8583548fa",
+      "kind": "PRIVATE_TOOL_RENDERING_NOT_ORIGIN_HTTP_BYTES",
+      "public_copy": false
+    },
+    {
+      "receipt_name": "nom_a_search_1.json",
+      "bytes": 28053,
+      "sha256": "af6fda8e67c94edae146e985674aa44b9bcc28a406f3422c1b394403f4e56ad3",
+      "kind": "PRIVATE_TOOL_RENDERING_NOT_ORIGIN_HTTP_BYTES",
+      "public_copy": false
+    },
+    {
+      "receipt_name": "nom_a_sources_3.json",
+      "bytes": 26823,
+      "sha256": "177d70c52bbe0c3c0f161a39e02a81b818f1f82a841b848ce47e115165ec5d98",
+      "kind": "PRIVATE_TOOL_RENDERING_NOT_ORIGIN_HTTP_BYTES",
+      "public_copy": false
+    },
+    {
+      "receipt_name": "nom_a_sources_4.json",
+      "bytes": 5165,
+      "sha256": "3fd6feb34b825b538aca68edf5c7540b08f7fa579d6940cb9c3094a3e62a4682",
+      "kind": "PRIVATE_TOOL_RENDERING_NOT_ORIGIN_HTTP_BYTES",
+      "public_copy": false
+    },
+    {
+      "receipt_name": "nom_a_sources_find.json",
+      "bytes": 1616,
+      "sha256": "75d2b9ed90d8d70c8570ce4005e5ef6e5a7507f091244e947d980c62498e35e6",
+      "kind": "PRIVATE_TOOL_RENDERING_NOT_ORIGIN_HTTP_BYTES",
+      "public_copy": false
+    }
+  ],
+  "fresh_primary_source_refs": [
+    "turn151view0",
+    "turn151view1",
+    "turn151view2",
+    "turn157view0"
+  ],
+  "limitations": [
+    "No exhaustive repository-history search. No new dataset/chain payload or complete execution inventory.",
+    "Primary component lists were already known; nomination is retrospective and incident-informed.",
+    "Independent review and all-frame integration are required before candidate selection; a separate exact measurement acceptance remains required."
+  ]
+}

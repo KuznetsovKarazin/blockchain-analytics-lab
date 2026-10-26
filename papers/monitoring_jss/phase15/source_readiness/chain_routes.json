@@ -1,0 +1,96 @@
+{
+  "schema_version": "article2_phase15_chain_source_readiness_v1",
+  "created_utc": "2026-10-26T20:12:57.645454+00:00",
+  "status": "DOCUMENTED_ROUTES_NOT_FULL_WINDOW_READABILITY",
+  "accounting": {
+    "web_tool_calls": 3,
+    "search_query_items": 3,
+    "open_items": 5,
+    "click_items": 1,
+    "total_query_and_retrieval_items": 9,
+    "backend_http_count": null,
+    "dataset_payload_requests": 0,
+    "rpc_calls": 0,
+    "new_row_data": 0
+  },
+  "receipt_sha256": "19e9684d32d03c508979be7872acfd22af3b84e7ac5b3c2c11e269f8910654b5",
+  "query_tools_discovered": [],
+  "credentials_or_accounts_inspected": false,
+  "sources": [
+    {
+      "id": "aws_registry",
+      "url": "https://registry.opendata.aws/aws-public-blockchain/",
+      "source_ref": "turn161view0",
+      "finding": "Anonymous public bucket in us-east-2 lists Ethereum v1.0/eth and BNB Chain v1.1/bnb. Registry presence alone does not establish 2022 table availability, schema or completeness."
+    },
+    {
+      "id": "aws_eth_docs",
+      "url": "https://github.com/aws-solutions-library-samples/guidance-for-digital-assets-on-aws/blob/main/analytics/README.md",
+      "source_ref": "turn161view1",
+      "finding": "Ethereum logs, transactions and blocks are date-partitioned Parquet; dataset is experimental."
+    },
+    {
+      "id": "google_locations",
+      "url": "https://docs.cloud.google.com/blockchain-analytics/docs/locations",
+      "source_ref": "turn161view2",
+      "finding": "Document updated 2026-10-22 lists historical Fantom Opera sharing datasets as deprecated without replacement and says updates stop after 2026-10-31. This does not establish loss of existing historical rows or current account access."
+    },
+    {
+      "id": "allium_fantom",
+      "url": "https://docs.allium.so/historical-data/supported-blockchains/evm/fantom/raw",
+      "source_ref": "turn165view0",
+      "finding": "Fetched document rendering contains only navigation/overview, insufficient to establish fields or historical span."
+    },
+    {
+      "id": "allium_bsc",
+      "url": "https://docs.allium.so/historical-data/supported-blockchains/evm/bsc/raw",
+      "source_ref": "turn165view1",
+      "finding": "BSC raw schema lists blocks, transactions, logs and traces. Field-level and historical/access verification remain pending."
+    },
+    {
+      "id": "aws_new_datasets",
+      "url": "https://repost.aws/articles/AR3gztQGeSS8CfaKNNeyYwsQ",
+      "source_ref": "turn165view2",
+      "finding": "Fetch returned403; no factual source support."
+    }
+  ],
+  "chains": [
+    {
+      "chain_name": "Ethereum",
+      "chain_id": 1,
+      "status": "ANONYMOUS_ARCHIVE_ROUTE_WITH_RETAINED_METADATA",
+      "route": "AWS v1.0/eth",
+      "evidence": "Phase14 inventoried full LiFi 30-day logs/blocks/transactions and first-date schemas. Revest window still requires case-specific complete source inventory and payload audit.",
+      "complete_window_rows_verified": false,
+      "implementation_status": "Phase15 generic Ethereum driver under construction; acquisition adapter still pending"
+    },
+    {
+      "chain_name": "BNB Smart Chain",
+      "chain_id": 56,
+      "status": "PUBLIC_ARCHIVE_PREFIX_DOCUMENTED_HISTORICAL_STRUCTURE_UNVERIFIED",
+      "route": "AWS v1.1/bnb; Allium BSC raw alternative",
+      "evidence": "Registry supports public prefix; no listing/schema/history probe made here. No absent-data inference.",
+      "complete_window_rows_verified": false,
+      "implementation_status": "Existing count/admission driver validates chain1; separate BSC source normalization and chain-neutral validation extension required before measurement"
+    },
+    {
+      "chain_name": "Fantom",
+      "chain_id": 250,
+      "status": "HISTORICAL_QUERY_ROUTE_DOCUMENTED_ACCESS_AND_FIELDS_UNVERIFIED",
+      "route": "Google deprecated Fantom dataset; Allium raw overview insufficient",
+      "evidence": "Historical dataset documented. Access, 2022 coverage and export route unverified; deprecation alone is not evidence data unavailable.",
+      "complete_window_rows_verified": false,
+      "implementation_status": "Separate source normalization and chain-neutral validation extension required before measurement",
+      "terminal_bounded_disposition": "NO_EXECUTABLE_SOURCE_ROUTE_VERIFIED_UNDER_DECLARED_TOOLS_AND_CAP"
+    }
+  ],
+  "selection_caveat": "Readiness limitations must be explicit per affected chain. No protocol row may silently drop a chain; this document alone admits or selects no case.",
+  "bounded_route_disposition": {
+    "rule": "A completed bounded source disposition need not mean every row has a ready source. NO_EXECUTABLE_SOURCE_ROUTE_VERIFIED_UNDER_DECLARED_TOOLS_AND_CAP is a limit of this bounded attempt, not proof that data do not exist or that the user cannot access them elsewhere.",
+    "tool_check": "No BigQuery, Allium, Athena or Snowflake query/export tools were exposed by name/description discovery. No account, credential or signed-in session was probed. The generic anonymous HTTP archive route is separately usable for documented public S3 sources.",
+    "Fantom": "Documentation provides a historical query-dataset locator but this attempt did not verify an executable authenticated query/export route or anonymous raw archive. Close source readiness at the frozen documentation/tool cap; preserve the nominated case as reference UNAVAILABLE under this route attempt.",
+    "BNB Smart Chain": "Anonymous S3 prefix is documented; historical path/schema/listing still unverified. Do not treat prefix presence as full-window availability or absence. If nomination completes, a separately bounded metadata capability check is needed before source-ready selection.",
+    "Ethereum": "An executable anonymous source route is already demonstrated by retained listings/footer reads; full scientific row coverage remains unverified."
+  },
+  "updated_utc": "2026-10-26T20:16:24.794040+00:00"
+}

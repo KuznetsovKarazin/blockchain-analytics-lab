@@ -1,0 +1,18 @@
+{
+  "schema_version": "phase15_independent_driver_cli_review_v1",
+  "status": "PASS",
+  "completed_utc": "2026-10-26T20:18:02.998604+00:00",
+  "driver_sha256": "591a8e09cd1920496ad0acc8fb13a1f4c62a0a224b3d8925ec364fff91ed293d",
+  "auditor_sha256": "4e6f92c5e9c4ac4973cbc959359dff961737ca5dcfc980923970324c530e5142",
+  "independent_cli_cases": 2,
+  "cases": [
+    "Synthetic thirty-day covered empty window produces exactly810zero cells and valid output seals",
+    "Mismatched independent acceptance digest fails with preserved failure marker and no accepted run"
+  ],
+  "accepted_output_artifacts_checked": 1020,
+  "producer_tests_rerun": 0,
+  "old_suites_rerun": 0,
+  "new_network_requests": 0,
+  "real_case_inputs_scores_or_labels": 0,
+  "limits": "Invented coverage attestations exercise CLI integrity only. This is not a real empty-chain observation, independent algorithm oracle or case admission. Bare load_inputs API requires callers to bind parsed config to the supplied config-file digest; the scientific CLI handles that binding."
+}

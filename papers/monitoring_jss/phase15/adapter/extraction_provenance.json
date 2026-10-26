@@ -1,0 +1,117 @@
+{
+  "schema_version": "article2_phase15_owned_pure_core_extraction_v1",
+  "created_utc": "2026-10-26T20:20:20.756538+00:00",
+  "source_path": "papers/monitoring_jss/acquire_semantic_flow_inputs.py",
+  "source_sha256": "bc752fa2fb8ae2747730d1eb213b64beb1faec7d43cc2a214d1edf73af3b884f",
+  "extracted_path": "papers/monitoring_jss/phase15/adapter/retained_observation_core.py",
+  "extracted_sha256": "63119a14c1f3fb5a2cf74f24f918181679611633e6e75df63b5dc6b7180ef662",
+  "exact_source_segments": [
+    {
+      "name": "TX_FIELDS",
+      "source_start_line": 23,
+      "source_end_line": 23,
+      "exact_source_segment_sha256": "d8c9da6fb03ede3a7ede941a8c3df694f6bb76a4523f07c725ab267e614e78c0"
+    },
+    {
+      "name": "LOG_FIELDS",
+      "source_start_line": 24,
+      "source_end_line": 24,
+      "exact_source_segment_sha256": "8d488594efc767aa6716c270296c4a5631f54b6922d500f1d22d1306dd358134"
+    },
+    {
+      "name": "ZERO",
+      "source_start_line": 27,
+      "source_end_line": 27,
+      "exact_source_segment_sha256": "857504330969d346267579726978d24e33e10569cf3a526f18fa9785dccb68ac"
+    },
+    {
+      "name": "HEX",
+      "source_start_line": 28,
+      "source_end_line": 28,
+      "exact_source_segment_sha256": "ce47a1f93cded123e2bb81cd27b7334291d3508bf9cbcae86949ce486226085d"
+    },
+    {
+      "name": "SCHEMA",
+      "source_start_line": 29,
+      "source_end_line": 29,
+      "exact_source_segment_sha256": "5603ac68c37a83de6570cb173179b56707f20b6229d59099a7a7dcbf4baa640b"
+    },
+    {
+      "name": "TIER",
+      "source_start_line": 30,
+      "source_end_line": 30,
+      "exact_source_segment_sha256": "878b2d47982fc0012afc889d1fbeeb67c0d1e99b154ee06b064a140b11ff3e20"
+    },
+    {
+      "name": "SOURCE_SCOPE",
+      "source_start_line": 31,
+      "source_end_line": 31,
+      "exact_source_segment_sha256": "66bdc59628f822862050ed7e3a191e483bc27be7385102f093ca86529ca10b45"
+    },
+    {
+      "name": "canonical",
+      "source_start_line": 33,
+      "source_end_line": 34,
+      "exact_source_segment_sha256": "f66a89e2f8522eb75938c13c97002f26e9390ef75b4adc8c85595cd148b71a9a"
+    },
+    {
+      "name": "digest",
+      "source_start_line": 36,
+      "source_end_line": 36,
+      "exact_source_segment_sha256": "9fb90e75a3fa51c6705ac79119ed84196af7ea53a216e638aad327d6af01244a"
+    },
+    {
+      "name": "require",
+      "source_start_line": 48,
+      "source_end_line": 49,
+      "exact_source_segment_sha256": "a8c4813851971313451236734b71e93bdf56176b04c6113926de5e99abc68128"
+    },
+    {
+      "name": "integer",
+      "source_start_line": 51,
+      "source_end_line": 53,
+      "exact_source_segment_sha256": "3a4003dd8bcd4c5c0131da5fcd9ea9149537c0d88a817e469db76522df725059"
+    },
+    {
+      "name": "hexvalue",
+      "source_start_line": 55,
+      "source_end_line": 58,
+      "exact_source_segment_sha256": "e12b28cbe92a57de81b1a6afec2b875e4f97c063883ca26b628beeabf6c4a16f"
+    },
+    {
+      "name": "log_payload",
+      "source_start_line": 63,
+      "source_end_line": 63,
+      "exact_source_segment_sha256": "ba1a5fde29e0215ae42fe5bb08a579c297cb17153aa4b953395300ac1b2cbaf6"
+    },
+    {
+      "name": "normalize_log",
+      "source_start_line": 81,
+      "source_end_line": 90,
+      "exact_source_segment_sha256": "c17ad79eec63a085cc3ffe5f58b0fb4dcda4cd1533dfecbaae74cd958c588314"
+    },
+    {
+      "name": "validate_transaction",
+      "source_start_line": 92,
+      "source_end_line": 104,
+      "exact_source_segment_sha256": "34334802f0cb30de8c5f5f9176e3a4fb496fe821314db6a61d505fc3b0096f92"
+    },
+    {
+      "name": "observe",
+      "source_start_line": 106,
+      "source_end_line": 137,
+      "exact_source_segment_sha256": "d1b782d869bdacd0ec47537b4455cbe45feab4a33123c69ebe2213e95a80b0e5"
+    }
+  ],
+  "code_changes_to_extracted_function_bodies": false,
+  "excluded": [
+    "network fetchers",
+    "CLI",
+    "resource/runtime environment collection",
+    "payload/output paths",
+    "development execution/configuration"
+  ],
+  "runtime_dependency": "papers/monitoring_jss/transfer_observation.py",
+  "runtime_dependency_sha256": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c",
+  "provenance_requirement": "The original full acquirer is needed only to independently verify extraction provenance, not to run this public pure module."
+}

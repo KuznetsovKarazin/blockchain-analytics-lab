@@ -1,0 +1,95 @@
+{
+  "schema_version": "article2_phase15_fixed_core_adapter_tests_v1",
+  "status": "PASS_FOCUSED_SYNTHETIC_CHECKS",
+  "created_utc": "2026-10-26T20:20:46.087912+00:00",
+  "distinct_test_methods": 18,
+  "test_methods": [
+    "test_multipart_expands_only_selected_transaction_and_exact_integer",
+    "test_covered_empty_day_not_selected_by_external_transfer",
+    "test_unavailable_never_becomes_empty",
+    "test_missing_source_part_rejected",
+    "test_stale_part_digest_rejected",
+    "test_unknown_status_rejected",
+    "test_failed_transaction_with_logs_rejected",
+    "test_gapped_transaction_logs_rejected",
+    "test_duplicate_global_log_position_rejected",
+    "test_global_log_order_cannot_reverse_transaction_order",
+    "test_header_gap_rejected",
+    "test_wrong_utc_boundary_rejected",
+    "test_full_transaction_count_must_match_headers",
+    "test_selection_cannot_expand_from_transfer_or_label",
+    "test_selection_membership_rejects_boolean_integer_alias",
+    "test_malformed_transfer_does_not_return_partial_observation",
+    "test_population_and_limits_fail_closed",
+    "test_cross_day_header_equality_required"
+  ],
+  "execution_history": [
+    {
+      "execution": 1,
+      "test_methods": 16,
+      "result": "PASS",
+      "code_stage": "Initial pure adapter"
+    },
+    {
+      "execution": 2,
+      "test_methods": 17,
+      "result": "PASS",
+      "reason": "Added cross-transaction global log order guard and explicit global selection digest argument to match the new driver"
+    },
+    {
+      "execution": 3,
+      "test_methods": 17,
+      "result": "PASS",
+      "reason": "Added runtime dependency hash guards"
+    },
+    {
+      "execution": 4,
+      "test_methods": 17,
+      "result": "PASS",
+      "reason": "Replaced private whole-acquirer runtime dependency with exact owned pure-function extraction; old source unchanged"
+    },
+    {
+      "execution": 5,
+      "test_methods": 18,
+      "result": "PASS",
+      "reason": "Independent reviewer identified Python Boolean/integer equality alias in sealed selection membership; compare canonical bytes and add rejection test"
+    }
+  ],
+  "counting_note": "18 distinct new test methods across five focused executions. No old suites executed. Extraction refactor preserved the 16 named source segments exactly.",
+  "real_case_rows_decoded": 0,
+  "new_network_requests": 0,
+  "real_case_detector_scores": 0,
+  "labels_joined": 0,
+  "bindings": [
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/fixed_core_adapter.py",
+      "sha256": "39725328201b6eb4110d6e0a589e08cfd1a8673f71ad0d8b99275254a47705f7"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/retained_observation_core.py",
+      "sha256": "63119a14c1f3fb5a2cf74f24f918181679611633e6e75df63b5dc6b7180ef662"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/extraction_provenance.json",
+      "sha256": "1c896539d5289f9313234e5a8c333164cb1284c3f7fcabe42cf05428bb2c94fc"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/test_fixed_core_adapter.py",
+      "sha256": "60dacf3bff5b03134af25cb71decb854f9437c7a2ce3645df4248d06f773b826"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/README.md",
+      "sha256": "1f3d8f7c6692f7f94042010c59a5f13aff8c9c925a45abbe652b5e88e982ce79"
+    },
+    {
+      "path": "papers/monitoring_jss/transfer_observation.py",
+      "sha256": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c"
+    }
+  ],
+  "remaining_work": [
+    "Source collector and original-byte independent audit",
+    "Exact 30-day assembly and driver manifest integration",
+    "Measurement/source/label freeze before real data or scoring"
+  ],
+  "claim_limit": "Tests validate new pure plumbing with synthetic data, not scientific performance, real source completeness or throughput."
+}

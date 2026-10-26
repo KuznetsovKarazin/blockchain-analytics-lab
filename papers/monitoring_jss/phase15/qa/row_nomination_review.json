@@ -1,0 +1,167 @@
+{
+  "schema_version": "article2_phase15_independent_row_review_v1",
+  "status": "PASS_NOMINATIONS_AND_BOUNDED_DISPOSITIONS_FOR_ALL_ORIGINAL_ROWS",
+  "reviewed_utc": "2026-10-26T20:19:34.102307+00:00",
+  "bindings": [
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_a/rows.json",
+      "sha256": "8190716f0168353de2bf009b30a714fe9da0f2c33868b3dd033972a495a918ff"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_b/rows.json",
+      "sha256": "90e53bcab202560f79b1f9c7020162bfab61ad617f44619f459922188b792e7f"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_c/rows.json",
+      "sha256": "b285de1b164c6413eeae6cf94a5196c67ebfe4649e211bb3975cd0b82d547cf6"
+    }
+  ],
+  "scope": "Independent offline review of exact retained opened primary-document renderings and historical evidence, with automated byte-binding/row/cap checks. No new web retrieval, transaction payload, detector score, labeljoin or oldsuite.",
+  "automated_checks": {
+    "active_rows_checked": 9,
+    "prior_preserved_dispositions": 4,
+    "all_original_rows_accounted": 13,
+    "retained_input_bindings_checked": 21,
+    "exact_private_tool_captures_checked": 22,
+    "separate_primary_rendered_segments_checked": 9,
+    "per_row_query_and_retrieval_counts": {
+      "65": [
+        2,
+        2
+      ],
+      "70": [
+        2,
+        4
+      ],
+      "66": [
+        3,
+        5
+      ],
+      "67": [
+        3,
+        6
+      ],
+      "76": [
+        3,
+        6
+      ],
+      "69": [
+        3,
+        5
+      ],
+      "73": [
+        3,
+        2
+      ],
+      "74": [
+        3,
+        2
+      ],
+      "75": [
+        3,
+        2
+      ]
+    },
+    "total_queries": 25,
+    "total_document_retrieval_items": 34
+  },
+  "accepted_nominations": [
+    {
+      "catalogue_line": 65,
+      "case_name": "Li.Fi",
+      "address_set": [
+        "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1"
+      ],
+      "family": "untrusted_external_call",
+      "disposition": "ACCEPT_FIXED_NAMED_COMPONENT_NOMINATION_TIER3_INCIDENT_INFORMED",
+      "basis": "Retained historical user-facing diamond role plus original-investigator interface/logic distinction, checked creation and runtime identity. CBridge implementation excluded under uniform direct-role rule. Full routing closure remains unproved and is not asserted."
+    },
+    {
+      "catalogue_line": 67,
+      "case_name": "OneRing Finance",
+      "address_set": [
+        "0xc06826f52f29b34c5d8b2c61abf844cebcf78abf"
+      ],
+      "family": "price_oracle_manipulation",
+      "disposition": "ACCEPT_FIXED_NAMED_COMPONENT_NOMINATION_TIER3_INCIDENT_INFORMED_REPORT_LEVEL",
+      "basis": "SlowMist names the vault/address and public deposit/withdraw operations; separate Knownsec narrative corroborates historical same-address role, and official report supplies UTC date/Fantom attribution. Historical identity accepted at report tier only; no proved creation/prewindow continuity. Full protocol custody population not claimed; named internal strategy is not automatically a qualifying coequal entrypoint."
+    },
+    {
+      "catalogue_line": 70,
+      "case_name": "Revest Finance",
+      "address_set": [
+        "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+        "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f"
+      ],
+      "family": "reentrancy",
+      "disposition": "ACCEPT_FIXED_NAMED_COMPONENT_NOMINATION_TIER3_INCIDENT_INFORMED",
+      "basis": "Official historical four-component architecture explicitly distinguishes public entrypoint and token storage from lock support and FNFT mint/burn implementation. Both qualifying roles included and all four records accounted. Retained checked creation corroborates identity; changed terminal registry does not alter fixed set or imply continuous activation."
+    }
+  ],
+  "remaining_row_dispositions": [
+    {
+      "catalogue_line": 66,
+      "disposition": "PENDING_EXACT_BOTH_CHAIN_ADDRESSES_UTC_DAY_AND_CAUSAL_FAMILY",
+      "both_chains_retained": true
+    },
+    {
+      "catalogue_line": 69,
+      "disposition": "PENDING_OCCURRENCE_CHRONOLOGY_CHAIN_AND_CORE_ROLE"
+    },
+    {
+      "catalogue_line": 73,
+      "disposition": "PENDING_UTC_DAY_CHAIN_AND_HISTORICAL_CORE_ROLE",
+      "note": "April GYM report kept distinct from later incident; report calendar day not silently converted to UTC."
+    },
+    {
+      "catalogue_line": 74,
+      "disposition": "PENDING_UTC_DAY_AND_HISTORICAL_CORE_ROLE",
+      "family_review": "ACCEPT_REPORT_BASED_AUTHORIZATION_OR_PRIVILEGE",
+      "family_basis": "Knownsec describes externally callable transfer internals bypassing caller/allowance checks after administrator disabled whitelist. This supports authorization rather than unconfirmed catalogue arithmetic-overflow label; report-level chain attribution is BscScan-link inference. Realized occurrence now supported; no precise executionday or admitted core."
+    },
+    {
+      "catalogue_line": 75,
+      "disposition": "PENDING_UTC_DAY_AND_ORIGINAL_VERSION_FINITE_CORE_SET",
+      "note": "Live-updated official report mixes original and replacement Reserve/version records; no convenient treasury subset selected."
+    },
+    {
+      "catalogue_line": 76,
+      "disposition": "PENDING_COMPLETE_HISTORICAL_COEQUAL_MARKET_SET",
+      "note": "Known rBNB member cannot stand in for all six named lending markets; incidental PoC snippets not used."
+    }
+  ],
+  "preserved_prior_dispositions": [
+    {
+      "catalogue_line": 68,
+      "disposition": "NOT_REALIZED_INCIDENT"
+    },
+    {
+      "catalogue_line": 71,
+      "disposition": "NOT_REALIZED_INCIDENT"
+    },
+    {
+      "catalogue_line": 72,
+      "disposition": "DEVELOPMENT_EXCLUDED"
+    },
+    {
+      "catalogue_line": 77,
+      "disposition": "DEVELOPMENT_EXCLUDED"
+    }
+  ],
+  "selection_review": {
+    "all_frame_bounded_nomination_dispositions_complete": true,
+    "measurement_admissions": 0,
+    "source_limited_acquisition_candidate_order": [
+      65,
+      70
+    ],
+    "conditional_basis": "With exact final root source-route disposition binding, OneRing remains nominated/reference-unavailable because no executable Fantom query/export route was verified under declared tools/cap, not because of absent data or chain1 implementation. Other rows remain metadata/core unresolved. Original date/name/line and first-per-verified-family order then selects LiFi and Revest as prospective acquisition candidates. Exact measurement acceptance and full-window observation audit are still required.",
+    "claim_limits": "No whole-frame recall, incident-independent nomination, globally unseen status, full protocol population, live latency or detector improvement is established."
+  },
+  "material_blockers": [],
+  "notes": [
+    "A malformed initial site query remains charged with no negative-evidence inference.",
+    "Some retrieval initiation times were not recorded; pre-freeze-to-closure upper bounds support30minute cap without inventing times.",
+    "All source-provenance proofs are at their stated tier; corroborating report authorship does not prove independent underlying data collection."
+  ]
+}

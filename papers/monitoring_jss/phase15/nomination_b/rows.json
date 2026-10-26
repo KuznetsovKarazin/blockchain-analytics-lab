@@ -1,0 +1,789 @@
+{
+  "schema_version": "article2_phase15_nomination_b_v1",
+  "status": "BOUNDED_METADATA_NOMINATIONS_COMPLETE_FOR_REVIEW",
+  "completed_utc": "2026-10-26T20:14:31.360589+00:00",
+  "rows": [
+    {
+      "catalogue_line": 66,
+      "catalogue_date": "2022-03-20",
+      "case_name": "Umbrella Network",
+      "chain_names": [
+        "Ethereum",
+        "BNB Smart Chain"
+      ],
+      "primary_family": "other_or_unresolved",
+      "prior_metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "prior_disposition_preserved": true,
+      "occurrence": "realized_unauthorized_incident",
+      "case_admitted": false,
+      "measurement_ready": false,
+      "new_detector_inputs": 0,
+      "new_detector_scores": 0,
+      "new_label_joins": 0,
+      "independent_reviewer_disposition": "PENDING",
+      "prior_exposure": "Phase9 metadata/report exposure remains recorded; no new population independence is asserted.",
+      "current_exposure": "Primary incident narratives, named contract components, incidental amounts, attacker addresses and transaction hashes were visible in report/search text. No transaction link, receipt, trace, state or detector payload was requested. No global blindness or incident-independent nomination is asserted.",
+      "address_rule": "Same accepted Phase14 role/source hierarchy; no victim, attacker, external token, transaction-flow or score-driven population expansion.",
+      "source_readiness": {
+        "status": "AWAITING_ROOT_CHAIN_DOCUMENTATION_REVIEW",
+        "affected_chains_preserved": [
+          "Ethereum",
+          "BNB Smart Chain"
+        ],
+        "all_chain_full_window_completeness": "UNPROVED",
+        "row_activity_payload_requests": 0
+      },
+      "acquisition": {
+        "queries": [
+          {
+            "engine": "system1",
+            "query": "Umbrella Network Polar Stream 2.0 staking contract addresses github March 2022",
+            "batch": "lookup1.json"
+          },
+          {
+            "engine": "system2",
+            "query": "\"Umbrella Network\" \"Polar\" contract address",
+            "batch": "lookup2.json"
+          },
+          {
+            "engine": "system2",
+            "query": "\"umb-network\" \"staking\" github",
+            "batch": "lookup3.json"
+          }
+        ],
+        "explicit_retrievals": [
+          {
+            "url": "https://medium.com/umbrella-network/umbrella-networks-2-0-staking-streams-are-now-live-ad40fcb5e317",
+            "tool_ref": "turn152view0",
+            "status": "SUCCESS"
+          },
+          {
+            "url": "https://medium.com/umbrella-network/update-on-polar-stream-exploit-b2f4526327f2",
+            "tool_ref": "turn158view0",
+            "status": "SUCCESS"
+          },
+          {
+            "url": "https://staking.umb.network/",
+            "tool_ref": "turn163view0",
+            "status": "FAILED_502"
+          },
+          {
+            "url": "https://github.com/umb-network",
+            "tool_ref": "turn166view0",
+            "status": "FAILED_DISABLED"
+          },
+          {
+            "url": "https://docs.umb.network/",
+            "tool_ref": "turn167view0",
+            "status": "INACCESSIBLE"
+          }
+        ],
+        "query_items": 3,
+        "open_click_items": 5,
+        "combined_items": 8,
+        "successful_unique_documents": 2,
+        "failed_opens": 3,
+        "retries": 0,
+        "exact_per_call_start_times": "NOT_RECORDED",
+        "retrieval_interval_conservative_utc": [
+          "2026-10-26T20:10:05.870837+00:00",
+          "2026-10-26T20:14:31.360589+00:00"
+        ],
+        "wall_minutes_upper_bound": 4.424829,
+        "backend_http_counts_and_bytes": "UNKNOWN"
+      },
+      "metadata_status": "RETAINED_METADATA_READY_WITH_UTC_AND_FAMILY_CAVEATS",
+      "reported_execution_date": "2022-03-20",
+      "execution_date_utc": null,
+      "execution_utc_status": "UNRESOLVED_TIMEZONE",
+      "family_status": "UNRESOLVED_EARLIEST_CAUSE",
+      "core_nomination_status": "PENDING_EXACT_BOTH_CHAIN_CORE_ADDRESSES",
+      "core_addresses": null,
+      "proposed_addresses_by_chain": {
+        "Ethereum": [],
+        "BNB Smart Chain": []
+      },
+      "source_ids": [
+        "U_LAUNCH",
+        "U_REPORT"
+      ],
+      "source_tier_review": [
+        {
+          "tier": 1,
+          "disposition": "No usable historical official deployment manifest returned by the bounded searches; guessed candidate GitHub organization could not be retrieved and is not claimed verified."
+        },
+        {
+          "tier": 2,
+          "disposition": "Historical official launch establishes LP-staking role on both chains. Linked staking portal failed and candidate documentation host inaccessible; exact addresses absent."
+        },
+        {
+          "tier": 3,
+          "disposition": "Official incident report confirms the same named component and both chains, but gives no exact pool addresses; no complete finite address artifact can be selected."
+        }
+      ],
+      "component_records": [
+        {
+          "component": "Polar Stream2.0 LP-staking vault",
+          "chain": "Ethereum",
+          "address": null,
+          "qualifying_role": "core custody/staking entrypoint",
+          "decision": "PENDING_EXACT_ADDRESS"
+        },
+        {
+          "component": "Polar Stream2.0 LP-staking vault",
+          "chain": "BNB Smart Chain",
+          "address": null,
+          "qualifying_role": "core custody/staking entrypoint",
+          "decision": "PENDING_EXACT_ADDRESS"
+        },
+        {
+          "component": "Polar1.0",
+          "decision": "OUTSIDE_NAMED_POLAR2_COMPONENT",
+          "reason": "Distinct version, stream or external LP/token; not automatically included."
+        },
+        {
+          "component": "Hadley1.0",
+          "decision": "OUTSIDE_NAMED_POLAR2_COMPONENT",
+          "reason": "Distinct version, stream or external LP/token; not automatically included."
+        },
+        {
+          "component": "Hadley2.0",
+          "decision": "OUTSIDE_NAMED_POLAR2_COMPONENT",
+          "reason": "Distinct version, stream or external LP/token; not automatically included."
+        },
+        {
+          "component": "Astro",
+          "decision": "OUTSIDE_NAMED_POLAR2_COMPONENT",
+          "reason": "Distinct version, stream or external LP/token; not automatically included."
+        },
+        {
+          "component": "Uniswap UMB-ETH LP",
+          "decision": "OUTSIDE_NAMED_POLAR2_COMPONENT",
+          "reason": "Distinct version, stream or external LP/token; not automatically included."
+        },
+        {
+          "component": "PancakeSwap UMB-BNB LP",
+          "decision": "OUTSIDE_NAMED_POLAR2_COMPONENT",
+          "reason": "Distinct version, stream or external LP/token; not automatically included."
+        },
+        {
+          "component": "UMB/rUMB1/rUMB2 tokens",
+          "decision": "OUTSIDE_NAMED_POLAR2_COMPONENT",
+          "reason": "Distinct version, stream or external LP/token; not automatically included."
+        }
+      ],
+      "historical_bounds": {
+        "component_available_no_later_than": "2022-03-16",
+        "basis": "Official dated launch; this is an availability bound for named pools, not address-specific deployment or first activity.",
+        "first_deployment": null,
+        "prewindow_existence": "UNRESOLVED"
+      },
+      "remaining_blockers": [
+        "Both historical Polar2 vault addresses and finite artifact identity",
+        "UTC execution date",
+        "Earliest enabling causal family",
+        "All affected-chain source readiness and complete fixed-window acquisition",
+        "Exact measurement and label freezes"
+      ]
+    },
+    {
+      "catalogue_line": 67,
+      "catalogue_date": "2022-03-21",
+      "case_name": "OneRing Finance",
+      "chain_names": [
+        "Fantom"
+      ],
+      "primary_family": "price_oracle_manipulation",
+      "prior_metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "prior_disposition_preserved": true,
+      "occurrence": "realized_unauthorized_incident",
+      "case_admitted": false,
+      "measurement_ready": false,
+      "new_detector_inputs": 0,
+      "new_detector_scores": 0,
+      "new_label_joins": 0,
+      "independent_reviewer_disposition": "PENDING",
+      "prior_exposure": "Phase9 metadata/report exposure remains recorded; no new population independence is asserted.",
+      "current_exposure": "Primary incident narratives, named contract components, incidental amounts, attacker addresses and transaction hashes were visible in report/search text. No transaction link, receipt, trace, state or detector payload was requested. No global blindness or incident-independent nomination is asserted.",
+      "address_rule": "Same accepted Phase14 role/source hierarchy; no victim, attacker, external token, transaction-flow or score-driven population expansion.",
+      "source_readiness": {
+        "status": "AWAITING_ROOT_CHAIN_DOCUMENTATION_REVIEW",
+        "affected_chains_preserved": [
+          "Fantom"
+        ],
+        "all_chain_full_window_completeness": "UNPROVED",
+        "row_activity_payload_requests": 0
+      },
+      "acquisition": {
+        "queries": [
+          {
+            "engine": "system1",
+            "query": "OneRing Finance OShare contract deployment address Fantom github 2022",
+            "batch": "lookup1.json"
+          },
+          {
+            "engine": "system2",
+            "query": "\"OneRing\" \"OShare\" \"contract\"",
+            "batch": "lookup2.json"
+          },
+          {
+            "engine": "system2",
+            "query": "\"OneRing\" \"addresses\" github",
+            "batch": "lookup3.json"
+          }
+        ],
+        "explicit_retrievals": [
+          {
+            "url": "https://slowmist.medium.com/post-mortem-analysis-of-onering-incident-d6166354e46e",
+            "tool_ref": "turn154view0",
+            "status": "SUCCESS"
+          },
+          {
+            "url": "https://medium.com/oneringfinance/onering-finance-exploit-post-mortem-after-oshare-hack-602a529db99b",
+            "tool_ref": "turn158view1",
+            "status": "SUCCESS"
+          },
+          {
+            "url": "https://medium.com/@Knownsec_Blockchain_Lab/knownsec-blockchain-lab-onering-finance-flash-loan-attack-analysis-3e51096fa886",
+            "tool_ref": "turn158view3",
+            "status": "SUCCESS"
+          },
+          {
+            "url": "https://docs.onering.finance/",
+            "tool_ref": "turn163view1",
+            "status": "INACCESSIBLE"
+          },
+          {
+            "url": "https://github.com/OneRingFinance",
+            "tool_ref": "turn166view1",
+            "status": "FAILED_DISABLED"
+          },
+          {
+            "url": "https://onering.finance/",
+            "tool_ref": "turn167view1",
+            "status": "FAILED_502"
+          }
+        ],
+        "query_items": 3,
+        "open_click_items": 6,
+        "combined_items": 9,
+        "successful_unique_documents": 3,
+        "failed_opens": 3,
+        "retries": 0,
+        "exact_per_call_start_times": "NOT_RECORDED",
+        "retrieval_interval_conservative_utc": [
+          "2026-10-26T20:10:05.870837+00:00",
+          "2026-10-26T20:14:31.360589+00:00"
+        ],
+        "wall_minutes_upper_bound": 4.424829,
+        "backend_http_counts_and_bytes": "UNKNOWN"
+      },
+      "metadata_status": "RETAINED_METADATA_READY",
+      "reported_execution_date": "2022-03-21",
+      "execution_date_utc": "2022-03-21",
+      "reported_first_execution_time_utc": "18:44:10",
+      "family_status": "VERIFIED_RETAINED_PRICE_ORACLE_MANIPULATION",
+      "core_nomination_status": "PROPOSED_TIER3_NAMED_VAULT_PENDING_INDEPENDENT_REVIEW",
+      "core_addresses": [
+        "0xc06826f52f29b34c5d8b2c61abf844cebcf78abf"
+      ],
+      "proposed_addresses_by_chain": {
+        "Fantom": [
+          "0xc06826f52f29b34c5d8b2c61abf844cebcf78abf"
+        ]
+      },
+      "nomination_source_tier": 3,
+      "nomination_exposure": "INCIDENT_INFORMED_RETROSPECTIVE_COMPONENT_NOMINATION",
+      "source_ids": [
+        "O_SLOWMIST",
+        "O_OFFICIAL",
+        "O_KNOWNSEC"
+      ],
+      "source_tier_review": [
+        {
+          "tier": 1,
+          "disposition": "Three bounded searches yielded no usable historical official deployment artifact; a candidate organization URL was attempted but unavailable and not verified."
+        },
+        {
+          "tier": 2,
+          "disposition": "Candidate official docs and website were inaccessible. No historical canonical full entrypoint roster obtained."
+        },
+        {
+          "tier": 3,
+          "disposition": "Chosen finite artifact is the named-address list in SlowMist original report: OneRingVault, attacker EOA and attack contract. The vault alone meets the named core-vault role. Knownsec independently authored report corroborates address and historical deposit/withdraw identity; official report establishes OShare/vault context and UTC date. This remains report-level, incident-informed evidence."
+        }
+      ],
+      "selected_source_artifact": {
+        "id": "O_SLOWMIST",
+        "version": "retrieved rendering of report displayed2022-03-23",
+        "scope": "Named OneRingVault component only; not entire protocol or all custody contracts",
+        "capture_sha256": "ddb323865d742beba9b7c5dc02295cd56c73922a22a8e00cc6054e3b4172515d"
+      },
+      "finite_artifact_records": [
+        {
+          "address": "0xc06826f52f29b34c5d8b2c61abf844cebcf78abf",
+          "label": "OneRingVault",
+          "decision": "INCLUDE_PROPOSED",
+          "reason": "Explicitly identified vault with deposit/withdraw user-facing operations."
+        },
+        {
+          "address": "0x12efed3512ea7b76f79bcde4a387216c7bce905e",
+          "label": "attacker address",
+          "decision": "EXCLUDE",
+          "reason": "Attacker identity is not protocol core role."
+        },
+        {
+          "address": "0x6a6d593ed7458b8213fa71f1adc4a9e5fd0b5a58",
+          "label": "attack contract",
+          "decision": "EXCLUDE",
+          "reason": "Attack executor is not protocol core role."
+        }
+      ],
+      "additional_corroborator_records": [
+        {
+          "address": "0xdbc07e219ba0cb5fddcd0fa0c5cc1eddfb77e082",
+          "label": "MasterChefBaseStrategy",
+          "decision": "NOT_AUTOMATICALLY_INCLUDED",
+          "reason": "Knownsec names an internal valuation strategy. No separately established canonical public entrypoint or core vault/custody role in the selected finite artifact; this is not a claim that strategy cannot hold funds."
+        }
+      ],
+      "historical_bounds": {
+        "address_reported_active_at_incident": "2022-03-21",
+        "basis": "Original technical reports identify the same vault and concrete historical deposit/withdraw function role; official protocol report identifies the affected OShare vault and UTC time. No new on-chain existence query.",
+        "first_deployment": null,
+        "continuous_identity": "NOT_ESTABLISHED",
+        "prewindow_existence": "UNRESOLVED",
+        "corroboration_limit": "Separate report authorship is not proof of independent data collection; no authenticated deployment or receipt evidence. Reviewer must decide whether this closes the tier3 historical-identity requirement.",
+        "corroborator_rendering_caveat": "Knownsec rendering appends a section marker 2.2 directly after the vault identifier. The unambiguous canonical40-hex-digit address is taken from SlowMist; Knownsec is corroborating narrative, not the sole address parser source."
+      },
+      "proposed_window_utc": [
+        "2022-02-20T00:00:00Z",
+        "2022-03-22T00:00:00Z"
+      ],
+      "remaining_blockers": [
+        "Independent acceptance of report-level tier3 historical identity and named-component scope",
+        "Fantom raw-log/status/header source readiness and full-window coverage",
+        "Exact driver, measurement, reference-inventory and label freezes"
+      ]
+    },
+    {
+      "catalogue_line": 76,
+      "catalogue_date": "2022-04-15",
+      "case_name": "Rikkei Finance",
+      "chain_names": [
+        "BNB Smart Chain"
+      ],
+      "primary_family": "authorization_or_privilege",
+      "prior_metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "prior_disposition_preserved": true,
+      "occurrence": "realized_unauthorized_incident",
+      "case_admitted": false,
+      "measurement_ready": false,
+      "new_detector_inputs": 0,
+      "new_detector_scores": 0,
+      "new_label_joins": 0,
+      "independent_reviewer_disposition": "PENDING",
+      "prior_exposure": "Phase9 metadata/report exposure remains recorded; no new population independence is asserted.",
+      "current_exposure": "Primary incident narratives, named contract components, incidental amounts, attacker addresses and transaction hashes were visible in report/search text. No transaction link, receipt, trace, state or detector payload was requested. No global blindness or incident-independent nomination is asserted.",
+      "address_rule": "Same accepted Phase14 role/source hierarchy; no victim, attacker, external token, transaction-flow or score-driven population expansion.",
+      "source_readiness": {
+        "status": "AWAITING_ROOT_CHAIN_DOCUMENTATION_REVIEW",
+        "affected_chains_preserved": [
+          "BNB Smart Chain"
+        ],
+        "all_chain_full_window_completeness": "UNPROVED",
+        "row_activity_payload_requests": 0
+      },
+      "acquisition": {
+        "queries": [
+          {
+            "engine": "system1",
+            "query": "Rikkei Finance contract addresses rTokens deployment github BSC 2022",
+            "batch": "lookup1.json"
+          },
+          {
+            "engine": "system2",
+            "query": "\"Rikkei\" \"contract addresses\"",
+            "batch": "lookup2.json"
+          },
+          {
+            "engine": "system2",
+            "query": "\"Rikkei\" \"rBNB\" contract",
+            "batch": "lookup3.json"
+          }
+        ],
+        "explicit_retrievals": [
+          {
+            "url": "https://www.certik.com/blog/revisiting-rikkei-finance-exploit",
+            "tool_ref": "turn154view1",
+            "status": "SUCCESS"
+          },
+          {
+            "url": "https://rikkeifinance.medium.com/rikkei-finance-incident-investigation-report-b5b1745b0155",
+            "tool_ref": "turn158view2",
+            "status": "SUCCESS"
+          },
+          {
+            "url": "https://slowmist.medium.com/slowmist-forensic-analysis-of-rikkei-finance-hack-ba0a77d582bc",
+            "tool_ref": "turn163view2",
+            "status": "SUCCESS"
+          },
+          {
+            "url": "https://rikkei.finance/peckshield-audit-report",
+            "tool_ref": "turn163view3",
+            "status": "INACCESSIBLE"
+          },
+          {
+            "url": "https://github.com/rikkei-finance",
+            "tool_ref": "turn166view2",
+            "status": "FAILED_DISABLED"
+          },
+          {
+            "url": "https://docs.rikkei.finance/",
+            "tool_ref": "turn167view2",
+            "status": "SUCCESS"
+          }
+        ],
+        "query_items": 3,
+        "open_click_items": 6,
+        "combined_items": 9,
+        "successful_unique_documents": 4,
+        "failed_opens": 2,
+        "retries": 0,
+        "exact_per_call_start_times": "NOT_RECORDED",
+        "retrieval_interval_conservative_utc": [
+          "2026-10-26T20:10:05.870837+00:00",
+          "2026-10-26T20:14:31.360589+00:00"
+        ],
+        "wall_minutes_upper_bound": 4.424829,
+        "backend_http_counts_and_bytes": "UNKNOWN"
+      },
+      "metadata_status": "RETAINED_METADATA_READY",
+      "reported_execution_date": "2022-04-15",
+      "execution_date_utc": "2022-04-15",
+      "reported_first_execution_time_utc": "03:18:38",
+      "family_status": "VERIFIED_RETAINED_AUTHORIZATION_OR_PRIVILEGE",
+      "core_nomination_status": "PENDING_COMPLETE_HISTORICAL_MARKET_ADDRESS_SET",
+      "core_addresses": null,
+      "proposed_addresses_by_chain": {
+        "BNB Smart Chain": []
+      },
+      "source_ids": [
+        "R_OFFICIAL",
+        "R_CERTIK",
+        "R_SLOWMIST",
+        "R_DOCS"
+      ],
+      "source_tier_review": [
+        {
+          "tier": 1,
+          "disposition": "Bounded manifest/address queries returned no usable historical official deployment artifact. Candidate GitHub organization and official audit URL unavailable."
+        },
+        {
+          "tier": 2,
+          "disposition": "Current official docs entry page opens, but contains no historical addresses. Developer link was not followed because6explicit document retrievals and3queries had closed the fixed row cap."
+        },
+        {
+          "tier": 3,
+          "disposition": "Original reports describe multiple coequal lending markets. SlowMist gives rBNB identity but not all five other named market addresses. Do not nominate only the convenient known member or derive the missing roster from exploit code."
+        }
+      ],
+      "known_component_records": [
+        {
+          "component": "rBNB lending market",
+          "address": "0x157822ac5fa0efe98daa4b0a55450f4a182c10ca",
+          "decision": "KNOWN_MEMBER_NOT_COMPLETE_NOMINATION",
+          "reason": "Named lending/custody role in SlowMist report; coequal historical market set unresolved."
+        },
+        {
+          "component": "rUSDC",
+          "address": null,
+          "decision": "PENDING_HISTORICAL_ADDRESS"
+        },
+        {
+          "component": "rBTC",
+          "address": null,
+          "decision": "PENDING_HISTORICAL_ADDRESS"
+        },
+        {
+          "component": "rDAI",
+          "address": null,
+          "decision": "PENDING_HISTORICAL_ADDRESS"
+        },
+        {
+          "component": "rUSDT",
+          "address": null,
+          "decision": "PENDING_HISTORICAL_ADDRESS"
+        },
+        {
+          "component": "rBUSD",
+          "address": null,
+          "decision": "PENDING_HISTORICAL_ADDRESS"
+        },
+        {
+          "component": "PriceOracle",
+          "address": "0xd55f01b4b51b7f48912cd8ca3cdd8070a1a9dba5",
+          "decision": "NOT_AUTOMATICALLY_INCLUDED",
+          "reason": "Configuration/pricing component; no established canonical public user entrypoint or core custody role."
+        },
+        {
+          "component": "malicious oracle",
+          "address": "0xa36f6f78b2170a29359c74cefcb8751e452116f9",
+          "decision": "EXCLUDE_ATTACKER_COMPONENT"
+        },
+        {
+          "component": "attacker",
+          "address": "0x803e0930357ba577dc414b552402f71656c093ab",
+          "decision": "EXCLUDE_ATTACKER_COMPONENT"
+        },
+        {
+          "component": "attack contract",
+          "address": "0xe6df12a9f33605f2271d2a2ddc92e509e54e6b5f",
+          "decision": "EXCLUDE_ATTACKER_COMPONENT"
+        }
+      ],
+      "historical_bounds": {
+        "rBNB_reported_active_at_incident": "2022-04-15",
+        "first_deployment": null,
+        "prewindow_existence": "UNRESOLVED",
+        "note": "Report-level historical identity only; no complete prior deployment roster or on-chain existence verification."
+      },
+      "proposed_window_utc": [
+        "2022-03-17T00:00:00Z",
+        "2022-04-16T00:00:00Z"
+      ],
+      "specific_exposure": "A search result from coinspect displayed an unsolicited exploit-code excerpt including rToken addresses. The page was not opened and its code/address list was not used for nomination, corroboration or inputs. This exposure is preserved rather than claiming no PoC text was seen.",
+      "remaining_blockers": [
+        "Complete named historical lending-market finite artifact and role review",
+        "BNB-chain source readiness and complete fixed window",
+        "Exact measurement and label freezes"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "U_LAUNCH",
+      "url": "https://medium.com/umbrella-network/umbrella-networks-2-0-staking-streams-are-now-live-ad40fcb5e317",
+      "title": "Umbrella Network’s 2.0 Staking Streams Are Now LIVE!!!",
+      "organization": "Umbrella Marketing Team",
+      "displayed_publication_date": "2022-03-16",
+      "evidence_type": "historical_official_announcement",
+      "claim_locations": "lines49-52,77-87,102-110",
+      "owned_evidence_summary": "Polar2 offers LP staking on ETH and BSC by the publication date. No exact staking contract addresses are provided.",
+      "tool_ref": "turn152view0",
+      "private_rendered_capture": "turn152view0.txt",
+      "rendered_capture_sha256": "64ff344c8944a6614dbce8de70eee48330715692d0920afb442698ed150164f1",
+      "capture_kind": "exact text segment of retained web-tool response, not origin HTML",
+      "retrieval_completed_by_utc": "2026-10-26T20:14:31.360589+00:00"
+    },
+    {
+      "id": "U_REPORT",
+      "url": "https://medium.com/umbrella-network/update-on-polar-stream-exploit-b2f4526327f2",
+      "title": "Update On Polar Stream Exploit",
+      "organization": "John Chen / Umbrella Network",
+      "displayed_publication_date": "2022-03-21",
+      "evidence_type": "official_incident_report",
+      "claim_locations": "lines57-65,91-96",
+      "owned_evidence_summary": "Reports the March20 incident in Polar2 on both chains. The retrieved text does not establish UTC timing, exact deployment addresses or a specific arithmetic cause.",
+      "tool_ref": "turn158view0",
+      "private_rendered_capture": "turn158view0.txt",
+      "rendered_capture_sha256": "d1a9a4097d05f444e385a6fb9b64c8242d0a0ff6f4e60082ef7c2aaa2ca896f6",
+      "capture_kind": "exact text segment of retained web-tool response, not origin HTML",
+      "retrieval_completed_by_utc": "2026-10-26T20:14:31.360589+00:00"
+    },
+    {
+      "id": "O_SLOWMIST",
+      "url": "https://slowmist.medium.com/post-mortem-analysis-of-onering-incident-d6166354e46e",
+      "title": "Post-mortem Analysis of OneRing Incident",
+      "organization": "SlowMist",
+      "displayed_publication_date": "2022-03-23",
+      "evidence_type": "original_investigator_report",
+      "claim_locations": "lines45-59,83-99,138-139",
+      "owned_evidence_summary": "Names the historical Fantom OneRingVault address and identifies deposit/withdraw operations. This supports a named vault component, not a complete OneRing deployment roster.",
+      "tool_ref": "turn154view0",
+      "private_rendered_capture": "turn154view0.txt",
+      "rendered_capture_sha256": "ddb323865d742beba9b7c5dc02295cd56c73922a22a8e00cc6054e3b4172515d",
+      "capture_kind": "exact text segment of retained web-tool response, not origin HTML",
+      "retrieval_completed_by_utc": "2026-10-26T20:14:31.360589+00:00"
+    },
+    {
+      "id": "O_OFFICIAL",
+      "url": "https://medium.com/oneringfinance/onering-finance-exploit-post-mortem-after-oshare-hack-602a529db99b",
+      "title": "OneRing Finance -After the Hack: A Recap and Solutions.",
+      "organization": "One Ring Finance",
+      "displayed_publication_date": "2022-03-22",
+      "evidence_type": "official_incident_report",
+      "claim_locations": "lines59-62,75-88,107,115-122",
+      "owned_evidence_summary": "Pins the incident to March21 at18:44:10UTC, identifies OShare and a paused vault, and distinguishes the affected component from other farms and RING.",
+      "tool_ref": "turn158view1",
+      "private_rendered_capture": "turn158view1.txt",
+      "rendered_capture_sha256": "7b61df0493d73510eefa269c1adbbde3cfebb965df2ca4e243e4a80e7f916162",
+      "capture_kind": "exact text segment of retained web-tool response, not origin HTML",
+      "retrieval_completed_by_utc": "2026-10-26T20:14:31.360589+00:00"
+    },
+    {
+      "id": "O_KNOWNSEC",
+      "url": "https://medium.com/@Knownsec_Blockchain_Lab/knownsec-blockchain-lab-onering-finance-flash-loan-attack-analysis-3e51096fa886",
+      "title": "Knownsec Blockchain Lab | OneRing Finance Flash Loan Attack Analysis",
+      "organization": "Knownsec Blockchain Lab",
+      "displayed_publication_date": "2022-03-23",
+      "evidence_type": "original_investigator_report",
+      "claim_locations": "lines51-60,68-79,115-145",
+      "owned_evidence_summary": "Separately describes the same historical vault address and its deposit/withdraw role; March22 Beijing reporting is compatible with the official UTC time. It also identifies an internal strategy address for valuation. This is report-level corroboration, not authenticated on-chain creation evidence.",
+      "tool_ref": "turn158view3",
+      "private_rendered_capture": "turn158view3.txt",
+      "rendered_capture_sha256": "893a5c5232b4ede161b6566899fc6dc25356f4edb70295f84d85e6c55325eff3",
+      "capture_kind": "exact text segment of retained web-tool response, not origin HTML",
+      "retrieval_completed_by_utc": "2026-10-26T20:14:31.360589+00:00",
+      "rendering_caveat": "The displayed vault field has a trailing2.2 section marker; exact nominated address comes from the clean SlowMist field."
+    },
+    {
+      "id": "R_CERTIK",
+      "url": "https://www.certik.com/blog/revisiting-rikkei-finance-exploit",
+      "title": "Revisiting Rikkei Finance Exploit",
+      "organization": "CertiK",
+      "displayed_publication_date": "2022-07-25",
+      "evidence_type": "original_security_analysis",
+      "claim_locations": "lines11-31",
+      "owned_evidence_summary": "Confirms unauthorized oracle changes preceded the borrowing exploit. Names multiple lending markets but does not supply a complete historical address roster in the retrieved text.",
+      "tool_ref": "turn154view1",
+      "private_rendered_capture": "turn154view1.txt",
+      "rendered_capture_sha256": "b3657ed39251212ea936aea7716060428ed7eb2fadf8bc4ecbcda270cdf016b4",
+      "capture_kind": "exact text segment of retained web-tool response, not origin HTML",
+      "retrieval_completed_by_utc": "2026-10-26T20:14:31.360589+00:00"
+    },
+    {
+      "id": "R_OFFICIAL",
+      "url": "https://rikkeifinance.medium.com/rikkei-finance-incident-investigation-report-b5b1745b0155",
+      "title": "Rikkei Finance: Incident Post Mortem",
+      "organization": "Rikkei Finance",
+      "displayed_publication_date": "2022-04-19",
+      "evidence_type": "official_incident_report",
+      "claim_locations": "lines48-60,68-75",
+      "owned_evidence_summary": "Pins April15 at03:18:38UTC and describes two executions and lending markets; no full market-address roster is provided in the text.",
+      "tool_ref": "turn158view2",
+      "private_rendered_capture": "turn158view2.txt",
+      "rendered_capture_sha256": "2e1173ff284727ccad6fc3ea2d3f8842e26cec9b03cd4873894747faaf117a9d",
+      "capture_kind": "exact text segment of retained web-tool response, not origin HTML",
+      "retrieval_completed_by_utc": "2026-10-26T20:14:31.360589+00:00"
+    },
+    {
+      "id": "R_SLOWMIST",
+      "url": "https://slowmist.medium.com/slowmist-forensic-analysis-of-rikkei-finance-hack-ba0a77d582bc",
+      "title": "SlowMist: Forensic Analysis of Rikkei Finance Hack (Released in 2022)",
+      "organization": "SlowMist",
+      "displayed_publication_date": "2023-05-09",
+      "evidence_type": "retrospective_original_investigator_report",
+      "claim_locations": "lines45-59,74-97",
+      "owned_evidence_summary": "Identifies rBNB and the price-oracle address and names five other rToken markets without their addresses. Its displayed publication date is2023; the title says released in2022. Neither date is a deployment date.",
+      "tool_ref": "turn163view2",
+      "private_rendered_capture": "turn163view2.txt",
+      "rendered_capture_sha256": "0aab1264c32f26103d46a267059937617dd4349b94d7aa86e1eb045a2fd5b4c0",
+      "capture_kind": "exact text segment of retained web-tool response, not origin HTML",
+      "retrieval_completed_by_utc": "2026-10-26T20:14:31.360589+00:00"
+    },
+    {
+      "id": "R_DOCS",
+      "url": "https://docs.rikkei.finance/",
+      "title": "Welcome | RiFi Resources",
+      "organization": "RiFi Resources",
+      "displayed_publication_date": null,
+      "evidence_type": "current_documentation_no_historical_version",
+      "claim_locations": "lines145-161",
+      "owned_evidence_summary": "Current documentation entry page links developer documentation but does not itself contain a historical deployment manifest. No deeper link was followed after the row cap closed.",
+      "tool_ref": "turn167view2",
+      "private_rendered_capture": "turn167view2.txt",
+      "rendered_capture_sha256": "d2dc36b40b3f961b7dafdde5aa2ece4bbc77b9c481e67ba83262827e25147cb2",
+      "capture_kind": "exact text segment of retained web-tool response, not origin HTML",
+      "retrieval_completed_by_utc": "2026-10-26T20:14:31.360589+00:00"
+    }
+  ],
+  "acquisition_totals": {
+    "web_tool_calls": 7,
+    "search_query_items": 9,
+    "explicit_open_items": 17,
+    "combined_items": 26,
+    "successful_unique_documents": 9,
+    "failed_opens": 8,
+    "actual_execution_payload_requests": 0,
+    "backend_http_counts_and_bytes": "UNKNOWN",
+    "per_row_counts": {
+      "66": [
+        3,
+        5,
+        8
+      ],
+      "67": [
+        3,
+        6,
+        9
+      ],
+      "76": [
+        3,
+        6,
+        9
+      ]
+    }
+  },
+  "bindings": [
+    {
+      "path": "papers/monitoring_jss/phase15/protocol/nomination_plan.json",
+      "sha256": "b3510a3ac297f96fd4111fc9fc15ddd0167fa24478bdea65b79d9fe4b028d48e"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/protocol/root_nomination_freeze.json",
+      "sha256": "11ada58e3c1ecc0a1e5b28678c1bb5b83b1bcb6a69df5682c57ab0b7892b6a8c"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/fixed_address_amendment.json",
+      "sha256": "2ac0e669768fe8c0fe83901bab595ff5ffbe4acd37267cbf74280c7c78153bc9"
+    },
+    {
+      "path": "papers/monitoring_jss/phase9/cohort_protocol/screening_results.json",
+      "sha256": "9d85a3a412c09b45d95d009d901defd54042ef06f7ff39cc8276c876a2f4c613"
+    }
+  ],
+  "private_web_receipts": [
+    {
+      "name": "lookup1.json",
+      "sha256": "7cad76473055642f8e06b319a1daf2f0e2272a12f3aba1697ab0d656b4a910f6",
+      "bytes": 34126
+    },
+    {
+      "name": "lookup2.json",
+      "sha256": "00640f3250502e4ec8505042ec7f9265653ed1709012b82ae823d1e03fda1e82",
+      "bytes": 32628
+    },
+    {
+      "name": "lookup3.json",
+      "sha256": "888c2ca0c24e7f8588bf8fde347df13d6362f7bb70b91351205a33a419c9b420",
+      "bytes": 29034
+    },
+    {
+      "name": "lookup4.json",
+      "sha256": "d60d81fd60c3e94996e8c79bdee87851197ee2442aa43e501b9c4ec9cad11197",
+      "bytes": 29320
+    },
+    {
+      "name": "lookup5.json",
+      "sha256": "b01bac6079ec8256f453a475c921fe91f68dc636ba88e08f562290b3057ddfaf",
+      "bytes": 11927
+    },
+    {
+      "name": "lookup6.json",
+      "sha256": "6bb2820e38ee73b054ff03dc494bf9b17b305c73f09d0792332b70daea3b027b",
+      "bytes": 919
+    },
+    {
+      "name": "lookup7.json",
+      "sha256": "26868e17df8cf14848bd35f7140a4bfcaa09bf3cf03b0aa3505209298e3c041e",
+      "bytes": 6709
+    }
+  ],
+  "limitations": [
+    "No case admitted, no detector inputs/scores/labels acquired.",
+    "Failed candidate documentation/GitHub URLs do not establish that corresponding resources do not exist.",
+    "Nomination is retrospective and incident-informed; source and full-window observation gates remain separate.",
+    "Exact per-call initiation times not recorded. Conservative rootfreeze-to-completion interval bounds all retrievals below30minutes."
+  ]
+}

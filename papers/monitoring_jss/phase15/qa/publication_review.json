@@ -1,0 +1,401 @@
+{
+  "schema_version": "article2_phase15_publication_review_v1",
+  "status": "PASS_EXACT_PHASE15_PUBLIC_PROJECTION_WITH_DECLARED_DEPENDENCIES",
+  "reviewed_utc": "2026-10-26T20:27:01.302665+00:00",
+  "public_parent": "a611d2a2c7a368617124f914dfaf8ca0ee1a45b9",
+  "scope": "All current Phase15 .py/.json/.md files as exact UTF8 bytes, including this verdict; caches, raw external captures and root STATUS/HANDOFF/ledger excluded. Publication transport is a separate root action.",
+  "reviewer_role": "Publication safety and dependency review. Reviewer also authored nomination_c; independent scientific nomination review was separately completed by phase15_review.",
+  "content_scope": {
+    "other_files_checked": 37,
+    "other_utf8_bytes_checked": 386943,
+    "transformations": 0,
+    "new_owned_source_and_paraphrases_only": true,
+    "full_external_article_or_source_dumps": false,
+    "raw_acquisition_payloads_in_scope": false,
+    "all_paths_new_relative_to_public_parent": true
+  },
+  "static_sensitive_marker_scan": {
+    "absolute_host_paths": [],
+    "private_library_file_ids": [],
+    "credential_material": []
+  },
+  "relative_markdown_links": [
+    {
+      "source": "papers/monitoring_jss/phase15/README.md",
+      "target": "frame_dispositions.json",
+      "available_in_projection_or_public_parent": true
+    },
+    {
+      "source": "papers/monitoring_jss/phase15/README.md",
+      "target": "cohort_selection.json",
+      "available_in_projection_or_public_parent": true
+    },
+    {
+      "source": "papers/monitoring_jss/phase15/README.md",
+      "target": "driver/README.md",
+      "available_in_projection_or_public_parent": true
+    },
+    {
+      "source": "papers/monitoring_jss/phase15/README.md",
+      "target": "adapter/README.md",
+      "available_in_projection_or_public_parent": true
+    },
+    {
+      "source": "papers/monitoring_jss/phase15/README.md",
+      "target": "COVERAGE_BOUNDS.md",
+      "available_in_projection_or_public_parent": true
+    },
+    {
+      "source": "papers/monitoring_jss/phase15/nomination_a/FINDINGS.md",
+      "target": "rows.json",
+      "available_in_projection_or_public_parent": true
+    },
+    {
+      "source": "papers/monitoring_jss/phase15/nomination_b/FINDINGS.md",
+      "target": "rows.json",
+      "available_in_projection_or_public_parent": true
+    },
+    {
+      "source": "papers/monitoring_jss/phase15/nomination_c/FINDINGS.md",
+      "target": "rows.json",
+      "available_in_projection_or_public_parent": true
+    }
+  ],
+  "data_syntax": {
+    "all_json_duplicate_key_checked": true,
+    "all_python_ast_parsed": true,
+    "no_program_import_or_test_execution_for_this_review": true
+  },
+  "scientific_closure": {
+    "results_path": "papers/monitoring_jss/phase15/results.json",
+    "results_sha256": "9488bc15efae25d13a7fab200d7cd6468254684923c0d4bac53d0fc26f45fe82",
+    "results_bindings_exact": 35,
+    "final_scope_review_path": "papers/monitoring_jss/phase15/qa/final_scope_review.json",
+    "final_scope_review_sha256": "4f3365d77de30297e61847d223047c0332b6be70a98510a1b98a01fc20b13a01",
+    "final_scope_status": "PASS_READY_FOR_PRIVATE_COMMIT_AND_SEPARATE_PUBLICATION_REVIEW"
+  },
+  "public_runtime_dependencies": [
+    {
+      "path": "papers/monitoring_jss/semantic_flow_replay.py",
+      "sha256": "49597dfa39c6f1fa65be47d107bdf60696f8d26b82b13876bf1d587a593ac16a",
+      "bytes": 29548,
+      "public_parent_equals_retained_bytes": true
+    },
+    {
+      "path": "papers/monitoring_jss/semantic_flow_monitor.py",
+      "sha256": "10ac4a7bc81b76c49be07ff8125136910cbacf2782708271d057b2094bfa60ad",
+      "bytes": 21660,
+      "public_parent_equals_retained_bytes": true
+    },
+    {
+      "path": "papers/monitoring_jss/transfer_observation.py",
+      "sha256": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c",
+      "bytes": 20698,
+      "public_parent_equals_retained_bytes": true
+    },
+    {
+      "path": "papers/monitoring_jss/semantic_flow_study_config.json",
+      "sha256": "4a3e038584158ba8b39b582291c18097f98a0fa67e70c46346c280b5cbb0cf3a",
+      "bytes": 5226,
+      "public_parent_equals_retained_bytes": true
+    }
+  ],
+  "adapter_dependency_resolution": {
+    "status": "RESOLVED_BY_EXACT_OWNED_PURE_EXTRACTION",
+    "adapter_sha256": "39725328201b6eb4110d6e0a589e08cfd1a8673f71ad0d8b99275254a47705f7",
+    "pure_module_path": "papers/monitoring_jss/phase15/adapter/retained_observation_core.py",
+    "pure_module_sha256": "63119a14c1f3fb5a2cf74f24f918181679611633e6e75df63b5dc6b7180ef662",
+    "exact_source_segments_independently_compared": 16,
+    "old_acquirer_import_required": false,
+    "remaining_runtime_dependency": "unchanged public transfer_observation.py plus Python standard library",
+    "original_full_acquirer_needed_only_for_extraction_provenance_check": true
+  },
+  "nonpublic_provenance_inputs": [
+    {
+      "path": "papers/monitoring_jss/phase9/cohort_protocol/screening_results.json",
+      "retained_sha256": "9d85a3a412c09b45d95d009d901defd54042ef06f7ff39cc8276c876a2f4c613",
+      "public_status": "ABSENT",
+      "role": "provenance-only input; not required for new public adapter/driver runtime"
+    },
+    {
+      "path": "papers/monitoring_jss/phase9/metadata_a/screening_results.json",
+      "retained_sha256": "60471c1e42f2bc5cad34d8c93062ac449d450a14c8a5307ad64c4388a0afd750",
+      "public_status": "ABSENT",
+      "role": "provenance-only input; not required for new public adapter/driver runtime"
+    },
+    {
+      "path": "papers/monitoring_jss/phase9/metadata_b/screening_results.json",
+      "retained_sha256": "13decab3ea246d07f83d76dd433f0280a6a684d02f38d7a273b217b476367916",
+      "public_status": "ABSENT",
+      "role": "provenance-only input; not required for new public adapter/driver runtime"
+    },
+    {
+      "path": "papers/monitoring_jss/phase9/revest_gate/gate_results.json",
+      "retained_sha256": "f3e79f354d157809e008c9806e2d23e8ec0ba573883ff244ede1db8a544acb73",
+      "public_status": "ABSENT",
+      "role": "provenance-only input; not required for new public adapter/driver runtime"
+    },
+    {
+      "path": "papers/monitoring_jss/phase10/lifi_gate/gate_results.json",
+      "retained_sha256": "dfc62bb18f4d315061e25e44f8033bce2acb2ccdba6e642bd871884c8347d043",
+      "public_status": "DIFFERENT_PUBLIC_PROJECTION",
+      "role": "provenance-only input; not required for new public adapter/driver runtime"
+    },
+    {
+      "path": "papers/monitoring_jss/acquire_semantic_flow_inputs.py",
+      "retained_sha256": "bc752fa2fb8ae2747730d1eb213b64beb1faec7d43cc2a214d1edf73af3b884f",
+      "public_status": "ABSENT",
+      "role": "provenance-only input; not required for new public adapter/driver runtime"
+    }
+  ],
+  "revest_inventory_reconstruction": {
+    "public_exact_inputs": [
+      {
+        "path": "papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/logs_2022-03_page1.xml",
+        "sha256": "a4fa3ab3ca8f30a6a881306ca858a5ae4eee1105b57c94ad7804443874b8d000",
+        "public_parent_equals_retained_bytes": true
+      },
+      {
+        "path": "papers/monitoring_jss/qa/phase4_common_window_feasibility_20261025T122103_763107Z/blocks_2022-03_page1.xml",
+        "sha256": "28d13f4044f74d245a4de952ad3fb77eea9972e0bd82c6b70482fec34f319a50",
+        "public_parent_equals_retained_bytes": true
+      },
+      {
+        "path": "papers/monitoring_jss/incidents/source_availability_phase6/run_20261025T145900Z/availability.json",
+        "sha256": "7957fd0c2f6ddd868dcca80ae71e2984429da94e5bc186440797a5a35f5c2f20",
+        "public_parent_equals_retained_bytes": true
+      }
+    ],
+    "retained_private_phase14_inputs": [
+      {
+        "filename": "001_prefix0_page1_response.xml",
+        "sha256": "67a80f0bf7cb80a1ad6a8145066f19a345a613fc69dd8a416273283dc0953590"
+      },
+      {
+        "filename": "002_prefix1_page1_response.xml",
+        "sha256": "c7391fb6aa9689d1207e3a41258a46172b6db315b6324f7a8e8f00b49278d159"
+      },
+      {
+        "filename": "003_prefix2_page1_response.xml",
+        "sha256": "ee134897927838d80e8e623f1d8a154cb0a017988e88e8af2dfc35725a6817f3"
+      },
+      {
+        "filename": "004_prefix3_page1_response.xml",
+        "sha256": "87d8e89b52531d6d33dfee29909056e73598099b1e5b8a5cf632c8f4674a547b"
+      },
+      {
+        "filename": "summary.json",
+        "sha256": "8b85676f2dbe50ff5e6f4d66d98cd9510017b906a3ba8249496624566ab4d26b"
+      }
+    ],
+    "standalone_public_reconstruction": false,
+    "reason": "Requires all six original listing XMLs plus Phase6 and Phase14 summaries; four listing XMLs and Phase14 summary are retained separately."
+  },
+  "reader_disclosure_review": {
+    "phase15_README_explicitly_discloses_private_evidence_dependencies": true,
+    "source_renderings_private_not_replaced_by_public_paraphrases": true,
+    "synthetic_checks_distinguished_from_historical_data_and_detector_performance": true,
+    "no_complete_protocol_population_or_globalblindness_claim": true,
+    "no_executable_source_route_not_claimed_data_absence": true
+  },
+  "limitations": [
+    "This public code can execute synthetic checks with its public inherited dependencies; it does not supply a complete historical experiment dataset or admission.",
+    "Actual replay still requires independently accepted measurement config/gates, source transport and audit, sealed selection and complete normalized observations; post-decision labels are separate.",
+    "Historical nomination provenance uses hash-bound private renderings and retained evidence. Some same-path public older artifacts are projections rather than exact private inputs.",
+    "External URLs were not reopened by this review. Publication remains subject to parent-match and exact-byte verification by root."
+  ],
+  "candidate_file_bindings_excluding_this_verdict": [
+    {
+      "path": "papers/monitoring_jss/phase15/COVERAGE_BOUNDS.md",
+      "bytes": 2901,
+      "sha256": "9d5c63c69e77c1199b1f00900af73e2ed7e2d2d41638b7bdd84792277d2d3818"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/README.md",
+      "bytes": 6309,
+      "sha256": "9b7aae701e269db1e824ce90607ad662ce5d248f6cac5aa4d57c6f9b5631b2c5"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/REPORT_RU.md",
+      "bytes": 7579,
+      "sha256": "4d56b164d4831631c1bb15ef9d929ecc9855b2dbeab42344f176495afb7f224d"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/README.md",
+      "bytes": 4901,
+      "sha256": "1f3d8f7c6692f7f94042010c59a5f13aff8c9c925a45abbe652b5e88e982ce79"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/extraction_provenance.json",
+      "bytes": 4314,
+      "sha256": "1c896539d5289f9313234e5a8c333164cb1284c3f7fcabe42cf05428bb2c94fc"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/fixed_core_adapter.py",
+      "bytes": 17598,
+      "sha256": "39725328201b6eb4110d6e0a589e08cfd1a8673f71ad0d8b99275254a47705f7"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/retained_observation_core.py",
+      "bytes": 6365,
+      "sha256": "63119a14c1f3fb5a2cf74f24f918181679611633e6e75df63b5dc6b7180ef662"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/test_fixed_core_adapter.py",
+      "bytes": 10966,
+      "sha256": "60dacf3bff5b03134af25cb71decb854f9437c7a2ce3645df4248d06f773b826"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/test_report.json",
+      "bytes": 3821,
+      "sha256": "b23c61198a08155eec5b14ae359d40186849e1796b908e6037d0440192fce9d7"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/cohort_selection.json",
+      "bytes": 4457,
+      "sha256": "260004eecde76a5ecbd6c1d76d5dc4bc2ae981819e5bd34549e872174e86ce49"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/driver/README.md",
+      "bytes": 6881,
+      "sha256": "b1b1db9250ce88d3bf799b50d9e51a9cc45edae20232cc0ec713aaf8d3391fe4"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/driver/fixed_address_replay.py",
+      "bytes": 21467,
+      "sha256": "591a8e09cd1920496ad0acc8fb13a1f4c62a0a224b3d8925ec364fff91ed293d"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/driver/test_fixed_address_replay.py",
+      "bytes": 15513,
+      "sha256": "1ed946ae38179f9e15b775daaa66d0293e7ac18b7bb7f1e50d3ccb74e14f4c53"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/driver/test_report_attempt1.json",
+      "bytes": 1809,
+      "sha256": "841202b0d5488a117d5f65524ad95201be43457cf0f2cedeaa77a0cbf5cba619"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/frame_dispositions.json",
+      "bytes": 11925,
+      "sha256": "f99e58cae92cb52c1e1c2e21ab98eaa81f90d5919d34adef70bdc8d615321966"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_a/FINDINGS.md",
+      "bytes": 3085,
+      "sha256": "58e2d0827f31416f1e4f683e25ae71e9f40ccb572e1444706476b3f43462a2ce"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_a/rows.json",
+      "bytes": 24543,
+      "sha256": "8190716f0168353de2bf009b30a714fe9da0f2c33868b3dd033972a495a918ff"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_b/FINDINGS.md",
+      "bytes": 2352,
+      "sha256": "7cdba62462a3b85177f96ce630df770fdedcb7f36f43feb7ddd6f5adb77f24cf"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_b/rows.json",
+      "bytes": 35415,
+      "sha256": "90e53bcab202560f79b1f9c7020162bfab61ad617f44619f459922188b792e7f"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_c/FINDINGS.md",
+      "bytes": 1283,
+      "sha256": "2c75179d2a1d6ebc1f1c6d8a9e3c9810aa6d6eac481402b01bb494d57785c903"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_c/rows.json",
+      "bytes": 29627,
+      "sha256": "b285de1b164c6413eeae6cf94a5196c67ebfe4649e211bb3975cd0b82d547cf6"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/protocol/nomination_plan.json",
+      "bytes": 12999,
+      "sha256": "b3510a3ac297f96fd4111fc9fc15ddd0167fa24478bdea65b79d9fe4b028d48e"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/protocol/root_nomination_freeze.json",
+      "bytes": 510,
+      "sha256": "11ada58e3c1ecc0a1e5b28678c1bb5b83b1bcb6a69df5682c57ab0b7892b6a8c"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/adapter_review.json",
+      "bytes": 3398,
+      "sha256": "45ccac83ed492410f6255d9d55005094610bca56cb586c0ed8653eb232cfb510"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/audit_driver_cli.py",
+      "bytes": 7728,
+      "sha256": "4e6f92c5e9c4ac4973cbc959359dff961737ca5dcfc980923970324c530e5142"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/coverage_bounds_review.json",
+      "bytes": 1526,
+      "sha256": "5a7f40192866e3f112eee9ad2d6a9f9830ba01ac585ae2e505136bc358b222a9"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/driver_cli_review.json",
+      "bytes": 1044,
+      "sha256": "ee1fbdaa18b5a47e936211dc0c1cd48e9be0a7e6852f0f315b2973854a5cab38"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/final_scope_review.json",
+      "bytes": 9320,
+      "sha256": "4f3365d77de30297e61847d223047c0332b6be70a98510a1b98a01fc20b13a01"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/nomination_procedure_review.json",
+      "bytes": 2717,
+      "sha256": "50490f2ffd086ceb280a03805bdd7673ede9ce1240ac9a7183706a6d1afb64ed"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/revest_inventory_review.json",
+      "bytes": 979,
+      "sha256": "72fa6ebd99adde9df34dccd2bb50d29ae73f66bd9bcad130e9765ff32d05e62a"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/row_nomination_review.json",
+      "bytes": 7116,
+      "sha256": "e3647c7e968042980ecef53512ed350e1ff395be3aae930bbe81178b8ed34343"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/source_readiness_review.json",
+      "bytes": 3051,
+      "sha256": "4c2b5e2e14040b515bc2ffc2fa050a268edaa32c2704b4a8c919a0b2f5a45c9e"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/results.json",
+      "bytes": 10263,
+      "sha256": "9488bc15efae25d13a7fab200d7cd6468254684923c0d4bac53d0fc26f45fe82"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/source_readiness/chain_routes.json",
+      "bytes": 5918,
+      "sha256": "1fc90f2954dcb9e092332ffefe4d046befc1ed7ff622ebcad9c9645c3dcfcd64"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/source_readiness/reconstruct_revest_inventory.py",
+      "bytes": 9477,
+      "sha256": "2c13b8d157abc189ca2be4ab100ec277f233ce2a21cd51477a0f4beb23e85e20"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/source_readiness/recovery_status.json",
+      "bytes": 1243,
+      "sha256": "e72bdba411abf8fe5c80b256dfdbaf04694c29fbb140890713a5f2b34d895c76"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/source_readiness/revest_inventory.json",
+      "bytes": 86543,
+      "sha256": "e557dd3951fac2e3365cc837cfece34e83f693f6d2a6941b46bf476984759dac"
+    }
+  ],
+  "checks_accounting": {
+    "new_network_requests": 0,
+    "old_tests_rerun": 0,
+    "producer_tests_rerun": 0,
+    "new_scientific_scores": 0
+  },
+  "material_blockers": []
+}

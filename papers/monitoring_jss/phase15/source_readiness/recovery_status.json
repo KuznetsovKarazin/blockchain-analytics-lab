@@ -1,0 +1,25 @@
+{
+  "schema_version": "article2_phase15_durable_locator_recovery_v1",
+  "status": "DURABLE_LOCATORS_RECOVERED_NOT_PAYLOAD_MATERIALIZED",
+  "source_index_text_sha256": "6477ab4382d21324ced818731d2c847a359e5d5b16a8fa0390a848a0ba8f936e",
+  "original_dates": [
+    "2022-03-19",
+    "2022-03-27"
+  ],
+  "archive_count": 9,
+  "source_tables_described_by_index": [
+    "logs",
+    "blocks"
+  ],
+  "potential_source_object_reuse_count": 18,
+  "new_payloads_downloaded_or_decoded": 0,
+  "source_content_verified_now": false,
+  "source_index_scope": "Original Phase4 authored index reports complete raw logs and blocks objects inside each day archive. Current read resolves archive locators and published archive hashes; byte/member validation still required. No transaction table reuse is asserted.",
+  "next_action": "After exact measurement acceptance, materialize the nine prior day archives, verify original archive and member hashes against frozen source inventory, and reuse accepted raw objects before any duplicate download.",
+  "library_queries": {
+    "search_calls": 2,
+    "search_query_items": 5,
+    "metadata_index_reads": 1
+  },
+  "private_recovery_receipt_sha256": "272b7617afea38d323109e44a3e24796d34721b378fd2820d262324eec6ee583"
+}
