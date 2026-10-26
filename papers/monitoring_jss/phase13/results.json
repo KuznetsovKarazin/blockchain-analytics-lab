@@ -1,0 +1,151 @@
+{
+  "attempts": [
+    {
+      "automatic_retry_split_or_fallback": false,
+      "completed_window_chunks": 0,
+      "failure_http_status": 400,
+      "failure_rpc_code": 35,
+      "first_event_interval_inclusive": [
+        14233163,
+        14238162
+      ],
+      "general_provider_range_limit_established": false,
+      "inclusive_block_count": 5000,
+      "name": "code_window_attempt1",
+      "new_rpc_methods": 19,
+      "nominal_replay_performed": false,
+      "provider": "dRPC",
+      "request_ledger_sha256": "0e53953ab41600cdf1d426733f8babc638739df6d4dfa5b780fa76f09603cc67",
+      "retained_response_bytes": 154568,
+      "status": "UNAVAILABLE_UNDER_FROZEN_CAP",
+      "successful_code_responses": 18,
+      "summary_sha256": "05f5793c3a0bd3b23c81006657200c1f925f70ecd94a4cbcd118dd1f25ec61c3",
+      "window_events_observed": null,
+      "window_log_requests": 1
+    },
+    {
+      "automatic_retry_split_or_fallback": false,
+      "completed_window_chunks": 0,
+      "failure_http_status": 200,
+      "failure_rpc_code": 4444,
+      "general_provider_retention_boundary_established": false,
+      "header_requests_attempted": 1,
+      "header_results_observed": 0,
+      "name": "publicnode_history_attempt1",
+      "new_rpc_methods": 2,
+      "nominal_replay_performed": false,
+      "positive_control_requests": 0,
+      "positive_control_result": null,
+      "provider": "PublicNode",
+      "reported_earliest_available_block": 15500000,
+      "request_ledger_sha256": "db0b3d0367e375981abd675d120cbe66aef074d7ae758d60ec9b9d7e482a74df",
+      "retained_response_bytes": 175,
+      "separately_frozen_provider_change": true,
+      "status": "UNAVAILABLE_UNDER_FROZEN_CAP",
+      "successful_chain_id_results": 1,
+      "summary_sha256": "41bc33710ebd96d1735327ee4b66fb9197e57f0e6ad68e6a00c8221b26606baf",
+      "window_events_observed": null,
+      "window_log_requests": 0
+    }
+  ],
+  "documentation_lookup": {
+    "backend_http_requests": null,
+    "backend_response_bytes": null,
+    "chain_rpc_requests": 0,
+    "direct_page_opens": 2,
+    "search_queries": 3,
+    "web_tool_calls": 2
+  },
+  "fixed_window_utc": [
+    "2022-02-19T00:00:00Z",
+    "2022-03-21T00:00:00Z"
+  ],
+  "independent_review_statuses": {
+    "independent_actual_review.json": "PASS_INDEPENDENT_CODE_AND_WINDOW_EVENT_AUDIT",
+    "independent_history_review.json": "PASS_PRESERVED_PUBLICNODE_HISTORY_UNAVAILABILITY",
+    "independent_runtime_match_review.json": "PASS_ALL_RETAINED_FULL_RUNTIME_BYTE_COMPARISONS"
+  },
+  "ledger_entries_after_phase13": 54,
+  "next_step": "Establish evidenced archive/event-source access and bind relevant code among the eight unmatched sampled facets under a separate bounded plan; no algorithm rework. A different estimand requires a separate prospective all-frame amendment before affected measurements.",
+  "phase13_totals": {
+    "detector_scores": 0,
+    "incident_transaction_payload_queries": 0,
+    "new_compiler_invocations": 0,
+    "new_rpc_methods": 21,
+    "new_source_fetches": 0,
+    "nominal_replays": 0,
+    "observed_window_event_count": null,
+    "retained_response_bytes": 154743,
+    "scientific_admissions": 0,
+    "successful_window_event_chunks": 0
+  },
+  "prior_ledger_entries_preserved": 51,
+  "public_reproduction_limit": "Exact private evidence and retained source/compiler artifacts are separate dependencies; public code and summaries are not a standalone full-source rebuild kit.",
+  "retained_compiler_comparison": {
+    "comparison_includes_metadata": true,
+    "comparison_pair_count": 684,
+    "compiled_contract_count": 59,
+    "compiled_source_path_count": 44,
+    "exact_match_observation_count": 11,
+    "exact_match_unique_addresses": 6,
+    "exact_matching_compiled_contracts": [
+      "DiamondCutFacet",
+      "DiamondLoupeFacet",
+      "OwnershipFacet",
+      "WithdrawFacet",
+      "NXTPFacet",
+      "CBridgeFacet"
+    ],
+    "excluded_empty_count": 23,
+    "excluded_missing_or_nonhex_count": 0,
+    "metadata_masking": false,
+    "new_compiler_invocations": 0,
+    "new_network_requests": 0,
+    "new_source_fetches": 0,
+    "newly_source_bound_address_count": 5,
+    "newly_source_bound_addresses": [
+      "0x5aa32689e546f04e9a8dbfc4491bd9ef691528a5",
+      "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+      "0xd66d7a4f3ae46ac64e492fff4236b5d97ef1c961",
+      "0xe7ec816130b0a2c006ec54682e08d2b38814294f"
+    ],
+    "nonempty_full_bytes_candidate_count": 36,
+    "observation_count": 19,
+    "unique_observed_addresses": 14,
+    "unique_observed_full_runtime_digests": 14,
+    "unmatched_addresses": 8,
+    "unmatched_observations": 8
+  },
+  "sampled_runtime": {
+    "address_checkpoint_observations": 19,
+    "changed_bindings_with_different_full_runtime_bytes": 14,
+    "changed_shared_selector_destination_bindings": 14,
+    "continuous_identity_or_activation_epochs_proved": false,
+    "distinct_full_runtime_digests": 14,
+    "empty_runtime_observations": 0,
+    "fresh_code_responses": 18,
+    "reused_prior_code_responses": 1,
+    "semantic_difference_proved": false,
+    "shared_window_endpoint_addresses": 4,
+    "shared_window_endpoint_addresses_with_identical_bytes": 4,
+    "unique_addresses": 14
+  },
+  "schema": "article2_phase13_staged_results_v1",
+  "scientific_limits": {
+    "all_frame_estimand_amendment_adopted": false,
+    "automatic_fixed_address_fallback": false,
+    "candidate_order_window_methods_thresholds_warmup_grouping_or_budgets_changed": false,
+    "case_exclusion": false,
+    "complete_population_proved": false,
+    "cryptographic_state_proofs_verified": false,
+    "event_index_completeness_proved": false,
+    "hidden_mutation_paths_excluded": false,
+    "historical_routing_proved": false,
+    "labels_joined": false,
+    "new_detector_performance_result": false
+  },
+  "scope_disposition": "RETAIN_ACCEPTED_ROUTING_POPULATION_SCOPE_BOUNDED_DISCOVERY_ONLY",
+  "status": "COMPLETE_SAMPLED_CODE_BINDINGS_AUDITED_HISTORY_UNAVAILABLE",
+  "updated_at_utc": "2026-10-26T18:56:36.536114+00:00"
+}

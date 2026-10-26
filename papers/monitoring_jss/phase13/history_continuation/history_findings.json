@@ -1,0 +1,72 @@
+{
+  "completed_all_39_window_chunks": false,
+  "detector_scores": 0,
+  "disposition": "UNAVAILABLE_UNDER_FROZEN_CAP",
+  "end_checkpoint_comparison": null,
+  "event_type_counts_in_retained_records": {},
+  "events": [],
+  "historical_routing_proved": false,
+  "limits": [
+    "Positive control checks a known two-event subset at one earlier block, not complete study-window retrieval.",
+    "Reference-header agreement is provider-data consistency, not cryptographic state or consensus authentication.",
+    "A complete scheduled event list and matching nominal end state do not exclude unlogged writes or initializer effects.",
+    "Unavailable event history is not an empty history; partial or absent records do not justify case exclusion.",
+    "Inited-shaped events are not automatically attributable to one facet or effective bridge configuration.",
+    "No new runtime, source, transaction-payload, detector-score or label acquisition follows from discovered targets."
+  ],
+  "matched_reference_headers": {},
+  "new_network_requests_for_this_summary": 0,
+  "new_replay_executions_for_this_summary": 0,
+  "new_request_accounting": {
+    "chain_id_queries": 1,
+    "completed_log_chunks": 0,
+    "fresh_headers": 1,
+    "positive_control_log_queries": 0,
+    "retained_response_bytes": 175,
+    "rpc_methods": 2,
+    "window_log_requests": 0
+  },
+  "nominal_replay_error": null,
+  "nominal_replay_events_applied": null,
+  "nominal_replay_performed": false,
+  "nominal_seed_block_end": 14233162,
+  "phase13_cumulative_retained_response_bytes": 154743,
+  "phase13_cumulative_rpc_methods": 21,
+  "plan_sha256": "210841deb0cd70655088d34ec84785d92780d22846d9cec7948206cd28fa48ad",
+  "positive_control": null,
+  "prior_attempt_summary_sha256": "05f5793c3a0bd3b23c81006657200c1f925f70ecd94a4cbcd118dd1f25ec61c3",
+  "provider_index_completeness_proved": false,
+  "requests_sha256": "db0b3d0367e375981abd675d120cbe66aef074d7ae758d60ec9b9d7e482a74df",
+  "retained_cut_entries_by_action": {},
+  "retained_decoded_window_records": 0,
+  "retained_initializer_targets": [],
+  "retained_nonzero_initializer_event_count": 0,
+  "retained_selector_references_by_action": {
+    "Add": 0,
+    "Remove": 0,
+    "Replace": 0
+  },
+  "returned_complete_window_event_count": null,
+  "runner_sha256": "327bf96024b37080958d7d683931347064a9b464969f76c01600042f81945182",
+  "schema_version": "article2_phase13_publicnode_history_findings_v1",
+  "scientific_admissions": 0,
+  "study_window_utc": [
+    "2022-02-19T00:00:00Z",
+    "2022-03-21T00:00:00Z"
+  ],
+  "summary_sha256": "41bc33710ebd96d1735327ee4b66fb9197e57f0e6ad68e6a00c8221b26606baf",
+  "transport_failure": {
+    "http_status": 200,
+    "key": "start_header",
+    "ordinal": 2,
+    "request_sha256": "33842e582c4a6ba02f99c2f444368b0fd07623b91945fe6db5176c4c359df060",
+    "response_bytes": 135,
+    "response_sha256": "18ba6166ae2f4cfb7e13b52613675a2dac37b11df1c3293ffb6b1317b1540f45",
+    "rpc_error_code": 4444,
+    "rpc_error_message": "pruned history unavailable: requested 14233162, earliest available 15500000"
+  },
+  "window_blocks_inclusive": [
+    14233163,
+    14426367
+  ]
+}

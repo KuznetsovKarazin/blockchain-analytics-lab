@@ -1,0 +1,28 @@
+{
+  "schema": "article2_phase13_provider_documentation_v1",
+  "consulted_date": "2026-10-26",
+  "purpose": "Select one explicit public Ethereum endpoint for a separately frozen availability continuation after two preserved dRPC administrative-log refusals.",
+  "primary_sources": [
+    {
+      "url": "https://ethereum.publicnode.com/",
+      "observed_endpoint": "https://ethereum-rpc.publicnode.com",
+      "supported_claim": "The provider's Ethereum page lists this RPC endpoint and advertises archive data availability.",
+      "limit": "The page does not establish unauthenticated access to the required historical logs, a numerical range allowance, completeness or independent infrastructure. Actual availability will be measured under the frozen request schedule. No account creation or paid access is authorized by this note."
+    },
+    {
+      "url": "https://ethereum.org/developers/docs/apis/json-rpc/",
+      "supported_claim": "The documented eth_getLogs filter accepts an address and OR topics, and a blockHash filter instead of fromBlock/toBlock for a single block.",
+      "limit": "API semantics do not prove this provider implements every method or returns an exhaustive historical index."
+    }
+  ],
+  "lookup_accounting": {
+    "web_tool_calls": 2,
+    "search_queries": 3,
+    "direct_page_opens": 2,
+    "backend_http_request_count": null,
+    "backend_response_bytes": null,
+    "chain_rpc_requests": 0
+  },
+  "design": "A new provider attempt is an exposed retrieval adaptation. Prior failed attempts and byte accounting remain unchanged. The study window, target, event signatures, methods and eligibility do not change.",
+  "full_web_renderings_in_public_or_download_artifacts": false
+}

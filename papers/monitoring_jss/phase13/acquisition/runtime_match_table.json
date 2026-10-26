@@ -1,0 +1,888 @@
+{
+  "analysis_type": "Retrospective follow-on identity comparison after the frozen acquisition; no new runtime target or source fetch.",
+  "candidate_inventory": [
+    {
+      "contract_name": "Ownable",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "@openzeppelin/contracts/access/Ownable.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "ERC1967Upgrade",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "Proxy",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "@openzeppelin/contracts/proxy/Proxy.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BeaconProxy",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 833,
+      "runtime_sha256": "d429425aed86d5c110400c49a050f62554336c43241f6064969efd77c24059ce",
+      "source_path": "@openzeppelin/contracts/proxy/beacon/BeaconProxy.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IBeacon",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "@openzeppelin/contracts/proxy/beacon/IBeacon.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "ERC20",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 2244,
+      "runtime_sha256": "472ccdda4dbb16154e5bd1cae202438f69b99ce349e296e51c366ea0be971461",
+      "source_path": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IERC20",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IERC20Metadata",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "SafeERC20",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 86,
+      "runtime_sha256": "1959c667ab4376fc9cf346557b726cf8b356b93ea5b50004c30b5bb4232f243f",
+      "source_path": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "Address",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 86,
+      "runtime_sha256": "1d29803c1b6012b0834b9327935d19bffe5a922d509246c2d8e2617ab4bb0158",
+      "source_path": "@openzeppelin/contracts/utils/Address.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "Context",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "@openzeppelin/contracts/utils/Context.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "StorageSlot",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 86,
+      "runtime_sha256": "26b696c7f43acb91e97d004461be7b8550b686c6bb98e6a7cbf1b0050fcc9799",
+      "source_path": "@openzeppelin/contracts/utils/StorageSlot.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "AnyswapFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 5532,
+      "runtime_sha256": "adc736d88e9985578bd55579080cd133ce7e142fcfe7a8d4929c027de2a98896",
+      "source_path": "src/Facets/AnyswapFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BiconomyFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 5381,
+      "runtime_sha256": "80344b15d08ff4496d95d38204f92b7f086a05ea306b5a053492d7d06c3c345b",
+      "source_path": "src/Facets/BiconomyFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "CBridgeFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 5686,
+      "runtime_sha256": "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00",
+      "source_path": "src/Facets/CBridgeFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "DiamondCutFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 5298,
+      "runtime_sha256": "da9e99f0357e2cc40568d03606fc7fb41a45055eff75d4b14d4fab87cbd2d3cf",
+      "source_path": "src/Facets/DiamondCutFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "DiamondLoupeFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 1680,
+      "runtime_sha256": "871a93522f311c93cc646786ea43cb3115d13581577c33b7f86312c2f7360f2d",
+      "source_path": "src/Facets/DiamondLoupeFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "GenericBridgeFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 4566,
+      "runtime_sha256": "da6813fa2734afc44980701a55605b5693f11baed760a6ea562f3703d78ca74b",
+      "source_path": "src/Facets/GenericBridgeFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "HopFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 6359,
+      "runtime_sha256": "1c530ab4be9f97c641aa5a5729a47629a197661b7db7f5398539ddcd7cc211a4",
+      "source_path": "src/Facets/HopFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "NXTPFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 7665,
+      "runtime_sha256": "2139f30407ed3f867d7bbffc67dce9798de8b7da224f6a06deb670154fec871c",
+      "source_path": "src/Facets/NXTPFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "Home",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Facets/OpticsRouterFacet.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "OpticsRouterFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 3792,
+      "runtime_sha256": "d54e28b6b4e08a1e974bc663915f266f08e600654ffb1f87e02b68abc85b7c0a",
+      "source_path": "src/Facets/OpticsRouterFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "OwnershipFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 584,
+      "runtime_sha256": "30499ec8ae7d4101ea3c0abaea02d1c9055b41a36783bfc1183d8a934c6763ec",
+      "source_path": "src/Facets/OwnershipFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "WithdrawFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 1600,
+      "runtime_sha256": "c70d2e886bbd0425877c52cd214f4fc87d9ad1721518d5b90eb0c1ebbdf50b02",
+      "source_path": "src/Facets/WithdrawFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "WormholeFacet",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 5181,
+      "runtime_sha256": "ba7269a8b9d59f103ba192436a7ffd9f3470ad353bfae173286618de3b86913b",
+      "source_path": "src/Facets/WormholeFacet.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IAnyswapRouter",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/IAnyswapRouter.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IAnyswapToken",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/IAnyswapToken.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IBiconomyRouter",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/IBiconomyRouter.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "ICBridge",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/ICBridge.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IDiamondCut",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/IDiamondCut.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IDiamondLoupe",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/IDiamondLoupe.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IERC165",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/IERC165.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IERC173",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/IERC173.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IHopBridge",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/IHopBridge.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "ILiFi",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/ILiFi.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "ITransactionManager",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/ITransactionManager.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IWormholeRouter",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Interfaces/IWormholeRouter.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "LiFiDiamond",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 4581,
+      "runtime_sha256": "c03fa708d3e65b647c904cbc7582412123fe5a725502ea208bd030a840534917",
+      "source_path": "src/LiFiDiamond.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "LibAsset",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 86,
+      "runtime_sha256": "2034c74c22598d560e29c402df382aecf28343c2b78b61f854b144ca7d23b438",
+      "source_path": "src/Libraries/LibAsset.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "LibBytes",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 86,
+      "runtime_sha256": "cddff7dcdbec0407e180e945b430a19ad7c5225bbb8eecbd81adbf874d8a6eca",
+      "source_path": "src/Libraries/LibBytes.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "LibDiamond",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 86,
+      "runtime_sha256": "28f73e45ef20434d2de7dcb9cef25a56819e6ff487ab1de85b5717e71b84465e",
+      "source_path": "src/Libraries/LibDiamond.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "LibSwap",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 86,
+      "runtime_sha256": "69858a5a810f8717a018cc44075a876ca16fde8ff048ed92a1a7b32f1ae08a39",
+      "source_path": "src/Libraries/LibSwap.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "LibUtil",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 86,
+      "runtime_sha256": "83dd3efc2825894b488c386786660de82036808c211d53d1bfbe20fdea708351",
+      "source_path": "src/Libraries/LibUtil.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "USDT",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 2244,
+      "runtime_sha256": "b5cb7a538553c9db56e92026435643d616f4a205a9b0b543330cd16a07df3a37",
+      "source_path": "src/Test/USDT.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "Bridge",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 19403,
+      "runtime_sha256": "acb99af211f734f12476a5202f6f628bae750ca533cb6cb7ea50ee88fdbf00a3",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BridgeGetters",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 887,
+      "runtime_sha256": "fbdcaafdb570a3e49e1009ad0af26416da3a88d37db2e6e18ee60e78b4567b69",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BridgeGovernance",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 5280,
+      "runtime_sha256": "d3879e59df3b9cfc161ca1f950c0f1234a189d1d717414d33df3c7f5e2fc1924",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BridgeSetters",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 63,
+      "runtime_sha256": "ee70205bcc711c1fb87323590732339a775e58598e6e1efeed58c4c63fff2baa",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BridgeState",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 63,
+      "runtime_sha256": "e50ee1bbde35dea4bb7cac114802fb9a13b290ccb87b42910c00b49f284d9a9b",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BridgeStorage",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 63,
+      "runtime_sha256": "24227f492a916dab313d6498207905dc14e368b8ea40e270c4f32eb600307c13",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BridgeStructs",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 63,
+      "runtime_sha256": "2d1913f0177e759880130cf9207d2c00ffddf58b863e0403d92f1e4598f8cf5e",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BridgeToken",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 833,
+      "runtime_sha256": "ac6ca4cec9a2000051bad34624f93c1350a5f0ffcedf377643bdcc7403d70c6c",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "BytesLib",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 86,
+      "runtime_sha256": "26feac10f6a08423e27592ae021867e59cc8f17e3fac14558425358eb19f06d3",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IWETH",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "IWormhole",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "Structs",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 0,
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "EMPTY_RUNTIME_NOT_A_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "TokenImplementation",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 4606,
+      "runtime_sha256": "55bd9557932181527c00105cd1ffa9d627ae39715ffc90e616e8b7aa3490e85c",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "TokenState",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 63,
+      "runtime_sha256": "e8e7fb09229c45295d2ff73423962384f2a2c9fbc18cf9b32028b6da2757e4b3",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    },
+    {
+      "contract_name": "TokenStorage",
+      "full_runtime_includes_compiler_metadata": true,
+      "immutable_reference_count": 0,
+      "link_reference_file_count": 0,
+      "runtime_bytes": 63,
+      "runtime_sha256": "ad1e81eae60ef3c02db3f9f04d57b8a0dcdbe5fbbf0afcc53a93b516b0832d8c",
+      "source_path": "src/Test/WormholeRouter.sol",
+      "status": "NONEMPTY_FULL_BYTES_COMPARISON_CANDIDATE"
+    }
+  ],
+  "comparison_pair_count": 684,
+  "compiled_contract_count": 59,
+  "compiled_source_path_count": 44,
+  "detector_scores": 0,
+  "exact_match_observation_count": 11,
+  "exact_match_unique_addresses": 6,
+  "excluded_empty_count": 23,
+  "excluded_missing_or_nonhex_count": 0,
+  "limits": [
+    "Exact matches bind the full sampled runtime to an existing reproduced compiler output under its retained source/settings provenance.",
+    "The same compiler was used for the earlier independent reproduction; this is not compiler diversity or formal proof.",
+    "No match does not establish semantic difference, malicious code, unavailable source or a failed scientific case.",
+    "Equality at sampled blocks does not prove continuous identity or historical selector activation between samples.",
+    "Full compiler output and source-bearing metadata remain private; this table contains hashes, lengths and contract identifiers only."
+  ],
+  "masked_bytes": 0,
+  "new_case_admissions": 0,
+  "new_compiler_invocations": 0,
+  "new_network_requests": 0,
+  "nonempty_full_bytes_candidate_count": 36,
+  "observation_count": 19,
+  "observations": [
+    {
+      "address": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+      "block_hash": "0x215605d842319a17d7d686b4d9822c6f2cef994ab3b91ced06a4098ab3eaf186",
+      "block_number": 13984588,
+      "checkpoint": "creation",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/DiamondCutFacet.sol:DiamondCutFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "227a2a9d0001fff5979160ccca87a3119f326f8305e92085da5c02b71ef21965",
+      "runtime_bytes": 5298,
+      "runtime_keccak256": "0xbf8b100377b6826d7994d8ce4959035901cdaa22b5b63178ddaf2f34882f6b0f",
+      "runtime_sha256": "da9e99f0357e2cc40568d03606fc7fb41a45055eff75d4b14d4fab87cbd2d3cf"
+    },
+    {
+      "address": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "checkpoint": "start",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/DiamondCutFacet.sol:DiamondCutFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "f0338dfc348afab8b2cf56a626c8bb93b0a4ddbfe53acf1d0cfea61921ceb406",
+      "runtime_bytes": 5298,
+      "runtime_keccak256": "0xbf8b100377b6826d7994d8ce4959035901cdaa22b5b63178ddaf2f34882f6b0f",
+      "runtime_sha256": "da9e99f0357e2cc40568d03606fc7fb41a45055eff75d4b14d4fab87cbd2d3cf"
+    },
+    {
+      "address": "0xd66d7a4f3ae46ac64e492fff4236b5d97ef1c961",
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "checkpoint": "start",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/DiamondLoupeFacet.sol:DiamondLoupeFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "168904790963b477eff0dc2dbb706a480a956d777e624420937c558cffe25a1f",
+      "runtime_bytes": 1680,
+      "runtime_keccak256": "0x93bbd209ce078abb4e6b88893268902cbf1d48f7a0c2c4f0c3faa3f917ba0168",
+      "runtime_sha256": "871a93522f311c93cc646786ea43cb3115d13581577c33b7f86312c2f7360f2d"
+    },
+    {
+      "address": "0xe7ec816130b0a2c006ec54682e08d2b38814294f",
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "checkpoint": "start",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/OwnershipFacet.sol:OwnershipFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "03f5248760f23c19c4de34191786c71039043b122070561a2203c084164dd538",
+      "runtime_bytes": 584,
+      "runtime_keccak256": "0x71638e7512577c07bd9a600570fa361c0c1b22c392b06748fb57b89b62162ed0",
+      "runtime_sha256": "30499ec8ae7d4101ea3c0abaea02d1c9055b41a36783bfc1183d8a934c6763ec"
+    },
+    {
+      "address": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "checkpoint": "start",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/NXTPFacet.sol:NXTPFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "8acd8008796d2b83884f8a4fa930adb50c5afd16b368e95d978c7d7dda4c9049",
+      "runtime_bytes": 7665,
+      "runtime_keccak256": "0x68862981b13f22d8984f1e0cbb3e8c44db8c2729137a408f4806f888c8420310",
+      "runtime_sha256": "2139f30407ed3f867d7bbffc67dce9798de8b7da224f6a06deb670154fec871c"
+    },
+    {
+      "address": "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "checkpoint": "start",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [],
+      "full_bytes_equal": false,
+      "masked_bytes": 0,
+      "response_sha256": "0d2e203dc7644bc9969f1a0313404c11754353570d33aa424824dc9ff562cf71",
+      "runtime_bytes": 6336,
+      "runtime_keccak256": "0xf2c4e6a438cffaeddff6bd6a0dd3f02928e68f2db9c26cf7c7ba2f89430a2f33",
+      "runtime_sha256": "823c93cf42888bb6a333a8404979185581fb93c67375f443e6cb5fa91e4720ae"
+    },
+    {
+      "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "checkpoint": "start",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/CBridgeFacet.sol:CBridgeFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "2d8227d2d7398ca40ab7f56c8db496ace4f65f76d413b5131369198ac3bc8706",
+      "runtime_bytes": 5686,
+      "runtime_keccak256": "0x6202b34b20ac4419ec8580f85d6fd1ad8a25db62981d13310efd5b2dec8dd401",
+      "runtime_sha256": "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00"
+    },
+    {
+      "address": "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "checkpoint": "start",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [],
+      "full_bytes_equal": false,
+      "masked_bytes": 0,
+      "response_sha256": "579d9e0feaaae2366957af21dabc4584f36ea516729eebbf7406c7852c5eeaad",
+      "runtime_bytes": 5423,
+      "runtime_keccak256": "0xe5298cfae86b0c1abd4995665d59c04227813b9c4ef61fa99d8364232da1a412",
+      "runtime_sha256": "205c79616553b921f4e488d63488fc294bba4f4813cebb931bcbb656ddef16cc"
+    },
+    {
+      "address": "0x5aa32689e546f04e9a8dbfc4491bd9ef691528a5",
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "checkpoint": "start",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/WithdrawFacet.sol:WithdrawFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "4e9e00d1ecee3bb435fb4e3d86675616bf01a5c09e6fd8fae42ebff6cdc970fe",
+      "runtime_bytes": 1600,
+      "runtime_keccak256": "0x860d47a30b2db80c67a3bc2f6035c8b42af772cc3d715fd08547966767a6c205",
+      "runtime_sha256": "c70d2e886bbd0425877c52cd214f4fc87d9ad1721518d5b90eb0c1ebbdf50b02"
+    },
+    {
+      "address": "0xe73b96b69870e9db5a5283e674f9fe62c89cc7a2",
+      "block_hash": "0x095c8195a3aa15af932a2bd7182899e3bac487fd9971ba2d7afbbba1eb0b8b3d",
+      "block_number": 14233162,
+      "checkpoint": "start",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [],
+      "full_bytes_equal": false,
+      "masked_bytes": 0,
+      "response_sha256": "39633c2cbdce10aa9a5766b306c9337d68f4a6ed8e9ddb095cb9fd300bb11e34",
+      "runtime_bytes": 4738,
+      "runtime_keccak256": "0x9c21edf8c7469f7a8e4af55adc1a5aabcf48acdf5174aa819fff5584e64c12f5",
+      "runtime_sha256": "fd98e5006b48e44a9721607ead43814a3f40c9fed3530bb63bf86261c6d2a80b"
+    },
+    {
+      "address": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "checkpoint": "end",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/DiamondCutFacet.sol:DiamondCutFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "44fa2b00fd6490baaa5afbc932d351185c6328e04f5fd599795b2be2a204a5f3",
+      "runtime_bytes": 5298,
+      "runtime_keccak256": "0xbf8b100377b6826d7994d8ce4959035901cdaa22b5b63178ddaf2f34882f6b0f",
+      "runtime_sha256": "da9e99f0357e2cc40568d03606fc7fb41a45055eff75d4b14d4fab87cbd2d3cf"
+    },
+    {
+      "address": "0xd66d7a4f3ae46ac64e492fff4236b5d97ef1c961",
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "checkpoint": "end",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/DiamondLoupeFacet.sol:DiamondLoupeFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "6569b56cae4ead1f86d8f42047872b479e3ed87b2e13a50147a44a34150e5e32",
+      "runtime_bytes": 1680,
+      "runtime_keccak256": "0x93bbd209ce078abb4e6b88893268902cbf1d48f7a0c2c4f0c3faa3f917ba0168",
+      "runtime_sha256": "871a93522f311c93cc646786ea43cb3115d13581577c33b7f86312c2f7360f2d"
+    },
+    {
+      "address": "0xe7ec816130b0a2c006ec54682e08d2b38814294f",
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "checkpoint": "end",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/OwnershipFacet.sol:OwnershipFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "cbef244c4562d7fc91bde23c37cd7cc118a5fd543befca09be45292a4f4ffbf0",
+      "runtime_bytes": 584,
+      "runtime_keccak256": "0x71638e7512577c07bd9a600570fa361c0c1b22c392b06748fb57b89b62162ed0",
+      "runtime_sha256": "30499ec8ae7d4101ea3c0abaea02d1c9055b41a36783bfc1183d8a934c6763ec"
+    },
+    {
+      "address": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "checkpoint": "end",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [],
+      "full_bytes_equal": false,
+      "masked_bytes": 0,
+      "response_sha256": "42650907b91261705570a5d64877679d8b4eedc734b35d2ad63bb6eaf454e3dc",
+      "runtime_bytes": 8199,
+      "runtime_keccak256": "0x55259b013dbacb9b5d80db0458616e62761331ccd121bb44eb12bbe12bb97e3d",
+      "runtime_sha256": "ab5a87381e0b19aed5ba5d6741810eb0fca638f86e7e2cec1818673e090aceee"
+    },
+    {
+      "address": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "checkpoint": "end",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [],
+      "full_bytes_equal": false,
+      "masked_bytes": 0,
+      "response_sha256": "642df79ebfaf942e5066275fdb896f8b6cb8b5c43f00c57a5aee3d32f7c37781",
+      "runtime_bytes": 6622,
+      "runtime_keccak256": "0x666751aa3e0d04e918d8a20b00919d5c9dc14e19f7dd4180a7ce854b6bcea713",
+      "runtime_sha256": "ece7d9879cd03e41a01c0bfdc090b1cc4b852aee66eefbfd30107ae6e9002902"
+    },
+    {
+      "address": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "checkpoint": "end",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [],
+      "full_bytes_equal": false,
+      "masked_bytes": 0,
+      "response_sha256": "53af50940bc90b2cb14aeb6a5f636cdf6d031c5ee7202c4750525fdbb5129e9d",
+      "runtime_bytes": 6216,
+      "runtime_keccak256": "0xb00a370c36f2e83c2522cbfb25632d93f8de4504f721b4480145563811aafa43",
+      "runtime_sha256": "9f03acee876e890f859d6a7f3d8f51a7a95d594a3886130276ac65446136e432"
+    },
+    {
+      "address": "0x4f932770648a1f53c19342d38bc02dba06527246",
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "checkpoint": "end",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [],
+      "full_bytes_equal": false,
+      "masked_bytes": 0,
+      "response_sha256": "6e8a42eaa361f7e086badaf7f4820129b4129c3027775f90a44968fb109e2527",
+      "runtime_bytes": 6062,
+      "runtime_keccak256": "0x18b96286337895470ac5d730a119d706425200da1fe4da2bc9e5123a6b4d8265",
+      "runtime_sha256": "4b1cd0a6b021e152b08a46d8c0a21faef69c91ada8192d2b9173f0c5cc9693f5"
+    },
+    {
+      "address": "0x5aa32689e546f04e9a8dbfc4491bd9ef691528a5",
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "checkpoint": "end",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/WithdrawFacet.sol:WithdrawFacet"
+      ],
+      "full_bytes_equal": true,
+      "masked_bytes": 0,
+      "response_sha256": "61e6d8b60746a1e03c718babbe95ecbc56f3d3d020d7eb3d7dbc94f426bd6515",
+      "runtime_bytes": 1600,
+      "runtime_keccak256": "0x860d47a30b2db80c67a3bc2f6035c8b42af772cc3d715fd08547966767a6c205",
+      "runtime_sha256": "c70d2e886bbd0425877c52cd214f4fc87d9ad1721518d5b90eb0c1ebbdf50b02"
+    },
+    {
+      "address": "0x62f7dc4742ed19716fd4e4fd1aa79b6ec2dcced8",
+      "block_hash": "0x1be7c1e841247d74e50f67ec7f943eaed040057ce6a5670d14be5ca30edf62dd",
+      "block_number": 14426367,
+      "checkpoint": "end",
+      "equality_includes_metadata": true,
+      "exact_matching_compiled_contracts": [],
+      "full_bytes_equal": false,
+      "masked_bytes": 0,
+      "response_sha256": "6c58442f106d6d2f9c0ec8a72c06fcafbed7f0f819c7e980acc87f07a28e40bd",
+      "runtime_bytes": 1998,
+      "runtime_keccak256": "0x6638f20be1c0e55d907cb09e5b1969a233f1ac5ba8d3cb17f704880a248cab24",
+      "runtime_sha256": "4b745dc6d7e5f3d905180350cb4d436f6c92f7acc2e90a231866607518cbb745"
+    }
+  ],
+  "schema_version": "article2_phase13_retained_compiler_runtime_comparison_v1",
+  "settings_searches": 0,
+  "status": "OFFLINE_ALL_RETAINED_CONTRACTS_FULL_BYTES_COMPARED",
+  "unique_observed_addresses": 14,
+  "unique_observed_full_runtime_digests": 14
+}

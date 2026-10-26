@@ -1,0 +1,504 @@
+{
+  "acquisition": {
+    "completed_log_chunks": 0,
+    "completed_runtime_observations": 19,
+    "disposition": "UNAVAILABLE_UNDER_FROZEN_CAP",
+    "empty_runtime_observation_count": 0,
+    "fresh_code_requests": 18,
+    "nominal_replay_performed": false,
+    "retained_response_bytes": 154568,
+    "rpc_methods": 19,
+    "window_log_requests": 1
+  },
+  "administrative_entrypoint_checkpoint_bindings": [
+    {
+      "entrypoint": "diamondCut",
+      "interval_authority_or_exhaustive_writer_coverage_proved": false,
+      "observed_bindings": [
+        {
+          "checkpoint": "creation",
+          "exact_matching_compiled_contracts": [
+            "src/Facets/DiamondCutFacet.sol:DiamondCutFacet"
+          ],
+          "facet": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+          "runtime_sha256": "da9e99f0357e2cc40568d03606fc7fb41a45055eff75d4b14d4fab87cbd2d3cf"
+        },
+        {
+          "checkpoint": "start",
+          "exact_matching_compiled_contracts": [
+            "src/Facets/DiamondCutFacet.sol:DiamondCutFacet"
+          ],
+          "facet": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+          "runtime_sha256": "da9e99f0357e2cc40568d03606fc7fb41a45055eff75d4b14d4fab87cbd2d3cf"
+        },
+        {
+          "checkpoint": "end",
+          "exact_matching_compiled_contracts": [
+            "src/Facets/DiamondCutFacet.sol:DiamondCutFacet"
+          ],
+          "facet": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+          "runtime_sha256": "da9e99f0357e2cc40568d03606fc7fb41a45055eff75d4b14d4fab87cbd2d3cf"
+        }
+      ],
+      "selector": "0x1f931c1c"
+    },
+    {
+      "entrypoint": "transferOwnership",
+      "interval_authority_or_exhaustive_writer_coverage_proved": false,
+      "observed_bindings": [
+        {
+          "checkpoint": "start",
+          "exact_matching_compiled_contracts": [
+            "src/Facets/OwnershipFacet.sol:OwnershipFacet"
+          ],
+          "facet": "0xe7ec816130b0a2c006ec54682e08d2b38814294f",
+          "runtime_sha256": "30499ec8ae7d4101ea3c0abaea02d1c9055b41a36783bfc1183d8a934c6763ec"
+        },
+        {
+          "checkpoint": "end",
+          "exact_matching_compiled_contracts": [
+            "src/Facets/OwnershipFacet.sol:OwnershipFacet"
+          ],
+          "facet": "0xe7ec816130b0a2c006ec54682e08d2b38814294f",
+          "runtime_sha256": "30499ec8ae7d4101ea3c0abaea02d1c9055b41a36783bfc1183d8a934c6763ec"
+        }
+      ],
+      "selector": "0xf2fde38b"
+    }
+  ],
+  "changed_bindings_with_different_full_runtime_bytes": 14,
+  "changed_selector_bindings_count": 14,
+  "changed_selector_endpoint_runtime_comparisons": [
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+      "end_runtime_sha256": "9f03acee876e890f859d6a7f3d8f51a7a95d594a3886130276ac65446136e432",
+      "full_runtime_bytes_same": false,
+      "selector": "0x01c0a31a",
+      "semantic_difference_proved": false,
+      "start_facet": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "start_runtime_sha256": "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+      "end_runtime_sha256": "ece7d9879cd03e41a01c0bfdc090b1cc4b852aee66eefbfd30107ae6e9002902",
+      "full_runtime_bytes_same": false,
+      "selector": "0x2722a4a8",
+      "semantic_difference_proved": false,
+      "start_facet": "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+      "start_runtime_sha256": "823c93cf42888bb6a333a8404979185581fb93c67375f443e6cb5fa91e4720ae"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "end_runtime_sha256": "ab5a87381e0b19aed5ba5d6741810eb0fca638f86e7e2cec1818673e090aceee",
+      "full_runtime_bytes_same": false,
+      "selector": "0x28225f0c",
+      "semantic_difference_proved": false,
+      "start_facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "start_runtime_sha256": "2139f30407ed3f867d7bbffc67dce9798de8b7da224f6a06deb670154fec871c"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "end_runtime_sha256": "ab5a87381e0b19aed5ba5d6741810eb0fca638f86e7e2cec1818673e090aceee",
+      "full_runtime_bytes_same": false,
+      "selector": "0x2a7a7042",
+      "semantic_difference_proved": false,
+      "start_facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "start_runtime_sha256": "2139f30407ed3f867d7bbffc67dce9798de8b7da224f6a06deb670154fec871c"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+      "end_runtime_sha256": "ece7d9879cd03e41a01c0bfdc090b1cc4b852aee66eefbfd30107ae6e9002902",
+      "full_runtime_bytes_same": false,
+      "selector": "0x327a564d",
+      "semantic_difference_proved": false,
+      "start_facet": "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+      "start_runtime_sha256": "823c93cf42888bb6a333a8404979185581fb93c67375f443e6cb5fa91e4720ae"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "end_runtime_sha256": "ab5a87381e0b19aed5ba5d6741810eb0fca638f86e7e2cec1818673e090aceee",
+      "full_runtime_bytes_same": false,
+      "selector": "0x4f7c96b5",
+      "semantic_difference_proved": false,
+      "start_facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "start_runtime_sha256": "2139f30407ed3f867d7bbffc67dce9798de8b7da224f6a06deb670154fec871c"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+      "end_runtime_sha256": "9f03acee876e890f859d6a7f3d8f51a7a95d594a3886130276ac65446136e432",
+      "full_runtime_bytes_same": false,
+      "selector": "0x4fd34907",
+      "semantic_difference_proved": false,
+      "start_facet": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "start_runtime_sha256": "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x4f932770648a1f53c19342d38bc02dba06527246",
+      "end_runtime_sha256": "4b1cd0a6b021e152b08a46d8c0a21faef69c91ada8192d2b9173f0c5cc9693f5",
+      "full_runtime_bytes_same": false,
+      "selector": "0x73bbd5c6",
+      "semantic_difference_proved": false,
+      "start_facet": "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+      "start_runtime_sha256": "205c79616553b921f4e488d63488fc294bba4f4813cebb931bcbb656ddef16cc"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "end_runtime_sha256": "ab5a87381e0b19aed5ba5d6741810eb0fca638f86e7e2cec1818673e090aceee",
+      "full_runtime_bytes_same": false,
+      "selector": "0x7d7aecd3",
+      "semantic_difference_proved": false,
+      "start_facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "start_runtime_sha256": "2139f30407ed3f867d7bbffc67dce9798de8b7da224f6a06deb670154fec871c"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "end_runtime_sha256": "ab5a87381e0b19aed5ba5d6741810eb0fca638f86e7e2cec1818673e090aceee",
+      "full_runtime_bytes_same": false,
+      "selector": "0xbfa1fc0a",
+      "semantic_difference_proved": false,
+      "start_facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "start_runtime_sha256": "2139f30407ed3f867d7bbffc67dce9798de8b7da224f6a06deb670154fec871c"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+      "end_runtime_sha256": "9f03acee876e890f859d6a7f3d8f51a7a95d594a3886130276ac65446136e432",
+      "full_runtime_bytes_same": false,
+      "selector": "0xc2c134df",
+      "semantic_difference_proved": false,
+      "start_facet": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "start_runtime_sha256": "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "end_runtime_sha256": "ab5a87381e0b19aed5ba5d6741810eb0fca638f86e7e2cec1818673e090aceee",
+      "full_runtime_bytes_same": false,
+      "selector": "0xcf76d313",
+      "semantic_difference_proved": false,
+      "start_facet": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "start_runtime_sha256": "2139f30407ed3f867d7bbffc67dce9798de8b7da224f6a06deb670154fec871c"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+      "end_runtime_sha256": "ece7d9879cd03e41a01c0bfdc090b1cc4b852aee66eefbfd30107ae6e9002902",
+      "full_runtime_bytes_same": false,
+      "selector": "0xd1026c9c",
+      "semantic_difference_proved": false,
+      "start_facet": "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+      "start_runtime_sha256": "823c93cf42888bb6a333a8404979185581fb93c67375f443e6cb5fa91e4720ae"
+    },
+    {
+      "change_time_or_count_proved": false,
+      "end_facet": "0x4f932770648a1f53c19342d38bc02dba06527246",
+      "end_runtime_sha256": "4b1cd0a6b021e152b08a46d8c0a21faef69c91ada8192d2b9173f0c5cc9693f5",
+      "full_runtime_bytes_same": false,
+      "selector": "0xe18a8fdb",
+      "semantic_difference_proved": false,
+      "start_facet": "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+      "start_runtime_sha256": "205c79616553b921f4e488d63488fc294bba4f4813cebb931bcbb656ddef16cc"
+    }
+  ],
+  "complete_window_event_observations_available": false,
+  "detector_scores": 0,
+  "failure_observations": [
+    {
+      "http_status": 400,
+      "method": "eth_getLogs",
+      "ordinal": 19,
+      "provider_error": {
+        "code": 35
+      },
+      "response_bytes": 113,
+      "response_sha256": "a28b7326335d60285166629cdeb12c8b433cd0cf996fe3509ea9c4db7d5784c3"
+    }
+  ],
+  "full_byte_match_counts": {
+    "comparison_pair_count": 684,
+    "compiled_contract_count": 59,
+    "compiled_source_path_count": 44,
+    "exact_match_observation_count": 11,
+    "exact_match_unique_addresses": 6,
+    "excluded_empty_count": 23,
+    "excluded_missing_or_nonhex_count": 0,
+    "nonempty_full_bytes_candidate_count": 36,
+    "observation_count": 19,
+    "unique_observed_addresses": 14,
+    "unique_observed_full_runtime_digests": 14
+  },
+  "historical_routing_proved": false,
+  "limits": [
+    "All code and registry statements concern sampled provider observations; no account proof or header state-root verification was added.",
+    "Different full runtime bytes can include compiler metadata differences; they do not by themselves prove changed execution semantics.",
+    "A same-address same-code endpoint pair cannot exclude change-and-restore or intervening routing changes.",
+    "Exact existing-compiler-output matches use the prior reproducibility chain with the same compiler, not independent compiler diversity or formal verification.",
+    "No nominal event replay or initializer analysis was possible because the first log query returned an error, not an event array.",
+    "There are no new detector scores, incident payloads, case admissions, exclusion decisions, or changes to the monitoring criteria."
+  ],
+  "new_compiler_invocations": 0,
+  "new_exact_source_runtime_bound_unique_addresses": [
+    "0x5aa32689e546f04e9a8dbfc4491bd9ef691528a5",
+    "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+    "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+    "0xd66d7a4f3ae46ac64e492fff4236b5d97ef1c961",
+    "0xe7ec816130b0a2c006ec54682e08d2b38814294f"
+  ],
+  "new_network_requests_for_offline_analysis": 0,
+  "next_relevant_work": [
+    "Administrative history availability remains unresolved. A separately justified and frozen retrieval design is required before more requests; retain both refused attempts.",
+    "Use the now exact-bound DiamondCutFacet and OwnershipFacet plus the already reviewed LibDiamond source to anchor source-shaped administrative writer analysis.",
+    "Any nonzero initializer or additional facet nominated by future successful history must be handled explicitly; none is identified by an unavailable event response.",
+    "Eight observed facet addresses do not match the retained compiler-output candidates; investigate only relevant reached code under a separate bounded source-binding plan.",
+    "The endpoint CBridge successor at 0x2abfcca3672a853370f59421c6c6f72e5f215d96 remains source-unbound; equal old namespace words do not establish its effective semantics."
+  ],
+  "observed_zero_events_in_window": false,
+  "previously_exact_source_bound_addresses": [
+    "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e"
+  ],
+  "provider_general_range_limit_established": false,
+  "reused_prior_code_pairs": 1,
+  "runtime_groups": [
+    {
+      "address": "0x2abfcca3672a853370f59421c6c6f72e5f215d96",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "end"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [],
+      "runtime_bytes_set": [
+        6216
+      ],
+      "runtime_sha256_set": [
+        "9f03acee876e890f859d6a7f3d8f51a7a95d594a3886130276ac65446136e432"
+      ]
+    },
+    {
+      "address": "0x4f932770648a1f53c19342d38bc02dba06527246",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "end"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [],
+      "runtime_bytes_set": [
+        6062
+      ],
+      "runtime_sha256_set": [
+        "4b1cd0a6b021e152b08a46d8c0a21faef69c91ada8192d2b9173f0c5cc9693f5"
+      ]
+    },
+    {
+      "address": "0x517f5d5f94d2f6faa48ad889467ccf470064ba43",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "end"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [],
+      "runtime_bytes_set": [
+        8199
+      ],
+      "runtime_sha256_set": [
+        "ab5a87381e0b19aed5ba5d6741810eb0fca638f86e7e2cec1818673e090aceee"
+      ]
+    },
+    {
+      "address": "0x5aa32689e546f04e9a8dbfc4491bd9ef691528a5",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "start",
+        "end"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/WithdrawFacet.sol:WithdrawFacet"
+      ],
+      "runtime_bytes_set": [
+        1600
+      ],
+      "runtime_sha256_set": [
+        "c70d2e886bbd0425877c52cd214f4fc87d9ad1721518d5b90eb0c1ebbdf50b02"
+      ]
+    },
+    {
+      "address": "0x62f7dc4742ed19716fd4e4fd1aa79b6ec2dcced8",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "end"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [],
+      "runtime_bytes_set": [
+        1998
+      ],
+      "runtime_sha256_set": [
+        "4b745dc6d7e5f3d905180350cb4d436f6c92f7acc2e90a231866607518cbb745"
+      ]
+    },
+    {
+      "address": "0x69df07bc9f91206406c85105342d2bdf4363f7c5",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "start"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [],
+      "runtime_bytes_set": [
+        6336
+      ],
+      "runtime_sha256_set": [
+        "823c93cf42888bb6a333a8404979185581fb93c67375f443e6cb5fa91e4720ae"
+      ]
+    },
+    {
+      "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "start"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/CBridgeFacet.sol:CBridgeFacet"
+      ],
+      "runtime_bytes_set": [
+        5686
+      ],
+      "runtime_sha256_set": [
+        "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00"
+      ]
+    },
+    {
+      "address": "0x8a017f915029e908bad589ef0f2af84d9dd4c976",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "start"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/NXTPFacet.sol:NXTPFacet"
+      ],
+      "runtime_bytes_set": [
+        7665
+      ],
+      "runtime_sha256_set": [
+        "2139f30407ed3f867d7bbffc67dce9798de8b7da224f6a06deb670154fec871c"
+      ]
+    },
+    {
+      "address": "0xa0239e30356ba1c40ece298f6d18c0ad0cbaf1e1",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "start"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [],
+      "runtime_bytes_set": [
+        5423
+      ],
+      "runtime_sha256_set": [
+        "205c79616553b921f4e488d63488fc294bba4f4813cebb931bcbb656ddef16cc"
+      ]
+    },
+    {
+      "address": "0xb4b4f5d0119f27601471a9392d78788538d52e8c",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "end"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [],
+      "runtime_bytes_set": [
+        6622
+      ],
+      "runtime_sha256_set": [
+        "ece7d9879cd03e41a01c0bfdc090b1cc4b852aee66eefbfd30107ae6e9002902"
+      ]
+    },
+    {
+      "address": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "creation",
+        "start",
+        "end"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/DiamondCutFacet.sol:DiamondCutFacet"
+      ],
+      "runtime_bytes_set": [
+        5298
+      ],
+      "runtime_sha256_set": [
+        "da9e99f0357e2cc40568d03606fc7fb41a45055eff75d4b14d4fab87cbd2d3cf"
+      ]
+    },
+    {
+      "address": "0xd66d7a4f3ae46ac64e492fff4236b5d97ef1c961",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "start",
+        "end"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/DiamondLoupeFacet.sol:DiamondLoupeFacet"
+      ],
+      "runtime_bytes_set": [
+        1680
+      ],
+      "runtime_sha256_set": [
+        "871a93522f311c93cc646786ea43cb3115d13581577c33b7f86312c2f7360f2d"
+      ]
+    },
+    {
+      "address": "0xe73b96b69870e9db5a5283e674f9fe62c89cc7a2",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "start"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [],
+      "runtime_bytes_set": [
+        4738
+      ],
+      "runtime_sha256_set": [
+        "fd98e5006b48e44a9721607ead43814a3f40c9fed3530bb63bf86261c6d2a80b"
+      ]
+    },
+    {
+      "address": "0xe7ec816130b0a2c006ec54682e08d2b38814294f",
+      "all_observed_runtime_bytes_same": true,
+      "checkpoints": [
+        "start",
+        "end"
+      ],
+      "continuous_runtime_identity_proved": false,
+      "exact_matching_compiled_contracts": [
+        "src/Facets/OwnershipFacet.sol:OwnershipFacet"
+      ],
+      "runtime_bytes_set": [
+        584
+      ],
+      "runtime_sha256_set": [
+        "30499ec8ae7d4101ea3c0abaea02d1c9055b41a36783bfc1183d8a934c6763ec"
+      ]
+    }
+  ],
+  "schema_version": "article2_phase13_attempt1_code_binding_findings_v1",
+  "scientific_admissions": 0,
+  "scope": "Phase13 code_window_attempt1 and its offline existing-compiler-output comparison only. Any separately accepted later retrieval attempt requires a separate receipt and accounting.",
+  "status": "SAMPLED_RUNTIME_BINDINGS_AVAILABLE_FIRST_WINDOW_HISTORY_QUERY_REFUSED"
+}
