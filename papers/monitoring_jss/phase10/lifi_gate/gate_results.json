@@ -1,0 +1,213 @@
+{
+  "schema_version": "article2_phase10_lifi_gate_results_v1",
+  "candidate": {
+    "catalogue_line": 65,
+    "case_name": "Li.Fi",
+    "frame_denominator": 13,
+    "selection": "First metadata-ready candidate in fixed catalogue-date/name/row order."
+  },
+  "disposition": "DEPLOYMENT_AND_BOUNDARY_CODE_OBSERVED_ROUTING_UNRESOLVED",
+  "achieved_evidence_tier": "provider_returned_creation_and_boundary_code_consistency",
+  "window_utc": [
+    "2022-02-19T00:00:00Z",
+    "2022-03-21T00:00:00Z"
+  ],
+  "included_block_numbers": [
+    14233163,
+    14426367
+  ],
+  "measurements": {
+    "stage_a_combined_search_open_click_direct_items": 18,
+    "stage_a_search_queries": 3,
+    "stage_a_successful_primary_documents": 8,
+    "stage_a_failed_requests": 3,
+    "stage_a_empty_queries": 1,
+    "stage_a_direct_response_bytes": 2384,
+    "stage_a_upstream_tool_http_bytes_measured": false,
+    "stage_b_original_model_stop": {
+      "requests": 2,
+      "explorer_gets": 2,
+      "rpc_methods": 0,
+      "response_bytes": 68075,
+      "reason": "Frozen direct-deployment model rejected a valid factory-call schema before any historical RPC; this was not a failed source response or evidence against Li.Fi.",
+      "preserved": true
+    },
+    "factory_continuation": {
+      "total_requests": 60,
+      "explorer_gets": 4,
+      "rpc_methods": 56,
+      "retained_response_bytes": 946448,
+      "elapsed_seconds": 491.4711688510033,
+      "reused_response_count": 2
+    },
+    "stage_b_cumulative": {
+      "total_requests": 62,
+      "explorer_gets": 6,
+      "rpc_methods": 56,
+      "retained_response_bytes": 1014523,
+      "transport_failures": 0,
+      "retries": 0,
+      "rpc_method_counts": {
+        "eth_chainId": 1,
+        "eth_getTransactionByHash": 2,
+        "eth_getTransactionReceipt": 2,
+        "trace_transaction": 2,
+        "eth_getBlockByNumber": 41,
+        "eth_getCode": 8
+      }
+    },
+    "code_check_counts": {
+      "empty_precreation": 2,
+      "exact_explorer_runtime_at_creation": 2,
+      "exact_explorer_runtime_at_window_boundaries": 4,
+      "total_queries": 8
+    },
+    "source_file_occurrences": {
+      "diamond": 3,
+      "cbridge_facet": 44,
+      "warning": "Occurrences in explorer compiler-input bundles, not unique files or deployed components."
+    }
+  },
+  "source_locators": [
+    {
+      "role": "official_occurrence_metadata",
+      "url": "https://blog.li.fi/20th-march-the-exploit-e9e1c5c03eb9"
+    },
+    {
+      "role": "original_investigator_component_identity",
+      "url": "https://blocksec.com/blog/li-fi-attack-a-cross-chain-bridge-vulnerability-no-it-s-due-to-unchecked-external-call"
+    }
+  ],
+  "source_review_requirements": [
+    "LiFiDiamond fallback delegates according to selector-to-facet storage; equal proxy runtime cannot prove stable business logic.",
+    "LibDiamond emits DiamondCut before calling a configurable delegatecall initializer; a complete event list alone is insufficient without initializer and active-code write coverage.",
+    "CBridgeFacet.initCbridge is owner-gated but repeatable and changes bridge/chain configuration; initial creation does not establish later activation or configuration.",
+    "Ownership changes, all historical facet/selector/configuration epochs, predecessor entrypoints and complete relevant mutation coverage remain open."
+  ],
+  "claim_limits": [
+    "The two nominated addresses are identity/code targets, not a frozen complete population or emitter roster. Facet execution through delegatecall uses diamond context; do not automatically add logic addresses to monitored core.",
+    "Observed successful creation at a specific block and empty code at its predecessor are not proof of first-ever deployment, initial activation, uninterrupted code identity or absence of earlier code cycles.",
+    "Explorer verification metadata, full initcode/runtime bytes and provider-returned transaction/receipt/trace/header/code agree at the checked points. No independent source compilation, cryptographic state proof or formal verification was performed.",
+    "Malformed-looking explorer constructor annotations were not used; checks used full factory input, initcode and returned runtime bytes.",
+    "Endpoint code agreement does not rule out intermediate code changes or any facet/selector/configuration change-and-restore.",
+    "No historical selector map, owner storage, DiamondCut event series or routing mutation history was acquired.",
+    "Fixed-core external outflow excludes user-to-external transfers when neither event endpoint belongs to core. Core-emitter transaction selection has a separate coverage limit; neither conditional limit is an actual Li.Fi score or exclusion reason.",
+    "Prior incident-report exposure is disclosed; global blindness is not claimed.",
+    "The first attempt and its rejected direct-deployment assumption remain preserved. The accepted factory continuation reused its exact two responses and made no retries."
+  ],
+  "scientific_admissions": 0,
+  "new_incident_execution_payload_requests": 0,
+  "detector_scores": 0,
+  "method_changes": false,
+  "full_population_or_routing_proved": false,
+  "independent_source_compilation": false,
+  "cryptographic_state_proofs_verified": false,
+  "next_gate": "Freeze complete source/runtime, selector/facet/owner/configuration epoch and mutation-coverage checks before further historical acquisition; measurement/cohort/warmup and label freeze remains separate.",
+  "contracts": [
+    {
+      "role": "diamond",
+      "address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+      "source_name": "LiFiDiamond",
+      "creation_block": 13984588,
+      "creation_time_utc": "2022-01-11T13:47:48.000000Z",
+      "creation_before_window": true,
+      "runtime_bytes": 4581,
+      "explorer_runtime_sha256": "c03fa708d3e65b647c904cbc7582412123fe5a725502ea208bd030a840534917",
+      "source_file_occurrences": 3,
+      "compiler_version": "0.8.7+commit.e28d00a7",
+      "initial_activation_time_proved": false,
+      "code_before_creation_empty": true,
+      "archive_creation_runtime_matches_explorer": true,
+      "archive_factory_transaction_receipt_match": true,
+      "archive_creation_trace_matches": true,
+      "create2_formula_matches_address": true
+    },
+    {
+      "role": "cbridge_facet",
+      "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "source_name": "CBridgeFacet",
+      "creation_block": 14211112,
+      "creation_time_utc": "2022-02-15T14:03:58.000000Z",
+      "creation_before_window": true,
+      "runtime_bytes": 5686,
+      "explorer_runtime_sha256": "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00",
+      "source_file_occurrences": 44,
+      "compiler_version": "0.8.7+commit.e28d00a7",
+      "initial_activation_time_proved": false,
+      "code_before_creation_empty": true,
+      "archive_creation_runtime_matches_explorer": true,
+      "archive_factory_transaction_receipt_match": true,
+      "archive_creation_trace_matches": true,
+      "create2_formula_matches_address": true
+    }
+  ],
+  "boundaries": {
+    "end": {
+      "first_at_or_after": {
+        "number": 14426368,
+        "timestamp": 1647820800,
+        "timestamp_utc": "2022-03-21T00:00:00+00:00"
+      },
+      "predecessor": {
+        "number": 14426367,
+        "timestamp": 1647820790,
+        "timestamp_utc": "2022-03-20T23:59:50+00:00"
+      }
+    },
+    "start": {
+      "first_at_or_after": {
+        "number": 14233163,
+        "timestamp": 1645228802,
+        "timestamp_utc": "2022-02-19T00:00:02+00:00"
+      },
+      "predecessor": {
+        "number": 14233162,
+        "timestamp": 1645228794,
+        "timestamp_utc": "2022-02-18T23:59:54+00:00"
+      }
+    }
+  },
+  "boundary_states": [
+    {
+      "address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+      "block_number": 14233162,
+      "boundary": "start",
+      "code_empty": false,
+      "matches_explorer_runtime": true,
+      "role": "diamond",
+      "runtime_bytes": 4581,
+      "runtime_sha256": "c03fa708d3e65b647c904cbc7582412123fe5a725502ea208bd030a840534917"
+    },
+    {
+      "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "block_number": 14233162,
+      "boundary": "start",
+      "code_empty": false,
+      "matches_explorer_runtime": true,
+      "role": "cbridge_facet",
+      "runtime_bytes": 5686,
+      "runtime_sha256": "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00"
+    },
+    {
+      "address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+      "block_number": 14426367,
+      "boundary": "end",
+      "code_empty": false,
+      "matches_explorer_runtime": true,
+      "role": "diamond",
+      "runtime_bytes": 4581,
+      "runtime_sha256": "c03fa708d3e65b647c904cbc7582412123fe5a725502ea208bd030a840534917"
+    },
+    {
+      "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "block_number": 14426367,
+      "boundary": "end",
+      "code_empty": false,
+      "matches_explorer_runtime": true,
+      "role": "cbridge_facet",
+      "runtime_bytes": 5686,
+      "runtime_sha256": "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00"
+    }
+  ],
+  "publication_scope": "Owned factual aggregate projection. Private freeze/result bindings and per-transaction/factory trace details remain in the retained research evidence."
+}

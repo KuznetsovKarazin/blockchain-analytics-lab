@@ -1,0 +1,131 @@
+{
+  "schema_version": "article2_phase10_lifi_source_findings_v1",
+  "stage": "A",
+  "status": "IDENTITY_PROVENANCE_READY_FOR_CONTINUATION",
+  "scope": "Source-level identity and architecture discovery only; no complete historical population or cohort admission.",
+  "window_utc": [
+    "2022-02-19T00:00:00Z",
+    "2022-03-21T00:00:00Z"
+  ],
+  "nominees": [
+    {
+      "role": "historical_protocol_entrypoint_nominee",
+      "address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+      "original_nomination": "S4 link47 identifies the protocol CBridge execution interface; linked address independently named LiFiDiamond by S5.",
+      "current_explorer_name": "LiFiDiamond",
+      "current_explorer_proxy_type": "eip2535",
+      "creation_status_reported": "success",
+      "creation_transaction_locator": "0xc7e45956cfd9da3259352e05411a71251f4a95da1e956c1bb0f093f2a4d3fa1c",
+      "creation_date": null,
+      "activation_epoch": null,
+      "historical_runtime_bound": false
+    },
+    {
+      "role": "historical_protocol_logic_nominee",
+      "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "original_nomination": "S4 link49 explicitly names protocol logic; S6 independently names CBridgeFacet.",
+      "current_explorer_name": "CBridgeFacet",
+      "creation_status_reported": "success",
+      "creation_transaction_locator": "0xf76c0d1a919559a5421833c3e9540fe92128ed3d09c7798e7c05d6bd11469078",
+      "creation_date": null,
+      "activation_epoch": null,
+      "historical_runtime_bound": false
+    }
+  ],
+  "nomination_limit": "These are original-investigator-nominated protocol components corroborated by present explorer metadata. They are not yet a complete pre-window deployment roster. Neither attacker nor affected user addresses nominate monitored core.",
+  "historical_repository": {
+    "repository": "lifinance/contracts",
+    "commit": "7b41d7d3306f213480b167e9487071d1c959d4fb",
+    "author_and_committer_timestamp": "2022-03-17T09:26:29Z",
+    "tree": "26c144a12a6838a80578abfa2d10a7a715f6f668",
+    "tree_entries": 108,
+    "returned_tree_truncated": false,
+    "readme_blob": "f3935fa141b928370a1cbf64dad8f9ea92c6041a",
+    "demo_hop_blob": "66f2d829cf10b42b77e0bc45e35165ba48484cf9",
+    "both_retrieved_contents_match_git_blob_ids": true,
+    "no_export_directory_in_this_tree": true,
+    "limit": "One API-selected commit and its returned complete tree were inspected, not all repository history. Git date is not on-chain activation; intended architecture is not a source/runtime match."
+  },
+  "architecture_assessment": {
+    "supported_design": "Versioned README describes one diamond dispatching with DELEGATECALL to business and administrative facets.",
+    "required_next_proof": "Exact source/runtime binding plus historical selector/facet, owner and activation epochs; creation alone is insufficient.",
+    "post_incident_mutation_evidence": "Official report describes disabled swap methods and an upgrade, without exact on-chain ordering. Preserve the full incident day and all changes.",
+    "current_implementation_list": "The explorer returns present facets; do not turn that list into the March 2022 roster or infer the old nominee's historical activation from it."
+  },
+  "measurement_limit": "Reported unauthorized transfers involve user-held assets and may not be covered by the frozen core external-out metric. Lack of core flows, weak alerts or cold start is not an exclusion rule; never redefine affected users as core. No metric output was calculated.",
+  "open_gates": [
+    "Exact creation block/time and on-chain component identity",
+    "Predecessor deployments and full-window activation",
+    "Complete historical selector/facet and governance mutation coverage",
+    "Runtime/source binding and appropriate proof tier",
+    "Measurement coverage, independent execution labels and full cohort/warmup freeze"
+  ],
+  "scientific_admissions": 0,
+  "detector_scores_computed": 0,
+  "sources": [
+    {
+      "id": "S1_OFFICIAL_POSTMORTEM",
+      "url": "https://blog.li.fi/20th-march-the-exploit-e9e1c5c03eb9",
+      "locations": [
+        "What Happened?",
+        "Background",
+        "The Vulnerability"
+      ],
+      "supports": "Approximate deployment recency; swap methods were disabled and contract logic upgraded after discovery; user approvals exposed externally held assets. Exact transition times and deployment dates are absent."
+    },
+    {
+      "id": "S2_CURRENT_ADDRESSES",
+      "url": "https://docs.li.fi/introduction/lifi-architecture/smart-contract-addresses",
+      "locations": [
+        "Smart Contract Addresses"
+      ],
+      "supports": "Current documentation gives a different common entrypoint,0x1231DEB6f5749EF6cE6943a275A1D3E7486F4EaE; it does not establish March 2022 identity."
+    },
+    {
+      "id": "S3_HISTORICAL_GIT",
+      "url": "https://github.com/lifinance/contracts/commit/7b41d7d3306f213480b167e9487071d1c959d4fb",
+      "locations": [
+        "commit metadata",
+        "recursive tree",
+        "README.md",
+        "scripts/demoHop.ts"
+      ],
+      "supports": "Commit metadata dated17 March 2022 points to a108-entry untruncated tree. README describes diamond/facet delegatecall architecture. The demo refers to a missing staging export and chain100, not a verified Ethereum deployment."
+    },
+    {
+      "id": "S4_INVESTIGATOR",
+      "url": "https://blocksec.com/blog/li-fi-attack-a-cross-chain-bridge-vulnerability-no-it-s-due-to-unchecked-external-call",
+      "locations": [
+        "Attack Transaction, protocol component link47",
+        "Code Analysis, logic link49"
+      ],
+      "supports": "Original analysis nominates the protocol entrypoint and logic component through contract-address links. No transaction link was followed. The functional CBridge wording of the first link must not override the explorer diamond name."
+    },
+    {
+      "id": "S5_DIAMOND_EXPLORER",
+      "url": "https://eth.blockscout.com/api/v2/addresses/0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+      "locations": [
+        "hash",
+        "name",
+        "proxy_type",
+        "creation_status",
+        "creation_transaction_hash",
+        "creator_address_hash"
+      ],
+      "supports": "Current address metadata names LiFiDiamond and EIP2535 and reports successful creation. No creation block/time is supplied; the balance-update block is unrelated to creation chronology."
+    },
+    {
+      "id": "S6_FACET_EXPLORER",
+      "url": "https://eth.blockscout.com/api/v2/addresses/0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+      "locations": [
+        "hash",
+        "name",
+        "creation_status",
+        "creation_transaction_hash",
+        "creator_address_hash"
+      ],
+      "supports": "Current address metadata names CBridgeFacet, reports successful creation and the same creator as the diamond. It does not establish historical activation."
+    }
+  ],
+  "review": "Independent local review matched two Git blobs and both raw explorer response hashes; no new network acquisition. The private review receipt holds full bindings and request accounting."
+}
