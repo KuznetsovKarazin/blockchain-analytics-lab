@@ -1,0 +1,842 @@
+{
+  "schema": "revest_creation_provenance_review_v1",
+  "created_at_utc": "2026-10-26T07:44:37.884207+00:00",
+  "scope": "Metadata, creation bytecode/source and administrative registry provenance only; no detector evaluation.",
+  "chain_id": 1,
+  "proposed_window": {
+    "start": "2022-02-26T00:00:00Z",
+    "end_exclusive": "2022-03-28T00:00:00Z",
+    "status": "proposed_not_frozen"
+  },
+  "decision": "NOT_ADMITTED",
+  "creations": [
+    {
+      "role": "registry",
+      "address": "0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4",
+      "contract_name": "RevestAddressRegistry",
+      "creation_tx": "0xd35b2e30fb324886b5a31f6019146f11c73bf1dd84fff651d25306ecc4e7d01b",
+      "creator": "0x81245E489Cf1e02e38A83C2B9618826747410C50",
+      "nonce": 5,
+      "block_number": 13290537,
+      "block_hash": "0x667edfbe3c094d1c3ef3da56ec8bb5dfe0afe0488dbb181fc204b7d0d4b247db",
+      "transaction_index": 256,
+      "timestamp_utc": "2021-09-24T20:08:48.000000Z",
+      "status": "ok",
+      "constructor_args_hex": null,
+      "constructor_provider": null,
+      "creation_input_equals_explorer_creation_bytecode": true,
+      "constructor_args_match_creation_input_tail": null,
+      "creation_input_bytes": 6479,
+      "creation_input_sha256": "91f3dd9b5973c789c6b79aa484dcc5c7c20db2ce1af62dcc7d68a5e786509fe3",
+      "explorer_runtime_sha256": "a2d3c0065904cf8d83d248c82ab2c21e29487b0a4b48ef9683c83ce31a942812",
+      "explorer_fully_verified": true,
+      "explorer_verified_at": "2024-08-17T12:00:41.367103Z",
+      "explorer_changed_bytecode_flag": false,
+      "explorer_proxy_type": null,
+      "source_sha256": "3f84a7b0cc0838e1dcb6c6af8d9410b4fd08c13f1f35229d33fb6f391922e6e4",
+      "phase6_source_pin": {
+        "commit": "f4b5a5a898d202a5040f72ec7b1196de5f05e5f8",
+        "git_blob_sha1": "101755f2b55420379538e37457b42a22d6101d5c",
+        "source_sha256": "3f84a7b0cc0838e1dcb6c6af8d9410b4fd08c13f1f35229d33fb6f391922e6e4",
+        "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/RevestAddressRegistry.sol"
+      },
+      "urls": {
+        "address": "https://eth.blockscout.com/api/v2/addresses/0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4",
+        "creation": "https://eth.blockscout.com/api/v2/transactions/0xd35b2e30fb324886b5a31f6019146f11c73bf1dd84fff651d25306ecc4e7d01b",
+        "block": "https://eth.blockscout.com/api/v2/blocks/13290537",
+        "verified_source": "https://eth.blockscout.com/api/v2/smart-contracts/0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4"
+      }
+    },
+    {
+      "role": "fnft_handler",
+      "address": "0xe952bda8c06481506e4731C4f54CeD2d4ab81659",
+      "contract_name": "FNFTHandler",
+      "creation_tx": "0x33a097e2d2b2320f1d9eb4f44171b15d3ca2acb1beadb3ae5efdaef78eabbe72",
+      "creator": "0x81245E489Cf1e02e38A83C2B9618826747410C50",
+      "nonce": 6,
+      "block_number": 13290542,
+      "block_hash": "0x14c0720c448b8af092196204571a922a77939c133107e340c839c55c2a9e0849",
+      "transaction_index": 87,
+      "timestamp_utc": "2021-09-24T20:09:51.000000Z",
+      "status": "ok",
+      "constructor_args_hex": "000000000000000000000000d721a90dd7e010c8c5e022cc0100c55ac78e0fc4",
+      "constructor_provider": "0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4",
+      "creation_input_equals_explorer_creation_bytecode": true,
+      "constructor_args_match_creation_input_tail": true,
+      "creation_input_bytes": 16721,
+      "creation_input_sha256": "852564cd81e8e34bf5b673c570edf0b7fe8954e00a0045de7062cda5524c51e4",
+      "explorer_runtime_sha256": "4bf2f55ba4f191a3fb075728c983e9a15288411caf16dd138c4ae1a7d34b9bb3",
+      "explorer_fully_verified": true,
+      "explorer_verified_at": "2024-04-01T03:15:18.928430Z",
+      "explorer_changed_bytecode_flag": false,
+      "explorer_proxy_type": null,
+      "source_sha256": "f3509df24ee9f84f0da6e1d0f7ae1f0c892eb694ac35a1f66911c603e1628639",
+      "phase6_source_pin": {
+        "commit": "f4b5a5a898d202a5040f72ec7b1196de5f05e5f8",
+        "git_blob_sha1": "349531e50b43d35e8739ee709793049e9cfa0171",
+        "source_sha256": "f3509df24ee9f84f0da6e1d0f7ae1f0c892eb694ac35a1f66911c603e1628639",
+        "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/FNFTHandler.sol"
+      },
+      "urls": {
+        "address": "https://eth.blockscout.com/api/v2/addresses/0xe952bda8c06481506e4731C4f54CeD2d4ab81659",
+        "creation": "https://eth.blockscout.com/api/v2/transactions/0x33a097e2d2b2320f1d9eb4f44171b15d3ca2acb1beadb3ae5efdaef78eabbe72",
+        "block": "https://eth.blockscout.com/api/v2/blocks/13290542",
+        "verified_source": "https://eth.blockscout.com/api/v2/smart-contracts/0xe952bda8c06481506e4731C4f54CeD2d4ab81659"
+      }
+    },
+    {
+      "role": "lock_manager",
+      "address": "0x226124E83868812D3Dae87eB3C5F28047E1070B7",
+      "contract_name": "LockManager",
+      "creation_tx": "0x11bee6c6bee7fd8b97b44db14b9bdc5a9c3e9e29b9505c4872868bc9d89b2f3e",
+      "creator": "0x81245E489Cf1e02e38A83C2B9618826747410C50",
+      "nonce": 7,
+      "block_number": 13290552,
+      "block_hash": "0x741028300edc9679db63ae701db56cf680bfe8942be35bddfa66ee1fdfdad07f",
+      "transaction_index": 45,
+      "timestamp_utc": "2021-09-24T20:11:51.000000Z",
+      "status": "ok",
+      "constructor_args_hex": "0x000000000000000000000000d721a90dd7e010c8c5e022cc0100c55ac78e0fc4",
+      "constructor_provider": "0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4",
+      "creation_input_equals_explorer_creation_bytecode": true,
+      "constructor_args_match_creation_input_tail": true,
+      "creation_input_bytes": 12966,
+      "creation_input_sha256": "b6d51ac0528777c7d188d8f32c133748028cf8401cf0e489346b50d2dff24a91",
+      "explorer_runtime_sha256": "863d8f9babc9fbfd4f3260ffbafb4aba8d35aa938773a117eb58fc43b8a5e186",
+      "explorer_fully_verified": true,
+      "explorer_verified_at": "2026-01-21T00:38:52.098492Z",
+      "explorer_changed_bytecode_flag": false,
+      "explorer_proxy_type": null,
+      "source_sha256": "05f743524ce1ffd58e45367fb29cf9b65b1207127ed3a2337737025129da4d2d",
+      "phase6_source_pin": null,
+      "urls": {
+        "address": "https://eth.blockscout.com/api/v2/addresses/0x226124E83868812D3Dae87eB3C5F28047E1070B7",
+        "creation": "https://eth.blockscout.com/api/v2/transactions/0x11bee6c6bee7fd8b97b44db14b9bdc5a9c3e9e29b9505c4872868bc9d89b2f3e",
+        "block": "https://eth.blockscout.com/api/v2/blocks/13290552",
+        "verified_source": "https://eth.blockscout.com/api/v2/smart-contracts/0x226124E83868812D3Dae87eB3C5F28047E1070B7"
+      }
+    },
+    {
+      "role": "token_vault",
+      "address": "0xA81bd16Aa6F6B25e66965A2f842e9C806c0AA11F",
+      "contract_name": "TokenVault",
+      "creation_tx": "0x7883df1063f8e44fd614ba9c368dc0d5f12eece7063b499fb09bdcaae36aa351",
+      "creator": "0x81245E489Cf1e02e38A83C2B9618826747410C50",
+      "nonce": 11,
+      "block_number": 13290580,
+      "block_hash": "0x0f7f7adf9d276e0f7bb8a48c7be12deeadb97072dd615f260981b7b16a7dbb0e",
+      "transaction_index": 15,
+      "timestamp_utc": "2021-09-24T20:16:10.000000Z",
+      "status": "ok",
+      "constructor_args_hex": "0x000000000000000000000000d721a90dd7e010c8c5e022cc0100c55ac78e0fc4",
+      "constructor_provider": "0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4",
+      "creation_input_equals_explorer_creation_bytecode": true,
+      "constructor_args_match_creation_input_tail": true,
+      "creation_input_bytes": 12956,
+      "creation_input_sha256": "1ea2f9133841ef12dde269271843a1a53d49ba4a62a5e52de2c02ffc110badcf",
+      "explorer_runtime_sha256": "a85671d1c06bb0d7559de8fed6c59abebd8665a292d6eda5191c4db90f5968dd",
+      "explorer_fully_verified": true,
+      "explorer_verified_at": "2024-02-20T03:16:49.835999Z",
+      "explorer_changed_bytecode_flag": false,
+      "explorer_proxy_type": null,
+      "source_sha256": "bc348e939be244d2de9a8151883f1cbcd3eb1cd792359a4a0ad45582e348f57a",
+      "phase6_source_pin": {
+        "commit": "f4b5a5a898d202a5040f72ec7b1196de5f05e5f8",
+        "git_blob_sha1": "1e377013f275ddc2cef070648ebad2d5a795d9ce",
+        "source_sha256": "bc348e939be244d2de9a8151883f1cbcd3eb1cd792359a4a0ad45582e348f57a",
+        "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/TokenVault.sol"
+      },
+      "urls": {
+        "address": "https://eth.blockscout.com/api/v2/addresses/0xA81bd16Aa6F6B25e66965A2f842e9C806c0AA11F",
+        "creation": "https://eth.blockscout.com/api/v2/transactions/0x7883df1063f8e44fd614ba9c368dc0d5f12eece7063b499fb09bdcaae36aa351",
+        "block": "https://eth.blockscout.com/api/v2/blocks/13290580",
+        "verified_source": "https://eth.blockscout.com/api/v2/smart-contracts/0xA81bd16Aa6F6B25e66965A2f842e9C806c0AA11F"
+      }
+    },
+    {
+      "role": "revest",
+      "address": "0x2320A28f52334d62622cc2EaFa15DE55F9987eD9",
+      "contract_name": "Revest",
+      "creation_tx": "0x3bf16e29aa9acc6bbdf5557ed1241b03989246ca0f4f652e9122655390b4caed",
+      "creator": "0x81245E489Cf1e02e38A83C2B9618826747410C50",
+      "nonce": 12,
+      "block_number": 13290587,
+      "block_hash": "0x346a78644be30e25cd432ab2022e007c544314098cf6f92ac67592babedceb1c",
+      "transaction_index": 63,
+      "timestamp_utc": "2021-09-24T20:17:37.000000Z",
+      "status": "ok",
+      "constructor_args_hex": "0x000000000000000000000000d721a90dd7e010c8c5e022cc0100c55ac78e0fc4000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "constructor_provider": "0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4",
+      "creation_input_equals_explorer_creation_bytecode": true,
+      "constructor_args_match_creation_input_tail": true,
+      "creation_input_bytes": 23015,
+      "creation_input_sha256": "a061f7798a09db400c5506a63aa8969190351233e2db1a7e6982a32013601d70",
+      "explorer_runtime_sha256": "4e72287aa7d3ff84d1138486c5a60222c3195602081cd1f2aef9383ed18f6a11",
+      "explorer_fully_verified": true,
+      "explorer_verified_at": "2024-08-07T16:56:16.710252Z",
+      "explorer_changed_bytecode_flag": false,
+      "explorer_proxy_type": null,
+      "source_sha256": "0342e2f35f29ff9840cefbde514b938f63053840d8326621fb8eb25ab0ce6977",
+      "phase6_source_pin": {
+        "commit": "f4b5a5a898d202a5040f72ec7b1196de5f05e5f8",
+        "git_blob_sha1": "62f36d068c80e05d5bfd5f9fda53f289f67444dd",
+        "source_sha256": "0342e2f35f29ff9840cefbde514b938f63053840d8326621fb8eb25ab0ce6977",
+        "url": "https://github.com/Revest-Finance/RevestContracts/blob/f4b5a5a898d202a5040f72ec7b1196de5f05e5f8/hardhat/contracts/Revest.sol"
+      },
+      "urls": {
+        "address": "https://eth.blockscout.com/api/v2/addresses/0x2320A28f52334d62622cc2EaFa15DE55F9987eD9",
+        "creation": "https://eth.blockscout.com/api/v2/transactions/0x3bf16e29aa9acc6bbdf5557ed1241b03989246ca0f4f652e9122655390b4caed",
+        "block": "https://eth.blockscout.com/api/v2/blocks/13290587",
+        "verified_source": "https://eth.blockscout.com/api/v2/smart-contracts/0x2320A28f52334d62622cc2EaFa15DE55F9987eD9"
+      }
+    }
+  ],
+  "registry_initialization": {
+    "tx": "0xc64620ec4d063b61b560ea86341780bb53cdb78b3622f57aa8bc7f0c1db8e9f8",
+    "block_number": 13290609,
+    "block_hash": "0x204defe75c6aa6f5bd6eeec809942d21f7e1ee2901c3a0da3f961e1c8edf3b44",
+    "transaction_index": 8,
+    "timestamp_utc": "2021-09-24T20:22:09.000000Z",
+    "status": "ok",
+    "selector": "0xf5e95acb",
+    "bindings": {
+      "lock_manager_": "0x226124E83868812D3Dae87eB3C5F28047E1070B7",
+      "liquidity_": "0x663A5C229c09b049E36dCc11a9B0d4a8Eb9db214",
+      "revest_token_": "0x120a3879da835A5aF037bB2d1456beBd6B54d4bA",
+      "token_vault_": "0xA81bd16Aa6F6B25e66965A2f842e9C806c0AA11F",
+      "revest_": "0x2320A28f52334d62622cc2EaFa15DE55F9987eD9",
+      "fnft_": "0xe952bda8c06481506e4731C4f54CeD2d4ab81659",
+      "metadata_": "0x0fb4c53ddd53161BD0087abD1AaC918EE97E4894",
+      "admin_": "0x81245E489Cf1e02e38A83C2B9618826747410C50",
+      "rewards_": "0x9C061b1880D587331dE977aEcc39a0425Bd9F195"
+    },
+    "raw_argument_words_independently_match_decoded_addresses": true,
+    "url": "https://eth.blockscout.com/api/v2/transactions/0xc64620ec4d063b61b560ea86341780bb53cdb78b3622f57aa8bc7f0c1db8e9f8"
+  },
+  "direct_registry_history": {
+    "url": "https://eth.blockscout.com/api/v2/addresses/0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4/transactions?filter=to",
+    "item_count": 20,
+    "next_page_params": null,
+    "items": [
+      {
+        "hash": "0xb9cc77c2909c23bd1da64da553d6612f7089f603a131118a35b2dc2183f54415",
+        "block": 13680621,
+        "tx_index": 112,
+        "timestamp": "2021-11-25T01:31:09.000000Z",
+        "status": "ok",
+        "method": "transferOwnership",
+        "parameters": [
+          {
+            "name": "newOwner",
+            "type": "address",
+            "value": "0x801e08919a483ceA4C345b5f8789E506e2624ccf"
+          }
+        ]
+      },
+      {
+        "hash": "0x3f4db62f751321fdefe551a10a8b4152061a7c2336d5279ec03412770f87c7a2",
+        "block": 13680614,
+        "tx_index": 320,
+        "timestamp": "2021-11-25T01:28:16.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0x2320A28f52334d62622cc2EaFa15DE55F9987eD9"
+          }
+        ]
+      },
+      {
+        "hash": "0xf9651823afcb772231a1df0b449e5502c83e667da045158a0939e20eb1b07be8",
+        "block": 13680594,
+        "tx_index": 230,
+        "timestamp": "2021-11-25T01:23:49.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0xA99B9d5f25Aa99973DD803c6307EC9a440f3B282"
+          }
+        ]
+      },
+      {
+        "hash": "0x740ff281975cbd8757a61fef455cf34b73727a1f227fba9823e3b91907749640",
+        "block": 13680578,
+        "tx_index": 133,
+        "timestamp": "2021-11-25T01:20:53.000000Z",
+        "status": "ok",
+        "method": "transferOwnership",
+        "parameters": [
+          {
+            "name": "newOwner",
+            "type": "address",
+            "value": "0x9EB52C04e420E40846f73D09bD47Ab5e25821445"
+          }
+        ]
+      },
+      {
+        "hash": "0xba2e00b640a995886d45fb6b22e27dcc5ae6a34eb2f3dc9c68e8c9e5507dd669",
+        "block": 13653804,
+        "tx_index": 237,
+        "timestamp": "2021-11-20T19:39:17.000000Z",
+        "status": "ok",
+        "method": "transferOwnership",
+        "parameters": [
+          {
+            "name": "newOwner",
+            "type": "address",
+            "value": "0x801e08919a483ceA4C345b5f8789E506e2624ccf"
+          }
+        ]
+      },
+      {
+        "hash": "0xa79c2aa16a54f9f16e9e1edee3bef15e855747dc3ad05acd54c7b53d42e28396",
+        "block": 13653765,
+        "tx_index": 33,
+        "timestamp": "2021-11-20T19:32:41.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0x2320A28f52334d62622cc2EaFa15DE55F9987eD9"
+          }
+        ]
+      },
+      {
+        "hash": "0xf6527c0b93b9ed56b3c2f40a8dd97c7320eaef7cbcac564817ddad1b03516d42",
+        "block": 13653564,
+        "tx_index": 203,
+        "timestamp": "2021-11-20T18:43:24.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0xA99B9d5f25Aa99973DD803c6307EC9a440f3B282"
+          }
+        ]
+      },
+      {
+        "hash": "0x6c2439068d896d55a8aa056eb82af7c8d8e0535823e0fb27f888dfcce7770e33",
+        "block": 13653491,
+        "tx_index": 180,
+        "timestamp": "2021-11-20T18:30:43.000000Z",
+        "status": "ok",
+        "method": "transferOwnership",
+        "parameters": [
+          {
+            "name": "newOwner",
+            "type": "address",
+            "value": "0x9EB52C04e420E40846f73D09bD47Ab5e25821445"
+          }
+        ]
+      },
+      {
+        "hash": "0x2e0fe4b9e9e0b59bd8752a932d024647695d49000c9d5bc15b2c4849d96dcfce",
+        "block": 13596864,
+        "tx_index": 294,
+        "timestamp": "2021-11-11T19:49:31.000000Z",
+        "status": "ok",
+        "method": "transferOwnership",
+        "parameters": [
+          {
+            "name": "newOwner",
+            "type": "address",
+            "value": "0xaF84f7D4061df1AaFbbec39DE7726D4F80beb652"
+          }
+        ]
+      },
+      {
+        "hash": "0xa3ca0385dad989fffe8a3c9f75688db3bdee0fbaf7513be0b91707f723957bb4",
+        "block": 13596493,
+        "tx_index": 130,
+        "timestamp": "2021-11-11T18:24:13.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0x2320A28f52334d62622cc2EaFa15DE55F9987eD9"
+          }
+        ]
+      },
+      {
+        "hash": "0x5f8b7800abc0011e1be2edf48a9b7fc93fb68a4a1fd1d701f8e7fbecdf9a643b",
+        "block": 13596473,
+        "tx_index": 166,
+        "timestamp": "2021-11-11T18:19:09.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0xA99B9d5f25Aa99973DD803c6307EC9a440f3B282"
+          }
+        ]
+      },
+      {
+        "hash": "0x548797b06575b2a4ca8c1e697a146dfc9e8e915be6338e716a5720ad4e546816",
+        "block": 13348871,
+        "tx_index": 290,
+        "timestamp": "2021-10-03T22:17:40.000000Z",
+        "status": "ok",
+        "method": "transferOwnership",
+        "parameters": [
+          {
+            "name": "newOwner",
+            "type": "address",
+            "value": "0x801e08919a483ceA4C345b5f8789E506e2624ccf"
+          }
+        ]
+      },
+      {
+        "hash": "0xf23a4c7e916682701e8658643cb67557b3986a476e9dac137035afdd8ba8b7d4",
+        "block": 13348683,
+        "tx_index": 133,
+        "timestamp": "2021-10-03T21:31:41.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0x2320A28f52334d62622cc2EaFa15DE55F9987eD9"
+          }
+        ]
+      },
+      {
+        "hash": "0xf61321e981ff9726c6dcff449efc113f0779a1d2e12f7a6bdde5cf444dc8d535",
+        "block": 13348683,
+        "tx_index": 131,
+        "timestamp": "2021-10-03T21:31:41.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0x31804267BB6f0d13b013BD130B866a7179A17D7A"
+          }
+        ]
+      },
+      {
+        "hash": "0xed0eba1980b54e72ff56bffb217bb3ee067ee94fd3c39fea5749bfc7c5cedabc",
+        "block": 13348651,
+        "tx_index": 29,
+        "timestamp": "2021-10-03T21:23:41.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0x2320A28f52334d62622cc2EaFa15DE55F9987eD9"
+          }
+        ]
+      },
+      {
+        "hash": "0xd85cd1534aece8ca3b418b25a324b2c025ffc1ad40ab7863d31ace639619259b",
+        "block": 13348464,
+        "tx_index": 0,
+        "timestamp": "2021-10-03T20:43:57.000000Z",
+        "status": "ok",
+        "method": "setRevest",
+        "parameters": [
+          {
+            "name": "revest",
+            "type": "address",
+            "value": "0x31804267BB6f0d13b013BD130B866a7179A17D7A"
+          }
+        ]
+      },
+      {
+        "hash": "0x8725d05fc64cfeddd90e4b289f191934eb9456a9a928980c95a51696858ca621",
+        "block": 13348463,
+        "tx_index": 72,
+        "timestamp": "2021-10-03T20:43:49.000000Z",
+        "status": "ok",
+        "method": "setRewardsHandler",
+        "parameters": [
+          {
+            "name": "esc",
+            "type": "address",
+            "value": "0xA4E7f2a1EDB5AD886baA09Fb258F8ACA7c934ba6"
+          }
+        ]
+      },
+      {
+        "hash": "0x9025fd4cb13cc95abcf6b1bdecf449dbb18b40fbac1c5a163f22dd0c3e4a626f",
+        "block": 13290829,
+        "tx_index": 140,
+        "timestamp": "2021-09-24T21:18:46.000000Z",
+        "status": "ok",
+        "method": "transferOwnership",
+        "parameters": [
+          {
+            "name": "newOwner",
+            "type": "address",
+            "value": "0x801e08919a483ceA4C345b5f8789E506e2624ccf"
+          }
+        ]
+      },
+      {
+        "hash": "0xc64620ec4d063b61b560ea86341780bb53cdb78b3622f57aa8bc7f0c1db8e9f8",
+        "block": 13290609,
+        "tx_index": 8,
+        "timestamp": "2021-09-24T20:22:09.000000Z",
+        "status": "ok",
+        "method": "initialize",
+        "parameters": [
+          {
+            "name": "lock_manager_",
+            "type": "address",
+            "value": "0x226124E83868812D3Dae87eB3C5F28047E1070B7"
+          },
+          {
+            "name": "liquidity_",
+            "type": "address",
+            "value": "0x663A5C229c09b049E36dCc11a9B0d4a8Eb9db214"
+          },
+          {
+            "name": "revest_token_",
+            "type": "address",
+            "value": "0x120a3879da835A5aF037bB2d1456beBd6B54d4bA"
+          },
+          {
+            "name": "token_vault_",
+            "type": "address",
+            "value": "0xA81bd16Aa6F6B25e66965A2f842e9C806c0AA11F"
+          },
+          {
+            "name": "revest_",
+            "type": "address",
+            "value": "0x2320A28f52334d62622cc2EaFa15DE55F9987eD9"
+          },
+          {
+            "name": "fnft_",
+            "type": "address",
+            "value": "0xe952bda8c06481506e4731C4f54CeD2d4ab81659"
+          },
+          {
+            "name": "metadata_",
+            "type": "address",
+            "value": "0x0fb4c53ddd53161BD0087abD1AaC918EE97E4894"
+          },
+          {
+            "name": "admin_",
+            "type": "address",
+            "value": "0x81245E489Cf1e02e38A83C2B9618826747410C50"
+          },
+          {
+            "name": "rewards_",
+            "type": "address",
+            "value": "0x9C061b1880D587331dE977aEcc39a0425Bd9F195"
+          }
+        ]
+      },
+      {
+        "hash": "0xd35b2e30fb324886b5a31f6019146f11c73bf1dd84fff651d25306ecc4e7d01b",
+        "block": 13290537,
+        "tx_index": 256,
+        "timestamp": "2021-09-24T20:08:48.000000Z",
+        "status": "ok",
+        "method": null,
+        "parameters": null
+      }
+    ],
+    "last_observed_direct_revest_restore_tx": "0x3f4db62f751321fdefe551a10a8b4152061a7c2336d5279ec03412770f87c7a2",
+    "last_observed_direct_revest_restore_block": 13680614,
+    "limitation": "Explorer direct-transaction list is not complete internal-call or historical-state evidence; no assertion of unchanged routing during the proposed window."
+  },
+  "gates": [
+    {
+      "id": "creation_before_window",
+      "status": "CLOSED_AT_EXPLORER_EVIDENCE_LEVEL",
+      "detail": "All five successful creations precede proposed window; matching transaction, block metadata, creator and created-address fields captured."
+    },
+    {
+      "id": "initial_component_registry_pointers",
+      "status": "CLOSED_FOR_CONSTRUCTOR_ARGUMENTS_AT_EXPLORER_EVIDENCE_LEVEL",
+      "detail": "Four constructor provider arguments all D721; creation-input tails checked."
+    },
+    {
+      "id": "initial_registry_bindings",
+      "status": "CLOSED_FOR_INITIALIZATION_ONLY_AT_EXPLORER_EVIDENCE_LEVEL",
+      "detail": "Successful initialize at block 13290609 contains all four component addresses; raw ABI words checked."
+    },
+    {
+      "id": "published_source_binding",
+      "status": "PARTIALLY_CLOSED",
+      "detail": "Four main source files and shared RevestAccessControl match phase 6 SHA256 pins; explorer reports fully verified. No independent recompilation or historical boundary runtime/state proof."
+    },
+    {
+      "id": "continuous_window_activation",
+      "status": "OPEN",
+      "detail": "Need canonical boundary blocks, start-state registry mappings and active component pointers plus complete successful relevant mutations, including internal calls and repeated initialize, in chain order."
+    },
+    {
+      "id": "complete_protocol_population",
+      "status": "OPEN",
+      "detail": "Five candidate contracts are not automatically all protocol emitters or the active routing graph; fixed-emitter workload definition must remain separate."
+    },
+    {
+      "id": "case_admission",
+      "status": "OPEN_NOT_ADMITTED",
+      "detail": "Freeze cohort/exposure/estimand, population intervals, rules/budgets, window/warmup and evaluation plan before payload acquisition."
+    }
+  ],
+  "source_semantics": {
+    "commit": "f4b5a5a898d202a5040f72ec7b1196de5f05e5f8",
+    "registry_mapping_keys": [
+      "LOCK_MANAGER",
+      "TOKEN_VAULT",
+      "REVEST",
+      "FNFT"
+    ],
+    "key_encoding": "Literal right-padded bytes32 strings, not name hashes.",
+    "active_pointer": "addressesProvider; the separate addressProvider variable is constructor-set and can be stale.",
+    "mutation_surfaces": [
+      "initialize (owner-only, reusable, writes 9 mappings)",
+      "nine named mapping setters",
+      "setDex",
+      "component setAddressRegistry"
+    ],
+    "no_dedicated_mapping_change_events": true,
+    "required_history": "Start-state plus all successful relevant writes (including owner-contract internal calls) through end; equal boundary values do not rule out change-and-restore."
+  },
+  "limitations": [
+    "One explorer backend; checks link its records but are not independent chain consensus or state-proof verification.",
+    "Current address tags, is_contract, EIP-7702/proxy annotations and verification timestamps must not be backdated to 2021/2022.",
+    "No archive RPC boundary-state or complete internal-mutation trace probe performed in this bounded subtask.",
+    "Etherscan direct web pages returned403 or inaccessible; Blockscout public API succeeded.",
+    "No incident transaction/log/score endpoint intentionally fetched; two unsolicited incident/third-party exploit snippets appeared in initial exact-address search results and were not opened, saved or used. Exposure must be recorded; no blind-case claim."
+  ],
+  "capture_manifest": [
+    {
+      "key": "registry_address",
+      "url": "https://eth.blockscout.com/api/v2/addresses/0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4",
+      "retrieved_at_utc": "2026-10-26T07:36:10.931401+00:00",
+      "status": 200,
+      "file": "registry_address.json",
+      "bytes": 741,
+      "sha256": "fdab3a0a3b3c8e7d1a9ba9dc1211ef165811577992ec04cc13edb88740a5eb6f"
+    },
+    {
+      "key": "revest_address",
+      "url": "https://eth.blockscout.com/api/v2/addresses/0x2320A28f52334d62622cc2EaFa15DE55F9987eD9",
+      "retrieved_at_utc": "2026-10-26T07:36:10.932303+00:00",
+      "status": 200,
+      "file": "revest_address.json",
+      "bytes": 726,
+      "sha256": "b9d9286a3db89bec5a13220ee2b2538e820050b702a2b9efb62f511575f5c514"
+    },
+    {
+      "key": "lock_manager_address",
+      "url": "https://eth.blockscout.com/api/v2/addresses/0x226124E83868812D3Dae87eB3C5F28047E1070B7",
+      "retrieved_at_utc": "2026-10-26T07:36:10.933152+00:00",
+      "status": 200,
+      "file": "lock_manager_address.json",
+      "bytes": 731,
+      "sha256": "258d4c88e7b68132076682aa4846549cc0d4e305c56c2e5723e7418a6a6e74ff"
+    },
+    {
+      "key": "token_vault_address",
+      "url": "https://eth.blockscout.com/api/v2/addresses/0xA81bd16Aa6F6B25e66965A2f842e9C806c0AA11F",
+      "retrieved_at_utc": "2026-10-26T07:36:17.461976+00:00",
+      "status": 200,
+      "file": "token_vault_address.json",
+      "bytes": 728,
+      "sha256": "a825e6353611e322afd606f3e6e932f78d9065f77c53599248999c334d7c29bc"
+    },
+    {
+      "key": "fnft_handler_address",
+      "url": "https://eth.blockscout.com/api/v2/addresses/0xe952bda8c06481506e4731C4f54CeD2d4ab81659",
+      "retrieved_at_utc": "2026-10-26T07:36:17.508791+00:00",
+      "status": 200,
+      "file": "fnft_handler_address.json",
+      "bytes": 1020,
+      "sha256": "0c7363c0c7142a5a5e57138413045d59359b39fbd30b27b8a34b90c3e394b85e"
+    },
+    {
+      "key": "registry_creation",
+      "url": "https://eth.blockscout.com/api/v2/transactions/0xd35b2e30fb324886b5a31f6019146f11c73bf1dd84fff651d25306ecc4e7d01b",
+      "retrieved_at_utc": "2026-10-26T07:36:23.982328+00:00",
+      "status": 200,
+      "file": "registry_creation.json",
+      "bytes": 14897,
+      "sha256": "e1b4c145608466fcdf8ac4178946cef36fcbb624addf1b61391477353c01fb71"
+    },
+    {
+      "key": "registry_verified_contract",
+      "url": "https://eth.blockscout.com/api/v2/smart-contracts/0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4",
+      "retrieved_at_utc": "2026-10-26T07:36:23.982850+00:00",
+      "status": 200,
+      "file": "registry_verified_contract.json",
+      "bytes": 42696,
+      "sha256": "81989ed31e64d02d1f240d2986e47014101208f32b6b554cfcdf53275638160f"
+    },
+    {
+      "key": "revest_creation",
+      "url": "https://eth.blockscout.com/api/v2/transactions/0x3bf16e29aa9acc6bbdf5557ed1241b03989246ca0f4f652e9122655390b4caed",
+      "retrieved_at_utc": "2026-10-26T07:36:23.983438+00:00",
+      "status": 200,
+      "file": "revest_creation.json",
+      "bytes": 47526,
+      "sha256": "21654ed614798a072a2d4f245f9a483b625405269fad52ed6e4577b44d819f6d"
+    },
+    {
+      "key": "revest_verified_contract",
+      "url": "https://eth.blockscout.com/api/v2/smart-contracts/0x2320A28f52334d62622cc2EaFa15DE55F9987eD9",
+      "retrieved_at_utc": "2026-10-26T07:36:30.628039+00:00",
+      "status": 200,
+      "file": "revest_verified_contract.json",
+      "bytes": 232922,
+      "sha256": "6be0d90e89778bc7b27130766af3afd51a93fa3d5e45fa5411fb5fd64ab82d14"
+    },
+    {
+      "key": "lock_manager_creation",
+      "url": "https://eth.blockscout.com/api/v2/transactions/0x11bee6c6bee7fd8b97b44db14b9bdc5a9c3e9e29b9505c4872868bc9d89b2f3e",
+      "retrieved_at_utc": "2026-10-26T07:36:30.673583+00:00",
+      "status": 200,
+      "file": "lock_manager_creation.json",
+      "bytes": 27432,
+      "sha256": "b3fc48d898c404ccf723410b1b88114db16be77da82ff3546afb5a7fb2f70f50"
+    },
+    {
+      "key": "lock_manager_verified_contract",
+      "url": "https://eth.blockscout.com/api/v2/smart-contracts/0x226124E83868812D3Dae87eB3C5F28047E1070B7",
+      "retrieved_at_utc": "2026-10-26T07:36:30.800133+00:00",
+      "status": 200,
+      "file": "lock_manager_verified_contract.json",
+      "bytes": 165932,
+      "sha256": "1ed1a0da5b3ff084b4adcf032f6b549500aa8c77c07db1937aa868a0c5ff5d1e"
+    },
+    {
+      "key": "token_vault_creation",
+      "url": "https://eth.blockscout.com/api/v2/transactions/0x7883df1063f8e44fd614ba9c368dc0d5f12eece7063b499fb09bdcaae36aa351",
+      "retrieved_at_utc": "2026-10-26T07:36:37.647050+00:00",
+      "status": 200,
+      "file": "token_vault_creation.json",
+      "bytes": 27412,
+      "sha256": "edc2f14897bbaa96c46403ed32fd3371e81fae9ec5b7e8dcd18ceddc573ab6b4"
+    },
+    {
+      "key": "token_vault_verified_contract",
+      "url": "https://eth.blockscout.com/api/v2/smart-contracts/0xA81bd16Aa6F6B25e66965A2f842e9C806c0AA11F",
+      "retrieved_at_utc": "2026-10-26T07:36:37.701658+00:00",
+      "status": 200,
+      "file": "token_vault_verified_contract.json",
+      "bytes": 161244,
+      "sha256": "0edc9a06536a20235c8cea164c834652a39e762163da75b2d161364f983ef763"
+    },
+    {
+      "key": "fnft_handler_creation",
+      "url": "https://eth.blockscout.com/api/v2/transactions/0x33a097e2d2b2320f1d9eb4f44171b15d3ca2acb1beadb3ae5efdaef78eabbe72",
+      "retrieved_at_utc": "2026-10-26T07:36:37.705736+00:00",
+      "status": 200,
+      "file": "fnft_handler_creation.json",
+      "bytes": 34959,
+      "sha256": "e57afe5ab444b5e5b2b3e348528b07e7c8da807da02c0dcf82d6d3a281d256ca"
+    },
+    {
+      "key": "fnft_handler_verified_contract",
+      "url": "https://eth.blockscout.com/api/v2/smart-contracts/0xe952bda8c06481506e4731C4f54CeD2d4ab81659",
+      "retrieved_at_utc": "2026-10-26T07:36:44.533515+00:00",
+      "status": 200,
+      "file": "fnft_handler_verified_contract.json",
+      "bytes": 155170,
+      "sha256": "5e07bac2e7820cadde2aa9a115bfd44aaed497e4d14b973cff34cc3c8df2e86d"
+    },
+    {
+      "key": "registry_transactions_page1",
+      "url": "https://eth.blockscout.com/api/v2/addresses/0xD721A90dd7e010c8C5E022cc0100c55aC78E0FC4/transactions?filter=to",
+      "retrieved_at_utc": "2026-10-26T07:37:42.139457+00:00",
+      "status": 200,
+      "file": "registry_transactions_page1.json",
+      "bytes": 60234,
+      "sha256": "4315992503127080667e6968f480e2dcdba3bfe5c8948f4d08ac5e0da1b1a005"
+    },
+    {
+      "key": "registry_initialize",
+      "url": "https://eth.blockscout.com/api/v2/transactions/0xc64620ec4d063b61b560ea86341780bb53cdb78b3622f57aa8bc7f0c1db8e9f8",
+      "retrieved_at_utc": "2026-10-26T07:39:20.679201+00:00",
+      "status": 200,
+      "file": "registry_initialize.json",
+      "bytes": 3582,
+      "sha256": "1ff279fda8b038d6acadf44af890bdbd8638bf05dd43d32191c6c7be3cf53972"
+    },
+    {
+      "key": "registry_last_direct_revest_restore",
+      "url": "https://eth.blockscout.com/api/v2/transactions/0x3f4db62f751321fdefe551a10a8b4152061a7c2336d5279ec03412770f87c7a2",
+      "retrieved_at_utc": "2026-10-26T07:39:20.680594+00:00",
+      "status": 200,
+      "file": "registry_last_direct_revest_restore.json",
+      "bytes": 2299,
+      "sha256": "f53bf9f1644e321e07bf3ff43e4f6179dc402165922b2519fa4cac6892d571b0"
+    },
+    {
+      "key": "registry_creation_block",
+      "url": "https://eth.blockscout.com/api/v2/blocks/13290537",
+      "retrieved_at_utc": "2026-10-26T07:39:20.685868+00:00",
+      "status": 200,
+      "file": "registry_creation_block.json",
+      "bytes": 1284,
+      "sha256": "393eb3f3666c51b9e8aeb206565df2ccb3206a6110cb8d7d3343d83963ca5d9e"
+    },
+    {
+      "key": "revest_creation_block",
+      "url": "https://eth.blockscout.com/api/v2/blocks/13290587",
+      "retrieved_at_utc": "2026-10-26T07:39:26.004205+00:00",
+      "status": 200,
+      "file": "revest_creation_block.json",
+      "bytes": 1282,
+      "sha256": "5095376ad558ddc754df8f1b84df9b3b19539669795f49316ad66b87dd7262ca"
+    },
+    {
+      "key": "lock_manager_creation_block",
+      "url": "https://eth.blockscout.com/api/v2/blocks/13290552",
+      "retrieved_at_utc": "2026-10-26T07:39:26.011091+00:00",
+      "status": 200,
+      "file": "lock_manager_creation_block.json",
+      "bytes": 1283,
+      "sha256": "caaed1c1240a86c63caaa6a1b773caae85c05d6b9d28711152d04bbd2895495f"
+    },
+    {
+      "key": "token_vault_creation_block",
+      "url": "https://eth.blockscout.com/api/v2/blocks/13290580",
+      "retrieved_at_utc": "2026-10-26T07:39:26.105323+00:00",
+      "status": 200,
+      "file": "token_vault_creation_block.json",
+      "bytes": 1282,
+      "sha256": "486f53c3557cf1d70928862f3ad913d6e6eed60b7cd9a2be5b00b0e3c36d3045"
+    },
+    {
+      "key": "fnft_handler_creation_block",
+      "url": "https://eth.blockscout.com/api/v2/blocks/13290542",
+      "retrieved_at_utc": "2026-10-26T07:39:32.656028+00:00",
+      "status": 200,
+      "file": "fnft_handler_creation_block.json",
+      "bytes": 1266,
+      "sha256": "eaef9fce7c35fb1c5340e0f271af8e6933171c05616aad228262552e590b66c0"
+    },
+    {
+      "key": "registry_initialize_block",
+      "url": "https://eth.blockscout.com/api/v2/blocks/13290609",
+      "retrieved_at_utc": "2026-10-26T07:39:32.721204+00:00",
+      "status": 200,
+      "file": "registry_initialize_block.json",
+      "bytes": 1279,
+      "sha256": "9f73aa01ac626f5519ca9de7a893a0937afd7a99df17a4c342edf8f8e8d01749"
+    }
+  ],
+  "source_license": "Captured verified-contract source retains original SPDX notices and attribution; source excerpts not rewritten."
+}

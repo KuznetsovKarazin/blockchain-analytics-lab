@@ -1,0 +1,404 @@
+{
+  "accepted_transactions_independently_recomputed": 10,
+  "aggregate_counts": {
+    "erc20_shaped": 84,
+    "erc721_shaped": 0,
+    "logs": 192,
+    "monitored_erc20_shaped": 16,
+    "opaque": 108,
+    "zero_value_transfers": 0
+  },
+  "archived_core_emitter_shape_counts": {
+    "erc20_shaped": 0,
+    "erc721_shaped": 0,
+    "logs": 58,
+    "monitored_erc20_shaped": 0,
+    "opaque": 58,
+    "zero_value_transfers": 0
+  },
+  "auditor_sha256": "de707e92d56f67468d5a1c7cec7d5dd306647bc6da2fe3137f25ccd5c173dad9",
+  "distinct_monitored_boundary_token_emitters": 11,
+  "freeze_sha256": "90f4ce0daf6faeeae2f6c83ee47241fd935aa5f6822541c3d51e6208238702a9",
+  "frozen_sources_unchanged": true,
+  "limitations": [
+    "Only captured indexer responses and prior archived core subsets are verified. Omitted non-core prefix/suffix logs and receipt-root completeness remain unproven.",
+    "First ten ordinary-day development transactions are not representative or adjudicated safe, and this is not an attack detection test.",
+    "Source hashes anchor retained consistency, not provider authenticity or the historical server version.",
+    "Observation shape and transfer-event arithmetic do not establish token compliance, actual balances or economic values."
+  ],
+  "method": "Original retained provider bytes independently parsed and normalized, all accepted metadata/cursors/identity/core subsets checked, and all counts/amount strings independently recomputed by boundary predicates and signed contributions; no production module imported.",
+  "network_calls_by_auditor": 0,
+  "no_replacements": true,
+  "not_accepted_transactions": 0,
+  "oracle_sha256": "0bd4d2763aeb747c5c7c932c592484fb193a2462dc5b24721c004129a15b2ad5",
+  "raw_response_hashes_sizes_and_receipts_verified": 21,
+  "request_caps_respected": true,
+  "request_count": 21,
+  "request_receipts": [
+    {
+      "bytes": 41860,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 0,
+      "sha256": "d9d8e685706276da2b7b7ad8ae7d92b4cdba0effa69d5a5923942edb897f0fde",
+      "status": 200
+    },
+    {
+      "bytes": 113603,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 0,
+      "sha256": "5987a3dd09723f971c0c27f6b87d86d46b80c82e3a0509dba4e2641edbd166fd",
+      "status": 200
+    },
+    {
+      "bytes": 58931,
+      "error": null,
+      "key": "logs_page_002.json",
+      "selection_index": 0,
+      "sha256": "0fadb127fc4ace7c17e7ae987c232c77c1d089a0bca7e34bc151e3ad50b3620e",
+      "status": 200
+    },
+    {
+      "bytes": 6710,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 1,
+      "sha256": "061ecaa0418d503ff36673e531e6bc06846a8ffab0e947bd4646013613fbc319",
+      "status": 200
+    },
+    {
+      "bytes": 13255,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 1,
+      "sha256": "d1111605ac5f06f8c80e7a7f20ec513d02784a7e6f2dd57333e3072d4836d5d3",
+      "status": 200
+    },
+    {
+      "bytes": 6728,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 2,
+      "sha256": "29cf9799b139515b2b46f2b8f58db267b832763d8d6cc195f190c5c970caddab",
+      "status": 200
+    },
+    {
+      "bytes": 11962,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 2,
+      "sha256": "b61f627e45da9d7aa9cbe7c3774c526598f692f17930655d501d081bf7701414",
+      "status": 200
+    },
+    {
+      "bytes": 22786,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 3,
+      "sha256": "04dbc29fdc31823caebb17584cb4ec94959dccb4785290c3ef53eac8b844827b",
+      "status": 200
+    },
+    {
+      "bytes": 70330,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 3,
+      "sha256": "9b01dc95f48b1b63ef74ce80c34e463d32637dc3b071696436bf76fd0becb898",
+      "status": 200
+    },
+    {
+      "bytes": 21412,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 4,
+      "sha256": "c44142c6a0c191bfeee1ddd0cfced348d760e5407b08510e248ca00b459a25a4",
+      "status": 200
+    },
+    {
+      "bytes": 75714,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 4,
+      "sha256": "bbe614770f0ca3253d0e3ec46cb8ad4b43f9f99071a0ab4cfbaf610ecc5718cc",
+      "status": 200
+    },
+    {
+      "bytes": 6694,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 5,
+      "sha256": "41f2601fb0d3dace184d87124740526e2f434eeccfa4163abfba5fa31e040387",
+      "status": 200
+    },
+    {
+      "bytes": 9140,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 5,
+      "sha256": "8be166839420b5690ab9a9776a7b455ecaa0c51b69dbe4379404cdf2a8d3004d",
+      "status": 200
+    },
+    {
+      "bytes": 9191,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 6,
+      "sha256": "4e17dcc626f3d860f17ca519c2ba93e89850061155034fd0ea78e2898b366a91",
+      "status": 200
+    },
+    {
+      "bytes": 13997,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 6,
+      "sha256": "145e61be96906f8ae0fa5f88b9068e5957da89b61ca5e99e77ba6c647846b974",
+      "status": 200
+    },
+    {
+      "bytes": 13050,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 7,
+      "sha256": "80cf8da0a2d0183d2820b513846ff58e865fca31630fa8454d4e56075b98e46d",
+      "status": 200
+    },
+    {
+      "bytes": 18055,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 7,
+      "sha256": "aab500c51a407a8e942f4d0d6cc509b6363fdde7f6c84cac6fc5e0d4b627c5ef",
+      "status": 200
+    },
+    {
+      "bytes": 7386,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 8,
+      "sha256": "9153529b33322605c09c28b82904e806183ff9b20d3c52a2659d54c756809bac",
+      "status": 200
+    },
+    {
+      "bytes": 9630,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 8,
+      "sha256": "771ff2e8535a2a369276fabdf152d690c65e2f764b2314b5360f8350d59a0abf",
+      "status": 200
+    },
+    {
+      "bytes": 8641,
+      "error": null,
+      "key": "metadata.json",
+      "selection_index": 9,
+      "sha256": "a8f299bfeac919b92902404d5234bd992c78fa641f6554e6eeb34c39050e79e0",
+      "status": 200
+    },
+    {
+      "bytes": 25891,
+      "error": null,
+      "key": "logs_page_001.json",
+      "selection_index": 9,
+      "sha256": "7843c14e71574ca95a8864dde55ada086cf8b4a2a110172458cd6a6d175f845f",
+      "status": 200
+    }
+  ],
+  "sample_summary_sha256": "1b6cf1f978ed99c995df3321f9defde530cd0928f490c6ad49a0beaff54c16c2",
+  "schema_version": "phase7_transfer_actual_independent_review_v1",
+  "selected_core_logs": 58,
+  "selected_transactions": 10,
+  "status": "PASS",
+  "transactions": [
+    {
+      "archived_core_logs": 15,
+      "counts": {
+        "erc20_shaped": 41,
+        "erc721_shaped": 0,
+        "logs": 73,
+        "monitored_erc20_shaped": 5,
+        "opaque": 32,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "cda560c8cc4dc08773eb6c08c959c10af64fe2ebc7f0f86232e50113d13c0290",
+      "provider_logs": 73,
+      "provider_pages": 2,
+      "raw_hashes_verified": 3,
+      "selection_index": 0,
+      "status": "independently_verified",
+      "token_flow_rows": 5,
+      "transaction_hash": "0x66efc5e2fb12ffa1d27644390ff968431a84ab1b073e61de8d5463266362c38a"
+    },
+    {
+      "archived_core_logs": 3,
+      "counts": {
+        "erc20_shaped": 2,
+        "erc721_shaped": 0,
+        "logs": 7,
+        "monitored_erc20_shaped": 1,
+        "opaque": 5,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "4c67a1311ab1415d06a2472553990999591e3783e02a54a5157fe0834249d2ee",
+      "provider_logs": 7,
+      "provider_pages": 1,
+      "raw_hashes_verified": 2,
+      "selection_index": 1,
+      "status": "independently_verified",
+      "token_flow_rows": 1,
+      "transaction_hash": "0xd36b3fee61023947ae7ded3212fae4daab545a5975c3158d50168540919d2fd0"
+    },
+    {
+      "archived_core_logs": 3,
+      "counts": {
+        "erc20_shaped": 2,
+        "erc721_shaped": 0,
+        "logs": 6,
+        "monitored_erc20_shaped": 1,
+        "opaque": 4,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "4a229811ef2b63999b1bc47e952b96bcf7fe4e939e2a0bbbbebef0deb3305731",
+      "provider_logs": 6,
+      "provider_pages": 1,
+      "raw_hashes_verified": 2,
+      "selection_index": 2,
+      "status": "independently_verified",
+      "token_flow_rows": 1,
+      "transaction_hash": "0x0dec059e26728875b0529be50958e521487b91696272de058247d9e1eb1fa141"
+    },
+    {
+      "archived_core_logs": 8,
+      "counts": {
+        "erc20_shaped": 12,
+        "erc721_shaped": 0,
+        "logs": 28,
+        "monitored_erc20_shaped": 2,
+        "opaque": 16,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "283f25193ad85c05ad444b1606b2a36f34026dcbec02e09628180dca78179e5d",
+      "provider_logs": 28,
+      "provider_pages": 1,
+      "raw_hashes_verified": 2,
+      "selection_index": 3,
+      "status": "independently_verified",
+      "token_flow_rows": 1,
+      "transaction_hash": "0x384b1ba80f03539fc9be7f00a02d4bfafb7a0900728755d25378b27c10358129"
+    },
+    {
+      "archived_core_logs": 6,
+      "counts": {
+        "erc20_shaped": 15,
+        "erc721_shaped": 0,
+        "logs": 35,
+        "monitored_erc20_shaped": 2,
+        "opaque": 20,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "3ff12548a88efe3835ff9d265a94d209fadbd6061919892214f9285cec6bd07c",
+      "provider_logs": 35,
+      "provider_pages": 1,
+      "raw_hashes_verified": 2,
+      "selection_index": 4,
+      "status": "independently_verified",
+      "token_flow_rows": 2,
+      "transaction_hash": "0xaca60f9457b453745ddcf68a28f20e1f4eb7e063aecae81ce0906fa44898db7c"
+    },
+    {
+      "archived_core_logs": 3,
+      "counts": {
+        "erc20_shaped": 2,
+        "erc721_shaped": 0,
+        "logs": 5,
+        "monitored_erc20_shaped": 1,
+        "opaque": 3,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "20cf1a59d76f7a525f05b45cc81ebda1a278fc59ae089c9c4390d642745c5495",
+      "provider_logs": 5,
+      "provider_pages": 1,
+      "raw_hashes_verified": 2,
+      "selection_index": 5,
+      "status": "independently_verified",
+      "token_flow_rows": 1,
+      "transaction_hash": "0x974747897d1ed3c26c54c5a2f16b81df7111239cc1a0d10b4ca290862f69ddeb"
+    },
+    {
+      "archived_core_logs": 4,
+      "counts": {
+        "erc20_shaped": 2,
+        "erc721_shaped": 0,
+        "logs": 8,
+        "monitored_erc20_shaped": 1,
+        "opaque": 6,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "cd6b37df09177f5e1358234aed465f55caa97372dce9caad3a21cf9b58b12f67",
+      "provider_logs": 8,
+      "provider_pages": 1,
+      "raw_hashes_verified": 2,
+      "selection_index": 6,
+      "status": "independently_verified",
+      "token_flow_rows": 1,
+      "transaction_hash": "0x9757ce4589ca8a4f099078dc439b2172c64f44ed7dcf1b594b0579c6a796b02d"
+    },
+    {
+      "archived_core_logs": 8,
+      "counts": {
+        "erc20_shaped": 4,
+        "erc721_shaped": 0,
+        "logs": 12,
+        "monitored_erc20_shaped": 1,
+        "opaque": 8,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "bb8e2085efa94d5842cfc200dffaa2ea797256b9762636e36c476c455f309096",
+      "provider_logs": 12,
+      "provider_pages": 1,
+      "raw_hashes_verified": 2,
+      "selection_index": 7,
+      "status": "independently_verified",
+      "token_flow_rows": 1,
+      "transaction_hash": "0x4e43b39528b34dc74aaf83b2426b950dfdf05842d0d98c1974362fffb81bc3d5"
+    },
+    {
+      "archived_core_logs": 4,
+      "counts": {
+        "erc20_shaped": 2,
+        "erc721_shaped": 0,
+        "logs": 6,
+        "monitored_erc20_shaped": 1,
+        "opaque": 4,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "61ab8ad03999fe39a1b4112a9234f0d9fe66fc0ca2438ef730f7f3d6a42292b2",
+      "provider_logs": 6,
+      "provider_pages": 1,
+      "raw_hashes_verified": 2,
+      "selection_index": 8,
+      "status": "independently_verified",
+      "token_flow_rows": 1,
+      "transaction_hash": "0x0a182d6c5c3239023d67285fc309642dc93dd6a65acf7c7a4b0863be09c0e15c"
+    },
+    {
+      "archived_core_logs": 4,
+      "counts": {
+        "erc20_shaped": 2,
+        "erc721_shaped": 0,
+        "logs": 12,
+        "monitored_erc20_shaped": 1,
+        "opaque": 10,
+        "zero_value_transfers": 0
+      },
+      "independent_flow_sha256": "8efe390fb1ee9697833c88ba7bba390e996118768fead4762a298c9a267427e5",
+      "provider_logs": 12,
+      "provider_pages": 1,
+      "raw_hashes_verified": 2,
+      "selection_index": 9,
+      "status": "independently_verified",
+      "token_flow_rows": 1,
+      "transaction_hash": "0xe8bd61d1a33ebb4461dfab66988e74a339eb04bdf26a8a54e0c83b2cf838ce48"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "actual_provider_data_used": false,
+  "auditor_source_sha256": "d4862ccaf2d40ef86894efb8bd769a2b845d6cf788a24486c38858d702cb42f4",
+  "coverage": [
+    "Three separate token emitters",
+    "Two monitored addresses",
+    "External and zero-address endpoints",
+    "Self and internal transfers",
+    "ERC721 shape and opaque topic",
+    "Values zero,2^53+1,uint256 maximum and random256bit",
+    "Exact decimal-string sums/differences",
+    "Descending provider presentation"
+  ],
+  "method": "Target outputs compared against separately written boundary-indicator/signed-contribution oracle; no production routine is used to derive expected values.",
+  "oracle_source_sha256": "0bd4d2763aeb747c5c7c932c592484fb193a2462dc5b24721c004129a15b2ad5",
+  "schema_version": "phase7_transfer_randomized_independent_review_v1",
+  "seed": 20261026,
+  "status": "PASS",
+  "synthetic_bundles": 100,
+  "synthetic_logs": 2020,
+  "target_source_sha256": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c"
+}

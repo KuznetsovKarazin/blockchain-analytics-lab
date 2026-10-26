@@ -1,9 +1,10 @@
-# Article 2 status — 25 October 2026
+# Article 2 status — 26 October 2026
 
-**Stages 3–5 are published. Phase 6 completes bounded Revest metadata,
-historical-source and source-listing checks. No new independent attack case
-is admitted.** Latest report: [SESSION_6_REPORT_RU.md](SESSION_6_REPORT_RU.md).
-Protocol: `protocol.json` v0.7, still draft for the full scientific comparison.
+**Phase 7 adds Revest creation/initial-binding provenance and a frozen
+ten-transaction Euler development sample for source-bound Transfer observations.
+No new independent attack case is admitted.** Latest report:
+[SESSION_7_REPORT_RU.md](SESSION_7_REPORT_RU.md).
+Protocol: `protocol.json` v0.8, still draft for the full scientific comparison.
 
 Repository: KuznetsovKarazin/blockchain-analytics-lab, branch paper/monitoring-jss.
 Companion pin unchanged: dc1ba8876f3f163c27c48f3a39292fc47f71bf18.
@@ -11,23 +12,30 @@ Book source/results and scripts/run_all.sh are untouched.
 
 ## Current findings
 
-- Exact old/current K4 metadata loaders both omit the targeted pinned Revest
-  fixture in both modes: the required literal `flash` is absent. The S2 row
-  establishes scoped historical L1 catalogue exposure. This does not establish
-  actual K4 contamination, global non-exposure or a blind test.
-- A historical SDK registry differs from current documentation. Source-level
-  registry setters can change bindings without dedicated mapping-change events.
-  Historical creation, deployed-code equivalence and routing intervals remain
-  unverified; a complete protocol population is not yet established.
-- The proposed 30-day window [2022-02-26,2022-03-28) has 60 complete nonempty daily
-  source listings, one object per logs/blocks day. Only 40,620 XML bytes were received;
-  listed payload size 6,404,872,951 bytes was not downloaded. This is metadata
-  availability, not data completeness. Independent listing audit PASS.
-- Metadata audit, twelve eligibility gates and deployment review:
-  `incidents/phase6_revest/`. Frozen listing protocol, code, 5 tests + 11 subtests and
-  actual independent verification: `incidents/source_availability_phase6/`.
-  No new candidate event payload, detector scores, fitted rule or positive-label
-  join. Revest remains `candidate_not_eligible`.
+- Revest: five successful creations on 24 September 2021 and registry
+  initialization at block 13290609 link four historical components at explorer
+  evidence level. Twenty direct registry transactions are enumerated, but internal
+  calls, mutable component pointers and continuous window activation remain
+  unresolved. Review and independent PASS receipt: `incidents/phase7_revest/`.
+- Exact old/current K4 metadata loaders still omit the pinned Revest fixture
+  because literal `flash` is absent. Scoped catalogue exposure and incidental
+  phase 7 search-snippet exposure are disclosed; global blindness is not claimed.
+- Proposed Revest window [2022-02-26,2022-03-28) retains 60 complete source
+  listings and 6,404,872,951 listed payload bytes, not an acquired evaluation
+  stream or frozen scientific cohort. Revest remains `candidate_not_eligible`.
+- The new pure observation boundary checks original metadata and every provider
+  log page, distinguishes ERC20/721-shaped events, and computes separate per-token
+  raw integer flow strings. Thirty offline tests and an independent arithmetic
+  oracle over 100 synthetic bundles / 2,020 logs passed before acquisition.
+- First ten transactions in the previously accepted Euler-core stream on
+  1 March 2023 were frozen before requests. All ten produced accepted observations
+  in 21 calls: 192 provider logs, all 58 archived core payloads matched, 84
+  ERC20-shaped events, 16 involving the monitored core. No retries/replacements.
+  Independent actual-response/flow audit PASS: `qa/phase7_transfer_actual_independent_review.json`.
+  Core-emitter logs contain zero ERC20-shaped events; the 16 come from other
+  emitters across 11 tokens. This demonstrates source scope, not detection quality.
+  Pagination exhaustion is not independent full-receipt completeness; event sums
+  are not proven balance changes. No detector, labels, thresholds or policy change.
 
 ## Accepted work from previous stages
 
@@ -43,8 +51,10 @@ Book source/results and scripts/run_all.sh are untouched.
 
 The resource initial series is valid with known concurrent audit activity and
 was retained alongside an identical technical repeat; it is not a corrupt or
-excluded run. Full production suite at phase 5: 165 tests + 92 subtests. Phase 6 changes
-no measured decoder/policy/resource source. See SESSION_3/4/5_REPORT_RU.md and
+excluded run. Full production suite at phase 5: 165 tests + 92 subtests. Phases 6–7 change
+no existing measured decoder/policy/resource source. The old suite was not rerun
+in phase 7; the new standalone adapter and its acquisition code have separate
+tests. See SESSION_3/4/5_REPORT_RU.md and
 result_ledger.json for exact runs, counts, evidence and limitations.
 
 Excluded original header, durability and budget-comparison attempts remain
@@ -62,6 +72,10 @@ publication rejection was resolved by the user's explicit content/destination
 permission. See qa/publication_success_20261025_phase6.json; old rejection
 receipts and old reports describe their historical state, not a current block.
 
+Phase 6 is published as ef6271631e14c5c1d5afb14d98f3cfa5d8c5389e,
+tree b8efd0a8b383987a2d76f80bb58a97170257d7ad; phase 7 starts from that
+freshly restored remote head.
+
 Git contains owned code, configs, aggregate results and provenance. Raw datasets,
 models and per-record evidence are in previously saved private packages. Thirty
 phase4 source archives are durable; reclaimed local ZIP caches are not missing
@@ -70,8 +84,9 @@ not the full third-party PoC or older large experiment archives.
 
 ## Remaining work
 
-Resolve historical deployment/registry provenance; design semantic features on
-declared development cases; freeze the candidate frame, population, windows,
+Resolve continuous historical registry/component routing and independent runtime
+provenance; develop semantic rules only on declared development cases; freeze
+the candidate frame, population, windows,
 methods and exclusion/stopping rules before acquiring evaluation-stream payloads.
 Historical creation/state evidence can be gathered separately as provenance.
 Revest alone does not meet 2–4 incidents across at least 2 families. Euler/Beanstalk

@@ -1,5 +1,5 @@
 {
-  "schema_version": "article2_monitoring_protocol_draft_v0.7",
+  "schema_version": "article2_monitoring_protocol_draft_v0.8",
   "status": "draft-not-frozen",
   "created_local_date": "2026-10-25",
   "title": "Operational Evaluation of Blockchain Monitoring Pipelines under Alert Budgets and Delayed Feedback",
@@ -180,7 +180,16 @@
       "historical_registry_bindings_verified": false,
       "raw_candidate_event_payload_acquired": false,
       "new_detector_outcomes_inspected": false,
-      "independent_holdout_admitted": false
+      "independent_holdout_admitted": false,
+      "deployment_provenance": "incidents/phase7_revest/deployment_review.json",
+      "creation_transactions_verified_at_explorer_evidence_level": 5,
+      "initial_component_constructor_pointers_verified": 4,
+      "registry_initialization_block": 13290609,
+      "initial_registry_bindings_verified_at_explorer_evidence_level": true,
+      "continuous_window_registry_bindings_verified": false,
+      "historical_runtime_equivalence_independently_verified": false,
+      "phase7_primary_responses": 24,
+      "limited_search_snippet_exposure": "Exact-address search exposed an already-known incident transaction and third-party exploit-code snippets; destinations not opened or used, no execution or detector evaluation."
     }
   },
   "pilot": {
@@ -383,6 +392,33 @@
         "qa/resource_benchmark_repeat_independent_review.json",
         "qa/resource_benchmark_repeat_equivalence_review.json"
       ]
+    },
+    "semantic_transfer_observations": {
+      "contract": "TRANSFER_OBSERVATION_CONTRACT.md",
+      "design": "runs/transfer_sample_design_20261026T075504_353899Z",
+      "scope": "Fixed first ten transactions in the accepted Euler-core development stream on 2023-03-01; event-layout observations only.",
+      "selected_transactions": 10,
+      "accepted_observations": 10,
+      "provider_requests": 21,
+      "provider_log_pages": 11,
+      "provider_logs": 192,
+      "archived_core_payloads_matched": 58,
+      "erc20_shaped_events": 84,
+      "erc721_shaped_events": 0,
+      "opaque_events": 108,
+      "monitored_erc20_shaped_events": 16,
+      "evidence_tier": "provider_pagination_exhausted_structure_checked",
+      "raw_amount_encoding": "base10_integer_string",
+      "production_rule_or_policy_changed": false,
+      "independent_incidents": 0,
+      "limitation": "Shape is not token compliance or actual balance change; terminal provider pagination and matching core subset do not prove completeness of non-core logs or receipt roots.",
+      "full_scientific_comparison_frozen": false,
+      "run": "runs/transfer_sample_20261026T075822_228291Z",
+      "actual_audit": "qa/phase7_transfer_actual_independent_review.json",
+      "actual_audit_status": "PASS",
+      "http_response_bytes": 564966,
+      "token_emitters_with_monitored_activity": 11,
+      "archived_core_erc20_shaped_events": 0
     }
   },
   "evaluation": {
@@ -464,7 +500,7 @@
     "exact seeds and measurement repeats",
     "finality and late-event policy"
   ],
-  "updated_local_date": "2026-10-25",
+  "updated_local_date": "2026-10-26",
   "change_log": [
     {
       "date": "2026-10-25",
@@ -529,6 +565,16 @@
         "Mapped historical SDK registry/component source evidence separately from current replacements; historical on-chain creation/routing remains unresolved.",
         "Froze and executed only 60 bounded daily source listings: all present, 6,404,872,951 listed payload bytes; no new candidate event data or scores.",
         "Published exact stages3-5 tree after explicit user authorization; no detector, budget, label or benchmark source changes."
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "scope": "v0.8 deployment provenance and source-bound transfer observations",
+      "changes": [
+        "Linked five Revest creations and four initial component bindings through captured explorer records; continuous activation and independent case admission remain open.",
+        "Added pure strict Transfer-shape decoder and per-token exact event-flow arithmetic, without changing existing count rules or budget policies.",
+        "Froze first10 Euler development transactions before21 provider calls; all58 archived core payloads match among192 provider logs,84ERC20-shaped events and16 involving monitored core.",
+        "Kept raw provider evidence and per-token values private; no labels, scoring, model fitting or scientific outcome selection."
       ]
     }
   ],

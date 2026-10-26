@@ -1,0 +1,120 @@
+{
+  "all_source_rows": 1247,
+  "all_source_transactions": 218,
+  "auditor_sha256": "5c6810304e6e5e7430e90e926f70107f975ed1d40d48f7832e909c73339a5a58",
+  "checks": [
+    "Committed manifest anchors exact restored byte sizes and SHA-256.",
+    "Strict source integers/hex/UTC range, unique log identity and canonical ordering.",
+    "Every selected-source log matches retained header hash and timestamp.",
+    "First ten distinct transaction hashes independently regrouped from entire source.",
+    "All 58 original dictionaries and selected transaction metadata exactly equal prior selection artifact."
+  ],
+  "committed_acquisition_manifest_sha256": "95ddf39a3d4ec0c7791bc4888fe0d51933177c52dd62f62277564eadffee3828",
+  "head": "ef6271631e14c5c1d5afb14d98f3cfa5d8c5389e",
+  "limitations": [
+    "Archive outer bytes/CRC claim not independently re-read by this audit; source member bytes independently match committed acquisition manifest.",
+    "No new provider request or transfer outcome was read; selection timestamp/exposure assertion is a retained provenance statement, not independently reconstructed system history."
+  ],
+  "matching_headers": 215,
+  "schema_version": "phase7_selection_independent_review_v1",
+  "selected": [
+    {
+      "block_number": 16730074,
+      "core_logs": 15,
+      "first_log_index": 43,
+      "last_log_index": 98,
+      "transaction_hash": "0x66efc5e2fb12ffa1d27644390ff968431a84ab1b073e61de8d5463266362c38a",
+      "transaction_index": 13
+    },
+    {
+      "block_number": 16730126,
+      "core_logs": 3,
+      "first_log_index": 598,
+      "last_log_index": 604,
+      "transaction_hash": "0xd36b3fee61023947ae7ded3212fae4daab545a5975c3158d50168540919d2fd0",
+      "transaction_index": 226
+    },
+    {
+      "block_number": 16730129,
+      "core_logs": 3,
+      "first_log_index": 570,
+      "last_log_index": 575,
+      "transaction_hash": "0x0dec059e26728875b0529be50958e521487b91696272de058247d9e1eb1fa141",
+      "transaction_index": 387
+    },
+    {
+      "block_number": 16730150,
+      "core_logs": 8,
+      "first_log_index": 27,
+      "last_log_index": 53,
+      "transaction_hash": "0x384b1ba80f03539fc9be7f00a02d4bfafb7a0900728755d25378b27c10358129",
+      "transaction_index": 6
+    },
+    {
+      "block_number": 16730196,
+      "core_logs": 6,
+      "first_log_index": 255,
+      "last_log_index": 264,
+      "transaction_hash": "0xaca60f9457b453745ddcf68a28f20e1f4eb7e063aecae81ce0906fa44898db7c",
+      "transaction_index": 113
+    },
+    {
+      "block_number": 16730231,
+      "core_logs": 3,
+      "first_log_index": 407,
+      "last_log_index": 411,
+      "transaction_hash": "0x974747897d1ed3c26c54c5a2f16b81df7111239cc1a0d10b4ca290862f69ddeb",
+      "transaction_index": 245
+    },
+    {
+      "block_number": 16730296,
+      "core_logs": 4,
+      "first_log_index": 344,
+      "last_log_index": 350,
+      "transaction_hash": "0x9757ce4589ca8a4f099078dc439b2172c64f44ed7dcf1b594b0579c6a796b02d",
+      "transaction_index": 115
+    },
+    {
+      "block_number": 16730296,
+      "core_logs": 8,
+      "first_log_index": 402,
+      "last_log_index": 413,
+      "transaction_hash": "0x4e43b39528b34dc74aaf83b2426b950dfdf05842d0d98c1974362fffb81bc3d5",
+      "transaction_index": 141
+    },
+    {
+      "block_number": 16730343,
+      "core_logs": 4,
+      "first_log_index": 212,
+      "last_log_index": 217,
+      "transaction_hash": "0x0a182d6c5c3239023d67285fc309642dc93dd6a65acf7c7a4b0863be09c0e15c",
+      "transaction_index": 101
+    },
+    {
+      "block_number": 16730399,
+      "core_logs": 4,
+      "first_log_index": 233,
+      "last_log_index": 243,
+      "transaction_hash": "0xe8bd61d1a33ebb4461dfab66988e74a339eb04bdf26a8a54e0c83b2cf838ce48",
+      "transaction_index": 101
+    }
+  ],
+  "selected_core_logs": 58,
+  "selected_transactions": 10,
+  "selection_sha256": "6817982ace7cd2df723351be807ffd3bb514ba6d00a9346a62eba6c82dff635a",
+  "source_files": [
+    {
+      "bytes": 1039160,
+      "path": "data/raw/monitoring_jss/protocol_logs/2023-03-01/protocol_logs_20261025T083346_282558Z/selected_logs.jsonl",
+      "rows": 1247,
+      "sha256": "49b205ef5691f27c3171de8ad6b9b005d67afc5f4a7683c76723e4c76239cd9a"
+    },
+    {
+      "bytes": 53957,
+      "path": "data/raw/monitoring_jss/protocol_logs/2023-03-01/protocol_logs_20261025T083346_282558Z/matching_headers.jsonl",
+      "rows": 215,
+      "sha256": "aca54bab0ecd38d5b0106fec6ef76a1644bec1f356316344b8806972f535522d"
+    }
+  ],
+  "status": "PASS"
+}

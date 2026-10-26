@@ -1,0 +1,68 @@
+{
+  "checks": {
+    "all_raw_sources_bound_to_external_source_record_digest": true,
+    "archived_input_hash_hardbound": true,
+    "both_executable_sources_required_in_freeze": true,
+    "canonical_bundle_independently_rebuilt_from_raw_pages": true,
+    "erc20_vs_erc721_layout_not_topic_alone": true,
+    "exact_integer_sums_and_signed_decimal_strings": true,
+    "exact_utc_nanosecond_parsing": true,
+    "exact_whole_byte_hex_and_address_padding": true,
+    "fixed_endpoint_request_caps_no_retry_redirect": true,
+    "fixed_first_ten_selection_no_outcome_replacement": true,
+    "global_log_order_contiguous_no_silent_deduplication": true,
+    "malformed_matching_log_aborts_bundle": true,
+    "optional_raw_log_timestamp_consistency": true,
+    "pagination_cursor_chain_terminal_and_url_checked": true,
+    "strict_integer_no_bool": true,
+    "token_and_chain_separation": true,
+    "unknown_or_failed_not_successful_zero": true,
+    "zero_self_internal_external_mint_burn": true
+  },
+  "independent_arithmetic_review": {
+    "path": "phase7_transfer_randomized_review.json",
+    "seed": 20261026,
+    "sha256": "53f3984047a273026cd831687b7835e66fbdcd28b40a4457c297fee8f8240a32",
+    "status": "PASS",
+    "synthetic_bundles": 100,
+    "synthetic_logs": 2020
+  },
+  "independent_selection_review": {
+    "path": "phase7_selection_independent_review.json",
+    "rows": 1247,
+    "selected_core_logs": 58,
+    "selected_transactions": 10,
+    "sha256": "45d51a38ac9f801fd607a033897b5465feb03a7808a2d2698b0f7dadf3b3e556",
+    "status": "PASS",
+    "transactions": 218
+  },
+  "limitations": [
+    "Provider pagination exhaustion and interior contiguity cannot exclude omitted prefix/suffix logs or prove receipt-root completeness.",
+    "Captured source digests establish consistency with the retained collector manifest; they do not authenticate the provider or replace independent chain evidence.",
+    "ERC20/721 event shapes are not proofs of deployed token standard compliance or actual balance changes.",
+    "All current checks are development/source validation; there is no attack rule, outcome tuning, independent incident claim, or native asset/price/balance inference."
+  ],
+  "network_requests_by_auditor": 0,
+  "offline_unit_tests": {
+    "command": "python3 -m unittest discover -s papers/monitoring_jss/tests -p test_transfer*.py",
+    "status": "PASS",
+    "tests": 30
+  },
+  "production_data_measurements_by_auditor": 0,
+  "resolved_prefreeze_findings": [
+    "Aligned normalized per-log fields between collector and independent parser; chain/time remain bundle context.",
+    "Log emitter comes from address/address_hash; unrelated smart_contract/transaction recipient is not an emitter identity.",
+    "Timestamp normalization uses exact <=9-digit fractions rather than datetime microsecond truncation.",
+    "Freeze requires both source names and the accepted archive input hash."
+  ],
+  "schema_version": "phase7_transfer_source_independent_review_v1",
+  "scope": "Read-only source/contract review and offline synthetic verification before new provider sample; not a real-data evaluation.",
+  "source_hashes": {
+    "TRANSFER_OBSERVATION_CONTRACT.md": "db816d56368433ca963539d147591f4e196e14495f0d339ecf767a1aaa51a83b",
+    "sample_transfer_observations.py": "7652355ecd6d154a9db3ce2518d644f0b7c973752d13efe8e36eed1369bd0fc7",
+    "tests/test_transfer_observation.py": "08410f3e4c1b7c6bf9c63f63dc8a5258049f5f8f88524d2218857100dd28ac68",
+    "tests/test_transfer_sampling.py": "5b2006fe9d352266e095e5326befd5fca5102e0afee14a6a675e24d075f1efd8",
+    "transfer_observation.py": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c"
+  },
+  "status": "PASS"
+}
