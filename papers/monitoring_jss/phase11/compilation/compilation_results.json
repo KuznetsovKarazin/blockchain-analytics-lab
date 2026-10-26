@@ -1,0 +1,195 @@
+{
+  "schema_version": "article2_phase11_lifi_compilation_results_data_only_v1",
+  "reported_utc": "2026-10-26T15:24:23.372213+00:00",
+  "producer_completed_utc": "2026-10-26T15:18:39.648153+00:00",
+  "disposition": "EXACT_SOURCE_COMPILER_BYTECODE_CONSISTENCY",
+  "all_exact": true,
+  "independent_compilation_review_status": "PASS_INDEPENDENT_EXACT_COMPILER_REPRODUCTION",
+  "compiler": {
+    "version": "0.8.7+commit.e28d00a7",
+    "sha256": "003d75383e45212f9812d0b6add90329fd3b239e6c378d2882f61f9345896d99",
+    "acquired_binary_bytes": 12141112,
+    "dependency_get_requests": 1,
+    "producer_standard_json_invocations": 2,
+    "producer_version_probes": 1,
+    "same_compiler_diversity_claim": false,
+    "independent_standard_json_invocations": 2,
+    "independent_version_probes": 1,
+    "total_standard_json_invocations": 4,
+    "total_version_probes": 2
+  },
+  "source_counts": {
+    "source_file_occurrences": 47,
+    "distinct_source_paths": 44,
+    "shared_path_contents_equal": true,
+    "not_a_deployed_component_count": true
+  },
+  "runtime_comparisons": {
+    "compiled_targets": 2,
+    "retained_historical_code_observations": 6,
+    "per_target_checkpoints": [
+      "creation",
+      "window_start_predecessor",
+      "window_end_predecessor"
+    ],
+    "new_rpc_requests": 0,
+    "source_and_trace_byte_equality_also_checked": true,
+    "metadata_stripping": false,
+    "bytecode_masking": false
+  },
+  "constructor_annotation_finding": {
+    "target": "diamond",
+    "actual_factory_initcode_bytes": 9945,
+    "exact_compiler_creation_prefix_bytes": 9881,
+    "compiler_abi_constructor_arguments_bytes": 64,
+    "retained_explorer_annotation_bytes": 236,
+    "annotation_overreach_into_compiled_creation_bytes": 172,
+    "corrected_value_source": "Exact compiler-established prefix plus compiler ABI static argument types; full creation bytes also match retained successful creation trace.",
+    "original_annotation_modified": false,
+    "scope": "Initial constructor inputs only; not ownership or selector activation throughout the later study window."
+  },
+  "ordinary_storage_layout_warning": "Both target storageLayout.storage arrays are empty. The programs use library/namespaced assembly storage; empty ordinary layouts do not establish statelessness, namespace slots, complete writer coverage or routing continuity.",
+  "claim_limits": [
+    "Exact source/settings/compiler consistency is established for two nominated code targets, not all historical facets or a full emitter population.",
+    "Only compiler outputSelection was added. Original per-target settings were preserved; facet omitted default settings remained omitted in its input, while the compiler reported London/IPFS defaults in output metadata.",
+    "Producer and independent auditor used the same pinned compiler, separately reconstructed source inputs and comparison logic. Both complete output files match; this is not compiler diversity or formal verification.",
+    "The source bundle has47file occurrences at44distinct paths, not47contracts or47independent source sets.",
+    "All compiler metadata, full ABI, AST, source text, raw bytecode and diagnostics are excluded from this data-only summary.",
+    "No source population change, threshold change, detector replay, label join, new incident payload or scientific cohort admission occurred."
+  ],
+  "scientific_admissions": 0,
+  "detector_scores": 0,
+  "routing_continuity_proved": false,
+  "formal_verification": false,
+  "new_case_data_requests": 0,
+  "independent_comparison": {
+    "semantic_inputs_identical": true,
+    "input_serialization_different": true,
+    "both_full_output_files_byte_identical": true,
+    "completed_utc": "2026-10-26T15:23:35.166887+00:00"
+  },
+  "roles": [
+    {
+      "role": "diamond",
+      "source_file_occurrences": 3,
+      "source_text_bytes": 13966,
+      "compiler_creation_bytes_without_constructor": 9881,
+      "constructor_suffix_bytes": 64,
+      "runtime_bytes": 4581,
+      "compiled_creation_sha256": "9d5fcfa3fe60172ef02d95c0ee5d1b85da90b8f8303853a2788a33ccdb342ff9",
+      "compiled_runtime_sha256": "c03fa708d3e65b647c904cbc7582412123fe5a725502ea208bd030a840534917",
+      "explorer_constructor_annotations_used": false,
+      "metadata_retained_without_stripping": true,
+      "checks": {
+        "compiled_creation_prefix_matches": true,
+        "compiler_abi_constructor_suffix_matches": true,
+        "full_creation_plus_constructor_matches_explorer": true,
+        "full_creation_plus_constructor_matches_trace": true,
+        "full_runtime_matches_creation": true,
+        "full_runtime_matches_creation_trace": true,
+        "full_runtime_matches_end": true,
+        "full_runtime_matches_explorer": true,
+        "full_runtime_matches_start": true
+      },
+      "all_exact": true,
+      "original_compiler_settings": {
+        "evmVersion": "london",
+        "libraries": {},
+        "metadata": {
+          "bytecodeHash": "ipfs",
+          "useLiteralContent": true
+        },
+        "optimizer": {
+          "enabled": true,
+          "runs": 200
+        },
+        "remappings": []
+      },
+      "effective_compiler_settings": {
+        "compilationTarget": {
+          "src/LiFiDiamond.sol": "LiFiDiamond"
+        },
+        "evmVersion": "london",
+        "libraries": {},
+        "metadata": {
+          "bytecodeHash": "ipfs",
+          "useLiteralContent": true
+        },
+        "optimizer": {
+          "enabled": true,
+          "runs": 200
+        },
+        "remappings": []
+      },
+      "ordinary_storage_layout_entries": 0,
+      "method_identifier_count": 0,
+      "constructor_arguments_from_exact_compiled_boundary": [
+        {
+          "name": "_contractOwner",
+          "type": "address",
+          "address": "0xcb1e9fa11edd27098a6b2ff23cb6b79183ccf8ee",
+          "byte_offset_in_factory_initcode": 9881
+        },
+        {
+          "name": "_diamondCutFacet",
+          "type": "address",
+          "address": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+          "byte_offset_in_factory_initcode": 9913
+        }
+      ]
+    },
+    {
+      "role": "cbridge_facet",
+      "source_file_occurrences": 44,
+      "source_text_bytes": 205562,
+      "compiler_creation_bytes_without_constructor": 5718,
+      "constructor_suffix_bytes": 0,
+      "runtime_bytes": 5686,
+      "compiled_creation_sha256": "34fff372f3836e3d45de249a41b030563fb33ad0f98efc96b1bdb4489e4fa896",
+      "compiled_runtime_sha256": "c7570dde9e1e0b080f7f584a4048d4d216e74e44456a9d1b56af8e5b2794ef00",
+      "explorer_constructor_annotations_used": false,
+      "metadata_retained_without_stripping": true,
+      "checks": {
+        "compiled_creation_prefix_matches": true,
+        "compiler_abi_constructor_suffix_matches": true,
+        "full_creation_plus_constructor_matches_explorer": true,
+        "full_creation_plus_constructor_matches_trace": true,
+        "full_runtime_matches_creation": true,
+        "full_runtime_matches_creation_trace": true,
+        "full_runtime_matches_end": true,
+        "full_runtime_matches_explorer": true,
+        "full_runtime_matches_start": true
+      },
+      "all_exact": true,
+      "original_compiler_settings": {
+        "metadata": {
+          "useLiteralContent": true
+        },
+        "optimizer": {
+          "enabled": true,
+          "runs": 200
+        }
+      },
+      "effective_compiler_settings": {
+        "compilationTarget": {
+          "src/Facets/CBridgeFacet.sol": "CBridgeFacet"
+        },
+        "evmVersion": "london",
+        "libraries": {},
+        "metadata": {
+          "bytecodeHash": "ipfs",
+          "useLiteralContent": true
+        },
+        "optimizer": {
+          "enabled": true,
+          "runs": 200
+        },
+        "remappings": []
+      },
+      "ordinary_storage_layout_entries": 0,
+      "method_identifier_count": 3,
+      "constructor_arguments_from_exact_compiled_boundary": []
+    }
+  ],
+  "publication_scope": "Owned aggregate projection; original compiler input/output and detailed evidence receipt bindings are retained separately. The public files do not supply the complete source input or a self-contained recompilation kit."
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "article2_phase11_constructor_bootstrap_public_v1",
+  "status": "PASS_ACTUAL_CONSTRUCTOR_RECEIPT_CHECK",
+  "diamond": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+  "achieved_evidence_tier": "compiler_bound_constructor_receipt_consistency",
+  "owner_at_constructor": "0xcb1e9fa11edd27098a6b2ff23cb6b79183ccf8ee",
+  "initial_diamond_cut_facet": "0xc46304a0b2accc4462d9bdcaa0f6bf632510d617",
+  "constructor_suffix_bytes": 64,
+  "constructor_arguments_from_source_annotations": false,
+  "diamond_cut_selector": "0x1f931c1c",
+  "cut_action": "Add",
+  "cut_initializer": "0x0000000000000000000000000000000000000000",
+  "cut_initializer_calldata": "0x",
+  "expected_diamond_events": 2,
+  "other_emitter_event_count": 0,
+  "ownership_log_index": 122,
+  "cut_log_index": 123,
+  "canonical_cut_data_bytes": 352,
+  "full_runtime_bytes": 4581,
+  "new_network_requests": 0,
+  "compiler_invocations": 0,
+  "detector_scores": 0,
+  "scientific_admissions": 0,
+  "historical_routing_proved": false,
+  "event_order": [
+    "OwnershipTransferred",
+    "DiamondCut"
+  ],
+  "log_index_semantics": "Block-level logIndex, not a count of events within this transaction.",
+  "validation": "Exact compiler ABI/prefix/runtime and canonical retained creation-receipt comparison; one actual root-accepted offline run. No new RPC or compiler invocation for this check.",
+  "independent_actual_audit": "PASS_INDEPENDENT_CONSTRUCTOR_RECEIPT_DECODING",
+  "limits": [
+    "Constructor bootstrap only; initial upgrade-facet address is a candidate whose runtime has not yet been verified here.",
+    "Does not establish subsequent ownership, active selectors, bridge configuration, all components or whole-window routing.",
+    "Addresses are not an emitter-population definition; no detector or cohort result follows."
+  ],
+  "independent_audit_method": "Separate canonical nested-ABI offset decoder and alternate pinned Keccak implementation; no producer rerun, compiler invocation or new network request."
+}
