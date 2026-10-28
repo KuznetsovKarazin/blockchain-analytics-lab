@@ -1,0 +1,61 @@
+{
+  "schema_version": "phase16_independent_scientific_protocol_review_v1",
+  "status": "PASS_PROTOCOL_DESIGN_ONLY_PENDING_EXACT_ROOT_ACCEPTANCE",
+  "reviewed_utc": "2026-10-28T09:32:34.249983+00:00",
+  "files": [
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/measurement_protocol.json",
+      "sha256": "34cd1a15c8055fd145ec21443c98c316e459637da4b82c3de70b713a656a5605"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/denominators.json",
+      "sha256": "ed3ddf0daea075a3b637b7ca43b628a8e5cf600906283b56edea03fbed06d5db"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/label_join_protocol.json",
+      "sha256": "f158f49e588c88077207896b48c961a24df8c461a1cb36831d8a644624802d10"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/core_nominations.json",
+      "sha256": "691572d5b2199144584546a95cc19301a382efa8350fada36bc585fccf8e28a3"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/configs/lifi.json",
+      "sha256": "fb3665da1b600766817aec9d0c49affea5f899be885560e82201abbb3c627125"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/configs/revest.json",
+      "sha256": "da90916dfb24b66c5b8220d6cbd2ca55cfec4df7172d4e68a3219ae205bc0d11"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/prepare_measurement_acceptance.py",
+      "sha256": "c0addc25b0e642f5e799415cc9a0f57a5107c696815b5773bb912d2264a55414"
+    }
+  ],
+  "findings": {
+    "unchanged_thresholds_and_policy_semantics": true,
+    "independent_utc_day_feature_grouping_budget_resets": true,
+    "all_30_days_per_case_preserved": true,
+    "same_complete_core_selected_transaction_inputs_for_all_arms": true,
+    "selection_requires_core_emitter_not_transfer_sender_or_topic": true,
+    "primary_B5_all_three_policies_no_post_outcome_policy_selection": true,
+    "two_incidents_not_1620_independent_scientific_replicates": true,
+    "known_reference_set_and_positive_inventory_closure_distinguished": true,
+    "missing_coverage_not_zero_or_measured_miss": true,
+    "exact_chain_hash_notification_attribution_only": true,
+    "both_case_decisions_sealed_before_new_labels": true,
+    "source_adjacent_boundaries_not_claimed_independent_chain_authentication": true,
+    "unknown_nonreference_notifications_not_false_positives": true,
+    "source_runtime_code_and_dependency_freeze_required": true
+  },
+  "blocking_findings": [],
+  "limitations": [
+    "Design approval is not source readability, coverage, incident execution inventory completeness, detector effectiveness, root acceptance or actual source audit.",
+    "Fixed named-component populations were retrospectively nominated and do not represent every protocol contract or a random incident sample.",
+    "Original header/log/transaction rows have not been read by this reviewer for this attempt."
+  ],
+  "new_network_requests": 0,
+  "real_source_rows_read": 0,
+  "detector_scores_computed": 0,
+  "old_test_suites_rerun": false
+}

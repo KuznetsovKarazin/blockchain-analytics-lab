@@ -1,0 +1,43 @@
+{
+  "schema_version": "article2_retained_original_source_expectation_v1",
+  "status": "RETAINED_EXPECTATION_NOT_NEW_ACQUISITION_OR_CURRENT_BYTE_VERIFICATION",
+  "source_key": "v1.0/eth/blocks/date=2022-03-21/part-00000-f10af45a-2119-4718-b5eb-1b99f88c0d78-c000.snappy.parquet",
+  "sha256": "8c1b29780dc286eed6cb39699dc6d458e2a18183bd0ceb4b2f47ffa251a19577",
+  "size_bytes": 5384684,
+  "etag_opaque": "\"859880d8641bc11faee4bffe546caab2\"",
+  "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/blocks/date=2022-03-21/part-00000-f10af45a-2119-4718-b5eb-1b99f88c0d78-c000.snappy.parquet",
+  "day_utc": "2022-03-21",
+  "table": "blocks",
+  "expected_archive_sha256": "c7455fb4ff37599dab09ceacb8cb7703c901844d0dfd3265b873756bcb6e4db7",
+  "expected_original_member_name": "headers.parquet",
+  "original_acquisition_metadata": {
+    "acquired_utc": "2026-10-25T12:34:05.017539+00:00",
+    "bytes": 5384684,
+    "elapsed_seconds": 6.506181523000123,
+    "hash_scope": "whole source object",
+    "network_bytes_this_attempt": 5384684,
+    "reused": false,
+    "sha256": "8c1b29780dc286eed6cb39699dc6d458e2a18183bd0ceb4b2f47ffa251a19577",
+    "source": {
+      "etag": "\"859880d8641bc11faee4bffe546caab2\"",
+      "size": 5384684,
+      "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/blocks/date=2022-03-21/part-00000-f10af45a-2119-4718-b5eb-1b99f88c0d78-c000.snappy.parquet",
+      "version_id": null
+    }
+  },
+  "retained_bindings": {
+    "reuse_expectations": {
+      "path": "papers/monitoring_jss/phase16/recovery/reuse_expectations.json",
+      "sha256": "e8d826633dab9af58da89d3155539f5af28181d10f8ca242050bca8d2a56d264"
+    },
+    "original_producer_manifest": {
+      "path": "papers/monitoring_jss/runs/protocol_window_20261025T123312_675327Z/manifest.json",
+      "sha256": "7505e42dec974609355d388313e7b446354f8c78a57421245e52b8107787431b"
+    },
+    "original_independent_audit": {
+      "path": "papers/monitoring_jss/qa/phase4_acquisition_independent_review.json",
+      "sha256": "c6cb1db123b3fef9adb63aee3efb7c87a54be5cd0b7ee0e8cbd02192018c71ab"
+    }
+  },
+  "phase16_real_bytes_verified": false
+}

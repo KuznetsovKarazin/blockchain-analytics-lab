@@ -1,0 +1,65 @@
+{
+  "schema_version": "article2_phase16_transport_auditor_preflight_v1",
+  "recorded_utc": "2026-10-28T09:37:24.960071+00:00",
+  "status": "HELPER_READY_ACTUAL_AUDIT_NOT_RUN",
+  "auditor": {
+    "path": "papers/monitoring_jss/phase16/qa/transport_receipt_audit.py",
+    "sha256": "9358885bffdf96d12fdfc7a9a578ccb5d770ae713af02c773b0494ae2dc38699"
+  },
+  "synthetic_fault_checks": {
+    "path": "papers/monitoring_jss/phase16/qa/transport_receipt_fault_checks.py",
+    "sha256": "f55cd24490510abcdcc345878d95f2c3da459d809653ce509625708e52046659",
+    "command": "python papers/monitoring_jss/phase16/qa/transport_receipt_fault_checks.py -v",
+    "distinct_methods": 8,
+    "passed": 8,
+    "failed": 0,
+    "executions": 2,
+    "real_network_requests": 0,
+    "historical_rows_decoded": 0,
+    "execution_history": [
+      {
+        "methods": 7,
+        "passed": 7,
+        "failed": 0
+      },
+      {
+        "methods": 8,
+        "passed": 8,
+        "failed": 0,
+        "new_check": "End-to-end synthetic evidence binding and output scope"
+      }
+    ]
+  },
+  "actual_audit_contract": {
+    "success_status": "PASS_TRANSPORT_ORIGINAL_BYTES",
+    "required_output_hash_bindings": [
+      "plan_sha256",
+      "collection_result_sha256",
+      "transport_sources_sha256",
+      "collector_sha256",
+      "pipeline_sha256",
+      "requests_sha256",
+      "session_sha256",
+      "runtime_source_paths_sha256"
+    ],
+    "verified_source_fields": [
+      "source_key",
+      "source",
+      "source_id",
+      "path",
+      "available_ranges",
+      "whole_source_sha256_verified",
+      "whole_source_sha256",
+      "successful_range_count",
+      "range_receipts_canonical_sha256",
+      "original_footer_evidence",
+      "whole_object_origin"
+    ]
+  },
+  "limits": [
+    "No actual source audit performed before root freeze.",
+    "No production collector or pipeline imports.",
+    "No Parquet rows decoded or selection/decision checks.",
+    "No whole sparse-file SHA used as evidence."
+  ]
+}

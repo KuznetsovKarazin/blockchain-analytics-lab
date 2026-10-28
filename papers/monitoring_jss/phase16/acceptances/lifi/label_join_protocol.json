@@ -1,0 +1,92 @@
+{
+  "schema_version": "article2_phase16_postdecision_reference_protocol_v1",
+  "status": "PROCEDURE_SPECIFIED_BEFORE_AFFECTED_WORKLOAD_NO_POSITIVES_COLLECTED_HERE",
+  "created_utc": "2026-10-28T09:20:57.503489+00:00",
+  "activation": "All replay decisions for both intended cases must be closed and hash-sealed or a source-failure stage explicitly closed before new reference acquisition. Failure-only work cannot report detector metrics. Reference hashes do not enter source selection or replay.",
+  "case_order": [
+    "lifi_20220320",
+    "revest_20220327"
+  ],
+  "primary_source_anchors": {
+    "lifi_20220320": [
+      "https://blog.li.fi/20th-march-the-exploit-e9e1c5c03eb9",
+      "https://blocksec.com/blog/li-fi-attack-a-cross-chain-bridge-vulnerability-no-it-s-due-to-unchecked-external-call"
+    ],
+    "revest_20220327": [
+      "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5",
+      "https://blocksec.com/blog/revest-finance-vulnerabilities-more-than-re-entrancy"
+    ]
+  },
+  "per_case_document_caps": {
+    "search_query_items": 3,
+    "explicit_open_click_or_github_fetch_items": 6,
+    "combined_items": 9,
+    "distinct_primary_documents": 6,
+    "minutes": 20,
+    "transient_retries_per_locator": 1
+  },
+  "document_order": "Open named primary anchors first. Follow official canonical migrations if needed, then named-protocol/original-investigator searches. Count failures/retries/verification reads. A search snippet or secondary catalogue alone cannot establish a positive. Never query notifications or raw detector scores to select sources.",
+  "candidate_enumeration": "Extract all reported transaction identities from each opened primary artifact in document order, retaining source location and stated role. Deduplicate by chain+hash, retain every role/conflict; do not choose only transactions inside S or receiving alerts. After all bounded documents close, audit candidates in sorted canonical(chain,hash)order.",
+  "per_case_execution_caps": {
+    "candidate_hashes_to_chain_audit": 64,
+    "chain_http_get_items": 192,
+    "max_log_pages_per_transaction": 8,
+    "total_retained_response_bytes": 67108864,
+    "per_response_bytes": 8388608,
+    "wall_minutes": 20,
+    "request_timeout_seconds": 45,
+    "automatic_retries": 0
+  },
+  "cap_failure": "Every found candidate remains in the candidate table. Beyond audit cap retain UNVERIFIED_DUE_TO_CAP; complete inventory cannot be asserted. Do not extend the cap after seeing coverage or replace difficult candidates.",
+  "chain_evidence_order": [
+    "Reuse already retained exact archive transaction/status/header records and full core-address/hash scans when their provenance and row coverage support the requested fact",
+    "If needed, fixed provider https://eth.blockscout.com/api/v2/transactions/{transaction_hash} for actual execution identity/status; no arbitrary provider switching",
+    "If no-core selection absence is not established by complete retained scans, use https://eth.blockscout.com/api/v2/transactions/{transaction_hash}/logs and its exact next_page_params until terminal page under the cap"
+  ],
+  "provider_evidence": "Provider metadata/pagination checked is a declared indexer tier, not raw RPC receipt acquisition, receipt-root authentication or complete canonical chain proof. HTTP/status/schema/pagination failures stay unavailable. Match chain-supported primary attribution, hash, successful status, block number/hash/index and exact timestamp against retained headers when present. Do not invent absent fields.",
+  "no_core_assertion": "Requires verified execution identity plus complete fixed-window address/hash selection scan or complete terminal all-log bundle showing no core emitter. Absence from observation JSONL alone is insufficient. Labeled but unselected transactions remain outside detector inputs.",
+  "primary_label_rule": "Successful unauthorized execution explicitly attributed by a direct protocol or original investigator report and corroborated by actual chain identity/status. Report association without sufficient role or contradictory sources remains UNKNOWN. Independent reviewer approves role, applicability, duplicate resolution and inventory completeness before joining.",
+  "inventory_completeness": "Explicit primary inventory closure or independently justified complete enumeration is required. One report naming one transaction, two agreeing reports, page exhaustion and reaching a cap do not prove an incident has no other executions. Default KNOWN_SUBSET_ONLY.",
+  "reference_fields": [
+    "case_id",
+    "chain_id",
+    "transaction_hash",
+    "primary_source_locations_and_hashes",
+    "reported_role",
+    "actual_identity_or_unavailable",
+    "success_status_or_unavailable",
+    "in_fixed_window",
+    "adjudication_status",
+    "reviewer_rationale",
+    "execution_inventory_status",
+    "source_coverage_audit_binding"
+  ],
+  "postdecision_join": {
+    "preconditions": [
+      "Verify exact run/config/source/selection/input/decision seals for both cases or explicit failed-stage receipts",
+      "Seal reference inventory and independent adjudication before joining",
+      "Keep reference audit files separate from selected detector input files"
+    ],
+    "identity": "Exact(chain_id,transaction_hash), within fixed case window; no time tolerance, same-block proxy, victim-address matching, grouped-neighbor credit or method-specific label subset.",
+    "full_matrix": "Join every declared method/policy/budget cell. Report B5 primary comparison for all three policies and the predeclared sensitivities.",
+    "attribution": "Execution hit iff same transaction has notification_emitted=true. Incident hit iff at least one verified execution has an exact hit. Never infer causal detection, prevention or saved loss.",
+    "failure_decomposition": "Use sealed selection, method and admission records to assign the first failed stage in denominators.json; preserve all original suppression codes.",
+    "freeze_of_decisions": "No replay rerun, method retuning, core expansion or history repair in response to reference results."
+  },
+  "new_positive_hashes_in_this_gate": 0,
+  "new_execution_payloads_in_this_gate": 0,
+  "bindings": [
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/measurement_protocol.json",
+      "sha256": "34cd1a15c8055fd145ec21443c98c316e459637da4b82c3de70b713a656a5605"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/denominators.json",
+      "sha256": "ed3ddf0daea075a3b637b7ca43b628a8e5cf600906283b56edea03fbed06d5db"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/core_nominations.json",
+      "sha256": "691572d5b2199144584546a95cc19301a382efa8350fada36bc585fccf8e28a3"
+    }
+  ]
+}

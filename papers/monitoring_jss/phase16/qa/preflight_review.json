@@ -1,0 +1,85 @@
+{
+  "schema_version": "phase16_independent_preflight_review_v1",
+  "status": "GO_FOR_EXACT_ROOT_ACCEPTANCE_THEN_BOUNDED_ACQUISITION",
+  "reviewed_utc": "2026-10-28T09:39:37.706478+00:00",
+  "source_plan_sha256": "d5a9caec11b0c6b407bb37e82e208d71aec62782bcbbbb79a7120c411c8adc9c",
+  "files": [
+    {
+      "path": "papers/monitoring_jss/phase16/qa/protocol_review.json",
+      "sha256": "db14793703933aac09ba55ad27a5dcddd6df6da36f3c71822154ecefdf92282d"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/inventory_review.json",
+      "sha256": "542e8e15f6d42d3e11134fef2243b56ab194c3780484302da0684ecf67dd93e8"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/streaming_fault_checks.py",
+      "sha256": "a9a6fd6e8741a846887a929f7b0160bd2dad3003a3fbc10d14e8b6a8055b6145"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/streaming_fault_report.json",
+      "sha256": "6e1982dcc3cec8cdf11bc9d08bde59c953985188c16b4f12c2c73f5ec2decb85"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/audit_prepared_sources.py",
+      "sha256": "385bff732afac356bf890193153b08d3751b5a3fbfd4788dab500176a0a03a62"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/source_audit_fault_checks.py",
+      "sha256": "55176193c86b19ff7f6da9ec1851d3c3f48efe429004668848a78544c22eb305"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/source_audit_fault_report.json",
+      "sha256": "ab403d90f667125420f01bf554f985fdc250422b5d59d428d528a153ec5f1497"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/transport_preflight_review.json",
+      "sha256": "9dd6fc02d5e426fedd96b86bc314ef072665e9c379826cfc8bf84c703ded414f"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/transport_receipt_audit.py",
+      "sha256": "9358885bffdf96d12fdfc7a9a578ccb5d770ae713af02c773b0494ae2dc38699"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/transport_receipt_preflight.json",
+      "sha256": "914da6d5de81c45d135e834ab97621baac1c787c35af84c899b99524be3c43e0"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/pipeline/streaming_pipeline.py",
+      "sha256": "56c086e4af2d65e863a4dc53a31bf24e79f1a2ccd3ab0c4915e19ff823f64f46"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/collector/range_collector.py",
+      "sha256": "13e15e7b770ad40c2e8d286abceb8f7e380d946626b35d0186f43f0001be563f"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/recovery/verify_recovered_archives.py",
+      "sha256": "5b17099b90f8a2ccea26fb510c981175aa5413db740973fb448f10fc63b4421a"
+    }
+  ],
+  "blocking_findings": [],
+  "resolved_concrete_findings": [
+    "Authenticated leading PAR1 bytes and original sparse range provenance required.",
+    "Transport failure poisoning and final wall-deadline enforcement verified after independently exposed defects.",
+    "Prepared cases payload bound inside audited partition manifest; assembler independently rehashes all audited sidecars and cases before decoding.",
+    "Runtime reuse paths permitted only when whole-object identity and original archive/member expectations match frozen bindings.",
+    "Independent auditor normalizes six source identity fields, retaining inventory annotations separately."
+  ],
+  "independent_checks": {
+    "streaming_methods": 14,
+    "transport_methods": 20,
+    "source_auditor_methods": 4,
+    "transport_auditor_methods": 8,
+    "are_scientific_replicates": false
+  },
+  "required_next_gates": [
+    "Both exact root acceptance receipts precede any affected acquisition or recovered old raw-table use.",
+    "Independent actual transport original-byte audit and source/selection/bundle audit must pass before observation decode and scoring.",
+    "Both full-window decision artifacts sealed before new incident-reference retrieval."
+  ],
+  "actual_source_audit_status": "NOT_RUN",
+  "real_source_rows_read": 0,
+  "detector_scores_computed": 0,
+  "old_test_suites_rerun": false,
+  "scientific_scope": "Two retrospectively nominated fixed-component incidents, enumerated archive and transaction metadata tier; no full protocol closure, receipt-root proof, live detection or effectiveness result inferred."
+}

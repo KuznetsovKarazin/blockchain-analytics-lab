@@ -1,0 +1,43 @@
+{
+  "schema_version": "article2_retained_original_source_expectation_v1",
+  "status": "RETAINED_EXPECTATION_NOT_NEW_ACQUISITION_OR_CURRENT_BYTE_VERIFICATION",
+  "source_key": "v1.0/eth/blocks/date=2022-03-27/part-00000-3de5fe2b-e3b4-48a7-a17e-2389833fb746-c000.snappy.parquet",
+  "sha256": "dae68e7a3134f064fb2ee4770fbe5c21e2d37b8dc9d6922edceb794989510ea3",
+  "size_bytes": 5382415,
+  "etag_opaque": "\"32071b46692aa45a12321f660098563d\"",
+  "source_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/blocks/date=2022-03-27/part-00000-3de5fe2b-e3b4-48a7-a17e-2389833fb746-c000.snappy.parquet",
+  "day_utc": "2022-03-27",
+  "table": "blocks",
+  "expected_archive_sha256": "3a1593016315c47561758a0c29b63c136670108f2a1a1fd17888ca8fa5533698",
+  "expected_original_member_name": "headers.parquet",
+  "original_acquisition_metadata": {
+    "acquired_utc": "2026-10-25T12:34:45.700290+00:00",
+    "bytes": 5382415,
+    "elapsed_seconds": 1.9449009260024468,
+    "hash_scope": "whole source object",
+    "network_bytes_this_attempt": 5382415,
+    "reused": false,
+    "sha256": "dae68e7a3134f064fb2ee4770fbe5c21e2d37b8dc9d6922edceb794989510ea3",
+    "source": {
+      "etag": "\"32071b46692aa45a12321f660098563d\"",
+      "size": 5382415,
+      "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/blocks/date=2022-03-27/part-00000-3de5fe2b-e3b4-48a7-a17e-2389833fb746-c000.snappy.parquet",
+      "version_id": null
+    }
+  },
+  "retained_bindings": {
+    "reuse_expectations": {
+      "path": "papers/monitoring_jss/phase16/recovery/reuse_expectations.json",
+      "sha256": "e8d826633dab9af58da89d3155539f5af28181d10f8ca242050bca8d2a56d264"
+    },
+    "original_producer_manifest": {
+      "path": "papers/monitoring_jss/runs/protocol_window_20261025T123312_675327Z/manifest.json",
+      "sha256": "7505e42dec974609355d388313e7b446354f8c78a57421245e52b8107787431b"
+    },
+    "original_independent_audit": {
+      "path": "papers/monitoring_jss/qa/phase4_acquisition_independent_review.json",
+      "sha256": "c6cb1db123b3fef9adb63aee3efb7c87a54be5cd0b7ee0e8cbd02192018c71ab"
+    }
+  },
+  "phase16_real_bytes_verified": false
+}

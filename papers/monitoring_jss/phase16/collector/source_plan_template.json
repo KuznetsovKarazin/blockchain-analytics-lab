@@ -1,0 +1,48 @@
+{
+  "schema_version": "article2_phase16_range_source_plan_v1",
+  "endpoint": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/",
+  "caps": {
+    "requests": 5000,
+    "total_response_bytes": 17179869184,
+    "wall_seconds": 7200,
+    "request_timeout_seconds": 60,
+    "max_range_bytes": 268435456,
+    "max_footer_bytes": 1048576,
+    "max_rows": 100000000,
+    "max_row_groups": 1024,
+    "max_top_level_columns": 128,
+    "max_leaf_columns": 256,
+    "max_source_bytes": 2147483648,
+    "retries": 0,
+    "concurrency": 1
+  },
+  "required_columns": {
+    "logs": [
+      "address",
+      "topics",
+      "data",
+      "transaction_index",
+      "log_index",
+      "transaction_hash",
+      "block_number",
+      "block_hash",
+      "block_timestamp"
+    ],
+    "blocks": [
+      "number",
+      "hash",
+      "parent_hash",
+      "timestamp",
+      "transaction_count"
+    ],
+    "transactions": [
+      "hash",
+      "transaction_index",
+      "block_hash",
+      "block_number",
+      "block_timestamp",
+      "receipt_status"
+    ]
+  },
+  "scientific_acceptance": "This is a template only; root must bind exact source inventory, collector/pipeline/dependency hashes and all measurement gates before real payload acquisition."
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "phase16_independent_exact_root_gate_check_v1",
+  "status": "GO_EXACT_BOTH_CASE_GATES_VERIFIED_BEFORE_AFFECTED_SOURCE_USE",
+  "reviewed_utc": "2026-10-28T09:40:45.269743+00:00",
+  "source_plan_sha256": "d5a9caec11b0c6b407bb37e82e208d71aec62782bcbbbb79a7120c411c8adc9c",
+  "cases": [
+    {
+      "case": "lifi",
+      "acceptance_sha256": "04bbe53fd5e6d31a1a018719c6c3e74e391a67493330b4b45febef55e5d5e2fd",
+      "accepted_utc": "2026-10-28T09:40:04.981875+00:00",
+      "config_sha256": "fb3665da1b600766817aec9d0c49affea5f899be885560e82201abbb3c627125",
+      "execution_binding_count": 13
+    },
+    {
+      "case": "revest",
+      "acceptance_sha256": "23d71b8641364099aad83490945c8cb270413fec3ff09f4de2550ad43446d9cd",
+      "accepted_utc": "2026-10-28T09:40:05.067281+00:00",
+      "config_sha256": "da90916dfb24b66c5b8220d6cbd2ca55cfec4df7172d4e68a3219ae205bc0d11",
+      "execution_binding_count": 13
+    }
+  ],
+  "preflight_review_sha256": "20569f99e004342ead1297ccbb54ee9501d6c4c405fdd0eae408aa7ddda5b42b",
+  "actual_source_audit_status": "NOT_RUN",
+  "reviewer_new_network_requests": 0,
+  "reviewer_real_source_rows_read": 0,
+  "detector_scores_computed": 0,
+  "timing_evidence": "Both exact root receipts checked while root reported no affected source payload newly acquired or reused. Timestamp assertion is not a cryptographic proof of chronology."
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "article2_phase16_independent_transport_preflight_v1",
+  "recorded_utc": "2026-10-28T09:32:21.978240+00:00",
+  "reviewer": "independent_transport_audit",
+  "code_status": "GO_CONDITIONAL_ON_ROOT_FREEZE",
+  "actual_source_audit_status": "NOT_RUN",
+  "collector": {
+    "path": "papers/monitoring_jss/phase16/collector/range_collector.py",
+    "sha256": "13e15e7b770ad40c2e8d286abceb8f7e380d946626b35d0186f43f0001be563f"
+  },
+  "independent_fault_checks": {
+    "path": "papers/monitoring_jss/phase16/qa/transport_fault_checks.py",
+    "sha256": "5cdba6cf89312f97aff0f6dd345425474a6bd258b0cfddcc8d8a4ae37e7daf61",
+    "final_command": "python papers/monitoring_jss/phase16/qa/transport_fault_checks.py -v",
+    "final_exit_code": 0,
+    "distinct_methods": 20,
+    "final_passed": 20,
+    "final_failed": 0,
+    "method_names": [
+      "test_boolean_caps_are_rejected",
+      "test_cache_byte_tampering_is_rejected_with_original_receipt",
+      "test_cache_cannot_reset_attempt_budget",
+      "test_cache_receipt_tampering_is_rejected_without_body_change",
+      "test_clean_resume_preserves_original_counters_and_cap",
+      "test_crash_before_cache_index_write_recovers_only_charged_range",
+      "test_exact_original_offsets_and_request_binding",
+      "test_failed_and_pending_attempts_cannot_resume",
+      "test_invalid_headers_are_counted_without_body_consumption",
+      "test_live_failed_attempt_cannot_issue_next_request",
+      "test_missing_interval_union_does_not_hide_gaps",
+      "test_partial_failure_preserves_bytes_and_digest",
+      "test_per_range_cap_rejects_before_network",
+      "test_request_cap_rejects_before_second_network_call",
+      "test_resume_rejects_changed_plan_and_expired_deadline",
+      "test_resume_rejects_unaccounted_bytes",
+      "test_slow_final_read_cannot_be_accepted_after_wall_deadline",
+      "test_source_identity_rejects_wrong_endpoint_or_table_path",
+      "test_total_byte_cap_rejects_before_network",
+      "test_unacquired_sparse_hole_cannot_be_read"
+    ],
+    "execution_history": [
+      {
+        "distinct_methods": 10,
+        "passed": 10,
+        "failed": 0,
+        "reason": "initial targeted tests"
+      },
+      {
+        "distinct_methods": 20,
+        "passed": 18,
+        "failed": 2,
+        "reason": "new resume/cache and final deadline/failure faults"
+      },
+      {
+        "distinct_methods": 20,
+        "passed": 20,
+        "failed": 0,
+        "reason": "collector changed to resolve two independently reproduced faults"
+      }
+    ],
+    "real_network_calls": 0,
+    "historical_source_rows_read": 0,
+    "old_suite_runs": 0
+  },
+  "resolved_findings": [
+    "Live failed session could issue another request: now latched and refused.",
+    "Slow final body read could pass after wall deadline: now rejected while retaining byte accounting.",
+    "Cross-attempt cache could reset budgets: now same-attempt exact charged receipt membership plus original bytes hash."
+  ],
+  "reviewed_invariants": [
+    "Exact source URL/key/opaque ETag/size; conditional GET; 206 and exact Content-Range/Length; no redirects or encoded response.",
+    "Original leading PAR1 and footer/trailer fetched and retained; synthetic decoder envelope not claimed as source bytes.",
+    "Each requested leaf column chunk fully covered by retained original byte ranges before decoding; sparse holes are not evidence.",
+    "No automatic retries; cumulative request/byte caps and original UTC deadline preserved on clean resume; pending/failed attempts cannot resume.",
+    "Full-object reuse requires exact supplied identity and content SHA, with independent original receipt binding required externally.",
+    "Footer offsets/counts schedule declared projections; no statistics values used for selection."
+  ],
+  "limitations": [
+    "Code review and synthetic fault checks do not establish actual source coverage or collection success.",
+    "Frozen source inventory, execution code, plan, reuse origin hashes, and root acceptance remain external prerequisites.",
+    "Whole-object origin receipt verification belongs to the separate actual transport audit.",
+    "No proof of full protocol population, chain completeness, or Ethereum receipt-root verification."
+  ],
+  "open_collector_blockers": []
+}

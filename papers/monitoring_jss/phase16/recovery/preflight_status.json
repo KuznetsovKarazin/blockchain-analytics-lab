@@ -1,0 +1,77 @@
+{
+  "schema_version": "article2_phase16_recovery_preflight_v1",
+  "status": "RETAINED_METADATA_RECONSTRUCTED_AND_SYNTHETIC_BYTE_GUARDS_PASSED_NO_REAL_ARCHIVE_MATERIALIZED",
+  "recorded_utc": "2026-10-28T09:35:49.095229+00:00",
+  "artifact_bindings": {
+    "build_source_union.py": {
+      "path": "build_source_union.py",
+      "sha256": "9f53fbf7c43901ff85016aefed73d69511176cb83e6f54b23a60ba0d36bd9e7e"
+    },
+    "source_union.json": {
+      "path": "source_union.json",
+      "sha256": "cb7b70f2d5cda8274e57c3ed8693c141e1a8d84bae2a800b6073d2ab6e5807ee"
+    },
+    "reuse_expectations.json": {
+      "path": "reuse_expectations.json",
+      "sha256": "e8d826633dab9af58da89d3155539f5af28181d10f8ca242050bca8d2a56d264"
+    },
+    "verify_recovered_archives.py": {
+      "path": "verify_recovered_archives.py",
+      "sha256": "5b17099b90f8a2ccea26fb510c981175aa5413db740973fb448f10fc63b4421a"
+    },
+    "test_recovery.py": {
+      "path": "test_recovery.py",
+      "sha256": "1ce3c7ef25ebb73e647d7afb0b949662f46fcb83dcf78cb6a86e8f8555f463d3"
+    },
+    "README.md": {
+      "path": "README.md",
+      "sha256": "0abcbe801540d049b1bd990e929b3eaced1b33af66af161e23c606c1f33d4fa3"
+    },
+    "whole_object_reuse_expectations.json": {
+      "path": "whole_object_reuse_expectations.json",
+      "sha256": "6e754d7de93aa9360fc5cc8d14b7cf8d313b55ff65786e0b9669833e419f0ee3"
+    }
+  },
+  "retained_phase14_evidence_zip_sha256": "2cb1c1cf8529385b91f733367fc40f4b950595bcd02ee69b50a1d790ea90dfff",
+  "study_days": 37,
+  "study_objects": 111,
+  "boundary_block_objects": 2,
+  "transport_objects": 113,
+  "transport_declared_whole_object_bytes": 21481727176,
+  "previous_case_inventory_records_cross_checked": 180,
+  "shared_case_objects": 69,
+  "original_archive_count": 9,
+  "original_archive_bytes": 2367074342,
+  "canonical_raw_source_object_count": 18,
+  "canonical_raw_source_bytes": 1942523039,
+  "private_archive_locator_plan_sha256": "c83ecd5d3f815f2cb59ee8a78a8ffc69ba0634e8bba8baf8d7e1f42042f651a4",
+  "retained_durable_index_text_sha256": "6477ab4382d21324ced818731d2c847a359e5d5b16a8fa0390a848a0ba8f936e",
+  "counts": {
+    "new_library_index_metadata_read_calls": 1,
+    "dataset_http_requests": 0,
+    "original_archives_materialized_by_this_task": 0,
+    "real_source_bytes_decoded": 0,
+    "real_parquet_rows_decoded": 0,
+    "detector_scores": 0
+  },
+  "focused_synthetic_checks": {
+    "distinct_unittest_methods": 6,
+    "suite_executions": 3,
+    "method_executions_total": 18,
+    "final_execution_passed": 6,
+    "final_execution_failed": 0,
+    "old_suites_rerun": 0,
+    "coverage": [
+      "exact canonical member recovery",
+      "archive size and SHA mismatch before extraction",
+      "path traversal, absolute paths, backslash paths and duplicate members",
+      "member size, SHA and symlink rejection",
+      "opaque ETag source identity",
+      "both exact case acceptances, pinned receipt digests, common source plan and bound metadata digests",
+      "collector keyed reuse map and duplicate source key rejection"
+    ],
+    "fixture_scope": "Tiny synthetic byte strings only; temporary synthetic acceptance fixtures cannot authorize actual recovery."
+  },
+  "limitation": "Metadata equality and synthetic guards do not establish current source completeness or any detector result. Actual archive receipt and independent byte audit are required after both case acceptance freezes.",
+  "retained_source_expectation_receipts": 18
+}

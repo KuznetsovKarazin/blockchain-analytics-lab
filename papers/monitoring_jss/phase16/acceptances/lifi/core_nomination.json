@@ -1,0 +1,183 @@
+{
+  "schema_version": "article2_phase16_fixed_core_nomination_gate_v1",
+  "status": "ACCEPTED_PHASE15_NOMINATIONS_RETAINED_UNCHANGED",
+  "created_utc": "2026-10-28T09:20:57.503489+00:00",
+  "cases": [
+    {
+      "case_id": "lifi_20220320",
+      "catalogue_line": 65,
+      "case_name": "Li.Fi",
+      "primary_family": "untrusted_external_call",
+      "chain_id": 1,
+      "population_addresses": [
+        "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1"
+      ],
+      "window": {
+        "execution_date_utc": "2022-03-20",
+        "start_date_utc": "2022-02-19",
+        "end_date_utc_exclusive": "2022-03-21"
+      },
+      "config": {
+        "path": "papers/monitoring_jss/phase16/protocol/configs/lifi.json",
+        "sha256": "fb3665da1b600766817aec9d0c49affea5f899be885560e82201abbb3c627125"
+      },
+      "historical_nomination_source_tier": 3,
+      "incident_informed_nomination": true,
+      "selected_artifact": {
+        "id": "LIFI_BLOCKSEC_20220321_COMPONENT_PAIR",
+        "url": "https://blocksec.com/blog/li-fi-attack-a-cross-chain-bridge-vulnerability-no-it-s-due-to-unchecked-external-call",
+        "title": "LI.FI Attack: a Cross-chain Bridge Vulnerability? No, It’s Due to Unchecked External Call!",
+        "organization": "BlockSec",
+        "published_date": "2022-03-21",
+        "finite_set": "The protocol execution interface (link47) and separately linked implementation logic (link49).",
+        "locations": [
+          "Attack Transaction, interface link47",
+          "Code Analysis, logic link49",
+          "Lessons, entrypoint role"
+        ],
+        "address_mapping": "Exact linked addresses retained in Phase10 source discovery and corroborated by its checked creation/runtime records; no execution link followed in Phase15.",
+        "new_tool_source_ref": "turn151view0"
+      },
+      "artifact_records": [
+        {
+          "name": "LiFiDiamond execution interface",
+          "address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+          "include": true,
+          "qualifying_role": "canonical_public_user_entrypoint",
+          "reason": "The interface is the public entry for the named historical swap-and-bridge component. Historical README identifies a single diamond as the user-facing dispatcher."
+        },
+        {
+          "name": "CBridgeFacet implementation",
+          "address": "0x73a499e043b03fc047189ab1ba72eb595ff1fc8e",
+          "include": false,
+          "reason": "Separately documented implementation logic; no independently documented qualifying direct user entrypoint or custody role. Delegatecall logic is not automatically core."
+        }
+      ],
+      "historical_identity": {
+        "address": "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1",
+        "creation_block": 13984588,
+        "creation_utc": "2022-01-11T13:47:48Z",
+        "before_window_start": true,
+        "corroboration": "Phase10 successful factory creation/receipt/trace and Phase11 full runtime binding; Phase12-14 checkpoint and nominal event evidence retained.",
+        "limits": "Does not prove all historical protocol addresses, every writer or continuous routing. Fixed-address events require no such universal semantic claim."
+      },
+      "prior_exposure": "Original S2 and Phase9 reports, Phase10 incident-informed component discovery, Phase11-14 source/code/admin-history probes and archive metadata; no prior LiFi detector scores.",
+      "nomination_scope": "All qualifying records of the finite named component artifact, not complete protocol ownership or continuous active routing."
+    },
+    {
+      "case_id": "revest_20220327",
+      "catalogue_line": 70,
+      "case_name": "Revest Finance",
+      "primary_family": "reentrancy",
+      "chain_id": 1,
+      "population_addresses": [
+        "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+        "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f"
+      ],
+      "window": {
+        "execution_date_utc": "2022-03-27",
+        "start_date_utc": "2022-02-26",
+        "end_date_utc_exclusive": "2022-03-28"
+      },
+      "config": {
+        "path": "papers/monitoring_jss/phase16/protocol/configs/revest.json",
+        "sha256": "da90916dfb24b66c5b8220d6cbd2ca55cfec4df7172d4e68a3219ae205bc0d11"
+      },
+      "historical_nomination_source_tier": 3,
+      "incident_informed_nomination": true,
+      "selected_artifact": {
+        "id": "REVEST_OFFICIAL_20220328_FOUR_COMPONENT_STACK",
+        "url": "https://revestfinance.medium.com/revest-protocol-exploit-recovery-plan-b06ca33fbdf5",
+        "title": "Revest Protocol Exploit Recovery Plan",
+        "organization": "Revest Finance",
+        "published_date": "2022-03-28",
+        "finite_set": "Explicit four-component historical Solidity stack paragraph: Revest, LockManager, TokenVault, FNFTHandler.",
+        "locations": [
+          "Opening statement, Ethereum and UTC date",
+          "Mechanism Behind the Exploit, four-component architecture paragraph and links30-33"
+        ],
+        "address_mapping": "Exact linked addresses retained in Phase6 deployment review and independently corroborated by Phase7 creation/constructor records.",
+        "new_tool_source_ref": "turn151view1"
+      },
+      "artifact_records": [
+        {
+          "name": "Revest entry point",
+          "address": "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+          "include": true,
+          "qualifying_role": "canonical_public_user_entrypoint",
+          "reason": "Explicitly identified as the public transaction entrypoint."
+        },
+        {
+          "name": "LockManager",
+          "address": "0x226124e83868812d3dae87eb3c5f28047e1070b7",
+          "include": false,
+          "qualifying_role": null,
+          "reason": "Lock-state support component, not documented here as a coequal public user entrypoint or custody vault."
+        },
+        {
+          "name": "Legacy TokenVault",
+          "address": "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f",
+          "include": true,
+          "qualifying_role": "core_custody_vault",
+          "reason": "Explicitly identified as the token-storage component."
+        },
+        {
+          "name": "FNFTHandler",
+          "address": "0xe952bda8c06481506e4731c4f54ced2d4ab81659",
+          "include": false,
+          "qualifying_role": null,
+          "reason": "FNFT mint/burn token implementation, not documented here as a coequal public entrypoint or underlying-token custody vault."
+        }
+      ],
+      "historical_identity": [
+        {
+          "address": "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f",
+          "name": "TokenVault",
+          "creation_block": 13290580,
+          "creation_utc": "2021-09-24T20:16:10.000000Z",
+          "before_window_start": true,
+          "evidence_tier": "Retained successful explorer creation/constructor/source consistency; independently audited Phase7. No new payload."
+        },
+        {
+          "address": "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+          "name": "Revest",
+          "creation_block": 13290587,
+          "creation_utc": "2021-09-24T20:17:37.000000Z",
+          "before_window_start": true,
+          "evidence_tier": "Retained successful explorer creation/constructor/source consistency; independently audited Phase7. No new payload."
+        }
+      ],
+      "prior_exposure": "S2 catalogue and Phase5 official/investigator reports, Phase6-7 source/deployment records, incidental historical exploit snippets and Phase9 compiled source/state probes. No Revest detector outcome was inspected.",
+      "nomination_scope": "All qualifying records of the finite named component artifact, not complete protocol ownership or continuous active routing."
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "papers/monitoring_jss/phase15/cohort_selection.json",
+      "sha256": "260004eecde76a5ecbd6c1d76d5dc4bc2ae981819e5bd34549e872174e86ce49"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/nomination_a/rows.json",
+      "sha256": "8190716f0168353de2bf009b30a714fe9da0f2c33868b3dd033972a495a918ff"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/row_nomination_review.json",
+      "sha256": "e3647c7e968042980ecef53512ed350e1ff395be3aae930bbe81178b8ed34343"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/root_amendment_acceptance.json",
+      "sha256": "caece70fe9a7bd31bcc8913be285f04c2faca2a72719aad51203322018cea608"
+    }
+  ],
+  "case_order": [
+    65,
+    70
+  ],
+  "source_limited_cohort": true,
+  "all_source_and_method_outcomes_not_yet_observed": true,
+  "limitations": [
+    "Incident-informed retrospective component selection; no global blindness",
+    "No universal full writer/routing closure claim",
+    "No extension of fixed core to victims, attackers, facets, approved holders, token emitters or favorable signals"
+  ]
+}

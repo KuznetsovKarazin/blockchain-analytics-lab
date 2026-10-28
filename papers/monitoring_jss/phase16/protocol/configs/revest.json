@@ -1,0 +1,55 @@
+{
+  "schema_version": "fixed_address_replay_config_v1",
+  "case_id": "revest_20220327",
+  "chain_id": 1,
+  "population_addresses": [
+    "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+    "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f"
+  ],
+  "window": {
+    "execution_date_utc": "2022-03-27",
+    "start_date_utc": "2022-02-26",
+    "end_date_utc_exclusive": "2022-03-28"
+  },
+  "state_initialization": "independent_utc_day_reset",
+  "source_scope": "aws_public_blockchain_parquet_transaction_subset",
+  "source_tier": "enumerated_daily_partition_and_transaction_metadata_checked",
+  "methods": [
+    "core_count_60s_10",
+    "outflow_rank_1_20",
+    "outflow_rank_1_10"
+  ],
+  "semantic": {
+    "history_size": 128,
+    "min_history": 19,
+    "max_tokens": 4096,
+    "thresholds": [
+      {
+        "numerator": 1,
+        "denominator": 20
+      },
+      {
+        "numerator": 1,
+        "denominator": 10
+      }
+    ]
+  },
+  "primary_semantic_method": "outflow_rank_1_20",
+  "sensitivity_method": "outflow_rank_1_10",
+  "count_baseline": {
+    "window_ns": 60000000000,
+    "threshold_count": 10
+  },
+  "grouping_ns": 300000000000,
+  "policies": [
+    "greedy",
+    "paced_cumulative",
+    "token_bucket"
+  ],
+  "budgets": [
+    1,
+    5,
+    20
+  ],
+  "primary_budget": 5
+}

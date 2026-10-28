@@ -1,0 +1,68 @@
+{
+  "schema_version": "article2_phase16_bound_source_execution_gate_v1",
+  "status": "ROOT_ACCEPTED_AS_PART_OF_DECLARED_MEASUREMENT",
+  "source_plan": {
+    "path": "source_plan_original.json",
+    "sha256": "d5a9caec11b0c6b407bb37e82e208d71aec62782bcbbbb79a7120c411c8adc9c"
+  },
+  "measurement_protocol": {
+    "path": "measurement_protocol.json",
+    "sha256": "34cd1a15c8055fd145ec21443c98c316e459637da4b82c3de70b713a656a5605"
+  },
+  "execution_source_bindings": [
+    {
+      "path": "papers/monitoring_jss/phase16/collector/range_collector.py",
+      "sha256": "13e15e7b770ad40c2e8d286abceb8f7e380d946626b35d0186f43f0001be563f"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/pipeline/streaming_pipeline.py",
+      "sha256": "56c086e4af2d65e863a4dc53a31bf24e79f1a2ccd3ab0c4915e19ff823f64f46"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/recovery/verify_recovered_archives.py",
+      "sha256": "5b17099b90f8a2ccea26fb510c981175aa5413db740973fb448f10fc63b4421a"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/transport_receipt_audit.py",
+      "sha256": "9358885bffdf96d12fdfc7a9a578ccb5d770ae713af02c773b0494ae2dc38699"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/audit_prepared_sources.py",
+      "sha256": "385bff732afac356bf890193153b08d3751b5a3fbfd4788dab500176a0a03a62"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/prepare_measurement_acceptance.py",
+      "sha256": "c0addc25b0e642f5e799415cc9a0f57a5107c696815b5773bb912d2264a55414"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/recovery/dependency_recovery.json",
+      "sha256": "eb4f0fb01f28e58128a4178a66bd772772d72c03f19334e8176603e231bef6f1"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/retained_observation_core.py",
+      "sha256": "63119a14c1f3fb5a2cf74f24f918181679611633e6e75df63b5dc6b7180ef662"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/driver/fixed_address_replay.py",
+      "sha256": "591a8e09cd1920496ad0acc8fb13a1f4c62a0a224b3d8925ec364fff91ed293d"
+    },
+    {
+      "path": "papers/monitoring_jss/transfer_observation.py",
+      "sha256": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c"
+    },
+    {
+      "path": "papers/monitoring_jss/semantic_flow_monitor.py",
+      "sha256": "10ac4a7bc81b76c49be07ff8125136910cbacf2782708271d057b2094bfa60ad"
+    },
+    {
+      "path": "papers/monitoring_jss/semantic_flow_replay.py",
+      "sha256": "49597dfa39c6f1fa65be47d107bdf60696f8d26b82b13876bf1d587a593ac16a"
+    },
+    {
+      "path": "papers/monitoring_jss/semantic_flow_study_config.json",
+      "sha256": "4a3e038584158ba8b39b582291c18097f98a0fa67e70c46346c280b5cbb0cf3a"
+    }
+  ],
+  "source_plan_adjudication": "Root acceptance binds these exact files; this helper does not establish source completeness or technical sufficiency.",
+  "before_payload_scope": "Includes restoration/reuse of prior raw archive tables newly consumed by the affected case workload, as well as new network acquisition."
+}

@@ -1,0 +1,44 @@
+{
+  "bindings": [
+    {
+      "path": "papers/monitoring_jss/phase16/reference/exact_reference_join.py",
+      "sha256": "deaf7e58715cda8e701ec31bc2f4fcd7e85db5f9199fe23a0b55e195519b1cee"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/reference/test_exact_reference_join.py",
+      "sha256": "9b59cf6e67a9e989b17c8497b8d823d0230e2babc33848f13253a44ae274f926"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/reference/README.md",
+      "sha256": "d75d23652f192eec7a545477d860d2d7844ab8c871e5deae2a7687415f551be2"
+    }
+  ],
+  "checks": [
+    "test_complete_inventory_requires_positive_closure",
+    "test_complete_observed_no_core_reference_is_complete_incident_miss",
+    "test_count_skips_outflow_history_and_unknown_alerts_not_fp",
+    "test_early_reference_acquisition_rejected",
+    "test_full_matrix_and_outer_funnel_unknown_bounds",
+    "test_incomplete_inventory_no_hit_is_indeterminate_and_empty_undefined",
+    "test_independent_review_cannot_be_reused_for_changed_reference_records",
+    "test_missing_selected_decision_rejected_even_if_artifact_resealed",
+    "test_nearby_unselected_transaction_gets_no_grouped_credit",
+    "test_no_core_without_full_scan_proof_rejected",
+    "test_tampered_decision_artifact_rejected",
+    "test_unavailable_candidate_metadata_is_retained_without_positive_label",
+    "test_unavailable_case_load_is_null_and_incident_not_miss",
+    "test_unknown_metadata_cannot_be_verified_positive"
+  ],
+  "command": "python papers/monitoring_jss/phase16/reference/test_exact_reference_join.py -v",
+  "exit_code": 0,
+  "network_calls": 0,
+  "observed_unittest_runtime_seconds": 5.2,
+  "old_suites_run": false,
+  "real_references_used": 0,
+  "recorded_utc": "2026-10-28T09:44:18.032952+00:00",
+  "schema_version": "article2_phase16_reference_join_synthetic_smoke_v1",
+  "status": "PASS",
+  "synthetic_only": true,
+  "tests_passed": 14,
+  "tests_run": 14
+}

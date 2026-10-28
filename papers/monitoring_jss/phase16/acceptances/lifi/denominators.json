@@ -1,0 +1,88 @@
+{
+  "schema_version": "article2_phase16_denominators_v1",
+  "status": "SPECIFIED_BEFORE_AFFECTED_WORKLOAD",
+  "created_utc": "2026-10-28T09:20:57.503489+00:00",
+  "outer_frame": {
+    "catalogue_rows": 13,
+    "preserved_development_exclusions": [
+      72,
+      77
+    ],
+    "preserved_non_realized_rows": [
+      68,
+      71
+    ],
+    "unresolved_metadata_or_core": [
+      66,
+      69,
+      73,
+      74,
+      75,
+      76
+    ],
+    "nominated_but_source_unavailable_in_bounded_attempt": [
+      67
+    ],
+    "prospective_measured_cases": [
+      65,
+      70
+    ],
+    "no_complete_frame_recall": true
+  },
+  "incident_unit": "Distinct primary-verified realized incident, not day, execution, token, cell or repeated test. Two selected source-limited incidents are the fixed intended measurement cohort; unavailable selected-case data remain explicit.",
+  "execution_unit": "Unique (chain_id, transaction_hash) independently attributed by a primary report as successful unauthorized execution of the named incident, with actual successful execution identity and date checked. Deployment, financing, preparatory, failed, remedial and duplicate records are separate adjudication dispositions, not automatically positive.",
+  "inventory_statuses": [
+    "COMPLETE_WITH_POSITIVE_CLOSURE_EVIDENCE",
+    "KNOWN_SUBSET_ONLY",
+    "UNRESOLVED_CONFLICT",
+    "NO_VERIFIED_EXECUTION_UNDER_CAP"
+  ],
+  "full_funnel": [
+    "independently_verified_reference_incidents_and_executions",
+    "source_evidence_available_for_reference_execution",
+    "selected_by_core_emitter_rule",
+    "positive_core_sender_outflow_for_semantic_arm",
+    "history_eligible_for_at_least_one_positive_token_for_semantic_arm",
+    "raw_trigger",
+    "group_candidate",
+    "emitted_notification"
+  ],
+  "terminal_execution_categories": [
+    "UNAVAILABLE_REFERENCE_OR_OBSERVATION_EVIDENCE",
+    "OBSERVED_NOT_SELECTED_NO_CORE_EMITTER_LOG",
+    "SELECTED_NO_POSITIVE_CORE_OUTFLOW",
+    "SELECTED_COLD_START",
+    "SELECTED_ELIGIBLE_NO_RAW_TRIGGER",
+    "RAW_TRIGGER_GROUPED",
+    "CANDIDATE_BUDGET_SUPPRESSED",
+    "EXACT_EXECUTION_NOTIFIED"
+  ],
+  "category_precedence": "First unavailable item makes status UNAVAILABLE. For fully observed references, follow the funnel in order. Count arm skips outflow/history gates. Suppression reasons retain original daily_cap/quota_not_released/token_unavailable codes; no reattribution to a nearby candidate.",
+  "execution_coverage": {
+    "numerator": "Verified reference execution identities with an exact same-transaction emitted notification in the given method/policy/budget cell.",
+    "denominator": "All verified applicable reference execution identities P in the fixed case window, including observed unselected, no-outflow and cold-start references.",
+    "if_complete_observation": "Report |P intersect N|/|P| as verified-known-execution notification coverage; call complete incident execution coverage only when inventory completeness has positive closure evidence.",
+    "if_missing_observation": "Point coverage is undefined. Report notified n, known-unnotified k, unknown u and bounds n/|P| to(n+u)/|P| over the known verified reference set, labeled as such. Missing evidence is never a measured miss.",
+    "empty_denominator": "Undefined, not zero.",
+    "conditional_metrics": "May additionally report rates among selected or eligible reference executions, always named and alongside the outer reference counts."
+  },
+  "incident_coverage": {
+    "hit": "At least one exact verified execution notification establishes a known incident hit even if further executions may exist.",
+    "miss": "Only if execution inventory is positively established complete and observation evidence for every applicable execution is complete, with no exact notified execution.",
+    "otherwise": "No hit among an incomplete known subset is INDETERMINATE_INCIDENT_COVERAGE; it is not a complete incident miss.",
+    "across_cases": "Report HIT/VERIFIED_COMPLETE_MISS/INDETERMINATE/UNAVAILABLE for both intended cases; a point incident-recall fraction requires fully determined statuses. Otherwise use explicitly labeled bounds, not omission of unavailable cases."
+  },
+  "load": "Report all emitted notifications across each full30-day window and each UTC day, offered caps and unused slots, with corresponding primary/sensitivity reference coverage. Equal offered cap need not mean equal realized load; show both.",
+  "nonreference_notifications": "UNKNOWN unless separately adjudicated. This protocol does not conduct exhaustive negative adjudication; no precision/FPR/false-alert reduction estimate.",
+  "cross_case_aggregation": "Show each case and policy separately. Optional pooled execution fraction must retain denominators and disclose execution imbalance; two incidents cannot establish broad population generalization.",
+  "bindings": [
+    {
+      "path": "papers/monitoring_jss/phase15/frame_dispositions.json",
+      "sha256": "f99e58cae92cb52c1e1c2e21ab98eaa81f90d5919d34adef70bdc8d615321966"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/cohort_selection.json",
+      "sha256": "260004eecde76a5ecbd6c1d76d5dc4bc2ae981819e5bd34549e872174e86ce49"
+    }
+  ]
+}

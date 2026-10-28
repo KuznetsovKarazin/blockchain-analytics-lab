@@ -1,0 +1,124 @@
+{
+  "schema_version": "article2_phase16_measurement_protocol_v1",
+  "status": "DESIGN_READY_FOR_EXACT_ROOT_ACCEPTANCE_NOT_ACCEPTANCE_ITSELF",
+  "created_utc": "2026-10-28T09:20:57.503489+00:00",
+  "purpose": "External-case fixed-address notification coverage and pipeline failure decomposition under the unchanged frozen methods.",
+  "case_ids": [
+    "lifi_20220320",
+    "revest_20220327"
+  ],
+  "case_order": [
+    65,
+    70
+  ],
+  "window_rule": "Every case retains [D-29 days00:00UTC,D+1 day00:00UTC),30 complete days, independent UTC-day feature/grouping/budget resets.",
+  "methods": {
+    "methods": [
+      "core_count_60s_10",
+      "outflow_rank_1_20",
+      "outflow_rank_1_10"
+    ],
+    "semantic": {
+      "history_size": 128,
+      "min_history": 19,
+      "max_tokens": 4096,
+      "thresholds": [
+        {
+          "numerator": 1,
+          "denominator": 20
+        },
+        {
+          "numerator": 1,
+          "denominator": 10
+        }
+      ]
+    },
+    "primary_semantic_method": "outflow_rank_1_20",
+    "sensitivity_method": "outflow_rank_1_10",
+    "count_baseline": {
+      "window_ns": 60000000000,
+      "threshold_count": 10
+    },
+    "grouping_ns": 300000000000,
+    "policies": [
+      "greedy",
+      "paced_cumulative",
+      "token_bucket"
+    ],
+    "budgets": [
+      1,
+      5,
+      20
+    ],
+    "primary_budget": 5
+  },
+  "primary_comparison": "outflow_rank_1_20 versus core_count_60s_10 at B=5, reporting each of the three fixed policies without choosing the best after results. 1/10 and B=1,20 are descriptive sensitivity cells.",
+  "units": {
+    "verified_primary_families": 2,
+    "case_days": 60,
+    "unique_calendar_days": 37,
+    "cells_per_case": 810,
+    "total_cells": 1620,
+    "deterministic_repetitions": 1,
+    "cells_are_independent_incidents": false,
+    "bootstrap_or_p_value_plan": null,
+    "intended_cohort_incidents": 2,
+    "measurement_admissions_at_protocol_write": 0
+  },
+  "observation": "All transactions with at least one log emitted by the fixed core in the full enumerated source window, no topic/score/label filter. All-emitter logs and successful actual execution metadata for each selected transaction are common to all arms.",
+  "source_tier": "enumerated_daily_partition_and_transaction_metadata_checked",
+  "transport_and_pipeline": "Exact separate source plan and collector/pipeline/adapter hashes must be bound by the root acceptance. Source inventory identities, complete address/hash scans, endpoint/header checks, coverage audits and observation manifests remain necessary.",
+  "hard_failure": "Missing source part/day, invalid source identity, wrong status, malformed selected bundle, ordering/header inconsistency or token capacity overflow halts the accepted comparison; retain partial artifacts as failed, never skip or shorten.",
+  "stages": [
+    "Exact root acceptance before affected workload acquisition, including recovered old raw tables newly used for these cases",
+    "Bounded source collection and reuse, complete full-window audit at declared tier",
+    "Seal selected transactions and common input observations",
+    "One deterministic replay of all declared cells; hash-seal both cases before new reference retrieval/label join",
+    "Bounded primary-reference retrieval and separately audited source coverage for selected and unselected executions",
+    "Freeze adjudicated reference inventory and join exact transaction identities without rerunning or changing decisions"
+  ],
+  "between_stage_changes": "If implementation must change after source reads, preserve attempt and exposure, issue prospective amendment for the changed component, rerun only justified checks, and do not alter method thresholds or hide partial outcomes.",
+  "denominator_and_label_gate": "denominators.json and label_join_protocol.json define reference statuses, full funnel and exact attribution.",
+  "live_time": "Only block-event timestamps; historical observed/feature-ready/live-notification times unknown. No prevention or intra-transaction causal inference.",
+  "public_output": "Owned aggregate metrics, code, decisions/provenance hashes and failure accounting. Raw acquired response bytes, token-level raw amounts and full retrieved article content remain separate.",
+  "input_bindings": [
+    {
+      "path": "papers/monitoring_jss/phase15/frame_dispositions.json",
+      "sha256": "f99e58cae92cb52c1e1c2e21ab98eaa81f90d5919d34adef70bdc8d615321966"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/cohort_selection.json",
+      "sha256": "260004eecde76a5ecbd6c1d76d5dc4bc2ae981819e5bd34549e872174e86ce49"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/fixed_address_amendment.json",
+      "sha256": "2ac0e669768fe8c0fe83901bab595ff5ffbe4acd37267cbf74280c7c78153bc9"
+    },
+    {
+      "path": "papers/monitoring_jss/semantic_flow_study_config.json",
+      "sha256": "4a3e038584158ba8b39b582291c18097f98a0fa67e70c46346c280b5cbb0cf3a"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/core_nominations.json",
+      "sha256": "691572d5b2199144584546a95cc19301a382efa8350fada36bc585fccf8e28a3"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/configs/lifi.json",
+      "sha256": "fb3665da1b600766817aec9d0c49affea5f899be885560e82201abbb3c627125"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/protocol/configs/revest.json",
+      "sha256": "da90916dfb24b66c5b8220d6cbd2ca55cfec4df7172d4e68a3219ae205bc0d11"
+    }
+  ],
+  "boundary_source_rule": {
+    "source_union": "2022-02-19 through2022-03-27 UTC inclusive:37 days and111 logs/transactions/blocks objects",
+    "additional_control_sources": [
+      "2022-02-18 blocks partition",
+      "2022-03-28 blocks partition"
+    ],
+    "planned_total_source_objects": 113,
+    "purpose": "Establish surrounding UTC header continuity and exact window inclusion boundaries. These two exterior header sources do not add detector transactions or extend any30-day case window.",
+    "anchors": "Use actually retained independent header anchors where available, and qualify partition-boundary checks at enumerated-source tier. Do not invent endpoint hashes or claim authenticated chain completeness."
+  }
+}

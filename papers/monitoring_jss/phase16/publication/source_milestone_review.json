@@ -1,0 +1,75 @@
+{
+  "schema_version": "article2_phase16_source_milestone_publication_review_v1",
+  "status": "PASS_FOR_EXACT_SOURCE_ACCEPTANCE_MILESTONE_ONLY",
+  "reviewed_utc": "2026-10-28T09:50:56.002112+00:00",
+  "base_commit": "32db576eb2360bd55ebd576040bac08607ef1986",
+  "branch": "paper/monitoring-jss",
+  "changes_to_preexisting_tracked_files": 0,
+  "changes_to_git_index": 0,
+  "no_applicable_AGENTS_md_found": true,
+  "protected_method_hashes": {
+    "papers/monitoring_jss/semantic_flow_monitor.py": "10ac4a7bc81b76c49be07ff8125136910cbacf2782708271d057b2094bfa60ad",
+    "papers/monitoring_jss/semantic_flow_replay.py": "49597dfa39c6f1fa65be47d107bdf60696f8d26b82b13876bf1d587a593ac16a",
+    "papers/monitoring_jss/transfer_observation.py": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c",
+    "papers/monitoring_jss/semantic_flow_study_config.json": "4a3e038584158ba8b39b582291c18097f98a0fa67e70c46346c280b5cbb0cf3a",
+    "papers/monitoring_jss/phase15/driver/fixed_address_replay.py": "591a8e09cd1920496ad0acc8fb13a1f4c62a0a224b3d8925ec364fff91ed293d",
+    "papers/monitoring_jss/phase15/adapter/fixed_core_adapter.py": "39725328201b6eb4110d6e0a589e08cfd1a8673f71ad0d8b99275254a47705f7",
+    "papers/monitoring_jss/phase15/adapter/retained_observation_core.py": "63119a14c1f3fb5a2cf74f24f918181679611633e6e75df63b5dc6b7180ef662"
+  },
+  "protected_attachment_hashes_checked": [
+    {
+      "file_name": "01-00_MASTER-2026-10-20.txt",
+      "sha256": "fe7ad26a49fb1e5369ecef387eddf34bb23aa1b104222837ef9d997aa2680a40"
+    },
+    {
+      "file_name": "02-01_RESOURCE_MANIFEST-.txt",
+      "sha256": "ebf6042a2399c1ef16a42dbbb4698daf0f2482954a2ecbd4838511216655a68f"
+    }
+  ],
+  "companion_pin_unchanged": "dc1ba8876f3f163c27c48f3a39292fc47f71bf18",
+  "source_plan_sha256": "d5a9caec11b0c6b407bb37e82e208d71aec62782bcbbbb79a7120c411c8adc9c",
+  "exact_case_acceptances": [
+    {
+      "case": "lifi",
+      "path": "papers/monitoring_jss/phase16/acceptances/lifi/measurement_acceptance.json",
+      "sha256": "04bbe53fd5e6d31a1a018719c6c3e74e391a67493330b4b45febef55e5d5e2fd",
+      "execution_sources_checked": 13
+    },
+    {
+      "case": "revest",
+      "path": "papers/monitoring_jss/phase16/acceptances/revest/measurement_acceptance.json",
+      "sha256": "23d71b8641364099aad83490945c8cb270413fec3ff09f4de2550ad43446d9cd",
+      "execution_sources_checked": 13
+    }
+  ],
+  "payload_file_count_before_this_review": 96,
+  "payload_bytes_before_this_review": 712734,
+  "private_content_scan": {
+    "runtime_absolute_paths": 0,
+    "library_identifiers": 0,
+    "signed_transfer_fields": 0,
+    "raw_dataset_payload_files": 0,
+    "scope": "Exact UTF-8 candidate files only; code uses runtime paths as parameters without embedding actual private destinations."
+  },
+  "science_claims_allowed": [
+    "Two unchanged fixed-address case configurations and complete 30-day windows are prospectively bound.",
+    "113 source objects describe37 study days plus two boundary-header objects; metadata counts are not acquired or decoded row totals.",
+    "New collector, projected pipeline and independent source audits have synthetic validation and exact pre-acquisition acceptance.",
+    "Public recovery summary reports nine restored archives and18 original files, 1942523039 verified source bytes, pending independent transport audit.",
+    "Frozen preflight files retain their historical not-materialized/not-run status; later actual recovery summary is separate evidence.",
+    "Separately reviewed exact post-decision reference-join and decision-audit programs are present with synthetic validation; real application follows source coverage and both sealed replays."
+  ],
+  "science_claims_not_established": [
+    "No completed source/selection audit, accepted replay result, reference join or external-case detector performance is included in this milestone.",
+    "1620 planned daily cells are not1620 independent incidents; there are two intended external incidents.",
+    "Coverage at an enumerated source-partition tier is not receipt-root verification, global protocol completeness, live prevention, or JSS publication readiness.",
+    "Synthetic test passes and original-byte recovery are engineering validation, not detection-efficacy observations."
+  ],
+  "validation_scope": "Read-only file/hash, JSON, exact gate binding and claim inspection; no network, no raw row reads, no detector runs, no old test suites.",
+  "publication_action_performed": false,
+  "excluded_scope": "Archive-reference auditing and source-evidence packers remain separate later candidates; Python caches are never public payload.",
+  "commit_proposal": {
+    "title": "Freeze Phase16 LiFi and Revest source measurement",
+    "body": "Bind both fixed-address 30-day cases to the unchanged detector methods, exact source inventory, range collector, projected pipeline and independent audit gates. Record synthetic validation, exact post-decision joining, and verified recovery of prior original files.\n\nThis is an acquisition and acceptance checkpoint. External-case source audit, replay and detection results remain pending."
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "phase16_independent_baseline_review_v1",
+  "reviewed_utc": "2026-10-28T09:16:52.621945+00:00",
+  "status": "BASELINE_CONFIRMED_PENDING_PHASE16_PREFLIGHT",
+  "bindings": [
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/fixed_address_amendment.json",
+      "sha256": "2ac0e669768fe8c0fe83901bab595ff5ffbe4acd37267cbf74280c7c78153bc9"
+    },
+    {
+      "path": "papers/monitoring_jss/phase14/scope_review/root_amendment_acceptance.json",
+      "sha256": "caece70fe9a7bd31bcc8913be285f04c2faca2a72719aad51203322018cea608"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/cohort_selection.json",
+      "sha256": "260004eecde76a5ecbd6c1d76d5dc4bc2ae981819e5bd34549e872174e86ce49"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/frame_dispositions.json",
+      "sha256": "f99e58cae92cb52c1e1c2e21ab98eaa81f90d5919d34adef70bdc8d615321966"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/driver/fixed_address_replay.py",
+      "sha256": "591a8e09cd1920496ad0acc8fb13a1f4c62a0a224b3d8925ec364fff91ed293d"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/fixed_core_adapter.py",
+      "sha256": "39725328201b6eb4110d6e0a589e08cfd1a8673f71ad0d8b99275254a47705f7"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/adapter/retained_observation_core.py",
+      "sha256": "63119a14c1f3fb5a2cf74f24f918181679611633e6e75df63b5dc6b7180ef662"
+    },
+    {
+      "path": "papers/monitoring_jss/semantic_flow_study_config.json",
+      "sha256": "4a3e038584158ba8b39b582291c18097f98a0fa67e70c46346c280b5cbb0cf3a"
+    },
+    {
+      "path": "papers/monitoring_jss/semantic_flow_monitor.py",
+      "sha256": "10ac4a7bc81b76c49be07ff8125136910cbacf2782708271d057b2094bfa60ad"
+    },
+    {
+      "path": "papers/monitoring_jss/semantic_flow_replay.py",
+      "sha256": "49597dfa39c6f1fa65be47d107bdf60696f8d26b82b13876bf1d587a593ac16a"
+    },
+    {
+      "path": "papers/monitoring_jss/transfer_observation.py",
+      "sha256": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c"
+    }
+  ],
+  "scope": "Offline review of recovered public operative rules and source contracts. No network, old-suite execution, real data decoding or detector score.",
+  "preserved_rules": [
+    "Two fixed-source-limited Ethereum cases, original frame order65then70",
+    "Unchanged methods,128positivehistory,min19,thresholds1/20and1/10,count10in60seconds,grouping300seconds,dailybudgets1/5/20",
+    "Independent UTC-day feature/grouping/budget resets",
+    "No topic filter for core transaction selection, no labels or outflow predicate in selection",
+    "Complete selected transaction log bundles and actual successful integer execution statuses",
+    "Covered empty day valid only with full required scans/header checks; unavailable is notzero",
+    "Unknown notifications are not false positives; reference inventory incompleteness disclosed",
+    "Selection/observations and decisions sealed before reference join"
+  ],
+  "required_phase16_checks": [
+    "Exact acquisition/normalization and collector hashes bound before affected workload",
+    "New streaming interface reviewed against complete-address and selected-bundle coverage contract; no false whole-table claim",
+    "Original byte identity, ETag/Range status,length,contentrange and SHA binding",
+    "Authentic original leading Parquet header plus exact footer and necessary column chunks; sparse holes not evidence",
+    "Whole-case30day windows and adjacent predecessor/successor headers; cross-day continuity",
+    "Source audit independently checks evidence before accepted replay",
+    "Post-decision reference/attribution rules and fixed bounded retrieval procedure"
+  ],
+  "boundary_note": "37-day union has111day/tableobjects. Adjacent Feb18/Mar28 block evidence needed for UTC endpoints, potentially113transportobjects.",
+  "new_network_requests": 0,
+  "old_test_suites": 0,
+  "new_real_scores": 0
+}

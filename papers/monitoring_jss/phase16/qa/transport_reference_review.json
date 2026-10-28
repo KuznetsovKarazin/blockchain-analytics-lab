@@ -1,0 +1,40 @@
+{
+  "schema_version": "article2_phase16_independent_reference_code_review_v1",
+  "recorded_utc": "2026-10-28T09:49:47.246042+00:00",
+  "code_status": "GO_FOR_FROZEN_POST_DECISION_EXACT_JOIN",
+  "actual_reference_audit_status": "NOT_RUN",
+  "reference_code": {
+    "path": "papers/monitoring_jss/phase16/reference/exact_reference_join.py",
+    "sha256": "deaf7e58715cda8e701ec31bc2f4fcd7e85db5f9199fe23a0b55e195519b1cee"
+  },
+  "independent_checks": {
+    "path": "papers/monitoring_jss/phase16/qa/transport_reference_fault_checks.py",
+    "sha256": "c6f814bab24d64c2cc33464a55a86a5700f78eab373a095ada7d29cd08bdeb08",
+    "command": "python papers/monitoring_jss/phase16/qa/transport_reference_fault_checks.py -v",
+    "distinct_methods": 3,
+    "passed": 3,
+    "failed": 0,
+    "executions": 1,
+    "production_suite_runs": 0,
+    "old_suite_runs": 0,
+    "network_requests": 0,
+    "historical_rows_read": 0,
+    "detector_replays": 0,
+    "scope": "Lightweight synthetic join_case/terminal invariants only; no producer fixtures or suite imported."
+  },
+  "findings": [
+    "Full verified-applicable reference set is retained across all27 cells; unavailable observations stay in denominator and become UNKNOWN, not measured misses.",
+    "Exact chain/hash join does not attribute an adjacent/grouped execution notification to another reference.",
+    "Known-subset point coverage is labeled as subset coverage; complete incident miss requires positive inventory closure, nonempty verified positives and no unavailable applicable reference.",
+    "An existing verified selected observation remains usable when an additional reference source audit reports UNAVAILABLE; no-core assertions contradicting selected evidence are rejected.",
+    "Unavailable complete run metrics are null; nonreference notifications remain UNKNOWN rather than false positives.",
+    "All eight terminal categories partition the synthetic positive inventory in semantic arms, with consistent nested funnel and full-denominator bounds.",
+    "Reference acquisition follows both closed decision stages, and separate named review is bound to exact candidate records; hash consistency does not establish audit truth."
+  ],
+  "open_blockers": [],
+  "limitations": [
+    "No actual incident reference or primary-source factual adjudication was performed.",
+    "The independent code review does not replace the separate audit of actual decisions, source evidence, reference identity or inventory closure.",
+    "Only three new targeted synthetic invariant tests were executed; the producer14 and old suites were not rerun."
+  ]
+}

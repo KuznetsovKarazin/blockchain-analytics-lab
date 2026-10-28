@@ -1,0 +1,41 @@
+{
+  "schema_version": "fixed_address_measurement_acceptance_v1",
+  "status": "ACCEPTED_FOR_DECLARED_FIXED_ADDRESS_MEASUREMENT",
+  "accepted_utc": "2026-10-28T09:40:05.067281+00:00",
+  "accepted_before_affected_payload": true,
+  "all_frame_dispositions_completed": true,
+  "config_sha256": "da90916dfb24b66c5b8220d6cbd2ca55cfec4df7172d4e68a3219ae205bc0d11",
+  "driver_sha256": "591a8e09cd1920496ad0acc8fb13a1f4c62a0a224b3d8925ec364fff91ed293d",
+  "dependency_sha256": {
+    "semantic_flow_replay.py": "49597dfa39c6f1fa65be47d107bdf60696f8d26b82b13876bf1d587a593ac16a",
+    "semantic_flow_monitor.py": "10ac4a7bc81b76c49be07ff8125136910cbacf2782708271d057b2094bfa60ad",
+    "transfer_observation.py": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c",
+    "semantic_flow_study_config.json": "4a3e038584158ba8b39b582291c18097f98a0fa67e70c46346c280b5cbb0cf3a"
+  },
+  "gate_bindings": {
+    "frame_dispositions": {
+      "path": "frame_dispositions.json",
+      "sha256": "f99e58cae92cb52c1e1c2e21ab98eaa81f90d5919d34adef70bdc8d615321966"
+    },
+    "cohort_selection": {
+      "path": "cohort_selection.json",
+      "sha256": "260004eecde76a5ecbd6c1d76d5dc4bc2ae981819e5bd34549e872174e86ce49"
+    },
+    "core_nomination": {
+      "path": "core_nomination.json",
+      "sha256": "691572d5b2199144584546a95cc19301a382efa8350fada36bc585fccf8e28a3"
+    },
+    "label_join_protocol": {
+      "path": "label_join_protocol.json",
+      "sha256": "f158f49e588c88077207896b48c961a24df8c461a1cb36831d8a644624802d10"
+    },
+    "denominators": {
+      "path": "denominators.json",
+      "sha256": "ed3ddf0daea075a3b637b7ca43b628a8e5cf600906283b56edea03fbed06d5db"
+    },
+    "source_plan": {
+      "path": "source_plan.json",
+      "sha256": "de5af4b423584bea81d63ae5fa3131f99ff4b06ae621f03107a90003c5bbc640"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "article2_phase15_prospective_acquisition_cohort_v1",
+  "status": "ACCEPTED_FOR_SOURCE_ACQUISITION_PREPARATION_NOT_MEASUREMENT",
+  "accepted_utc": "2026-10-26T20:20:45.495670+00:00",
+  "selection_rule": "After all13 bounded dispositions: original date/name/line order, first eligible per verified family up to4 then fill. Eligibility here is fixed-component nomination, verified UTCdate/family/chain and executable documented source route; full row audit remains a subsequent measurement gate.",
+  "selected_catalogue_lines": [
+    65,
+    70
+  ],
+  "selected_cases": [
+    {
+      "catalogue_line": 65,
+      "catalogue_date": "2022-03-20",
+      "case_name": "Li.Fi",
+      "prior_metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "case_admitted": false,
+      "evidence_record": "nomination_a/rows.json",
+      "chain_names": [
+        "Ethereum"
+      ],
+      "primary_family": "untrusted_external_call",
+      "verified_execution_date_utc": "2022-03-20",
+      "core_addresses": [
+        "0x5a9fd7c39a6c488e715437d7b1f3c823d5596ed1"
+      ],
+      "nomination_status": "ACCEPTED_FIXED_NAMED_COMPONENT_TIER3",
+      "incident_informed_nomination": true,
+      "reviewer_status": "PASS_BOUNDED_ROW_DISPOSITION",
+      "source_ready_for_prospective_acquisition": true,
+      "measurement_ready": false,
+      "full_window_rows_verified": false,
+      "source_disposition": "EXECUTABLE_ANONYMOUS_ARCHIVE_ROUTE_LISTINGS_COMPLETE_PAYLOAD_UNVERIFIED"
+    },
+    {
+      "catalogue_line": 70,
+      "catalogue_date": "2022-03-27",
+      "case_name": "Revest Finance",
+      "prior_metadata_status": "METADATA_READY_FOR_HISTORICAL_GATES",
+      "case_admitted": false,
+      "evidence_record": "nomination_a/rows.json",
+      "chain_names": [
+        "Ethereum"
+      ],
+      "primary_family": "reentrancy",
+      "verified_execution_date_utc": "2022-03-27",
+      "core_addresses": [
+        "0x2320a28f52334d62622cc2eafa15de55f9987ed9",
+        "0xa81bd16aa6f6b25e66965a2f842e9c806c0aa11f"
+      ],
+      "nomination_status": "ACCEPTED_FIXED_NAMED_COMPONENT_TIER3",
+      "incident_informed_nomination": true,
+      "reviewer_status": "PASS_BOUNDED_ROW_DISPOSITION",
+      "source_ready_for_prospective_acquisition": true,
+      "measurement_ready": false,
+      "full_window_rows_verified": false,
+      "source_disposition": "EXECUTABLE_ANONYMOUS_ARCHIVE_ROUTE_LISTINGS_COMPLETE_PAYLOAD_UNVERIFIED"
+    }
+  ],
+  "verified_families": [
+    "untrusted_external_call",
+    "reentrancy"
+  ],
+  "nomination_exposure": "Both selected cases are retrospective incident-informed component nominations; external evaluation only relative to previously frozen detector methods. No global blindness claim.",
+  "source_scope": "Two Ethereum cases selected under the available documented anonymous raw archive route. This is a source-limited cohort, not random or representative of the13catalogue rows or chains.",
+  "one_ring_disposition": "Accepted named-vault nomination retained as an unmeasured reference with sourceUNAVAILABLE under the bounded route/tool attempt. No claim that Fantom historical data do not exist. No measured miss and no zero denominator substitution.",
+  "driver_chain_restriction_used_for_exclusion": false,
+  "new_case_measurement_admissions": 0,
+  "remaining_before_payload": [
+    "Exact per-case source transport/normalization plan with caps and failure rules",
+    "Exact adapter/driver/config hashes and scope",
+    "Reference inventory/adjudication, label join and execution/incident attribution rules",
+    "Full source/readability/selection/observation audit requirements",
+    "Separate root measurement acceptance binding all gates before affected workload acquisition"
+  ],
+  "bindings": [
+    {
+      "path": "papers/monitoring_jss/phase15/frame_dispositions.json",
+      "sha256": "f99e58cae92cb52c1e1c2e21ab98eaa81f90d5919d34adef70bdc8d615321966"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/qa/row_nomination_review.json",
+      "sha256": "e3647c7e968042980ecef53512ed350e1ff395be3aae930bbe81178b8ed34343"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/source_readiness/chain_routes.json",
+      "sha256": "1fc90f2954dcb9e092332ffefe4d046befc1ed7ff622ebcad9c9645c3dcfcd64"
+    },
+    {
+      "path": "papers/monitoring_jss/phase15/source_readiness/revest_inventory.json",
+      "sha256": "e557dd3951fac2e3365cc837cfece34e83f693f6d2a6941b46bf476984759dac"
+    }
+  ]
+}
