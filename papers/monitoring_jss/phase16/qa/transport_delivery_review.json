@@ -1,0 +1,68 @@
+{
+  "schema_version": "article2_phase16_independent_range_delivery_review_v1",
+  "recorded_utc": "2026-10-28T09:58:44.877901+00:00",
+  "code_status": "GO_FOR_OFFLINE_FINALIZED_CAPTURE_PACKAGING",
+  "actual_capture_pack_audit_status": "NOT_RUN",
+  "outside_frozen_measurement": true,
+  "code": [
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/pack_range_capture.py",
+      "sha256": "c8825278ad5542e800eeaf11fc87e8e637dc8d3ded5da9cd33aded3cc09bcc48"
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/restore_range_capture.py",
+      "sha256": "6f2a18d88b25a1724054bc7edd805fa165beb7e542a972eb737d20284cd02d14"
+    }
+  ],
+  "independent_checks": {
+    "path": "papers/monitoring_jss/phase16/qa/transport_delivery_fault_checks.py",
+    "sha256": "9603a8b64db362a8c305d7a6e800dcc5bb3c377fa51fa68dbb923cc00e1c5ea0",
+    "command": "python papers/monitoring_jss/phase16/qa/transport_delivery_fault_checks.py -v",
+    "distinct_methods": 5,
+    "final_passed": 5,
+    "final_failed": 0,
+    "execution_history": [
+      {
+        "methods": 3,
+        "passed": 3,
+        "failed": 0
+      },
+      {
+        "methods": 5,
+        "passed": 4,
+        "failed": 1,
+        "finding": "Embedded private failure path was accepted."
+      },
+      {
+        "methods": 5,
+        "passed": 5,
+        "failed": 0,
+        "reason": "Producer fixed privacy rejection; exact original evidence retained."
+      }
+    ],
+    "network_requests": 0,
+    "actual_capture_reads": 0,
+    "producer_suite_runs": 0,
+    "old_suite_runs": 0
+  },
+  "resolved_findings": [
+    "A failed initial SourceReader.open may precede runtime path-map publication: failed-mode packing now derives only frozen inventory/request-bound canonical cache paths and verifies retained bytes.",
+    "Embedded private paths in exception strings bypassed the initial startswith check: portable metadata now rejects them instead of redacting original evidence."
+  ],
+  "reviewed_invariants": [
+    "Copies only original recorded response bytes at exact offsets; each body length and SHA checked.",
+    "Deterministic ZIP_STORED splitting includes full ZIP and manifest overhead in the cap, bounded by500MiB.",
+    "Pinned index binds original plan/result/session/requests/source metadata and archive hashes; original runtime paths excluded from portable metadata.",
+    "Restore verifies every archive hash before constructing sparse sources, and verifies each exact original response member.",
+    "Failed and full-length-but-unaccepted bodies remain forensic; only successful original receipts enter restored range cache.",
+    "Reused whole objects remain explicit original archive/member provenance references; optional attachment requires exact current whole-object size/SHA.",
+    "No source is deleted, no network/Parquet/scoring occurs, no sparse whole-file hash or scientific acceptance is claimed."
+  ],
+  "open_blockers": [],
+  "limitations": [
+    "No actual capture or delivery archive has been reviewed by this check.",
+    "Whole-object original archive provenance and scientific source acceptance remain separate audits.",
+    "Prepared/source/scored/label artifacts require separate preservation; range packs restore recorded source-byte evidence only.",
+    "Metadata containing private paths is rejected, preserving exact original evidence for an explicitly private bundle instead of redacting it."
+  ]
+}

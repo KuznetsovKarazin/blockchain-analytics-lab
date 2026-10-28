@@ -1,4 +1,42 @@
-# Article 2 status — 26 October 2026
+# Article 2 status — 28 October 2026
+
+**Phase16 is complete: two fixed external cases, independently checked decisions,
+and bounded post-decision reference adjudication.** The current entrypoint is
+[Phase16 results and public evidence](phase16/README.md). The primary semantic
+method's previously observed development advantage was not reproduced in these
+external cases.
+
+At an offered daily budget of five notifications, all three policies yield
+Li.Fi count 1/1 versus semantic 0/1, and Revest 0/2 for both methods. Realized
+30-day notification loads are 1 versus 0 for Li.Fi and 2 versus 0 for Revest.
+Both denominators are verified known subsets. No-hit cells do not establish a
+complete incident miss. All three semantic references fail the minimum-history
+gate; token histories have zero or one earlier positive observation within the
+UTC day, below the required 19.
+
+The [full results](phase16/manuscript/EXTERNAL_CASE_RESULTS.md) retain all policies,
+budgets and sensitivity thresholds. The operational code and
+[public evidence package](phase16/public_evidence/README.md) support inspection
+and offline verification from the selected observations and sealed decisions.
+Fresh raw-source replication still requires the separate accepted source bodies
+and original whole objects. Original frozen code and scientific parameters are
+unchanged; portability is handled by a separate hash-checking path map.
+
+The cohort contains two incident families over 60 case-days and 37 calendar
+dates. The 12,798 decision rows and 1,620 daily cells do not increase the number
+of independent incidents. The scientific result is a measured applicability
+limit of the daily-reset semantic configuration, not evidence of general
+superiority, precision/FPR or live protection. A warm-start comparison and
+validation on additional incidents remain future work under a separate protocol.
+
+Repository: KuznetsovKarazin/blockchain-analytics-lab, branch paper/monitoring-jss.
+Companion pin remains dc1ba8876f3f163c27c48f3a39292fc47f71bf18.
+
+## Historical Phase7 status — 26 October 2026
+
+The following record describes the earlier stage and is retained for context;
+its candidate dispositions and remaining-work list are not the current Phase16
+status.
 
 **Phase 7 adds Revest creation/initial-binding provenance and a frozen
 ten-transaction Euler development sample for source-bound Transfer observations.
@@ -10,7 +48,7 @@ Repository: KuznetsovKarazin/blockchain-analytics-lab, branch paper/monitoring-j
 Companion pin unchanged: dc1ba8876f3f163c27c48f3a39292fc47f71bf18.
 Book source/results and scripts/run_all.sh are untouched.
 
-## Current findings
+### Current findings
 
 - Revest: five successful creations on 24 September 2021 and registry
   initialization at block 13290609 link four historical components at explorer
@@ -37,7 +75,7 @@ Book source/results and scripts/run_all.sh are untouched.
   Pagination exhaustion is not independent full-receipt completeness; event sums
   are not proven balance changes. No detector, labels, thresholds or policy change.
 
-## Accepted work from previous stages
+### Accepted work from previous stages
 
 | Evidence | Main result | Scientific scope |
 |---|---|---|
@@ -61,7 +99,7 @@ Excluded original header, durability and budget-comparison attempts remain
 preserved with unchanged failure records. Their corruption causes are unknown.
 Do not repair expected hashes or substitute them for accepted sealed retries.
 
-## Publication and evidence
+### Publication and evidence
 
 Stages 3–5 were published as 09fa5825b4e27dc35e1d43b2f46e14ba1fa13a02,
 parent 23129bdcff24508bb690a6747c3c4900d8ae8dbd. Its tree
@@ -82,7 +120,7 @@ phase4 source archives are durable; reclaimed local ZIP caches are not missing
 acquisitions. The phase6 package adds metadata evidence and retrieval instructions,
 not the full third-party PoC or older large experiment archives.
 
-## Remaining work
+### Remaining work
 
 Resolve continuous historical registry/component routing and independent runtime
 provenance; develop semantic rules only on declared development cases; freeze

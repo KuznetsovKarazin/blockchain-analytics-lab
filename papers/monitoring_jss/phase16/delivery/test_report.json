@@ -1,0 +1,54 @@
+{
+  "bindings": {
+    "pack_range_capture.py": "bb30a8e76ca43d600218225f2134b777117f0016be2ec28946417baefbff096a",
+    "restore_range_capture.py": "4354b24482e0e8e94d34f3cb994a97a735d794e7c801044ca6b830670afb437d",
+    "test_range_pack.py": "774bc5aa61c7ef34be836fb000f3a416f0903595dc842e8bb5c884b139f03c38"
+  },
+  "bound_measurement_code_changed": false,
+  "current_code_validation_scope": "Four focused serialization/default-complete/partial-failed regressions. Prior12-check suite was not rerun wholesale.",
+  "detector_scores": 0,
+  "distinct_test_methods": 14,
+  "execution_history": [
+    {
+      "methods": 10,
+      "purpose": "initial complete/failed roundtrip and fault checks",
+      "result": "PASS"
+    },
+    {
+      "methods": 11,
+      "purpose": "failed first-open path recovery",
+      "result": "PASS"
+    },
+    {
+      "methods": 12,
+      "purpose": "embedded private path rejection",
+      "result": "PASS"
+    },
+    {
+      "methods": 2,
+      "purpose": "accepted input/runtime serialization distinction and semantic rejection",
+      "result": "PASS"
+    },
+    {
+      "methods": 2,
+      "purpose": "accepted input hash recheck after metadata copy",
+      "result": "PASS"
+    },
+    {
+      "methods": 4,
+      "purpose": "final focused regressions including default complete and unchanged partial-failure paths",
+      "result": "PASS"
+    }
+  ],
+  "network_requests": 0,
+  "parquet_rows_decoded": 0,
+  "prior_12_check_bindings": {
+    "pack_range_capture.py": "c8825278ad5542e800eeaf11fc87e8e637dc8d3ded5da9cd33aded3cc09bcc48",
+    "restore_range_capture.py": "6f2a18d88b25a1724054bc7edd805fa165beb7e542a972eb737d20284cd02d14",
+    "test_range_pack.py": "159655d27989586d64fb928fa2aab8ea0235d454f67e35863472af45101253bb"
+  },
+  "real_capture_bytes_read": 0,
+  "schema_version": "phase16_delivery_synthetic_checks_v1",
+  "scope": "Delivery helpers only. Independent review recorded separately by QA; no real packaging or restoration performed.",
+  "status": "PASS_4_FOCUSED_SERIALIZATION_REGRESSIONS_AFTER_PRIOR_12_CHECKS"
+}

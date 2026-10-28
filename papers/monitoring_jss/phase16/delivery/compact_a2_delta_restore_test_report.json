@@ -1,0 +1,22 @@
+{
+  "actual_a1_payload_read": false,
+  "actual_a2_payload_read": false,
+  "created_utc": "2026-10-28T13:35:04.599694+00:00",
+  "files": {
+    "COMPACT_A2_DELTA_RESTORE.md": "7b99cb251d1ef11afd3525b810f32a6e68bc441868f4a1f6abfd6eaed4fb7194",
+    "restore_compact_a2_delta.py": "1f94552124ed50471141ffb8d813fa00708f589cad1959cf89ed3c6ecb6d682b",
+    "test_restore_compact_a2_delta.py": "147b86c610447f2b84dd534279d18c8c4c2ce2ee82987f55d6766f15c2922e5e"
+  },
+  "fixture_update": "Gate-bound external JSON and jsonl.gz fixtures; producer original_external_path preserved in independent relocation map. Duplicate original paths rejected and embedded ZIP provenance compared with pinned index.",
+  "network_requests": 0,
+  "original_bound_files_modified": false,
+  "producer_binding_review": "Focused static review: expected digests retained from authoritative gates; external artifacts require retained hashes; all bound artifacts must enter final inventory; archived hashes compared with expected values. No blocker found in these changes.",
+  "producer_pack_format_integration": "artifact_entries + group_entries + exact pinned pack_one ZIP output",
+  "producer_packer_sha256_reviewed": "ad832803b4c5406b61f4bbb38e9400fb85a46b08234c7a2d4f6b3d7aaacc0e3e",
+  "schema_version": "phase16_compact_a2_delta_restore_synthetic_report_v1",
+  "scope": "Byte restoration only; no new source audit, scoring, or replay authorization",
+  "status": "PASS_SYNTHETIC_ONLY",
+  "test_command": "python -m unittest -v test_restore_compact_a2_delta.py",
+  "tests_failed": 0,
+  "tests_passed": 11
+}

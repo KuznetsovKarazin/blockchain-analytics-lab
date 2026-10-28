@@ -1,0 +1,50 @@
+{
+  "bindings": {
+    "collector.py": "bf774e6f6658a8e1607d9bcd494bdf59d91359d78caef3a50aa4c0eb09c537b3",
+    "test_collector.py": "eaf904cfe608840ee09156706e3a19a3ce2043d62a62cdca78598e293d363dad"
+  },
+  "detector_scores": 0,
+  "distinct_test_methods": 24,
+  "execution_history": [
+    {
+      "methods": 14,
+      "reason": "initial cumulative continuation implementation",
+      "result": "PASS"
+    },
+    {
+      "methods": 15,
+      "reason": "absolute clock anchoring and conflicting reacquisition bytes",
+      "result": "PASS"
+    },
+    {
+      "methods": 16,
+      "reason": "explicit total retry accounting and synthetic PyArrow26 integration",
+      "result": "PASS"
+    },
+    {
+      "methods": 20,
+      "reason": "root-approved narrow deadline timeout and conservative failed-range reservation",
+      "result": "PASS"
+    },
+    {
+      "methods": 23,
+      "reason": "exact urllib timeout wrappers and final-checkpoint wall guard",
+      "result": "PASS"
+    },
+    {
+      "methods": 24,
+      "reason": "separate accepted input-plan hash from runtime reserialization hash",
+      "result": "PASS"
+    }
+  ],
+  "independent_review": "separate QA candidate report",
+  "original_bound_code_changed": false,
+  "original_collector_sha256": "13e15e7b770ad40c2e8d286abceb8f7e380d946626b35d0186f43f0001be563f",
+  "real_capture_payload_bytes_read": 0,
+  "real_continuation_started": false,
+  "real_network_requests": 0,
+  "response_budget": "Exact retained counts plus conservative full declared failed/pending range charges; not complete wire-byte measurement.",
+  "schema_version": "phase16_continuation_collector_candidate_checks_v1",
+  "status": "PASS_24_SYNTHETIC_CHECKS_CANDIDATE_ONLY",
+  "timeout_scope": "Only sole finalGET inside original final60s with recognized TimeoutError or exact URLError wrapper; causal contribution unknown, no general network retry."
+}

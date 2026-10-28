@@ -1,0 +1,46 @@
+{
+  "schema_version": "article2_phase16_storage_recovery_pre_replay_authorization_v1",
+  "status": "ACCEPTED_FOR_FROZEN_REPLAY_AFTER_AMENDED_SOURCE_AUDIT",
+  "accepted_utc": "2026-10-28T13:06:21.386545+00:00",
+  "accepted_by": "root research execution agent under existing user authorization",
+  "accepted_before_replay": true,
+  "detector_scoring_started": false,
+  "new_reference_acquisition_started": false,
+  "storage_recovery_amendment": {
+    "path": "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/phase16/storage_recovery/actual/storage_recovery_amendment.json",
+    "sha256": "2cb97a448e13433d949d0bd3bd922490c18226022a938838801dc5dd51a857ee"
+  },
+  "transport_audit": {
+    "path": "/workspace/scratch/159bf77d8682/phase16_storage_recovery_audit/transport_audit.json",
+    "sha256": "d8f479c24035d8b40708c1e4a1a9fa139fdb54ee46e84d1595c9813ab9c06ed3"
+  },
+  "source_review": {
+    "path": "/tmp/article2_phase16_runtime_159bf77d8682/independent_source_audit/source_review.json",
+    "sha256": "625fe2520f62646febc2e798795d5dcc0c91aafb118f28461aa38f1049155acd"
+  },
+  "multiattempt_ledger": {
+    "path": "/workspace/scratch/159bf77d8682/phase16_storage_recovery_audit/multiattempt_ledger.json",
+    "sha256": "b8b4835768cfc45c32a79f9d551617c483d3a138422a759054be8fb233a18bb3"
+  },
+  "input_manifests": {
+    "lifi_20220320": {
+      "path": "/tmp/article2_phase16_runtime_159bf77d8682/attempt2/observations/lifi_20220320/manifest.json",
+      "sha256": "8a5e12dfee0789e9e34a3723ef5bd2415bc1275bc3fdeb4191b89de7a86f609c"
+    },
+    "revest_20220327": {
+      "path": "/tmp/article2_phase16_runtime_159bf77d8682/attempt2/observations/revest_20220327/manifest.json",
+      "sha256": "391fb7d743fc519a5c60ae2dfef0327a8de8f5f18ddfdd580873b4a93e58523b"
+    }
+  },
+  "replay_launcher_sha256": "0672fc9e337cc0ea4aaf3f7234e0a97156ccc91e6237ccded9017b29195afcd4",
+  "replay_output_root": "/tmp/article2_phase16_runtime_159bf77d8682/replays",
+  "reference_archive_auditor": {
+    "path": "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/phase16/storage_recovery/archive_reference_audit.py",
+    "sha256": "777c9e8a4c6e2ca3ccbc6de23cf890bb7f317b93399b0b10d0f8bb7c91211acd"
+  },
+  "reference_compact_reader": {
+    "path": "/workspace/scratch/159bf77d8682/monitoring-work/papers/monitoring_jss/phase16/storage_recovery/independent_compact_reader.py",
+    "sha256": "ad042251b4307346d1a2d50d02107eadced95c42c800b7599b0abccb9bb769af"
+  },
+  "reference_archive_source_engine_sha256": "347bf76e162cf995e0b3c30ce6a3e72a75a1e78008d120ce8d51137667409955"
+}

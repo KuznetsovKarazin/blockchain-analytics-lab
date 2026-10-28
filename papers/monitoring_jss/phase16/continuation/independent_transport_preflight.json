@@ -1,0 +1,127 @@
+{
+  "schema_version": "article2_phase16_independent_continuation_transport_preflight_v1",
+  "recorded_utc": "2026-10-28T11:03:34.227211+00:00",
+  "status": "CANDIDATE_READY_REQUIRES_EXACT_ROOT_FREEZE",
+  "actual_transport_audit_status": "NOT_RUN",
+  "actual_a1_closure_inspected": false,
+  "root_continuation_executed": false,
+  "auditor": {
+    "path": "papers/monitoring_jss/phase16/continuation/independent_transport_audit.py",
+    "sha256": "e5ed887c357ff34439448c7d8b8eb36bd2b9dc86729b623901f66e6dbdec4f41"
+  },
+  "independent_byte_helper": {
+    "path": "papers/monitoring_jss/phase16/qa/transport_receipt_audit.py",
+    "sha256": "9358885bffdf96d12fdfc7a9a578ccb5d770ae713af02c773b0494ae2dc38699"
+  },
+  "synthetic_checks": {
+    "path": "papers/monitoring_jss/phase16/continuation/test_independent_transport_audit.py",
+    "sha256": "081b9a4db8688ff641fb571e574728c54b0fac007ca9588c6698095de317c67b",
+    "command": "python papers/monitoring_jss/phase16/continuation/test_independent_transport_audit.py -v",
+    "distinct_methods": 33,
+    "final_passed": 33,
+    "final_failed": 0,
+    "method_names": [
+      "test_absolute_deadline_cannot_reset_from_continuation_start",
+      "test_acceptance_cannot_predate_exposure_review",
+      "test_accepted_destination_cannot_be_inside_original_attempt",
+      "test_auditor_must_be_bound_before_continuation",
+      "test_complete_over_wall_cannot_hide_a_late_accepted_get",
+      "test_complete_over_wall_retains_failed_original_contract_disposition",
+      "test_conservative_byte_charge_cannot_be_reported_as_retained_only",
+      "test_cumulative_accounting_cannot_omit_failed_partial_bytes",
+      "test_distinct_origins_and_all_failed_bytes_remain_charged",
+      "test_earlier_or_outside_deadline_timeout_is_not_retriable",
+      "test_end_to_end_synthetic_113_source_byte_audit_preserves_separate_ledgers",
+      "test_exact_urlopen_timeout_wrappers_preserve_outer_exception_and_uncertainty",
+      "test_full_failed_range_reservation_blocks_get_that_retained_total_would_allow",
+      "test_full_length_wall_failed_body_still_not_successful_evidence",
+      "test_full_prospective_chain_binds_code_original_closure_and_exposure",
+      "test_manual_receipt_must_name_exact_original_attempt",
+      "test_manual_target_cannot_change_range_or_original_request",
+      "test_missing_manual_exception_cannot_promote_failed_interval",
+      "test_narrow_timeout_preserves_uncertainty_and_full_declared_reservation",
+      "test_new_request_before_prospective_acceptance_is_rejected",
+      "test_non_wall_parent_failure_cannot_be_continued",
+      "test_open_parent_is_not_a_natural_closed_attempt",
+      "test_parent_stopped_before_original_deadline_is_rejected",
+      "test_reference_exposure_cannot_be_reclassified_source_only",
+      "test_repeated_reacquisition_is_not_automatic_retry",
+      "test_request_after_failed_continuation_is_rejected",
+      "test_sealed_original_metadata_cannot_change_after_acceptance",
+      "test_success_after_absolute_deadline_is_not_accepted",
+      "test_threshold_change_cannot_hide_in_operational_plan",
+      "test_timeout_cannot_hide_observed_bad_or_partial_headers",
+      "test_timeout_does_not_authorize_other_exception_classes",
+      "test_timeout_with_inconsistent_original_clocks_is_rejected",
+      "test_timeout_without_response_headers_requires_zero_retained_bytes"
+    ],
+    "execution_history": [
+      {
+        "methods": 14,
+        "passed": 14,
+        "reason": "initial cumulative ledger and exact manual lineage faults"
+      },
+      {
+        "methods": 16,
+        "passed": 16,
+        "reason": "explicitly authorized complete-over-wall branch"
+      },
+      {
+        "methods": 23,
+        "passed": 23,
+        "reason": "new synthetic prospective chain and exposure gates"
+      },
+      {
+        "methods": 31,
+        "passed": 31,
+        "reason": "new narrow timeout and conservative failed-range charge gates"
+      },
+      {
+        "methods": 33,
+        "passed": 33,
+        "reason": "exact URL timeout wrappers and full tiny synthetic113-source byte audit"
+      }
+    ],
+    "network_requests": 0,
+    "actual_attempts_read": 0,
+    "historical_rows_decoded": 0,
+    "producer_suite_runs": 0,
+    "old_suite_runs": 0
+  },
+  "accepted_candidate_conditions": [
+    "Final explicit wall ValueError or wall-only pre-request stop; immutable A1 remains noncompliant.",
+    "Producer COMPLETE-over-wall requires independently bound full source validity review and all GETs inside original7200s; report retains producer COMPLETE; original wall contract FAILED.",
+    "Exactly four timeout class/message pairs under sole-final-GET/final60s/UTC/header predicates, with unchanged exception and explicit unresolved causal contribution.",
+    "A1 start+14400s absolute deadline; original5000 GET and16GiB cumulative conservative charge caps; no automatic retry.",
+    "At most one separately authorized exact-range manual reacquisition; failed original bytes remain excluded from accepted evidence.",
+    "Exact retained bytes reported separately from full declared failed-range reservation; no complete wire-byte measurement claim.",
+    "Unchanged original plan/scientific fields, prospective accepted code/auditor hashes, fixed A2 destination, both original measurement acceptances, and complete/partial source exposure seals.",
+    "Original A1 request bytes preserved separately; new global-ordinal A2 ledger and successful evidence-origin view bound alongside a full cumulative failure/cost ledger.",
+    "Every retained A1 positive body including failed prefix rehashed; copied inherited accepted ranges and new accepted bodies rehashed at new source offsets; sparse holes never accepted.",
+    "Original whole-object archive/member/acquisition receipts verified independently when reused."
+  ],
+  "output_contract": {
+    "status": "PASS_CONTINUATION_TRANSPORT_ORIGINAL_BYTES",
+    "schema_version": "article2_phase16_independent_continuation_transport_audit_v1",
+    "lineage": [
+      "continuation_amendment_sha256",
+      "continuation_amendment_path",
+      "original_source_plan_sha256",
+      "first_attempt_seal_sha256",
+      "first_attempt_seal_path",
+      "parent_root",
+      "multiattempt_ledger_sha256",
+      "requests_sha256",
+      "inherited_requests_sha256",
+      "accepted_range_evidence_sha256"
+    ],
+    "sources": "verified_sources preserves original source/path/available_ranges/whole-object/footer/receipt-hash contract plus successful_receipt_origins"
+  },
+  "limitations": [
+    "This is candidate code verification only, not an actual source or continuation approval.",
+    "No actual A1, A2, archive or reference data was read.",
+    "Independent prior-day semantic comparison, complete source projections, selections and raw bundles remain assigned to separate source auditor.",
+    "Independent original-byte helper is pinned; producer collector/protocol/pipeline are not imported by this auditor.",
+    "Original A1 and previously bound implementations were not modified."
+  ]
+}

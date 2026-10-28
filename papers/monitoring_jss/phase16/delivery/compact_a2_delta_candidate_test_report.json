@@ -1,0 +1,76 @@
+{
+  "actual_A2_capture_read": false,
+  "actual_delta_pack_run": false,
+  "additional_delivery_integration_checks": [
+    "Exactly gate-bound compressed JSONL outputs remain byte-identical; arbitrary archives still rejected.",
+    "Original external paths are retained in ZIP/index metadata and emitted only as restoration relocation mappings; historical files never rewritten."
+  ],
+  "command": "python -m unittest test_compact_a2_delta test_compact_a2_delta_independent test_restore_compact_a2_delta -v",
+  "created_utc": "2026-10-28T13:36:21.464949+00:00",
+  "errors": 0,
+  "failures": 0,
+  "file_bindings": [
+    {
+      "path": "pack_compact_a2_delta.py",
+      "sha256": "ad832803b4c5406b61f4bbb38e9400fb85a46b08234c7a2d4f6b3d7aaacc0e3e"
+    },
+    {
+      "path": "restore_compact_a2_delta.py",
+      "sha256": "1f94552124ed50471141ffb8d813fa00708f589cad1959cf89ed3c6ecb6d682b"
+    },
+    {
+      "path": "test_compact_a2_delta.py",
+      "sha256": "31b888869e2d714f8470e4301c772af42466f44beeca58a36feb1aa812cff960"
+    },
+    {
+      "path": "test_compact_a2_delta_independent.py",
+      "sha256": "5f9c026d9dd748245d792e2702b98a5d3ea41ee83665ae8a8767be194543e030"
+    },
+    {
+      "path": "test_restore_compact_a2_delta.py",
+      "sha256": "147b86c610447f2b84dd534279d18c8c4c2ce2ee82987f55d6766f15c2922e5e"
+    },
+    {
+      "path": "compact_a2_delta_independent_review.json",
+      "sha256": "94e9fada87614c7b02d5085687995df3bca686c7e42d8f8e4e239637bc1381b4"
+    },
+    {
+      "path": "compact_a2_delta_restore_test_report.json",
+      "sha256": "591bea0fe807d2f6b21b750383dd184709d784a7e91162c52d22b247e0ddd0df"
+    },
+    {
+      "path": "COMPACT_A2_DELTA.md",
+      "sha256": "bdcd5af630786f48230473ead2269fe903d08a660e3a9a2fbe473e1dc77a98e8"
+    },
+    {
+      "path": "COMPACT_A2_DELTA_RESTORE.md",
+      "sha256": "7b99cb251d1ef11afd3525b810f32a6e68bc441868f4a1f6abfd6eaed4fb7194"
+    },
+    {
+      "path": "compact_a2_delta_ready_inputs.template.json",
+      "sha256": "d9651f5126aa575291c4851ae786102c5a21ffeeccabbded70708e95970d3bbc"
+    },
+    {
+      "path": "compact_a2_final_snapshot.template.json",
+      "sha256": "db2c8590e9e73a50e373576fd459e40e3c7eb354925ce6a31a07dbaa424b49f2"
+    }
+  ],
+  "frozen_scientific_source_modified": false,
+  "independent_tests": 20,
+  "network_or_upload_performed": false,
+  "producer_tests": 8,
+  "real_dependency_metadata_validation": {
+    "a1_saved_objects": 43,
+    "frozen_reuse_map_digest_verified": true,
+    "original_archives": 9,
+    "original_whole_objects": 18,
+    "path": "/tmp/article2_phase16_runtime_159bf77d8682/a2_delta_dependencies.json",
+    "sha256": "c1c77ea9e517d7afe52d241c31dde8bfbcb84e83cea7520f7dee8c424355b951",
+    "source_body_bytes_read": 0
+  },
+  "remaining_execution_condition": "Root must close all final scientific artifacts and bind COMPLETE collection, independent transport/source PASS, assembly, cumulative ledger, and final delivery snapshot before actual pack.",
+  "restore_tests": 11,
+  "schema_version": "phase16_compact_a2_delta_candidate_validation_v1",
+  "status": "PASS_39_BOUNDED_SYNTHETIC_TESTS_NO_ACTUAL_A2_PACK",
+  "tests_total": 39
+}

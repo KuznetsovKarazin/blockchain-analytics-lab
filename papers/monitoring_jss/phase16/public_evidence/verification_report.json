@@ -1,0 +1,35 @@
+{
+  "schema_version": "article2_phase16_public_evidence_verification_v1",
+  "status": "PASS_FROZEN_EXACT_JOIN_FROM_PUBLIC_SEALED_EVIDENCE",
+  "completed_utc": "2026-10-28T21:31:44.383907+00:00",
+  "verifier_sha256": "48aa25f92d3f35071c2d5dae6fbaf049e0e8513035a1b9d4e13b551c5ce29bfe",
+  "manifest_sha256": "792b2c2abf3f7ccc4274455900c13c02ad2d040355120e7971ec65ebcf491f8a",
+  "capsule_sha256": "56f19a262c36f5438d11d19cbb8434ea3dcb731b1cbdae34f479f667ec9997e2",
+  "frozen_join_sha256": "deaf7e58715cda8e701ec31bc2f4fcd7e85db5f9199fe23a0b55e195519b1cee",
+  "capsule_files_verified": 2147,
+  "repository_files_verified": 32,
+  "case_count": 2,
+  "aggregate_arm_cells": 54,
+  "across_case_cells": 27,
+  "coverage_equal_except_generated_utc": true,
+  "joined_row_checks": {
+    "reference_funnel.jsonl.gz": {
+      "decompressed_bytes_equal": true,
+      "rows": 81,
+      "compressed_bytes_equal": true
+    },
+    "candidate_adjudications.jsonl.gz": {
+      "decompressed_bytes_equal": true,
+      "rows": 5,
+      "compressed_bytes_equal": true
+    }
+  },
+  "only_adapted_function": "exact_reference_join.binding (explicit historical path relocation)",
+  "driver_relative_path_binding_unchanged": true,
+  "frozen_scientific_source_bytes_unchanged": true,
+  "detector_scoring_or_replay_performed": false,
+  "network_requests": 0,
+  "raw_source_audit_repeated": false,
+  "reference_roles_readjudicated": false,
+  "limits": "Validates retained bytes and recomputes the exact reference join from sealed decisions. Historical source/role audits remain assertions supported by their retained evidence; this does not independently repeat raw-chain acquisition or prove those historical assertions."
+}

@@ -1,0 +1,28 @@
+{
+  "bindings": {
+    "compact_collector.py": "63c67410216d65cefaa8e2e19afb9856267c65bbe7ee729a8b248a7c48db2daa",
+    "test_compact_collector.py": "92911e7bd9a4b7da82a4583302bb1533eaaf13e9af2da6b212a281b58b5f2b40"
+  },
+  "distinct_test_methods": 15,
+  "execution_history": [
+    {
+      "methods": 13,
+      "passed": 13,
+      "reason": "initial compact storage/strict Arrow/lineage/budget faults"
+    },
+    {
+      "methods": 15,
+      "passed": 15,
+      "reason": "verified immutable-blob cache and mutation checks; final receipt field alignment"
+    }
+  ],
+  "helper_sha256": "bf774e6f6658a8e1607d9bcd494bdf59d91359d78caef3a50aa4c0eb09c537b3",
+  "independent_review": "separate exact-bound reviewer reports required before root freeze",
+  "new_full_size_or_sparse_parquet_files": 0,
+  "original_or_unused_wall_code_changed": false,
+  "real_capture_payload_bytes_read": 0,
+  "real_network_requests": 0,
+  "real_recovery_started": false,
+  "schema_version": "phase16_compact_resource_recovery_candidate_checks_v1",
+  "status": "PASS_15_SYNTHETIC_CHECKS_CANDIDATE_ONLY"
+}

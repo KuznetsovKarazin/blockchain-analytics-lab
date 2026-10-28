@@ -1,0 +1,51 @@
+{
+  "command": "python -B papers/monitoring_jss/phase16/storage_recovery/test_protocol.py",
+  "coverage": [
+    "preserved OPEN_REQUEST_PENDING with external ENOSPC closure",
+    "unknown pending received/written bytes and full declared reservation",
+    "exact final pending reacquisition only",
+    "external process bracket and terminal failure metadata",
+    "all committed metadata and empty failed-checkpoint immutability",
+    "relocation alias and metadata hashes",
+    "exposed completed/partial selection inventory",
+    "unchanged science and original transport bounds",
+    "source-only exposure and prospective chronology",
+    "fixed fresh A2 destination and historical validation",
+    "both original case acceptances and code binding hashes",
+    "strict pending-request start before original 7200-second deadline, including exact-boundary rejection"
+  ],
+  "errors": 0,
+  "failed": 0,
+  "fixture_limits": {
+    "actual_captures_or_forensic_artifacts_read": false,
+    "actual_source_bytes_read": false,
+    "candidate_execution_code_bindings": "INERT_SYNTHETIC_TEMPORARY_FILES_HASHED_BUT_NEVER_IMPORTED",
+    "detector_runs": 0,
+    "establishes_real_source_completeness_or_eligibility": false,
+    "forensic_attestations_and_source_review": "INVENTED_SYNTHETIC_METADATA_ONLY_NOT_ACTUAL_EVIDENCE",
+    "frozen_driver_and_case_config_validation": "REAL_VALIDATORS_WITH_UNMODIFIED_REPOSITORY_FILES",
+    "network_or_reference_requests": 0,
+    "old_test_suites_run": false,
+    "runtime_root_and_repo_and_gate_file_location": "PATCHED_TO_SMALL_TEMPORARY_FIXTURE_DIRECTORY"
+  },
+  "generated_utc": "2026-10-28T11:51:37.204190+00:00",
+  "open_review_edges": [],
+  "passed": 31,
+  "protocol": {
+    "path": "papers/monitoring_jss/phase16/storage_recovery/protocol.py",
+    "sha256": "3b5003147d59cfd13f28adf614bb2859f8d6d1c6a3923ccd3c77e34944d261e0"
+  },
+  "resolved_review_edges": [
+    {
+      "description": "Pending GET start originally lacked a strict original-wall deadline guard; parent added the guard. New test accepts 7199s and rejects 7200s and 7201s.",
+      "status": "FIXED_AND_SYNTHETICALLY_VERIFIED"
+    }
+  ],
+  "schema_version": "article2_phase16_storage_protocol_synthetic_preflight_v1",
+  "status": "PASS_SYNTHETIC_PROTOCOL_GATE_CHECKS",
+  "synthetic_test_methods": 31,
+  "tests": {
+    "path": "papers/monitoring_jss/phase16/storage_recovery/test_protocol.py",
+    "sha256": "87c5f4eb2de2ae0d1c1b5e4bf8a524b3971890bdaab6e091fec1b2347b439660"
+  }
+}

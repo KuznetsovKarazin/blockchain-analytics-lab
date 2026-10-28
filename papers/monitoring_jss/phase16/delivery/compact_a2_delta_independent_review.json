@@ -1,0 +1,72 @@
+{
+  "schema_version": "phase16_compact_a2_delta_independent_synthetic_review_v1",
+  "status": "PASS_INDEPENDENT_SYNTHETIC_DELTA_REVIEW",
+  "reviewed_packer_sha256": "ad832803b4c5406b61f4bbb38e9400fb85a46b08234c7a2d4f6b3d7aaacc0e3e",
+  "test_file": "test_compact_a2_delta_independent.py",
+  "test_sha256": "5f9c026d9dd748245d792e2702b98a5d3ea41ee83665ae8a8767be194543e030",
+  "command": "python -m unittest -v test_compact_a2_delta_independent.py",
+  "tests_run": 20,
+  "tests_passed": 20,
+  "passing_coverage": [
+    "Pending parent body omitted from recipes and archive entries",
+    "Tampered receipt rejected",
+    "Out-of-source and overlapping ranges rejected",
+    "Duplicate or missing parent archive member rejected",
+    "Inherited blob bodies are not opened by delta inventory",
+    "Missing or writable accepted blobs rejected",
+    "Escaping symlink rejected",
+    "Covered-empty observation retained",
+    "Tampered new blob prevents COMPLETE index",
+    "File census changes during packing prevent COMPLETE index",
+    "External final report retains its original sealed digest",
+    "Unfrozen reuse archive/member map rejected",
+    "Missing gate-bound internal artifact rejected",
+    "Complete invented delta ZIP roundtrip preserves exact metadata and only new response bodies",
+    "Internal source/archive payload rejected from metadata selection",
+    "Known external whole object rejected even with misleading report filename",
+    "Gate-bound compressed JSONL preserved byte-exact through ZIP roundtrip",
+    "Unbound compressed JSONL and bound other archive types rejected",
+    "External compressed JSONL original path retained in member records and embedded ZIP manifest",
+    "Changed gate-bound compressed JSONL prevents COMPLETE index"
+  ],
+  "additional_nonblocking_note": "Resolved: metadata/report selection rejects known whole-object paths and source/archive payload suffixes. The only compressed scientific exception is a gate-bound case-insensitive .jsonl.gz name; its original expected SHA remains enforced.",
+  "actual_A1_payload_reads": 0,
+  "actual_A2_capture_reads": 0,
+  "network_calls": 0,
+  "scientific_source_decode_or_scoring": false,
+  "producer_code_modified": false,
+  "test_inputs": "Invented files in automatically cleaned temporary directories only",
+  "limitation": "This review does not authorize or attest any actual collection, audit, delivery pack, upload, or restoration.",
+  "resolved_findings": [
+    {
+      "test": "test_external_final_report_keeps_sealed_digest",
+      "finding": "External artifact inventory recomputes expected_sha256 from mutable current bytes instead of preserving the digest accepted by load_ready. An external final report changed after its gate check is silently rebound and could be archived despite a conflicting final_snapshot binding.",
+      "requested_fix": "Carry exact accepted digests for every gated or audited artifact through inventory and ZIP verification; never replace a bound expected digest by a later hash.",
+      "status": "FIX_VERIFIED_BY_SYNTHETIC_REGRESSION"
+    },
+    {
+      "test": "test_dependency_creation_rejects_unfrozen_member_map",
+      "finding": "The supplied reuse_expectations file is not checked against original_plan.reuse_expectations_binding. Archive/member fields can change while matching whole-source SHA, size, and ETag, yielding an accepted but unrestorable dependency map.",
+      "requested_fix": "Verify the exact original frozen reuse_expectations digest both when building dependencies and when accepting them.",
+      "status": "FIX_VERIFIED_BY_SYNTHETIC_REGRESSION"
+    },
+    {
+      "test": "test_gate_bound_internal_artifact_cannot_disappear_before_inventory",
+      "finding": "A required internal artifact deleted after the gate was previously omitted from the census and archive.",
+      "resolution": "Inventory now requires every gate-bound artifact path to occur among archive entries.",
+      "status": "FIX_VERIFIED_BY_SYNTHETIC_REGRESSION"
+    }
+  ],
+  "remaining_static_blockers": [],
+  "integration_limitations": [
+    "The expensive source-ready validator was mocked only in pack-level synthetic tests; its production call and digest propagation were inspected statically.",
+    "No full 113-source actual integration or final scientific delivery attestation was exercised.",
+    "No restorer execution in this review; separately owned independent tests cover restoration."
+  ],
+  "narrow_followup": {
+    "change": "Allow gate-bound .jsonl.gz replay artifacts and retain original_external_path for external member relocation.",
+    "full_suite_result": "20/20 PASS",
+    "additional_affected_test": "External original-path propagation additionally verified inside the ZIP member manifest after extending that test.",
+    "actual_capture_access": false
+  }
+}

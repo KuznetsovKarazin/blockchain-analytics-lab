@@ -1,0 +1,60 @@
+{
+  "schema_version": "phase16_final_delta_snapshot_independent_synthetic_review_v1",
+  "status": "PASS_INDEPENDENT_FINALIZER_SYNTHETIC_REVIEW",
+  "finalizer_sha256": "1db761411d8203c5ea281dfd993528ed846ae98480bd584abee376ecf7855494",
+  "tests_sha256": "74fcfd32b4df1442cc53726581ef73c60112d43469b2c9334e159c589916f7a7",
+  "command": "python -m unittest -v test_final_delta_snapshot_independent.py",
+  "tests_run": 15,
+  "tests_passed": 15,
+  "resolved_static_findings": [
+    {
+      "finding": "Validator-time report, publication and required-status digests could previously be replaced by later census hashes.",
+      "resolution": "Trusted validated digests are retained and required by Closure.add."
+    },
+    {
+      "finding": "Resolving paths before metadata checks could bypass lexical symlink rejection.",
+      "resolution": "Lexical file symlinks are rejected in inventory, direct graph addition and graph resolution."
+    },
+    {
+      "finding": "Aliased snapshot/proof/closure output paths could overwrite earlier outputs.",
+      "resolution": "Three distinct resolved fresh output paths required."
+    }
+  ],
+  "passing_coverage": [
+    "Valid invented closure includes QA interpretation and untracked operational metadata; exact Git files and empty invalid wall report excluded",
+    "Final proof preserves proposal fields except removal of proposal_status and replacement of final_snapshot",
+    "Explicit all-writers-closed gate occurs before reads",
+    "Exact published HEAD and ordinary tracked-content changes enforced",
+    "Missing final group and nonempty invalid wall report rejected",
+    "Raw primary copies and Python cache excluded",
+    "Census and direct graph symlinks rejected",
+    "Unapproved review, wrong mechanism status and unverified publication rejected",
+    "Report/publication/closed-status mutations after validation rejected",
+    "Changes while hashing, late added files and changed final files rejected",
+    "Output paths must be distinct",
+    "Missing graph bindings rejected; durable original body references recorded without opening bytes",
+    "Exact published Git JSON is a terminal durable node with commit/path/hash evidence; absent historical payload is not reopened, while missing current private metadata still rejects closure"
+  ],
+  "test_environment": "Invented automatically cleaned temporary repositories with local synthetic commits; tiny metadata only",
+  "mocked_boundaries": [
+    "Production runtime/workspace roots replaced with temporary fixture roots",
+    "Fixed derivation-script path redirected to a tiny invented local script",
+    "Production packer SHA replaced only inside test process for an unexecuted stub"
+  ],
+  "actual_A1_payload_reads": 0,
+  "actual_A2_capture_reads": 0,
+  "actual_final_census_executions": 0,
+  "network_calls": 0,
+  "producer_or_frozen_source_code_modified": false,
+  "remaining_static_blockers": [],
+  "limitations": [
+    "Does not attest actual final capture, real report content or durable upload.",
+    "Scientific source code and frozen delta packer were not altered or executed."
+  ],
+  "published_git_boundary_followup": {
+    "status": "PASS",
+    "regression": "test_exact_published_json_is_terminal_but_private_missing_binding_still_fails",
+    "scope": "Only exact published Git nodes stop recursive historical traversal; private current metadata graph checks remain active.",
+    "actual_census_executed_by_reviewer": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "actual_network_requests": 0,
+  "actual_parquet_rows_decoded": 0,
+  "actual_source_body_reads": 0,
+  "auditor_sha256": "8ecbf0a633b9d42db8538e3b05822f39c45373b0df28b4a8a3d47ad5184e013a",
+  "checks": [
+    "Independent prospective acceptance, unchanged original plan, exact six code hashes, external ENOSPC seal, forensic metadata/relocation and source-only exposure chain.",
+    "Original 729 successful receipts plus unresolved pending 730; full 275821-byte reservation, unknown actual terminal bytes retained as null.",
+    "Exactly one explicit first new request for the same pending source/range; no overlap with accepted original ranges, no automatic retry.",
+    "Known recorded bytes and conservative charged bytes kept separate; cumulative 5000 GET/16 GiB and original start +14400 s including final preparation closure.",
+    "Current immutable blob SHA/size/read-only mode and exact original source offset/origin/receipt hashes; pending bytes never accepted; strict header/footer reads reject holes.",
+    "Current canonical whole-object SHA matched to frozen acquisition identity, prior independent ZIP/member verification and recovery receipt; no fresh ZIP read claimed."
+  ],
+  "collector_sha256": "63c67410216d65cefaa8e2e19afb9856267c65bbe7ee729a8b248a7c48db2daa",
+  "limitations": [
+    "External terminal ENOSPC is a root-attested process observation; producer checkpoint remains OPEN_REQUEST_PENDING.",
+    "Unknown original final response bytes are not reconstructed or described as measured zero.",
+    "This preflight does not approve table projection coverage, selection, detector decisions or reference attribution."
+  ],
+  "old_suites_rerun": 0,
+  "recorded_utc": "2026-10-28T12:00:09.303912+00:00",
+  "schema_version": "article2_phase16_storage_recovery_transport_candidate_preflight_v1",
+  "status": "GO_CANDIDATE_CODE_ONLY_ACTUAL_BYTES_NOT_YET_AUDITED",
+  "synthetic_test_methods": 26,
+  "synthetic_test_result": "PASS",
+  "test_scope": "26 invented-data unit/fault methods, not an end-to-end actual capture audit. Main byte audit remains mandatory after a completed accepted collection.",
+  "test_sha256": "ccc8c9638d0ce851822a45fd9f7f7a9c65f2a71c17f23025865e3f96509715c3"
+}

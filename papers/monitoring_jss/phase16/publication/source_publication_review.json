@@ -1,0 +1,1708 @@
+{
+  "schema_version": "article2_phase16_source_publication_review_v1",
+  "status": "PASS_EXACT_SOURCE_ALLOWLIST_WITH_DISCLOSED_HISTORICAL_LIMITS",
+  "reviewer": "independent publication scope reviewer /root/publication_scope_review",
+  "reviewed_utc": "2026-10-28T21:30:18.228560+00:00",
+  "public_baseline_commit": "45774fc9fd5b7399b1c9a95461c8f746ff65d135",
+  "source_archive": {
+    "filename": "a2_delta_metadata_001.zip",
+    "sha256": "17c239c9319bc726053bb01aa475c8e760ef8cf670f3e38abb9772c10be1339e",
+    "bytes": 22744883
+  },
+  "recovered_repository_artifact_count": 102,
+  "recommended_added_file_count": 93,
+  "recommended_added_bytes": 1140945,
+  "category_counts": {
+    "continuation": 18,
+    "delivery": 26,
+    "qa": 6,
+    "reference": 4,
+    "storage_recovery": 39
+  },
+  "recommended_files": [
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/PIPELINE.md",
+      "sha256": "8fa89fbabe07f7c53069ec9c9087b02814f1b24efa20233df7e682debe05348e",
+      "bytes": 5036,
+      "git_blob_sha": "e3cd3cb8d2457b90a97a1499d31c7e76fa37e0e4",
+      "original_archive_member": "delivery_control/2139_PIPELINE.md",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/STATUS.md",
+      "sha256": "0bb9b202084c6683e8e600a09b839d0775aa00ce0df92191b5849762dfcca320",
+      "bytes": 1064,
+      "git_blob_sha": "b385f7b3a1578cbcf410a7479aafe6896d39e712",
+      "original_archive_member": "delivery_control/2140_STATUS.md",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/archive_reference_audit.py",
+      "sha256": "0ee77494e5792dd1d37ead6f5b008756cc448b904a739e22473de29ee6580412",
+      "bytes": 25668,
+      "git_blob_sha": "d1379a99a4d41108e49b0f371374fab3e4ee9772",
+      "original_archive_member": "delivery_control/2141_archive_reference_audit.py",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/audit_sources.py",
+      "sha256": "6891548a3adcb927f927a2671ebc699129e9ba02375075d3a52774f1e6c4479b",
+      "bytes": 14879,
+      "git_blob_sha": "2eba47705593b9e65539efdf5b95299db1297bd2",
+      "original_archive_member": "delivery_control/2142_audit_sources.py",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/collector.py",
+      "sha256": "bf774e6f6658a8e1607d9bcd494bdf59d91359d78caef3a50aa4c0eb09c537b3",
+      "bytes": 28871,
+      "git_blob_sha": "f281295d95fbf393eb24b596e8949d5dda26b36b",
+      "original_archive_member": "delivery_control/2143_collector.py",
+      "category": "continuation",
+      "role": "HASH_PINNED_PURE_HELPER_USED_BY_STORAGE_RECOVERY",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/collector_checks.json",
+      "sha256": "8d4d3b70e6ee8c49a93f9f6c1182aa389bbd8dd03699e6cc6569d3e9750e382d",
+      "bytes": 1883,
+      "git_blob_sha": "157fb5fbadecb7ac124d2b770e39ea2b785088ef",
+      "original_archive_member": "delivery_control/2144_collector_checks.json",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/collector_notes.md",
+      "sha256": "0b6a27655cb3f6f8205794e99a2c6f55c3ab5f5372c4997bc3e59d2e953da3d4",
+      "bytes": 6655,
+      "git_blob_sha": "e25da793151fa5d788c7b66390c87bf499397384",
+      "original_archive_member": "delivery_control/2145_collector_notes.md",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/continue_pipeline.py",
+      "sha256": "1b31d9e53f87e8e333a622c40d13964bfef9678d996c0bc292ae61fad2e3bea3",
+      "bytes": 29813,
+      "git_blob_sha": "1d1c9fe826dbd48e39ff68a68b14ef274d06bef8",
+      "original_archive_member": "delivery_control/2146_continue_pipeline.py",
+      "category": "continuation",
+      "role": "HASH_PINNED_PURE_HELPER_USED_BY_STORAGE_RECOVERY",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/independent_transport_audit.py",
+      "sha256": "e5ed887c357ff34439448c7d8b8eb36bd2b9dc86729b623901f66e6dbdec4f41",
+      "bytes": 49544,
+      "git_blob_sha": "5590df1e829b7c3dcf0a3758f4e11e3e56d2288a",
+      "original_archive_member": "delivery_control/2147_independent_transport_audit.py",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/independent_transport_preflight.json",
+      "sha256": "aee57caa6d8047a7412be788dad668649cc580922341f3c0ac71e3eab9813178",
+      "bytes": 7059,
+      "git_blob_sha": "12829f987209801e0c78b3b2d5f92896c3fd5554",
+      "original_archive_member": "delivery_control/2148_independent_transport_preflight.json",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/pipeline_synthetic_report.json",
+      "sha256": "8a9bc71533e567c11006e74f2ba84f785b9760ce4a0ef95cf2aae1d5ac054ffa",
+      "bytes": 1954,
+      "git_blob_sha": "501e02b65bb51323d8ceb8e7690fbeeb2acc9924",
+      "original_archive_member": "delivery_control/2149_pipeline_synthetic_report.json",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/protocol.py",
+      "sha256": "7afb6398fcf4f10f0db6f92bc18a8f1949e13b411f19241443c86d8d0d811fff",
+      "bytes": 41455,
+      "git_blob_sha": "3ad0673ae927cf5cc337c0b174246412a88c68d2",
+      "original_archive_member": "delivery_control/2150_protocol.py",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/protocol_notes.md",
+      "sha256": "aa3c94e9867b2b172d2c3b5d8e1e55f8f7dfab231611b79ed48e24f64ab2d675",
+      "bytes": 17417,
+      "git_blob_sha": "39984aeddad49be10bf9a7b42d553948276f9c58",
+      "original_archive_member": "delivery_control/2151_protocol_notes.md",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/source_adapter_preflight.json",
+      "sha256": "1d465f3f2604d370fb6c95296fb18c7aebd04a2be7ae351282914784e70293fc",
+      "bytes": 1113,
+      "git_blob_sha": "99ee36a4a28948873d62cf7a8446da20cb44524a",
+      "original_archive_member": "delivery_control/2152_source_adapter_preflight.json",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/test_collector.py",
+      "sha256": "eaf904cfe608840ee09156706e3a19a3ce2043d62a62cdca78598e293d363dad",
+      "bytes": 20612,
+      "git_blob_sha": "8da7714f08ac992701fda402ee606692b9ccf3e0",
+      "original_archive_member": "delivery_control/2153_test_collector.py",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/test_continue_pipeline.py",
+      "sha256": "3998fa2f2ec4d6d289f58d25822fe92d14cdc4827dea2589739352e7078b2e5b",
+      "bytes": 17642,
+      "git_blob_sha": "275b217badbc6463c565ce04af7080e7c1c95e88",
+      "original_archive_member": "delivery_control/2154_test_continue_pipeline.py",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/test_independent_transport_audit.py",
+      "sha256": "081b9a4db8688ff641fb571e574728c54b0fac007ca9588c6698095de317c67b",
+      "bytes": 30561,
+      "git_blob_sha": "127b53a705b2bb4125f461eaffb981f6a211c525",
+      "original_archive_member": "delivery_control/2155_test_independent_transport_audit.py",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/continuation/test_source_audit_adapter.py",
+      "sha256": "6430fdeb980fb8af7afa885a9dab65192fb50ed08c77d2c2f3af2ff18ee5e8e5",
+      "bytes": 13555,
+      "git_blob_sha": "674761a26b2d90d380c53fe7f8c5bfac4e5cc325",
+      "original_archive_member": "delivery_control/2156_test_source_audit_adapter.py",
+      "category": "continuation",
+      "role": "INACTIVE_HISTORICAL_CANDIDATE_OR_DOCUMENTATION",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/CLOSED_A1_FORENSICS.md",
+      "sha256": "e03de873c1094f1f91ae44129e6d5e4bafbc1d14279f71e60d0bcdd4cc6c728f",
+      "bytes": 2980,
+      "git_blob_sha": "d2f7199543b09817bcfb224fe9ed5e94531139e8",
+      "original_archive_member": "delivery_control/2157_CLOSED_A1_FORENSICS.md",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/COMPACT_A2_DELTA_RESTORE.md",
+      "sha256": "7b99cb251d1ef11afd3525b810f32a6e68bc441868f4a1f6abfd6eaed4fb7194",
+      "bytes": 3985,
+      "git_blob_sha": "c2cf337f03a543043742d86986b5496268bba65a",
+      "original_archive_member": "delivery_control/2159_COMPACT_A2_DELTA_RESTORE.md",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/README.md",
+      "sha256": "21c2ece59a1300188b3d85aa77a475c7dffbaf8ca1fbc1cb8909802c888e74bd",
+      "bytes": 5499,
+      "git_blob_sha": "c9957b237c9298db81b25abdfd7cf065879cb9d4",
+      "original_archive_member": "delivery_control/2160_README.md",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/closed_a1_forensic_packing_summary.json",
+      "sha256": "9650080bd62f44eb335a43552caa96c35c0caaf921a12f2fcb869c79fbe35e1c",
+      "bytes": 1574,
+      "git_blob_sha": "b419a36792ded725e75dea9d1de5771a4ac6aa05",
+      "original_archive_member": "delivery_control/2162_closed_a1_forensic_packing_summary.json",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/closed_a1_forensic_test_report.json",
+      "sha256": "167a72d977824109f55bb37abcad975ea77383f6f66b891e052a3a28deee47e0",
+      "bytes": 875,
+      "git_blob_sha": "b39f3c4805243abcfe0d336639a7aeb6c8709c66",
+      "original_archive_member": "delivery_control/2163_closed_a1_forensic_test_report.json",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/compact_a2_delta_candidate_test_report.json",
+      "sha256": "fb52dc87e2af14f98c231df0d88b52ea92221b92189be19fba48953e521f5a8a",
+      "bytes": 3151,
+      "git_blob_sha": "ef70a7d0618ad60045a73198cff707169137cc93",
+      "original_archive_member": "delivery_control/2164_compact_a2_delta_candidate_test_report.json",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/compact_a2_delta_independent_review.json",
+      "sha256": "94e9fada87614c7b02d5085687995df3bca686c7e42d8f8e4e239637bc1381b4",
+      "bytes": 4812,
+      "git_blob_sha": "2e2cfb0efb50e23f719066c43ba9aff9ca0cf560",
+      "original_archive_member": "delivery_control/2165_compact_a2_delta_independent_review.json",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/compact_a2_delta_ready_inputs.template.json",
+      "sha256": "d9651f5126aa575291c4851ae786102c5a21ffeeccabbded70708e95970d3bbc",
+      "bytes": 898,
+      "git_blob_sha": "51300db0c12486e3cad705eadf4c326e96037929",
+      "original_archive_member": "delivery_control/2166_compact_a2_delta_ready_inputs.template.json",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/compact_a2_delta_restore_test_report.json",
+      "sha256": "591bea0fe807d2f6b21b750383dd184709d784a7e91162c52d22b247e0ddd0df",
+      "bytes": 1574,
+      "git_blob_sha": "c959c05b3cddd7b5cfe51e10ae027a3bd4df6a5b",
+      "original_archive_member": "delivery_control/2167_compact_a2_delta_restore_test_report.json",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/compact_a2_final_snapshot.template.json",
+      "sha256": "db2c8590e9e73a50e373576fd459e40e3c7eb354925ce6a31a07dbaa424b49f2",
+      "bytes": 621,
+      "git_blob_sha": "3ad1ddbbabe593e318e0474b9a0d6b49f0573510",
+      "original_archive_member": "delivery_control/2168_compact_a2_final_snapshot.template.json",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/create_final_delta_snapshot.py",
+      "sha256": "1db761411d8203c5ea281dfd993528ed846ae98480bd584abee376ecf7855494",
+      "bytes": 18375,
+      "git_blob_sha": "a3cd160b0792c2d07178cceebfe6741fa02041c7",
+      "original_archive_member": "delivery_control/2169_create_final_delta_snapshot.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/final_delta_snapshot_independent_review.json",
+      "sha256": "39a2eb5aaf19521e38b8cc077a7ad6f7fcb5947ea8a30032fe5742ac2f1e99ae",
+      "bytes": 3454,
+      "git_blob_sha": "efdfcbc9ddcdd90708a5dd36a61b02dddb204261",
+      "original_archive_member": "delivery_control/2170_final_delta_snapshot_independent_review.json",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/observe_runtime.py",
+      "sha256": "ed34928c8b07376783512758e146c402fcb926f0c34304cc96e8d635fc6c6372",
+      "bytes": 2261,
+      "git_blob_sha": "e32c703ae2c173b42ae01c1a2cb4eb61ec8956fc",
+      "original_archive_member": "delivery_control/2171_observe_runtime.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/observe_storage_recovery.py",
+      "sha256": "fa6a080726963ed204510e5ba05f9b420740cb4b32ba95620145d9e477a3ddef",
+      "bytes": 2131,
+      "git_blob_sha": "a35813a95fc89707fa3faef0eed756fea1e96c2f",
+      "original_archive_member": "delivery_control/2172_observe_storage_recovery.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/pack_closed_a1_forensics.py",
+      "sha256": "16d2c759ba7876f2d6357c279c85941f5bb52d40f9b2d8cec5b2dbffc82ddbd3",
+      "bytes": 19241,
+      "git_blob_sha": "c90be7b0cab90d2c49a142c6285c1215e0711c4d",
+      "original_archive_member": "delivery_control/2173_pack_closed_a1_forensics.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/pack_compact_a2_delta.py",
+      "sha256": "ad832803b4c5406b61f4bbb38e9400fb85a46b08234c7a2d4f6b3d7aaacc0e3e",
+      "bytes": 32720,
+      "git_blob_sha": "7e498c529242df141d3e2db4c3ca6e5f19886c82",
+      "original_archive_member": "delivery_control/2174_pack_compact_a2_delta.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/pack_range_capture.py",
+      "sha256": "bb30a8e76ca43d600218225f2134b777117f0016be2ec28946417baefbff096a",
+      "bytes": 21936,
+      "git_blob_sha": "d23177945f8223faec147321261471455f3e7bfc",
+      "original_archive_member": "delivery_control/2175_pack_range_capture.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/restore_compact_a2_delta.py",
+      "sha256": "1f94552124ed50471141ffb8d813fa00708f589cad1959cf89ed3c6ecb6d682b",
+      "bytes": 30516,
+      "git_blob_sha": "52e7ac2ef1dab0d6905fabc7ee2d77beee1e47e0",
+      "original_archive_member": "delivery_control/2176_restore_compact_a2_delta.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/restore_range_capture.py",
+      "sha256": "4354b24482e0e8e94d34f3cb994a97a735d794e7c801044ca6b830670afb437d",
+      "bytes": 10577,
+      "git_blob_sha": "ad7efb89b92f22536ed8eea52a49426192f65606",
+      "original_archive_member": "delivery_control/2177_restore_range_capture.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/test_closed_a1_forensics.py",
+      "sha256": "16d9de4c8aabeb66a116f2bdc094cab732f69c6e5b8a3689b45cec3955e42702",
+      "bytes": 5378,
+      "git_blob_sha": "9ba5a2d1ec1bb1363412757c59b5997b499cace4",
+      "original_archive_member": "delivery_control/2178_test_closed_a1_forensics.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/test_compact_a2_delta.py",
+      "sha256": "31b888869e2d714f8470e4301c772af42466f44beeca58a36feb1aa812cff960",
+      "bytes": 8969,
+      "git_blob_sha": "01c72735c4782b6bf35d6a3e7e35d08f83a33cbd",
+      "original_archive_member": "delivery_control/2179_test_compact_a2_delta.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/test_compact_a2_delta_independent.py",
+      "sha256": "5f9c026d9dd748245d792e2702b98a5d3ea41ee83665ae8a8767be194543e030",
+      "bytes": 20550,
+      "git_blob_sha": "609f9741fbe3b35a1896e9a35acc54bd04f56320",
+      "original_archive_member": "delivery_control/2180_test_compact_a2_delta_independent.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/test_final_delta_snapshot_independent.py",
+      "sha256": "74fcfd32b4df1442cc53726581ef73c60112d43469b2c9334e159c589916f7a7",
+      "bytes": 15555,
+      "git_blob_sha": "f2abd9d716b35a4549531d6bd955378e1055ae72",
+      "original_archive_member": "delivery_control/2181_test_final_delta_snapshot_independent.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/test_range_pack.py",
+      "sha256": "774bc5aa61c7ef34be836fb000f3a416f0903595dc842e8bb5c884b139f03c38",
+      "bytes": 13760,
+      "git_blob_sha": "334ffb1f69b9fff21827f84199ff1d79834fc88a",
+      "original_archive_member": "delivery_control/2182_test_range_pack.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/test_report.json",
+      "sha256": "b6a2cf39f029e99ec576110829b1e20689a0fecb84127cb51f09147ac55bc953",
+      "bytes": 2056,
+      "git_blob_sha": "155ad7b40d666daeebe5827f9dae4f9218c07eeb",
+      "original_archive_member": "delivery_control/2183_test_report.json",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/test_restore_compact_a2_delta.py",
+      "sha256": "147b86c610447f2b84dd534279d18c8c4c2ce2ee82987f55d6766f15c2922e5e",
+      "bytes": 17272,
+      "git_blob_sha": "0650bf1626959a581dc7a8b50fc0991c4b9b7503",
+      "original_archive_member": "delivery_control/2184_test_restore_compact_a2_delta.py",
+      "category": "delivery",
+      "role": "ARCHIVAL_DELIVERY_TOOL_TEST_OR_REVIEW_REQUIRES_EXTERNAL_INPUTS",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/archive_reference_static_review.json",
+      "sha256": "579ff96e9ed20fdb0742d9e2dd5637cf8fba2406663965af700535f39d337b73",
+      "bytes": 1902,
+      "git_blob_sha": "2ce1675ae1a1ccf12d5a87c8216bfe88ebce6640",
+      "original_archive_member": "delivery_control/2190_archive_reference_static_review.json",
+      "category": "qa",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/audit_interpretation.py",
+      "sha256": "d8ae91b2d00987a1183f9a708d64ebb919861e68dd2c62fa28eae61b9316bd1b",
+      "bytes": 16218,
+      "git_blob_sha": "7717c4925a0a0a5017ef048b07553742b5e09209",
+      "original_archive_member": "delivery_control/2191_audit_interpretation.py",
+      "category": "qa",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/interpretation_preflight.json",
+      "sha256": "50acba1530c7c45e14cb1ae18d68fdabfd2dd54c2b20c70f7c8ff78b9955ba74",
+      "bytes": 399,
+      "git_blob_sha": "c3d75c35f582bc2e121657b5c1231da153a08922",
+      "original_archive_member": "delivery_control/2192_interpretation_preflight.json",
+      "category": "qa",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/test_interpretation_audit.py",
+      "sha256": "2568239702d1c3722197862d2f85cabb958bd60b82ba7ea25134d9d395352961",
+      "bytes": 8648,
+      "git_blob_sha": "781daed3818b2482cdfc6207670b8a0f5317f7d3",
+      "original_archive_member": "delivery_control/2193_test_interpretation_audit.py",
+      "category": "qa",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/transport_delivery_fault_checks.py",
+      "sha256": "9603a8b64db362a8c305d7a6e800dcc5bb3c377fa51fa68dbb923cc00e1c5ea0",
+      "bytes": 7725,
+      "git_blob_sha": "936f7540da1377a2d389a3fced2c77d8c09ac23b",
+      "original_archive_member": "delivery_control/2194_transport_delivery_fault_checks.py",
+      "category": "qa",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/qa/transport_delivery_review.json",
+      "sha256": "ea38af5309f31ec9fa2335b834943892b93f32441cd2be1f76f302823ae9ff41",
+      "bytes": 3409,
+      "git_blob_sha": "4c65d170d35aea4d04a9d9ee254d9507f2855bdb",
+      "original_archive_member": "delivery_control/2195_transport_delivery_review.json",
+      "category": "qa",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/reference/ARCHIVE_REFERENCE_AUDIT.md",
+      "sha256": "6eca83f5007780e6773ada203e01c519670bc5dfd0adb4e640078b51fc7e218c",
+      "bytes": 8788,
+      "git_blob_sha": "4a20fc49323f9c8a4370d98b05cb6b79cf29e3f7",
+      "original_archive_member": "delivery_control/2196_ARCHIVE_REFERENCE_AUDIT.md",
+      "category": "reference",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/reference/archive_reference_audit.py",
+      "sha256": "347bf76e162cf995e0b3c30ce6a3e72a75a1e78008d120ce8d51137667409955",
+      "bytes": 27769,
+      "git_blob_sha": "887bf0742a91416ff15a14e5a1db8ce70d61f275",
+      "original_archive_member": "delivery_control/2197_archive_reference_audit.py",
+      "category": "reference",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/reference/archive_reference_synthetic_report.json",
+      "sha256": "c56b9e36dfc112fc27a6c7fabe821c85bcbcf13aa50b9df8a566c3bd3fb56773",
+      "bytes": 1838,
+      "git_blob_sha": "2ce8623db278606b73a087c78d85545b6fb6c536",
+      "original_archive_member": "delivery_control/2198_archive_reference_synthetic_report.json",
+      "category": "reference",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/reference/test_archive_reference_audit.py",
+      "sha256": "9fd64212b4a55c731e67ecee92e5d98d1df0aefb9b8ec54b00f2cec3addd6834",
+      "bytes": 25047,
+      "git_blob_sha": "9ba57c8ae2eb4332bd720a4d4c8421fbbbd1294d",
+      "original_archive_member": "delivery_control/2199_test_archive_reference_audit.py",
+      "category": "reference",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/PIPELINE.md",
+      "sha256": "b55511e7f3f0cc8e9004f97605d22d5f54765a354439ab6871a2e07c590db804",
+      "bytes": 4637,
+      "git_blob_sha": "42b62d500e092da7050cfcbe2a1bf758a7406d33",
+      "original_archive_member": "delivery_control/2200_PIPELINE.md",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/README.md",
+      "sha256": "689cc6577f1f37e501e7608976e0d360ffddc9219308f0a195081e02a2232471",
+      "bytes": 1671,
+      "git_blob_sha": "d2940f59c4a7ad2e62c3d44e84c83b2325eb967f",
+      "original_archive_member": "delivery_control/2201_README.md",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/REPLAY_AND_REFERENCES.md",
+      "sha256": "9caeadaa69486b153e5b94b8ccae7eb1c8ada5e86b1ba1ba46da68d0018ac3a0",
+      "bytes": 12700,
+      "git_blob_sha": "cd4616d0385c255f670b68c1c04969663fe9bd6a",
+      "original_archive_member": "delivery_control/2202_REPLAY_AND_REFERENCES.md",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/actual/first_attempt_external_seal.json",
+      "sha256": "b75f6ac2fcbb2587aaf9267f913e2766c9929583dd4939dc8b29facc61633e8d",
+      "bytes": 28643,
+      "git_blob_sha": "63fc3003314ac5fd483817d18628016ace431500",
+      "original_archive_member": "delivery_control/2203_first_attempt_external_seal.json",
+      "category": "storage_recovery",
+      "role": "ACTUAL_ACCEPTED_OPERATIONAL_LINEAGE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/actual/forensic_bindings.json",
+      "sha256": "7913fd55d0bcd4c8608811c4bcc56d3fbd5f49ea148ba8469908eca8b058e347",
+      "bytes": 1050,
+      "git_blob_sha": "50479d1ab6d8929d8f8906521f80499a7dd82b38",
+      "original_archive_member": "delivery_control/2204_forensic_bindings.json",
+      "category": "storage_recovery",
+      "role": "ACTUAL_ACCEPTED_OPERATIONAL_LINEAGE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/actual/independent_historical_gate_check.json",
+      "sha256": "7a3da0fc89c83eb0f7be3f17490ed8b36db066b16f244ad2168ba5b3f8607ac1",
+      "bytes": 712,
+      "git_blob_sha": "eae9045246ce5ae8ec41522b05ffc63bf8cb7711",
+      "original_archive_member": "delivery_control/2205_independent_historical_gate_check.json",
+      "category": "storage_recovery",
+      "role": "ACTUAL_ACCEPTED_OPERATIONAL_LINEAGE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/actual/pre_replay_authorization.json",
+      "sha256": "e61eb66452f1b2d5d772585522c22d91d8fb09f1f7a62feda3338d86b44d1457",
+      "bytes": 2591,
+      "git_blob_sha": "32592806751f8a197456a0bf2287a6dc8b3d809b",
+      "original_archive_member": "delivery_control/2206_pre_replay_authorization.json",
+      "category": "storage_recovery",
+      "role": "ACTUAL_ACCEPTED_OPERATIONAL_LINEAGE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/actual/recovery_source_plan.json",
+      "sha256": "387d9795538b4cff97cef965b59195015eca842965049acf2253524877a04e57",
+      "bytes": 12760,
+      "git_blob_sha": "7b11c3caea15f81a7342921925192ccc970dbb45",
+      "original_archive_member": "delivery_control/004_recovery_source_plan.json",
+      "category": "storage_recovery",
+      "role": "ACTUAL_ACCEPTED_OPERATIONAL_LINEAGE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/actual/source_only_exposure_report.json",
+      "sha256": "e9a63a49383e6b8d8e3ffc34743be6f37860405b30951c9aae1d37b7bf6a19ba",
+      "bytes": 1533,
+      "git_blob_sha": "9474f0133d1461c921fc75150d94ba4d05356b60",
+      "original_archive_member": "delivery_control/2207_source_only_exposure_report.json",
+      "category": "storage_recovery",
+      "role": "ACTUAL_ACCEPTED_OPERATIONAL_LINEAGE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/actual/storage_recovery_amendment.json",
+      "sha256": "2cb97a448e13433d949d0bd3bd922490c18226022a938838801dc5dd51a857ee",
+      "bytes": 27253,
+      "git_blob_sha": "ae1ddd7f7ffb8017e5b5491a16932eed2fccedf6",
+      "original_archive_member": "delivery_control/002_storage_recovery_amendment.json",
+      "category": "storage_recovery",
+      "role": "ACTUAL_ACCEPTED_OPERATIONAL_LINEAGE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/archive_reference_audit.py",
+      "sha256": "777c9e8a4c6e2ca3ccbc6de23cf890bb7f317b93399b0b10d0f8bb7c91211acd",
+      "bytes": 28966,
+      "git_blob_sha": "24f4c5466d5ae75b65ddbcf67780427e783daf8d",
+      "original_archive_member": "delivery_control/2208_archive_reference_audit.py",
+      "category": "storage_recovery",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/archive_reference_preflight.json",
+      "sha256": "246efd8bc2bf9f8ca38f3c4b44e340a58932c3a2966bad97f47333173c564861",
+      "bytes": 2041,
+      "git_blob_sha": "31ba7daa0c321e1b37951a61bf41e14a2d1096b1",
+      "original_archive_member": "delivery_control/2209_archive_reference_preflight.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/audit_sources.py",
+      "sha256": "4a8016bffc74cbd7754ca57b9c990af880483519054f53a96d82b7312ddd4e13",
+      "bytes": 16821,
+      "git_blob_sha": "7c94e73e55c519a5c46da6f9e22671b65c3acf6f",
+      "original_archive_member": "delivery_control/2210_audit_sources.py",
+      "category": "storage_recovery",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/compact_collector.py",
+      "sha256": "63c67410216d65cefaa8e2e19afb9856267c65bbe7ee729a8b248a7c48db2daa",
+      "bytes": 33955,
+      "git_blob_sha": "201ac7f2c385517a1326bb7bcc2f1e7697e5b9a6",
+      "original_archive_member": "delivery_control/2211_compact_collector.py",
+      "category": "storage_recovery",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/compact_collector_checks.json",
+      "sha256": "3e3b44e870b438ac0b1541175c823d9b8ab384b15271ffe775105e08154c6136",
+      "bytes": 1075,
+      "git_blob_sha": "dc8e62be3a958298c8f9205322ff8d0cf9ae3c69",
+      "original_archive_member": "delivery_control/2212_compact_collector_checks.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/compact_collector_notes.md",
+      "sha256": "c0037ddc3f5d53851f4ddafe67b122744f1f83f2eed7930495433b0e77fbc460",
+      "bytes": 5033,
+      "git_blob_sha": "7f2b76678d77ef90a0948f9db772e575b0bebe55",
+      "original_archive_member": "delivery_control/2213_compact_collector_notes.md",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/compact_source_row_checks.json",
+      "sha256": "c485f36264e7c4587f41b6c24be3475afd9500a3adff65df566c758d2efe7c8c",
+      "bytes": 748,
+      "git_blob_sha": "deb303c45f2f98891d2249917ee933a6b4688427",
+      "original_archive_member": "delivery_control/2214_compact_source_row_checks.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/independent_reader_checks.json",
+      "sha256": "71e948de6df21da4f75eee10e8cbcf641487f2d31ed6e832804f4ebd24ae00ce",
+      "bytes": 380,
+      "git_blob_sha": "8610905755594442586bb2fb71da0352ae9867bc",
+      "original_archive_member": "delivery_control/2215_independent_reader_checks.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/independent_source_preflight.json",
+      "sha256": "94de2c744023d0e8324b05979fe6168b6e1b68606a183a39e8b131eeddb55a21",
+      "bytes": 2650,
+      "git_blob_sha": "17c1bf8506ebbb030f796a13e6a5705e577e1f0d",
+      "original_archive_member": "delivery_control/2216_independent_source_preflight.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/independent_transport_audit.py",
+      "sha256": "8ecbf0a633b9d42db8538e3b05822f39c45373b0df28b4a8a3d47ad5184e013a",
+      "bytes": 53473,
+      "git_blob_sha": "68b184c543b36b600419891a02712886903bce90",
+      "original_archive_member": "delivery_control/2217_independent_transport_audit.py",
+      "category": "storage_recovery",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/independent_transport_preflight.json",
+      "sha256": "e4aa64d739112ad3165c9ce6c712f0bb72979a37df2b94494798f3b878e3eeff",
+      "bytes": 2206,
+      "git_blob_sha": "b023ea293d9ddc1a951f144858745d65b5dc3af4",
+      "original_archive_member": "delivery_control/2218_independent_transport_preflight.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/pipeline.py",
+      "sha256": "c1b8969584cec238c100cdcd43f9fc013f594ce2d692f2f82ea30a1154e2c5b5",
+      "bytes": 26532,
+      "git_blob_sha": "56ca67ec351ccc75ecfcf2322a6935094ef3cdf2",
+      "original_archive_member": "delivery_control/2219_pipeline.py",
+      "category": "storage_recovery",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/pipeline_synthetic_report.json",
+      "sha256": "ddbb39ac67b01f1b21612d9a474456eecf7eaab58063c755f3f5892222888322",
+      "bytes": 1520,
+      "git_blob_sha": "9aa7bd01ed790c837ae6fd3a7d2df957c9697813",
+      "original_archive_member": "delivery_control/2220_pipeline_synthetic_report.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/protocol.py",
+      "sha256": "3b5003147d59cfd13f28adf614bb2859f8d6d1c6a3923ccd3c77e34944d261e0",
+      "bytes": 38070,
+      "git_blob_sha": "393db41474623a98119b489b66a9e4db51a6b804",
+      "original_archive_member": "delivery_control/003_protocol.py",
+      "category": "storage_recovery",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/protocol_notes.md",
+      "sha256": "4c535dbe4a8eca4eefc250beb01e0842921e4774b52ffab33ad3a74784fd91c9",
+      "bytes": 8652,
+      "git_blob_sha": "519681c10540a765d42b57dd07fb765cc5af926c",
+      "original_archive_member": "delivery_control/2221_protocol_notes.md",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/protocol_preflight.json",
+      "sha256": "444513d8347cee06790c25b20f74bfc12cc406c9169850f3638933f576284eba",
+      "bytes": 2481,
+      "git_blob_sha": "01c7235537e8ca69a7938881f29423c280156328",
+      "original_archive_member": "delivery_control/2222_protocol_preflight.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/replay_preflight.json",
+      "sha256": "daf2872a28f4d1195eab92483165de59002d02042b65b6ae7a6b4af790e71aaa",
+      "bytes": 897,
+      "git_blob_sha": "64039a634f465d3f661ec2e77c5c36bdc400326e",
+      "original_archive_member": "delivery_control/2223_replay_preflight.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/run_replays.py",
+      "sha256": "0672fc9e337cc0ea4aaf3f7234e0a97156ccc91e6237ccded9017b29195afcd4",
+      "bytes": 10006,
+      "git_blob_sha": "2fc9c0ff0703bb02ab602bf7e76b9f1e3004ce40",
+      "original_archive_member": "delivery_control/2224_run_replays.py",
+      "category": "storage_recovery",
+      "role": "EXECUTION_OR_INDEPENDENT_AUDIT_SOURCE",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/runtime_api_integration.json",
+      "sha256": "b89fa833f900669717e5d87c13776bfef2d914015deb53218b2e37140ad20994",
+      "bytes": 722,
+      "git_blob_sha": "b4130a2f9a6a8f07a9789c5eb59d8ea49b21bde1",
+      "original_archive_member": "delivery_control/2225_runtime_api_integration.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/source_adapter_checks.json",
+      "sha256": "5bf9850f615f5109ea71130cb5f2fc2b7b15af89925459abe3ce63425c22c071",
+      "bytes": 1373,
+      "git_blob_sha": "c6ef1058ec41e82f20df336432711d690cb6a937",
+      "original_archive_member": "delivery_control/2226_source_adapter_checks.json",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/test_archive_reference_audit.py",
+      "sha256": "221c1a74118b19ffed415ae545caaed52b4e499683af4bfe372ab6e81915fc78",
+      "bytes": 30481,
+      "git_blob_sha": "a08242b0679c1b963dee27646b3c9f041955d300",
+      "original_archive_member": "delivery_control/2227_test_archive_reference_audit.py",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/test_compact_collector.py",
+      "sha256": "92911e7bd9a4b7da82a4583302bb1533eaaf13e9af2da6b212a281b58b5f2b40",
+      "bytes": 15167,
+      "git_blob_sha": "d1f4e9974fea4b135072ad6a5ac3c9045398c414",
+      "original_archive_member": "delivery_control/2228_test_compact_collector.py",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/test_compact_source_rows.py",
+      "sha256": "d7c6d274dacab7464af780154483c86551c643d4d36b3b388afa07a859eac944",
+      "bytes": 6223,
+      "git_blob_sha": "feffd5ca81baba9dc315905a62d303a7ac483863",
+      "original_archive_member": "delivery_control/2229_test_compact_source_rows.py",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/test_independent_transport_audit.py",
+      "sha256": "ccc8c9638d0ce851822a45fd9f7f7a9c65f2a71c17f23025865e3f96509715c3",
+      "bytes": 11414,
+      "git_blob_sha": "f67e4fe77184bd3eb8585f32ec4e1f181675c86f",
+      "original_archive_member": "delivery_control/2230_test_independent_transport_audit.py",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/test_pipeline.py",
+      "sha256": "8be1a51186412a2b515d1276a88cad913b893cccc156b3235ff973fff07eb5b4",
+      "bytes": 9220,
+      "git_blob_sha": "cbf67d9df939c045c46c6d8350bb14962d27cd9d",
+      "original_archive_member": "delivery_control/2231_test_pipeline.py",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/test_protocol.py",
+      "sha256": "87c5f4eb2de2ae0d1c1b5e4bf8a524b3971890bdaab6e091fec1b2347b439660",
+      "bytes": 28659,
+      "git_blob_sha": "0fb8427e6583a37a1f4690f09223cbf2afcc1994",
+      "original_archive_member": "delivery_control/2232_test_protocol.py",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/test_run_replays.py",
+      "sha256": "10355b458d7fd726dc18f4271cb85f200eea69768b0d3d8be7c683c2b90852e9",
+      "bytes": 16400,
+      "git_blob_sha": "722d0c16a918a1573fd320a739fc8d8f639f2498",
+      "original_archive_member": "delivery_control/2233_test_run_replays.py",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/test_runtime_api_integration.py",
+      "sha256": "90c5ebcf192fe40f23b1ae36ba2a2e2919101541090e67c4ceb7d96d606c982f",
+      "bytes": 8393,
+      "git_blob_sha": "b5fa42fb1a7894cc2ea8a3897dd5357abf9c0fd1",
+      "original_archive_member": "delivery_control/2234_test_runtime_api_integration.py",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/storage_recovery/test_source_audit_adapter.py",
+      "sha256": "7b028a34aa6c2963c82975261060d03d042998f064c080fe104544e63937c8de",
+      "bytes": 16593,
+      "git_blob_sha": "b18665aed2981cca20008becf3cc1214794ac3fa",
+      "original_archive_member": "delivery_control/2235_test_source_audit_adapter.py",
+      "category": "storage_recovery",
+      "role": "DOCUMENTATION_TEST_OR_RETAINED_REVIEW",
+      "frozen_bytes_unchanged": true,
+      "bounded_marker_scan": {
+        "personal_library_identifier": 0,
+        "signed_or_tokenized_url": 0,
+        "credential_or_private_key": 0
+      }
+    }
+  ],
+  "explicit_exclusions": [
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/COMPACT_A2_DELTA.md",
+      "sha256": "bdcd5af630786f48230473ead2269fe903d08a660e3a9a2fbe473e1dc77a98e8",
+      "bytes": 4876,
+      "git_blob_sha": "5f2fb40ea1c5be9ee990ef28ae9c754bfbfe9da1",
+      "original_archive_member": "delivery_control/2158_COMPACT_A2_DELTA.md",
+      "reason": "Contains a concrete personal Library catalog identifier in a historical command example; publish separate generic instructions."
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/delivery/a1_durable_preservation.json",
+      "sha256": "2a17040779b70f33c18d78bffdd5d5232e0f419b4e9344c2b0cdd4cbe3c0ae3f",
+      "bytes": 1596,
+      "git_blob_sha": "8ca8e869e0ba2cb4192d64ffecf83b604f8f9273",
+      "original_archive_member": "delivery_control/2161_a1_durable_preservation.json",
+      "reason": "Personal durable-save catalog links; not an execution or import dependency."
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/publication/initial_publication_receipt.json",
+      "sha256": "ba43663e77b0087b83a0195d6b773e4e1ffd0e4e02898d9ba8e8db75f246de03",
+      "bytes": 2585,
+      "git_blob_sha": "c9dd5af336b3782ead7d08ddddfdf65b051d3ef7",
+      "original_archive_member": "delivery_control/2185_initial_publication_receipt.json",
+      "reason": "Historical publication receipts and candidate allowlists are not execution/import dependencies or independent scientific measurements; superseded scopes should not be mistaken for current provenance."
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/publication/initial_source_allowlist.json",
+      "sha256": "9b4a2a35864f21fe45d0e3b9c892902a32533200ed553a4f2319e258b3bb9962",
+      "bytes": 22574,
+      "git_blob_sha": "1acfb652829c841cd18fb88e4296c2d8bd9c7119",
+      "original_archive_member": "delivery_control/2186_initial_source_allowlist.json",
+      "reason": "Historical publication receipts and candidate allowlists are not execution/import dependencies or independent scientific measurements; superseded scopes should not be mistaken for current provenance."
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/publication/recovery_source_allowlist.json",
+      "sha256": "e285135906fc326bfebc9324cd12811cc819a958da272ffc6b86c71796910108",
+      "bytes": 24740,
+      "git_blob_sha": "47be2635520c19fed44c762385893f30090bf621",
+      "original_archive_member": "delivery_control/2187_recovery_source_allowlist.json",
+      "reason": "Historical publication receipts and candidate allowlists are not execution/import dependencies or independent scientific measurements; superseded scopes should not be mistaken for current provenance."
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/publication/safe_subset_publication_receipt.json",
+      "sha256": "8cf821daa91d5f869f232599b0f63e1fefb6713ff76e9b6250fdba440adb5c6f",
+      "bytes": 1992,
+      "git_blob_sha": "65b27cf10a6924509bbaef3d176f3f2575ffb852",
+      "original_archive_member": "delivery_control/2188_safe_subset_publication_receipt.json",
+      "reason": "Historical publication receipts and candidate allowlists are not execution/import dependencies or independent scientific measurements; superseded scopes should not be mistaken for current provenance."
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/publication/scientific_results_publication_receipt.json",
+      "sha256": "e55ba2be7ed6ffff1da46b9b7e7a69221f838bbba62e3f999288e7dbdab5e587",
+      "bytes": 1852,
+      "git_blob_sha": "ff5eb88dc827fdd4ebd22a29a9523e7acd37085d",
+      "original_archive_member": "delivery_control/2189_scientific_results_publication_receipt.json",
+      "reason": "Historical publication receipts and candidate allowlists are not execution/import dependencies or independent scientific measurements; superseded scopes should not be mistaken for current provenance."
+    }
+  ],
+  "already_public_exact_files": [
+    {
+      "path": "papers/monitoring_jss/phase16/recovery/reuse_expectations.json",
+      "sha256": "e8d826633dab9af58da89d3155539f5af28181d10f8ca242050bca8d2a56d264",
+      "bytes": 16714,
+      "git_blob_sha": "bc3ceda0c8c1e1871c6934241706aba31aafa111",
+      "original_archive_member": "delivery_control/014_reuse_expectations.json",
+      "reason": "Exact bytes already present in public baseline."
+    },
+    {
+      "path": "papers/monitoring_jss/phase16/source_plan.json",
+      "sha256": "d5a9caec11b0c6b407bb37e82e208d71aec62782bcbbbb79a7120c411c8adc9c",
+      "bytes": 13135,
+      "git_blob_sha": "c4d72e375e635670dfb52c6a3c74470e62f51e04",
+      "original_archive_member": "delivery_control/013_source_plan.json",
+      "reason": "Exact bytes already present in public baseline."
+    }
+  ],
+  "nonexistent_invalid_file": {
+    "path": "papers/monitoring_jss/phase16/continuation/independent_scope_preflight.json",
+    "disposition": "Not recovered or proposed. STATUS identifies its interrupted zero-byte write as invalid, not a PASS."
+  },
+  "static_pin_edges_verified": [
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/compact_collector.py",
+      "constant": "HELPER_SHA256",
+      "target": "papers/monitoring_jss/phase16/continuation/collector.py",
+      "expected_sha256": "bf774e6f6658a8e1607d9bcd494bdf59d91359d78caef3a50aa4c0eb09c537b3",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/pipeline.py",
+      "constant": "PURE_HELPER_SHA256",
+      "target": "papers/monitoring_jss/phase16/continuation/continue_pipeline.py",
+      "expected_sha256": "1b31d9e53f87e8e333a622c40d13964bfef9678d996c0bc292ae61fad2e3bea3",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/protocol.py",
+      "constant": "DRIVER_SHA256",
+      "target": "papers/monitoring_jss/phase15/driver/fixed_address_replay.py",
+      "expected_sha256": "591a8e09cd1920496ad0acc8fb13a1f4c62a0a224b3d8925ec364fff91ed293d",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/protocol.py",
+      "constant": "ORIGINAL_ROW_AUDITOR_SHA256",
+      "target": "papers/monitoring_jss/phase16/qa/audit_prepared_sources.py",
+      "expected_sha256": "385bff732afac356bf890193153b08d3751b5a3fbfd4788dab500176a0a03a62",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/audit_sources.py",
+      "constant": "ORIGINAL_ROW_AUDITOR_SHA256",
+      "target": "papers/monitoring_jss/phase16/qa/audit_prepared_sources.py",
+      "expected_sha256": "385bff732afac356bf890193153b08d3751b5a3fbfd4788dab500176a0a03a62",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/run_replays.py",
+      "constant": "PROTOCOL_SHA256",
+      "target": "papers/monitoring_jss/phase16/storage_recovery/protocol.py",
+      "expected_sha256": "3b5003147d59cfd13f28adf614bb2859f8d6d1c6a3923ccd3c77e34944d261e0",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/run_replays.py",
+      "constant": "JOIN_SHA256",
+      "target": "papers/monitoring_jss/phase16/reference/exact_reference_join.py",
+      "expected_sha256": "deaf7e58715cda8e701ec31bc2f4fcd7e85db5f9199fe23a0b55e195519b1cee",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/run_replays.py",
+      "constant": "ENGINE_SHA256",
+      "target": "papers/monitoring_jss/phase16/reference/archive_reference_audit.py",
+      "expected_sha256": "347bf76e162cf995e0b3c30ce6a3e72a75a1e78008d120ce8d51137667409955",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/archive_reference_audit.py",
+      "constant": "PROTOCOL_SHA256",
+      "target": "papers/monitoring_jss/phase16/storage_recovery/protocol.py",
+      "expected_sha256": "3b5003147d59cfd13f28adf614bb2859f8d6d1c6a3923ccd3c77e34944d261e0",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/archive_reference_audit.py",
+      "constant": "JOIN_SHA256",
+      "target": "papers/monitoring_jss/phase16/reference/exact_reference_join.py",
+      "expected_sha256": "deaf7e58715cda8e701ec31bc2f4fcd7e85db5f9199fe23a0b55e195519b1cee",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/archive_reference_audit.py",
+      "constant": "ENGINE_SHA256",
+      "target": "papers/monitoring_jss/phase16/reference/archive_reference_audit.py",
+      "expected_sha256": "347bf76e162cf995e0b3c30ce6a3e72a75a1e78008d120ce8d51137667409955",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/continuation/collector.py",
+      "constant": "ORIGINAL_SHA256",
+      "target": "papers/monitoring_jss/phase16/collector/range_collector.py",
+      "expected_sha256": "13e15e7b770ad40c2e8d286abceb8f7e380d946626b35d0186f43f0001be563f",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/continuation/continue_pipeline.py",
+      "constant": "ORIGINAL_PIPELINE_SHA256",
+      "target": "papers/monitoring_jss/phase16/pipeline/streaming_pipeline.py",
+      "expected_sha256": "56c086e4af2d65e863a4dc53a31bf24e79f1a2ccd3ab0c4915e19ff823f64f46",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/continuation/continue_pipeline.py",
+      "constant": "ORIGINAL_COLLECTOR_SHA256",
+      "target": "papers/monitoring_jss/phase16/collector/range_collector.py",
+      "expected_sha256": "13e15e7b770ad40c2e8d286abceb8f7e380d946626b35d0186f43f0001be563f",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/delivery/pack_compact_a2_delta.py",
+      "constant": "HELPER_SHA256",
+      "target": "papers/monitoring_jss/phase16/delivery/pack_closed_a1_forensics.py",
+      "expected_sha256": "16d2c759ba7876f2d6357c279c85941f5bb52d40f9b2d8cec5b2dbffc82ddbd3",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/delivery/create_final_delta_snapshot.py",
+      "constant": "PACKER_SHA",
+      "target": "papers/monitoring_jss/phase16/delivery/pack_compact_a2_delta.py",
+      "expected_sha256": "ad832803b4c5406b61f4bbb38e9400fb85a46b08234c7a2d4f6b3d7aaacc0e3e",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/qa/audit_prepared_sources.py",
+      "constant": "FROZEN",
+      "target": "papers/monitoring_jss/phase15/adapter/retained_observation_core.py",
+      "expected_sha256": "63119a14c1f3fb5a2cf74f24f918181679611633e6e75df63b5dc6b7180ef662",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/qa/audit_prepared_sources.py",
+      "constant": "FROZEN",
+      "target": "papers/monitoring_jss/phase15/driver/fixed_address_replay.py",
+      "expected_sha256": "591a8e09cd1920496ad0acc8fb13a1f4c62a0a224b3d8925ec364fff91ed293d",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/qa/audit_prepared_sources.py",
+      "constant": "FROZEN",
+      "target": "papers/monitoring_jss/transfer_observation.py",
+      "expected_sha256": "eb905fdbdc44033424066e4baebbbc1f6724bd68bd9e0573676f39e4908f429c",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/actual/recovery_source_plan.json",
+      "constant": "storage_recovery_execution_bindings",
+      "target": "papers/monitoring_jss/phase16/storage_recovery/audit_sources.py",
+      "expected_sha256": "4a8016bffc74cbd7754ca57b9c990af880483519054f53a96d82b7312ddd4e13",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/actual/recovery_source_plan.json",
+      "constant": "storage_recovery_execution_bindings",
+      "target": "papers/monitoring_jss/phase16/storage_recovery/compact_collector.py",
+      "expected_sha256": "63c67410216d65cefaa8e2e19afb9856267c65bbe7ee729a8b248a7c48db2daa",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/actual/recovery_source_plan.json",
+      "constant": "storage_recovery_execution_bindings",
+      "target": "papers/monitoring_jss/phase16/storage_recovery/independent_compact_reader.py",
+      "expected_sha256": "ad042251b4307346d1a2d50d02107eadced95c42c800b7599b0abccb9bb769af",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/actual/recovery_source_plan.json",
+      "constant": "storage_recovery_execution_bindings",
+      "target": "papers/monitoring_jss/phase16/storage_recovery/independent_transport_audit.py",
+      "expected_sha256": "8ecbf0a633b9d42db8538e3b05822f39c45373b0df28b4a8a3d47ad5184e013a",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/actual/recovery_source_plan.json",
+      "constant": "storage_recovery_execution_bindings",
+      "target": "papers/monitoring_jss/phase16/storage_recovery/pipeline.py",
+      "expected_sha256": "c1b8969584cec238c100cdcd43f9fc013f594ce2d692f2f82ea30a1154e2c5b5",
+      "status": "MATCH"
+    },
+    {
+      "source": "papers/monitoring_jss/phase16/storage_recovery/actual/recovery_source_plan.json",
+      "constant": "storage_recovery_execution_bindings",
+      "target": "papers/monitoring_jss/phase16/storage_recovery/protocol.py",
+      "expected_sha256": "3b5003147d59cfd13f28adf614bb2859f8d6d1c6a3923ccd3c77e34944d261e0",
+      "status": "MATCH"
+    }
+  ],
+  "continuation_scope": {
+    "executed_helper_files": [
+      "papers/monitoring_jss/phase16/continuation/collector.py",
+      "papers/monitoring_jss/phase16/continuation/continue_pipeline.py"
+    ],
+    "entire_directory_required_by_executed_route": false,
+    "whole_recovered_directory_allowed_as_labeled_history": true,
+    "status_document_required": "papers/monitoring_jss/phase16/continuation/STATUS.md",
+    "inactive_wrapper_missing_target": "papers/monitoring_jss/phase16/continuation/run_replays.py",
+    "interpretation": "The inactive preliminary archive wrapper is not a runnable accepted measurement route. No replacement file is fabricated."
+  },
+  "publication_notes": [
+    "Exact source and gate bytes must remain unchanged, including intentional historical absolute runtime paths; current user authorization covers their publication.",
+    "The historical storage_recovery/README.md references excluded delivery/a1_durable_preservation.json. A new public entrypoint should explain that private operational manifest rather than replace it under the old identity.",
+    "Some delivery commands require external archive/index/save receipts absent from this source set. Publication of delivery code does not claim those data inputs are present.",
+    "A separate exact-byte observation/decision/reference capsule and path adapter need their own final review.",
+    "No full copyrighted primary retrieval bodies, concrete personal Library IDs, credentials or signed URLs occur in the recommended source set. Invented synthetic Library identifiers remain in tests.",
+    "Fresh full raw-source audit still requires omitted original source bodies. This publication review does not establish new source completeness."
+  ],
+  "checks": {
+    "all_recovered_repository_bytes_match_archived_hashes": true,
+    "recommended_python_ast_parse_pass": true,
+    "static_runtime_hash_pins_match": true,
+    "only_tracked_change_is_root_authored_status_document": true,
+    "frozen_source_edits": 0,
+    "gate_imports_or_execution": 0,
+    "scientific_replays": 0,
+    "network_source_requests": 0,
+    "git_mutations": 0
+  },
+  "new_entrypoint_documents_review": "Separate final wording review will bind the new phase16/README.md and updated STATUS.md; these are outside the recovered exact-source set.",
+  "scope_limit": "Independent publication scope and static dependency review, not another scientific source audit or replay."
+}
