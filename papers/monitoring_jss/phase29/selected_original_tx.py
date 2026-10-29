@@ -73,21 +73,32 @@ def main():
             reader=rc.SourceReader(src,session,args.out/"sparse",pa,pq).open()
             core_events=0;positions=set();rows_by_pos=collections.defaultdict(list)
             scanned=0
+            # Pass 1: find the complete daily selected-transaction set using only
+            # core address and transaction coordinates. An individual transaction
+            # can straddle a Parquet row-group boundary; an unrelated row group
+            # with no core log can still contain other logs of a selected tx.
             for rg,tab in reader.iter_row_groups(["address","block_number","transaction_index"]):
                 scanned+=len(tab)
                 addr=pc.utf8_lower(tab.column("address"))
-                coremask=pc.equal(addr,emitter)
-                core=tab.filter(coremask)
+                core=tab.filter(pc.equal(addr,emitter))
                 core_events+=len(core)
-                rg_pos={(int(r["block_number"]),int(r["transaction_index"])) for r in core.select(["block_number","transaction_index"]).to_pylist()}
-                check(all(0<=b and 0<=i<65536 for b,i in rg_pos),"invalid historical transaction key")
+                rg_pos={(int(r["block_number"]),int(r["transaction_index"]))
+                    for r in core.select(["block_number","transaction_index"]).to_pylist()}
+                check(all(0<=b and 0<=i<65536 for b,i in rg_pos),
+                      "invalid historical transaction key")
                 positions.update(rg_pos)
-                if rg_pos:
-                    full=reader.read_row_group(rg,COLS)
-                    for row in full.filter(match_positions(full,rg_pos,pa,pc)).to_pylist():
-                        pos=(int(row["block_number"]),int(row["transaction_index"]))
-                        check(pos in rg_pos,"unselected transaction row")
-                        rows_by_pos[pos].append(row)
+            # Pass 2: now inspect all row groups for those *same* selected keys.
+            # Failing to do this silently truncates cross-rowgroup bundles.
+            if positions:
+                for rg in range(reader.metadata.num_row_groups):
+                    keys=reader.read_row_group(rg,["block_number","transaction_index"])
+                    mask=match_positions(keys,positions,pa,pc)
+                    if bool(pc.any(mask).as_py()):
+                        full=reader.read_row_group(rg,COLS)
+                        for row in full.filter(mask).to_pylist():
+                            pos=(int(row["block_number"]),int(row["transaction_index"]))
+                            check(pos in positions,"unselected transaction row")
+                            rows_by_pos[pos].append(row)
             check(scanned==source_day["original_log_rows"]==reader.metadata.num_rows,"source row coverage mismatch")
             check(core_events==source_day["core_emitted_events"],"Phase28 core count changed")
             check(len(positions)==source_day["distinct_core_selected_tx"],"Phase28 tx count changed")
