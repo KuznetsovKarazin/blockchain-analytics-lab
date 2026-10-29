@@ -1,0 +1,25 @@
+name: article2-phase29-independent-reimplementation
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_independent_audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  run-independent-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pure independent implementation checks all published policy decisions
+        run: |
+          python papers/monitoring_jss/phase29/independent_policy_audit.py \
+            --out phase29_independent_audit.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: article2-phase29-algorithm-independent-qa
+          path: phase29_independent_audit.json
+          if-no-files-found: warn
+          retention-days: 30
