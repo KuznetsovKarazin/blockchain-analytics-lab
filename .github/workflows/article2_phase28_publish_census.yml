@@ -2,7 +2,7 @@ name: article2-phase28-publish-source-receipts
 on:
   push:
     branches: [research/monitoring-v6-independent-cohort]
-    paths: [.github/workflows/article2_phase28_publish_census.yml]
+    paths: [.github/workflows/article2_phase28_publish_census.yml, papers/monitoring_jss/phase28/merge_published_census.py]
   workflow_dispatch:
 permissions:
   contents: write
