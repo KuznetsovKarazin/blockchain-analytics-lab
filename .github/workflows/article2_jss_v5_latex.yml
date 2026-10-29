@@ -1,0 +1,64 @@
+name: article2-jss-v5-latex
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths:
+      - 'papers/monitoring_jss/jss_latex_v5/**'
+      - '.github/workflows/article2_jss_v5_latex.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public normalized data and source audits
+        run: |
+          python - <<'PY'
+          import csv,hashlib,json,zipfile
+          from pathlib import Path
+          p=Path('papers/monitoring_jss')
+          d=p/'phase25/data'
+          m=json.loads((d/'public_source_manifest.json').read_text())
+          assert m['schema']=='article2_public_normalized_data_v1'
+          for item in m['archives'].values():
+              path=d/item['name']
+              assert hashlib.sha256(path.read_bytes()).hexdigest()==item['sha256'],path
+              with zipfile.ZipFile(path) as z:
+                  for name,digest in item['member_sha256'].items():
+                      assert hashlib.sha256(z.read(name)).hexdigest()==digest,(path,name)
+          rows=list(csv.DictReader((p/'phase26/results/control_summary.csv').open()))
+          assert len(rows)==24
+          assert len(set(x['id'] for x in rows))==12
+          assert sum(30-int(x['days_t_lt20']) for x in rows)==660
+          assert sum(int(x['days_t_lt20']) for x in rows)==60
+          q=json.loads((p/'phase27/results/summary.json').read_text())
+          assert q['status']=='PASS' and q['original_log_matches']==10
+          assert all(x['status']=='MATCHED_ALL_ORIGINAL_S3_LOG_CONTENT' for x in q['matches'])
+          tracked=list(p.rglob('__pycache__'))
+          assert not tracked,tracked
+          print('PASS: three normalized replay archives, 24 control windows, 10 source payload matches')
+          PY
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-publishers texlive-bibtex-extra texlive-fonts-recommended texlive-science lmodern poppler-utils >/dev/null
+      - name: Build Elsevier manuscript and verify citations
+        working-directory: papers/monitoring_jss/jss_latex_v5
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/v5_latex1.log 2>&1 || { tail -100 /tmp/v5_latex1.log; exit 1; }
+          bibtex8 main > /tmp/v5_bib.log 2>&1 || test -s main.bbl
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/v5_latex2.log 2>&1
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/v5_latex3.log 2>&1
+          test -s main.pdf
+          ! grep -E 'Citation .* undefined|There were undefined references' main.log
+          pdfinfo main.pdf | grep '^Pages:'
+      - name: Upload reproducible PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-jss-v5-pdf
+          path: papers/monitoring_jss/jss_latex_v5/main.pdf
+          if-no-files-found: error
+          retention-days: 30
