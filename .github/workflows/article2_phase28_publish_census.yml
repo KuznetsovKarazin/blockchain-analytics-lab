@@ -1,0 +1,37 @@
+name: article2-phase28-publish-source-receipts
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase28_publish_census.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish-rechecked-source-census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Acquire eight pinned historical source-audit artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/a2p28
+          for i in 0 1 2 3 4 5 6 7; do
+            mkdir -p /tmp/a2p28/"$i"
+            gh run download 40914786131 -n "article2-phase28-source-batch-$i" -D /tmp/a2p28/"$i"
+          done
+      - name: Independently verify 16 candidate source frames and generate 480-day table
+        run: python papers/monitoring_jss/phase28/merge_published_census.py /tmp/a2p28
+      - name: Commit only derived publicly sourced counts, no downloaded raw chain partitions
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase28/results
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase28: publish checked sixteen-candidate original S3 source-census receipts'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
