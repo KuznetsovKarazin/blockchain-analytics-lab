@@ -1,0 +1,40 @@
+name: monitoring-phase21-selected-tx-audit
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths:
+      - .github/workflows/monitoring_phase21_selected_tx_audit.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  selected-transaction-projection:
+    name: "Label-free selected TX / ${{ matrix.case }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 21
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [bacon_20220305, rari_pool127_20220430]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact pinned Parquet tooling and test runner
+        run: python -m pip install --disable-pip-version-check 'pyarrow==19.0.1' 'pytest>=8,<9'
+      - name: Check pure source-selection examples
+        run: python -m pytest -q papers/monitoring_jss/phase21/test_selected_tx_audit.py
+      - name: Read original daily source projections and match Phase20 log counts
+        run: |
+          python papers/monitoring_jss/phase21/selected_tx_audit.py \
+            --case "${{ matrix.case }}" \
+            --output "phase21_output_${{ matrix.case }}"
+      - name: Preserve derived per-day selected transaction identities and receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase21-selected-tx-${{ matrix.case }}
+          path: phase21_output_${{ matrix.case }}/selected_tx_result.json
+          if-no-files-found: warn
+          retention-days: 30
