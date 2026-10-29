@@ -1,0 +1,50 @@
+name: article2-phase28-publish-reference-probe
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase28_publish_reference.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  check-and-publish-candidate-reference-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve checked indexed candidate transaction metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/a2-p28-ref
+          gh run download 40916555433 -n article2-phase28-reference-candidates -D /tmp/a2-p28-ref
+      - name: Confirm 17 originally declared candidates, never convert to attack labels
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('papers/monitoring_jss/phase28')
+          origin=Path('/tmp/a2-p28-ref/phase28_reference_metadata.json').read_bytes()
+          x=json.loads(origin)
+          refs=(root/'REFERENCE_CANDIDATES.json').read_bytes()
+          orig=json.loads(refs)
+          assert x['references_sha256']==hashlib.sha256(refs).hexdigest()
+          assert len(x['rows'])==len(orig['rows'])==17
+          assert all(a['tx']==b['tx'] and a['id']==b['id'] for a,b in zip(x['rows'],orig['rows']))
+          assert all(not a['admitted'] and a['state']=='INDEXED_TX_METADATA' for a in x['rows'])
+          assert x['incident_admissions']==x['monitor_scores']==0
+          out=root/'results/REFERENCE_PREFLIGHT.json'
+          out.parent.mkdir(exist_ok=True)
+          out.write_bytes(origin)
+          print('PASS: all 17 indexed transaction candidate records, no admitted labels')
+          PY
+      - name: Preserve indexed candidate metadata after Actions expiration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase28/results/REFERENCE_PREFLIGHT.json
+          git diff --cached --check
+          git commit -m 'Phase28: permanently preserve indexed candidate-reference triage'
+          git push origin HEAD:research/monitoring-v6-independent-cohort
