@@ -17,7 +17,7 @@ jobs:
       - name: Install TeX Live
         run: |
           sudo apt-get update -qq
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-publishers texlive-bibtex-extra texlive-fonts-recommended texlive-science poppler-utils >/dev/null
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-publishers texlive-bibtex-extra texlive-fonts-recommended texlive-science lmodern poppler-utils >/dev/null
       - name: Build Elsevier PDF and check references
         working-directory: papers/monitoring_jss/jss_latex_v4
         run: |
