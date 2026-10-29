@@ -1,0 +1,47 @@
+name: article2-phase30-publish-verified-indexed
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase30_publish_indexed.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve successful full-event bundles from pinned Phase30 job
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for c in cohort28_07 cohort28_11 cohort28_14; do
+            mkdir -p "raw/$c"
+            gh run download 40929925243 -n "article2-phase30-indexed-$c" -D "raw/$c"
+          done
+      - name: Independently verify complete selected tx identity, source/count and normalized observations
+        run: |
+          set -euo pipefail
+          for c in cohort28_07 cohort28_11 cohort28_14; do
+            d=papers/monitoring_jss/phase30/indexed/$c
+            mkdir -p "$d"
+            python papers/monitoring_jss/phase29/verify_indexed.py \
+              --case "$c" \
+              --original-dir "papers/monitoring_jss/phase30/data/$c" \
+              --indexed-dir "raw/$c" --out "$d/independent_verification.json"
+            cp "raw/$c/"{acquisition_manifest.json,indexer_observations.jsonl.gz,indexer_response_receipts.json} "$d/"
+          done
+      - name: Publish permanent original-source-linked bundle
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase30/indexed
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase30: permanently retain independently verified indexed observations for 3 cases'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
