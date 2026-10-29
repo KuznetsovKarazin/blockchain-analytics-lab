@@ -1,0 +1,39 @@
+name: monitoring-phase20-independent-recheck
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase20_independent_recheck.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  recheck-saved-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch exact already sealed source-metadata artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/article2-traffic /tmp/article2-listing
+          gh run download 40852958094 -R KuznetsovKarazin/blockchain-analytics-lab -n article2-phase20-core-traffic-address-only -D /tmp/article2-traffic
+          gh run download 40851131526 -R KuznetsovKarazin/blockchain-analytics-lab -n article2-phase20-full-window-metadata -D /tmp/article2-listing
+          echo "65163ffe4a7ea0d027029e67ed957f7b1c7f7bb78f6ce883f854409430a42193  /tmp/article2-traffic/phase20_core_traffic_audit.json" | sha256sum --check
+          echo "b04f8412af42c79a0959b1eba9b8ae89c36254027c02d061d12295d7831f98f4  /tmp/article2-listing/phase20_full_window_metadata.json" | sha256sum --check
+      - name: Execute independent verifier on retained original summary
+        run: |
+          python -m py_compile papers/monitoring_jss/phase20/verify_core_traffic.py
+          python papers/monitoring_jss/phase20/verify_core_traffic.py /tmp/article2-traffic/phase20_core_traffic_audit.json /tmp/article2-listing/phase20_full_window_metadata.json --output phase20_independent_recheck.json
+      - name: Retain independent verification result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase20-independent-recheck
+          path: phase20_independent_recheck.json
+          if-no-files-found: warn
+          retention-days: 30
