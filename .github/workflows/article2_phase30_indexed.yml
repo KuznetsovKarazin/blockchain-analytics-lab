@@ -1,0 +1,37 @@
+name: article2-phase30-complete-indexed-logs
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase30_indexed.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-bound-indexer:
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [cohort28_07, cohort28_11, cohort28_14]
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently verify the complete original source before indexer
+        run: |
+          python papers/monitoring_jss/phase29/verify_source_streams.py \
+            --case ${{ matrix.case }} \
+            --source-dir papers/monitoring_jss/phase30/data/${{ matrix.case }} \
+            --out /tmp/verified_phase30.json
+      - name: Full source-count-bounded indexer retrieval, no detector, no labels
+        run: |
+          python papers/monitoring_jss/phase29/indexed_selected_bundles.py \
+            --case ${{ matrix.case }} \
+            --identities-dir papers/monitoring_jss/phase30/data/${{ matrix.case }} \
+            --out indexed_output/${{ matrix.case }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: article2-phase30-indexed-${{ matrix.case }}
+          path: indexed_output/${{ matrix.case }}
+          if-no-files-found: warn
+          retention-days: 30
