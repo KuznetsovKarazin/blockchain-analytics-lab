@@ -53,7 +53,7 @@ def source_bounded_logs(txid, expected_count, rate_log, limits, old):
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument("--case",required=True,choices=("cohort28_02","cohort28_09","cohort28_10","cohort28_13"))
+    p.add_argument("--case",required=True,choices=("cohort28_02","cohort28_07","cohort28_09","cohort28_10","cohort28_11","cohort28_13","cohort28_14"))
     p.add_argument("--identities-dir",type=Path,required=True)
     p.add_argument("--out",type=Path,required=True)
     a=p.parse_args()
