@@ -1,0 +1,311 @@
+\documentclass[preprint,12pt,authoryear]{elsarticle}
+\journal{Journal of Systems and Software}
+\biboptions{authoryear,round}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{siunitx}
+\graphicspath{{./}}
+\hypersetup{colorlinks=true,urlcolor=blue,citecolor=black,linkcolor=black}
+\emergencystretch=3em
+
+\begin{document}
+\begin{frontmatter}
+\title{When Can a Blockchain Monitor Trigger? An Audited Study of Feature Readiness, Historical Initialization, and Known-Execution Coverage}
+\author[aff1,aff2]{Oleksandr Kuznetsov\corref{cor1}}
+\cortext[cor1]{Corresponding author. ORCID: 0000-0003-2331-6326.}
+\ead{oleksandr.kuznetsov@uniecampus.it}
+\address[aff1]{Department of Theoretical and Applied Sciences, eCampus University, Italy}
+\address[aff2]{Department of Intelligent Software Systems and Technologies, School of Computer Science and Artificial Intelligence, V.~N. Karazin Kharkiv National University, Ukraine}
+\begin{abstract}
+History-dependent anomaly monitors can be deployed with syntactically valid input and alert budgets yet lack enough causally preceding evidence to evaluate their features. We examine a fixed token-outflow rank rule and an event-count comparator on four retrospective Ethereum incident families using 30-day, component-specific observation windows. The rank rule requires 19 strictly earlier positive outflows of the same token. Under independent daily state resets it generates no exact known-execution notification in the evaluated Li.Fi, Revest, Bacon and Rari Fuse component views. Full attack-day transaction counts are misleading: although three of four Bacon/Rari components record at least 20 selected transactions by midnight, they have only 2, 8, 17 and 18 selected transactions, respectively, strictly before the known exploit. Retaining preceding observations within seven days or the captured 30-day window raises feature applicability, but its coverage effect is heterogeneous: Li.Fi and Revest gain notifications without additional known-execution matches; Bacon's cumulative history and Rari fETH/fUSDC historical views yield exact matches on one documented execution per incident. The core-count comparator matches the Li.Fi execution and the Rari execution in two distinct Rari component views. Independent recomputation confirms 252 newly generated monitoring configurations; results for the first two families retain their earlier independent audit. We provide a label-free readiness assessment, attack-time observation accounting and a replayable decision audit. These descriptive results are conditional on nominated contracts, incomplete execution inventories and mixed-source historical evidence; they neither establish population-wide attack recall nor demonstrate superiority of a detector.
+\end{abstract}
+\begin{keyword}
+Blockchain monitoring \sep Runtime monitoring \sep Empirical software engineering \sep Feature readiness \sep Historical initialization \sep Reproducibility \sep Decentralized finance
+\end{keyword}
+\end{frontmatter}
+
+\section{Introduction}\label{sec:intro}
+
+An automated software monitor is meaningful only if the data required by its decision rule can be observed when the decision is due. This requirement precedes the numerical choice of score threshold and the allocation of notifications. In conventional runtime verification, monitoring semantics explicitly distinguish the trace that is available from a system property and from the monitor's answer \citep{Leucker2009RV,Bauer2011RV}. Streaming anomaly detectors similarly depend on warm-up rules and observational constraints \citep{Lavin2015NAB}. A detection-rate figure can conceal a monitor that was incapable of computing its intended feature on much of the evaluated workload.
+
+This paper studies that failure mode in Ethereum decentralized finance (DeFi). A typical blockchain monitoring pipeline nominates observable smart-contract components, reads the events of transactions selected by those components, extracts features, updates state, evaluates an anomaly rule, groups related candidates and allocates a daily notification budget. A user-to-attacker transfer may bypass the selected component even if the attack transaction contains events emitted by that component. A monitor based on outflow from the selected contract is therefore neither equivalent to a transaction-wide exploit monitor nor a general-purpose security guarantee. The need to match security claims to threat mechanisms is emphasized in DeFi attack systematizations and transaction-level monitoring studies \citep{Zhou2023SoKDeFi,Wu2024DeFiRanger,Meng2026Houston}.
+
+We first observed an adverse outcome for a fixed, history-dependent token-outflow rule in two externally acquired incidents: Li.Fi and Revest. Although every independently admitted execution was visible in the selected transaction observations, the rank rule generated no notification for these executions. A count-based rule produced one verified Li.Fi match. The immediate gating reason was insufficient positive same-token history under the declared daily state reset. This finding, by itself, is a diagnostic of a particular configuration rather than a new anomaly-detection method.
+
+To assess whether the failure was confined to the originally examined transactions or was a property of the wider observation pipeline, we performed a label-free audit of all selected transactions and a full replay with alternate history retention. We then examined two additional, historically documented incident families, Bacon Protocol and Rari Fuse Pool~127, using source-bound transaction identities and separately indexed complete event bundles. Their observation boundaries were nominated before the new ranking outputs were generated but after the initial Li.Fi/Revest results were known. We disclose that exposure rather than describe the additional cases as a globally blind test.
+
+Our principal question concerns \emph{software monitor validation}: at what stage does the monitor's input contract fail, and can the effects of a changed state-initialization policy be distinguished from the meaning of a security feature and from subsequent notification admission? We address three research questions:
+
+\begin{description}
+\item[RQ1 (feature readiness).] How frequently does the selected historical traffic supply enough strictly preceding same-token positive observations to compute a history-dependent rank? Does end-of-day traffic overstate readiness at the known execution time?
+\item[RQ2 (initialization and dispatch).] Holding the observed transactions and decision rule fixed, how do three history-retention policies affect eligible scores, candidate notifications and exact matches to independently reviewed known executions? How does the count comparator behave on the same component view?
+\item[RQ3 (construct validity).] Do gross token-outflow features on nominated core addresses correspond to the security-relevant mechanism of the documented exploit?
+\end{description}
+
+The work makes an empirical-software-engineering contribution by treating feature computability and observation scope as explicit preconditions for evaluating a monitoring implementation. We provide a multi-case, versioned measurement and cross-check procedure; a contrasting set of positive and negative historical-initialization outcomes; and a source-linked mechanism analysis. The rank formula, minimum-history arithmetic and conventional budget policies are not claimed as novel. The reported numbers describe four incident families, five known successful executions across those families, and several overlapping Rari component views; they are not prevalence or generalizable detection-rate estimates. The protocol and independently verifiable artifacts establish what was measured and why the limitations matter for software-monitor validation \citep{Kitchenham2004Evidence,Wohlin2012Experimentation}.
+
+\section{Related work and differentiation}\label{sec:related}
+
+\paragraph{Runtime monitors and feature preconditions.} Runtime verification concerns the evaluation of properties over finite observations of an executing system \citep{Leucker2009RV,Bauer2011RV}. Our study does not verify a temporal-logic property or claim formal completeness. It measures a weaker, practical prerequisite: whether the data and pre-event state needed by a particular score exist at the time of the event. A missing feature is distinct from an observed low anomaly score. This distinction can be encoded as a monitor validation contract and verified without attack labels. Streaming evaluations such as NAB explicitly recognize the relevance of event time and detection windows \citep{Lavin2015NAB}; our unit of analysis is an exact blockchain transaction and a selected-core observation boundary.
+
+\paragraph{DeFi exploit detection and semantics.} TXSPECTOR studies exploit patterns through transaction dependencies, EtherClue provides investigation-oriented indicators, and DeFiRanger models higher-level financial operations for price manipulation \citep{Zhang2020TxSpector,Aquilina2021EtherClue,Wu2024DeFiRanger}. HOUSTON evaluates richer protocol-level anomalies over a substantially larger collection of historical incidents \citep{Meng2026Houston}. These systems motivate why protocol semantics matter but cannot be compared numerically with our simple fixed-core rank and count rules: observation populations, labels and detection units differ. A method that observes ERC-20-shaped transfers at a nominated address need not model native ETH borrowing, user allowance abuse, or accounting invariants \citep{Vogelsteller2015ERC20,Revest2022Postmortem,Rari2022Postmortem}.
+
+\paragraph{Event provenance and cross-chain monitoring.} XChainWatcher applies logic-driven event monitoring, whereas BridgeGuard studies detection of cross-chain attack transactions \citep{Augusto2025XChainWatcher,Wu2025BridgeGuard}. The Ethereum address-and-transaction observation model used here is narrower. The diamond proxy architecture relevant to Li.Fi also distinguishes an entrypoint's emitted logs from implementation facets and user token transfers \citep{Mudge2020ERC2535,BlockSec2022LiFi}. These considerations constrain any claim that a selected event trace represents all protocol activity.
+
+\paragraph{Empirical security evaluation and artifacts.} Security-ML studies warn against unrealistic experimental populations, label assumptions and over-interpretation of numerical performance \citep{Sommer2010ClosedWorld,Arp2022Dons}. Empirical-software-engineering methodology recommends explicit experimental units and transparent inclusion rules \citep{Kitchenham2004Evidence,Wohlin2012Experimentation}. Hidden data dependencies and state configuration are also recognized as sources of operational technical debt \citep{Sculley2015Debt}. Our independent evidence records, exact hash bindings and source-tier distinctions aim to make such assumptions auditable. DeFiHackLabs supplies reproducible exploit \emph{candidate} code, not automatically complete inventories of all successful historical attacks \citep{DeFiHackLabs2026}. Forta documents practical monitoring interfaces but does not establish the performance of the particular rules tested here \citep{FortaDocs}.
+
+The specific empirical observation is that numerical eligibility and actual notification coverage can respond differently to retaining historical state. The applicable outcome must be measured at the same transaction and component boundary; it does not follow from the elementary warm-up inequality alone. We distinguish the known-subset exact notifications from the far broader notion of incident-wide recall.
+
+\section{Monitoring model and estimands}\label{sec:model}
+
+\subsection{Observation boundary, chronology and input units}
+For each incident family $c$, a predeclared component view $v$ specifies one or more Ethereum log-emitting addresses. A transaction is \emph{selected} when at least one successful observed log is emitted by a view address. The full log bundle of a selected transaction is used to derive token-flow features, including transfer events from other emitters; selection itself does not use an attack label, anomaly score or transfer amount. Selected transactions are ordered by block number and transaction index. The block timestamp is a logical historical event time, not an observed network delivery time.
+
+A \emph{case family} is a documented exploit event, not a row in an experiment table. Its \emph{core view} is a monitored component, not a separate attack; the Rari fETH, fUSDC and Comptroller views belong to one family. A \emph{known execution} is a historically identified and separately reviewed transaction that executed the documented unauthorized behavior. The verified inventories used here are \texttt{KNOWN\_SUBSET\_ONLY}; neither the negative population nor all historical exploit transactions are completely adjudicated. Therefore an emitted alert on an unknown transaction is not a false positive and a reference denominator is not a full incident recall denominator.
+
+The extracted ERC-20-shaped fields are gross integer quantities as represented in the event data; they do not independently establish token compliance or a native-asset state delta. For token $k$, $x_{i,k}>0$ denotes the gross external token outflow whose sender is in the nominated view and whose recipient is outside it, as defined by the frozen extractor. Inflows do not cancel outflows. Different tokens have independent histories and raw units cannot be added across tokens without an external unit conversion \citep{Vogelsteller2015ERC20}.
+
+\subsection{Feature readiness and the rank rule}
+Let $H_{i,k}^{(m)}$ be the up-to-128 most recent strictly preceding positive values for token $k$ available at selected transaction $i$ under history mode $m$. The reported rank is
+\begin{equation}\label{eq:rank}
+q_{i,k}^{(m)}=\frac{1+\sum_{h\in H_{i,k}^{(m)}}\mathbf{1}\{h\geq x_{i,k}\}}{|H_{i,k}^{(m)}|+1}.
+\end{equation}
+A positive token score is eligible if $|H_{i,k}^{(m)}|\geq 19$. The primary semantic rule triggers on a selected transaction when at least one eligible token score has $q_{i,k}^{(m)}\leq1/20$; the separately reported sensitivity uses $1/10$. This empirical rank is not a calibrated transaction false-alarm probability. At 19 preceding positive values, a new value must be a strict maximum of the token's preceding amounts for $q\leq1/20$ to hold.
+
+At a daily reset, a token-day with $N_{k,d}$ positive selected transactions permits at most $\max(0,N_{k,d}-19)$ eligible \emph{token scores}; it may produce fewer eligible transactions when multiple tokens occur in the same transaction. The inequality is a validation precondition, not a detection theorem. To strengthen it without token decoding, let $T_{v,d}$ denote all distinct selected transactions for view $v$ on day $d$; if $T_{v,d}<20$, no token can have an eligible daily-reset score that day. Crucially, for a specific reference transaction $i$, the relevant necessary bound is $T_{v,d}^{\mathrm{prior}}(i)\geq19$, the number of distinct view-selected transactions \emph{strictly before} $i$ on that day. End-of-day totals include post-attack traffic and are not an acceptable proxy for this condition.
+
+\subsection{History-policy intervention}
+Three modes are replayed over the \emph{same} retained 30-day historical window:
+\begin{enumerate}
+\item \textbf{Daily reset:} remove positive-token histories at each UTC midnight.
+\item \textbf{Trailing seven days:} keep only qualifying positive observations with timestamps in the strictly preceding seven-day interval, capped at 128 observations per token.
+\item \textbf{Cumulative in the captured window:} retain positive observations from the beginning of the available 30-day window, also capped at 128 per token.
+\end{enumerate}
+All three use the same positive-flow definition and rank rule. They are not equivalent to production monitors initialized from months or years of earlier chain history. The two historical modes were selected retrospectively after the initial Li.Fi/Revest outcomes became known. Their effect on Bacon/Rari was assessed after those cases were selected for follow-up, not as a statistically independent preregistered benchmark.
+
+The original daily-reset design arose from the operational choice to replay separately sealed UTC-day source partitions under a deterministic, independent feature-state contract. It was not a blockchain consensus requirement, a proven optimal choice, or a universal operational recommendation. In the earlier Euler \emph{semantic} development comparison the history was also day-local; a separate Euler/Beanstalk event-count allocation study retained other forms of policy state continuously. These experiments must not be conflated. The historical modes here explicitly test the sensitivity of the originally frozen choice rather than disguising it as a necessary production configuration.
+
+\subsection{Grouping, count comparator and notification allocation}
+A raw semantic trigger is a candidate unless another candidate of the same method and view occurred within the preceding 300 seconds. The grouping anchor is the most recent \emph{candidate}, not the most recent emitted notification; candidate grouping is independent of the subsequent budget policy. The count comparator triggers when at least ten core-emitter logs occur in the preceding 60-second interval \emph{including the current complete transaction}. It does not use token history and is replayed in the original daily-reset configuration for comparison. A raw trigger is not itself an emitted alert.
+
+For each day the notification allocator receives the grouped candidates and enforces an offered maximum $B\in\{1,5,20\}$, under greedy, paced-cumulative and token-bucket admission. No rejected candidate is queued. Budget-policy state resets daily for every feature-history mode. Offered capacity and realized notifications are reported separately: a nominal $B=5$ does not imply five messages. Comparisons in the main tables use the primary rank $1/20$, greedy admission and $B=5$, with all policy and threshold variants retained in machine-readable results.
+
+\subsection{Outcomes and independent checks}
+We distinguish five stages: (1) source-observed transaction, (2) selected core, (3) eligible token score, (4) raw/grouped candidate, and (5) emitted exact-transaction alert. Label-free readiness is the number of selected transactions with at least one eligible score divided by the selected transaction count. Exact known-set coverage is the number of independently admitted execution transactions that have themselves emitted alerts divided by the number of such known executions within the selected scope. The latter is descriptive; missing labels preclude estimation of precision, false-positive rate or incident-wide recall.
+
+The earliest two family comparisons use exact archived Ethereum range evidence, independent reference adjudication and a sealed decision study. Their 30-day observations and hash-bound decisions were independently reproduced (948 method rows and 8,532 policy rows). For Bacon and Rari, original AWS Parquet columns independently fix the identities, order and core-emitter counts of 256 Bacon transactions and 411 Rari union-selected transactions. For these selected identities, Blockscout supplies complete indexed all-emitter events and successful execution status. The source tier is therefore deliberately described as \emph{S3-verified selected identities plus indexed topics/data and status}, rather than fully independently authenticated receipt-root evidence. A separately implemented score/policy verifier recomputed all 252 new method-policy configurations without importing the scoring implementation and found no discrepancies.
+
+\section{Study material and case eligibility}\label{sec:material}
+
+\subsection{The four historical incident families}
+Table~\ref{tab:cohort} lists the case and observation units. The earlier Li.Fi/Revest windows each end with an incident date and contribute 60 case-days spread over 37 distinct UTC dates; shared dates, tokens and observations do not create additional independent attacks. The Bacon proxy window runs from 4 February to 5 March 2022 inclusive, and Rari Pool~127 from 1 to 30 April 2022 inclusive. These later cases were selected from incident documentation and a fixed PoC catalogue, not sampled randomly. A source-preparation stage had reviewed 13 historical catalogue entries before the Li.Fi/Revest source cohort was accepted; its rejected, unresolved and unavailable records remain in the public dispositions rather than being treated as negatives.
+
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{Four incident families and fixed observation boundaries. Counts are case-specific; Rari component views overlap. All execution inventories are known subsets.}
+\label{tab:cohort}
+\begin{tabular}{p{1.8cm}p{3.35cm}c p{2.7cm}c}
+\toprule
+Incident & Observed components & Days & Selected TX & Known refs \\
+\midrule
+Li.Fi & Diamond entrypoint & 30 & 280 & 1 \\
+Revest & Entrypoint and TokenVault & 30 & 194 & 2 \\
+Bacon & Lending proxy & 30 & 256 & 1 \\
+Rari Pool~127 & fETH; fUSDC; Comptroller (separate) & 30 & 132; 159; 133 (411 union) & 1 (shared) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The role of the selected components matters. Li.Fi's documented exploit involved an unchecked external call that used existing user allowances to transfer approved assets from user accounts \citep{LiFi2022Postmortem,BlockSec2022LiFi}. Revest involved a reentrant accounting process around FNFT collateral \citep{Revest2022Postmortem,SlowMist2022Revest}. The Bacon incident was described as reentrancy in the lending workflow, but the investigative report cautioned that the unverified implementation prevented a definitive reconstruction of the complete internal path \citep{Bacon2022Postmortem,Certik2022Bacon}. The Rari team's post-mortem documents multiple exploited Fuse pools and a native-ETH borrowing and \texttt{exitMarket()} reentrancy mechanism; we assess one original Pool~127 transaction, not all seven affected pools \citep{Rari2022Postmortem,Beosin2022Rari}.
+
+\subsection{Source acquisition and validation boundaries}
+The Li.Fi/Revest stream was produced from enumerated original AWS Parquet partitions with transaction-level all-emitter bundles, separately audited before exact post-decision reference joining. The Bacon/Rari source extension used the same public Ethereum archive for a full 30-day address-column count and a 60-day selected-transaction identity audit. Every selected transaction position was then bound to an original AWS transaction hash and indexed Blockscout record with consistent block and transaction identities, core-emitter counts and status. These are \emph{two evidence tiers}: the later token topics/data and successful-status claims depend on a second historical indexer. Neither tier constitutes a complete receipt-root authentication of the entire Ethereum history. Original Parquet bodies and third-party copies are not included in the public software repository \citep{AWS2026Dataset}.
+
+For Bacon, 256 selected transactions were reconstructed. For Rari, 411 distinct union-selected transactions were available to the three separately nominated views; selected view sizes are 132 fETH, 159 fUSDC and 133 Comptroller. The union size is not the sum of view sizes because an individual transaction can emit logs from several components. The exactly known Bacon execution contains 18 all-emitter logs, whereas the documented Rari execution contains 65. These identities matched the original S3 selected-transaction evidence, but the study does not establish that they exhaust the respective attack campaigns.
+
+\subsection{Fixed comparisons, retrospective scope and unit of replication}
+The primary comparison fixes an outflow rank threshold of $1/20$, greedy admission and $B=5$ emitted notifications per UTC day. The alternate history policies modify the state of the rank rule but not the selected addresses, scoring formula, grouping or allocator. Each mode begins cold at the start of the 30-day captured window. The event-count comparator is a distinct baseline that does not require token history.
+
+The first two families had 108 semantic policy configurations in the retained alternate-initialization study, based on the earlier sealed observations. The later two families contributed 252 rank/count/policy configurations across four candidate component views; count outcomes are computed only once per core view because they are independent of rank history. The 252 new cells were independently recomputed without importing the original scoring/notification functions, with exact equality of emitted transaction sequences. These counts describe reproducibility of computations, not the number of independent attacks, reruns or training seeds. No model was fitted to new test labels.
+
+\section{Results}\label{sec:results}
+
+\subsection{RQ1: population-wide feature readiness}
+The original daily-reset streams contain 141 Li.Fi and 102 Revest selected transactions with positive external core outflow. At the required minimum 19 preceding positive values, no Li.Fi transaction is eligible and only 24 of Revest's 194 selected transactions are eligible. Li.Fi has 83 positive token-days, none containing the 20 qualifying transactions required to compute even a first eligible rank. Revest has 17 positive token-days, of which one reaches the threshold. Thus a failure to notify the known execution is not the only measurable symptom; most of the corresponding observation stream cannot enter the rank decision at all under this initialization.
+
+Table~\ref{tab:eligibility} extends this check across all six fixed core views. Retaining history strictly before the scored transaction raises the proportion of defined scores, but the extent differs markedly by observed token stream. The Comptroller view in the retained Rari population yields no positive gross core outflow at all; longer history cannot repair this feature-definition mismatch.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Transactions with at least one eligible positive token score when at least 19 prior values are required. The fraction is conditional on the named core-selected transaction population; Rari views overlap.}
+\label{tab:eligibility}
+\begin{tabular}{lrrrr}
+\toprule
+View & Selected TX & Daily reset & Trailing 7 d & Captured 30 d \\
+\midrule
+Li.Fi core & 280 & 0 & 20 & 59 \\
+Revest core & 194 & 24 & 64 & 71 \\
+Bacon proxy & 256 & 0 & 0 & 15 \\
+Rari fETH & 132 & 0 & 5 & 23 \\
+Rari fUSDC & 159 & 1 & 36 & 75 \\
+Rari Comptroller & 133 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{fig2_history_eligibility_six_views.pdf}
+\caption{Label-free computability of token-outflow ranks in six fixed observation views under the same minimum-history rule. Different views are not independent samples from a defined population.}
+\label{fig:readiness}
+\end{figure}
+
+A simple sensitivity analysis of minimum strictly preceding history lengths 1, 5, 10, 19 and 39 is reported as a machine-readable table for each view and initialization policy. This is \emph{not} a retrospective optimization of a detector threshold: the corresponding score triggering and exact-execution comparisons retain the original history minimum of 19. The sensitivity exposes how much workload remains eligible under alternative preconditions rather than suggesting an improved detection rate.
+
+\subsection{Attack-time readiness, not end-of-day volume}
+The additional Bacon/Rari audit allowed us to distinguish the number of selected transactions by the end of the incident day from those that precede the known exploit. Table~\ref{tab:attacktime} directly addresses a possible selection bias in the earlier source-only audit: reporting only days with less than 20 transactions conceals attack days with late traffic spikes. In fact, three of four component views record 20 or more selected transactions over the full incident day, but \emph{none} has 19 selected transactions strictly before the reference execution. The reference transaction itself is scored before its positive amount is appended to history.
+
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{Selected transactions on the documented attack day. The current execution is excluded from strictly preceding history. Four views belong to only two incident families.}
+\label{tab:attacktime}
+\begin{tabular}{lrrrrp{2.5cm}}
+\toprule
+View & Full day & Before & Ref. & After & Max earlier positive same-token values \\
+\midrule
+Bacon proxy & 23 & 2 & 1 & 20 & 0 \\
+Rari fETH & 19 & 8 & 1 & 10 & 7 \\
+Rari fUSDC & 48 & 17 & 1 & 30 & 11 \\
+Rari Comptroller & 24 & 18 & 1 & 5 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{fig1_attack_time_selected.pdf}
+\caption{Source-validated distinct transactions strictly before the documented execution (dark bar) versus the full day including the execution and subsequent traffic (light bar). The dashed line denotes the necessary 19 preceding selected transactions; the stricter feature-specific condition requires 19 earlier \emph{positive same-token outflows}.}
+\label{fig:attacktime}
+\end{figure}
+
+This distinction is important for empirical software validation. A precondition that holds only after the event to be detected is not satisfied at the decision time. The last column gives the stronger token-specific result obtained from the selected complete-bundle reconstruction. It confirms that none of these four component views supplied 19 prior positive same-token outflows at the known execution. Therefore all four original daily-reset semantic misses have a measured feature-eligibility explanation, not merely an end-of-day event-rate argument. This observation does not establish what an alternative, independently chosen feature or a longer pre-window history would do.
+
+\subsection{RQ2: history initialization, count comparator and exact notifications}
+Table~\ref{tab:outcomes} compares exact known-reference notifications with the total number of emitted messages under the primary greedy daily budget. An entry such as $1/3$ means that one known reference execution was notified in a three-alert stream; it is \emph{not} an estimate of precision. The count comparator is independent of rank-history mode and appears as its own reference column.
+
+\begin{table}[htbp]
+\centering\scriptsize
+\caption{Primary outcomes as \emph{exact known-execution hits / all emitted notifications} (greedy, $B=5$, rank threshold $1/20$). No unknown notification is treated as a false positive. Three Rari views share one historical execution.}
+\label{tab:outcomes}
+\begin{tabular}{lrrrr}
+\toprule
+View & Semantic daily & Semantic 7 d & Semantic 30 d & Count daily \\
+\midrule
+Li.Fi core & 0/0 & 0/0 & 0/2 & \textbf{1/1} \\
+Revest core & 0/0 & 0/2 & 0/1 & 0/2 \\
+Bacon proxy & 0/0 & 0/0 & \textbf{1/1} & 0/1 \\
+Rari fETH & 0/0 & \textbf{1/1} & \textbf{1/3} & 0/0 \\
+Rari fUSDC & 0/0 & \textbf{1/2} & \textbf{1/7} & \textbf{1/2} \\
+Rari Comptroller & 0/0 & 0/0 & 0/0 & \textbf{1/1} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The original negative outcome persists for Li.Fi and Revest: greater historical readiness yields additional alerts but no exact known execution notification. Li.Fi's cumulative replay yields two unadjudicated notifications, on 1 and 3 March 2022, preceding the 20 March exploit. The Revest seven-day mode yields two unadjudicated notifications on 23 and 24 March, and cumulative history yields one on 24 March. These are not credited as early detections because no independently established relation to the attack has been shown.
+
+By contrast, the new case results differ. Bacon's cumulative within-window history yields a reference-execution notification at 12:46:23 UTC on 5 March 2022: the USDC rank is $1/33$ after 32 strictly preceding positive core-outflow values. The trailing-seven-day history contains only five such values and cannot score that transaction. In Rari fETH, the known execution is notified under seven-day and cumulative histories with scores $1/24$ and $1/42$; in Rari fUSDC it is also notified in those historical modes, with independently scored positive token features. The Comptroller has no positive core-boundary token outflow, so no semantic trigger occurs, while the count comparator notifies the known execution. These are observation-view-dependent matches on one shared Rari execution, not multiple independent attacks.
+
+Across all primary 1/20 cells in the new two-family replay, the offered budget never blocks an eligible grouped semantic candidate. Under the more permissive rank $1/10$, grouping and allocation can change realized loads; all retained policy/budget cells remain available in the result export. The main outcome is therefore driven principally by feature readiness, component observation and rank extremeness rather than budget exhaustion. Budget studies on the separate, previously exposed Euler and Beanstalk development workloads are not pooled into this external table; their event-time allocation findings answer a different question.
+
+\subsection{Alert timing and reference status}
+An auditable notification result requires the exact notified transaction identity and its associated score, not only a total count. We generated a 19-row primary semantic notification ledger from the original score streams, independently restored Phase 22 decisions and the fixed reference inventories. Every record contains source case/view, UTC event time, token identity, rank, initialization, the emitted transaction hash and one of two reference statuses: independently verified known execution or \emph{unadjudicated}. The complete ledger is retained in the companion artifact and a compact reading of the results appears in Appendix~\ref{app:alerts}.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{fig3_incident_relative_alerts.pdf}
+\caption{Timing of primary semantic notifications relative to the documented execution time. Stars mark notifications on the exact admitted reference, and circles denote unadjudicated notifications. Rari rows share the same reference execution; Li.Fi and Revest reference times come from the independently admitted historical identities. The graph does not establish early warning or live notification latency.}
+\label{fig:alerttime}
+\end{figure}
+
+The nonreference notifications should be investigated separately if precision or actionable triage cost is to be evaluated. Labelling the unadjudicated alerts as false positives merely because they are not the single known execution would bias the result. Equally, the presence of an alert before an exploit date does not demonstrate the alert's causal relevance to the later event.
+
+\subsection{RQ3: feature--mechanism correspondence}
+The original Li.Fi post-mortem and independent attack analysis describe an external-call/approval route: user funds could be transferred through allowances granted to the protocol \citep{LiFi2022Postmortem,BlockSec2022LiFi}. The reference transaction contains 40 ERC-20-shaped logs, of which only three touch the monitored diamond core; 92 logs were emitted across the transaction. The positive USDC/USDT core-boundary flows used by the rank rule are not the victim-to-attacker transfers themselves. With cumulative history, the Li.Fi USDC rank on the reference is $54/56$, not a high-outflow anomaly. This is a construct limitation independent of the original daily-history ineligibility.
+
+Revest's admitted reference tokens have no strictly preceding positive outflows in the retained 30-day history, despite positive flows at the known executions; its documented exploit relates to reentrancy and FNFT accounting rather than an isolated magnitude tail \citep{Revest2022Postmortem,SlowMist2022Revest}. In Bacon, an exact rank notification appears under cumulative history, but a positive USDC transfer at the lending proxy is not by itself proof that the statistic recognizes the underlying reentrancy mechanism. In Rari, the fETH token outflow event and fUSDC ERC-20 transfer patterns are similarly not interchangeable with the principal native-ETH borrowing/state update exploit mechanism documented by the team \citep{Rari2022Postmortem}. Exact transaction coincidence is measurable and meaningful; precise exploit-mechanism recognition is a stronger claim that these syntactic features do not establish.
+
+The source-tier, component-role and token/transaction distinctions thus matter to requirements engineering for a monitor. Before treating a rule as an exploit detector, a specification must state which class of adversarial state transition the feature is intended to represent, which contracts must be observed, and whether the feature is available strictly before the requested decision. This does not turn the studied rank statistic into a new attack-specific detector.
+
+\section{Discussion: implications for reliable monitoring software}\label{sec:discussion}
+
+\subsection{From an eligibility check to a validation obligation}
+The inequality $N_{k,d}\geq20$ is not intrinsically a research contribution: it follows directly from the rank rule's configured minimum history. Its engineering value depends on measuring the \emph{right} $N_{k,d}$ from available data, applying it at the decision time and using it to avoid invalid comparisons. The accepted experimental records demonstrate a sequence of increasingly restrictive checks: daily emitted log counts, unique selected transaction counts, positive same-token outflows, and strictly preceding history at the reference execution. Each stage excludes conclusions that would have appeared plausible from the weaker count alone.
+
+This hierarchy is an executable monitor requirement. A deployment or evaluation report should distinguish ``no candidate because score below threshold'' from ``no candidate because score was ineligible'' and from ``unknown because source observation failed.'' Our results show why reporting only the total number of alerts obscures these categories. A program that emits zero alerts may be correctly implementing its alert cap while being unable to run the anomaly statistic. Model and software assurance should make those states explicit rather than encode them as normal observations.
+
+The phenomenon is not confined to one date or code path in this cohort: Li.Fi and Revest have different token-history distributions; the Bacon and Rari records likewise show markedly different conditional score availability across nominated component views. The full attack-day transaction count can also be misleading, because many selected transactions occur after the exploit. This reinforces the requirement to measure historical state causally before each evaluated event. The present sample does not justify extrapolating these fractions to every DeFi contract or to all history-dependent detectors.
+
+\subsection{A history intervention can restore a hit, but not consistently}
+Initialization cannot be evaluated by counting newly eligible transactions alone. Under the same rank rule, Li.Fi and Revest gain history-eligible transactions without new known-execution notifications; Bacon and two Rari component views obtain known-execution matches. Longer history changes not only the number of previous observations but also the empirical rank of a given current amount. Consequently raw-trigger count need not increase monotonically with available history, even though eligibility generally increases. At Rari fETH, for example, the current known execution is an extreme value relative to both seven-day and cumulative histories, whereas the Li.Fi observed core-boundary USDC amount is not.
+
+These comparisons are \emph{counterfactual historical replays}, not randomized experiments and not measured prospective deployment outcomes. Both the revised modes and the new case study arose after the initial two-case results were known; historical core nominations were incident-informed. A new independent cohort with a frozen eligibility preflight and blinded scoring is necessary before interpreting differences as generalizable. In particular, a single Rari transaction scored against three component views cannot be counted three times in a significance test.
+
+\subsection{What this says about the two target publication communities}
+A software-engineering interpretation emphasizes that a monitoring feature is a component with an input contract, state-initialization semantics, fallback/ineligible behavior and traceable end-to-end output. We offer a reproducible method for auditing those software contracts, not a new security oracle. Work on runtime verification and the evaluation of learned software components supplies the conceptual context \citep{Leucker2009RV,Bauer2011RV,Arp2022Dons,Sculley2015Debt}. The concrete blockchain examples permit an empirical stress test of the specification, including success and failure outcomes across different attack semantics.
+
+For a security journal, the remaining central question would be comparative detection utility against contemporary DeFi monitors on a representative labelled incident corpus. That question is not answered here. For an empirical software-engineering journal, the proposed contribution is the evaluation method, its faithfully reproduced results and the identified effect of state/history contracts. Strong evidence of transferability to additional applications or many more monitor implementations would strengthen this contribution substantially.
+
+\subsection{Practical evaluation checklist}
+Before claiming that a monitor detects a given class of incidents, an evaluator should: define the relevant state transition and observable contracts; establish that source partitions and selected all-emitter bundles are available; compute the fraction of observations for which every required feature is defined; measure state readiness \emph{at} the reference execution; report candidate grouping and realized alerts separately; and join a documented reference inventory only after decisions are fixed. Applying these checks does not guarantee detector quality, but their omission can produce uninterpretable detection statistics.
+
+\section{Threats to validity}\label{sec:validity}
+
+\paragraph{Case selection and statistical independence.} Four incident families were studied, and five successful executions were admitted to known subsets. Li.Fi and Revest were previously exposed, Bacon and Rari were selected after these results, and component nominations were incident-informed. One Rari execution is represented in multiple component views. The study neither estimates a population recall nor applies significance tests across deterministic replay configurations. The sample cannot establish universality or comparative superiority. The selection of one Bacon proxy and one Rari pool is a source-availability decision, not a representative sampling mechanism.
+
+\paragraph{Reference completeness and unadjudicated alerts.} The incident reports do not close every attack-execution inventory, especially for Rari's multiple affected pools. Additional exact reference candidates in the earlier cases retain unresolved roles. Alerts not matching the admitted known execution are not labelled benign. Hence precision, false-positive rate, missed economic loss and complete incident-level failure cannot be inferred.
+
+\paragraph{Provenance and observation boundary.} The first two families have original S3-based selected transactions and separately audited replay input. For Bacon and Rari, transaction identities and selected core counts were checked against original Parquet objects, while all-emitter topics/data and success status were supplied by a distinct historical indexer. The latter data were cross-checked at the execution transactions and against selected transaction identities, but not independently authenticated against every Ethereum receipt root. Contract address nomination and event-typed arithmetic may also omit native ETH, internal calls, token-specific semantics or state invariants. Data missing from a view cannot be taken as evidence that an exploit did not occur.
+
+\paragraph{Temporal state and operational interpretation.} Three score-history modes start from a truncated, retained 30-day observation window. The seven-day mode is a trailing lookback within that source boundary; the cumulative mode lacks pre-window history. All grouping and budget states reset at UTC midnight by design. The historical timestamps are block event times, not observed availability or notification latency. Even an exact notification on an atomic exploit transaction does not establish any ability to prevent that transaction or reduce its loss.
+
+\paragraph{Implementation and measurement verification.} Independent re-evaluation reproduced all newly accepted score/candidate/notification configurations and the earlier sealed comparisons. These checks constrain implementation disagreement but cannot prove the truth of all incident narratives or the completeness of a third-party indexer. Our readiness-sensitivity analyses do not represent optimized alternative detector parameters. Reproducing the decisions also does not provide a controlled performance benchmark or a study of operator response burden.
+
+\section{Conclusion}\label{sec:conclusion}
+
+We examined a fixed history-dependent token-outflow monitor as a software system with observation and state contracts, rather than assuming that a defined threshold implies an executable detector. Across four retrospective Ethereum incident families, the original daily-reset rank rule produced no exact known-execution notification on the admitted reference set. In the newly reconstructed Bacon and Rari cases, only 2, 8, 17 and 18 view-selected transactions, respectively, preceded the documented exploit on its UTC day; end-of-day totals masked this deficit. Full replay of strictly prior seven-day and captured-window histories produced contrasting outcomes: Li.Fi and Revest gained unadjudicated notifications without new known-execution matches, whereas Bacon and Rari acquired exact matches under longer-history variants. A count baseline also matched documented executions in some views. The implications are specific to the chosen feature, contracts and incident subsets, not a superiority claim.
+
+The defensible general lesson for monitoring-software evaluation is to report feature computability, history state, construct alignment and actual emitted notifications as separate measurable quantities. We provide source-linked identities, independent calculation checks and a traceable alert ledger for these claims. A broader prospective cohort, complete reference inventory and comparison against additional monitor definitions are necessary to establish cross-protocol generality.
+
+\section*{Data, code and reproducibility}
+The unchanged original evaluated baseline is available at commit
+\href{https://github.com/KuznetsovKarazin/blockchain-analytics-lab/commit/e720697bc3986dd291a7047c580cf973ae6e5567}{\texttt{e720697}}. The subsequent historical-initialization code and source-audit materials are maintained in the separate branch
+\href{https://github.com/KuznetsovKarazin/blockchain-analytics-lab/tree/research/monitoring-applicability-20261029}{research branch} \citep{Kuznetsov2026Artifacts}.
+The exact source input tier and case-specific provenance hashes are documented in the evidence manifests; a full-window receipt-root authentication is not claimed. Reconstructed third-party Ethereum source bodies are not redistributed. A version-pinned, flat Elsevier LaTeX project and independent verifier are bundled with this manuscript. The public repository's archival version and a Zenodo DOI, if issued, must be updated here \emph{only after verification}; no DOI is presently asserted.
+
+\section*{Competing interests}
+\textit{Author confirmation required before submission.}
+\section*{Funding}
+\textit{Author confirmation required: identify only grants that actually supported the reported work, with the required agreement numbers.}
+\section*{Declaration of generative AI and AI-assisted technologies}
+\textit{Author confirmation required: disclose the actual drafting, editing or analytical assistance according to the journal's policy.}
+
+\appendix
+\section{Complete primary notification ledger}\label{app:alerts}
+Each row corresponds to one emitted semantic notification in the primary rank-$1/20$, greedy, $B=5$ comparison. Token names are indicative addresses mapped to common token symbols only where their identity is unambiguous; the downloadable CSV retains full contract addresses, scores and transaction hashes. \textbf{Known} means an exact match with an admitted successful execution. \textbf{Unknown} means the notification has not been independently adjudicated and must not be classified as a false positive.
+
+\input{alerts_table.tex}
+
+\section{Additional measurement details}\label{app:measurement}
+The independent source audit checked 60 daily log objects for Bacon and Rari component address membership and confirmed selected transaction identities across all 60 days. The later source tier used the Blockscout indexer for the complete contents and successful status of those selected transactions. The verification scripts reject missing cases, mismatched source identities, changed hashes and inconsistent counts. For each per-token rank, a transaction is scored against strictly prior successful observations and is inserted into the token history only after its own score is evaluated. No unlabelled notification is replaced by a labelled negative. Counts and timestamps in the main text were regenerated from the machine-readable result files, not manually transcribed from plots.
+
+\bibliographystyle{elsarticle-harv}
+\begingroup\sloppy\bibliography{references}\endgroup
+\end{document}
