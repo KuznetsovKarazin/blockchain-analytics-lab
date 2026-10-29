@@ -1,0 +1,137 @@
+{
+  "schema": "article2_phase26_pretreatment_control_registry_v1",
+  "freeze_date_utc": "2026-10-29",
+  "case_selection_status": "EXPLORATORY_NONRANDOM_COMPARISON_CONTRACTS_NOT_PROVEN_BENIGN",
+  "criterion": "Publicly documented Ethereum DeFi deployed protocol/pool emitter addresses not nominated as the exploited component in the two preceding Bacon/Rari source windows; convenience/role diversity, no inference of attack-free status or matched sampling.",
+  "primary_unit": "contract_emitter_x_30day_window",
+  "windows": [
+    {
+      "id": "bacon_window",
+      "first": "2022-02-04",
+      "last_inclusive": "2022-03-05"
+    },
+    {
+      "id": "rari_window",
+      "first": "2022-04-01",
+      "last_inclusive": "2022-04-30"
+    }
+  ],
+  "labels_used": false,
+  "reference_postjoin": false,
+  "source": "same S3 Ethereum log objects and ETags accepted in Phase20, with original byte-range reader",
+  "feature": "core-emitter log count per uniquely selected transaction, NOT token-outflow magnitude",
+  "rules": {
+    "daily_reset_history_limits": [
+      5,
+      10,
+      19,
+      39
+    ],
+    "cumulative_capped_history": 128,
+    "ewma_warmup": 5,
+    "z_score_warmup": 19,
+    "mad_warmup": 19,
+    "mad_requires_positive_dispersion": true,
+    "z_requires_positive_dispersion": true,
+    "per_day_feasibility_necessary_condition_for_min_history19": "20 or more selected transactions in same emitter/day; not sufficient for positive token history"
+  },
+  "contracts": [
+    {
+      "id": "control_01",
+      "name": "Compound cDAI",
+      "address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
+      "category": "lending",
+      "deployment_reference": "https://docs.compound.finance/v2/",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_02",
+      "name": "Compound cUSDC",
+      "address": "0x39aa39c021dfbae8fac545936693ac917d5e7563",
+      "category": "lending",
+      "deployment_reference": "https://docs.compound.finance/v2/",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_03",
+      "name": "Compound cETH",
+      "address": "0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5",
+      "category": "lending",
+      "deployment_reference": "https://docs.compound.finance/v2/",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_04",
+      "name": "Aave V2 LendingPool",
+      "address": "0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9",
+      "category": "lending",
+      "deployment_reference": "https://docs.aave.com/developers/v/2.0/deployed-contracts/deployed-contracts",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_05",
+      "name": "Uniswap V2 USDC/WETH",
+      "address": "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc",
+      "category": "amm",
+      "deployment_reference": "https://developers.uniswap.org/docs/ecosystem/subgraphs/guides/v2-query-examples",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_06",
+      "name": "Uniswap V2 DAI/WETH",
+      "address": "0xa478c2975ab1ea89e8196811f51a7b7ade33eb11",
+      "category": "amm",
+      "deployment_reference": "https://developers.uniswap.org/docs/ecosystem/subgraphs/guides/v2-query-examples",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_07",
+      "name": "Uniswap V2 USDC/DAI",
+      "address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "category": "amm",
+      "deployment_reference": "https://developers.uniswap.org/docs/ecosystem/subgraphs/concepts/v2/queries",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_08",
+      "name": "Uniswap V3 USDC/WETH 0.05%",
+      "address": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+      "category": "amm",
+      "deployment_reference": "https://developers.uniswap.org/docs",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_09",
+      "name": "Balancer V2 Vault",
+      "address": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+      "category": "vault",
+      "deployment_reference": "https://docs-v2.balancer.fi/reference/contracts/deployment-addresses/mainnet.html",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_10",
+      "name": "Curve 3pool",
+      "address": "0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7",
+      "category": "amm",
+      "deployment_reference": "https://curve.readthedocs.io/ref-addresses.html",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_11",
+      "name": "Curve AAVE pool",
+      "address": "0xdebf20617708857ebe4f679508e7b7863a8a8eee",
+      "category": "amm",
+      "deployment_reference": "https://curve.readthedocs.io/ref-addresses.html",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    },
+    {
+      "id": "control_12",
+      "name": "Curve stETH pool",
+      "address": "0xdc24316b9ae028f1497c275eb9192a3ea0f67022",
+      "category": "amm",
+      "deployment_reference": "https://curve.readthedocs.io/ref-addresses.html",
+      "label": "COMPARISON_NO_VERIFIED_BENIGNITY"
+    }
+  ],
+  "decisions": "Registry and estimands frozen before any Phase26 AWS counts; no exclusion for observed low traffic. Zero source rows means zero selected transactions only after all source partitions audited."
+}
