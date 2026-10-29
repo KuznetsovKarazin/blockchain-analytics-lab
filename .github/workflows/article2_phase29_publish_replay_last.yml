@@ -1,0 +1,60 @@
+name: article2-phase29-publish-last-two-replays
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_publish_replay_last.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  verify-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover accepted Phase29 source-bound replay artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for case in cohort28_10 cohort28_13; do
+            mkdir -p "first/$case"
+            gh run download 40927837029 -n "article2-phase29-final-replay-$case" -D "first/$case"
+          done
+      - name: Independently reproduce immutable token rank and count results before publication
+        run: |
+          set -euo pipefail
+          for case in cohort28_10 cohort28_13; do
+            python papers/monitoring_jss/phase29/fixed_replay.py \
+              --case "$case" \
+              --indexed-dir "papers/monitoring_jss/phase29/indexed/$case" \
+              --out "/tmp/replayed_$case" \
+              --reference-ledger papers/monitoring_jss/phase29/REFERENCE_ROLE_LEDGER.json
+            dest=papers/monitoring_jss/phase29/results/$case
+            mkdir -p "$dest"
+            for file in label_blind_replay.json reference_join.json method_policy_cells.csv; do
+              cmp "first/$case/$file" "/tmp/replayed_$case/$file"
+              cp "first/$case/$file" "$dest/$file"
+            done
+          done
+      - name: Canonical CSV newline normalization (only after byte-exact scientific recheck)
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for p in Path("papers/monitoring_jss/phase29/results").glob("cohort28_*/method_policy_cells.csv"):
+              body=p.read_bytes()
+              if b"\r\n" in body:
+                  p.write_bytes(body.replace(b"\r\n",b"\n"))
+          PY
+      - name: Publish reproducible exploratory case results, no new incident denominator
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase29/results
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase29: publish verified source-bound rank/count replay for Schnoodle and Omni'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
