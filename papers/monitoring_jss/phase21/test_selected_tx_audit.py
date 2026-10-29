@@ -22,3 +22,7 @@ def test_case_normalization():
     x=[('0xABc',1,2),('0xabc',1,2)]
     a,b,c=mod.tally_selected(x,{'a':'0xabc'})
     assert (a['a'],b['a'],c)==(2,1,1)
+
+def test_checksums_in_core_addresses():
+    a,b,c=mod.tally_selected([('0xAbC',10,0),('0xabc',11,0)],{'mixed':'0xAbC'})
+    assert (a['mixed'],b['mixed'],c)==(2,2,2)
