@@ -1,0 +1,71 @@
+name: monitoring-phase20-source-preflight
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths:
+      - .github/workflows/monitoring_phase20_source_preflight.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Bounded anonymous S3 and explorer metadata (no chain payloads)
+        run: |
+          python - <<'PY'
+          import json, urllib.parse, urllib.request
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          cases = {
+            'bacon_20220305': ('2022-03-05', '0x7d2296bcb936aa5e2397ddf8ccba59f54a178c3901666b49291d880369dbcf31'),
+            'rari_fuse_pool127_20220430': ('2022-04-30', '0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530')}
+          result={'schema':'phase20_ci_metadata_only_v1','tier':'LISTINGS_AND_EXPLORER_SUMMARIES_NOT_RECEIPTS','case_admissions':0,'parquet_bodies_downloaded':0,'detector_scores':0,'s3':[],'explorer':[]}
+          def get(url, limit=512000):
+              req=urllib.request.Request(url,headers={'User-Agent':'article2-phase20-source-audit/1.0'})
+              with urllib.request.urlopen(req,timeout=12) as f: data=f.read(limit+1)
+              if len(data)>limit: raise ValueError('metadata response size limit')
+              return data
+          for case,(day,tx) in cases.items():
+              for table in ('logs','transactions','blocks'):
+                  prefix='v1.0/eth/'+table+'/date='+day+'/'
+                  query=urllib.parse.urlencode({'list-type':'2','prefix':prefix,'max-keys':'100'})
+                  row={'case':case,'table':table,'date':day,'prefix':prefix}
+                  try:
+                      root=ET.fromstring(get('https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?'+query))
+                      tag=lambda e:e.tag.rsplit('}',1)[-1]
+                      def field(node,name): return next((c.text for c in node if tag(c)==name),None)
+                      if field(root,'Prefix')!=prefix: raise ValueError('prefix mismatch')
+                      objects=[(field(e,'Key'),int(field(e,'Size'))) for e in root if tag(e)=='Contents']
+                      truncated=field(root,'IsTruncated')=='true'
+                      row.update({'state':'LISTED_METADATA_ONLY' if objects and not truncated else 'EMPTY_OR_INCOMPLETE',
+                                  'is_truncated':truncated,'objects':len(objects),
+                                  'parquet_objects':sum(k.endswith('.snappy.parquet') for k,_ in objects),
+                                  'declared_bytes':sum(n for _,n in objects),
+                                  'first_keys':[k for k,_ in objects[:4]]})
+                  except Exception as exc:
+                      row.update({'state':'UNAVAILABLE','error':type(exc).__name__+': '+str(exc)[:120]})
+                  result['s3'].append(row)
+              row={'case':case,'reference_hash':tx}
+              try:
+                  obj=json.loads(get('https://eth.blockscout.com/api/v2/transactions/'+tx,1000000))
+                  row.update({'state':'INDEXED_EXPLORER_RESPONSE','hash':obj.get('hash'),'status':obj.get('status'),
+                              'block':obj.get('block'),'timestamp':obj.get('timestamp')})
+              except Exception as exc:
+                  row.update({'state':'UNAVAILABLE','error':type(exc).__name__+': '+str(exc)[:120]})
+              result['explorer'].append(row)
+          result['status']='INCIDENT_DATE_SOURCE_METADATA_AVAILABLE' if all(r['state']=='LISTED_METADATA_ONLY' and r.get('parquet_objects',0)>0 for r in result['s3']) else 'METADATA_PARTIAL_OR_UNAVAILABLE'
+          Path('phase20_source_preflight.json').write_text(json.dumps(result,indent=2)+'\n')
+          print(result['status'])
+          print('S3:',[(r['case'],r['table'],r['state'],r.get('parquet_objects')) for r in result['s3']])
+          print('EXPLORER:',[(r['case'],r['state'],r.get('status'),r.get('block')) for r in result['explorer']])
+          PY
+      - name: Preserve source metadata evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase20-source-preflight
+          path: phase20_source_preflight.json
+          if-no-files-found: error
+          retention-days: 30
