@@ -1,0 +1,40 @@
+name: article2-phase28-source-census
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths:
+      - .github/workflows/article2_phase28_source_census.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-census:
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        batch: [0,1,2,3,4,5,6,7]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned original-Parquet decoder
+        run: python -m pip install --disable-pip-version-check pyarrow==19.0.1
+      - name: Scan original Ethereum Parquet for two frozen emitter windows (no labels)
+        run: |
+          python papers/monitoring_jss/phase28/source_census.py \
+            --frame papers/monitoring_jss/phase28/CANDIDATE_FRAME.json \
+            --windows papers/monitoring_jss/phase28/FORK_WINDOWS.json \
+            --batch ${{ matrix.batch }} \
+            --output phase28_batch_${{ matrix.batch }}
+      - name: Retain outputs even on source unavailability
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase28-source-batch-${{ matrix.batch }}
+          path: phase28_batch_${{ matrix.batch }}/source_census.json
+          if-no-files-found: warn
+          retention-days: 90
