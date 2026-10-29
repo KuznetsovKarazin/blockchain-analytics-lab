@@ -1,0 +1,36 @@
+name: article2-phase29-omni-indexed-retry
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_omni_retry.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  one-complete-source-validated-index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently revalidate original complete 103 selected Ethereum transactions
+        run: |
+          python papers/monitoring_jss/phase29/verify_source_streams.py \
+            --case cohort28_13 --source-dir papers/monitoring_jss/phase29/data/cohort28_13 \
+            --out /tmp/omni_source_validation.json
+      - name: Get 103 indexed bundles using source-count-bounded pagination
+        run: |
+          python papers/monitoring_jss/phase29/indexed_selected_bundles.py \
+            --case cohort28_13 \
+            --identities-dir papers/monitoring_jss/phase29/data/cohort28_13 \
+            --out phase29_omni_repaired
+      - name: Preserve complete or rejected attempt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase29-indexed-cohort28_13-complete
+          path: |
+            phase29_omni_repaired/acquisition_manifest.json
+            phase29_omni_repaired/indexer_observations.jsonl.gz
+            phase29_omni_repaired/indexer_response_receipts.json
+          if-no-files-found: error
+          retention-days: 30
