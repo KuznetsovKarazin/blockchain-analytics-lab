@@ -27,6 +27,12 @@ python initialization_full_replay.py --evidence-zip /path/to/sealed_evidence.zip
 python -m unittest -v test_initialization_full_replay.py
 ```
 
+To reproduce the three figures and token-day summaries (matplotlib required):
+
+```sh
+python make_phase18_figures.py --evidence-zip /path/to/sealed_evidence.zip --results ./phase18_results --out ./phase18_results
+```
+
 Outputs include exact transaction-level and per-case/method/policy/budget decision tables, 108 summary cells and independently checked frozen-control equality. Source evidence and full raw-chain archive were **not** recollected. Do not run `scripts/run_all.sh`.
 
 ## Principal observations
@@ -47,6 +53,7 @@ The new notifications have unknown truth status; they are not labelled false pos
 - [English scientific findings](PHASE18_FINDINGS_EN.md)
 - [Article 2 revised V2 manuscript](Article2_Manuscript_V2_2026-10-29.md)
 - [Prospective new-cohort screening protocol](EXTERNAL_COHORT_PROTOCOL.md)
+- [Source-grounded candidate triage](PHASE19_SOURCE_TRIAGE.md)
 - [Fig. 1 — token-day applicability](phase18_results/fig1_token_day_gate.svg)
 - [Fig. 2 — eligibility vs history retention](phase18_results/fig2_history_eligibility.svg)
 - [Fig. 3 — raw and emitted notifications](phase18_results/fig3_raw_vs_notifications.svg)
