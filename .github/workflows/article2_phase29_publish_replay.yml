@@ -1,0 +1,51 @@
+name: article2-phase29-publish-two-verified-replays
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_publish_replay.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  independent-clean-recalculation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read completed deterministic scientific artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for case in cohort28_02 cohort28_09; do
+            mkdir -p "frozen/$case"
+            gh run download 40926960532 -n "article2-phase29-replay-$case" -D "frozen/$case"
+          done
+      - name: Independent clean working-directory recomputation before storing
+        run: |
+          set -euo pipefail
+          for case in cohort28_02 cohort28_09; do
+            python papers/monitoring_jss/phase29/fixed_replay.py \
+              --case "$case" \
+              --indexed-dir "papers/monitoring_jss/phase29/indexed/$case" \
+              --out "/tmp/independent_$case" \
+              --reference-ledger papers/monitoring_jss/phase29/REFERENCE_ROLE_LEDGER.json
+            for f in label_blind_replay.json reference_join.json method_policy_cells.csv; do
+              cmp "frozen/$case/$f" "/tmp/independent_$case/$f"
+            done
+            mkdir -p "papers/monitoring_jss/phase29/results/$case"
+            cp "frozen/$case/"{label_blind_replay.json,reference_join.json,method_policy_cells.csv} \
+              "papers/monitoring_jss/phase29/results/$case/"
+          done
+      - name: Publish public derived outcomes with unknown labels retained
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase29/results
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase29: publish independently recomputed frozen rank/count scores for Umbrella and Inverse'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
