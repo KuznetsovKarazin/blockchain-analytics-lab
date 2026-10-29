@@ -1,0 +1,55 @@
+name: monitoring-phase26-label-free-control-census
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase26_control_census.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  frozen-control-census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 19
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install original Parquet decoder
+        run: pip install --disable-pip-version-check 'pyarrow==19.0.1'
+      - name: Scan exact original AWS source partitions in both fixed windows
+        run: |
+          set -euo pipefail
+          python papers/monitoring_jss/phase26/control_readiness_census.py \
+            --registry papers/monitoring_jss/phase26/CONTROL_REGISTRY.json \
+            --source-baseline papers/monitoring_jss/phase20/source_evidence/core_traffic.json \
+            --out /tmp/phase26_control_results
+      - name: Check complete data/metadata before acceptance
+        run: |
+          python - <<'PY'
+          import csv,json,hashlib
+          from pathlib import Path
+          p=Path('/tmp/phase26_control_results'); d=json.loads((p/'control_evidence.json').read_text())
+          assert d['status']=='PASS' and len(d['sources'])==60 and d['control_contracts']==12
+          assert d['emitter_day_units']==720 and d['contract_window_units']==24
+          assert d['total_source_rows_scanned']==120747757
+          for file,n in [('control_daily.csv',720),('control_readiness.csv',5760),
+                         ('control_runtime_readiness.csv',1440),('control_summary.csv',24)]:
+             rows=list(csv.DictReader((p/file).open()))
+             print(file,len(rows))
+             assert len(rows)==n,(file,len(rows),n)
+          print('PHASE26_SOURCE_CENSUS_PASS')
+          PY
+      - name: Commit only derived contract-day counts and source proof hashes
+        run: |
+          set -euo pipefail
+          mkdir -p papers/monitoring_jss/phase26/results
+          cp /tmp/phase26_control_results/{control_daily.csv,control_readiness.csv,control_runtime_readiness.csv,control_summary.csv,control_evidence.json} papers/monitoring_jss/phase26/results/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase26/results
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase26: public, source-audited, label-free comparison cohort census'
+            git push origin HEAD:research/monitoring-applicability-20261029
+          fi
