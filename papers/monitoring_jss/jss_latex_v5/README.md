@@ -1,6 +1,6 @@
 # Article 2 — JSS research manuscript, V5 (29 October 2026)
 
-This is the **current peer-reviewed draft**, not a claim that all journal submission gates are closed.
+This is the **current externally reviewed scientific draft**, not a claim that all journal submission gates are closed.
 
 ## Manuscript
 - `main.tex` — Elsevier `elsarticle` source, 29-page locally compiled version.
