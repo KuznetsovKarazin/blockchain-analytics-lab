@@ -1,0 +1,34 @@
+name: monitoring-phase26-release-data
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase26_release_data.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  publish-verified-census-artifact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit pinned source and results
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          r=Path('papers/monitoring_jss/phase26/results')
+          d=json.loads((r/'control_evidence.json').read_text())
+          assert d['status']=='PASS' and len(d['sources'])==60 and d['total_source_rows_scanned']==120747757
+          expected={'control_daily.csv':720,'control_readiness.csv':5760,
+                   'control_runtime_readiness.csv':1440,'control_summary.csv':24}
+          for name,n in expected.items():
+             with (r/name).open() as f:got=sum(1 for _ in csv.DictReader(f))
+             assert got==n, (name,got)
+          print('ACCEPTED_CENSUS_DATA_PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase26-source-audited-control-census
+          path: papers/monitoring_jss/phase26/results/
+          retention-days: 30
