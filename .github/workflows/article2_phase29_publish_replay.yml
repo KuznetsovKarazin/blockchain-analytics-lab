@@ -38,6 +38,16 @@ jobs:
             cp "frozen/$case/"{label_blind_replay.json,reference_join.json,method_policy_cells.csv} \
               "papers/monitoring_jss/phase29/results/$case/"
           done
+      - name: Normalize transport-only CSV line endings after exact scientific comparison
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for p in Path('papers/monitoring_jss/phase29/results').glob('*/method_policy_cells.csv'):
+              data=p.read_bytes()
+              assert b'\r\n' in data
+              p.write_bytes(data.replace(b'\r\n',b'\n'))
+              print(p,'CRLF-to-LF publication normalization only')
+          PY
       - name: Publish public derived outcomes with unknown labels retained
         run: |
           set -euo pipefail
