@@ -1,0 +1,34 @@
+name: article2-phase29-schnoodle-indexed-source
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_schnoodle_indexed.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-bound-indexed-bundles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently validate exact 30-day original AWS source
+        run: |
+          python papers/monitoring_jss/phase29/verify_source_streams.py \
+            --case cohort28_10 \
+            --source-dir papers/monitoring_jss/phase29/data/cohort28_10 \
+            --out /tmp/snood_verified.json
+      - name: Acquire complete indexed all-emitter token observations
+        run: |
+          python papers/monitoring_jss/phase29/indexed_selected_bundles.py \
+            --case cohort28_10 \
+            --identities-dir papers/monitoring_jss/phase29/data/cohort28_10 \
+            --out indexed_snood
+      - name: Preserve accepted or rejected bounded outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase29-indexed-cohort28_10-complete
+          path: indexed_snood
+          if-no-files-found: warn
+          retention-days: 30
