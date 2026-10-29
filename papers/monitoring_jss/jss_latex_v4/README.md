@@ -22,3 +22,5 @@ pdflatex -interaction=nonstopmode -halt-on-error main.tex
 The research data and all code-derived tables are under `../phase23/`. Rebuild using `phase23/build_phase23_tables.py` with the separately preserved and SHA-256-bound Phase16, Phase18 and Phase22 research archives; those original source archives are *not* reproduced here. Chart creation uses `phase23/make_figures.py` and the generated CSV files. The new branch is separate from the original sealed `paper/monitoring-jss` at `e720697bc3986dd291a7047c580cf973ae6e5567`; new experimental results remain retrospective diagnostics.
 
 **Required before submission:** verify author funding/COI/AI-assistance declarations, corresponding author details, final rights/licences, journal metadata and stable artifact citation. Future expanded prospective external validation is still desirable; no such experiments have been completed within this package.
+
+A convenience, editable **Word review copy** is provided as `Article2_V4_review.docx`. The LaTeX files remain authoritative for Elsevier submission.
