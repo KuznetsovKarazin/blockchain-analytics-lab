@@ -1,0 +1,58 @@
+name: article2-phase30-publish-replayed-outcomes
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase30_publish_results.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve only complete three independent scientific replay artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for c in cohort28_07 cohort28_11 cohort28_14; do
+            mkdir -p "frozen/$c"
+            gh run download 40930335137 -n "article2-phase30-results-$c" -D "frozen/$c"
+          done
+      - name: Independently recompute and compare every output byte before publishing
+        run: |
+          set -euo pipefail
+          for c in cohort28_07 cohort28_11 cohort28_14; do
+            python papers/monitoring_jss/phase30/fixed_replay.py \
+              --case "$c" \
+              --indexed-dir "papers/monitoring_jss/phase30/indexed/$c" \
+              --out "/tmp/new_science_$c" \
+              --reference-ledger papers/monitoring_jss/phase29/REFERENCE_ROLE_LEDGER.json
+            for f in label_blind_replay.json reference_join.json method_policy_cells.csv; do
+              cmp "frozen/$c/$f" "/tmp/new_science_$c/$f"
+            done
+            dest="papers/monitoring_jss/phase30/results/$c"
+            mkdir -p "$dest"
+            cp "frozen/$c/"{label_blind_replay.json,reference_join.json,method_policy_cells.csv} "$dest/"
+          done
+      - name: Normalize CSV publisher line endings only after the exact byte comparison
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for p in Path("papers/monitoring_jss/phase30/results").glob("*/method_policy_cells.csv"):
+              p.write_bytes(p.read_bytes().replace(b"\r\n",b"\n"))
+          PY
+      - name: Persist public derived evidence, no source raw Parquet or attack truth claims
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase30/results
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase30: publish independently reproduced Saddle XCarnival Audius policy results'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
