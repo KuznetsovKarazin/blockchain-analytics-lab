@@ -1,0 +1,28 @@
+name: article2-phase28-metadata-preflight
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths:
+      - .github/workflows/article2_phase28_metadata.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fork-window-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin candidate fork blocks to indexed UTC dates
+        run: |
+          python papers/monitoring_jss/phase28/fork_window_metadata.py \
+            --frame papers/monitoring_jss/phase28/CANDIDATE_FRAME.json \
+            --output phase28_fork_window_metadata.json
+      - name: Retain metadata and failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase28-fork-window-preflight
+          path: phase28_fork_window_metadata.json
+          if-no-files-found: warn
+          retention-days: 30
