@@ -1,0 +1,23 @@
+name: monitoring-phase22-blockscout-contract-probe
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase22_blockscout_probe.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  api-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect public transaction and paginated log payload schemas
+        run: python papers/monitoring_jss/phase22/blockscout_contract_probe.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: article2-phase22-blockscout-schema-probe
+          path: blockscout_contract_probe.json
+          if-no-files-found: warn
+          retention-days: 30
