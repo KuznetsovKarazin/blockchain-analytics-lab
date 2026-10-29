@@ -54,6 +54,7 @@ The new notifications have unknown truth status; they are not labelled false pos
 - [Article 2 revised V2 manuscript](Article2_Manuscript_V2_2026-10-29.md)
 - [Prospective new-cohort screening protocol](EXTERNAL_COHORT_PROTOCOL.md)
 - [Source-grounded candidate triage](PHASE19_SOURCE_TRIAGE.md)
+- [Phase19 corpus-source and provenance audit](PHASE19_CORPUS_SOURCES.md)
 - [Fig. 1 — token-day applicability](phase18_results/fig1_token_day_gate.svg)
 - [Fig. 2 — eligibility vs history retention](phase18_results/fig2_history_eligibility.svg)
 - [Fig. 3 — raw and emitted notifications](phase18_results/fig3_raw_vs_notifications.svg)
