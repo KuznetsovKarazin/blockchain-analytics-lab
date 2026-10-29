@@ -1,0 +1,128 @@
+name: monitoring-phase20-aws-exact-reference-audit
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase20_aws_exact_reference_audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-reference-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install constrained Parquet decoder
+        run: python -m pip install --disable-pip-version-check 'pyarrow==19.0.1'
+      - name: Audit exact transaction identities within S3 original log columns
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import sys, json, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+          import pyarrow.compute as pc,pyarrow as pa,pyarrow.parquet as pq
+          root=Path.cwd()
+          sys.path.insert(0,str(root/'papers/monitoring_jss/phase16/collector'))
+          import range_collector as rc
+          source_cases={
+            'bacon_20220305':{'date':'2022-03-05','block':14326932,
+              'tx':'0x7d2296bcb936aa5e2397ddf8ccba59f54a178c3901666b49291d880369dbcf31',
+              'cores':['0xb8919522331c59f5c16bdfaa6a121a6e03a91f62']},
+            'rari_pool127_20220430':{'date':'2022-04-30','block':14684814,
+              'tx':'0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530',
+              'cores':['0x26267e41ceca7c8e0f143554af707336f27fa051',
+                       '0xebe0d1cb6a0b8569929e062d67bfbC07608f0a47',
+                       '0x3f2d1bc6d02522dbcdb216b2e75edddafe04b16f']}
+          }
+          def scalar(n,key):
+              return next((x.text for x in n if x.tag.rsplit('}',1)[-1]==key),None)
+          def canonical(x):
+              if isinstance(x,bytes):return '0x'+x.hex()
+              return str(x).lower()
+          def get_source(day):
+              prefix=f'v1.0/eth/logs/date={day}/'
+              url=rc.ENDPOINT+'?'+urllib.parse.urlencode({'list-type':'2','prefix':prefix,'max-keys':'100'})
+              with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'article2-audit/1.0'}),timeout=15) as f:
+                  raw=f.read(200001)
+              if len(raw)>200000:raise ValueError('listing length cap')
+              doc=ET.fromstring(raw)
+              objs=[x for x in doc if x.tag.rsplit('}',1)[-1]=='Contents']
+              if len(objs)!=1 or scalar(doc,'IsTruncated')=='true':raise ValueError('nonunique source object')
+              obj=objs[0]
+              return {'table':'logs','day_utc':day,'key':scalar(obj,'Key'),
+                      'size_bytes':int(scalar(obj,'Size')),
+                      'etag_opaque':scalar(obj,'ETag')}
+          caps={'requests':65,'total_response_bytes':160_000_000,'wall_seconds':310,
+                'request_timeout_seconds':40,'max_range_bytes':20_000_000,
+                'max_footer_bytes':1_000_000,'max_rows':6_000_000,'max_row_groups':64,
+                'max_top_level_columns':60,'max_leaf_columns':80,
+                'max_source_bytes':800_000_000,'retries':0,'concurrency':1}
+          report={'schema':'phase20_exact_reference_aws_audit_v1',
+              'source_tier':'enumerated original S3 Parquet logs with exact byte-range receipts; not transaction receipt-root authentication',
+              'scope':'reference day/block only; not complete 30-day source audit',
+              'scientific_new_case_admissions':0,'full_window_replays':0,'cases':[]}
+          for case,expected in source_cases.items():
+              row={'case':case,'target_tx':expected['tx'],'target_block':expected['block']}
+              session=None
+              try:
+                  source=get_source(expected['date'])
+                  plan={'schema_version':'article2_phase16_range_source_plan_v1',
+                        'endpoint':rc.ENDPOINT,'caps':caps,
+                        'required_columns':{'logs':['block_number','transaction_hash','address','log_index']}}
+                  session=rc.RangeSession(plan,Path('phase20_range_')/case)
+                  reader=rc.SourceReader(source,session,Path('phase20_cache_')/case,pa,pq).open()
+                  groups=[]
+                  for idx,table in reader.iter_row_groups(['block_number']):
+                      block=table.column('block_number')
+                      if pc.any(pc.equal(block,expected['block'])).as_py():
+                          groups.append(idx)
+                  if not groups:raise ValueError('reference block not in S3 day log column')
+                  target_rows=[]
+                  for idx in groups:
+                      table=reader.read_row_group(idx,['block_number','transaction_hash','address','log_index'])
+                      subset=table.filter(pc.equal(table.column('block_number'),expected['block']))
+                      target_rows.extend(x for x in subset.to_pylist() if canonical(x['transaction_hash'])==expected['tx'])
+                  if not target_rows:raise ValueError('reference transaction absent among block logs')
+                  from collections import Counter
+                  emit=Counter(canonical(x['address']) for x in target_rows)
+                  idxs=[int(x['log_index']) for x in target_rows]
+                  if len(idxs)!=len(set(idxs)):raise ValueError('duplicate log_index within same reference')
+                  row.update({'state':'S3_REFERENCE_LOG_IDENTITIES_VERIFIED',
+                     'source_key':source['key'],'source_size_bytes':source['size_bytes'],
+                     'source_etag':source['etag_opaque'],
+                     'footer_rows':reader.metadata.num_rows,
+                     'rowgroups_total':reader.metadata.num_row_groups,
+                     'rowgroups_containing_reference_block':groups,
+                     'reference_log_rows':len(target_rows),
+                     'candidate_core_log_counts':{c.lower():emit[c.lower()] for c in expected['cores']},
+                     'emitter_log_counts':dict(sorted(emit.items())),
+                     'unique_log_indices':len(idxs),
+                     'range_http_requests':len(session.requests),
+                     'range_bytes':session.bytes,
+                     'accepted_ranges_sha256':[r['response_sha256'] for r in session.requests]})
+                  session.close('COMPLETE')
+              except Exception as exc:
+                  row.update({'state':'REFERENCE_SOURCE_AUDIT_INCOMPLETE',
+                      'error':type(exc).__name__+': '+str(exc)[:260]})
+                  if session:
+                      row.update({'range_http_requests':len(session.requests),'range_bytes':session.bytes})
+                      try:session.close('INCOMPLETE')
+                      except Exception:pass
+              report['cases'].append(row)
+              print(case,row['state'],'core=',row.get('candidate_core_log_counts'),
+                    'matched_logs=',row.get('reference_log_rows'),'range_bytes=',row.get('range_bytes'),
+                    'error=',row.get('error'))
+          report['status']='BOTH_REFERENCE_LOG_IDENTITIES_VERIFIED' if all(x['state']=='S3_REFERENCE_LOG_IDENTITIES_VERIFIED' for x in report['cases']) else 'REFERENCE_AUDIT_INCOMPLETE'
+          Path('phase20_aws_reference_audit.json').write_text(json.dumps(report,indent=2)+'\n')
+          print('FINAL',report['status'])
+          PY
+      - name: Keep only compact audit receipts (not source columns)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase20-aws-reference-audit
+          path: phase20_aws_reference_audit.json
+          if-no-files-found: error
+          retention-days: 30
