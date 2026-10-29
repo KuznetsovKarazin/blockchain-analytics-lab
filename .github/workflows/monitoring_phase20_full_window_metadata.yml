@@ -1,0 +1,92 @@
+name: monitoring-phase20-full-window-metadata
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths:
+      - .github/workflows/monitoring_phase20_full_window_metadata.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Enumerate 60 prospective UTC days, three tables, metadata only
+        run: |
+          python - <<'PY'
+          from datetime import date,timedelta
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from pathlib import Path
+          import urllib.parse, urllib.request
+          import xml.etree.ElementTree as ET
+          import collections, hashlib, json
+          cases={'bacon_20220305':('2022-02-04','2022-03-06'),
+                 'rari_fuse_pool127_20220430':('2022-04-01','2022-05-01')}
+          requests=[]
+          for case,(s,e) in cases.items():
+              d=date.fromisoformat(s);end=date.fromisoformat(e)
+              assert (end-d).days==30
+              while d<end:
+                  for table in ('logs','transactions','blocks'):
+                      requests.append((case,d.isoformat(),table))
+                  d+=timedelta(days=1)
+          assert len(requests)==180
+          def check(p):
+              case,day,table=p
+              prefix=f'v1.0/eth/{table}/date={day}/'
+              row={'case':case,'date':day,'table':table,'prefix':prefix}
+              url='https://aws-public-blockchain.s3.us-east-2.amazonaws.com/?'+urllib.parse.urlencode({'list-type':'2','prefix':prefix,'max-keys':'100'})
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'article2-phase20-meta/1.0'}),timeout=10) as resp:
+                      content=resp.read(300001)
+                  if len(content)>300000:raise ValueError('list XML exceeds byte cap')
+                  root=ET.fromstring(content)
+                  tag=lambda e:e.tag.rsplit('}',1)[-1]
+                  def val(node,key):return next((x.text for x in node if tag(x)==key),None)
+                  if val(root,'Prefix')!=prefix:raise ValueError('S3 prefix mismatch')
+                  items=[(val(x,'Key'),int(val(x,'Size'))) for x in root if tag(x)=='Contents']
+                  trunc=val(root,'IsTruncated')=='true'
+                  if not items or trunc or not any(k.endswith('.snappy.parquet') for k,_ in items):
+                      row.update({'status':'INCOMPLETE_OR_EMPTY','n':len(items),'truncated':trunc})
+                  else:
+                      row.update({'status':'LISTED_METADATA_ONLY','n':len(items),
+                          'bytes':sum(b for _,b in items),
+                          'keys':[{'key':k,'declared_bytes':b} for k,b in items]})
+              except Exception as exc:
+                  row.update({'status':'UNAVAILABLE','error':type(exc).__name__+': '+str(exc)[:120]})
+              return row
+          rows=[]
+          with ThreadPoolExecutor(max_workers=6) as pool:
+              for f in as_completed(pool.submit(check,p) for p in requests):
+                  rows.append(f.result())
+          rows.sort(key=lambda r:(r['case'],r['date'],r['table']))
+          summary={}
+          for case in cases:
+              a=[r for r in rows if r['case']==case]
+              summary[case]={'expected_partition_tables':90,'listed':sum(r['status']=='LISTED_METADATA_ONLY' for r in a),
+                'unavailable':sum(r['status']!='LISTED_METADATA_ONLY' for r in a),
+                'declared_bytes':sum(r.get('bytes',0) for r in a),
+                'n_source_objects':sum(r.get('n',0) for r in a),
+                'per_table':{table:{'listed':sum(r['status']=='LISTED_METADATA_ONLY' and r['table']==table for r in a),
+                                  'declared_bytes':sum(r.get('bytes',0) for r in a if r['table']==table)}
+                             for table in ('logs','transactions','blocks')}}
+          result={'schema':'phase20_full_window_s3_metadata_v1',
+                  'tier':'S3_LISTING_ONLY_NOT_SOURCE_AUDIT',
+                  'candidate_intake_sha256':'6a6217282d93a36926ebea4d83c208fad6fc031786b87522195ef75feecf7e98',
+                  'total_list_requests':len(requests),'raw_parquet_objects_downloaded':0,
+                  'detector_scores_computed':0,'new_incidents_admitted':0,
+                  'summary':summary,'partitions':rows}
+          result['status']='COMPLETE_PARTITION_METADATA_ONLY' if all(v['listed']==90 for v in summary.values()) else 'INCOMPLETE_OR_UNAVAILABLE_PARTITION_METADATA'
+          Path('phase20_full_window_metadata.json').write_text(json.dumps(result,indent=2)+'\n')
+          print('status',result['status'])
+          print('SUMMARY',json.dumps(summary,sort_keys=True))
+          PY
+      - name: Preserve enumerated source metadata
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase20-full-window-metadata
+          path: phase20_full_window_metadata.json
+          if-no-files-found: error
+          retention-days: 30
