@@ -1,0 +1,25 @@
+name: article2-phase30-independent-441-cells
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase30_independent_qa.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independent-formulas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Separate pure-Python implementation checks 7 source streams and all 441 policy cells
+        run: |
+          python papers/monitoring_jss/phase30/independent_policy_audit.py \
+            --out phase30_independent_qa.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: article2-phase30-independent-policy-qa
+          path: phase30_independent_qa.json
+          if-no-files-found: warn
+          retention-days: 30
