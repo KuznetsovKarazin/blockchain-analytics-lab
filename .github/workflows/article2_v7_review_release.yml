@@ -42,8 +42,8 @@ jobs:
       - name: Compile exact article source and create portable package
         working-directory: papers/monitoring_jss/jss_latex_v7_review
         env:
-          TEXINPUTS: /tmp/elsarticle//:
-          BSTINPUTS: /tmp/elsarticle//:
+          TEXINPUTS: '/tmp/elsarticle//:'
+          BSTINPUTS: '/tmp/elsarticle//:'
         run: |
           set -euo pipefail
           export SOURCE_DATE_EPOCH="$(git show -s --format=%ct "$GITHUB_SHA")"
