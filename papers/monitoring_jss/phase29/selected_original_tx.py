@@ -5,7 +5,7 @@ Read-only, label-free; no detector computation, scores or attack joins.
 import argparse, collections, datetime as dt, gzip, hashlib, json, shutil, sys
 from pathlib import Path
 
-CASES = ("cohort28_02", "cohort28_09", "cohort28_10", "cohort28_13")
+CASES = ("cohort28_02", "cohort28_07", "cohort28_09", "cohort28_10", "cohort28_11", "cohort28_13", "cohort28_14")
 COLS = ["address","block_number","transaction_index","transaction_hash",
         "block_hash","block_timestamp","log_index"]
 
@@ -56,7 +56,7 @@ def main():
     check([x["day"] for x in days]==[(start+dt.timedelta(days=i)).isoformat() for i in range(30)],"nonconsecutive days")
     check(sum(x["distinct_core_selected_tx"] for x in days)==case["summary"]["total_distinct_selected_tx"],"Phase28 sum disagrees")
     args.out.mkdir(parents=True,exist_ok=False)
-    caps={"requests":1400,"total_response_bytes":(3600000000 if args.case=="cohort28_10" else 2800000000),"wall_seconds":1550,
+    caps={"requests":1400,"total_response_bytes":(3600000000 if args.case in {"cohort28_10","cohort28_07","cohort28_11","cohort28_14"} else 2800000000),"wall_seconds":1550,
           "request_timeout_seconds":45,"max_range_bytes":32000000,"max_footer_bytes":1500000,
           "max_rows":10000000,"max_row_groups":100,"max_top_level_columns":100,
           "max_leaf_columns":120,"max_source_bytes":850000000,"retries":0,"concurrency":1}
