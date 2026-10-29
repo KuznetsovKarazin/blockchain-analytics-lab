@@ -58,6 +58,6 @@ def main():
  (folder/"SOURCE_RECEIPTS.json").write_text(json.dumps({"batch_receipts":manifest,"source_actions_run":40914786131,"frame_sha256":sha(frame),"windows_sha256":sha(windows)},indent=2)+"\n")
  for name,values in (("CENSUS_CASES.csv",all_cases),("CENSUS_DAILY.csv",daily)):
   with (folder/name).open("w",newline="") as out:
-   writer=csv.DictWriter(out,fieldnames=values[0].keys());writer.writeheader();writer.writerows(values)
+   writer=csv.DictWriter(out,fieldnames=values[0].keys(),lineterminator="\n");writer.writeheader();writer.writerows(values)
  print("PASS independent merge",json.dumps(sums,sort_keys=True))
 if __name__=="__main__":main()
