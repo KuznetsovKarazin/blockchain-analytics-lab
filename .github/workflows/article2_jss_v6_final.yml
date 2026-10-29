@@ -1,0 +1,99 @@
+name: article2-jss-v6-final-reproduction
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths:
+      - '.github/workflows/article2_jss_v6_final.yml'
+      - 'papers/monitoring_jss/jss_latex_v6_final/main.tex'
+      - 'papers/monitoring_jss/jss_latex_v6_final/references.bib'
+      - 'papers/monitoring_jss/jss_latex_v6_final/*_table.tex'
+      - 'papers/monitoring_jss/jss_latex_v6_final/fig*.pdf'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independent rank/count/grouping/budget reimplementation
+        run: |
+          python papers/monitoring_jss/phase30/independent_policy_audit.py --out /tmp/article2_independent.json
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/article2_independent.json'))
+          assert x['status']=='PASS' and x['total_cells']==441 and x['total_transactions']==525
+          assert len(x['cases'])==7 and all(r['status']=='PASS_INDEPENDENT_ALGORITHM' for r in x['cases'])
+          print('PASS independent 7 streams / 441 cells / 525 source-linked TX')
+          PY
+      - name: Independent source/feature control census totals
+        run: |
+          python - <<'PY'
+          import csv,json,pathlib
+          p=pathlib.Path('papers/monitoring_jss')
+          summary=json.loads((p/'phase28/results/CENSUS_SUMMARY.json').read_text())
+          assert summary['candidate_views']==16
+          assert summary['total_emitter_days']==480 and summary['selected_tx']==44780
+          assert summary['days_lt20']==410
+          with (p/'phase26/results/control_runtime_readiness.csv').open(newline='') as f:
+              rows=list(csv.DictReader(f))
+          daily=[r for r in rows if r['mode']=='daily_reset']
+          assert len(daily)==720
+          totals=[sum(int(r[c]) for r in daily) for c in ('transactions','z19_ready','mad19_ready','ewma5_ready')]
+          assert totals==[714951,275250,13816,711525],totals
+          print('PASS 16 candidate source counts, 720 comparison contract-days and 4 readiness totals')
+          PY
+      - name: Preserve signed independent scientific QA
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-jss-v6-independent-reproducibility
+          path: /tmp/article2_independent.json
+          if-no-files-found: error
+          retention-days: 90
+
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install reproducible Elsevier LaTeX toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends \
+             texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+             texlive-publishers texlive-bibtex-extra texlive-fonts-recommended \
+             texlive-science lmodern poppler-utils zip >/dev/null
+      - name: Compile from exact repository source with no local auxiliary files
+        working-directory: papers/monitoring_jss/jss_latex_v6_final
+        run: |
+          set -euo pipefail
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > pdflatex1.log || { tail -100 pdflatex1.log; exit 1; }
+          bibtex8 main > bibtex.log || { cat bibtex.log; exit 1; }
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > pdflatex2.log || { tail -100 pdflatex2.log; exit 1; }
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > pdflatex3.log || { tail -100 pdflatex3.log; exit 1; }
+          test -s main.pdf
+          ! grep -E 'Citation .* undefined|There were undefined references|There were multiply-defined labels' main.log
+          pdfinfo main.pdf | grep '^Pages:'
+          sha256sum main.pdf > PDF_SHA256.txt
+      - name: Assemble portable source-and-paper artifact
+        working-directory: papers/monitoring_jss/jss_latex_v6_final
+        run: |
+          set -euo pipefail
+          zip -q -X Article2_JSS_V6_Manuscript_and_LaTeX.zip \
+            main.tex references.bib alerts_table.tex source_census_tables.tex \
+            fig1_attack_time_selected.pdf fig2_history_eligibility_six_views.pdf \
+            fig3_incident_relative_alerts.pdf fig4_external_readiness_census.pdf \
+            README.md HIGHLIGHTS.md main.pdf PDF_SHA256.txt
+          test -s Article2_JSS_V6_Manuscript_and_LaTeX.zip
+          unzip -t Article2_JSS_V6_Manuscript_and_LaTeX.zip | tail -2
+      - name: Upload PDF manuscript and self-contained LaTeX project
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-jss-v6-latex-pdf
+          path: |
+            papers/monitoring_jss/jss_latex_v6_final/main.pdf
+            papers/monitoring_jss/jss_latex_v6_final/Article2_JSS_V6_Manuscript_and_LaTeX.zip
+            papers/monitoring_jss/jss_latex_v6_final/PDF_SHA256.txt
+          if-no-files-found: error
+          retention-days: 90
