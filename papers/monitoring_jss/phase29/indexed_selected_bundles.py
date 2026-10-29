@@ -14,6 +14,43 @@ def check(b,msg):
 def canon(x):return json.dumps(x,sort_keys=True,separators=(",",":"),ensure_ascii=False,allow_nan=False).encode()
 def sha(x):return hashlib.sha256(x).hexdigest()
 
+def source_bounded_logs(txid, expected_count, rate_log, limits, old):
+    """Read complete indexed event pages up to the pinned original AWS log count.
+
+    The frozen Phase22 helper allowed <=12 pages, but the new independent Omni
+    incident has >600 event logs in one source-pinned transaction. The cap
+    depends solely on AWS declared event volume, not any attack label.
+    """
+    import math, urllib.parse
+    check(type(expected_count) is int and 0<expected_count<5000,
+          "unreasonable original source event count")
+    max_pages=max(12,math.ceil(expected_count/10)+4)
+    current=None
+    seen=set()
+    rows=[]
+    pages=0
+    while True:
+        pages+=1
+        check(pages<=max_pages,"source-bounded page cap")
+        url=old.BASE+txid+"/logs"
+        if current:
+            check(isinstance(current,dict) and 0<len(current)<=5,"bad pagination cursor")
+            url+="?"+urllib.parse.urlencode(current)
+        payload=old.fetch_json(url,rate_log,limits)
+        check(type(payload) is dict and type(payload.get("items")) is list,"unexpected indexer response")
+        items=payload["items"]
+        check(0<len(items)<=50,"empty or oversized indexer page")
+        rows.extend(items)
+        check(len(rows)<=expected_count,"indexer has more events than original AWS")
+        next_page=payload.get("next_page_params")
+        if next_page is None:break
+        ident=json.dumps(next_page,sort_keys=True)
+        check(ident not in seen and next_page!=current,"repeating indexer cursor")
+        seen.add(ident)
+        current=next_page
+    check(len(rows)==expected_count,"incomplete indexed all-emitter transaction bundle")
+    return rows,pages
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--case",required=True,choices=("cohort28_02","cohort28_09","cohort28_10","cohort28_13"))
@@ -48,7 +85,7 @@ def main():
             check(tx["hash"].lower()==src["transaction_hash"] and tx["status"]=="ok","indexed tx failed, missing or mismatched")
             check(tx["block_number"]==src["block_number"] and tx["position"]==src["transaction_index"],"indexed tx source identity mismatch")
             check(old.parse_time(tx["timestamp"])==src["event_time_ns"],"indexed tx timestamp mismatch")
-            events,pages=old.logs_of_tx(src["transaction_hash"],log,limits)
+            events,pages=source_bounded_logs(src["transaction_hash"],expect["all_emitter_log_count"],log,limits,old)
             rows=old.normalized_indexed_rows(events,expect)
             record=old.feature_record(rows,expect,cores)
             record["indexed_pages"]=pages
