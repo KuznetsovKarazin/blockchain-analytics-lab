@@ -1,0 +1,49 @@
+name: article2-phase29-publish-indexed-accepted
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_publish_indexed.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publication-with-independent-crosscheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch only completed original-source-linked indexer artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for case in cohort28_02 cohort28_09; do
+            mkdir -p "raw/$case"
+            gh run download 40925991444 -n "article2-phase29-indexed-$case" -D "raw/$case"
+          done
+      - name: Verify all 163 indexed transaction records against their original S3 identity/count
+        run: |
+          set -euo pipefail
+          for case in cohort28_02 cohort28_09; do
+            target="papers/monitoring_jss/phase29/indexed/$case"
+            mkdir -p "$target"
+            python papers/monitoring_jss/phase29/verify_indexed.py \
+              --case "$case" \
+              --original-dir "papers/monitoring_jss/phase29/data/$case" \
+              --indexed-dir "raw/$case" --out "$target/independent_verification.json"
+            cp "raw/$case/acquisition_manifest.json" "$target/"
+            cp "raw/$case/indexer_observations.jsonl.gz" "$target/"
+            cp "raw/$case/indexer_response_receipts.json" "$target/"
+          done
+      - name: Commit immutable mixed-source derived observations
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase29/indexed
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase29: publish independently source-verified indexer observations for Umbrella and Inverse'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
