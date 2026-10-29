@@ -2,7 +2,9 @@ name: monitoring-phase26-label-free-control-census
 on:
   push:
     branches: [research/monitoring-applicability-20261029]
-    paths: [.github/workflows/monitoring_phase26_control_census.yml]
+    paths:
+      - .github/workflows/monitoring_phase26_control_census.yml
+      - papers/monitoring_jss/phase26/control_readiness_census.py
   workflow_dispatch:
 permissions:
   contents: write
