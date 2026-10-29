@@ -1,0 +1,51 @@
+name: monitoring-phase22-selected-identities-preflight
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase22_identifications.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  projected-original-chain-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [bacon_20220305, rari_pool127_20220430]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned parquet reader
+        run: python -m pip install --disable-pip-version-check pyarrow==19.0.1
+      - name: Restore the independently accepted Phase21 transaction selection
+        uses: actions/download-artifact@v4
+        with:
+          name: article2-phase21-selected-tx-${{ matrix.case }}
+          run-id: 40861738915
+          github-token: ${{ github.token }}
+          path: phase21_selection
+      - name: Recover original S3 identities of selected transactions (one-day pilot)
+        run: |
+          python papers/monitoring_jss/phase22/phase22_hash_identities.py \
+            --case '${{ matrix.case }}' \
+            --selection phase21_selection/selected_tx_result.json \
+            --out phase22_identity_result \
+            --max-days 1 \
+            --limit-bytes 900000000
+      - name: Preserve completed and failed read-only audits
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase22-identity-preflight-${{ matrix.case }}
+          path: |
+            phase22_identity_result/selected_tx_identities.json
+            phase22_identity_result/source_audit.json
+            phase22_identity_result/range_receipts/requests.json
+            phase22_identity_result/range_receipts/plan.json
+            phase22_identity_result/range_receipts/session.json
+          if-no-files-found: warn
+          retention-days: 30
