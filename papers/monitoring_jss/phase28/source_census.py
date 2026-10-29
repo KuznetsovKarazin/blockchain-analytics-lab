@@ -117,7 +117,6 @@ def main():
     need([c["id"] for c in frame["cases"]]==[w["id"] for w in windows["results"]],"window order mismatch")
     selected=frame["cases"][a.batch*2:a.batch*2+2]
     lookup={r["id"]:r for r in windows["results"]}
-    from pathlib import Path
     root=Path(__file__).resolve().parents[3]
     collector=root/"papers/monitoring_jss/phase16/collector"
     sys.path.insert(0,str(collector))
