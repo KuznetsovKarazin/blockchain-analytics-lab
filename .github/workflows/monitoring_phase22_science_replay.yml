@@ -1,0 +1,48 @@
+name: monitoring-phase22-science-replay
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase22_science_replay.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  phase22-science:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download fixed Bacon indexer evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: article2-phase22-indexer-full-bacon_20220305
+          run-id: 40866570847
+          github-token: ${{ github.token }}
+          path: inputs/bacon
+      - name: Download fixed Rari indexer evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: article2-phase22-indexer-full-rari_pool127_20220430
+          run-id: 40866570847
+          github-token: ${{ github.token }}
+          path: inputs/rari
+      - name: Synthetic tests on frozen scoring/grouping/policy code
+        run: python -m unittest discover -s papers/monitoring_jss/phase22 -p test_phase22_science.py -v
+      - name: Full label-blind scoring and late reference join
+        run: |
+          python papers/monitoring_jss/phase22/phase22_science_replay.py \
+            --bacon inputs/bacon/indexer_observations.jsonl.gz \
+            --rari inputs/rari/indexer_observations.jsonl.gz \
+            --out phase22_science_results
+      - name: Preserve full diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase22-complete-replay
+          path: phase22_science_results/
+          if-no-files-found: warn
+          retention-days: 30
