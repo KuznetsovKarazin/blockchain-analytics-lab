@@ -57,7 +57,7 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--base',type=Path,default=Path('/mnt/data'));p.add_argument('--out',type=Path,required=True)
  a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)
  # Independent, full decision-level replication must be green.
- sys.path.insert(0,str(a.base/'article2_phase22'))
+ sys.path.insert(0,str(Path(__file__).resolve().parent))
  from verify_phase22_science_independent import verify
  verified=verify(a.base);require(verified['status']=='PASS' and verified['cells_recomputed']==252,'independent Phase22 FAIL')
  with zipfile.ZipFile(a.base/'Article2_Phase22_CompleteReplay.zip') as z:
