@@ -1,0 +1,54 @@
+{
+  "date_source_scans": 60,
+  "limitations": "Verifies stored S3 listing identities, source-range receipts and counts, not independent receipt roots or original source bytes.",
+  "new_incidents_admitted": 0,
+  "per_core": {
+    "bacon_20220305": {
+      "proxy": {
+        "days": 30,
+        "days_at_least_20": 15,
+        "days_below_20": 15,
+        "days_without_logs": 0,
+        "max_logs": 74,
+        "median_logs": 19.0,
+        "min_logs": 4,
+        "total_logs": 746
+      }
+    },
+    "rari_pool127_20220430": {
+      "comptroller": {
+        "days": 30,
+        "days_at_least_20": 1,
+        "days_below_20": 29,
+        "days_without_logs": 4,
+        "max_logs": 33,
+        "median_logs": 3.5,
+        "min_logs": 0,
+        "total_logs": 146
+      },
+      "fETH": {
+        "days": 30,
+        "days_at_least_20": 4,
+        "days_below_20": 26,
+        "days_without_logs": 4,
+        "max_logs": 54,
+        "median_logs": 8.5,
+        "min_logs": 0,
+        "total_logs": 331
+      },
+      "fUSDC": {
+        "days": 30,
+        "days_at_least_20": 5,
+        "days_below_20": 25,
+        "days_without_logs": 3,
+        "max_logs": 134,
+        "median_logs": 5.0,
+        "min_logs": 0,
+        "total_logs": 426
+      }
+    }
+  },
+  "range_requests": 306,
+  "retained_response_bytes": 381260575,
+  "verification": "PASS_OFFLINE_SUMMARY_AND_RECEIPTS"
+}

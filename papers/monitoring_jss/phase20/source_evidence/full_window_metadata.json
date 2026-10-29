@@ -1,0 +1,2756 @@
+{
+  "schema": "phase20_full_window_s3_metadata_v1",
+  "tier": "S3_LISTING_ONLY_NOT_SOURCE_AUDIT",
+  "candidate_intake_sha256": "6a6217282d93a36926ebea4d83c208fad6fc031786b87522195ef75feecf7e98",
+  "total_list_requests": 180,
+  "raw_parquet_objects_downloaded": 0,
+  "detector_scores_computed": 0,
+  "new_incidents_admitted": 0,
+  "summary": {
+    "bacon_20220305": {
+      "expected_partition_tables": 90,
+      "listed": 90,
+      "unavailable": 0,
+      "declared_bytes": 17387330021,
+      "n_source_objects": 90,
+      "per_table": {
+        "logs": {
+          "listed": 30,
+          "declared_bytes": 6180247225
+        },
+        "transactions": {
+          "listed": 30,
+          "declared_bytes": 11043647410
+        },
+        "blocks": {
+          "listed": 30,
+          "declared_bytes": 163435386
+        }
+      }
+    },
+    "rari_fuse_pool127_20220430": {
+      "expected_partition_tables": 90,
+      "listed": 90,
+      "unavailable": 0,
+      "declared_bytes": 18715057631,
+      "n_source_objects": 90,
+      "per_table": {
+        "logs": {
+          "listed": 30,
+          "declared_bytes": 7320699457
+        },
+        "transactions": {
+          "listed": 30,
+          "declared_bytes": 11233085299
+        },
+        "blocks": {
+          "listed": 30,
+          "declared_bytes": 161272875
+        }
+      }
+    }
+  },
+  "partitions": [
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-04",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-04/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5531775,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-04/part-00000-b685c9ed-deb1-4e22-8811-f659b866fbb8-c000.snappy.parquet",
+          "declared_bytes": 5531775
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-04",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-04/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 204641015,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-04/part-00000-a907d134-0ead-4723-b27f-fd8a80efe1df-c000.snappy.parquet",
+          "declared_bytes": 204641015
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-04",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-04/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 359692979,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-04/part-00000-4c2766cd-eecf-4704-a6f3-fa3ea0ed7e26-c000.snappy.parquet",
+          "declared_bytes": 359692979
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-05",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-05/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5382344,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-05/part-00000-8871ff82-6616-4681-916f-88800057b41b-c000.snappy.parquet",
+          "declared_bytes": 5382344
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-05",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-05/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 199865263,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-05/part-00000-573684c0-c161-49a7-9ac8-f1240046c673-c000.snappy.parquet",
+          "declared_bytes": 199865263
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-05",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-05/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 353903137,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-05/part-00000-54b01633-9960-4634-87fb-8e1c13778162-c000.snappy.parquet",
+          "declared_bytes": 353903137
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-06",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-06/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5512389,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-06/part-00000-ea56d04f-1159-4e20-bac5-9744470d2315-c000.snappy.parquet",
+          "declared_bytes": 5512389
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-06",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-06/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 202974171,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-06/part-00000-ab44d709-bb14-4564-a488-ef7b8db6beac-c000.snappy.parquet",
+          "declared_bytes": 202974171
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-06",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-06/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 343445048,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-06/part-00000-3b1e61ae-438d-4932-aeca-17fcc92abd9a-c000.snappy.parquet",
+          "declared_bytes": 343445048
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-07",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-07/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5452879,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-07/part-00000-4335106f-e138-4574-9d94-19d68428fa03-c000.snappy.parquet",
+          "declared_bytes": 5452879
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-07",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-07/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 202537906,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-07/part-00000-4a99338e-439d-4a57-8599-a663798643b3-c000.snappy.parquet",
+          "declared_bytes": 202537906
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-07",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-07/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 365396106,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-07/part-00000-ba226ea4-c4b3-4961-9da9-fd5bc13dbf6a-c000.snappy.parquet",
+          "declared_bytes": 365396106
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-08",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-08/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5434007,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-08/part-00000-e6c7d3b8-8423-4dbd-99fd-146465433ec9-c000.snappy.parquet",
+          "declared_bytes": 5434007
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-08",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-08/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 208169012,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-08/part-00000-92421e1f-9c05-42f7-a564-ec3545c80aca-c000.snappy.parquet",
+          "declared_bytes": 208169012
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-08",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-08/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 362925978,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-08/part-00000-5dc33d3b-ffb3-4c45-b268-e4e662a2f7f3-c000.snappy.parquet",
+          "declared_bytes": 362925978
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-09",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-09/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5464558,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-09/part-00000-0d3fd708-741c-4cc5-92ba-e63eb234e3b4-c000.snappy.parquet",
+          "declared_bytes": 5464558
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-09",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-09/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 204959274,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-09/part-00000-7969758b-a281-49fa-9f09-7f6c51a5d5f8-c000.snappy.parquet",
+          "declared_bytes": 204959274
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-09",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-09/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 365607998,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-09/part-00000-f96770af-c1c1-43e0-be18-901cb916dcfc-c000.snappy.parquet",
+          "declared_bytes": 365607998
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-10",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-10/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5436764,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-10/part-00000-19602d00-b651-4f58-b79d-dac690aba79e-c000.snappy.parquet",
+          "declared_bytes": 5436764
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-10",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-10/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 201916495,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-10/part-00000-ceaafd5f-446b-4fdd-962e-928caf78cf28-c000.snappy.parquet",
+          "declared_bytes": 201916495
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-10",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-10/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 374702755,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-10/part-00000-a058af0f-f416-492c-9d54-e2addb29ae02-c000.snappy.parquet",
+          "declared_bytes": 374702755
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-11",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-11/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5502747,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-11/part-00000-415e0f2c-5278-4eef-8152-9e0e02be713c-c000.snappy.parquet",
+          "declared_bytes": 5502747
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-11",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-11/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 208905563,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-11/part-00000-09e575bb-112a-4e88-b229-130edd6714df-c000.snappy.parquet",
+          "declared_bytes": 208905563
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-11",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-11/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 368368846,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-11/part-00000-574b86a7-3f0f-44e2-9736-faa87b919391-c000.snappy.parquet",
+          "declared_bytes": 368368846
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-12",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-12/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5452621,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-12/part-00000-0fd8bfbd-152d-413a-bb3e-1f41693ec74b-c000.snappy.parquet",
+          "declared_bytes": 5452621
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-12",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-12/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 202236296,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-12/part-00000-b68b24d0-91ee-4728-879f-7633dc23c00d-c000.snappy.parquet",
+          "declared_bytes": 202236296
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-12",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-12/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 342403723,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-12/part-00000-c92591b7-11d5-4192-b2dc-ecbb98267240-c000.snappy.parquet",
+          "declared_bytes": 342403723
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-13",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-13/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5428513,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-13/part-00000-ffe52176-67f3-47c2-a798-32d83ebbe068-c000.snappy.parquet",
+          "declared_bytes": 5428513
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-13",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-13/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 200261238,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-13/part-00000-c479ab8a-01cb-4649-a2c2-ea796c3b0ca8-c000.snappy.parquet",
+          "declared_bytes": 200261238
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-13",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-13/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 343595770,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-13/part-00000-a23a87ae-2bf0-45ca-a265-c1cc16ed32dd-c000.snappy.parquet",
+          "declared_bytes": 343595770
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-14",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-14/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5428380,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-14/part-00000-284292e9-c003-4348-b6b3-0ba8405dd3b9-c000.snappy.parquet",
+          "declared_bytes": 5428380
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-14",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-14/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 202745537,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-14/part-00000-6016bf81-6f01-417d-87e1-18aebf9460a1-c000.snappy.parquet",
+          "declared_bytes": 202745537
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-14",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-14/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 361431127,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-14/part-00000-485aecc7-4409-45bf-8422-4a975c67f6ba-c000.snappy.parquet",
+          "declared_bytes": 361431127
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-15",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-15/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5506070,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-15/part-00000-4f6af710-0224-4f6c-bb46-f89570286908-c000.snappy.parquet",
+          "declared_bytes": 5506070
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-15",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-15/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 208306174,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-15/part-00000-6119899f-b6b9-4577-aa9b-824d8333ecc8-c000.snappy.parquet",
+          "declared_bytes": 208306174
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-15",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-15/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 383465057,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-15/part-00000-28d41b00-fc0e-4faf-abc1-a2d73ceb7e78-c000.snappy.parquet",
+          "declared_bytes": 383465057
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-16",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-16/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5402779,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-16/part-00000-cb538839-b2b4-4f86-be10-d7610d4aeaf2-c000.snappy.parquet",
+          "declared_bytes": 5402779
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-16",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-16/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 210567000,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-16/part-00000-f7ca3f96-6486-461b-8079-e516e74c4dba-c000.snappy.parquet",
+          "declared_bytes": 210567000
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-16",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-16/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 369029498,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-16/part-00000-b09cf90c-9497-4c10-b4ec-ac2e6414a788-c000.snappy.parquet",
+          "declared_bytes": 369029498
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-17",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-17/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5463569,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-17/part-00000-5c0e1450-88d5-40b0-9a43-909ffb0baba3-c000.snappy.parquet",
+          "declared_bytes": 5463569
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-17",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-17/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 208237121,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-17/part-00000-09e8e31e-8066-4680-ae26-908ce2363eb9-c000.snappy.parquet",
+          "declared_bytes": 208237121
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-17",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-17/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 372233668,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-17/part-00000-0d98d7e8-7eb0-40a7-b948-0e4f716c5ac3-c000.snappy.parquet",
+          "declared_bytes": 372233668
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-18",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-18/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5444574,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-18/part-00000-59c05b74-c776-454a-bee8-97020c134d48-c000.snappy.parquet",
+          "declared_bytes": 5444574
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-18",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-18/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 216151670,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-18/part-00000-8e72783b-b0df-48d7-9d85-3a0689a86f27-c000.snappy.parquet",
+          "declared_bytes": 216151670
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-18",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-18/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 377425451,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-18/part-00000-5f628a91-f395-48fa-bfdd-7f6801d6fc2f-c000.snappy.parquet",
+          "declared_bytes": 377425451
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-19",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-19/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5419161,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-19/part-00000-5b2c3ade-1ed6-41f1-b4e2-90e4cac395cb-c000.snappy.parquet",
+          "declared_bytes": 5419161
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-19",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-19/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 200751669,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-19/part-00000-1ea06460-3c77-4f14-b039-877c56df49f0-c000.snappy.parquet",
+          "declared_bytes": 200751669
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-19",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-19/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 361011091,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-19/part-00000-a035f1e5-df43-4b3c-ab18-fd2173d17e23-c000.snappy.parquet",
+          "declared_bytes": 361011091
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-20",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-20/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5534139,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-20/part-00000-d38808a7-54aa-40d2-a124-4d85afad0942-c000.snappy.parquet",
+          "declared_bytes": 5534139
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-20",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-20/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 235939234,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-20/part-00000-4b1daaa4-2d3e-4827-8bdb-56bb136d5820-c000.snappy.parquet",
+          "declared_bytes": 235939234
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-20",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-20/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 393784696,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-20/part-00000-9ed7ddc9-3869-4d91-8713-ec7746a59b37-c000.snappy.parquet",
+          "declared_bytes": 393784696
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-21",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-21/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5416637,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-21/part-00000-0fabbd80-9f8b-4fca-85f5-5c3496ed88e4-c000.snappy.parquet",
+          "declared_bytes": 5416637
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-21",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-21/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 200133642,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-21/part-00000-ecc65b13-6c67-4715-982e-b10995a0871a-c000.snappy.parquet",
+          "declared_bytes": 200133642
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-21",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-21/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 406613859,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-21/part-00000-f49889bb-090b-4fd4-8591-9376cacc41a4-c000.snappy.parquet",
+          "declared_bytes": 406613859
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-22",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-22/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5471762,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-22/part-00000-d500c148-36ac-4c66-bf65-6cb1cca2a4ba-c000.snappy.parquet",
+          "declared_bytes": 5471762
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-22",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-22/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 203172712,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-22/part-00000-3671a4b7-b514-450e-90de-48cc5205828f-c000.snappy.parquet",
+          "declared_bytes": 203172712
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-22",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-22/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 387075170,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-22/part-00000-6a32b9ac-5e3d-4d7c-9eb4-0b31dbcb9d25-c000.snappy.parquet",
+          "declared_bytes": 387075170
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-23",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-23/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5454361,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-23/part-00000-39c7a97a-9662-4fba-919d-c19df8660c93-c000.snappy.parquet",
+          "declared_bytes": 5454361
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-23",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-23/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 201031352,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-23/part-00000-0dc0554b-88e9-4466-b56d-b28783cc076f-c000.snappy.parquet",
+          "declared_bytes": 201031352
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-23",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-23/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 376293607,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-23/part-00000-017f72f7-e7d0-488d-accc-26df6b328790-c000.snappy.parquet",
+          "declared_bytes": 376293607
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-24",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-24/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5485561,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-24/part-00000-881abd8f-02bb-4617-b1b7-493ac3a33c7b-c000.snappy.parquet",
+          "declared_bytes": 5485561
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-24",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-24/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 216747911,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-24/part-00000-d757ed5b-5130-42d3-aa18-42616dd6534e-c000.snappy.parquet",
+          "declared_bytes": 216747911
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-24",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-24/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 398721791,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-24/part-00000-c9927043-3127-4dac-a823-7c096db2554d-c000.snappy.parquet",
+          "declared_bytes": 398721791
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-25",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-25/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5409942,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-25/part-00000-a19a1ccc-480d-4332-9e82-f388020c3c1f-c000.snappy.parquet",
+          "declared_bytes": 5409942
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-25",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-25/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 198048205,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-25/part-00000-5046bd69-2a74-4a23-a3c8-4a27a4621c16-c000.snappy.parquet",
+          "declared_bytes": 198048205
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-25",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-25/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 376555643,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-25/part-00000-b13a71c3-a9b2-4f89-8586-7e5c131d9b7f-c000.snappy.parquet",
+          "declared_bytes": 376555643
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-26",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-26/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5412324,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-26/part-00000-a894af6a-fc16-47ff-ace0-9094957f4876-c000.snappy.parquet",
+          "declared_bytes": 5412324
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-26",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-26/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 201570743,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-26/part-00000-a2cbe129-c479-4665-82fe-9b6021bdd395-c000.snappy.parquet",
+          "declared_bytes": 201570743
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-26",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-26/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 362643317,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-26/part-00000-c09bb54d-9c68-4e79-b807-0b7ac7074853-c000.snappy.parquet",
+          "declared_bytes": 362643317
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-27",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-27/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5451156,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-27/part-00000-3daf764e-ed05-4cc1-b889-cb69cfc25bb5-c000.snappy.parquet",
+          "declared_bytes": 5451156
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-27",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-27/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 206228147,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-27/part-00000-93246583-f94e-4df0-9d1a-7e12b0d7dcea-c000.snappy.parquet",
+          "declared_bytes": 206228147
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-27",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-27/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 360545498,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-27/part-00000-de36d779-7581-4c31-9c8c-19d409d3194d-c000.snappy.parquet",
+          "declared_bytes": 360545498
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-28",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-02-28/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5416319,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-02-28/part-00000-dedfdffd-18a8-43bd-b668-2e326185572b-c000.snappy.parquet",
+          "declared_bytes": 5416319
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-28",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-02-28/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 200271038,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-02-28/part-00000-e720205f-eedd-4bf9-8902-c31bd2e3d584-c000.snappy.parquet",
+          "declared_bytes": 200271038
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-02-28",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-02-28/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 362464044,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-02-28/part-00000-f9e4d591-f977-4ef0-ad17-fb77d4c08801-c000.snappy.parquet",
+          "declared_bytes": 362464044
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-01",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-03-01/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5478384,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-03-01/part-00000-8bcb39ff-b5e7-4665-b958-a11de962bd6d-c000.snappy.parquet",
+          "declared_bytes": 5478384
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-01",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-03-01/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 210554140,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-03-01/part-00000-f63a0063-13ff-4d97-a591-32a6980f5ab4-c000.snappy.parquet",
+          "declared_bytes": 210554140
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-01",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-03-01/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 371598043,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-03-01/part-00000-ce96f018-46bf-4f62-b226-b264884ba457-c000.snappy.parquet",
+          "declared_bytes": 371598043
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-02",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-03-02/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5400274,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-03-02/part-00000-3955e1ef-314d-4ee0-b8f7-b37eb339360b-c000.snappy.parquet",
+          "declared_bytes": 5400274
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-02",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-03-02/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 208358485,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-03-02/part-00000-c1bb0c1a-fa73-4591-ac07-ac80e7deed94-c000.snappy.parquet",
+          "declared_bytes": 208358485
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-02",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-03-02/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 390767273,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-03-02/part-00000-6290dc40-1297-4b64-a4d4-a9d35d3103af-c000.snappy.parquet",
+          "declared_bytes": 390767273
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-03",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-03-03/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5426027,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-03-03/part-00000-a0d7c520-56fa-4707-9c18-e02a56e463ab-c000.snappy.parquet",
+          "declared_bytes": 5426027
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-03",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-03-03/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 204500982,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-03-03/part-00000-ab44e055-e120-4529-81b4-7510c60db525-c000.snappy.parquet",
+          "declared_bytes": 204500982
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-03",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-03-03/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 369587653,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-03-03/part-00000-a716a7a7-d85f-496a-8e59-a423c0f596a3-c000.snappy.parquet",
+          "declared_bytes": 369587653
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-04",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-03-04/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5467377,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-03-04/part-00000-fcb7dedb-7788-4cc9-869d-67b9517bf5de-c000.snappy.parquet",
+          "declared_bytes": 5467377
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-04",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-03-04/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 207844309,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-03-04/part-00000-b57fd428-161f-41f5-93be-6f701ebc5676-c000.snappy.parquet",
+          "declared_bytes": 207844309
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-04",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-03-04/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 359940436,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-03-04/part-00000-511e6b8b-63dd-40b7-9425-f870a5c523d4-c000.snappy.parquet",
+          "declared_bytes": 359940436
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-05",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-03-05/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5347993,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-03-05/part-00000-4c454d9a-242f-4d60-b705-daa0b60bb943-c000.snappy.parquet",
+          "declared_bytes": 5347993
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-05",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-03-05/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 202620921,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-03-05/part-00000-52404826-a7af-410e-891a-35fdb6225eeb-c000.snappy.parquet",
+          "declared_bytes": 202620921
+        }
+      ]
+    },
+    {
+      "case": "bacon_20220305",
+      "date": "2022-03-05",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-03-05/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 322418148,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-03-05/part-00000-301a5bb2-73aa-4c6b-bfd6-045bf4affb26-c000.snappy.parquet",
+          "declared_bytes": 322418148
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-01",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-01/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5466704,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-01/part-00000-e8b40355-3041-40b1-afe5-5c2510d67b20-c000.snappy.parquet",
+          "declared_bytes": 5466704
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-01",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-01/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 212248069,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-01/part-00000-2057e4fd-957d-4c1b-860e-46f888d7e946-c000.snappy.parquet",
+          "declared_bytes": 212248069
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-01",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-01/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 387988523,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-01/part-00000-96764375-d9d9-48e9-8dcc-54aed654c51e-c000.snappy.parquet",
+          "declared_bytes": 387988523
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-02",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-02/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5389617,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-02/part-00000-6961c16e-fd4c-4493-b54e-af5e77eae42d-c000.snappy.parquet",
+          "declared_bytes": 5389617
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-02",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-02/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 213416360,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-02/part-00000-fcea0575-1f40-4e18-a482-0c44cb375445-c000.snappy.parquet",
+          "declared_bytes": 213416360
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-02",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-02/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 376332921,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-02/part-00000-d88566ca-dceb-4418-bf02-2d84a29bc76d-c000.snappy.parquet",
+          "declared_bytes": 376332921
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-03",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-03/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5417754,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-03/part-00000-e77e848e-6fcb-4fce-87ad-0d21b9ae1eb0-c000.snappy.parquet",
+          "declared_bytes": 5417754
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-03",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-03/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 379010992,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-03/part-00000-9d73465b-2761-402e-8b53-7a3630f3da17-c000.snappy.parquet",
+          "declared_bytes": 379010992
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-03",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-03/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 359086269,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-03/part-00000-9bbf06dc-affd-4a2d-8208-302e182b8123-c000.snappy.parquet",
+          "declared_bytes": 359086269
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-04",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-04/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5331573,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-04/part-00000-77b35342-4b9f-4b3a-964f-06e8e79981d8-c000.snappy.parquet",
+          "declared_bytes": 5331573
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-04",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-04/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 205945708,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-04/part-00000-5f6ab99c-797a-4ab5-bf90-bf3e84991ba6-c000.snappy.parquet",
+          "declared_bytes": 205945708
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-04",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-04/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 358573439,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-04/part-00000-09ef5740-0abb-4e5a-acb8-73bf0c033100-c000.snappy.parquet",
+          "declared_bytes": 358573439
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-05",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-05/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5417248,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-05/part-00000-4ef159a1-bf2f-4dc3-b582-0a423e2df242-c000.snappy.parquet",
+          "declared_bytes": 5417248
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-05",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-05/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 199882208,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-05/part-00000-619d04e1-907b-4e75-a0fe-0367733530cb-c000.snappy.parquet",
+          "declared_bytes": 199882208
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-05",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-05/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 362081918,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-05/part-00000-06ca8a8d-48a7-44e4-92d1-d36ee10536da-c000.snappy.parquet",
+          "declared_bytes": 362081918
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-06",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-06/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5416650,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-06/part-00000-09bfde89-6fe1-4712-9570-9007a41be99e-c000.snappy.parquet",
+          "declared_bytes": 5416650
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-06",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-06/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 215079450,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-06/part-00000-0c3f558e-0d27-4ac8-9e44-4981fdd84f4d-c000.snappy.parquet",
+          "declared_bytes": 215079450
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-06",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-06/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 390277088,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-06/part-00000-9df73e1d-3475-4bd5-8833-0429425410f0-c000.snappy.parquet",
+          "declared_bytes": 390277088
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-07",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-07/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5407090,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-07/part-00000-2e7f24ec-4c83-4ec3-b9ff-e65a6131e815-c000.snappy.parquet",
+          "declared_bytes": 5407090
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-07",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-07/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 205917707,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-07/part-00000-18d2bca1-4d19-47c9-b0e3-bc5047cda2cf-c000.snappy.parquet",
+          "declared_bytes": 205917707
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-07",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-07/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 396180125,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-07/part-00000-7cd81cce-6dbe-4f2e-8003-88080597bb26-c000.snappy.parquet",
+          "declared_bytes": 396180125
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-08",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-08/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5345148,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-08/part-00000-2de506d9-3dc0-4b68-a018-b08fffbbc18c-c000.snappy.parquet",
+          "declared_bytes": 5345148
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-08",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-08/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 208400388,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-08/part-00000-e4cf700d-9ec7-411c-821f-a852d97074f1-c000.snappy.parquet",
+          "declared_bytes": 208400388
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-08",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-08/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 395611438,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-08/part-00000-d98e5e4e-4825-4b06-a7bd-d0d7e6feaff1-c000.snappy.parquet",
+          "declared_bytes": 395611438
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-09",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-09/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5394894,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-09/part-00000-93265593-b8ff-4072-b731-fa713da5712f-c000.snappy.parquet",
+          "declared_bytes": 5394894
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-09",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-09/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 203724490,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-09/part-00000-1f67072e-203e-4188-af72-805971f65f00-c000.snappy.parquet",
+          "declared_bytes": 203724490
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-09",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-09/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 362955712,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-09/part-00000-a671d62c-dcb8-4d5f-a122-1ea7e143683c-c000.snappy.parquet",
+          "declared_bytes": 362955712
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-10",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-10/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5390402,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-10/part-00000-09116deb-cd5b-44b0-b57e-bc05526a0109-c000.snappy.parquet",
+          "declared_bytes": 5390402
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-10",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-10/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 199329323,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-10/part-00000-69338c47-a5fc-4c41-bfc1-8f3e465dc38d-c000.snappy.parquet",
+          "declared_bytes": 199329323
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-10",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-10/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 360478158,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-10/part-00000-2cafd349-ebe4-41ce-be65-0b95e5fa0c1f-c000.snappy.parquet",
+          "declared_bytes": 360478158
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-11",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-11/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5441589,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-11/part-00000-d6f6ee51-12ae-4479-9d16-d5d251f31c4f-c000.snappy.parquet",
+          "declared_bytes": 5441589
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-11",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-11/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 209310419,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-11/part-00000-995225bd-1165-4e01-bf14-3ffd70402722-c000.snappy.parquet",
+          "declared_bytes": 209310419
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-11",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-11/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 377134223,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-11/part-00000-9085da2e-5e5f-4a2b-9ec1-d1c4038f6b43-c000.snappy.parquet",
+          "declared_bytes": 377134223
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-12",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-12/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5435642,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-12/part-00000-201cf8d3-ce81-44f2-bc64-83aed74536b0-c000.snappy.parquet",
+          "declared_bytes": 5435642
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-12",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-12/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 206413790,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-12/part-00000-41f3494c-a34c-49ad-a0ad-fa660b0f2d89-c000.snappy.parquet",
+          "declared_bytes": 206413790
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-12",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-12/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 371927483,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-12/part-00000-4a212c4c-b666-4da3-a7c3-082a2924dd1e-c000.snappy.parquet",
+          "declared_bytes": 371927483
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-13",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-13/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5325994,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-13/part-00000-442af023-90e9-421d-9fa3-6caa25f6421d-c000.snappy.parquet",
+          "declared_bytes": 5325994
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-13",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-13/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 206424521,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-13/part-00000-c02d69c3-af1b-4f6c-8f2b-581afd5b5121-c000.snappy.parquet",
+          "declared_bytes": 206424521
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-13",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-13/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 355840012,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-13/part-00000-5f87eeb2-83c2-4e4a-b016-75c50237f26a-c000.snappy.parquet",
+          "declared_bytes": 355840012
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-14",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-14/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5380705,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-14/part-00000-86f57835-aba0-4e10-b8f7-6ced11b86827-c000.snappy.parquet",
+          "declared_bytes": 5380705
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-14",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-14/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 204897680,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-14/part-00000-31410db3-86de-4ecf-9938-f6338af93261-c000.snappy.parquet",
+          "declared_bytes": 204897680
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-14",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-14/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 365421020,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-14/part-00000-d84ad4e3-00da-46f2-9e1b-3d826c700d92-c000.snappy.parquet",
+          "declared_bytes": 365421020
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-15",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-15/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5417635,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-15/part-00000-cba9f4cd-dd8a-465a-b922-dbef6a173599-c000.snappy.parquet",
+          "declared_bytes": 5417635
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-15",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-15/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 206785294,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-15/part-00000-ca14edbc-c4ac-43ae-bbfd-90d082384622-c000.snappy.parquet",
+          "declared_bytes": 206785294
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-15",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-15/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 356843515,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-15/part-00000-25217e51-1ace-4ceb-bb86-bc0f04eaf7a3-c000.snappy.parquet",
+          "declared_bytes": 356843515
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-16",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-16/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5342501,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-16/part-00000-6e4f7693-6226-48ae-90da-f8356e62b3e1-c000.snappy.parquet",
+          "declared_bytes": 5342501
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-16",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-16/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 209011121,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-16/part-00000-708098d5-0582-457e-b798-9ab542dd80b3-c000.snappy.parquet",
+          "declared_bytes": 209011121
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-16",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-16/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 339492543,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-16/part-00000-ef495741-71e7-4ab2-82fe-ab51be94d701-c000.snappy.parquet",
+          "declared_bytes": 339492543
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-17",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-17/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5392294,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-17/part-00000-16b58699-d097-4d80-bff7-067b6768736c-c000.snappy.parquet",
+          "declared_bytes": 5392294
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-17",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-17/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 390316788,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-17/part-00000-d446ec27-2a7a-4a4b-aef9-2ad1fc2c190e-c000.snappy.parquet",
+          "declared_bytes": 390316788
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-17",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-17/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 342282504,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-17/part-00000-db8063c0-4590-4e0b-844d-9b2e9d9d515d-c000.snappy.parquet",
+          "declared_bytes": 342282504
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-18",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-18/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5351068,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-18/part-00000-84f4571b-29bb-4e51-aef2-d8c6319ab40b-c000.snappy.parquet",
+          "declared_bytes": 5351068
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-18",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-18/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 215501701,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-18/part-00000-d3fd3330-d854-4191-921e-9841f49546b6-c000.snappy.parquet",
+          "declared_bytes": 215501701
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-18",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-18/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 364022780,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-18/part-00000-f534c8de-0192-47c3-ae96-218189823891-c000.snappy.parquet",
+          "declared_bytes": 364022780
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-19",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-19/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5375825,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-19/part-00000-1656834c-e403-4b99-b748-059332f01e9a-c000.snappy.parquet",
+          "declared_bytes": 5375825
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-19",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-19/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 210428117,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-19/part-00000-efb1ccb4-b0f2-43f0-82ef-a40700b3563f-c000.snappy.parquet",
+          "declared_bytes": 210428117
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-19",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-19/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 389523624,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-19/part-00000-d2a007e8-c4d0-46ba-ba92-8684ff523263-c000.snappy.parquet",
+          "declared_bytes": 389523624
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-20",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-20/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5398668,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-20/part-00000-0f518c6e-eeaf-486a-80f4-ab2789298410-c000.snappy.parquet",
+          "declared_bytes": 5398668
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-20",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-20/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 202103098,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-20/part-00000-4f11f066-9e92-4793-8ed9-bc6808b5cd87-c000.snappy.parquet",
+          "declared_bytes": 202103098
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-20",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-20/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 406117150,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-20/part-00000-cb5ffd1f-2d00-4044-9dc6-4a75b7f1ec9b-c000.snappy.parquet",
+          "declared_bytes": 406117150
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-21",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-21/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5285386,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-21/part-00000-bdb87a43-d168-418d-b431-9cd4ddcb3fed-c000.snappy.parquet",
+          "declared_bytes": 5285386
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-21",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-21/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 211854848,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-21/part-00000-0563aaae-958d-4262-9e14-4ccca973ff16-c000.snappy.parquet",
+          "declared_bytes": 211854848
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-21",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-21/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 380607375,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-21/part-00000-f692317c-bca3-46b6-98a0-580c9c44e69e-c000.snappy.parquet",
+          "declared_bytes": 380607375
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-22",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-22/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5384968,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-22/part-00000-edb60bbc-9405-4b62-9658-572949ddee6d-c000.snappy.parquet",
+          "declared_bytes": 5384968
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-22",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-22/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 211559885,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-22/part-00000-158049b5-b177-4b14-880b-483ba4d74052-c000.snappy.parquet",
+          "declared_bytes": 211559885
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-22",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-22/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 384976555,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-22/part-00000-a31d8e3c-3b80-48a1-8d0b-86d8d395c4e9-c000.snappy.parquet",
+          "declared_bytes": 384976555
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-23",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-23/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5348470,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-23/part-00000-86678f06-d4c5-4da3-ac35-8333b5b87c8e-c000.snappy.parquet",
+          "declared_bytes": 5348470
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-23",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-23/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 382025583,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-23/part-00000-9c7b5b68-7043-4280-ae4e-0703422b5678-c000.snappy.parquet",
+          "declared_bytes": 382025583
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-23",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-23/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 358977353,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-23/part-00000-58b647f5-4f24-4922-abcb-e92b3fe181fb-c000.snappy.parquet",
+          "declared_bytes": 358977353
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-24",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-24/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5329101,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-24/part-00000-68722fad-0a68-47f7-96c7-ed180e2f9995-c000.snappy.parquet",
+          "declared_bytes": 5329101
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-24",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-24/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 383814846,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-24/part-00000-5330332b-31a6-4624-8d67-5edb3c104c87-c000.snappy.parquet",
+          "declared_bytes": 383814846
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-24",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-24/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 367839125,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-24/part-00000-e887b183-8715-478f-90c7-bfa63b8f122c-c000.snappy.parquet",
+          "declared_bytes": 367839125
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-25",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-25/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5332406,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-25/part-00000-4de6b185-575d-4132-a85c-34a0d8e6246a-c000.snappy.parquet",
+          "declared_bytes": 5332406
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-25",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-25/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 375781377,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-25/part-00000-64e87d5d-9154-4054-96c7-4346f4ac0214-c000.snappy.parquet",
+          "declared_bytes": 375781377
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-25",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-25/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 398583746,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-25/part-00000-7c054a8b-fdd3-4355-9b57-eb754e1ef4ec-c000.snappy.parquet",
+          "declared_bytes": 398583746
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-26",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-26/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5322865,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-26/part-00000-348e0bd0-f0dc-402a-bb45-b9a2a7123c3e-c000.snappy.parquet",
+          "declared_bytes": 5322865
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-26",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-26/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 216450303,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-26/part-00000-da32e202-3cfd-4946-92fa-e11e6eae5582-c000.snappy.parquet",
+          "declared_bytes": 216450303
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-26",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-26/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 375869373,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-26/part-00000-7065cf68-8f8d-4204-8b97-d62a99e29b1e-c000.snappy.parquet",
+          "declared_bytes": 375869373
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-27",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-27/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5377584,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-27/part-00000-ea52a198-83ff-4d83-9904-f3fbbcc642d6-c000.snappy.parquet",
+          "declared_bytes": 5377584
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-27",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-27/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 212137388,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-27/part-00000-aa360550-552f-44d4-a463-06f3fad06d06-c000.snappy.parquet",
+          "declared_bytes": 212137388
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-27",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-27/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 403247272,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-27/part-00000-96a651b1-816e-45da-af21-3bd1f7cb965d-c000.snappy.parquet",
+          "declared_bytes": 403247272
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-28",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-28/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5341283,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-28/part-00000-2157f227-9416-4f90-ad98-7d356a38b1e0-c000.snappy.parquet",
+          "declared_bytes": 5341283
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-28",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-28/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 216993847,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-28/part-00000-1c496660-1f31-44c2-a685-852af3369bfe-c000.snappy.parquet",
+          "declared_bytes": 216993847
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-28",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-28/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 383690001,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-28/part-00000-a66908bf-3374-4711-8c5f-0929f6daef45-c000.snappy.parquet",
+          "declared_bytes": 383690001
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-29",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-29/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5371964,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-29/part-00000-c2996d15-d36b-48f6-8dc7-1150d06da7b6-c000.snappy.parquet",
+          "declared_bytes": 5371964
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-29",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-29/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 217506153,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-29/part-00000-7f8d22c6-d861-4f63-858e-1a73ef87e8d5-c000.snappy.parquet",
+          "declared_bytes": 217506153
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-29",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-29/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 383968057,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-29/part-00000-863f08f0-151a-464d-9159-831581d7b029-c000.snappy.parquet",
+          "declared_bytes": 383968057
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-30",
+      "table": "blocks",
+      "prefix": "v1.0/eth/blocks/date=2022-04-30/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 5339847,
+      "keys": [
+        {
+          "key": "v1.0/eth/blocks/date=2022-04-30/part-00000-e189a140-40b2-48f6-9531-6d004543e9b8-c000.snappy.parquet",
+          "declared_bytes": 5339847
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-30",
+      "table": "logs",
+      "prefix": "v1.0/eth/logs/date=2022-04-30/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 388428003,
+      "keys": [
+        {
+          "key": "v1.0/eth/logs/date=2022-04-30/part-00000-b9f8f61d-573c-47ee-9fcc-1cd417cfcc07-c000.snappy.parquet",
+          "declared_bytes": 388428003
+        }
+      ]
+    },
+    {
+      "case": "rari_fuse_pool127_20220430",
+      "date": "2022-04-30",
+      "table": "transactions",
+      "prefix": "v1.0/eth/transactions/date=2022-04-30/",
+      "status": "LISTED_METADATA_ONLY",
+      "n": 1,
+      "bytes": 377155997,
+      "keys": [
+        {
+          "key": "v1.0/eth/transactions/date=2022-04-30/part-00000-e7152521-5144-4c78-9090-7002cc1caefe-c000.snappy.parquet",
+          "declared_bytes": 377155997
+        }
+      ]
+    }
+  ],
+  "status": "COMPLETE_PARTITION_METADATA_ONLY"
+}
