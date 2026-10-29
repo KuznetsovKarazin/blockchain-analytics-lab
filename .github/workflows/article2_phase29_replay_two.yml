@@ -1,0 +1,50 @@
+name: article2-phase29-two-case-locked-replay
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_replay_two.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deterministic-replay:
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [cohort28_02, cohort28_09]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently check pinned S3 plus indexed observations
+        run: |
+          python papers/monitoring_jss/phase29/verify_indexed.py \
+            --case ${{ matrix.case }} \
+            --original-dir papers/monitoring_jss/phase29/data/${{ matrix.case }} \
+            --indexed-dir papers/monitoring_jss/phase29/indexed/${{ matrix.case }} \
+            --out /tmp/verified_phase29.json
+      - name: Exact label-blind fixed baseline replay and post-score candidate join
+        run: |
+          python papers/monitoring_jss/phase29/fixed_replay.py \
+            --case ${{ matrix.case }} \
+            --indexed-dir papers/monitoring_jss/phase29/indexed/${{ matrix.case }} \
+            --out science/${{ matrix.case }} \
+            --reference-ledger papers/monitoring_jss/phase29/REFERENCE_ROLE_LEDGER.json
+      - name: Independent clean-directory deterministic re-execution and exact byte check
+        run: |
+          python papers/monitoring_jss/phase29/fixed_replay.py \
+            --case ${{ matrix.case }} \
+            --indexed-dir papers/monitoring_jss/phase29/indexed/${{ matrix.case }} \
+            --out /tmp/second_scientific_replay_${{ matrix.case }} \
+            --reference-ledger papers/monitoring_jss/phase29/REFERENCE_ROLE_LEDGER.json
+          for f in label_blind_replay.json reference_join.json method_policy_cells.csv; do
+            cmp "science/${{ matrix.case }}/$f" "/tmp/second_scientific_replay_${{ matrix.case }}/$f"
+          done
+      - name: Preserve complete or explicitly rejected evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase29-replay-${{ matrix.case }}
+          path: science/${{ matrix.case }}
+          if-no-files-found: warn
+          retention-days: 30
