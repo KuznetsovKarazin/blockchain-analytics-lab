@@ -1,0 +1,101 @@
+name: monitoring-phase20-reference-erc20-corrected
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase20_reference_erc20_corrected.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  indexed-transfer-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Correct padded topic-array parsing and preserve full summary
+        run: |
+          python - <<'PY'
+          from collections import Counter, defaultdict
+          from pathlib import Path
+          import json,urllib.request,urllib.parse
+          cases={
+            'bacon_20220305':{
+                'tx':'0x7d2296bcb936aa5e2397ddf8ccba59f54a178c3901666b49291d880369dbcf31',
+                'cores':{'proxy':'0xb8919522331c59f5c16bdfaa6a121a6e03a91f62'}},
+            'rari_fuse_127_20220430':{
+                'tx':'0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530',
+                'cores':{'fETH':'0x26267e41ceca7c8e0f143554af707336f27fa051',
+                         'fUSDC':'0xebe0d1cb6a0b8569929e062d67bfbC07608f0a47',
+                         'comptroller':'0x3f2d1bc6d02522dbcdb216b2e75edddafe04b16f'}}}
+          TRANSFER='0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
+          def get(url):
+              with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Article2-phase20-ERC20-v2/1.0'}),timeout=14) as f:
+                  data=f.read(1000001)
+              if len(data)>1000000:raise ValueError('response too large')
+              return json.loads(data)
+          def emitter(log):
+              a=log.get('address')
+              if isinstance(a,dict):a=a.get('hash')
+              return str(a).lower() if a else ''
+          output={'schema':'phase20_blockscout_reference_erc20_shape_v2',
+              'scope':'indexed successful reference transaction logs; not independently authenticated receipts',
+              'parquet_logs_acquired':0,'external_case_admissions':0,'rows':[]}
+          for name,config in cases.items():
+              tx=config['tx'];base='https://eth.blockscout.com/api/v2/transactions/'+tx
+              info=get(base)
+              if str(info.get('hash','')).lower()!=tx or info.get('status')!='ok':raise ValueError('transaction identity/status')
+              logs=[];params=None
+              for p in range(10):
+                  obj=get(base+'/logs'+('?'+urllib.parse.urlencode(params) if params else ''))
+                  logs.extend(obj['items'])
+                  if len(logs)>800:raise ValueError('unbounded indexed log count')
+                  params=obj.get('next_page_params')
+                  if params is None:break
+              else:raise ValueError('pagination incomplete')
+              core={k:a.lower() for k,a in config['cores'].items()}
+              emitted=Counter(emitter(log) for log in logs)
+              erc20=[];n_nonempty=0;skipped=Counter()
+              for log in logs:
+                  raw_topics=log.get('topics')
+                  if not isinstance(raw_topics,list):
+                      skipped['invalid_topics']+=1;continue
+                  topics=[x.lower() for x in raw_topics if isinstance(x,str) and x.startswith('0x') and x!='0x']
+                  n_nonempty+=len(topics)
+                  if not topics or topics[0]!=TRANSFER:continue
+                  raw=log.get('data')
+                  if len(topics)!=3 or not isinstance(raw,str) or len(raw)!=66 or not raw.startswith('0x'):
+                      skipped['not_erc20_shaped']+=1;continue
+                  src='0x'+topics[1][-40:];dest='0x'+topics[2][-40:]
+                  val=int(raw,16)
+                  if val<=0:continue
+                  erc20.append({'token':emitter(log),'from':src,'to':dest,'raw_amount':val})
+              metrics={}
+              for label,a in core.items():
+                  outgoing=[x for x in erc20 if x['from']==a and x['to']!=a]
+                  incoming=[x for x in erc20 if x['to']==a and x['from']!=a]
+                  metrics[label]={'address':a,'emitted_logs':emitted[a],
+                     'erc20_gross_external_out_transfer_count':len(outgoing),
+                     'erc20_gross_external_in_transfer_count':len(incoming),
+                     'out_token_counts':dict(sorted(Counter(x['token'] for x in outgoing).items())),
+                     'in_token_counts':dict(sorted(Counter(x['token'] for x in incoming).items())),
+                     'out_token_raw_amounts':{t:str(sum(x['raw_amount'] for x in outgoing if x['token']==t))
+                         for t in sorted({x['token'] for x in outgoing})}}
+              core_union=set(core.values())
+              noncore_transfers=sum(x['from'] not in core_union and x['to'] not in core_union for x in erc20)
+              output['rows'].append({'case':name,'reference_tx':tx,'block':info.get('block_number'),
+                 'timestamp':info.get('timestamp'),'status':info.get('status'),
+                 'indexed_log_count':len(logs),'erc20_shaped_positive_transfers':len(erc20),
+                 'positive_transfers_not_touching_any_candidate_core':noncore_transfers,
+                 'core_metrics':metrics,'nonempty_topic_elements':n_nonempty,
+                 'notes':'Core candidates are not independently frozen for a 30-day population; no historical rank or notification computed.'})
+          Path('phase20_reference_erc20_corrected.json').write_text(json.dumps(output,indent=2)+'\n')
+          for x in output['rows']:
+              print(x['case'],'logs=',x['indexed_log_count'],'erc20=',x['erc20_shaped_positive_transfers'],
+                  'noncore=',x['positive_transfers_not_touching_any_candidate_core'])
+              for key,y in x['core_metrics'].items():
+                  print(' ',key,'emitted=',y['emitted_logs'],'core_out=',y['erc20_gross_external_out_transfer_count'],'core_in=',y['erc20_gross_external_in_transfer_count'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase20-reference-erc20-corrected
+          path: phase20_reference_erc20_corrected.json
+          retention-days: 30
