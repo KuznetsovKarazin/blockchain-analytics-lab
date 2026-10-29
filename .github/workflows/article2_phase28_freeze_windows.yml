@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Recover immutable source-window metadata
         env:
-          GH_TOKEN: \${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           mkdir -p /tmp/a2p28
