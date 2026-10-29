@@ -1,0 +1,46 @@
+name: article2-phase28-freeze-fork-windows
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase28_freeze_windows.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  freeze-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover immutable source-window metadata
+        env:
+          GH_TOKEN: \${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/a2p28
+          gh run download 40914114138 -n article2-phase28-fork-window-preflight -D /tmp/a2p28
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          src=Path('/tmp/a2p28/phase28_fork_window_metadata.json')
+          data=json.loads(src.read_text())
+          frame=Path('papers/monitoring_jss/phase28/CANDIDATE_FRAME.json')
+          f=json.loads(frame.read_text())
+          assert data['complete']==len(data['results'])==len(f['cases'])==16
+          assert data['frame_sha256']==hashlib.sha256(frame.read_bytes()).hexdigest()
+          assert [i['id'] for i in data['results']]==[c['id'] for c in f['cases']]
+          assert all(i['status']=='INDEXED_BLOCK_DATE' and
+                     i['poC_fork_block']==c['poC_fork_block']
+                     for i,c in zip(data['results'],f['cases']))
+          Path('papers/monitoring_jss/phase28/FORK_WINDOWS.json').write_bytes(src.read_bytes())
+          print('PASS: 16 fixed source windows, matching frozen frame')
+          PY
+      - name: Record source-window file as a public immutable commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase28/FORK_WINDOWS.json
+          git diff --cached --check
+          git commit -m 'Phase28: freeze 16 externally indexed PoC fork-window dates before S3 source census'
+          git push origin HEAD:research/monitoring-v6-independent-cohort
