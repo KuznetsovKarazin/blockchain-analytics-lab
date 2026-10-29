@@ -1,0 +1,50 @@
+name: monitoring-phase27-aws-payload-matching
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase27_aws_payload_matching.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  original-log-payloads:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - name: Install bounded original-Parquet reader
+        run: pip install --disable-pip-version-check 'pyarrow==19.0.1'
+      - name: Original AWS topic/data audit for every emitted Bacon/Rari primary alert
+        run: |
+          set -euo pipefail
+          python papers/monitoring_jss/phase27/verify_aws_log_payloads.py \
+            --ledger papers/monitoring_jss/phase23/results/alert_ledger.csv \
+            --phase20 papers/monitoring_jss/phase20/source_evidence/core_traffic.json \
+            --bacon-archive papers/monitoring_jss/phase25/data/Article2_Phase22_IndexedFull_12894646607.zip \
+            --rari-archive papers/monitoring_jss/phase25/data/Article2_Phase22_IndexedFull_12894666788.zip \
+            --out /tmp/phase27
+      - name: Verify output and publish small hash evidence
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('/tmp/phase27/summary.json').read_text())
+          assert r['status']=='PASS'
+          assert r['original_log_matches']==r['selected_transactions']
+          assert r['original_log_matches']>=9
+          assert len(r['source_days'])>=3
+          print('INDEPENDENT_S3_PAYLOAD_AUDIT_PASS',r['original_log_matches'])
+          PY
+          mkdir -p papers/monitoring_jss/phase27/results
+          cp /tmp/phase27/summary.json papers/monitoring_jss/phase27/results/summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase27/results/summary.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+             git commit -m 'Phase27: independently verify original AWS event payloads for exact primary alerts'
+             git push origin HEAD:research/monitoring-applicability-20261029
+          fi
