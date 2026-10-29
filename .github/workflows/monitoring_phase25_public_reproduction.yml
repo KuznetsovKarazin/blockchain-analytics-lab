@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.13'
       - name: Recover original workflow data
         env:
           GH_TOKEN: ${{ github.token }}
@@ -73,7 +73,7 @@ jobs:
           p=Path('papers/monitoring_jss/phase23/results')
           for name,digest in json.loads((p/'audit_manifest.json').read_text())['outputs_sha256'].items():
               data=(Path('/tmp/a2/rebuilt')/name).read_bytes()
-              assert hashlib.sha256(data).hexdigest()==digest,name
+              assert hashlib.sha256(data).hexdigest()==digest,(name, hashlib.sha256(data).hexdigest(),digest)
               assert data==(p/name).read_bytes(),name
           print('PASS: independent replication; all outputs identical')
           PY
