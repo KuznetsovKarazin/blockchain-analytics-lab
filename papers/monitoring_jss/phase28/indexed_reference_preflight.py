@@ -52,10 +52,10 @@ def main():
             if complete:
                 addr=[]
                 for log in logs:
-                    a=log.get("address")
-                    if isinstance(a,dict):a=a.get("hash")
-                    if not isinstance(a,str):raise ValueError("log address malformed")
-                    addr.append(a.lower())
+                    emitter=log.get("address")
+                    if isinstance(emitter,dict):emitter=emitter.get("hash")
+                    if not isinstance(emitter,str):raise ValueError("log address malformed")
+                    addr.append(emitter.lower())
                 row.update(core_emitter_logs=sum(x==core for x in addr),
                     indexed_all_emitter_logs=len(logs),log_bundle_complete=True)
         except Exception as e:
