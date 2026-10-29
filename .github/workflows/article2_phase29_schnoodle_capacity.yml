@@ -1,0 +1,33 @@
+name: article2-phase29-schnoodle-source-capacity
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_schnoodle_capacity.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rerun-rejected-source-attempt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 29
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Parquet library
+        run: python -m pip install --disable-pip-version-check pyarrow==19.0.1
+      - name: Rebuild all 30 days independently after documented byte-cap exhaustion
+        run: |
+          python papers/monitoring_jss/phase29/selected_original_tx.py \
+            --case cohort28_10 --out phase29_out/cohort28_10
+      - name: Retain success or failure evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase29-ids-cohort28_10-recap
+          path: |
+            phase29_out/cohort28_10/source_identity_manifest.json
+            phase29_out/cohort28_10/selected_tx_identities.jsonl.gz
+          if-no-files-found: error
+          retention-days: 30
