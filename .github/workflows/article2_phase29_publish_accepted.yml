@@ -1,0 +1,46 @@
+name: article2-phase29-publish-accepted-source-identities
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_publish_accepted.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  verify-publish-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read three completed original-source artifacts (source-only)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for case in cohort28_02 cohort28_09 cohort28_13; do
+            mkdir -p "inputs/$case"
+            gh run download 40924858879 -n "article2-phase29-ids-$case" -D "inputs/$case"
+          done
+      - name: Verify each original AWS identity before publishing
+        run: |
+          set -euo pipefail
+          for case in cohort28_02 cohort28_09 cohort28_13; do
+            mkdir -p "papers/monitoring_jss/phase29/data/$case"
+            python papers/monitoring_jss/phase29/verify_source_streams.py \
+              --case "$case" --source-dir "inputs/$case" \
+              --out "papers/monitoring_jss/phase29/data/$case/independent_verification.json"
+            cp "inputs/$case/source_identity_manifest.json" "papers/monitoring_jss/phase29/data/$case/"
+            cp "inputs/$case/selected_tx_identities.jsonl.gz" "papers/monitoring_jss/phase29/data/$case/"
+          done
+      - name: Publish SHA-bound derived source identities (not raw Parquet or scores)
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase29/data
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase29: publish independently verified AWS selected transaction identities for three new candidates'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
