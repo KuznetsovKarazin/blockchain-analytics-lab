@@ -43,7 +43,7 @@ def verify(case,original,indexed):
              and rec["dataset_execution_status_source"]=="Blockscout_v2_success_status","incorrect indexer source tier")
         view=rec["views"].get("fixed_core")
         need(view and view["archived_core_log_count"]==input_tx["core_emitter_logs"],"missing fixed-core view")
-        need(HEX.fullmatch(rec["all_emitter_logs_sha256"]),"no indexer event payload checksum")
+        need(re.fullmatch(r"[0-9a-f]{64}",rec["all_emitter_logs_sha256"]),"no indexer event payload checksum")
     return {"schema":"article2_phase29_independent_mixed_source_verification_v1",
             "case":case,"status":"PASS_SOURCE_MATCHED_INDEXED_ONLY",
             "source_selected_transactions":len(txs),
