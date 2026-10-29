@@ -1,0 +1,19 @@
+name: monitoring-phase21-offline-count-check
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths:
+      - .github/workflows/monitoring_phase21_offline_verify.yml
+      - papers/monitoring_jss/phase21/selected_tx_daily_counts.csv
+      - papers/monitoring_jss/phase21/verify_published_counts.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify distinct-TX counts, union bounds, and frozen daily emitted logs
+        run: python papers/monitoring_jss/phase21/verify_published_counts.py
