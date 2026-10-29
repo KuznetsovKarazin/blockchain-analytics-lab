@@ -1,0 +1,78 @@
+name: article2-jss-v6-1-final-pin-and-publish
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_jss_v6_1_publish.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  final-source-audited-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download only the successful independent LaTeX and evidence QA
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/v61
+          gh run download 40934936653 -n article2-v6-1-final-latex -D /tmp/v61
+          test -s /tmp/v61/main.pdf
+          test -s /tmp/v61/Article2_JSS_V6_1_Final_LaTeX_PDF.zip
+      - name: Verify all published source bytes, bibliography, figures, and PDF digest
+        run: |
+          set -euo pipefail
+          cd papers/monitoring_jss/jss_latex_v6_1_final
+          (cd /tmp/v61 && sha256sum --check PDF_SHA256.txt)
+          unzip -t /tmp/v61/Article2_JSS_V6_1_Final_LaTeX_PDF.zip | tail -2
+          for f in main.tex references.bib alerts_table.tex source_census_tables.tex \
+                   fig1_attack_time_selected.pdf fig2_history_eligibility_six_views.pdf \
+                   fig3_incident_relative_alerts.pdf fig4_external_readiness_census.pdf \
+                   README.md HIGHLIGHTS.md; do
+            unzip -p /tmp/v61/Article2_JSS_V6_1_Final_LaTeX_PDF.zip "$f" | cmp - "$f"
+          done
+          unzip -p /tmp/v61/Article2_JSS_V6_1_Final_LaTeX_PDF.zip main.pdf | cmp - /tmp/v61/main.pdf
+          test "$(git hash-object main.tex)" = b4f85083744bb6dd0e61f9363b19af58d2f9cbaf
+          test "$(git hash-object references.bib)" = 272ef81d47d554bfa14e34c6606dab430b4f32a7
+          printf '%s\n' "PASS: exact V6.1 text, bibliography, 4 vector figures, build output and SHA256"
+      - name: Permanently archive PDF and ZIP with exact source-citation release manifest
+        run: |
+          set -euo pipefail
+          cd papers/monitoring_jss/jss_latex_v6_1_final
+          initial_source_commit=$(git rev-parse HEAD)
+          cp /tmp/v61/main.pdf main.pdf
+          cp /tmp/v61/Article2_JSS_V6_1_Final_LaTeX_PDF.zip Article2_JSS_V6_1_Final_LaTeX_PDF.zip
+          cp /tmp/v61/PDF_SHA256.txt PDF_SHA256.txt
+          cat > RELEASE_MANIFEST.txt <<EOF
+          Article2 JSS V6.1 corrected bibliography and source-pin edition
+          CI source reproducibility and latex run: https://github.com/KuznetsovKarazin/blockchain-analytics-lab/actions/runs/40934936653
+          Source-revision commit: $initial_source_commit
+          Immutable research tag: article2-jss-v6.1-2026-10-29
+          Scientific evidence: 7 nonrandom fixed-core case streams, 525 selected transactions, 441 independently reproduced policy cells.
+          Conditional exact joins are not incident-population recall; full reference inventories remain incomplete.
+          Author competing interests, research-supported funding and AI-use declarations require sign-off before journal submission.
+          Zenodo DOI has not been registered. Manuscript was not submitted.
+          EOF
+          sha256sum main.pdf Article2_JSS_V6_1_Final_LaTeX_PDF.zip >> RELEASE_MANIFEST.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add main.pdf Article2_JSS_V6_1_Final_LaTeX_PDF.zip PDF_SHA256.txt RELEASE_MANIFEST.txt
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'JSS Article2 V6.1 release: publish corrected pinned article PDF and exact LaTeX sources'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
+      - name: Create new immutable versioned article tag, never move V6
+        run: |
+          set -euo pipefail
+          git fetch origin --tags --quiet
+          if git rev-parse -q --verify 'refs/tags/article2-jss-v6.1-2026-10-29' >/dev/null; then
+            echo 'Existing tag detected: refusing to overwrite' >&2
+            exit 1
+          fi
+          git tag -a article2-jss-v6.1-2026-10-29 -m 'JSS Article2 V6.1 final research edition; bibliography and pin aligned; not journal submission'
+          git push origin refs/tags/article2-jss-v6.1-2026-10-29
+          echo "FINAL_V6_1_TAG_COMMIT=$(git rev-parse HEAD)"
