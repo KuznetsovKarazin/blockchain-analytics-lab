@@ -45,7 +45,7 @@ def main():
   manifest.append({"batch":batch,"sha256":sha(raw),"ranges":data["range_requests"],"response_bytes":data["response_bytes"]})
  need(len(all_cases)==16 and len(daily)==480,"missing cases or days")
  sums={"schema":"phase28_external_candidate_source_census_v1","candidate_views":16,
-   "total_emitter_days":480,"active_emitter_days":sum(x["total_tx"]>0 for x in daily),
+   "total_emitter_days":480,"active_emitter_days":sum(x["tx"]>0 for x in daily),
    "zero_emitter_days":sum(x["tx"]==0 for x in daily),
    "days_lt20":sum(x["tx"]<20 for x in daily),
    "days_positive_lt20":sum(0<x["tx"]<20 for x in daily),
