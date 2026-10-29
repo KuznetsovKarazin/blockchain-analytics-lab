@@ -1,0 +1,71 @@
+{
+  "all_emitter_logs": 2103,
+  "archive_extracted_to_fresh_temporary_directory": true,
+  "attack_reference_inventory_closed": false,
+  "cases": [
+    {
+      "all_emitter_logs": 850,
+      "all_frozen_features_match": true,
+      "all_historical_payload_digests_match": true,
+      "all_independent_counts_and_flows_match": true,
+      "case": "cohort28_07",
+      "http_receipt_chain_head": "24e508ffee47968343a11c75067ddf4ac476288af1b5b47efc8b90359fb34840",
+      "http_response_bytes": 2816353,
+      "http_response_count": 92,
+      "offline_verification_sha256": "70e145a159922d0ff87b1c0b5c9bcae0004f3a918744f3784b586e0aa488475a",
+      "verified_transactions": 44
+    },
+    {
+      "all_emitter_logs": 1200,
+      "all_frozen_features_match": true,
+      "all_historical_payload_digests_match": true,
+      "all_independent_counts_and_flows_match": true,
+      "case": "cohort28_11",
+      "http_receipt_chain_head": "524089c47fc4870a33ce164986f91724dcbfed1ae11c5c91f88c58a6b019fbf2",
+      "http_response_bytes": 3478583,
+      "http_response_count": 107,
+      "offline_verification_sha256": "b6a0083b53c386d2f39f14e643ce8a387c19f98be54e5c601a1355021af16e9d",
+      "verified_transactions": 43
+    },
+    {
+      "all_emitter_logs": 53,
+      "all_frozen_features_match": true,
+      "all_historical_payload_digests_match": true,
+      "all_independent_counts_and_flows_match": true,
+      "case": "cohort28_14",
+      "http_receipt_chain_head": "886c85123a46ed61b69484eb7aba0ea0213a8ab01a98cf8292233bf5de3e9507",
+      "http_response_bytes": 172021,
+      "http_response_count": 76,
+      "offline_verification_sha256": "8e533f9005f40b397072e6ae74ae2cc4e933918ba3f2f424b6de6d4327d0a865",
+      "verified_transactions": 38
+    }
+  ],
+  "collector_sha256": "2db8cb97ce4004c14d01ee4d2d6785950f2be9b792c756b3c24545c85c573bf6",
+  "data_archive_sha256": "3e1a3de3454c886c7a051db6780a876f435d2a96011faf1854aa0f8b53d8d77d",
+  "failures": [],
+  "negative_integrity_tests": [
+    {
+      "mutation": "response_body_changed",
+      "rejected": true,
+      "returncode": 1
+    },
+    {
+      "mutation": "normalized_event_changed",
+      "rejected": true,
+      "returncode": 1
+    },
+    {
+      "mutation": "success_metadata_changed",
+      "rejected": true,
+      "returncode": 1
+    }
+  ],
+  "network_requests_during_verification": 0,
+  "original_AWS_topics_data_reacquired": false,
+  "receipt_root_authenticated": false,
+  "schema": "article2_phase31_full_raw_observation_audit_v1",
+  "source_tier": "AWS-selected identities/counts plus retained Blockscout response bytes, full logs and success metadata",
+  "status": "PASS",
+  "verified_transactions": 125,
+  "verifier_sha256": "e53b4761000003047bde8e74c70351adb34b46574710b757e3a42fe40e74e206"
+}

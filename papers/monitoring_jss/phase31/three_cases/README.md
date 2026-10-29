@@ -55,6 +55,18 @@ positive values, but rank 3/21 = 1/7 fails gate C at 1/20. The nine-log count
 does not trigger. This is a concrete source-level example of sufficient
 history without extremality.
 
+`python papers/monitoring_jss/phase31/three_cases/saddle_rank_decomposition.py`
+rebuilds `saddle_rank_decomposition.json` from the stored event observations
+and then joins the role ledger; `--check` verifies the saved result without
+rewriting it. The report records input SHA-256 digests and all 20 comparisons.
+Exactly two preceding sUSD outflows exceed the current raw amount
+`10192570610655635628246736`: the 07:40:24 documented extraction
+(`59888626434884970935973053`) and the 08:04:55 whitehat rescue
+(`24329895955941259352960310`). The other 18 are smaller, giving
+`(1 + 2) / (20 + 1) = 3/21`. These are gross emitted token quantities,
+not net losses; the rescue belongs in label-blind history while remaining
+excluded from harmful-extraction references.
+
 The sole count notification occurs at `0x3189cb...`, 08:24:35, twelve seconds
 later: nine logs from the preceding transaction plus one current core log
 make ten. This is not an exact-transaction match and is not evidence of

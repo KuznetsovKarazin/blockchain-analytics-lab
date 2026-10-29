@@ -1,0 +1,58 @@
+\small
+\begin{longtable}{@{}p{6.9cm}rrrr@{}}
+\caption{Original-source selected-transaction census for the sixteen additional nominations. These are source-window counts anchored to PoC fork dates, not completed historical incident-detection evaluations.}\label{tab:allcensus}\\
+\toprule
+Candidate emitter & TX & 0 TX/d & 1--19/d & $\geq20$/d\\
+\midrule
+\endfirsthead
+\toprule
+Candidate emitter & TX & 0 TX/d & 1--19/d & $\geq20$/d\\
+\midrule
+\endhead
+Compound cTUSD sweepToken & 15 & 20 & 10 & 0\\
+Umbrella Network staking & 92 & 24 & 4 & 2\\
+Ronin Bridge Ethereum withdrawal & 18,522 & 0 & 0 & 30\\
+Auctus options writer & 0 & 30 & 0 & 0\\
+Beanstalk governance & 12,392 & 0 & 0 & 30\\
+Akutar NFT auction & 1 & 29 & 1 & 0\\
+Saddle sUSD metapool & 44 & 10 & 20 & 0\\
+ApeCoin airdrop claim & 10,938 & 29 & 0 & 1\\
+Inverse Finance June lending & 71 & 28 & 1 & 1\\
+Schnoodle ERC777 token & 134 & 1 & 29 & 0\\
+XCarnival XNFT & 43 & 22 & 7 & 1\\
+FlippazOne NFT auction & 1 & 29 & 1 & 0\\
+Omni NFT lending & 103 & 15 & 13 & 2\\
+Audius governance & 38 & 20 & 10 & 0\\
+Nomad Bridge replica & 930 & 18 & 11 & 1\\
+Bad Guys by RPF NFT & 1,456 & 27 & 1 & 2\\
+\midrule
+All sixteen & 44,780 & 302 & 108 & 70\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\begin{table}[H]
+\centering\small
+\caption{Initial indexer reference preflight for twelve of the sixteen incident-derived candidate families. All indexed hashes have successful status. At this initial preflight stage, exact roles and incident-wide completeness were not independently adjudicated. \emph{Core present} denotes indexed log-emitter matching, not a notification. Unknown pagination is an initial preflight status, superseded where complete bundles were subsequently reconstructed.}
+\label{tab:refpreflight}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r r r@{}}
+\toprule
+Case & Indexed TX & Core present & Within PoC window\\
+\midrule
+Umbrella Network staking & 1 & 1/1 & 1/1\\
+Beanstalk governance & 1 & 1/1 & 0/1\\
+Akutar NFT auction & 1 & 0/1 & 0/1\\
+Saddle sUSD metapool & 1 & 1/1 & 1/1\\
+ApeCoin airdrop claim & 1 & 1/1 & 1/1\\
+Inverse Finance June lending & 1 & 1/1 & 1/1\\
+Schnoodle ERC777 token & 1 & 1/1 & 1/1\\
+XCarnival XNFT & 2 & 1/2 & 2/2\\
+Omni NFT lending & 1 & 0/1 (1 unknown) & 1/1\\
+Audius governance & 4 & 3/4 & 4/4\\
+Nomad Bridge replica & 2 & 1/2 & 2/2\\
+Bad Guys by RPF NFT & 1 & 1/1 & 1/1\\
+\midrule
+All candidate references & 17 & 12/17 (1 unknown) & 15/17\\
+\bottomrule
+\end{tabularx}
+\end{table}
