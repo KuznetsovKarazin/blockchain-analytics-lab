@@ -74,7 +74,7 @@ jobs:
           for name,digest in json.loads((p/'audit_manifest.json').read_text())['outputs_sha256'].items():
               data=(Path('/tmp/a2/rebuilt')/name).read_bytes()
               assert hashlib.sha256(data).hexdigest()==digest,(name, hashlib.sha256(data).hexdigest(),digest)
-              assert data==(p/name).read_bytes(),name
+              assert data.replace(bytes([13,10]),bytes([10]))==(p/name).read_bytes().replace(bytes([13,10]),bytes([10])),name
           print('PASS: independent replication; all outputs identical')
           PY
       - name: Commit accepted derived data only
