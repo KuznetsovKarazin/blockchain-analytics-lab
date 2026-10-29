@@ -153,7 +153,7 @@ def main():
         out_rows.append(record)
         if (i+1)%10==0:
             print('INDEXED',args.case,i+1,'/',min(args.max_tx,len(ids)),'requests',len(log),'bytes',limits['bytes'],flush=True)
-        time.sleep(.08)
+        time.sleep(.22)
       info['processed']=len(out_rows)
       info['status']='COMPLETE_30_DAYS' if len(out_rows)==len(ids) else 'COMPLETE_DIAGNOSTIC_SUBSET'
     except Exception as exc:
