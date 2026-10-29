@@ -21,6 +21,7 @@ jobs:
           python-version: '3.12'
       - name: Pinned Parquet decoder
         run: python -m pip install --disable-pip-version-check pyarrow==19.0.1
+      # Repeat after the first-pass cross-rowgroup completeness audit rejected 3 of 4 cases.
       - name: Recover exactly selected historical transaction identities from original AWS
         run: |
           python papers/monitoring_jss/phase29/selected_original_tx.py \
