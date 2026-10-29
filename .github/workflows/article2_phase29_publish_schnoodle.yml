@@ -1,0 +1,40 @@
+name: article2-phase29-publish-schnoodle-source
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_publish_schnoodle.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  verify-one-accepted-30day-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover accepted 30-day source identities (not first incomplete 29-day attempt)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/a2p29s
+          gh run download 40925712059 -n article2-phase29-ids-cohort28_10-recap -D /tmp/a2p29s
+      - name: Independently check original AWS source and exact selected TX
+        run: |
+          out=papers/monitoring_jss/phase29/data/cohort28_10
+          mkdir -p "$out"
+          python papers/monitoring_jss/phase29/verify_source_streams.py \
+            --case cohort28_10 --source-dir /tmp/a2p29s \
+            --out "$out/independent_verification.json"
+          cp /tmp/a2p29s/{source_identity_manifest.json,selected_tx_identities.jsonl.gz} "$out/"
+      - name: Commit only checked derived results, no source Parquet
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase29/data/cohort28_10
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase29: archive Schnoodle complete 30-day source identity audit under raised resource cap'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
