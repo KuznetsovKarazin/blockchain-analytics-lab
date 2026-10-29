@@ -1,0 +1,49 @@
+name: article2-phase30-frozen-replay
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase30_replay.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  three-cases:
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [cohort28_07, cohort28_11, cohort28_14]
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recheck pinned original source identity against indexed feature bundles
+        run: |
+          python papers/monitoring_jss/phase29/verify_indexed.py \
+            --case ${{ matrix.case }} \
+            --original-dir papers/monitoring_jss/phase30/data/${{ matrix.case }} \
+            --indexed-dir papers/monitoring_jss/phase30/indexed/${{ matrix.case }} \
+            --out /tmp/source_verified.json
+      - name: Label-blind frozen rank/count/grouping/budget replay and postscore candidate join
+        run: |
+          python papers/monitoring_jss/phase30/fixed_replay.py \
+            --case ${{ matrix.case }} \
+            --indexed-dir papers/monitoring_jss/phase30/indexed/${{ matrix.case }} \
+            --out phase30_replay/${{ matrix.case }} \
+            --reference-ledger papers/monitoring_jss/phase29/REFERENCE_ROLE_LEDGER.json
+      - name: Repeat independently from clean output path, compare every decision
+        run: |
+          python papers/monitoring_jss/phase30/fixed_replay.py \
+            --case ${{ matrix.case }} \
+            --indexed-dir papers/monitoring_jss/phase30/indexed/${{ matrix.case }} \
+            --out /tmp/replay_again_${{ matrix.case }} \
+            --reference-ledger papers/monitoring_jss/phase29/REFERENCE_ROLE_LEDGER.json
+          for f in label_blind_replay.json reference_join.json method_policy_cells.csv; do
+            cmp "phase30_replay/${{ matrix.case }}/$f" "/tmp/replay_again_${{ matrix.case }}/$f"
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: article2-phase30-results-${{ matrix.case }}
+          path: phase30_replay/${{ matrix.case }}
+          if-no-files-found: warn
+          retention-days: 30
