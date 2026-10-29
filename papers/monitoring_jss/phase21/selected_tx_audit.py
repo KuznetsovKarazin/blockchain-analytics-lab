@@ -115,12 +115,14 @@ def main():
                                 txs[label].add(pair)
                                 union.add(pair)
                 require(nr==reader.metadata.num_rows==day['source_log_rows'],'source row count mismatch')
-                require(dict(log_counts)==day['core_log_counts'], 'phase20 core log count mismatch')
+                actual_counts={label:int(log_counts[label]) for label in cores}
+                require(actual_counts==day['core_log_counts'],
+                        'phase20 core log count mismatch: '+repr((actual_counts,day['core_log_counts'])))
                 core_tx_counts={k:len(v) for k,v in txs.items()}
                 require(all(core_tx_counts[k]<=log_counts[k] for k in cores),'more selected tx than core logs')
                 require(max(core_tx_counts.values()) <= len(union) <= sum(core_tx_counts.values()), 'invalid union membership')
                 row.update({'status':'COMPLETE_PROJECTED_SELECTION',
-                    'source_rows':nr,'source_log_counts':dict(log_counts),
+                    'source_rows':nr,'source_log_counts':actual_counts,
                     'selected_tx_counts':core_tx_counts, 'candidate_union_selected_tx_count':len(union),
                     'selected_core_tx_keys':{k:sorted([list(p) for p in v]) for k,v in txs.items()},
                     'candidate_union_tx_keys':sorted([list(p) for p in union]),
