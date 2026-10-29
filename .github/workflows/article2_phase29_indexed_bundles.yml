@@ -1,0 +1,41 @@
+name: article2-phase29-indexed-full-bundles
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_indexed_bundles.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  separately-bound-candidate-streams:
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [cohort28_02, cohort28_09, cohort28_13]
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently verify complete original AWS source identities
+        run: |
+          python papers/monitoring_jss/phase29/verify_source_streams.py \
+            --case ${{ matrix.case }} \
+            --source-dir papers/monitoring_jss/phase29/data/${{ matrix.case }} \
+            --out /tmp/phase29_verified.json
+      - name: Retrieve and validate full selected transaction indexed bundles (no labels)
+        run: |
+          python papers/monitoring_jss/phase29/indexed_selected_bundles.py \
+            --case ${{ matrix.case }} \
+            --identities-dir papers/monitoring_jss/phase29/data/${{ matrix.case }} \
+            --out phase29_indexer_out/${{ matrix.case }}
+      - name: Preserve diagnostics and accepted indexed case data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase29-indexed-${{ matrix.case }}
+          path: |
+            phase29_indexer_out/${{ matrix.case }}/acquisition_manifest.json
+            phase29_indexer_out/${{ matrix.case }}/indexer_observations.jsonl.gz
+            phase29_indexer_out/${{ matrix.case }}/indexer_response_receipts.json
+          if-no-files-found: warn
+          retention-days: 30
