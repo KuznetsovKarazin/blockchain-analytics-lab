@@ -29,7 +29,7 @@ def tally_selected(rows, named_cores):
         a = a.lower()
         pair = (block, tx_index)
         for label, core in named_cores.items():
-            if a == core:
+            if a == core.lower():
                 counts[label] += 1
                 grouped[label].add(pair)
                 union.add(pair)
@@ -101,7 +101,7 @@ def main():
                     nr+=len(tab)
                     names=pc.utf8_lower(tab.column('address'))
                     for label, addr in cores.items():
-                        mask=pc.equal(names,addr)
+                        mask=pc.equal(names,addr.lower())
                         n=pc.sum(pc.cast(mask,pa.int64())).as_py()
                         n=int(n or 0)
                         log_counts[label]+=n
