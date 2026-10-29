@@ -1,0 +1,47 @@
+name: article2-phase30-publish-source-identities
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase30_publish_source.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  independent-completeness-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve only three completed source-identity archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for c in cohort28_07 cohort28_11 cohort28_14; do
+            mkdir -p "source/$c"
+            gh run download 40928616518 -n "article2-phase30-original-$c" -D "source/$c"
+          done
+      - name: Verify original S3 byte-range identity and all 30 dates before publication
+        run: |
+          set -euo pipefail
+          for c in cohort28_07 cohort28_11 cohort28_14; do
+            dst=papers/monitoring_jss/phase30/data/$c
+            mkdir -p "$dst"
+            python papers/monitoring_jss/phase29/verify_source_streams.py \
+              --case "$c" --source-dir "source/$c" \
+              --out "$dst/independent_verification.json"
+            cp "source/$c/source_identity_manifest.json" "$dst/"
+            cp "source/$c/selected_tx_identities.jsonl.gz" "$dst/"
+          done
+      - name: Publish verified provenance without raw Parquet or labels
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase30/data/
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Phase30: publish source-audited Saddle/XCarnival/Audius selected identities'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
