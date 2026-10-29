@@ -1,0 +1,150 @@
+{
+  "schema": "phase31_three_case_role_adjudication_v1",
+  "adjudicated_utc_date": "2026-10-29",
+  "frozen_monitor_release_commit": "651daa926bb3803ad76227389a4fb35c1027da63",
+  "selection_policy": "Preserve all Phase30 source observations and original reference candidates. Add source-explicit reference transactions without selecting by monitor outcomes. Keep setup, failed governance attempt, harmful extraction and post-exploit sale separate.",
+  "incident_inventory_complete": false,
+  "references": [
+    {
+      "case": "cohort28_07",
+      "tx": "0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56",
+      "role": "harmful_extraction",
+      "role_status": "EXACT_HASH_LINKED_IN_PRIMARY_INVESTIGATOR_REPORT",
+      "source_ids": [
+        "saddle_blocksec"
+      ],
+      "original_phase30_reference": true
+    },
+    {
+      "case": "cohort28_07",
+      "tx": "0x9549c0cb48ec5a5a2c4703cbbbbea5638028b2d8c8adc103220ef1c7fe5e99a3",
+      "role": "whitehat_rescue",
+      "role_status": "SECURITY_ALLIANCE_CURATED_RESCUE_AND_EXPLORER_ATTRIBUTION",
+      "source_ids": [
+        "saddle_seal_rescue",
+        "saddle_rescue_explorer",
+        "saddle_blocksec"
+      ],
+      "original_phase30_reference": false,
+      "note": "Excluded from harmful-extraction denominator. Rescue reuses the exploit mechanism."
+    },
+    {
+      "case": "cohort28_07",
+      "tx": "0xe7e0474793aad11875c131ebd7582c8b73499dd3c5a473b59e6762d4e373d7b8",
+      "role": "subsequent_extraction",
+      "role_status": "CHAIN_SEQUENCE_AND_ACTOR_ATTRIBUTION_INFERENCE",
+      "source_ids": [
+        "saddle_second_explorer",
+        "saddle_blocksec"
+      ],
+      "original_phase30_reference": false,
+      "note": "Same sender as report-linked original attack; successful same-pool exploit-like transfer sequence and proceeds to sender. Keep inference explicit; not an independently closed incident inventory."
+    },
+    {
+      "case": "cohort28_11",
+      "tx": "0x422e7b0a449deba30bfe922b5c34282efbdbf860205ff04b14fd8129c5b91433",
+      "role": "collateral_order_preparation",
+      "role_status": "FROZEN_POC_EXPLICIT_STAGE_PLUS_PRIMARY_MECHANISM_CORROBORATION",
+      "source_ids": [
+        "xcarnival_poc",
+        "xcarnival_slowmist"
+      ],
+      "original_phase30_reference": true
+    },
+    {
+      "case": "cohort28_11",
+      "tx": "0xabfcfaf3620bbb2d41a3ffea6e31e93b9b5f61c061b9cfc5a53c74ebe890294d",
+      "role": "borrow_extraction",
+      "role_status": "FROZEN_POC_EXPLICIT_STAGE_PLUS_PRIMARY_MECHANISM_CORROBORATION",
+      "source_ids": [
+        "xcarnival_poc",
+        "xcarnival_slowmist"
+      ],
+      "original_phase30_reference": true
+    },
+    {
+      "case": "cohort28_11",
+      "tx": "0x61a6a8936afab47a3f2750e1ea40ac63430a01dd4f53a933e1c25e737dd32b2f",
+      "role": "collateral_order_preparation",
+      "role_status": "EXACT_HASH_LINKED_IN_PRIMARY_INVESTIGATOR_REPORT",
+      "source_ids": [
+        "xcarnival_slowmist"
+      ],
+      "original_phase30_reference": false
+    },
+    {
+      "case": "cohort28_11",
+      "tx": "0x51cbfd46f21afb44da4fa971f220bd28a14530e1d5da5009cfbdfee012e57e35",
+      "role": "borrow_extraction",
+      "role_status": "EXACT_HASH_LINKED_IN_PRIMARY_INVESTIGATOR_REPORT",
+      "source_ids": [
+        "xcarnival_slowmist",
+        "xcarnival_borrow_explorer"
+      ],
+      "original_phase30_reference": false,
+      "outside_selected_metadata": {
+        "timestamp_utc": "2022-06-26T12:03:30+00:00",
+        "block_number": 15028889,
+        "transaction_index": 15,
+        "status": "Success",
+        "all_emitter_logs": 24,
+        "source_tier": "Etherscan_public_transaction_page_read_2026-10-29",
+        "raw_log_bundle_retained": false,
+        "core_emitter_logs_independently_reverified": null
+      }
+    },
+    {
+      "case": "cohort28_14",
+      "tx": "0x3bbb15f9852c389e8d77399fe88b49b042d0f22aad4a33c979fbabc60a34b24f",
+      "role": "first_initialization_and_failed_governance_attempt",
+      "role_status": "EXACT_HASH_LINKED_IN_PROTOCOL_POSTMORTEM",
+      "source_ids": [
+        "audius_official"
+      ],
+      "original_phase30_reference": false,
+      "note": "The governance attempt failed; this does not mean the Ethereum transaction reverted. V6.1 acquisition admits only successful indexed transactions."
+    },
+    {
+      "case": "cohort28_14",
+      "tx": "0xfefd829e246002a8fd061eede7501bccb6e244a9aacea0ebceaecef5d877a984",
+      "role": "second_initialization_and_proposal_preparation",
+      "role_status": "EXACT_HASH_LINKED_IN_PROTOCOL_POSTMORTEM_AND_FROZEN_POC",
+      "source_ids": [
+        "audius_official",
+        "audius_poc"
+      ],
+      "original_phase30_reference": true
+    },
+    {
+      "case": "cohort28_14",
+      "tx": "0x3c09c6306b67737227edc24c663462d870e7c2bf39e9ab66877a980c900dd5d5",
+      "role": "vote_submission",
+      "role_status": "EXPLICIT_STAGE_IN_FROZEN_POC",
+      "source_ids": [
+        "audius_poc"
+      ],
+      "original_phase30_reference": true
+    },
+    {
+      "case": "cohort28_14",
+      "tx": "0x4227bca8ed4b8915c7eec0e14ad3748a88c4371d4176e716e8007249b9980dc9",
+      "role": "proposal_execution_and_treasury_extraction",
+      "role_status": "EXACT_HASH_LINKED_IN_PROTOCOL_POSTMORTEM_AND_FROZEN_POC",
+      "source_ids": [
+        "audius_official",
+        "audius_poc"
+      ],
+      "original_phase30_reference": true
+    },
+    {
+      "case": "cohort28_14",
+      "tx": "0x82fc23992c7433fffad0e28a1b8d11211dc4377de83e88088d79f24f4a3f28b3",
+      "role": "post_exploit_token_sale",
+      "role_status": "EXPLICIT_STAGE_IN_FROZEN_POC",
+      "source_ids": [
+        "audius_poc"
+      ],
+      "original_phase30_reference": true
+    }
+  ]
+}

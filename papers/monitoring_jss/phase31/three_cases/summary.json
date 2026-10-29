@@ -1,0 +1,217 @@
+{
+  "cases": [
+    {
+      "case": "cohort28_07",
+      "complete_fixed_core_stream_in_stored_window": true,
+      "complete_incident_inventory": false,
+      "count_notifications_greedy_B5": 1,
+      "positive_outflow_history_counts": {
+        "0x57ab1ec28d129707052df4df418d58a2d46d5f51": 22,
+        "0x5f86558387293b6009d7896a61fcc86c17808d62": 8,
+        "0x6b175474e89094c44da98b954eedeac495271d0f": 9,
+        "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": 13,
+        "0xdac17f958d2ee523a2206206994597c13d831ec7": 10
+      },
+      "positive_outflow_tokens": 5,
+      "positive_outflow_transactions": 39,
+      "rank_eligible_transactions": {
+        "cumulative_in_window": 3,
+        "daily_reset": 0,
+        "lookback_7d": 0
+      },
+      "rank_notifications_greedy_B5": {
+        "cumulative_in_window": 0,
+        "daily_reset": 0,
+        "lookback_7d": 0
+      },
+      "receipt_root_authenticated": false,
+      "selected_transactions": 44
+    },
+    {
+      "case": "cohort28_11",
+      "complete_fixed_core_stream_in_stored_window": true,
+      "complete_incident_inventory": false,
+      "count_notifications_greedy_B5": 4,
+      "positive_outflow_history_counts": {},
+      "positive_outflow_tokens": 0,
+      "positive_outflow_transactions": 0,
+      "rank_eligible_transactions": {
+        "cumulative_in_window": 0,
+        "daily_reset": 0,
+        "lookback_7d": 0
+      },
+      "rank_notifications_greedy_B5": {
+        "cumulative_in_window": 0,
+        "daily_reset": 0,
+        "lookback_7d": 0
+      },
+      "receipt_root_authenticated": false,
+      "selected_transactions": 43
+    },
+    {
+      "case": "cohort28_14",
+      "complete_fixed_core_stream_in_stored_window": true,
+      "complete_incident_inventory": false,
+      "count_notifications_greedy_B5": 0,
+      "positive_outflow_history_counts": {
+        "0x18aaa7115705e8be94bffebde57af9bfc265b998": 1
+      },
+      "positive_outflow_tokens": 1,
+      "positive_outflow_transactions": 1,
+      "rank_eligible_transactions": {
+        "cumulative_in_window": 0,
+        "daily_reset": 0,
+        "lookback_7d": 0
+      },
+      "rank_notifications_greedy_B5": {
+        "cumulative_in_window": 0,
+        "daily_reset": 0,
+        "lookback_7d": 0
+      },
+      "receipt_root_authenticated": false,
+      "selected_transactions": 38
+    }
+  ],
+  "checks": [
+    {
+      "case": "cohort28_07",
+      "method": "outflow_rank_1_20",
+      "mode": "daily_reset",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_07",
+      "method": "outflow_rank_1_20",
+      "mode": "lookback_7d",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_07",
+      "method": "outflow_rank_1_20",
+      "mode": "cumulative_in_window",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_07",
+      "method": "core_count_60s_10",
+      "mode": "daily_reset",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_11",
+      "method": "outflow_rank_1_20",
+      "mode": "daily_reset",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_11",
+      "method": "outflow_rank_1_20",
+      "mode": "lookback_7d",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_11",
+      "method": "outflow_rank_1_20",
+      "mode": "cumulative_in_window",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_11",
+      "method": "core_count_60s_10",
+      "mode": "daily_reset",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_14",
+      "method": "outflow_rank_1_20",
+      "mode": "daily_reset",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_14",
+      "method": "outflow_rank_1_20",
+      "mode": "lookback_7d",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_14",
+      "method": "outflow_rank_1_20",
+      "mode": "cumulative_in_window",
+      "status": "PASS"
+    },
+    {
+      "case": "cohort28_14",
+      "method": "core_count_60s_10",
+      "mode": "daily_reset",
+      "status": "PASS"
+    }
+  ],
+  "greedy_B5_cells_reproduced": 12,
+  "inputs": [
+    {
+      "path": "phase30/indexed/cohort28_07/indexer_observations.jsonl.gz",
+      "sha256": "ee84f5f811f5e6106d6d03d9fb8cba49b961597b992b9d5855c97be5db496fae"
+    },
+    {
+      "path": "phase30/indexed/cohort28_07/acquisition_manifest.json",
+      "sha256": "e20bab22f11bb6994b09d1da0ec53f83e5327f02df2cee62b62fe46b46949938"
+    },
+    {
+      "path": "phase30/data/cohort28_07/source_identity_manifest.json",
+      "sha256": "77150a8db947951f93c3d4f33923aac2afea9869dd2ce3e95c0547d458e57508"
+    },
+    {
+      "path": "phase30/data/cohort28_07/selected_tx_identities.jsonl.gz",
+      "sha256": "88d5c749ee8ab3c2d09b72978de4621c1ca4160808073d42bbf23c3534024ee9"
+    },
+    {
+      "path": "phase30/results/cohort28_07/label_blind_replay.json",
+      "sha256": "ae42042fb8c1bf77ae45f25e64adde4a97fb4719431a6d38a9bc9b372b14c781"
+    },
+    {
+      "path": "phase30/indexed/cohort28_11/indexer_observations.jsonl.gz",
+      "sha256": "da54d8aa5ee11e9202b15854acbeb6899e3b8705e7d7682078237932d0db4f59"
+    },
+    {
+      "path": "phase30/indexed/cohort28_11/acquisition_manifest.json",
+      "sha256": "4b235262c83af239673274ca7bddb4cc7fe7a6863174b59f75d6a1a931cec219"
+    },
+    {
+      "path": "phase30/data/cohort28_11/source_identity_manifest.json",
+      "sha256": "a6609a6f871743539977d6b1b4d4870cece9894b0bb44d25c5c0f13a14b7474a"
+    },
+    {
+      "path": "phase30/data/cohort28_11/selected_tx_identities.jsonl.gz",
+      "sha256": "ce1843a31fa8e940b165897a03b6eebf4bfb42e9caad588c38884b89ab0a0845"
+    },
+    {
+      "path": "phase30/results/cohort28_11/label_blind_replay.json",
+      "sha256": "353f43f9aa0c6e9885dafe86a09cda977c8c5f425acfa8027e16827ef9a2b6b1"
+    },
+    {
+      "path": "phase30/indexed/cohort28_14/indexer_observations.jsonl.gz",
+      "sha256": "dcdaabcdbf3b796ab98f30d1578a019093b40cbf8e258034276d902a9bb94fc9"
+    },
+    {
+      "path": "phase30/indexed/cohort28_14/acquisition_manifest.json",
+      "sha256": "8f1080c180c0c501fe38ffea6b06a55772f29f7301976f9d32cff17ba510fc03"
+    },
+    {
+      "path": "phase30/data/cohort28_14/source_identity_manifest.json",
+      "sha256": "2888670c0d4b62d41673f6ad643ca5338720ceecdeb94679f724185fac8dae68"
+    },
+    {
+      "path": "phase30/data/cohort28_14/selected_tx_identities.jsonl.gz",
+      "sha256": "2af8e665ece3692316e929324db4edb5551c4a9320890bf41a43f1be913e99a8"
+    },
+    {
+      "path": "phase30/results/cohort28_14/label_blind_replay.json",
+      "sha256": "1cfd50d3dd260348b28483de6d888cb606cd9d90fe83d740ec8fc47d980dec9a"
+    }
+  ],
+  "offstream_raw_reference_bundles_verified": 3,
+  "raw_feature_extraction_limitation": "V6.1 stores feature aggregates and hashes, not raw indexed topics/data.",
+  "raw_feature_extraction_repeated": false,
+  "schema": "phase31_three_cases_observation_audit_v1",
+  "status": "PASS_OFFLINE_DERIVED_OBSERVATIONS_WITH_SOURCE_LIMITATIONS"
+}

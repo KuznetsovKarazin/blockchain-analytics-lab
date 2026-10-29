@@ -1,0 +1,64 @@
+{
+  "Inverse_historical_boundary": {
+    "changed_transactions": [
+      {
+        "candidate_with_ge_300": true,
+        "candidate_with_gt_300": false,
+        "gap_ns": 300000000000,
+        "time_utc": "2022-06-16T12:09:18+00:00",
+        "tx": "0x0b4e9021a01528a703e98daf6af0df39b711e857b3ff5ce4f2f0b283f84c0a97"
+      }
+    ],
+    "with_ge_300_group_candidates": 2,
+    "with_gt_300_group_candidates": 1
+  },
+  "frozen_rule_retained": "candidate gap >= 300 seconds; grouped raw triggers do not move anchor",
+  "synthetic_edge_checks": [
+    {
+      "expected_second_candidate": false,
+      "gap_ns": 299999999999,
+      "status": "PASS"
+    },
+    {
+      "expected_second_candidate": true,
+      "gap_ns": 300000000000,
+      "status": "PASS"
+    },
+    {
+      "expected_second_candidate": true,
+      "gap_ns": 300000000001,
+      "status": "PASS"
+    },
+    {
+      "B1_budget_suppressed": 2,
+      "B1_notifications": 1,
+      "candidate_flags": [
+        true,
+        false,
+        true,
+        false,
+        true
+      ],
+      "case": "group anchor is prior group candidate, including budget-blocked candidates",
+      "status": "PASS"
+    },
+    {
+      "case": "count window lower bound",
+      "expected_second_raw_trigger": true,
+      "gap_ns": 59999999999,
+      "status": "PASS"
+    },
+    {
+      "case": "count window lower bound",
+      "expected_second_raw_trigger": false,
+      "gap_ns": 60000000000,
+      "status": "PASS"
+    },
+    {
+      "case": "count window lower bound",
+      "expected_second_raw_trigger": false,
+      "gap_ns": 60000000001,
+      "status": "PASS"
+    }
+  ]
+}

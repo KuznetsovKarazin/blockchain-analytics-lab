@@ -1,0 +1,512 @@
+{
+  "checks": [
+    {
+      "name": "phase16_sealed_capsule_and_exact_reference_join",
+      "status": "PASS"
+    },
+    {
+      "name": "phase18_causal_initialization_replay",
+      "status": "PASS"
+    },
+    {
+      "name": "phase22_independent_252_cells",
+      "status": "PASS"
+    },
+    {
+      "name": "phase23_cross_case_tables",
+      "status": "PASS"
+    },
+    {
+      "name": "phase21_distinct_transaction_and_union_bounds",
+      "status": "PASS"
+    }
+  ],
+  "limits": "Recomputes retained inputs and verifies source receipts; does not repeat remote acquisition or authenticate receipt roots.",
+  "network_requests": 0,
+  "phase16": {
+    "across_case_cells": 27,
+    "aggregate_arm_cells": 54,
+    "capsule_files_verified": 2147,
+    "capsule_sha256": "56f19a262c36f5438d11d19cbb8434ea3dcb731b1cbdae34f479f667ec9997e2",
+    "case_count": 2,
+    "coverage_equal_except_generated_utc": true,
+    "detector_scoring_or_replay_performed": false,
+    "driver_relative_path_binding_unchanged": true,
+    "frozen_join_sha256": "deaf7e58715cda8e701ec31bc2f4fcd7e85db5f9199fe23a0b55e195519b1cee",
+    "frozen_scientific_source_bytes_unchanged": true,
+    "joined_row_checks": {
+      "candidate_adjudications.jsonl.gz": {
+        "compressed_bytes_equal": true,
+        "decompressed_bytes_equal": true,
+        "rows": 5
+      },
+      "reference_funnel.jsonl.gz": {
+        "compressed_bytes_equal": true,
+        "decompressed_bytes_equal": true,
+        "rows": 81
+      }
+    },
+    "limits": "Validates retained bytes and recomputes the exact reference join from sealed decisions. Historical source/role audits remain assertions supported by their retained evidence; this does not independently repeat raw-chain acquisition or prove those historical assertions.",
+    "manifest_sha256": "792b2c2abf3f7ccc4274455900c13c02ad2d040355120e7971ec65ebcf491f8a",
+    "network_requests": 0,
+    "only_adapted_function": "exact_reference_join.binding (explicit historical path relocation)",
+    "raw_source_audit_repeated": false,
+    "reference_roles_readjudicated": false,
+    "repository_files_verified": 32,
+    "schema_version": "article2_phase16_public_evidence_verification_v1",
+    "status": "PASS_FROZEN_EXACT_JOIN_FROM_PUBLIC_SEALED_EVIDENCE",
+    "verifier_sha256": "48aa25f92d3f35071c2d5dae6fbaf049e0e8513035a1b9d4e13b551c5ce29bfe"
+  },
+  "phase18_exact_output_sha256": {
+    "full_replay_summary.json": "f8db7c0a8f4b478135e98e9c13a97e522b7b104b3c0ccebb0f8d2577367fdcf5",
+    "recomputed_transaction_decisions.jsonl": "61ae2b607658600190aa5062a000fb7a9e5f2f506cf8f99b5600acb51b1aaea6"
+  },
+  "phase22": {
+    "case_families": 2,
+    "cells_recomputed": 252,
+    "cross_check_failures": 0,
+    "notification_streams_recomputed": 252,
+    "reference_examples": [
+      {
+        "case": "bacon_20220305",
+        "eligible": 0,
+        "hit": 0,
+        "method": "outflow_rank_1_20",
+        "mode": "daily_reset",
+        "notified": 0,
+        "positive": 34,
+        "raw": 0,
+        "reference": {
+          "candidate": false,
+          "day": 19056,
+          "eligible": false,
+          "positive": true,
+          "raw": false,
+          "scores": [
+            [
+              "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              0,
+              "1",
+              false
+            ]
+          ],
+          "time": 1646484383000000000,
+          "tx": "0x7d2296bcb936aa5e2397ddf8ccba59f54a178c3901666b49291d880369dbcf31"
+        },
+        "view": "proxy"
+      },
+      {
+        "case": "bacon_20220305",
+        "eligible": null,
+        "hit": 0,
+        "method": "core_count_60s_10",
+        "mode": "daily_reset",
+        "notified": 1,
+        "positive": null,
+        "raw": 1,
+        "reference": {
+          "candidate": false,
+          "day": 19056,
+          "eligible": null,
+          "positive": null,
+          "raw": false,
+          "time": 1646484383000000000,
+          "tx": "0x7d2296bcb936aa5e2397ddf8ccba59f54a178c3901666b49291d880369dbcf31"
+        },
+        "view": "proxy"
+      },
+      {
+        "case": "bacon_20220305",
+        "eligible": 0,
+        "hit": 0,
+        "method": "outflow_rank_1_20",
+        "mode": "lookback_7d",
+        "notified": 0,
+        "positive": 34,
+        "raw": 0,
+        "reference": {
+          "candidate": false,
+          "day": 19056,
+          "eligible": false,
+          "positive": true,
+          "raw": false,
+          "scores": [
+            [
+              "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              5,
+              "1/6",
+              false
+            ]
+          ],
+          "time": 1646484383000000000,
+          "tx": "0x7d2296bcb936aa5e2397ddf8ccba59f54a178c3901666b49291d880369dbcf31"
+        },
+        "view": "proxy"
+      },
+      {
+        "case": "bacon_20220305",
+        "eligible": 15,
+        "hit": 1,
+        "method": "outflow_rank_1_20",
+        "mode": "cumulative_in_window",
+        "notified": 1,
+        "positive": 34,
+        "raw": 1,
+        "reference": {
+          "candidate": true,
+          "day": 19056,
+          "eligible": true,
+          "positive": true,
+          "raw": true,
+          "scores": [
+            [
+              "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              32,
+              "1/33",
+              true
+            ]
+          ],
+          "time": 1646484383000000000,
+          "tx": "0x7d2296bcb936aa5e2397ddf8ccba59f54a178c3901666b49291d880369dbcf31"
+        },
+        "view": "proxy"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": 0,
+        "hit": 0,
+        "method": "outflow_rank_1_20",
+        "mode": "daily_reset",
+        "notified": 0,
+        "positive": 42,
+        "raw": 0,
+        "reference": {
+          "candidate": false,
+          "day": 19112,
+          "eligible": false,
+          "positive": true,
+          "raw": false,
+          "scores": [
+            [
+              "0x26267e41ceca7c8e0f143554af707336f27fa051",
+              7,
+              "1/8",
+              false
+            ]
+          ],
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "fETH"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": null,
+        "hit": 0,
+        "method": "core_count_60s_10",
+        "mode": "daily_reset",
+        "notified": 0,
+        "positive": null,
+        "raw": 0,
+        "reference": {
+          "candidate": false,
+          "day": 19112,
+          "eligible": null,
+          "positive": null,
+          "raw": false,
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "fETH"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": 5,
+        "hit": 1,
+        "method": "outflow_rank_1_20",
+        "mode": "lookback_7d",
+        "notified": 1,
+        "positive": 42,
+        "raw": 1,
+        "reference": {
+          "candidate": true,
+          "day": 19112,
+          "eligible": true,
+          "positive": true,
+          "raw": true,
+          "scores": [
+            [
+              "0x26267e41ceca7c8e0f143554af707336f27fa051",
+              23,
+              "1/24",
+              true
+            ]
+          ],
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "fETH"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": 23,
+        "hit": 1,
+        "method": "outflow_rank_1_20",
+        "mode": "cumulative_in_window",
+        "notified": 3,
+        "positive": 42,
+        "raw": 3,
+        "reference": {
+          "candidate": true,
+          "day": 19112,
+          "eligible": true,
+          "positive": true,
+          "raw": true,
+          "scores": [
+            [
+              "0x26267e41ceca7c8e0f143554af707336f27fa051",
+              41,
+              "1/42",
+              true
+            ]
+          ],
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "fETH"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": 1,
+        "hit": 0,
+        "method": "outflow_rank_1_20",
+        "mode": "daily_reset",
+        "notified": 0,
+        "positive": 113,
+        "raw": 0,
+        "reference": {
+          "candidate": false,
+          "day": 19112,
+          "eligible": false,
+          "positive": true,
+          "raw": false,
+          "scores": [
+            [
+              "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              5,
+              "1/6",
+              false
+            ],
+            [
+              "0xebe0d1cb6a0b8569929e062d67bfbc07608f0a47",
+              11,
+              "1/12",
+              false
+            ]
+          ],
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "fUSDC"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": null,
+        "hit": 1,
+        "method": "core_count_60s_10",
+        "mode": "daily_reset",
+        "notified": 2,
+        "positive": null,
+        "raw": 2,
+        "reference": {
+          "candidate": true,
+          "day": 19112,
+          "eligible": null,
+          "positive": null,
+          "raw": true,
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "fUSDC"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": 36,
+        "hit": 1,
+        "method": "outflow_rank_1_20",
+        "mode": "lookback_7d",
+        "notified": 2,
+        "positive": 113,
+        "raw": 2,
+        "reference": {
+          "candidate": true,
+          "day": 19112,
+          "eligible": true,
+          "positive": true,
+          "raw": true,
+          "scores": [
+            [
+              "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              26,
+              "1/27",
+              true
+            ],
+            [
+              "0xebe0d1cb6a0b8569929e062d67bfbc07608f0a47",
+              22,
+              "1/23",
+              true
+            ]
+          ],
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "fUSDC"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": 75,
+        "hit": 1,
+        "method": "outflow_rank_1_20",
+        "mode": "cumulative_in_window",
+        "notified": 7,
+        "positive": 113,
+        "raw": 7,
+        "reference": {
+          "candidate": true,
+          "day": 19112,
+          "eligible": true,
+          "positive": true,
+          "raw": true,
+          "scores": [
+            [
+              "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              63,
+              "1/64",
+              true
+            ],
+            [
+              "0xebe0d1cb6a0b8569929e062d67bfbc07608f0a47",
+              33,
+              "1/34",
+              true
+            ]
+          ],
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "fUSDC"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": 0,
+        "hit": 0,
+        "method": "outflow_rank_1_20",
+        "mode": "daily_reset",
+        "notified": 0,
+        "positive": 0,
+        "raw": 0,
+        "reference": {
+          "candidate": false,
+          "day": 19112,
+          "eligible": false,
+          "positive": false,
+          "raw": false,
+          "scores": [],
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "comptroller"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": null,
+        "hit": 1,
+        "method": "core_count_60s_10",
+        "mode": "daily_reset",
+        "notified": 1,
+        "positive": null,
+        "raw": 1,
+        "reference": {
+          "candidate": true,
+          "day": 19112,
+          "eligible": null,
+          "positive": null,
+          "raw": true,
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "comptroller"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": 0,
+        "hit": 0,
+        "method": "outflow_rank_1_20",
+        "mode": "lookback_7d",
+        "notified": 0,
+        "positive": 0,
+        "raw": 0,
+        "reference": {
+          "candidate": false,
+          "day": 19112,
+          "eligible": false,
+          "positive": false,
+          "raw": false,
+          "scores": [],
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "comptroller"
+      },
+      {
+        "case": "rari_pool127_20220430",
+        "eligible": 0,
+        "hit": 0,
+        "method": "outflow_rank_1_20",
+        "mode": "cumulative_in_window",
+        "notified": 0,
+        "positive": 0,
+        "raw": 0,
+        "reference": {
+          "candidate": false,
+          "day": 19112,
+          "eligible": false,
+          "positive": false,
+          "raw": false,
+          "scores": [],
+          "time": 1651311149000000000,
+          "tx": "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+        },
+        "view": "comptroller"
+      }
+    ],
+    "source_tier": "S3_selected_identities_verified_by_original_parquet; indexer topics/data/status",
+    "status": "PASS"
+  },
+  "phase23_exact_output_sha256": {
+    "alert_ledger.csv": "9cfd6e1891ce5e5189dcc683cdc199a5e43c9937cd8a7d427d374dfefaa59552",
+    "attack_day_before_after.csv": "e6f32244262746b6a6cea937c675af082cf83508acf044cd1b6fda02f031d321",
+    "primary_outcomes.csv": "545502a79523da9d0c365936c965b53c1280769710d421f5a3a92c8f67689c09",
+    "readiness_sensitivity.csv": "8b89e8c0fa7526287494910d9976660f8222e5086713df22310c896d5271940a"
+  },
+  "phase25_archives_and_members_verified": 3,
+  "phase26_aggregates": {
+    "daily_reset": {
+      "ewma5_ready": 711525,
+      "kind": "published_daily_aggregate_reconciliation_only",
+      "mad19_ready": 13816,
+      "transactions": 714951,
+      "z19_ready": 275250
+    },
+    "retained_within_30day_window": {
+      "ewma5_ready": 714831,
+      "kind": "published_daily_aggregate_reconciliation_only",
+      "mad19_ready": 14857,
+      "transactions": 714951,
+      "z19_ready": 283909
+    }
+  },
+  "schema": "article2_phase31_original_offline_audit_v1",
+  "status": "PASS"
+}

@@ -1,0 +1,101 @@
+{
+  "sources": [
+    {
+      "id": "saddle_blocksec",
+      "url": "https://blocksec.com/blog/how-to-exploit-the-same-vulnerability-of-meta-pool-in-two-different-ways-nerve-bridge-saddle-finance-what-you-see-is-not-what-you-get",
+      "title": "How to Exploit the Same Vulnerability of MetaPool in Two Different Ways",
+      "publication_date": "2022-05-06",
+      "source_type": "primary_investigator_analysis",
+      "read_utc_date": "2026-10-29",
+      "short_quote": "Here we take one attack transaction as a concrete example to illustrate the process.",
+      "linked_hash": "0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56",
+      "source_section": "0x4. The New Attack Method of the Saddle Finance Incident",
+      "facts": "Identifies the nominated metapool and exact representative attack hash. Describes vulnerable swap scaling and repeated exploit executions. This closes the role of the linked transaction, but not the entire incident inventory."
+    },
+    {
+      "id": "audius_official",
+      "url": "https://blog.audius.co/posts/audius-governance-takeover-post-mortem-7-23-22",
+      "title": "Audius Governance Takeover Post-Mortem 7/23/22",
+      "publication_date": "2022-07-24",
+      "source_type": "protocol_team_postmortem",
+      "read_utc_date": "2026-10-29",
+      "short_quote": "23:11:36 UTC - Suspicious token transfer occurs on-chain as a result",
+      "facts": "Links initial attempt 0x3bbb15f... at22:54:37, second initialization/proposal 0xfefd829... at23:10:12 and treasury extraction 0x4227bca... at23:11:36. Proposal84 failed quorum; proposal85 executed. The failed governance attempt is distinct from Ethereum transaction reversion. Lists governance, staking and delegation components."
+    },
+    {
+      "id": "xcarnival_slowmist",
+      "url": "https://slowmist.medium.com/xcarnival-nft-lending-protocol-vulnerability-analysis-583474cede61",
+      "title": "XCarnival NFT lending protocol vulnerability analysis",
+      "publication_date": "2022-06-28",
+      "source_type": "primary_investigator_analysis",
+      "read_utc_date": "2026-10-29",
+      "short_quote": "Preparing for the attack \u2014 the transaction that generated the order",
+      "facts": "Explicitly identifies preparation0x61a6a893... and borrowing0x51cbfd46.... Describes collateral withdrawal leaving reusable orders and subsequent native-ETH borrowing through xToken. Explains only one example, so the linked hashes are not a complete execution inventory. Report calendar wording June27 differs from indexed UTC June26."
+    },
+    {
+      "id": "xcarnival_borrow_explorer",
+      "url": "https://etherscan.io/tx/0x51cbfd46f21afb44da4fa971f220bd28a14530e1d5da5009cfbdfee012e57e35",
+      "title": "Ethereum transaction 0x51cbfd46...",
+      "source_type": "public_explorer_transaction",
+      "read_utc_date": "2026-10-29",
+      "facts": "Success; block15028889; position15; 2022-06-26T12:03:30Z;24 receipt logs. Sender0xb7cbb4d43f1e08327a90b32a8417688c9d0b800a; recipient0xf70f691d30ce23786cfb3a1522cfd76d159aca8d. Native ETH borrow calls originate from xToken proxy0xb38707e31c813f832ef71c70731ed80b45b85b2d. Later Blockscout raw bundle is authoritative for the saved reproducibility audit."
+    },
+    {
+      "id": "saddle_poc",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-04/Saddle_exp.sol",
+      "source_type": "frozen_reproduction_source",
+      "source_commit": "0a9b9fd81c50767ff49f81089fbf8934f2f45b02",
+      "read_utc_date": "2026-10-29",
+      "file_sha256": "99a82fd0bb49f7ec2ea5f1f03e59579aefcb6fb6612e9509f252df283cbd8839",
+      "git_blob_sha1": "b050592681782735461e5e2261443ec5988af650",
+      "bytes": 3442,
+      "redistribution_note": "Source files declare SPDX UNLICENSED. Only locator, digest and factual role extraction are redistributed here, not full copied code."
+    },
+    {
+      "id": "xcarnival_poc",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-06/XCarnival_exp.sol",
+      "source_type": "frozen_reproduction_source",
+      "source_commit": "0a9b9fd81c50767ff49f81089fbf8934f2f45b02",
+      "read_utc_date": "2026-10-29",
+      "file_sha256": "a0995a971b94dffb716741e1d557a7050fc2ce4e70c3a48b229408aa5d45c7b6",
+      "git_blob_sha1": "f976f338caa2edb08db90aa4b5959b968d7a339f",
+      "bytes": 6145,
+      "redistribution_note": "Source files declare SPDX UNLICENSED. Only locator, digest and factual role extraction are redistributed here, not full copied code."
+    },
+    {
+      "id": "audius_poc",
+      "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-07/Audius_exp.sol",
+      "source_type": "frozen_reproduction_source",
+      "source_commit": "0a9b9fd81c50767ff49f81089fbf8934f2f45b02",
+      "read_utc_date": "2026-10-29",
+      "file_sha256": "013293e3055b0e8798f71e8b28b5be0a6866845b464b7a1b6d742a5916d553fc",
+      "git_blob_sha1": "6693283728c367b2e1776a01d7be0874b195b8ec",
+      "bytes": 8776,
+      "redistribution_note": "Source files declare SPDX UNLICENSED. Only locator, digest and factual role extraction are redistributed here, not full copied code."
+    },
+    {
+      "id": "saddle_seal_rescue",
+      "url": "https://safeharbor.securityalliance.org/whitehats",
+      "title": "Whitehat Rescues: Blocksec / Saddle",
+      "source_type": "maintainer_curated_rescue_registry",
+      "read_utc_date": "2026-10-29",
+      "facts": "Explicitly classifies0x9549c0cb... as a BlockSec whitehat rescue of Saddle; links recovery0xe09b3017... . This is role evidence, not a monitor outcome."
+    },
+    {
+      "id": "saddle_rescue_explorer",
+      "url": "https://etherscan.io/tx/0x9549c0cb48ec5a5a2c4703cbbbbea5638028b2d8c8adc103220ef1c7fe5e99a3",
+      "title": "Ethereum transaction0x9549c0cb...",
+      "source_type": "public_explorer_transaction",
+      "read_utc_date": "2026-10-29",
+      "facts": "Success;14684434;2022-04-30T08:04:55Z. Sender0x811929c3c17dd598172f8078a48540fa23f44b05 labelled BlockSec Whitehat Ops."
+    },
+    {
+      "id": "saddle_second_explorer",
+      "url": "https://etherscan.io/tx/0xe7e0474793aad11875c131ebd7582c8b73499dd3c5a473b59e6762d4e373d7b8",
+      "title": "Ethereum transaction0xe7e04747...",
+      "source_type": "public_explorer_transaction",
+      "read_utc_date": "2026-10-29",
+      "facts": "Success;14684518;position282;2022-04-30T08:24:23Z. Sender0x63341ba917de90498f3903b199df5699b4a55ac0 matches original report-linked attacker. Receipt events show repeated nominated-pool transfers and WETH proceeds to same sender. Assigning subsequent harmful extraction is an explicit chain-sequence inference."
+    }
+  ]
+}
