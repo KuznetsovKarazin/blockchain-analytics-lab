@@ -1,0 +1,42 @@
+name: monitoring-phase22-indexed-bundles-preflight
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase22_indexed_bundles.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-indexed-data-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [bacon_20220305, rari_pool127_20220430]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: article2-phase22-identity-full-${{ matrix.case }}
+          run-id: 40865540938
+          github-token: ${{ github.token }}
+          path: original_s3_selected
+      - name: Match public indexed complete transaction logs to pinned AWS identities
+        run: |
+          python papers/monitoring_jss/phase22/phase22_indexed_bundles.py \
+            --case '${{ matrix.case }}' \
+            --identities original_s3_selected/selected_tx_identities.json \
+            --out phase22_indexed \
+            --max-tx 3
+      - name: Preserve source receipts and normalized derived observations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase22-indexer-probe-${{ matrix.case }}
+          path: |
+            phase22_indexed/acquisition_manifest.json
+            phase22_indexed/indexer_response_receipts.json
+            phase22_indexed/indexer_observations.jsonl.gz
+          if-no-files-found: warn
+          retention-days: 30
