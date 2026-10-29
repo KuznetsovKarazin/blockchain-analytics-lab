@@ -1,0 +1,490 @@
+{
+  "schema": "article2_phase29_independent_reference_adjudication_v1",
+  "frozen_phase28_ref": "fc25cd8c187e6c8b0afb9afae2072f78dc2d3c0e",
+  "source_catalogue": "SunWeb3Sec/DeFiHackLabs@0a9b9fd81c50767ff49f81089fbf8934f2f45b02",
+  "disclaimer": "Source documents corroborate incidents or candidate roles as specifically described. Independent Ethereum receipt-root and complete all-emitter original-source full-window acceptance has NOT been performed for these sixteen. No new detection hit is admitted.",
+  "incident_family_count": 16,
+  "new_detection_cases_admitted": 0,
+  "case_records": [
+    {
+      "case_id": "cohort28_01",
+      "name": "Compound cTUSD sweepToken",
+      "original_poc_fork_block": 14266479,
+      "candidate_core": "0x12392f67bdf24fae0af363c24ac620a2f67dad86",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "POTENTIAL_ONLY",
+      "actual_attack_date_utc": null,
+      "independently_supported_reference_hash": null,
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [],
+      "indexed_reference_count": 0,
+      "indexed_references": [],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "A hypothetical/PoC sweepToken exploit, not a verified realized historical attack."
+    },
+    {
+      "case_id": "cohort28_02",
+      "name": "Umbrella Network staking",
+      "original_poc_fork_block": 14421983,
+      "candidate_core": "0xb3fb1d01b07a706736ca175f827e4f56021b85de",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "INCIDENT_CONFIRMED_REFERENCE_ROLE_PENDING",
+      "actual_attack_date_utc": null,
+      "independently_supported_reference_hash": null,
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://medium.com/umbrella-network/update-on-polar-stream-exploit-b2f4526327f2"
+      ],
+      "indexed_reference_count": 1,
+      "indexed_references": [
+        {
+          "tx": "0x33479bcfbc792aa0f8103ab0d7a3784788b5b0e1467c81ffbed1b7682660b4fa",
+          "status": "ok",
+          "role_hint": "possible_exploit_execution",
+          "core_emitter_logs": 1,
+          "indexed_all_emitter_logs": 2,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Official March20 incident covers ETH and BSC; one Ethereum transaction indexed, but official report does not establish this is the complete attack inventory."
+    },
+    {
+      "case_id": "cohort28_03",
+      "name": "Ronin Bridge Ethereum withdrawal",
+      "original_poc_fork_block": 14442834,
+      "candidate_core": "0x1a2a1c938ce3ec39b6d47113c7955baa9dd454f2",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "DIFFERENT_THREAT_SURFACE",
+      "actual_attack_date_utc": null,
+      "independently_supported_reference_hash": null,
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-03/Ronin_exp.sol"
+      ],
+      "indexed_reference_count": 0,
+      "indexed_references": [],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Ronin validator-key compromise; Ethereum bridge withdrawals must be distinguished from source-chain key compromise; no reliable single original ETH exploit execution in frame."
+    },
+    {
+      "case_id": "cohort28_04",
+      "name": "Auctus options writer",
+      "original_poc_fork_block": 14460635,
+      "candidate_core": "0xe7597f774fd0a15a617894dc39d45a28b97afa4f",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "INCIDENT_CANDIDATE_NO_HASH",
+      "actual_attack_date_utc": null,
+      "independently_supported_reference_hash": null,
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-03/Auctus_exp.sol"
+      ],
+      "indexed_reference_count": 0,
+      "indexed_references": [],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Approval-drain suspected; exact original execution and stable observation boundary unverified; nominated writer emitted no logs in original window."
+    },
+    {
+      "case_id": "cohort28_05",
+      "name": "Beanstalk governance",
+      "original_poc_fork_block": 14595905,
+      "candidate_core": "0xc1e088fc1323b20bcbee9bd1b9fc9546db5624c5",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "REFERENCE_ROLE_SUPPORTED",
+      "actual_attack_date_utc": "2022-04-17",
+      "independently_supported_reference_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://bean.money/blog/beanstalk-governance-exploit",
+        "https://official.beosin.com/resources/beosins-analysis-of-the-beanstalk-exploit"
+      ],
+      "indexed_reference_count": 1,
+      "indexed_references": [
+        {
+          "tx": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+          "status": "ok",
+          "role_hint": "reported_exploit_execution",
+          "core_emitter_logs": 6,
+          "indexed_all_emitter_logs": 121,
+          "within_original_fork_window": false
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Verified successful exploit April17 from original report+independent analysis; original Phase28 window ended April16 (PoC fork): INVALID FOR ATTACK-DAY COVERAGE; needs corrected 30day pre-execution window and original-source evidence."
+    },
+    {
+      "case_id": "cohort28_06",
+      "name": "Akutar NFT auction",
+      "original_poc_fork_block": 14636844,
+      "candidate_core": "0xf42c318dbfbaab0eee040279c6a2588fa01a961d",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "NON_OUTFLOW_FAILURE_MODE",
+      "actual_attack_date_utc": "2022-04-23",
+      "independently_supported_reference_hash": "0x62d280abc60f8b604175ab24896c989e6092e496ac01f2f5399b2a62e9feaacf",
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-04/AkutarNFT_exp.sol"
+      ],
+      "indexed_reference_count": 1,
+      "indexed_references": [
+        {
+          "tx": "0x62d280abc60f8b604175ab24896c989e6092e496ac01f2f5399b2a62e9feaacf",
+          "status": "ok",
+          "role_hint": "role_pending",
+          "core_emitter_logs": 0,
+          "indexed_all_emitter_logs": 0,
+          "within_original_fork_window": false
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "NFT auction lock/DoS rather than theft; PoC candidate on April23, outside PoC-anchored window ending April22. Contract nominated as NFT not necessarily actual escrow."
+    },
+    {
+      "case_id": "cohort28_07",
+      "name": "Saddle sUSD metapool",
+      "original_poc_fork_block": 14684306,
+      "candidate_core": "0x824dcd7b044d60df2e89b1bb888e66d8bcf41491",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "INCIDENT_CONFIRMED_REFERENCE_ROLE_PENDING",
+      "actual_attack_date_utc": "2022-04-30",
+      "independently_supported_reference_hash": "0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56",
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://blocksec.com/blog/how-to-exploit-the-same-vulnerability-of-meta-pool-in-two-different-ways-nerve-bridge-saddle-finance-what-you-see-is-not-what-you-get"
+      ],
+      "indexed_reference_count": 1,
+      "indexed_references": [
+        {
+          "tx": "0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56",
+          "status": "ok",
+          "role_hint": "role_pending",
+          "core_emitter_logs": 9,
+          "indexed_all_emitter_logs": 74,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Technical incident report supports the attack mechanism/date; nominated metapool proxy has indexed emitter logs but exact transaction and complete attack-inventory role need separate source corroboration."
+    },
+    {
+      "case_id": "cohort28_08",
+      "name": "ApeCoin airdrop claim",
+      "original_poc_fork_block": 14403948,
+      "candidate_core": "0x025c6da5bd0e6a5dd1350fda9e3b6a614b205a1f",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "INCIDENT_CANDIDATE_ROLE_PENDING",
+      "actual_attack_date_utc": "2022-03-17",
+      "independently_supported_reference_hash": "0xeb8c3bebed11e2e4fcd30cbfc2fb3c55c4ca166003c7f7d319e78eaab9747098",
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-05/Bayc_apecoin_exp.sol"
+      ],
+      "indexed_reference_count": 1,
+      "indexed_references": [
+        {
+          "tx": "0xeb8c3bebed11e2e4fcd30cbfc2fb3c55c4ca166003c7f7d319e78eaab9747098",
+          "status": "ok",
+          "role_hint": "role_pending",
+          "core_emitter_logs": 7,
+          "indexed_all_emitter_logs": 69,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "PoC uses high-value NFT and ApeCoin claim; must distinguish permissionless claim strategy/flashloan arbitrage from historical software vulnerability or exploit."
+    },
+    {
+      "case_id": "cohort28_09",
+      "name": "Inverse Finance June lending",
+      "original_poc_fork_block": 14972418,
+      "candidate_core": "0x1429a930ec3bcf5aa32ef298ccc5ab09836ef587",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "REFERENCE_ROLE_SUPPORTED",
+      "actual_attack_date_utc": "2022-06-16",
+      "independently_supported_reference_hash": "0x958236266991bc3fe3b77feaacea120f172c0708ad01c7a715b255f218f9313c",
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://blocksec.com/blog/our-take-on-the-inverse-finance-security-incident-price-manipulation-attack",
+        "https://www.certik.com/blog/inverse-finance-incident-analysis"
+      ],
+      "indexed_reference_count": 1,
+      "indexed_references": [
+        {
+          "tx": "0x958236266991bc3fe3b77feaacea120f172c0708ad01c7a715b255f218f9313c",
+          "status": "ok",
+          "role_hint": "reported_exploit_execution",
+          "core_emitter_logs": 3,
+          "indexed_all_emitter_logs": 54,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Independent BlockSec explicitly identifies original execution tx; nominated yvCrv3Crypto market is only one possible impacted contract, not necessarily full economic boundary."
+    },
+    {
+      "case_id": "cohort28_10",
+      "name": "Schnoodle ERC777 token",
+      "original_poc_fork_block": 14983660,
+      "candidate_core": "0xd45740ab9ec920bedbd9bab2e863519e59731941",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "REFERENCE_ROLE_SUPPORTED_WITH_SECONDARY_REPORT",
+      "actual_attack_date_utc": "2022-06-18",
+      "independently_supported_reference_hash": "0x9a6227ef97d7ce75732645bd604ef128bb5dfbc1bfbe0966ad1cd2870d45a20e",
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://vishvesh-rao.github.io/posts/Detailed-Postmortem-of-Uniswap-v2-Schnoodle-exploit/"
+      ],
+      "indexed_reference_count": 1,
+      "indexed_references": [
+        {
+          "tx": "0x9a6227ef97d7ce75732645bd604ef128bb5dfbc1bfbe0966ad1cd2870d45a20e",
+          "status": "ok",
+          "role_hint": "reported_exploit_execution",
+          "core_emitter_logs": 14,
+          "indexed_all_emitter_logs": 18,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Independent historical analysis of ERC777 token exploit identifies Schnoodle proxy; risk of token event counts conflating token transfers and protocol safety; requires original source full window."
+    },
+    {
+      "case_id": "cohort28_11",
+      "name": "XCarnival XNFT",
+      "original_poc_fork_block": 15028846,
+      "candidate_core": "0xb14b3b9682990ccc16f52eb04146c3ceab01169a",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "INCIDENT_CONFIRMED_REFERENCE_ROLE_PENDING",
+      "actual_attack_date_utc": "2022-06-26",
+      "independently_supported_reference_hash": null,
+      "additional_reference_candidates": [
+        "0x422e7b0a449deba30bfe922b5c34282efbdbf860205ff04b14fd8129c5b91433",
+        "0xabfcfaf3620bbb2d41a3ffea6e31e93b9b5f61c061b9cfc5a53c74ebe890294d"
+      ],
+      "primary_or_independent_sources": [
+        "https://onchainattack.org/document/examples/2022-06-xcarnival-withdrawn-nft-collateral-order-reuse/"
+      ],
+      "indexed_reference_count": 2,
+      "indexed_references": [
+        {
+          "tx": "0x422e7b0a449deba30bfe922b5c34282efbdbf860205ff04b14fd8129c5b91433",
+          "status": "ok",
+          "role_hint": "role_pending",
+          "core_emitter_logs": 8,
+          "indexed_all_emitter_logs": 52,
+          "within_original_fork_window": true
+        },
+        {
+          "tx": "0xabfcfaf3620bbb2d41a3ffea6e31e93b9b5f61c061b9cfc5a53c74ebe890294d",
+          "status": "ok",
+          "role_hint": "role_pending",
+          "core_emitter_logs": 0,
+          "indexed_all_emitter_logs": 33,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Multiple attack legs and distinct XNFT vs lending pool contracts; one nominated XNFT proxy has zero core logs in second execution; cannot choose boundary by alerts."
+    },
+    {
+      "case_id": "cohort28_12",
+      "name": "FlippazOne NFT auction",
+      "original_poc_fork_block": 15083765,
+      "candidate_core": "0xe85a08cf316f695ebe7c13736c8cc38a7cc3e944",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "POC_ONLY_NO_REALIZED_REFERENCE",
+      "actual_attack_date_utc": null,
+      "independently_supported_reference_hash": null,
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-07/FlippazOne_exp.sol"
+      ],
+      "indexed_reference_count": 0,
+      "indexed_references": [],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Only a PoC/hypothetical candidate in frozen frame; no independently verified original exploit reference."
+    },
+    {
+      "case_id": "cohort28_13",
+      "name": "Omni NFT lending",
+      "original_poc_fork_block": 15114361,
+      "candidate_core": "0xebe72cdafebc1abf26517dd64b28762df77912a9",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "REFERENCE_ROLE_SUPPORTED_WITH_SECONDARY_REPORT",
+      "actual_attack_date_utc": "2022-07-10",
+      "independently_supported_reference_hash": "0x05d65e0adddc5d9ccfe6cd65be4a7899ebcb6e5ec7a39787971bcc3d6ba73996",
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://slowmist.medium.com/slowmist-an-analysis-of-the-attack-on-the-omnix-nft-platform-51f89a6042ca",
+        "https://www.theblock.co/news/regulation/2022-07-10-hacker-drains-1-4-million-worth-of-eth-from-nft-lender-omni-156800"
+      ],
+      "indexed_reference_count": 1,
+      "indexed_references": [
+        {
+          "tx": "0x05d65e0adddc5d9ccfe6cd65be4a7899ebcb6e5ec7a39787971bcc3d6ba73996",
+          "status": "ok",
+          "role_hint": "reported_exploit_execution",
+          "core_emitter_logs": null,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Independent investigator identifies original attack tx and pool; preflight Blockscout bundle incomplete, so cannot admit until full source recovery."
+    },
+    {
+      "case_id": "cohort28_14",
+      "name": "Audius governance",
+      "original_poc_fork_block": 15201793,
+      "candidate_core": "0x4deca517d6817b6510798b7328f2314d3003abac",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "MULTISTAGE_REFERENCE_ROLE_PENDING",
+      "actual_attack_date_utc": "2022-07-23",
+      "independently_supported_reference_hash": null,
+      "additional_reference_candidates": [
+        "0xfefd829e246002a8fd061eede7501bccb6e244a9aacea0ebceaecef5d877a984",
+        "0x3c09c6306b67737227edc24c663462d870e7c2bf39e9ab66877a980c900dd5d5",
+        "0x4227bca8ed4b8915c7eec0e14ad3748a88c4371d4176e716e8007249b9980dc9",
+        "0x82fc23992c7433fffad0e28a1b8d11211dc4377de83e88088d79f24f4a3f28b3"
+      ],
+      "primary_or_independent_sources": [
+        "https://blog.audius.co/posts/audius-governance-takeover-post-mortem-7-23-22",
+        "https://github.com/nukanoto/audius-exploit"
+      ],
+      "indexed_reference_count": 4,
+      "indexed_references": [
+        {
+          "tx": "0x82fc23992c7433fffad0e28a1b8d11211dc4377de83e88088d79f24f4a3f28b3",
+          "status": "ok",
+          "role_hint": "role_pending_final",
+          "core_emitter_logs": 0,
+          "indexed_all_emitter_logs": 7,
+          "within_original_fork_window": true
+        },
+        {
+          "tx": "0xfefd829e246002a8fd061eede7501bccb6e244a9aacea0ebceaecef5d877a984",
+          "status": "ok",
+          "role_hint": "setup",
+          "core_emitter_logs": 2,
+          "indexed_all_emitter_logs": 5,
+          "within_original_fork_window": true
+        },
+        {
+          "tx": "0x3c09c6306b67737227edc24c663462d870e7c2bf39e9ab66877a980c900dd5d5",
+          "status": "ok",
+          "role_hint": "setup",
+          "core_emitter_logs": 1,
+          "indexed_all_emitter_logs": 1,
+          "within_original_fork_window": true
+        },
+        {
+          "tx": "0x4227bca8ed4b8915c7eec0e14ad3748a88c4371d4176e716e8007249b9980dc9",
+          "status": "ok",
+          "role_hint": "setup",
+          "core_emitter_logs": 2,
+          "indexed_all_emitter_logs": 3,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Official Audius postmortem confirms governance takeover and treasury drain; stage-specific PoC IDs include initialization/vote/execution/later swap. Final swap emits no nominated governance proxy logs. Must isolate actual treasury-drain transaction, not score post-exploit sale as governance attack."
+    },
+    {
+      "case_id": "cohort28_15",
+      "name": "Nomad Bridge replica",
+      "original_poc_fork_block": 15259100,
+      "candidate_core": "0x5d94309e5a0090b165fa4181519701637b6daeba",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "INCIDENT_CONFIRMED_MANY_EXECUTIONS",
+      "actual_attack_date_utc": "2022-08-01",
+      "independently_supported_reference_hash": null,
+      "additional_reference_candidates": [
+        "0xa5fe9d044e4f3e5aa5bc4c0709333cd2190cba0f4e7f16bcf73f49f83e4a5460",
+        "0xed26708a7335116bdb0673f32ace7c2f329fe3cd349e200447210f1721f335f0"
+      ],
+      "primary_or_independent_sources": [
+        "https://github.com/nomad-xyz/hack-data"
+      ],
+      "indexed_reference_count": 2,
+      "indexed_references": [
+        {
+          "tx": "0xa5fe9d044e4f3e5aa5bc4c0709333cd2190cba0f4e7f16bcf73f49f83e4a5460",
+          "status": "ok",
+          "role_hint": "role_pending",
+          "core_emitter_logs": 1,
+          "indexed_all_emitter_logs": 3,
+          "within_original_fork_window": true
+        },
+        {
+          "tx": "0xed26708a7335116bdb0673f32ace7c2f329fe3cd349e200447210f1721f335f0",
+          "status": "ok",
+          "role_hint": "setup",
+          "core_emitter_logs": 0,
+          "indexed_all_emitter_logs": 3,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "Nomad team maintains broad original exploit ledger; single PoC-replayed claim is not full inventory; distinguish initial token deposit from fraudulent process and router vs Replica boundary."
+    },
+    {
+      "case_id": "cohort28_16",
+      "name": "Bad Guys by RPF NFT",
+      "original_poc_fork_block": 15460093,
+      "candidate_core": "0xb84cbaf116eb90fd445dd5aeadfab3e807d2cbac",
+      "original_phase28_window": "PoC-fork-anchored; do not use as attack-day coverage",
+      "source_readiness": "SOURCE_CENSUS_ONLY",
+      "source_status": "POC_REFERENCE_ROLE_PENDING",
+      "actual_attack_date_utc": "2022-09-02",
+      "independently_supported_reference_hash": "0xb613c68b00c532fe9b28a50a91c021d61a98d907d0217ab9b44cd8d6ae441d9f",
+      "additional_reference_candidates": [],
+      "primary_or_independent_sources": [
+        "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-09/BadGuysbyRPF_exp.sol"
+      ],
+      "indexed_reference_count": 1,
+      "indexed_references": [
+        {
+          "tx": "0xb613c68b00c532fe9b28a50a91c021d61a98d907d0217ab9b44cd8d6ae441d9f",
+          "status": "ok",
+          "role_hint": "role_pending",
+          "core_emitter_logs": 400,
+          "indexed_all_emitter_logs": 400,
+          "within_original_fork_window": true
+        }
+      ],
+      "explicitly_not_admitted": true,
+      "original_source_payloads_verified_for_full_window": false,
+      "review_notes": "NFT whitelist mint allows arbitrary quantities; 400 nominated emitter logs in known indexed tx, but ERC20 positive outflow is not the exploit construct. Independent role confirmation still required."
+    }
+  ]
+}
