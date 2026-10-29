@@ -1,0 +1,104 @@
+name: monitoring-phase20-reference-log-audit
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths:
+      - .github/workflows/monitoring_phase20_reference_log_audit.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  indexed-log-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read bounded indexer event metadata for two known historical references
+        run: |
+          python - <<'PY'
+          import collections,json,urllib.request,urllib.parse
+          from pathlib import Path
+          cases={
+            'bacon_20220305':{'tx':'0x7d2296bcb936aa5e2397ddf8ccba59f54a178c3901666b49291d880369dbcf31',
+                             'core':['0xb8919522331c59f5c16bdfaa6a121a6e03a91f62']},
+            'rari_pool127_20220430':{'tx':'0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530',
+                             'core':['0x26267e41ceca7c8e0f143554af707336f27fa051',
+                                     '0xebe0d1cb6a0b8569929e062d67bfbC07608f0a47',
+                                     '0x3f2d1bc6d02522dbcdb216b2e75edddafe04b16f']}}
+          TRANSFER='0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
+          def get(url):
+              with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'article2-phase20-indexed-reference-audit/1.0'}),timeout=15) as f:
+                  data=f.read(2000001)
+              if len(data)>2000000: raise ValueError('response exceeds maximum 2MB')
+              return json.loads(data)
+          def address(log):
+              v=log.get('address')
+              if isinstance(v,dict):v=v.get('hash')
+              return str(v).lower() if v else None
+          results=[]
+          for case,config in cases.items():
+              tx=config['tx'];core={x.lower() for x in config['core']}
+              row={'case':case,'tx':tx,'source_tier':'BLOCKSCOUT_INDEXED_NOT_RAW_RECEIPT_ROOT_AUTHENTICATED'}
+              try:
+                  base='https://eth.blockscout.com/api/v2/transactions/'+tx
+                  t=get(base)
+                  if str(t.get('hash','')).lower()!=tx:raise ValueError('transaction identity mismatch')
+                  row.update({'status':t.get('status'),'block_number':t.get('block_number'),
+                              'block_hash':t.get('block_hash'),'timestamp':t.get('timestamp')})
+                  logs=[]; params=None;complete=False
+                  for page in range(12):
+                      url=base+'/logs'
+                      if params: url+='?'+urllib.parse.urlencode(params)
+                      payload=get(url)
+                      if not isinstance(payload.get('items'),list):raise ValueError('invalid log list')
+                      logs.extend(payload['items'])
+                      if len(logs)>900:raise ValueError('too many logs in this bounded task')
+                      params=payload.get('next_page_params')
+                      if params is None:
+                          complete=True
+                          break
+                      if not isinstance(params,dict):raise ValueError('invalid continuation')
+                  if not complete:raise ValueError('log pagination incomplete')
+                  emitters=collections.Counter(address(l) for l in logs)
+                  transfers=0;core_from=collections.Counter();core_to=collections.Counter()
+                  for log in logs:
+                      topics=log.get('topics') or []
+                      if not isinstance(topics,list):continue
+                      data=str(log.get('data') or '')
+                      if len(topics)==3 and str(topics[0]).lower()==TRANSFER and len(data)==66 and data.startswith('0x'):
+                          transfers+=1
+                          f='0x'+str(topics[1])[-40:].lower()
+                          to='0x'+str(topics[2])[-40:].lower()
+                          token=address(log)
+                          try:amt=int(data,16)
+                          except ValueError:continue
+                          if amt>0 and f in core and to not in core:core_from[token]+=1
+                          if amt>0 and to in core and f not in core:core_to[token]+=1
+                  row.update({'state':'COMPLETE_INDEXED_LOG_PAGES','log_count':len(logs),
+                              'indexed_emitter_log_counts':dict(sorted(emitters.items())),
+                              'candidate_core_log_counts':{c:emitters.get(c,0) for c in sorted(core)},
+                              'erc20_transfer_shaped_logs':transfers,
+                              'positive_erc20_core_sender_token_event_counts':dict(sorted(core_from.items())),
+                              'positive_erc20_core_recipient_token_event_counts':dict(sorted(core_to.items())),
+                              'log_pages':page+1})
+              except Exception as exc:
+                  row.update({'state':'UNAVAILABLE_OR_INCOMPLETE','error':type(exc).__name__+': '+str(exc)[:180]})
+              results.append(row)
+          report={'schema':'phase20_reference_indexed_logs_v1',
+                  'source_tier':'INDEXER_METADATA_NOT_RAW_RECEIPT_OR_COMPLETE_WINDOW',
+                  'case_admissions':0,'new_external_families_measured':0,'detector_scores':0,
+                  'cases':results}
+          Path('phase20_reference_log_metadata.json').write_text(json.dumps(report,indent=2)+'\n')
+          for x in results:
+              print(x['case'],'state=',x['state'],'status=',x.get('status'),'block=',x.get('block_number'),
+                    'logs=',x.get('log_count'),'core_logs=',x.get('candidate_core_log_counts'),
+                    'erc20_shaped=',x.get('erc20_transfer_shaped_logs'),
+                    'core_sender_shapes=',x.get('positive_erc20_core_sender_token_event_counts'))
+          PY
+      - name: Save independently retrieved indexer summaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase20-reference-log-metadata
+          path: phase20_reference_log_metadata.json
+          if-no-files-found: error
+          retention-days: 30
