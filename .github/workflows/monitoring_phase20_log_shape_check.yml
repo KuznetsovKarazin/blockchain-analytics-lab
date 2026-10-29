@@ -1,0 +1,49 @@
+name: monitoring-phase20-log-shape-check
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths:
+      - .github/workflows/monitoring_phase20_log_shape_check.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  log-shape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Inspect API event field shapes, no historic raw data downloads
+        run: |
+          python - <<'PY'
+          import urllib.request,json,collections
+          from pathlib import Path
+          refs={'bacon':'0x7d2296bcb936aa5e2397ddf8ccba59f54a178c3901666b49291d880369dbcf31',
+                'rari':'0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530'}
+          result={}
+          for name,tx in refs.items():
+              url='https://eth.blockscout.com/api/v2/transactions/'+tx+'/logs'
+              with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'article2-phase20-shape-check/1.0'}),timeout=15) as f:
+                  payload=json.loads(f.read(750001))
+              items=payload['items']
+              samples=[]
+              for row in items[:8]:
+                  topics=row.get('topics')
+                  samples.append({'keys':sorted(row),'topics_type':str(type(topics)),
+                                  'topics_len':len(topics) if hasattr(topics,'__len__') else None,
+                                  'topics0':str(topics[0])[:90] if isinstance(topics,list) and topics else None,
+                                  'data_type':str(type(row.get('data'))),
+                                  'data_len':len(str(row.get('data'))),
+                                  'data_prefix':str(row.get('data'))[:20],
+                                  'address_type':str(type(row.get('address')))})
+              topic_counts=collections.Counter(str((r.get('topics') or [''])[0])[:14] for r in items)
+              result[name]={'samples':samples,'topic_prefix_counts':dict(topic_counts),
+                            'pagination':payload.get('next_page_params'),'page_log_count':len(items)}
+          Path('phase20_log_field_shapes.json').write_text(json.dumps(result,indent=2)+'\n')
+          print(json.dumps({k:{'topic_prefix_counts':v['topic_prefix_counts'],
+                  'sample':v['samples'][0] if v['samples'] else {}} for k,v in result.items()},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase20-log-shapes
+          path: phase20_log_field_shapes.json
+          retention-days: 30
