@@ -1,0 +1,135 @@
+name: monitoring-phase20-core-traffic-audit
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase20_core_traffic_audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-window-address-columns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Parquet decoder
+        run: python -m pip install --disable-pip-version-check 'pyarrow==19.0.1'
+      - name: Scan only original S3 Parquet address columns for frozen core emitters
+        run: |
+          python - <<'PY'
+          import json,sys,urllib.parse,urllib.request,xml.etree.ElementTree as ET
+          from collections import defaultdict
+          from datetime import date,timedelta
+          from pathlib import Path
+          import pyarrow as pa,pyarrow.compute as pc,pyarrow.parquet as pq
+          sys.path.insert(0,str(Path.cwd()/'papers/monitoring_jss/phase16/collector'))
+          import range_collector as rc
+          cases={
+            'bacon_20220305':{'start':'2022-02-04','end':'2022-03-06','cores':{
+              'proxy':'0xb8919522331c59f5c16bdfaa6a121a6e03a91f62'}},
+            'rari_pool127_20220430':{'start':'2022-04-01','end':'2022-05-01','cores':{
+              'fETH':'0x26267e41ceca7c8e0f143554af707336f27fa051',
+              'fUSDC':'0xebe0d1cb6a0b8569929e062d67bfbC07608f0a47',
+              'comptroller':'0x3f2d1bc6d02522dbcdb216b2e75edddafe04b16f'}}}
+          caps={'requests':450,'total_response_bytes':550_000_000,'wall_seconds':560,
+              'request_timeout_seconds':30,'max_range_bytes':18_000_000,
+              'max_footer_bytes':1_000_000,'max_rows':7_000_000,'max_row_groups':64,
+              'max_top_level_columns':60,'max_leaf_columns':80,
+              'max_source_bytes':800_000_000,'retries':0,'concurrency':1}
+          def xmlfield(node,name):
+              return next((x.text for x in node if x.tag.rsplit('}',1)[-1]==name),None)
+          def source_for(day):
+              prefix=f'v1.0/eth/logs/date={day}/'
+              q=urllib.parse.urlencode({'list-type':'2','prefix':prefix,'max-keys':'100'})
+              with urllib.request.urlopen(urllib.request.Request(rc.ENDPOINT+'?'+q,
+                   headers={'User-Agent':'article2-phase20-core-audit/1.0'}),timeout=15) as f:
+                  raw=f.read(250001)
+              if len(raw)>250000:raise ValueError('oversized S3 listing')
+              root=ET.fromstring(raw)
+              objs=[x for x in root if x.tag.rsplit('}',1)[-1]=='Contents']
+              if len(objs)!=1 or xmlfield(root,'IsTruncated')=='true':raise ValueError('incomplete S3 listing')
+              obj=objs[0]
+              key=xmlfield(obj,'Key')
+              if not key.startswith(prefix) or not key.endswith('.snappy.parquet'):
+                  raise ValueError('invalid source key')
+              return {'table':'logs','day_utc':day,'key':key,
+                     'size_bytes':int(xmlfield(obj,'Size')),
+                     'etag_opaque':xmlfield(obj,'ETag')}
+          report={'schema':'phase20_label_free_core_traffic_v1',
+              'provenance':'papers/monitoring_jss/phase20/PHASE20_CORE_TRAFFIC_PROTOCOL.md',
+              'source_tier':'full address-column coverage of enumerated AWS daily Parquet objects; not all-emitter bundles or blockchain receipt-root authentication',
+              'new_incidents_admitted':0,'detector_runs':0,'transaction_hashes_downloaded':0,
+              'subjects':cases,'days':[],'source_audit':[],'summary':{}}
+          plan={'schema_version':'article2_phase16_range_source_plan_v1',
+              'endpoint':rc.ENDPOINT,'caps':caps,'required_columns':{'logs':['address']}}
+          session=rc.RangeSession(plan,Path('phase20_traffic_range_capture'))
+          failed=False
+          for case,design in cases.items():
+              d=date.fromisoformat(design['start']);end=date.fromisoformat(design['end'])
+              assert (end-d).days==30
+              while d<end:
+                  day=d.isoformat();entry={'case':case,'day':day,'status':'UNAVAILABLE'}
+                  try:
+                      source=source_for(day)
+                      before_requests=len(session.requests);before_bytes=session.bytes
+                      reader=rc.SourceReader(source,session,Path('phase20_traffic_sparse')/case,pa,pq).open()
+                      counts={k:0 for k in design['cores']}
+                      total_rows=0
+                      for group,tab in reader.iter_row_groups(['address']):
+                          normalized=pc.utf8_lower(tab.column('address'))
+                          total_rows+=len(normalized)
+                          for label,addr in design['cores'].items():
+                              hits=pc.sum(pc.cast(pc.equal(normalized,addr.lower()),pa.int64())).as_py()
+                              counts[label]+=int(hits or 0)
+                      if total_rows!=reader.metadata.num_rows:
+                          raise ValueError('Parquet group row count mismatch')
+                      entry.update({'status':'FULL_ORIGINAL_ADDRESS_COLUMN_AUDIT',
+                          'source_key':source['key'],'source_etag':source['etag_opaque'],
+                          'source_declared_bytes':source['size_bytes'],
+                          'source_log_rows':total_rows,'rowgroups':reader.metadata.num_row_groups,
+                          'core_log_counts':counts,
+                          'range_response_bytes':session.bytes-before_bytes,
+                          'range_requests':len(session.requests)-before_requests})
+                      report['source_audit'].append({'case':case,'day':day,'key':source['key'],
+                          'etag':source['etag_opaque'],'declared_bytes':source['size_bytes'],
+                          'range_receipts':[{'start':r['start'],'length':r['length'],'sha256':r['response_sha256']}
+                              for r in reader.ranges]})
+                      print(case,day,'log rows',total_rows,'core',counts,'GET bytes',entry['range_response_bytes'])
+                  except Exception as exc:
+                      entry.update({'status':'UNAVAILABLE','error':type(exc).__name__+': '+str(exc)[:200]})
+                      failed=True
+                      print('HALTED',case,day,entry['error'])
+                  report['days'].append(entry)
+                  d+=timedelta(days=1)
+                  if failed:break
+              if failed:break
+          try:session.close('INCOMPLETE' if failed else 'COMPLETE')
+          except Exception as exc:report['session_close_error']=str(exc)
+          report['range_requests']=len(session.requests)
+          report['range_response_bytes']=session.bytes
+          for case,design in cases.items():
+              rows=[x for x in report['days'] if x['case']==case and x['status']=='FULL_ORIGINAL_ADDRESS_COLUMN_AUDIT']
+              per_core={}
+              for label in design['cores']:
+                  amounts=[int(x['core_log_counts'][label]) for x in rows]
+                  per_core[label]={'audited_days':len(amounts),'days_impossible_history_eligibility_upper_bound':sum(v<20 for v in amounts),
+                      'days_at_least_20_logs':sum(v>=20 for v in amounts),
+                      'total_core_logs':sum(amounts),'median_core_logs':sorted(amounts)[len(amounts)//2] if amounts else None,
+                      'max_core_logs':max(amounts) if amounts else None}
+              report['summary'][case]={'audited_days':len(rows),'expected_days':30,'per_core':per_core}
+          report['status']='COMPLETE_ADDRESS_ONLY_60_DAYS' if not failed and len(report['days'])==60 else 'INCOMPLETE_DONT_IMPUTE_MISSING_DAYS'
+          Path('phase20_core_traffic_audit.json').write_text(json.dumps(report,indent=2)+'\n')
+          print('STUDY STATUS',report['status'],'requests',report['range_requests'],'bytes',report['range_response_bytes'])
+          print('SUMMARY',json.dumps(report['summary'],sort_keys=True))
+          PY
+      - name: Upload derived counts and source range-hash receipts only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase20-core-traffic-address-only
+          path: phase20_core_traffic_audit.json
+          if-no-files-found: error
+          retention-days: 30
