@@ -1,0 +1,33 @@
+name: monitoring-phase25-unknown-alert-triage
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase25_unknown_alert_triage.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  indexed-transaction-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Compare known and 12 unknown alerts without assigning truth labels
+        run: |
+          python papers/monitoring_jss/phase25/triage_unknown_alerts.py \
+            --ledger papers/monitoring_jss/phase23/results/alert_ledger.csv \
+            --out papers/monitoring_jss/phase25/unadjudicated_alert_metadata.json
+      - name: Publish provenance-limited metadata
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase25/unadjudicated_alert_metadata.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+             git commit -m 'Phase25: pin indexer metadata of unresolved alerts, without reclassification'
+             git push origin HEAD:research/monitoring-applicability-20261029
+          fi
