@@ -1,0 +1,29 @@
+name: article2-phase28-reference-preflight
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths:
+      - .github/workflows/article2_phase28_reference_preflight.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  indexer-reference-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check independently sourced Ethereum reference candidate identities
+        run: |
+          python papers/monitoring_jss/phase28/indexed_reference_preflight.py \
+            --frame papers/monitoring_jss/phase28/CANDIDATE_FRAME.json \
+            --windows papers/monitoring_jss/phase28/FORK_WINDOWS.json \
+            --candidates papers/monitoring_jss/phase28/REFERENCE_CANDIDATES.json \
+            --output phase28_reference_metadata.json
+      - name: Preserve complete and partial checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase28-reference-candidates
+          path: phase28_reference_metadata.json
+          retention-days: 60
