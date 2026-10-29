@@ -1,0 +1,103 @@
+name: monitoring-phase20-parquet-footer-feasibility
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase20_parquet_footer_feasibility.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-range-read:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install footer metadata decoder
+        run: python -m pip install --disable-pip-version-check 'pyarrow==19.0.1'
+      - name: Read only S3 object footer and required Parquet metadata
+        run: |
+          python - <<'PY'
+          import json,urllib.parse,urllib.request,xml.etree.ElementTree as ET
+          import pyarrow as pa,pyarrow.parquet as pq
+          from pathlib import Path
+          cases={'bacon_20220305':'2022-03-05','rari_fuse_pool127_20220430':'2022-04-30'}
+          endpoint='https://aws-public-blockchain.s3.us-east-2.amazonaws.com/'
+          output={'schema':'phase20_parquet_footer_feasibility_v1',
+                  'scope':'day-of-exploit logs only, remote Parquet column metadata; no event rows downloaded',
+                  'source_table':'logs','total_range_requests':0,
+                  'raw_column_chunks_downloaded':0,'cases':[]}
+          def fetch(url,headers,max_bytes):
+              req=urllib.request.Request(url,headers={'User-Agent':'article2-range-footer-feasibility/1.0',
+                                                       'Accept-Encoding':'identity',**headers})
+              with urllib.request.urlopen(req,timeout=20) as r:
+                  content=r.read(max_bytes+1)
+                  code=r.status;response_headers=dict(r.headers)
+              if len(content)>max_bytes:raise ValueError('response exceeds cap')
+              return code,response_headers,content
+          def scalar(node,child):
+              return next((e.text for e in node if e.tag.rsplit('}',1)[-1]==child),None)
+          for case,day in cases.items():
+              prefix=f'v1.0/eth/logs/date={day}/'
+              url=endpoint+'?'+urllib.parse.urlencode({'list-type':'2','prefix':prefix,'max-keys':'100'})
+              row={'case':case,'date':day}
+              try:
+                  status,headers,raw=fetch(url,{},250000)
+                  if status!=200:raise ValueError('S3 list response status')
+                  root=ET.fromstring(raw)
+                  objects=[e for e in root if e.tag.rsplit('}',1)[-1]=='Contents']
+                  if len(objects)!=1 or scalar(root,'IsTruncated')=='true':
+                      raise ValueError('nonunique/truncated listing')
+                  obj=objects[0];key=scalar(obj,'Key');size=int(scalar(obj,'Size'));etag=scalar(obj,'ETag')
+                  if not key.startswith(prefix) or not key.endswith('.snappy.parquet') or size>1_000_000_000:
+                      raise ValueError('unexpected object')
+                  row.update({'key':key,'size_bytes':size,'etag':etag})
+                  def range_get(a,b):
+                      headers={'Range':f'bytes={a}-{b-1}','If-Match':etag}
+                      status,h,body=fetch(endpoint+key,headers,b-a)
+                      output['total_range_requests']+=1
+                      if (status!=206 or len(body)!=(b-a)
+                          or h.get('Content-Range')!=f'bytes {a}-{b-1}/{size}'
+                          or h.get('ETag')!=etag):
+                          raise ValueError('range identity/content-range mismatch')
+                      return body
+                  prefix_magic=range_get(0,4)
+                  trailer=range_get(size-8,size)
+                  if prefix_magic!=b'PAR1' or trailer[-4:]!=b'PAR1':raise ValueError('Parquet magic mismatch')
+                  footer_length=int.from_bytes(trailer[:4],'little')
+                  if not 0<footer_length<=1_500_000:raise ValueError('footer exceeds byte cap')
+                  footer=range_get(size-8-footer_length,size-8)
+                  f=pq.ParquetFile(pa.BufferReader(prefix_magic+footer+trailer),pre_buffer=False)
+                  meta=f.metadata
+                  columns={}
+                  for rg in range(meta.num_row_groups):
+                      group=meta.row_group(rg)
+                      for j in range(group.num_columns):
+                          c=group.column(j)
+                          name=c.path_in_schema.split('.')[0]
+                          col=columns.setdefault(name,{'compressed_bytes':0,'leaf_chunks':0})
+                          col['compressed_bytes']+=c.total_compressed_size
+                          col['leaf_chunks']+=1
+                  row.update({'status':'FOOTER_VALIDATED','footer_length':footer_length,
+                     'row_count_from_footer':meta.num_rows,'row_groups':meta.num_row_groups,
+                     'top_level_fields':f.schema_arrow.names,
+                     'column_compressed_bytes':dict(sorted(columns.items())),
+                     'required_scan_fields_present':all(x in f.schema_arrow.names for x in ['address','transaction_hash'])})
+              except Exception as exc:
+                  row.update({'status':'FOOTER_UNAVAILABLE','error':type(exc).__name__+': '+str(exc)[:240]})
+              output['cases'].append(row)
+          output['status']='BOTH_FOOTERS_VERIFIED' if all(x['status']=='FOOTER_VALIDATED' for x in output['cases']) else 'FOOTER_CHECK_INCOMPLETE'
+          Path('phase20_parquet_footer_feasibility.json').write_text(json.dumps(output,indent=2)+'\n')
+          print(output['status'],'range requests=',output['total_range_requests'])
+          for x in output['cases']:
+              print(x['case'],x['status'],'rows=',x.get('row_count_from_footer'),
+                  'row_groups=',x.get('row_groups'),'columns=',list(x.get('column_compressed_bytes',{})))
+              if x['status']=='FOOTER_VALIDATED':
+                  print('projected address bytes=',x['column_compressed_bytes'].get('address'))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase20-parquet-footer-feasibility
+          path: phase20_parquet_footer_feasibility.json
+          retention-days: 30
