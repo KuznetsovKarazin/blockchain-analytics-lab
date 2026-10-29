@@ -1,0 +1,81 @@
+name: article2-jss-v6-final-release
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths:
+      - '.github/workflows/article2_jss_v6_publish.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  verify-and-permanently-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Download exact verified two-job LaTeX build (no new detector computation)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/article2_verified
+          gh run download 40933771982 -n article2-jss-v6-latex-pdf -D /tmp/article2_verified
+          test -s /tmp/article2_verified/main.pdf
+          test -s /tmp/article2_verified/Article2_JSS_V6_Manuscript_and_LaTeX.zip
+      - name: Independent complete PDF/ZIP integrity check against Git checkout
+        run: |
+          set -euo pipefail
+          cd papers/monitoring_jss/jss_latex_v6_final
+          (cd /tmp/article2_verified && sha256sum --check PDF_SHA256.txt)
+          unzip -t /tmp/article2_verified/Article2_JSS_V6_Manuscript_and_LaTeX.zip | tail -2
+          for f in main.tex references.bib alerts_table.tex source_census_tables.tex \
+                   fig1_attack_time_selected.pdf fig2_history_eligibility_six_views.pdf \
+                   fig3_incident_relative_alerts.pdf fig4_external_readiness_census.pdf \
+                   README.md HIGHLIGHTS.md; do
+            unzip -p /tmp/article2_verified/Article2_JSS_V6_Manuscript_and_LaTeX.zip "$f" | cmp - "$f"
+          done
+          unzip -p /tmp/article2_verified/Article2_JSS_V6_Manuscript_and_LaTeX.zip main.pdf | cmp - /tmp/article2_verified/main.pdf
+          printf '%s\n' "PASS: all exact LaTeX sources, figures, final compiled PDF and checksum"
+          test "$(git hash-object main.tex)" = bed3a118a6ae928e9fe67c052aaf06984a8b899d
+          test "$(git hash-object references.bib)" = 6bc965c270f44ce8b02c05ea08f4eac87029fd5b
+      - name: Pin compiled PDF and complete source-and-paper ZIP permanently in Git
+        run: |
+          set -euo pipefail
+          cd papers/monitoring_jss/jss_latex_v6_final
+          source_commit=$(git rev-parse HEAD)
+          cp /tmp/article2_verified/main.pdf main.pdf
+          cp /tmp/article2_verified/Article2_JSS_V6_Manuscript_and_LaTeX.zip Article2_JSS_V6_Manuscript_and_LaTeX.zip
+          cp /tmp/article2_verified/PDF_SHA256.txt PDF_SHA256.txt
+          cat > RELEASE_MANIFEST.txt <<EOF
+          Article2 JSS V6 source-bounded research edition
+          Verified CI run: https://github.com/KuznetsovKarazin/blockchain-analytics-lab/actions/runs/40933771982
+          Git source commit: $source_commit
+          Expected release tag: article2-jss-v6-2026-10-29
+          Study: 7 nonrandom fixed-emitter case streams; 525 selected transactions; 441/441 independent policy checks.
+          Exploratory; not 7 full independent incident recall trials.
+          No Zenodo DOI assigned. Author declarations and final editorial permissions require confirmation before journal submission.
+          EOF
+          sha256sum main.pdf Article2_JSS_V6_Manuscript_and_LaTeX.zip | tee -a RELEASE_MANIFEST.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add main.pdf Article2_JSS_V6_Manuscript_and_LaTeX.zip PDF_SHA256.txt RELEASE_MANIFEST.txt
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m 'Article2 JSS V6 release: archive independently compiled manuscript and exact source ZIP'
+            git push origin HEAD:research/monitoring-v6-independent-cohort
+          fi
+      - name: Create immutable research manuscript release tag, never overwrite
+        run: |
+          set -euo pipefail
+          git fetch origin --tags --quiet
+          if git rev-parse -q --verify "refs/tags/article2-jss-v6-2026-10-29" >/dev/null; then
+            echo 'ERROR: release tag already exists; refusing to overwrite' >&2
+            exit 1
+          fi
+          git tag -a article2-jss-v6-2026-10-29 -m 'Article2 JSS V6 verified 441-cell empirical-research manuscript release (not journal submission)'
+          git push origin refs/tags/article2-jss-v6-2026-10-29
+          echo "PINNED_RELEASE_COMMIT=$(git rev-parse HEAD)"
+          echo 'Source and compiled PDF are available from this immutable tag.'
