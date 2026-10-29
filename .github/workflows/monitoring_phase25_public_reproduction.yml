@@ -1,0 +1,89 @@
+name: monitoring-phase25-public-reproduction
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase25_public_reproduction.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recover original workflow data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/a2/{bacon,rari,replay,phase18,root/phase23,root/article2_work/phase18/results}
+          gh run download 40866570847 -n article2-phase22-indexer-full-bacon_20220305 -D /tmp/a2/bacon
+          gh run download 40866570847 -n article2-phase22-indexer-full-rari_pool127_20220430 -D /tmp/a2/rari
+          gh run download 40868023075 -n article2-phase22-complete-replay -D /tmp/a2/replay
+      - name: Hash-check and archive normalized public-chain observations
+        run: |
+          python - <<'PY'
+          import hashlib,json,zipfile
+          from pathlib import Path
+          root=Path('/tmp/a2');dst=Path('papers/monitoring_jss/phase25/data');dst.mkdir(parents=True,exist_ok=True)
+          specs={
+           'bacon':('Article2_Phase22_IndexedFull_12894646607.zip',{'acquisition_manifest.json':'f174f0634f790eb30e4515318626c4095787a3dfc69d1d0662292b0a64f3db8f','indexer_observations.jsonl.gz':'b727667ce3d6b9217872d715f1bfd539c6d817688cda1db96187d1f40672d739'}),
+           'rari':('Article2_Phase22_IndexedFull_12894666788.zip',{'acquisition_manifest.json':'d0a1e3d12d68673ea9d37124c63b5b31a32e1a15cb7d0faa196856bc845aa161','indexer_observations.jsonl.gz':'1a92ade058293b79a2f2758cd6fc527237b0a76298c013f4d542590ffa7d9023'}),
+           'replay':('Article2_Phase22_CompleteReplay.zip',{'full_replay.json':'05550b764bf2eff79ca1643e51db90c3eedc30803719b44876eb37f35b01d810','full_replay_cells.csv':'383001827f504c2b694ba2f7e3674c3c388f85957db8b93d9e6c04c458daa189','per_transaction_replay.jsonl.gz':'eed8e6ce6c1e20c6c9d8b2cf86e8a176ff4006771af89b958760df64e93e7bfc'})}
+          manifest={'schema':'article2_public_normalized_data_v1','source_actions_runs':[40866570847,40868023075],'source_tier':'AWS_selected_tx_identities_plus_Blockscout_indexed_logs/status','archives':{}}
+          for case,(name,files) in specs.items():
+              for member,digest in files.items():
+                 assert hashlib.sha256((root/case/member).read_bytes()).hexdigest()==digest,(case,member)
+              dest=dst/name
+              with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED) as z:
+                 for member in sorted(files):z.write(root/case/member,member)
+              manifest['archives'][case]={'name':name,'sha256':hashlib.sha256(dest.read_bytes()).hexdigest(),'member_sha256':files}
+          (dst/'public_source_manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+          PY
+      - name: Regenerate Phase18 from original public frozen archive
+        run: |
+          set -euo pipefail
+          python papers/monitoring_jss/phase18/initialization_full_replay.py --evidence-zip papers/monitoring_jss/phase16/public_evidence/sealed_evidence.zip --out /tmp/a2/phase18
+          echo 'f8db7c0a8f4b478135e98e9c13a97e522b7b104b3c0ccebb0f8d2577367fdcf5  /tmp/a2/phase18/full_replay_summary.json' | sha256sum -c
+          echo '61ae2b607658600190aa5062a000fb7a9e5f2f506cf8f99b5600acb51b1aaea6  /tmp/a2/phase18/recomputed_transaction_decisions.jsonl' | sha256sum -c
+          cp /tmp/a2/phase18/full_replay_summary.json papers/monitoring_jss/phase25/data/phase18_summary.json
+          python - <<'PY'
+          import gzip
+          from pathlib import Path
+          f=Path('papers/monitoring_jss/phase25/data/phase18_method_decisions.jsonl.gz')
+          with f.open('wb') as o:
+            with gzip.GzipFile(fileobj=o,filename='',mode='wb',mtime=0) as z:z.write(Path('/tmp/a2/phase18/recomputed_transaction_decisions.jsonl').read_bytes())
+          PY
+      - name: Clean-directory independent replay and compare every published CSV hash
+        run: |
+          set -euo pipefail
+          cp papers/monitoring_jss/phase25/data/Article2_Phase22*.zip /tmp/a2/root/
+          cp papers/monitoring_jss/phase23/{build_phase23_tables.py,verify_phase22_science_independent.py} /tmp/a2/root/phase23/
+          cp /tmp/a2/phase18/{full_replay_summary.json,recomputed_transaction_decisions.jsonl} /tmp/a2/root/article2_work/phase18/results/
+          ln -s "$GITHUB_WORKSPACE/papers/monitoring_jss/phase16/public_evidence/sealed_evidence.zip" /tmp/a2/root/article2_work/sealed_evidence.zip
+          python /tmp/a2/root/phase23/build_phase23_tables.py --base /tmp/a2/root --out /tmp/a2/rebuilt
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          p=Path('papers/monitoring_jss/phase23/results')
+          for name,digest in json.loads((p/'audit_manifest.json').read_text())['outputs_sha256'].items():
+              data=(Path('/tmp/a2/rebuilt')/name).read_bytes()
+              assert hashlib.sha256(data).hexdigest()==digest,name
+              assert data==(p/name).read_bytes(),name
+          print('PASS: independent replication; all outputs identical')
+          PY
+      - name: Commit accepted derived data only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/phase25/data
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+             git commit -m 'Phase25: permanently archive verified derived transaction/replay data'
+             git push origin HEAD:research/monitoring-applicability-20261029
+          fi
