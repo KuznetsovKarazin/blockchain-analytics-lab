@@ -1,4 +1,4 @@
-name: monitoring-phase22-indexed-bundles-preflight
+name: monitoring-phase22-indexed-bundles-full
 on:
   push:
     branches: [research/monitoring-applicability-20261029]
@@ -7,9 +7,9 @@ on:
 permissions:
   contents: read
 jobs:
-  bounded-indexed-data-preflight:
+  full-30-day-indexed-bundles:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:
@@ -28,12 +28,12 @@ jobs:
             --case '${{ matrix.case }}' \
             --identities original_s3_selected/selected_tx_identities.json \
             --out phase22_indexed \
-            --max-tx 3
+            --max-tx 10000
       - name: Preserve source receipts and normalized derived observations
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: article2-phase22-indexer-probe-${{ matrix.case }}
+          name: article2-phase22-indexer-full-${{ matrix.case }}
           path: |
             phase22_indexed/acquisition_manifest.json
             phase22_indexed/indexer_response_receipts.json
