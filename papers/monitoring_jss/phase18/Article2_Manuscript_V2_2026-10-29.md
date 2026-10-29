@@ -132,7 +132,7 @@ The original published baseline is commit `e720697bc3986dd291a7047c580cf973ae6e5
 
 Figure 1 displays each token-day's positive-outflow count against the necessary 20-observation level. None of Li.Fi's 83 active token-days reaches that level. Revest has one eligible token-day, on 23 March 2022, with 43 qualifying observations and 24 eligible scores. Nonetheless, none of its eligible scores meets the primary 1/20 threshold. This result is obtained without using incident labels: for these populations, the main rank detector is non-operative under daily reset over the entire retained windows, not merely on the known exploit executions.
 
-![Figure 1. Positive same-token core outflow observations per UTC token-day. The dashed line marks the first possible eligible score under min_history = 19.](phase18_results/fig1_token_day_gate.png)
+![Figure 1. Positive same-token core outflow observations per UTC token-day. The dashed line marks the first possible eligible score under min_history = 19.](phase18_results/fig1_token_day_gate.svg)
 
 ### 5.2. Historical retention raises applicability but not admitted-execution hits
 
@@ -149,9 +149,9 @@ Figure 1 displays each token-day's positive-outflow count against the necessary 
 
 Eligibility improves under retained history in both cases (Figure 2). Yet the additional eligible observations do not yield a notification on any admitted execution. At the primary 1/20 threshold, all raw triggers in the new modes survive grouping and admission for all three budget policies and tested values of B, so offered budget is not the binding cause of the absence of admitted hits. Figure 3 distinguishes raw triggers and emitted alerts for the primary configuration.
 
-![Figure 2. Fraction of selected core transactions with at least one rank-eligible token under three initialization modes.](phase18_results/fig2_history_eligibility.png)
+![Figure 2. Fraction of selected core transactions with at least one rank-eligible token under three initialization modes.](phase18_results/fig2_history_eligibility.svg)
 
-![Figure 3. Primary rank 1/20 raw triggers and emitted notifications under greedy B=5. No emitted notification matches an admitted execution.](phase18_results/fig3_raw_vs_notifications.png)
+![Figure 3. Primary rank 1/20 raw triggers and emitted notifications under greedy B=5. No emitted notification matches an admitted execution.](phase18_results/fig3_raw_vs_notifications.svg)
 
 At the sensitivity threshold 1/10, the cumulative mode produces three raw Li.Fi candidates and five raw Revest triggers (four after grouping), compared with none and two under daily reset, respectively. With greedy B=5, all three and four candidates are emitted. Some B=1 or token-bucket cells suppress additional candidates; their numerical outcomes are preserved in the full 108-cell report. **Every admitted-execution hit count remains zero for the semantic rule across all history modes, thresholds, policies and budgets.** Extra alerts are not independently adjudicated, and they cannot be called false positives. Lower-tail frequency or global precision cannot be estimated here.
 
