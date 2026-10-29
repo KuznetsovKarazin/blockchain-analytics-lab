@@ -1,0 +1,76 @@
+name: article2-jss-v6-1-final-qa
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_jss_v6_1_final.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproducibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independent algorithm and claim verification
+        run: |
+          python papers/monitoring_jss/phase30/independent_policy_audit.py --out /tmp/a2v6_1_independent.json
+          python - <<'PY'
+          import json,pathlib
+          r=json.load(open('/tmp/a2v6_1_independent.json'))
+          assert r['status']=='PASS' and len(r['cases'])==7
+          assert r['total_cells']==441 and r['total_transactions']==525
+          root=pathlib.Path('papers/monitoring_jss/jss_latex_v6_1_final')
+          tex=(root/'main.tex').read_text()
+          bib=(root/'references.bib').read_text()
+          assert 'article2-jss-v6.1-2026-10-29' in tex and 'article2-jss-v6.1-2026-10-29' in bib
+          assert 'all ten distinct Bacon/Rari transactions' in tex
+          assert 'a2fc034510622536d29aae031cbfe65eed0da69c' not in bib
+          print('PASS 441/441 independent cells; correct final artifact citation')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: article2-v6-1-independent-reproducibility
+          path: /tmp/a2v6_1_independent.json
+          if-no-files-found: error
+          retention-days: 90
+
+  latex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Elsevier and BibTeX toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+            texlive-publishers texlive-bibtex-extra texlive-fonts-recommended \
+            texlive-science lmodern poppler-utils zip unzip >/dev/null
+      - name: Clean CI compilation with bibliography and page count
+        working-directory: papers/monitoring_jss/jss_latex_v6_1_final
+        run: |
+          set -euo pipefail
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > p1.log || { tail -80 p1.log; exit 1; }
+          bibtex8 main > bib.log || { cat bib.log; exit 1; }
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > p2.log || { tail -80 p2.log; exit 1; }
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > p3.log || { tail -80 p3.log; exit 1; }
+          ! grep -E 'Citation .* undefined|There were undefined references|There were multiply-defined labels' main.log
+          test "$(pdfinfo main.pdf | awk '/^Pages:/ {print $2}')" -ge 30
+          sha256sum main.pdf > PDF_SHA256.txt
+          zip -q -X Article2_JSS_V6_1_Final_LaTeX_PDF.zip \
+             main.tex references.bib alerts_table.tex source_census_tables.tex \
+             fig1_attack_time_selected.pdf fig2_history_eligibility_six_views.pdf \
+             fig3_incident_relative_alerts.pdf fig4_external_readiness_census.pdf \
+             README.md HIGHLIGHTS.md main.pdf PDF_SHA256.txt
+          unzip -t Article2_JSS_V6_1_Final_LaTeX_PDF.zip | tail -2
+          pdfinfo main.pdf | grep '^Pages:'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: article2-v6-1-final-latex
+          path: |
+            papers/monitoring_jss/jss_latex_v6_1_final/main.pdf
+            papers/monitoring_jss/jss_latex_v6_1_final/Article2_JSS_V6_1_Final_LaTeX_PDF.zip
+            papers/monitoring_jss/jss_latex_v6_1_final/PDF_SHA256.txt
+          if-no-files-found: error
+          retention-days: 90
