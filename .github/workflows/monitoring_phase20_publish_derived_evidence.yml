@@ -1,0 +1,45 @@
+name: monitoring-phase20-publish-derived-evidence
+on:
+  push:
+    branches: [research/monitoring-applicability-20261029]
+    paths: [.github/workflows/monitoring_phase20_publish_derived_evidence.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  preserve-derived-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve exact SHA-pinned bounded source evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/phase20-traffic /tmp/phase20-listing
+          gh run download 40852958094 -R KuznetsovKarazin/blockchain-analytics-lab -n article2-phase20-core-traffic-address-only -D /tmp/phase20-traffic
+          gh run download 40851131526 -R KuznetsovKarazin/blockchain-analytics-lab -n article2-phase20-full-window-metadata -D /tmp/phase20-listing
+          echo "65163ffe4a7ea0d027029e67ed957f7b1c7f7bb78f6ce883f854409430a42193  /tmp/phase20-traffic/phase20_core_traffic_audit.json" | sha256sum --check
+          echo "b04f8412af42c79a0959b1eba9b8ae89c36254027c02d061d12295d7831f98f4  /tmp/phase20-listing/phase20_full_window_metadata.json" | sha256sum --check
+      - name: Independently validate and stage explicit source-only files
+        run: |
+          set -euo pipefail
+          root=papers/monitoring_jss/phase20
+          mkdir -p "$root/source_evidence"
+          python "$root/verify_core_traffic.py" /tmp/phase20-traffic/phase20_core_traffic_audit.json /tmp/phase20-listing/phase20_full_window_metadata.json --output "$root/source_evidence/independent_verification.json"
+          cp /tmp/phase20-traffic/phase20_core_traffic_audit.json "$root/source_evidence/core_traffic.json"
+          cp /tmp/phase20-listing/phase20_full_window_metadata.json "$root/source_evidence/full_window_metadata.json"
+          printf 'Source-only historical metadata and bounded SHA-256 range receipts; no raw Parquet columns. The original data remain on AWS. See ../PHASE20_SOURCE_AUDIT_FINDINGS.md and ../verify_core_traffic.py.\n' > "$root/source_evidence/README.txt"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$root/source_evidence/core_traffic.json" "$root/source_evidence/full_window_metadata.json" "$root/source_evidence/independent_verification.json" "$root/source_evidence/README.txt"
+          git diff --cached --quiet && exit 0
+          git commit -m "Phase20: preserve independently checked public source metadata and bounded range receipts"
+          git push origin HEAD:research/monitoring-applicability-20261029
