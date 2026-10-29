@@ -1,0 +1,50 @@
+name: article2-phase29-frozen-replay-last-two
+on:
+  push:
+    branches: [research/monitoring-v6-independent-cohort]
+    paths: [.github/workflows/article2_phase29_replay_last_two.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  two-complete-independent-cases:
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [cohort28_10, cohort28_13]
+    runs-on: ubuntu-latest
+    timeout-minutes: 11
+    steps:
+      - uses: actions/checkout@v4
+      - name: Revalidate original S3-selected identity and full indexed observations
+        run: |
+          python papers/monitoring_jss/phase29/verify_indexed.py \
+            --case ${{ matrix.case }} \
+            --original-dir papers/monitoring_jss/phase29/data/${{ matrix.case }} \
+            --indexed-dir papers/monitoring_jss/phase29/indexed/${{ matrix.case }} \
+            --out /tmp/phase29_indexer_verified.json
+      - name: Complete frozen method-policy replay and post-label exact reference join
+        run: |
+          python papers/monitoring_jss/phase29/fixed_replay.py \
+            --case ${{ matrix.case }} \
+            --indexed-dir papers/monitoring_jss/phase29/indexed/${{ matrix.case }} \
+            --out output/${{ matrix.case }} \
+            --reference-ledger papers/monitoring_jss/phase29/REFERENCE_ROLE_LEDGER.json
+      - name: Repeat from empty working directory and verify scientific bytes identical
+        run: |
+          python papers/monitoring_jss/phase29/fixed_replay.py \
+            --case ${{ matrix.case }} \
+            --indexed-dir papers/monitoring_jss/phase29/indexed/${{ matrix.case }} \
+            --out /tmp/replay2_${{ matrix.case }} \
+            --reference-ledger papers/monitoring_jss/phase29/REFERENCE_ROLE_LEDGER.json
+          for x in label_blind_replay.json reference_join.json method_policy_cells.csv; do
+            cmp "output/${{ matrix.case }}/$x" "/tmp/replay2_${{ matrix.case }}/$x"
+          done
+      - name: Preserve all source-tethered positive, negative and unknown results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: article2-phase29-final-replay-${{ matrix.case }}
+          path: output/${{ matrix.case }}
+          if-no-files-found: warn
+          retention-days: 30
