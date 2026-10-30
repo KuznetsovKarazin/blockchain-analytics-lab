@@ -1,0 +1,26 @@
+{
+  "caps": {
+    "concurrency": 1,
+    "max_footer_bytes": 1000000,
+    "max_leaf_columns": 80,
+    "max_range_bytes": 18000000,
+    "max_row_groups": 64,
+    "max_rows": 7000000,
+    "max_source_bytes": 800000000,
+    "max_top_level_columns": 60,
+    "request_timeout_seconds": 35,
+    "requests": 1000,
+    "retries": 0,
+    "total_response_bytes": 1400000000,
+    "wall_seconds": 1000
+  },
+  "endpoint": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/",
+  "required_columns": {
+    "logs": [
+      "address",
+      "block_number",
+      "transaction_index"
+    ]
+  },
+  "schema_version": "article2_phase16_range_source_plan_v1"
+}
