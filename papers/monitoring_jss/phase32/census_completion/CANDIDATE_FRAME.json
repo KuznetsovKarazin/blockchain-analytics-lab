@@ -1,0 +1,161 @@
+{
+  "baseline_commit": "aab963c5c5aa60adb7af5f04bc86601f92c67b87",
+  "baseline_release": "article2-jss-v7-2026-10-29",
+  "batches": [
+    [
+      "cohort32_01",
+      "cohort32_02"
+    ],
+    [
+      "cohort32_03",
+      "cohort32_04"
+    ],
+    [
+      "cohort32_05",
+      "cohort32_06"
+    ],
+    [
+      "cohort32_07"
+    ]
+  ],
+  "cases": [
+    {
+      "core_address": "0x186e55c0bebd2f69348d94c4a27556d93c5bd36c",
+      "core_role_nomination": "wxBTRFLY token contract",
+      "family": "Redacted Cartel wxBTRFLY",
+      "id": "cohort32_01",
+      "nomination_reason": "PoC invokes the named wxBTRFLY token; the allowance vulnerability is in its transferFrom implementation. Synthetic pranks and an owner unfreeze occur; do not treat as an admitted historical attack.",
+      "poC_fork_block": 13908185,
+      "source_files": [
+        {
+          "git_blob_sha1": "ce3e330e4a7f9fe33a13fa564f046ace7488c410",
+          "source_path": "src/test/2022-03/RedactedCartel_exp.sol",
+          "source_sha256": "7c13338b2fb17afe19c4c6071906e24878f3d3372fcd575f407c51f4b42d4dab"
+        }
+      ],
+      "source_status": "SOURCE_REPRODUCTION_ONLY_NOT_INCIDENT_ADMITTED"
+    },
+    {
+      "core_address": "0x715cdda5e9ad30a0ced14940f9997ee611496de6",
+      "core_role_nomination": "Ethereum multisignature wallet",
+      "family": "Harmony Ethereum multisig",
+      "id": "cohort32_02",
+      "nomination_reason": "PoC explicitly names MultiSigWallet and invokes submitTransaction/confirmTransaction on it. The bridge destination 0x2dccdb493827e15a5dc8f8b72147e6c4a5620857 is distinct.",
+      "poC_fork_block": 15012645,
+      "source_files": [
+        {
+          "git_blob_sha1": "1bf89f9ce3b3cba94806f7f81c052cf75f645207",
+          "source_path": "src/test/2022-06/Harmony_multisig_exp.sol",
+          "source_sha256": "02ca5f2ea69ba2bbdc77acf19fc8dd9f95582d1bc93ed9524ec4fa95943b4a4c"
+        }
+      ],
+      "source_status": "SOURCE_REPRODUCTION_ONLY_NOT_INCIDENT_ADMITTED"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "core_role_nomination": "source-designated Uniswap V2 DAI-USDC pair",
+      "family": "Circle PoC / Uniswap V2 DAI-USDC pair",
+      "id": "cohort32_03",
+      "nomination_reason": "Header explicitly designates this vulnerable contract; univ2_token is burned after Maker collateral operations. Role label is source-derived, not independent exploit adjudication. Fork expression15331020-1.",
+      "poC_fork_block": 15331019,
+      "source_files": [
+        {
+          "git_blob_sha1": "11fbaf8ce1aad426c6bd9165c715e133bb3995a0",
+          "source_path": "src/test/2022-08/Circle_exp1.sol",
+          "source_sha256": "3205251b5bf3dd2117e7d465a1168fa79421d9c454bfa1e1f9754d2b238f573f"
+        }
+      ],
+      "source_status": "SOURCE_REPRODUCTION_ONLY_NOT_INCIDENT_ADMITTED"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "core_role_nomination": "source-designated Uniswap V2 DAI-USDC pair",
+      "family": "Circle PoC / Uniswap V2 DAI-USDC pair",
+      "id": "cohort32_04",
+      "nomination_reason": "Same explicitly designated core as exp1, but distinct fork expression15354438-1 and distinct reference transaction; cannot silently collapse its window.",
+      "poC_fork_block": 15354437,
+      "source_files": [
+        {
+          "git_blob_sha1": "84990cce2a97753fdee4fdab2c443d7eea7d7a11",
+          "source_path": "src/test/2022-08/Circle_exp2.sol",
+          "source_sha256": "1d20f189110175a5558dc3b084c6d8a3022215079c07498090fe0a167af0e91e"
+        }
+      ],
+      "source_status": "SOURCE_REPRODUCTION_ONLY_NOT_INCIDENT_ADMITTED"
+    },
+    {
+      "core_address": "0x9c87a5726e98f2f404cdd8ac8968e9b2c80c0967",
+      "core_role_nomination": "NFT minting contract",
+      "family": "LuckyTiger NFT",
+      "id": "cohort32_05",
+      "nomination_reason": "PoC nftAddress is target of publicMint and balanceOf. vm.warp changes execution time after the fork; census anchor remains fork block under existing protocol.",
+      "poC_fork_block": 15403430,
+      "source_files": [
+        {
+          "git_blob_sha1": "9b279f78c428672378e926f5d4abb933875e1ce7",
+          "source_path": "src/test/2022-08/LuckyTiger_exp.sol",
+          "source_sha256": "ea4a3374aa48e4739837df610af014ea7e8ff65c3e25f6a9b4f9c504e9728118"
+        }
+      ],
+      "source_status": "SOURCE_REPRODUCTION_ONLY_NOT_INCIDENT_ADMITTED"
+    },
+    {
+      "core_address": "0x91383a15c391c142b80045d8b4730c1c37ac0378",
+      "core_role_nomination": "XST token proxy/emitter",
+      "family": "XST token",
+      "id": "cohort32_06",
+      "nomination_reason": "Both PoCs directly use this token for transfer/balanceOf. Logic contract0xb276647e70cb3b81a1ca302cf8de280ff0ce5799 and affectedpair0x694f8f9e0ec188f528d6354fdd0e47dca79b6f2c are separate roles. Nomination chooses token emitter rather than pool or logic.",
+      "poC_fork_block": 15310016,
+      "source_files": [
+        {
+          "git_blob_sha1": "1380f163cc58ad269f3790e6d954563638455f99",
+          "source_path": "src/test/2022-08/XST_exp.sol",
+          "source_sha256": "4b13f6a0fa4f6c90cab4e2456bc53fd7ce51959e3174e553d53c0a324b7f2deb"
+        },
+        {
+          "git_blob_sha1": "0eb3da68cabf571b4e608c3e5cd3b412f34174ac",
+          "source_path": "src/test/2022-08/XST_exp2.sol",
+          "source_sha256": "b3aea05081889da0e7ee268e112d26e4d0139ad08bf6550be542630b7b78107e"
+        }
+      ],
+      "source_status": "SOURCE_REPRODUCTION_ONLY_NOT_INCIDENT_ADMITTED"
+    },
+    {
+      "core_address": "0xbadc0defafcf6d4239bdf0b66da4d7bd36fcf05a",
+      "core_role_nomination": "MEV bot contract",
+      "family": "MEV badc0de bot",
+      "id": "cohort32_07",
+      "nomination_reason": "PoC names target MEVBOT; dYdX SoloMargin is used as caller but is not the nominated bot. The vulnerable target may itself emit no standard events; do not replace core based on traffic.",
+      "poC_fork_block": 15625424,
+      "source_files": [
+        {
+          "git_blob_sha1": "a2d3afec733e2c0dd01502bb61d9bae28db7a7fd",
+          "source_path": "src/test/2022-09/MEVbadc0de_exp.sol",
+          "source_sha256": "60b8d13a9d8a25405e806491764b01b7806d688bdeb75ebaa45591ce5579cf8d"
+        }
+      ],
+      "source_status": "SOURCE_REPRODUCTION_ONLY_NOT_INCIDENT_ADMITTED"
+    }
+  ],
+  "catalogue_commit": "0a9b9fd81c50767ff49f81089fbf8934f2f45b02",
+  "detector_scores_computed": false,
+  "directory_frame": [
+    "src/test/2022-03",
+    "src/test/2022-04",
+    "src/test/2022-05",
+    "src/test/2022-06",
+    "src/test/2022-07",
+    "src/test/2022-08",
+    "src/test/2022-09"
+  ],
+  "frozen_utc": "2026-10-30T08:22:44.788031+00:00",
+  "historical_status": "This completes the catalogue prospectively after review; it does not retroactively make the original sixteen convenience nominations exhaustive.",
+  "inclusion_rule": "Every Ethereum-mainnet PoC source file in the pinned directory frame is accounted for. Four original-family files remain in the primary study; all other files map to an extension nomination. The eight previously omitted files receive source-designated or directly targeted operational components before their traffic is measured. Exact core/fork duplicates collapse; distinct fork windows are retained.",
+  "mapping_sha256": "6e01532cb159c8207000c109d447af21d3b889c94b3da0440074e7eba8949124",
+  "metadata_audit_sha256": "cf3a9ee0b8fb5f904ee3e522d5fa5a109edda0841ca64d0a39e7f0f5633ee7b4",
+  "old_frame_sha256": "67a3be5e90330ae52ba64c9aaeb5d19aeca8f97b6510a1a3af7c70244e2bc7f2",
+  "schema": "article2_phase32_catalogue_completion_frame_v1",
+  "traffic_acquired_before_freeze": false,
+  "unit": "Unique nominated core-address/fork-block window, not independent incident. Primary aggregate deduplicates repeated (core_address, UTC day).",
+  "window_rule": "30 whole UTC dates ending inclusively on the indexed PoC fork-block date; not strictly pre-attack histories."
+}

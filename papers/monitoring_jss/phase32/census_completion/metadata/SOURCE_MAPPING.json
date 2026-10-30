@@ -1,0 +1,162 @@
+{
+  "source_commit": "0a9b9fd81c50767ff49f81089fbf8934f2f45b02",
+  "source_files_sha256_verified": 8,
+  "unique_recommended_core_addresses": 6,
+  "distinct_core_fork_pairs": 7,
+  "source_code_executed": false,
+  "full_source_files_published": false,
+  "rows": [
+    {
+      "source_path": "src/test/2022-03/RedactedCartel_exp.sol",
+      "source_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-03/RedactedCartel_exp.sol",
+      "source_sha256": "7c13338b2fb17afe19c4c6071906e24878f3d3372fcd575f407c51f4b42d4dab",
+      "git_blob_sha1": "ce3e330e4a7f9fe33a13fa564f046ace7488c410",
+      "fork_rpc_alias": "mainnet",
+      "fork_block": 13908185,
+      "recommended_core_address": "0x186e55c0bebd2f69348d94c4a27556d93c5bd36c",
+      "family": "Redacted Cartel wxBTRFLY",
+      "reason_and_limits": "PoC invokes the named wxBTRFLY token; the allowance vulnerability is in its transferFrom implementation. Synthetic pranks and an owner unfreeze occur; do not treat as an admitted historical attack.",
+      "core_address": "0x186e55c0bebd2f69348d94c4a27556d93c5bd36c",
+      "core_role": "wxBTRFLY token contract",
+      "alternative_addresses": []
+    },
+    {
+      "source_path": "src/test/2022-06/Harmony_multisig_exp.sol",
+      "source_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-06/Harmony_multisig_exp.sol",
+      "source_sha256": "02ca5f2ea69ba2bbdc77acf19fc8dd9f95582d1bc93ed9524ec4fa95943b4a4c",
+      "git_blob_sha1": "1bf89f9ce3b3cba94806f7f81c052cf75f645207",
+      "fork_rpc_alias": "mainnet",
+      "fork_block": 15012645,
+      "recommended_core_address": "0x715cdda5e9ad30a0ced14940f9997ee611496de6",
+      "family": "Harmony Ethereum multisig",
+      "reason_and_limits": "PoC explicitly names MultiSigWallet and invokes submitTransaction/confirmTransaction on it. The bridge destination 0x2dccdb493827e15a5dc8f8b72147e6c4a5620857 is distinct.",
+      "core_address": "0x715cdda5e9ad30a0ced14940f9997ee611496de6",
+      "core_role": "Ethereum multisignature wallet",
+      "alternative_addresses": [
+        {
+          "address": "0x2dccdb493827e15a5dc8f8b72147e6c4a5620857",
+          "role": "bridge unlockToken destination"
+        }
+      ]
+    },
+    {
+      "source_path": "src/test/2022-08/Circle_exp1.sol",
+      "source_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-08/Circle_exp1.sol",
+      "source_sha256": "3205251b5bf3dd2117e7d465a1168fa79421d9c454bfa1e1f9754d2b238f573f",
+      "git_blob_sha1": "11fbaf8ce1aad426c6bd9165c715e133bb3995a0",
+      "fork_rpc_alias": "mainnet",
+      "fork_block": 15331019,
+      "recommended_core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "family": "Circle PoC / Uniswap V2 DAI-USDC pair",
+      "reason_and_limits": "Header explicitly designates this vulnerable contract; univ2_token is burned after Maker collateral operations. Role label is source-derived, not independent exploit adjudication. Fork expression15331020-1.",
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "core_role": "source-designated Uniswap V2 DAI-USDC pair",
+      "alternative_addresses": []
+    },
+    {
+      "source_path": "src/test/2022-08/Circle_exp2.sol",
+      "source_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-08/Circle_exp2.sol",
+      "source_sha256": "1d20f189110175a5558dc3b084c6d8a3022215079c07498090fe0a167af0e91e",
+      "git_blob_sha1": "84990cce2a97753fdee4fdab2c443d7eea7d7a11",
+      "fork_rpc_alias": "mainnet",
+      "fork_block": 15354437,
+      "recommended_core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "family": "Circle PoC / Uniswap V2 DAI-USDC pair",
+      "reason_and_limits": "Same explicitly designated core as exp1, but distinct fork expression15354438-1 and distinct reference transaction; cannot silently collapse its window.",
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "core_role": "source-designated Uniswap V2 DAI-USDC pair",
+      "alternative_addresses": []
+    },
+    {
+      "source_path": "src/test/2022-08/LuckyTiger_exp.sol",
+      "source_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-08/LuckyTiger_exp.sol",
+      "source_sha256": "ea4a3374aa48e4739837df610af014ea7e8ff65c3e25f6a9b4f9c504e9728118",
+      "git_blob_sha1": "9b279f78c428672378e926f5d4abb933875e1ce7",
+      "fork_rpc_alias": "mainnet",
+      "fork_block": 15403430,
+      "recommended_core_address": "0x9c87a5726e98f2f404cdd8ac8968e9b2c80c0967",
+      "family": "LuckyTiger NFT",
+      "reason_and_limits": "PoC nftAddress is target of publicMint and balanceOf. vm.warp changes execution time after the fork; census anchor remains fork block under existing protocol.",
+      "core_address": "0x9c87a5726e98f2f404cdd8ac8968e9b2c80c0967",
+      "core_role": "NFT minting contract",
+      "alternative_addresses": []
+    },
+    {
+      "source_path": "src/test/2022-08/XST_exp.sol",
+      "source_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-08/XST_exp.sol",
+      "source_sha256": "4b13f6a0fa4f6c90cab4e2456bc53fd7ce51959e3174e553d53c0a324b7f2deb",
+      "git_blob_sha1": "1380f163cc58ad269f3790e6d954563638455f99",
+      "fork_rpc_alias": "mainnet",
+      "fork_block": 15310016,
+      "recommended_core_address": "0x91383a15c391c142b80045d8b4730c1c37ac0378",
+      "family": "XST token",
+      "reason_and_limits": "Both PoCs directly use this token for transfer/balanceOf. Logic contract0xb276647e70cb3b81a1ca302cf8de280ff0ce5799 and affectedpair0x694f8f9e0ec188f528d6354fdd0e47dca79b6f2c are separate roles. Nomination chooses token emitter rather than pool or logic.",
+      "core_address": "0x91383a15c391c142b80045d8b4730c1c37ac0378",
+      "core_role": "XST token proxy/emitter",
+      "alternative_addresses": [
+        {
+          "address": "0xb276647e70cb3b81a1ca302cf8de280ff0ce5799",
+          "role": "XST logic contract"
+        },
+        {
+          "address": "0x694f8f9e0ec188f528d6354fdd0e47dca79b6f2c",
+          "role": "affected WETH/XST pool"
+        },
+        {
+          "address": "0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852",
+          "role": "WETH/USDT flash-swap funding pool"
+        }
+      ]
+    },
+    {
+      "source_path": "src/test/2022-08/XST_exp2.sol",
+      "source_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-08/XST_exp2.sol",
+      "source_sha256": "b3aea05081889da0e7ee268e112d26e4d0139ad08bf6550be542630b7b78107e",
+      "git_blob_sha1": "0eb3da68cabf571b4e608c3e5cd3b412f34174ac",
+      "fork_rpc_alias": "mainnet",
+      "fork_block": 15310016,
+      "recommended_core_address": "0x91383a15c391c142b80045d8b4730c1c37ac0378",
+      "family": "XST token",
+      "reason_and_limits": "Same token and exact fork block as XST_exp.sol; same documented reference execution. Eligible for exact core/window deduplication.",
+      "core_address": "0x91383a15c391c142b80045d8b4730c1c37ac0378",
+      "core_role": "XST token proxy/emitter",
+      "alternative_addresses": [
+        {
+          "address": "0xb276647e70cb3b81a1ca302cf8de280ff0ce5799",
+          "role": "XST logic contract"
+        },
+        {
+          "address": "0x694f8f9e0ec188f528d6354fdd0e47dca79b6f2c",
+          "role": "affected WETH/XST pool"
+        },
+        {
+          "address": "0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852",
+          "role": "WETH/USDT flash-swap funding pool"
+        }
+      ]
+    },
+    {
+      "source_path": "src/test/2022-09/MEVbadc0de_exp.sol",
+      "source_url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/0a9b9fd81c50767ff49f81089fbf8934f2f45b02/src/test/2022-09/MEVbadc0de_exp.sol",
+      "source_sha256": "60b8d13a9d8a25405e806491764b01b7806d688bdeb75ebaa45591ce5579cf8d",
+      "git_blob_sha1": "a2d3afec733e2c0dd01502bb61d9bae28db7a7fd",
+      "fork_rpc_alias": "mainnet",
+      "fork_block": 15625424,
+      "recommended_core_address": "0xbadc0defafcf6d4239bdf0b66da4d7bd36fcf05a",
+      "family": "MEV badc0de bot",
+      "reason_and_limits": "PoC names target MEVBOT; dYdX SoloMargin is used as caller but is not the nominated bot. The vulnerable target may itself emit no standard events; do not replace core based on traffic.",
+      "core_address": "0xbadc0defafcf6d4239bdf0b66da4d7bd36fcf05a",
+      "core_role": "MEV bot contract",
+      "alternative_addresses": [
+        {
+          "address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+          "role": "dYdX SoloMargin caller used by PoC"
+        },
+        {
+          "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "role": "WETH token transferred from the bot"
+        }
+      ]
+    }
+  ]
+}
