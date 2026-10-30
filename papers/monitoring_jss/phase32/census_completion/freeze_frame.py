@@ -8,6 +8,8 @@ PAPER=BASE.parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def write(p,x):p.write_text(json.dumps(x,indent=2,sort_keys=True)+'\n')
 def main():
+ if any((BASE/n).exists() for n in ['CANDIDATE_FRAME.json','FORK_WINDOWS.json','CATALOGUE_COVERAGE.json']):
+  raise SystemExit('Frozen frame already exists; refusing to overwrite post-acquisition provenance.')
  mapping=json.loads((BASE/'metadata/SOURCE_MAPPING.json').read_text())
  meta=json.loads((BASE/'metadata/METADATA_AUDIT.json').read_text())
  assert meta['status']=='COMPLETE' and meta['complete_fork_blocks']==7 and meta['complete_contract_creations']==6

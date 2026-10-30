@@ -1,0 +1,527 @@
+{
+  "available_original_bytes": 6429275,
+  "available_ranges": [
+    [
+      0,
+      3338847
+    ],
+    [
+      91148563,
+      92076192
+    ],
+    [
+      123575978,
+      123606982
+    ],
+    [
+      130523955,
+      132079329
+    ],
+    [
+      180643554,
+      181197966
+    ],
+    [
+      198470687,
+      198488150
+    ],
+    [
+      202682096,
+      202686642
+    ]
+  ],
+  "column_chunks": [
+    {
+      "acquired": true,
+      "column": "address",
+      "compressed_bytes": 3338843,
+      "compression": "SNAPPY",
+      "end_exclusive": 3338847,
+      "leaf_path": "address",
+      "physical_type": "BYTE_ARRAY",
+      "row_group": 0,
+      "start": 4
+    },
+    {
+      "acquired": true,
+      "column": "transaction_index",
+      "compressed_bytes": 927629,
+      "compression": "SNAPPY",
+      "end_exclusive": 92076192,
+      "leaf_path": "transaction_index",
+      "physical_type": "INT64",
+      "row_group": 0,
+      "start": 91148563
+    },
+    {
+      "acquired": true,
+      "column": "block_number",
+      "compressed_bytes": 31004,
+      "compression": "SNAPPY",
+      "end_exclusive": 123606982,
+      "leaf_path": "block_number",
+      "physical_type": "INT64",
+      "row_group": 0,
+      "start": 123575978
+    },
+    {
+      "acquired": true,
+      "column": "address",
+      "compressed_bytes": 1555374,
+      "compression": "SNAPPY",
+      "end_exclusive": 132079329,
+      "leaf_path": "address",
+      "physical_type": "BYTE_ARRAY",
+      "row_group": 1,
+      "start": 130523955
+    },
+    {
+      "acquired": true,
+      "column": "transaction_index",
+      "compressed_bytes": 554412,
+      "compression": "SNAPPY",
+      "end_exclusive": 181197966,
+      "leaf_path": "transaction_index",
+      "physical_type": "INT64",
+      "row_group": 1,
+      "start": 180643554
+    },
+    {
+      "acquired": true,
+      "column": "block_number",
+      "compressed_bytes": 17463,
+      "compression": "SNAPPY",
+      "end_exclusive": 198488150,
+      "leaf_path": "block_number",
+      "physical_type": "INT64",
+      "row_group": 1,
+      "start": 198470687
+    }
+  ],
+  "holes_are_original_bytes": false,
+  "independent_chain_completeness_verified": false,
+  "read_projections": [
+    {
+      "columns": [
+        "address",
+        "block_number",
+        "transaction_index"
+      ],
+      "row_group": 0,
+      "rows": 1270100
+    },
+    {
+      "columns": [
+        "address",
+        "block_number",
+        "transaction_index"
+      ],
+      "row_group": 1,
+      "rows": 761556
+    }
+  ],
+  "receipt_roots_verified": false,
+  "row_count_metadata": 2031656,
+  "row_group_count": 2,
+  "row_group_rows": [
+    1270100,
+    761556
+  ],
+  "schema": [
+    {
+      "name": "address",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "name": "topics",
+      "nullable": true,
+      "type": "list<element: string>"
+    },
+    {
+      "name": "data",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "name": "transaction_index",
+      "nullable": true,
+      "type": "int64"
+    },
+    {
+      "name": "log_index",
+      "nullable": true,
+      "type": "int64"
+    },
+    {
+      "name": "transaction_hash",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "name": "block_number",
+      "nullable": true,
+      "type": "int64"
+    },
+    {
+      "name": "block_hash",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "name": "block_timestamp",
+      "nullable": true,
+      "type": "timestamp[ns]"
+    },
+    {
+      "name": "date",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "name": "last_modified",
+      "nullable": true,
+      "type": "timestamp[ns]"
+    }
+  ],
+  "schema_version": "article2_phase16_projected_source_manifest_v1",
+  "source": {
+    "day_utc": "2022-05-30",
+    "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+    "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+    "size_bytes": 202686642,
+    "table": "logs",
+    "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+  },
+  "source_file_name": "source.parquet",
+  "source_id": "6e548692068810355406314ab79335494872b06b05bb7b1edf1a4208da2d9a74",
+  "statistics_values_exported_or_used": false,
+  "successful_original_ranges": [
+    {
+      "completed_utc": "2026-10-30T08:28:01.780302+00:00",
+      "content_encoding": null,
+      "content_length": "4",
+      "content_range": "bytes 0-3/202686642",
+      "etag": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+      "http_status": 206,
+      "invalid_header_body_read": false,
+      "kind": "leading_magic",
+      "length": 4,
+      "method": "GET",
+      "ordinal": 337,
+      "request_headers": {
+        "Accept": "application/octet-stream",
+        "Accept-Encoding": "identity",
+        "If-Match": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "Range": "bytes=0-3",
+        "User-Agent": "Article2-fixed-core-source/1"
+      },
+      "response_bytes": 4,
+      "response_sha256": "fbc62d3b511368ee275ddc74117d8689b430e1427220e25d30816201d89ca7b6",
+      "response_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+      "source": {
+        "day_utc": "2022-05-30",
+        "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+        "size_bytes": 202686642,
+        "table": "logs",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+      },
+      "start": 0,
+      "started_utc": "2026-10-30T08:28:01.591296+00:00",
+      "stored_file_name": "source.parquet",
+      "stored_offset": 0,
+      "transport_ok": true
+    },
+    {
+      "completed_utc": "2026-10-30T08:28:01.957301+00:00",
+      "content_encoding": null,
+      "content_length": "8",
+      "content_range": "bytes 202686634-202686641/202686642",
+      "etag": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+      "http_status": 206,
+      "invalid_header_body_read": false,
+      "kind": "trailer",
+      "length": 8,
+      "method": "GET",
+      "ordinal": 338,
+      "request_headers": {
+        "Accept": "application/octet-stream",
+        "Accept-Encoding": "identity",
+        "If-Match": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "Range": "bytes=202686634-202686641",
+        "User-Agent": "Article2-fixed-core-source/1"
+      },
+      "response_bytes": 8,
+      "response_sha256": "00bf6b31ab6c7928aa4d221c8cd6292656f025324a5ce7a5d973b9ae5c264b08",
+      "response_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+      "source": {
+        "day_utc": "2022-05-30",
+        "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+        "size_bytes": 202686642,
+        "table": "logs",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+      },
+      "start": 202686634,
+      "started_utc": "2026-10-30T08:28:01.790625+00:00",
+      "stored_file_name": "source.parquet",
+      "stored_offset": 202686634,
+      "transport_ok": true
+    },
+    {
+      "completed_utc": "2026-10-30T08:28:02.113709+00:00",
+      "content_encoding": null,
+      "content_length": "4538",
+      "content_range": "bytes 202682096-202686633/202686642",
+      "etag": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+      "http_status": 206,
+      "invalid_header_body_read": false,
+      "kind": "footer",
+      "length": 4538,
+      "method": "GET",
+      "ordinal": 339,
+      "request_headers": {
+        "Accept": "application/octet-stream",
+        "Accept-Encoding": "identity",
+        "If-Match": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "Range": "bytes=202682096-202686633",
+        "User-Agent": "Article2-fixed-core-source/1"
+      },
+      "response_bytes": 4538,
+      "response_sha256": "b06ac05f2f515aebb30c0d476364fe09a241d05bb09229fa93d3c9a00ca62d79",
+      "response_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+      "source": {
+        "day_utc": "2022-05-30",
+        "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+        "size_bytes": 202686642,
+        "table": "logs",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+      },
+      "start": 202682096,
+      "started_utc": "2026-10-30T08:28:01.967570+00:00",
+      "stored_file_name": "source.parquet",
+      "stored_offset": 202682096,
+      "transport_ok": true
+    },
+    {
+      "completed_utc": "2026-10-30T08:28:02.385295+00:00",
+      "content_encoding": null,
+      "content_length": "3338843",
+      "content_range": "bytes 4-3338846/202686642",
+      "etag": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+      "http_status": 206,
+      "invalid_header_body_read": false,
+      "kind": "column_chunks",
+      "length": 3338843,
+      "method": "GET",
+      "ordinal": 340,
+      "request_headers": {
+        "Accept": "application/octet-stream",
+        "Accept-Encoding": "identity",
+        "If-Match": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "Range": "bytes=4-3338846",
+        "User-Agent": "Article2-fixed-core-source/1"
+      },
+      "response_bytes": 3338843,
+      "response_sha256": "c56ba218d6a248bcb5ae77212f0a6f5d4fd35bd6fb337c2eea27add9ace4167d",
+      "response_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+      "source": {
+        "day_utc": "2022-05-30",
+        "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+        "size_bytes": 202686642,
+        "table": "logs",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+      },
+      "start": 4,
+      "started_utc": "2026-10-30T08:28:02.133533+00:00",
+      "stored_file_name": "source.parquet",
+      "stored_offset": 4,
+      "transport_ok": true
+    },
+    {
+      "completed_utc": "2026-10-30T08:28:02.675101+00:00",
+      "content_encoding": null,
+      "content_length": "927629",
+      "content_range": "bytes 91148563-92076191/202686642",
+      "etag": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+      "http_status": 206,
+      "invalid_header_body_read": false,
+      "kind": "column_chunks",
+      "length": 927629,
+      "method": "GET",
+      "ordinal": 341,
+      "request_headers": {
+        "Accept": "application/octet-stream",
+        "Accept-Encoding": "identity",
+        "If-Match": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "Range": "bytes=91148563-92076191",
+        "User-Agent": "Article2-fixed-core-source/1"
+      },
+      "response_bytes": 927629,
+      "response_sha256": "1116125e50b8f856b1417f8bcf5b6cb116e9f2b94678a1ef88d4a4dfa201ef9a",
+      "response_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+      "source": {
+        "day_utc": "2022-05-30",
+        "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+        "size_bytes": 202686642,
+        "table": "logs",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+      },
+      "start": 91148563,
+      "started_utc": "2026-10-30T08:28:02.395627+00:00",
+      "stored_file_name": "source.parquet",
+      "stored_offset": 91148563,
+      "transport_ok": true
+    },
+    {
+      "completed_utc": "2026-10-30T08:28:02.875404+00:00",
+      "content_encoding": null,
+      "content_length": "31004",
+      "content_range": "bytes 123575978-123606981/202686642",
+      "etag": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+      "http_status": 206,
+      "invalid_header_body_read": false,
+      "kind": "column_chunks",
+      "length": 31004,
+      "method": "GET",
+      "ordinal": 342,
+      "request_headers": {
+        "Accept": "application/octet-stream",
+        "Accept-Encoding": "identity",
+        "If-Match": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "Range": "bytes=123575978-123606981",
+        "User-Agent": "Article2-fixed-core-source/1"
+      },
+      "response_bytes": 31004,
+      "response_sha256": "ace3b50bb617ef9ffae419613d7631370d29ec075fb9b4e9679ca7946dcdb0f7",
+      "response_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+      "source": {
+        "day_utc": "2022-05-30",
+        "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+        "size_bytes": 202686642,
+        "table": "logs",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+      },
+      "start": 123575978,
+      "started_utc": "2026-10-30T08:28:02.686232+00:00",
+      "stored_file_name": "source.parquet",
+      "stored_offset": 123575978,
+      "transport_ok": true
+    },
+    {
+      "completed_utc": "2026-10-30T08:28:03.095046+00:00",
+      "content_encoding": null,
+      "content_length": "1555374",
+      "content_range": "bytes 130523955-132079328/202686642",
+      "etag": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+      "http_status": 206,
+      "invalid_header_body_read": false,
+      "kind": "column_chunks",
+      "length": 1555374,
+      "method": "GET",
+      "ordinal": 343,
+      "request_headers": {
+        "Accept": "application/octet-stream",
+        "Accept-Encoding": "identity",
+        "If-Match": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "Range": "bytes=130523955-132079328",
+        "User-Agent": "Article2-fixed-core-source/1"
+      },
+      "response_bytes": 1555374,
+      "response_sha256": "c812e5ef73b084a431e8b17aed5195167b2e52467e33ad8433289fcc28b413cc",
+      "response_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+      "source": {
+        "day_utc": "2022-05-30",
+        "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+        "size_bytes": 202686642,
+        "table": "logs",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+      },
+      "start": 130523955,
+      "started_utc": "2026-10-30T08:28:02.885717+00:00",
+      "stored_file_name": "source.parquet",
+      "stored_offset": 130523955,
+      "transport_ok": true
+    },
+    {
+      "completed_utc": "2026-10-30T08:28:03.420375+00:00",
+      "content_encoding": null,
+      "content_length": "554412",
+      "content_range": "bytes 180643554-181197965/202686642",
+      "etag": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+      "http_status": 206,
+      "invalid_header_body_read": false,
+      "kind": "column_chunks",
+      "length": 554412,
+      "method": "GET",
+      "ordinal": 344,
+      "request_headers": {
+        "Accept": "application/octet-stream",
+        "Accept-Encoding": "identity",
+        "If-Match": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "Range": "bytes=180643554-181197965",
+        "User-Agent": "Article2-fixed-core-source/1"
+      },
+      "response_bytes": 554412,
+      "response_sha256": "03ee8bf4906dcc52d152a65159d9c7f40754ccdc2e9adeb0513c9d1d81a9ca1a",
+      "response_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+      "source": {
+        "day_utc": "2022-05-30",
+        "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+        "size_bytes": 202686642,
+        "table": "logs",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+      },
+      "start": 180643554,
+      "started_utc": "2026-10-30T08:28:03.105943+00:00",
+      "stored_file_name": "source.parquet",
+      "stored_offset": 180643554,
+      "transport_ok": true
+    },
+    {
+      "completed_utc": "2026-10-30T08:28:03.606418+00:00",
+      "content_encoding": null,
+      "content_length": "17463",
+      "content_range": "bytes 198470687-198488149/202686642",
+      "etag": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+      "http_status": 206,
+      "invalid_header_body_read": false,
+      "kind": "column_chunks",
+      "length": 17463,
+      "method": "GET",
+      "ordinal": 345,
+      "request_headers": {
+        "Accept": "application/octet-stream",
+        "Accept-Encoding": "identity",
+        "If-Match": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "Range": "bytes=198470687-198488149",
+        "User-Agent": "Article2-fixed-core-source/1"
+      },
+      "response_bytes": 17463,
+      "response_sha256": "b0ca551297fa1948d8405c697c9fe4f5129d7269414128406f5e76e9169df454",
+      "response_url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+      "source": {
+        "day_utc": "2022-05-30",
+        "etag_opaque": "\"930906a211cbd6f3bc0f15271aa4ce3c-4\"",
+        "key": "v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet",
+        "size_bytes": 202686642,
+        "table": "logs",
+        "url": "https://aws-public-blockchain.s3.us-east-2.amazonaws.com/v1.0/eth/logs/date=2022-05-30/part-00000-b4bba6a1-56cf-44c8-b153-fc758475f609-c000.snappy.parquet"
+      },
+      "start": 198470687,
+      "started_utc": "2026-10-30T08:28:03.431235+00:00",
+      "stored_file_name": "source.parquet",
+      "stored_offset": 198470687,
+      "transport_ok": true
+    }
+  ],
+  "whole_source_sha256": null,
+  "whole_source_sha256_verified": false
+}

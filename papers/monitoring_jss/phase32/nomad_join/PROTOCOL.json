@@ -1,0 +1,27 @@
+{
+  "schema": "article2_phase32_nomad_postscore_join_protocol_v1",
+  "baseline_release": "article2-jss-v7-2026-10-29",
+  "baseline_commit": "aab963c5c5aa60adb7af5f04bc86601f92c67b87",
+  "source_repository": "nomad-xyz/hack-data",
+  "source_commit": "ba9adb9323517e8e677c774fbfc58364566df43b",
+  "source_retrieval_date": "2026-10-30",
+  "study_timing": "Post-review documentary identity join after immutable V7 label-blind replay; not preregistration.",
+  "core_address": "0x5d94309e5a0090b165fa4181519701637b6daeba",
+  "captured_window_utc": [
+    "2022-07-03",
+    "2022-08-01"
+  ],
+  "join_rule": "Lowercase exact transaction-hash membership in the protocol-published analysis/hack/transaction_hashes.json; cross-check shared Process event fields against the retained normalized original-AWS bundles.",
+  "label_semantics": "Protocol-listed transactions involved in the hack; includes no independently established malicious-intent label, complete execution inventory, or economic-loss label.",
+  "detector_rules_changed": false,
+  "boundary_or_window_changed": false,
+  "baseline_inputs_sha256": {
+    "phase31/nomad/ACCEPTED_DATA.json": "c862c3f25f38c590ff7971fc493a31002ed27937c1c87398fef467f97c4a8069",
+    "phase31/nomad/data_attempt3/acquisition_manifest.json": "46cf14eddd1bce341114e01caaf01be7c6e7a738c7f7f43b07d5bf9e6fcf3308",
+    "phase31/nomad/data_attempt3/observations.jsonl.gz": "4f1c25a8fb84021843858d2546949753aeb5bda0f859f536b4b537dc924851f5",
+    "phase31/nomad/data_attempt3/raw_selected_bundles.jsonl.gz": "aadf93bb1361eae807998a2891e6b94e5af09f813634b015feaa14fbb3703104",
+    "phase31/nomad/results/label_blind_replay.json": "60a2c9e3853a98b11756405ce549560d40c330a19bd21fd58efa61cc6b32f94a",
+    "phase31/nomad/results/method_traces.json": "82c9f76a233ac2d411fc85c43ac43fc5aa856a96faef32d9051c817097d21609",
+    "phase31/nomad/results/boundary_diagnostics.json": "ff44d07c29398cfe134e88f8ce2732806a52d26ea80f3c3793158b1b6a60d63d"
+  }
+}

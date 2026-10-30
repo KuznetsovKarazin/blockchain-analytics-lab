@@ -1,0 +1,118 @@
+name: article2-v8-final-reproducibility-release
+on:
+  push:
+    branches: [research/monitoring-v8-final-review-20261030]
+    paths:
+      - .github/workflows/article2_v8_final_release.yml
+      - papers/monitoring_jss/jss_latex_v8_final/**
+      - papers/monitoring_jss/phase32/**
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: article2-v8-final-release
+  cancel-in-progress: false
+jobs:
+  verify-build-release:
+    if: github.ref == 'refs/heads/research/monitoring-v8-final-review-20261030'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require a new release and unchanged baseline tags
+        run: |
+          set -euo pipefail
+          if git show-ref --verify --quiet refs/tags/article2-jss-v8-2026-10-30; then
+            echo 'V8 is already published. Preserve its immutable tag and use a new version.'
+            exit 1
+          fi
+          test "$(git rev-parse 'article2-jss-v7-2026-10-29^{commit}')" = aab963c5c5aa60adb7af5f04bc86601f92c67b87
+          test "$(git rev-parse 'article2-jss-v6.1-2026-10-29^{commit}')" = 651daa926bb3803ad76227389a4fb35c1027da63
+      - name: Reproduce the complete scientific record offline
+        run: |
+          set -euo pipefail
+          git diff --exit-code article2-jss-v7-2026-10-29 -- papers/monitoring_jss/phase{16..31} papers/monitoring_jss/jss_latex_v7_review
+          python papers/monitoring_jss/phase32/verify_release.py --out /tmp/v8_release_audit.json
+          git diff --exit-code
+      - name: Install LaTeX and pin the official Elsevier class
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-bibtex-extra texlive-fonts-recommended lmodern poppler-utils >/dev/null
+          git clone -q https://github.com/STM-Document-Engineering/elsarticle.git /tmp/elsarticle
+          git -C /tmp/elsarticle checkout -q 04aee43a9049051128c5d58b617dcd05e34df8b4
+          test "$(git -C /tmp/elsarticle rev-parse HEAD)" = 04aee43a9049051128c5d58b617dcd05e34df8b4
+      - name: Compile in an isolated directory and create the exact package
+        env:
+          TEXINPUTS: '/tmp/elsarticle//:'
+          BSTINPUTS: '/tmp/elsarticle//:'
+          FORCE_SOURCE_DATE: '1'
+        run: |
+          set -euo pipefail
+          export SOURCE_DATE_EPOCH="$(git show -s --format=%ct "$GITHUB_SHA")"
+          build_dir="$(mktemp -d /tmp/article2-v8-build-XXXXXX)"
+          export ARTICLE2_V8_BUILD_DIR="$build_dir"
+          python - <<'PY'
+          import importlib.util, os, pathlib, shutil
+          path=pathlib.Path('papers/monitoring_jss/phase32/verify_release.py')
+          spec=importlib.util.spec_from_file_location('v8_release',path)
+          module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+          target=pathlib.Path(os.environ['ARTICLE2_V8_BUILD_DIR'])
+          for name in module.SOURCE_FILES:shutil.copyfile(module.ARTICLE/name,target/name)
+          PY
+          (
+            cd "$build_dir"
+            pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/v8_latex1.log
+            bibtex main > /tmp/v8_bibtex.log 2>&1
+            ! grep -Ei 'warning|error|cannot open' /tmp/v8_bibtex.log
+            pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/v8_latex2.log
+            pdflatex -interaction=nonstopmode -halt-on-error main.tex > /tmp/v8_latex3.log
+            ! grep -E 'Citation .* undefined|There were undefined references|There were multiply-defined labels|Overfull' main.log
+          )
+          python - <<'PY'
+          import os,pathlib
+          source=pathlib.Path(os.environ['ARTICLE2_V8_BUILD_DIR'])/'main.pdf'
+          target=pathlib.Path('papers/monitoring_jss/jss_latex_v8_final/main.pdf')
+          temporary=target.with_suffix('.pdf.new')
+          with temporary.open('wb') as f:f.write(source.read_bytes());f.flush();os.fsync(f.fileno())
+          os.replace(temporary,target)
+          PY
+          python papers/monitoring_jss/phase32/verify_release.py --package --source-commit "$GITHUB_SHA" --audit /tmp/v8_release_audit.json
+          python papers/monitoring_jss/phase32/verify_release.py --verify-package --source-commit "$GITHUB_SHA"
+          pdfinfo papers/monitoring_jss/jss_latex_v8_final/main.pdf | grep '^Pages:'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: article2-v8-verified-manuscript-and-audits
+          path: |
+            papers/monitoring_jss/jss_latex_v8_final/Article2_JSS_V8_LaTeX_PDF.zip
+            papers/monitoring_jss/jss_latex_v8_final/main.pdf
+            papers/monitoring_jss/jss_latex_v8_final/PDF_SHA256.txt
+            papers/monitoring_jss/jss_latex_v8_final/RELEASE_MANIFEST.json
+            /tmp/v8_release_audit.json
+            /tmp/v8_latex3.log
+            /tmp/v8_bibtex.log
+          if-no-files-found: error
+          retention-days: 90
+      - name: Preserve the verified build and atomically publish the new immutable tag
+        run: |
+          set -euo pipefail
+          git fetch origin --tags
+          if git show-ref --verify --quiet refs/tags/article2-jss-v8-2026-10-30; then
+            echo 'Release tag appeared during verification; refusing publication.'
+            exit 1
+          fi
+          test "$(git rev-parse 'article2-jss-v7-2026-10-29^{commit}')" = aab963c5c5aa60adb7af5f04bc86601f92c67b87
+          test "$(git rev-parse 'article2-jss-v6.1-2026-10-29^{commit}')" = 651daa926bb3803ad76227389a4fb35c1027da63
+          test "$(git rev-parse origin/research/monitoring-v8-final-review-20261030)" = "$GITHUB_SHA"
+          python papers/monitoring_jss/phase32/verify_release.py --verify-package --source-commit "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add papers/monitoring_jss/jss_latex_v8_final/main.pdf papers/monitoring_jss/jss_latex_v8_final/Article2_JSS_V8_LaTeX_PDF.zip papers/monitoring_jss/jss_latex_v8_final/PDF_SHA256.txt papers/monitoring_jss/jss_latex_v8_final/RELEASE_MANIFEST.json papers/monitoring_jss/jss_latex_v8_final/REPRODUCTION_REPORT.json
+          git diff --cached --check
+          git diff --cached --quiet && { echo 'No new build artifacts'; exit 1; }
+          git commit -m 'Article2 V8: preserve complete-catalogue census and independently verified final review revision'
+          tag=article2-jss-v8-2026-10-30
+          git tag -a "$tag" -m 'V8: complete pinned Ethereum catalogue, independent documentary join, declared support, audited final manuscript'
+          git push --atomic origin HEAD:refs/heads/research/monitoring-v8-final-review-20261030 "refs/tags/$tag"

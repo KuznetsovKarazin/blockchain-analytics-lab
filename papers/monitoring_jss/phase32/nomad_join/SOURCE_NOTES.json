@@ -1,0 +1,47 @@
+{
+  "retrieved_date": "2026-10-30",
+  "sources": [
+    {
+      "id": "nomad_architecture",
+      "author": "Nomad",
+      "title": "Token Bridge: Architecture",
+      "url": "https://docs.nomad.xyz/token-bridge/architecture",
+      "publication_date": null,
+      "source_type": "protocol_documentation",
+      "section": "Message Flow; Handling Messages",
+      "finding": "A Replica processes and dispatches a message to the BridgeRouter; the BridgeRouter sends escrowed native tokens or mints representations to the recipient.",
+      "interpretation": "The fixed Replica does not define the asset-custody boundary; zero Replica outflow is architecturally expected, and retained source values confirm it."
+    },
+    {
+      "id": "nomad_root_cause",
+      "author": "Nomad",
+      "title": "Nomad Bridge Hack: Root Cause Analysis",
+      "url": "https://medium.com/nomad-xyz-blog/nomad-bridge-hack-root-cause-analysis-875ad2e5aacd",
+      "publication_date": "2022-08-05",
+      "source_type": "protocol_team_postmortem",
+      "section": "High-level Issue",
+      "finding": "The Replica authentication failure admitted fraudulent messages to the Nomad BridgeRouter."
+    },
+    {
+      "id": "nomad_recovery_update",
+      "author": "Nomad",
+      "title": "The Road to Recovery",
+      "url": "https://medium.com/nomad-xyz-blog/the-road-to-recovery-6abe5eec8ff1",
+      "publication_date": "2022-08-17",
+      "source_type": "protocol_team_update",
+      "section": "Where we are today",
+      "finding": "The team links its open dataset of addresses and transactions involved in the exploit, and separately discusses whitehat returns."
+    },
+    {
+      "id": "nomad_hack_data",
+      "author": "Nomad",
+      "title": "Nomad Hack Data",
+      "url": "https://github.com/nomad-xyz/hack-data/tree/ba9adb9323517e8e677c774fbfc58364566df43b",
+      "source_commit": "ba9adb9323517e8e677c774fbfc58364566df43b",
+      "source_commit_date": "2022-12-20T22:02:38Z",
+      "source_type": "protocol_published_incident_dataset",
+      "license": "Apache-2.0",
+      "finding": "The published hash list has 960 unique entries; it is used as documentary membership after frozen V7 scoring, not as a complete malicious-execution ground truth."
+    }
+  ]
+}

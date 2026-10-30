@@ -1,0 +1,456 @@
+{
+  "batches": [
+    {
+      "batch": 0,
+      "listing_response_bytes": 40500,
+      "range_requests": 627,
+      "range_response_bytes": 531724248,
+      "selected_coordinate_files": 60,
+      "source_census_sha256": "99c867e614d3a0cee37af85fbcb58b468e977e2f075e7e43bfc5fb91a4896e7b",
+      "source_days": 60
+    },
+    {
+      "batch": 1,
+      "listing_response_bytes": 22275,
+      "range_requests": 333,
+      "range_response_bytes": 312422748,
+      "selected_coordinate_files": 33,
+      "source_census_sha256": "d536ddfdb2b5bf225643c4efcee64bdd945ad8e8088365ac62914012d36109ca",
+      "source_days": 33
+    },
+    {
+      "batch": 2,
+      "listing_response_bytes": 30375,
+      "range_requests": 465,
+      "range_response_bytes": 442206982,
+      "selected_coordinate_files": 60,
+      "source_census_sha256": "383aeccd1d2f7cb3e89ea03069728c234fe5cbc0ba062a17df938d07d33a4289",
+      "source_days": 45
+    },
+    {
+      "batch": 3,
+      "listing_response_bytes": 20250,
+      "range_requests": 369,
+      "range_response_bytes": 353765531,
+      "selected_coordinate_files": 30,
+      "source_census_sha256": "b77028ff2fea01f2c4e947290e767925ae6cfdd45fdf794ce8d06ab8c5890834",
+      "source_days": 30
+    }
+  ],
+  "catalogue_coverage": {
+    "catalogue_files": 67,
+    "counts": {
+      "NEW_EXTENSION_NOMINATION": 8,
+      "ORIGINAL_EXTENSION_NOMINATION": 16,
+      "OTHER_CHAIN_EXCLUDED": 39,
+      "PRIMARY_STUDY_SOURCE": 4
+    },
+    "ethereum_files": 28,
+    "extension_source_files": 24,
+    "extension_unique_core_addresses": 22,
+    "extension_unique_windows": 23
+  },
+  "deployment_sensitivity": {
+    "fully_after_creation_date": {
+      "below20_days": 293,
+      "core_emitted_events": 63980,
+      "emitter_days": 439,
+      "ge20_days": 146,
+      "nonempty_below20_days": 122,
+      "nonempty_below20_fraction": 0.4552238805970149,
+      "nonempty_days": 268,
+      "selected_transaction_observations": 40504,
+      "zero_days": 171
+    },
+    "including_partial_creation_dates": {
+      "below20_days": 302,
+      "core_emitted_events": 100511,
+      "emitter_days": 449,
+      "ge20_days": 147,
+      "nonempty_below20_days": 130,
+      "nonempty_below20_fraction": 0.4693140794223827,
+      "nonempty_days": 277,
+      "selected_transaction_observations": 51452,
+      "zero_days": 172
+    },
+    "partial_creation_dates": {
+      "below20_days": 9,
+      "core_emitted_events": 36531,
+      "emitter_days": 10,
+      "ge20_days": 1,
+      "nonempty_below20_days": 8,
+      "nonempty_below20_fraction": 0.8888888888888888,
+      "nonempty_days": 9,
+      "selected_transaction_observations": 10948,
+      "zero_days": 1
+    },
+    "strictly_predeployment": {
+      "below20_days": 214,
+      "core_emitted_events": 0,
+      "emitter_days": 214,
+      "ge20_days": 0,
+      "nonempty_below20_days": 0,
+      "nonempty_below20_fraction": null,
+      "nonempty_days": 0,
+      "selected_transaction_observations": 0,
+      "zero_days": 214
+    }
+  },
+  "duplicate_circle_days": [
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-18",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-19",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-20",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-21",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-22",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-23",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-24",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-25",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-26",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-27",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-28",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-29",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-30",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-07-31",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-01",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-02",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-03",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-04",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-05",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-06",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-07",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-08",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-09",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-10",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-11",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-12",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "day": "2022-08-13",
+      "first_view": "cohort32_03",
+      "second_view": "cohort32_04"
+    }
+  ],
+  "extended22_unique_emitter_days": {
+    "below20_days": 516,
+    "core_emitted_events": 100511,
+    "emitter_days": 663,
+    "ge20_days": 147,
+    "nonempty_below20_days": 130,
+    "nonempty_below20_fraction": 0.4693140794223827,
+    "nonempty_days": 277,
+    "selected_transaction_observations": 51452,
+    "zero_days": 386
+  },
+  "extended23_window_weighted": {
+    "below20_days": 516,
+    "core_emitted_events": 106226,
+    "emitter_days": 690,
+    "ge20_days": 174,
+    "nonempty_below20_days": 130,
+    "nonempty_below20_fraction": 0.4276315789473684,
+    "nonempty_days": 304,
+    "selected_transaction_observations": 54492,
+    "zero_days": 386
+  },
+  "inputs_sha256": {
+    "CANDIDATE_FRAME.json": "43c57ab8bbac5db8726cb4d95b717558020804a414c16423533aa5174b29fcf8",
+    "CATALOGUE_COVERAGE.json": "0b249731f333ee70ea8d99cc1ddbdf184494751fd8057ff15635a3b1e15df1ec",
+    "FORK_WINDOWS.json": "b41c6977a8482689fef61798deeebd4d2e0735d6057ba2ea9683db2284c80975",
+    "metadata/METADATA_AUDIT.json": "cf3a9ee0b8fb5f904ee3e522d5fa5a109edda0841ca64d0a39e7f0f5633ee7b4",
+    "old_daily_csv": "4038e045462ba3f1efb1db73ed670acc8cf8c5aad4ea04c3c0a31427399e08e8",
+    "verifier": "f20e30d863f762bb41c824896102787439fea1b54cea73b18abae977728eee33"
+  },
+  "limits": [
+    "Complete source-file coverage within one pinned seven-directory catalogue is not population coverage of Ethereum incidents.",
+    "Operational component nominations remain investigator-informed; fork-date windows are not attack-time histories.",
+    "Offline checks independently recount retained selected coordinates and reconcile source/listing/range/coverage evidence; original Parquet byte-to-selection re-extraction requires online acquisition.",
+    "Source range hashes are not receipt-root authentication; no attack labels or detector scores were evaluated."
+  ],
+  "network_requests": 0,
+  "new6_unique_emitter_days": {
+    "below20_days": 106,
+    "core_emitted_events": 11629,
+    "emitter_days": 183,
+    "ge20_days": 77,
+    "nonempty_below20_days": 22,
+    "nonempty_below20_fraction": 0.2222222222222222,
+    "nonempty_days": 99,
+    "selected_transaction_observations": 6672,
+    "zero_days": 84
+  },
+  "new7_window_weighted": {
+    "below20_days": 106,
+    "core_emitted_events": 17344,
+    "emitter_days": 210,
+    "ge20_days": 104,
+    "nonempty_below20_days": 22,
+    "nonempty_below20_fraction": 0.1746031746031746,
+    "nonempty_days": 126,
+    "selected_transaction_observations": 9712,
+    "zero_days": 84
+  },
+  "new_cases": [
+    {
+      "core_address": "0x186e55c0bebd2f69348d94c4a27556d93c5bd36c",
+      "days": 30,
+      "days_ge20": 2,
+      "days_lt20": 28,
+      "days_positive_lt20": 1,
+      "days_zero": 27,
+      "family": "Redacted Cartel wxBTRFLY",
+      "first": "2021-12-01",
+      "fork_block": 13908185,
+      "id": "cohort32_01",
+      "last": "2021-12-30",
+      "max_tx_per_day": 91,
+      "median_tx_per_day": 0.0,
+      "total_core_emitted_events": 167,
+      "total_distinct_selected_tx": 167
+    },
+    {
+      "core_address": "0x715cdda5e9ad30a0ced14940f9997ee611496de6",
+      "days": 30,
+      "days_ge20": 30,
+      "days_lt20": 0,
+      "days_positive_lt20": 0,
+      "days_zero": 0,
+      "family": "Harmony Ethereum multisig",
+      "first": "2022-05-25",
+      "fork_block": 15012645,
+      "id": "cohort32_02",
+      "last": "2022-06-23",
+      "max_tx_per_day": 103,
+      "median_tx_per_day": 45.5,
+      "total_core_emitted_events": 3107,
+      "total_distinct_selected_tx": 1554
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "days": 30,
+      "days_ge20": 30,
+      "days_lt20": 0,
+      "days_positive_lt20": 0,
+      "days_zero": 0,
+      "family": "Circle PoC / Uniswap V2 DAI-USDC pair",
+      "first": "2022-07-15",
+      "fork_block": 15331019,
+      "id": "cohort32_03",
+      "last": "2022-08-13",
+      "max_tx_per_day": 179,
+      "median_tx_per_day": 106.0,
+      "total_core_emitted_events": 6063,
+      "total_distinct_selected_tx": 3237
+    },
+    {
+      "core_address": "0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5",
+      "days": 30,
+      "days_ge20": 30,
+      "days_lt20": 0,
+      "days_positive_lt20": 0,
+      "days_zero": 0,
+      "family": "Circle PoC / Uniswap V2 DAI-USDC pair",
+      "first": "2022-07-18",
+      "fork_block": 15354437,
+      "id": "cohort32_04",
+      "last": "2022-08-16",
+      "max_tx_per_day": 179,
+      "median_tx_per_day": 106.0,
+      "total_core_emitted_events": 6113,
+      "total_distinct_selected_tx": 3254
+    },
+    {
+      "core_address": "0x9c87a5726e98f2f404cdd8ac8968e9b2c80c0967",
+      "days": 30,
+      "days_ge20": 1,
+      "days_lt20": 29,
+      "days_positive_lt20": 1,
+      "days_zero": 28,
+      "family": "LuckyTiger NFT",
+      "first": "2022-07-26",
+      "fork_block": 15403430,
+      "id": "cohort32_05",
+      "last": "2022-08-24",
+      "max_tx_per_day": 218,
+      "median_tx_per_day": 0.0,
+      "total_core_emitted_events": 552,
+      "total_distinct_selected_tx": 220
+    },
+    {
+      "core_address": "0x91383a15c391c142b80045d8b4730c1c37ac0378",
+      "days": 30,
+      "days_ge20": 0,
+      "days_lt20": 30,
+      "days_positive_lt20": 3,
+      "days_zero": 27,
+      "family": "XST token",
+      "first": "2022-07-11",
+      "fork_block": 15310016,
+      "id": "cohort32_06",
+      "last": "2022-08-09",
+      "max_tx_per_day": 2,
+      "median_tx_per_day": 0.0,
+      "total_core_emitted_events": 66,
+      "total_distinct_selected_tx": 4
+    },
+    {
+      "core_address": "0xbadc0defafcf6d4239bdf0b66da4d7bd36fcf05a",
+      "days": 30,
+      "days_ge20": 11,
+      "days_lt20": 19,
+      "days_positive_lt20": 17,
+      "days_zero": 2,
+      "family": "MEV badc0de bot",
+      "first": "2022-08-29",
+      "fork_block": 15625424,
+      "id": "cohort32_07",
+      "last": "2022-09-27",
+      "max_tx_per_day": 539,
+      "median_tx_per_day": 6.5,
+      "total_core_emitted_events": 1276,
+      "total_distinct_selected_tx": 1276
+    }
+  ],
+  "original16": {
+    "below20_days": 410,
+    "core_emitted_events": 88882,
+    "emitter_days": 480,
+    "ge20_days": 70,
+    "nonempty_below20_days": 108,
+    "nonempty_below20_fraction": 0.6067415730337079,
+    "nonempty_days": 178,
+    "selected_transaction_observations": 44780,
+    "zero_days": 302
+  },
+  "schema": "phase32_catalogue_completion_independent_audit_v1",
+  "status": "PASS"
+}
